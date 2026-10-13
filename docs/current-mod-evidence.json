@@ -1,0 +1,2503 @@
+{
+  "checked_at": "2026-10-13",
+  "method": "Official published JAR metadata inspection; not runtime testing. User workbook has filenames only, not user-file hashes.",
+  "files": [
+    {
+      "source_id": 7,
+      "slug": "kubejs",
+      "official_file_url": "https://cdn.modrinth.com/data/umyGl7zF/versions/THIGFPwf/kubejs-neoforge-2101.7.2-build.377.jar",
+      "mods": [
+        {
+          "modId": "kubejs",
+          "version": "2101.7.2-build.377",
+          "displayName": "KubeJS",
+          "authors": "latvian.dev",
+          "description": "Customize your modpack or server with JavaScript!\n",
+          "logoFile": "kubejs_logo.png",
+          "modUrl": "https://kubejs.com",
+          "displayURL": "https://kubejs.com"
+        }
+      ],
+      "dependencies": {
+        "kubejs": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.199,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "rhino",
+            "type": "required",
+            "versionRange": "[2101.2.7-build.81,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "jei",
+            "type": "optional",
+            "versionRange": "[19.25.0.322,)",
+            "ordering": "AFTER",
+            "side": "CLIENT"
+          },
+          {
+            "modId": "roughlyenoughitems",
+            "type": "optional",
+            "versionRange": "[16.0.799,)",
+            "ordering": "AFTER",
+            "side": "CLIENT"
+          },
+          {
+            "modId": "emi",
+            "type": "optional",
+            "versionRange": "[1.1.22,)",
+            "ordering": "AFTER",
+            "side": "CLIENT"
+          },
+          {
+            "modId": "betteradvancedtooltips",
+            "type": "optional",
+            "versionRange": "[2101.1.0-build.1,)",
+            "ordering": "BEFORE",
+            "side": "CLIENT"
+          }
+        ]
+      },
+      "bundled": [
+        {
+          "identifier": {
+            "group": "com.github.rtyley",
+            "artifact": "animated-gif-lib-for-java"
+          },
+          "version": {
+            "range": "[animated-gif-lib-1.7,)",
+            "artifactVersion": "animated-gif-lib-1.7"
+          },
+          "path": "META-INF/jarjar/animated-gif-lib-for-java-animated-gif-lib-1.7.jar",
+          "isObfuscated": false
+        },
+        {
+          "identifier": {
+            "group": "dev.latvian.apps",
+            "artifact": "tiny-java-server"
+          },
+          "version": {
+            "range": "[1.0.0-build.33,)",
+            "artifactVersion": "1.0.0-build.33"
+          },
+          "path": "META-INF/jarjar/tiny-java-server-1.0.0-build.33.jar",
+          "isObfuscated": false
+        },
+        {
+          "identifier": {
+            "group": "dev.latvian.mods",
+            "artifact": "better-advanced-tooltips"
+          },
+          "version": {
+            "range": "[2101.1.0-build.1,)",
+            "artifactVersion": "2101.1.0-build.1"
+          },
+          "path": "META-INF/jarjar/better-advanced-tooltips-2101.1.0-build.1.jar",
+          "isObfuscated": false
+        }
+      ]
+    },
+    {
+      "source_id": 13,
+      "slug": "curios",
+      "official_file_url": "https://cdn.modrinth.com/data/vvuO3ImH/versions/yohfFbgD/curios-neoforge-9.5.1%2B1.21.1.jar",
+      "mods": [
+        {
+          "modId": "curios",
+          "version": "9.5.1+1.21.1",
+          "displayName": "Curios API",
+          "displayURL": "https://github.com/TheIllusiveC4/Curios",
+          "authors": "C4",
+          "description": "A flexible and expandable accessory/equipment API for users and developers."
+        }
+      ],
+      "dependencies": {
+        "curios": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.60,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21, 1.22)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 17,
+      "slug": "create-connected",
+      "official_file_url": "https://cdn.modrinth.com/data/Vg5TIO6d/versions/Xe7EqzfQ/create_connected-1.3.3-mc1.21.1.jar",
+      "mods": [
+        {
+          "modId": "create_connected",
+          "version": "1.3.3-mc1.21.1",
+          "displayName": "Create: Connected",
+          "updateJSONURL": "https://raw.githubusercontent.com/hlysine/create_connected/main/update.json",
+          "displayURL": "https://github.com/hlysine/create_connected",
+          "logoFile": "create_connected_icon.png",
+          "credits": "GitHub contributors, the Create mod Discord and redditors",
+          "authors": "Lysine",
+          "description": "Quality-of-life blocks that you wish existed in Create."
+        }
+      ],
+      "dependencies": {
+        "create_connected": [
+          {
+            "modId": "neoforge",
+            "mandatory": true,
+            "versionRange": "[21.1.200,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "mandatory": true,
+            "versionRange": "[1.21.1,1.22)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "mandatory": true,
+            "versionRange": "[6.0.10,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": [
+        {
+          "identifier": {
+            "group": "dev.ryanhcode.sable-companion",
+            "artifact": "sable-companion-common-1.21.1"
+          },
+          "version": {
+            "range": "[1.6.0,)",
+            "artifactVersion": "1.6.0"
+          },
+          "path": "META-INF/jarjar/sable-companion-common-1.21.1-1.6.0.jar",
+          "isObfuscated": false
+        }
+      ]
+    },
+    {
+      "source_id": 23,
+      "slug": "create-enchantment-industry",
+      "official_file_url": "https://cdn.modrinth.com/data/JWGBpFUP/versions/WJ2VPWAG/create-enchantment-industry-2.5.4.jar",
+      "mods": [
+        {
+          "modId": "create_enchantment_industry",
+          "version": "2.5.4",
+          "displayName": "Create: Enchantment Industry",
+          "displayURL": "https://github.com/DragonsPlusMinecraft/CreateEnchantmentIndustry",
+          "logoFile": "icon.png",
+          "authors": "DragonsPlus",
+          "description": "Enchantment, Experience, Enhancement and Enlightening - with Create"
+        }
+      ],
+      "dependencies": {
+        "create_enchantment_industry": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.228,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1, 1.22)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.10,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create_dragons_plus",
+            "type": "required",
+            "versionRange": "[1.11.9,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "apothic_enchanting",
+            "type": "optional",
+            "versionRange": "[1.6.1,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "apotheosis",
+            "type": "optional",
+            "versionRange": "[8.7.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "apothic_spawners",
+            "type": "optional",
+            "versionRange": "[1.4.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "optional",
+            "versionRange": "[2.0.3,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "touhou_little_maid",
+            "type": "optional",
+            "versionRange": "[1.2.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": [
+        {
+          "identifier": {
+            "group": "me.fallenbreath",
+            "artifact": "conditional-mixin-neoforge"
+          },
+          "version": {
+            "range": "[0.6.4,)",
+            "artifactVersion": "0.6.4"
+          },
+          "path": "META-INF/jarjar/conditional-mixin-neoforge-0.6.4.jar",
+          "isObfuscated": false
+        }
+      ]
+    },
+    {
+      "source_id": 28,
+      "slug": "create-radars",
+      "official_file_url": "https://cdn.modrinth.com/data/BLu2Yqfq/versions/AntNFNAx/create_radar-0.4.9.4-1.21.1.jar",
+      "mods": [
+        {
+          "modId": "create_radar",
+          "version": "0.4.9.4-1.21.1",
+          "displayName": "Create: Radars",
+          "authors": "Aycer, HappySG, CeoOfGoogle, Kipti, OndatraCZE, Ray(furuochen)",
+          "description": "Welcome to Create Radars, a mod offering a variety of tools and blocks for Surveillance, Detection, and Controlling Weapons."
+        }
+      ],
+      "dependencies": {
+        "create_radar": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1,1.21.2)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.10,6.1.0)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "createbigcannons",
+            "type": "required",
+            "versionRange": "[5.11.2,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "valkyrienskies",
+            "type": "optional",
+            "versionRange": "[2.4.7,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "shupapium",
+            "type": "optional",
+            "versionRange": "[1.0,2.0)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "computercraft",
+            "type": "optional",
+            "versionRange": "[1.113.0,2.0)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": [
+        {
+          "identifier": {
+            "group": "dev.ryanhcode.sable-companion",
+            "artifact": "sable-companion-common-1.21.1"
+          },
+          "version": {
+            "range": "[1.5.0,)",
+            "artifactVersion": "1.5.0"
+          },
+          "path": "META-INF/jarjar/sable-companion-common-1.21.1-1.5.0.jar",
+          "isObfuscated": false
+        }
+      ]
+    },
+    {
+      "source_id": 32,
+      "slug": "create-deep-seas",
+      "official_file_url": "https://cdn.modrinth.com/data/mva5q4qZ/versions/8CV1LRTl/create_submarine-3.3.0.jar",
+      "mods": [
+        {
+          "modId": "create_submarine",
+          "version": "3.3.0",
+          "displayName": "Create Deep Seas",
+          "authors": "Maxenonyme",
+          "logoFile": "logo.png",
+          "logoBlur": false,
+          "description": "A submarine addon for the Create mod.\n"
+        },
+        {
+          "modId": "create_abyss",
+          "version": "1.0.0",
+          "displayName": "Create Abyss",
+          "authors": "Maxenonyme",
+          "logoFile": "logo_abyss.png",
+          "logoBlur": false,
+          "description": "The Abyss dimension and its fauna, for Create Deep Seas.\n"
+        },
+        {
+          "modId": "create_high_seas",
+          "version": "0.1.1",
+          "displayName": "Create High Seas",
+          "authors": "Maxenonyme",
+          "logoFile": "high_seas_logo_1.png",
+          "logoBlur": false,
+          "description": "Surface naval content for Create Deep Seas. Coming soon.\n"
+        }
+      ],
+      "dependencies": {
+        "create_submarine": [
+          {
+            "modId": "lithostitched",
+            "mandatory": false,
+            "type": "optional",
+            "versionRange": "[1.4.8,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[0.5,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "ponder",
+            "type": "required",
+            "versionRange": "[1.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "required",
+            "versionRange": "[2.0.3,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "aeronautics",
+            "type": "required",
+            "versionRange": "[1.3.2,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "simulated",
+            "type": "required",
+            "versionRange": "[1.3.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "fusion",
+            "mandatory": false,
+            "type": "optional",
+            "versionRange": "[1.2.12,)",
+            "ordering": "NONE",
+            "side": "CLIENT"
+          }
+        ],
+        "create_abyss": [
+          {
+            "modId": "create_submarine",
+            "type": "required",
+            "versionRange": "[3.3.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "required",
+            "versionRange": "[2.0.3,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "lithostitched",
+            "mandatory": false,
+            "type": "optional",
+            "versionRange": "[1.4.8,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ],
+        "create_high_seas": [
+          {
+            "modId": "create_submarine",
+            "type": "required",
+            "versionRange": "[3.3.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": [
+        {
+          "identifier": {
+            "group": "dev.ryanhcode.sable-companion",
+            "artifact": "sable-companion-common-1.21.1"
+          },
+          "version": {
+            "range": "[1.6.0,)",
+            "artifactVersion": "1.6.0"
+          },
+          "path": "META-INF/jarjar/sable-companion-common-1.21.1-1.6.0.jar",
+          "isObfuscated": false
+        },
+        {
+          "identifier": {
+            "group": "maven.modrinth",
+            "artifact": "XaDC71GB"
+          },
+          "version": {
+            "range": "[1.4.8-neoforge-1.21,)",
+            "artifactVersion": "1.4.8-neoforge-1.21"
+          },
+          "path": "META-INF/jarjar/XaDC71GB-1.4.8-neoforge-1.21.jar",
+          "isObfuscated": false
+        },
+        {
+          "identifier": {
+            "group": "maven.modrinth",
+            "artifact": "p19vrgc2"
+          },
+          "version": {
+            "range": "[1.2.12-neoforge-mc1.21.1,)",
+            "artifactVersion": "1.2.12-neoforge-mc1.21.1"
+          },
+          "path": "META-INF/jarjar/p19vrgc2-1.2.12-neoforge-mc1.21.1.jar",
+          "isObfuscated": false
+        }
+      ]
+    },
+    {
+      "source_id": 34,
+      "slug": "create-dragons-plus",
+      "official_file_url": "https://cdn.modrinth.com/data/dzb1a5WV/versions/b0u9vk8C/CreateDragonsPlus-1.11.9.jar",
+      "mods": [
+        {
+          "modId": "create_dragons_plus",
+          "version": "1.11.9",
+          "displayName": "Create: Dragons Plus",
+          "displayURL": "https://github.com/DragonsPlusMinecraft/CreateDragonsPlus",
+          "logoFile": "icon.png",
+          "authors": "DragonsPlus",
+          "description": "Library mod for DragonsPlusMinecraft Create-addons."
+        }
+      ],
+      "dependencies": {
+        "create_dragons_plus": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.0,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1, 1.22)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.10,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": [
+        {
+          "identifier": {
+            "group": "me.fallenbreath",
+            "artifact": "conditional-mixin-neoforge"
+          },
+          "version": {
+            "range": "[0.6.4,)",
+            "artifactVersion": "0.6.4"
+          },
+          "path": "META-INF/jarjar/conditional-mixin-neoforge-0.6.4.jar",
+          "isObfuscated": false
+        }
+      ]
+    },
+    {
+      "source_id": 35,
+      "slug": "create-sable-dynamic-lights",
+      "official_file_url": "https://cdn.modrinth.com/data/eIsyUZG3/versions/sKw2ERw2/create-dyn-light-2.3.1-sodium-sable.jar",
+      "mods": [
+        {
+          "modId": "createdynlight",
+          "version": "2.3.1-sodium-sable",
+          "displayName": "Create Dynamic Lights",
+          "displayURL": "https://github.com/leon-o/Create-Dynamic-Lights",
+          "logoFile": "icon.png",
+          "authors": "Leon, ported for SodiumDynamicLights and Sable by OpenAI",
+          "description": "Adds dynamic lights to Create contraptions and Sable/Create Aeronautics sub-levels using SodiumDynamicLights."
+        }
+      ],
+      "dependencies": {
+        "createdynlight": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.219,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.10,6.1.0)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sodiumdynamiclights",
+            "type": "required",
+            "versionRange": "[0,)",
+            "ordering": "AFTER",
+            "side": "CLIENT"
+          },
+          {
+            "modId": "sable",
+            "type": "optional",
+            "versionRange": "[1.0.0,)",
+            "ordering": "AFTER",
+            "side": "CLIENT"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 36,
+      "slug": "rechiseled-create",
+      "official_file_url": "https://cdn.modrinth.com/data/E6867niZ/versions/VnOezhJR/rechiseledcreate-1.1.1-neoforge-mc1.21.jar",
+      "mods": [
+        {
+          "modId": "rechiseledcreate",
+          "version": "1.1.1",
+          "displayName": "Rechiseled: Create",
+          "displayURL": "https://www.curseforge.com/minecraft/mc-mods/rechiseled",
+          "logoFile": "rechiseledcreate.png",
+          "authors": "SuperMartijn642",
+          "description": "Rechiseled: Create adds new decorative variants of blocks in Create!"
+        }
+      ],
+      "dependencies": {
+        "rechiseledcreate": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.0.78-beta,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "1.21.1",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "supermartijn642corelib",
+            "type": "required",
+            "versionRange": ">=1.1.20 <1.2.0",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "rechiseled",
+            "type": "required",
+            "versionRange": ">=1.2.0",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": ">=6.0.4",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 39,
+      "slug": "create-bits-n-bobs",
+      "official_file_url": "https://cdn.modrinth.com/data/T8bvmqVZ/versions/g9Lmjjc5/bits_n_bobs-2.3.5.jar",
+      "mods": [
+        {
+          "modId": "bits_n_bobs",
+          "version": "2.3.5",
+          "displayName": "Create Bits 'n' Bobs",
+          "logoFile": "logo.png",
+          "authors": "Cake, Kipti, NormalGuy, Astral, Spydnel",
+          "description": "Decorative and mechanical additions to create!"
+        }
+      ],
+      "dependencies": {
+        "bits_n_bobs": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.219,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.10,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "azimuth",
+            "type": "required",
+            "versionRange": "[1.4.6,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "struts",
+            "type": "required",
+            "versionRange": "[1.0.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "createcasing",
+            "type": "optional",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "dndecor",
+            "type": "optional",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create_connected",
+            "type": "optional",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "tfmg",
+            "type": "incompatible",
+            "reason": "TFMG <= 1.2.2 is incompatible with Bits 'n' Bobs. If TFMG 1.2.3 is not released yet, use Create: TFMG Community Edition or TFMG 1.2.2c which is available on the Bits n Bobs mod page",
+            "ordering": "AFTER",
+            "versionRange": "(,1.2.2]",
+            "side": "BOTH"
+          },
+          {
+            "modId": "bits_n_tracks",
+            "type": "incompatible",
+            "reason": "Bits 'n' Tracks <= 1.0.3.1 targets old code in Bits 'n' Bobs, wait for Bits 'n' Tracks to update the code, or use Bits 'n' Bobs 2.2.9.",
+            "ordering": "AFTER",
+            "versionRange": "(,1.0.3.1]",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": [
+        {
+          "identifier": {
+            "group": "dev.ryanhcode.sable-companion",
+            "artifact": "sable-companion-common-1.21.1"
+          },
+          "version": {
+            "range": "[1.4.2,)",
+            "artifactVersion": "1.4.2"
+          },
+          "path": "META-INF/jarjar/sable-companion-common-1.21.1-1.4.2.jar",
+          "isObfuscated": false
+        }
+      ]
+    },
+    {
+      "source_id": 42,
+      "slug": "power-grid",
+      "official_file_url": "https://cdn.modrinth.com/data/eWiBLJ9R/versions/jCkPHjmP/powergrid-mc1.21.1-0.6.2.jar",
+      "mods": [
+        {
+          "modId": "powergrid",
+          "version": "0.6.2",
+          "displayName": "Create: Power Grid",
+          "authors": "patryk3211, Da-Negy, rvndm, casvara",
+          "description": "Providing electricity to a world near you.\n",
+          "logoFile": "assets/powergrid/icon.png"
+        }
+      ],
+      "dependencies": {
+        "powergrid": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "architectury",
+            "type": "required",
+            "versionRange": "[13.0.8,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.9,6.1.0)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "tfmg",
+            "type": "optional",
+            "versionRange": "[1.3.0,1.4.0)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "optional",
+            "versionRange": "[2.0.3,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": [
+        {
+          "identifier": {
+            "group": "org.ejml",
+            "artifact": "ejml-core"
+          },
+          "version": {
+            "range": "[0.44.0,)",
+            "artifactVersion": "0.44.0"
+          },
+          "path": "META-INF/jars/ejml-core-0.44.0.jar"
+        },
+        {
+          "identifier": {
+            "group": "org.ejml",
+            "artifact": "ejml-simple"
+          },
+          "version": {
+            "range": "[0.44.0,)",
+            "artifactVersion": "0.44.0"
+          },
+          "path": "META-INF/jars/ejml-simple-0.44.0.jar"
+        },
+        {
+          "identifier": {
+            "group": "org.ejml",
+            "artifact": "ejml-ddense"
+          },
+          "version": {
+            "range": "[0.44.0,)",
+            "artifactVersion": "0.44.0"
+          },
+          "path": "META-INF/jars/ejml-ddense-0.44.0.jar"
+        },
+        {
+          "identifier": {
+            "group": "org.ejml",
+            "artifact": "ejml-dsparse"
+          },
+          "version": {
+            "range": "[0.44.0,)",
+            "artifactVersion": "0.44.0"
+          },
+          "path": "META-INF/jars/ejml-dsparse-0.44.0.jar"
+        },
+        {
+          "identifier": {
+            "group": "io.github.llamalad7",
+            "artifact": "mixinextras-neoforge"
+          },
+          "version": {
+            "range": "[0.3.5,)",
+            "artifactVersion": "0.3.5"
+          },
+          "path": "META-INF/jars/mixinextras-neoforge-0.3.5.jar"
+        },
+        {
+          "identifier": {
+            "group": "dev.ryanhcode.sable-companion",
+            "artifact": "sable-companion-common-1.21.1"
+          },
+          "version": {
+            "range": "[1.6.0,)",
+            "artifactVersion": "1.6.0"
+          },
+          "path": "META-INF/jars/sable-companion-common-1.21.1-1.6.0.jar"
+        }
+      ]
+    },
+    {
+      "source_id": 48,
+      "slug": "create-aeronautics",
+      "official_file_url": "https://cdn.modrinth.com/data/oWaK0Q19/versions/44pLdPGg/create-aeronautics-bundled-1.21.1-1.3.2.jar",
+      "mods": [
+        {
+          "modId": "aeronautics_bundled",
+          "version": "1.3.2",
+          "displayName": "Create Aeronautics",
+          "logoFile": "aeronautics_bundled.png",
+          "credits": "",
+          "authors": "Simulated Team",
+          "description": "Expands the Create mod with physics-based contraptions, to build anything from cars to planes. This is a bundled JAR that contains Simulated, Aeronautics, and Offroad."
+        }
+      ],
+      "dependencies": {
+        "aeronautics_bundled": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.228,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": [
+        {
+          "identifier": {
+            "group": "dev.eriksonn.aeronautics",
+            "artifact": "aeronautics-neoforge-1.21.1"
+          },
+          "version": {
+            "range": "[1.3.2,)",
+            "artifactVersion": "1.3.2"
+          },
+          "path": "META-INF/jarjar/dev.eriksonn.aeronautics.aeronautics-neoforge-1.21.1-1.3.2.jar",
+          "isObfuscated": false
+        },
+        {
+          "identifier": {
+            "group": "dev.ryanhcode.offroad",
+            "artifact": "offroad-neoforge-1.21.1"
+          },
+          "version": {
+            "range": "[1.3.2,)",
+            "artifactVersion": "1.3.2"
+          },
+          "path": "META-INF/jarjar/dev.ryanhcode.offroad.offroad-neoforge-1.21.1-1.3.2.jar",
+          "isObfuscated": false
+        },
+        {
+          "identifier": {
+            "group": "dev.simulated_team.simulated",
+            "artifact": "simulated"
+          },
+          "version": {
+            "range": "[1.3.2,)",
+            "artifactVersion": "1.3.2"
+          },
+          "path": "META-INF/jarjar/dev.simulated_team.simulated.simulated-neoforge-1.21.1-1.3.2.jar",
+          "isObfuscated": false
+        }
+      ]
+    },
+    {
+      "source_id": 49,
+      "slug": "create-aeronautics-lift-patch",
+      "official_file_url": "https://cdn.modrinth.com/data/wEWnF0xx/versions/b5GqYXEI/create-aeronautics-lift-patch-1.1.0.jar",
+      "mods": [
+        {
+          "modId": "ldfix",
+          "version": "1.0.0",
+          "displayName": "Create Aeronautics Lift Fix",
+          "description": "Fixes Sable's lift and drag scaling to be calculated with the square of velocity rather than linearly. Should help larger aircraft fly."
+        }
+      ],
+      "dependencies": {
+        "ldfix": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "required",
+            "versionRange": "[0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 50,
+      "slug": "create-aeronautics-automated-logistics",
+      "official_file_url": "https://cdn.modrinth.com/data/73ZXeRfx/versions/EgPi4wq9/create_aeronautics_automated_logistics-0.6.2.jar",
+      "mods": [
+        {
+          "modId": "create_aeronautics_automated_logistics",
+          "version": "0.6.2",
+          "displayName": "Create Aeronautics: Automated Logistics",
+          "credits": "Built for Create Aeronautics logistics automation.",
+          "description": "Recorded airship routes, optional Simurail train station support, unloaded travel, docking queues, cargo transfer, and schedule automation for Create Aeronautics.\n"
+        }
+      ],
+      "dependencies": {
+        "create_aeronautics_automated_logistics": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.229,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "reason": "Automated Logistics uses Create schedule UI conventions and logistics types.",
+            "versionRange": "[6.0.10,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "aeronautics_bundled",
+            "type": "required",
+            "reason": "Automated Logistics targets Create Aeronautics airships from the bundled Create Aeronautics distribution.",
+            "versionRange": "[1.3.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "ftbteams",
+            "type": "optional",
+            "reason": "FTB Teams enables shared team and allied control of logistics assets.",
+            "versionRange": "[0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "ftbchunks",
+            "type": "optional",
+            "reason": "FTB Chunks displays named automated ship markers on its map and minimap.",
+            "versionRange": "[0,)",
+            "ordering": "AFTER",
+            "side": "CLIENT"
+          },
+          {
+            "modId": "journeymap",
+            "type": "optional",
+            "reason": "JourneyMap displays named automated ship markers on its map and minimap.",
+            "versionRange": "[0,)",
+            "ordering": "AFTER",
+            "side": "CLIENT"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 51,
+      "slug": "create-aeronautics-throwable-rope-connector",
+      "official_file_url": "https://cdn.modrinth.com/data/9xiCbKmM/versions/EDzeTV17/create_aeronautics_throwable_rope_connector-0.4.3.jar",
+      "mods": [
+        {
+          "modId": "create_aeronautics_throwable_rope_connector",
+          "version": "0.4.3",
+          "displayName": "Create Aeronautics: Throwable Rope Connector",
+          "logoFile": "icon.png",
+          "description": "A lightweight addon that lets you throw, launch, or mount-fire rope connectors for easier Create Aeronautics docking.\n"
+        }
+      ],
+      "dependencies": {
+        "create_aeronautics_throwable_rope_connector": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.228,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.10,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "aeronautics_bundled",
+            "type": "required",
+            "versionRange": "[1.3.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "simulated",
+            "type": "optional",
+            "versionRange": "[1.3.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 53,
+      "slug": "create-aeronautics-transmission-linkage",
+      "official_file_url": "https://cdn.modrinth.com/data/Y1dq5ioE/versions/FCZZ3ED4/create_aeronautics_transmission_linkage-0.2.8.jar",
+      "mods": [
+        {
+          "modId": "aeronautics_utility_objects",
+          "version": "0.2.8",
+          "displayName": "Create Aeronautics: Transmission & Linkage",
+          "logoFile": "logo.png",
+          "authors": "enxv233",
+          "description": "Adds universal joints, hydraulic links and kinetic converters for connecting and transmitting motion between Aeronautics structures."
+        }
+      ],
+      "dependencies": {
+        "aeronautics_utility_objects": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.226,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.10,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "required",
+            "versionRange": "[2.0.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "simulated",
+            "type": "required",
+            "versionRange": "[1.3.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 54,
+      "slug": "create-aeronautics-gyroscope-stabilizers",
+      "official_file_url": "https://cdn.modrinth.com/data/JcEFpckH/versions/9P9dNVUn/Create%20Aeronautics%20Gyroscope%20Stabilizers.jar",
+      "mods": [
+        {
+          "modId": "gyro",
+          "version": "1.2.2",
+          "displayName": "Create Aeronautics: Gyroscope Stabilizers",
+          "logoFile": "logo.png",
+          "authors": "raprek",
+          "description": "it adds a gyro to Create Aeronautics."
+        }
+      ],
+      "dependencies": {
+        "gyro": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1,1.22)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "required",
+            "versionRange": "[1.0.6,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 55,
+      "slug": "create-aeronautics-physics-gantry",
+      "official_file_url": "https://cdn.modrinth.com/data/tptzZZl3/versions/QoeKSEzn/createaerophysicsgantry-1.0.3.jar",
+      "mods": [
+        {
+          "modId": "createaerophysicsgantry",
+          "version": "1.0.3",
+          "displayName": "Create Aeronautics Physics Gantry",
+          "authors": "blorbee",
+          "logoFile": "icon.png",
+          "description": "Adds a physics gantry for Create Aeronautics"
+        }
+      ],
+      "dependencies": {
+        "createaerophysicsgantry": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.228,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.10,6.1.0)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "required",
+            "versionRange": "[2.0.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sablecompanion",
+            "type": "required",
+            "versionRange": "*",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "aeronautics_bundled",
+            "type": "required",
+            "versionRange": "[1.3.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 56,
+      "slug": "create-avionics",
+      "official_file_url": "https://cdn.modrinth.com/data/h4nsLvjf/versions/9siqVCcu/create_avionics-neoforge-1.21.1-0.6.0.jar",
+      "mods": [
+        {
+          "modId": "create_avionics",
+          "version": "0.6.0",
+          "displayName": "Create: Avionics",
+          "authors": "Sol Astrius PhÅnix",
+          "credits": "RyanHCode, Edgar Onghena, TechTastic, the Simulated Team.",
+          "logoFile": "icon.png",
+          "displayURL": "https://github.com/SolAstrius/CreateAvionics",
+          "updateJSONURL": "https://raw.githubusercontent.com/SolAstrius/CreateAvionics/main/updates.json",
+          "description": "Processes main resources."
+        }
+      ],
+      "dependencies": {
+        "create_avionics": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.219,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "simulated",
+            "type": "required",
+            "versionRange": "[1.2.1,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "computercraft",
+            "type": "required",
+            "versionRange": "[1.115,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.10,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "required",
+            "versionRange": "[1.1.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "aeronautics",
+            "type": "optional",
+            "versionRange": "[1.2.1,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "offroad",
+            "type": "optional",
+            "versionRange": "[1.2.1,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 57,
+      "slug": "create-aeronautics-compatability",
+      "official_file_url": "https://cdn.modrinth.com/data/aLVC5usA/versions/j10zlI9h/aeronauticscompat-1.1.3.jar",
+      "mods": [
+        {
+          "modId": "aeronauticscompat",
+          "version": "1.1.3",
+          "displayName": "AeronauticsCompat",
+          "authors": "rohan",
+          "description": "Compatibility fixes for Create: Aeronautics / Sable sub-levels. Per-mod patches apply only when the target mod is installed."
+        }
+      ],
+      "dependencies": {
+        "aeronauticscompat": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.0,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "optional",
+            "versionRange": "[2.0.3,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "etched",
+            "type": "optional",
+            "versionRange": "[5.0.0,6.0.0)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "waterframes",
+            "type": "optional",
+            "versionRange": "[2.1.0,3.0.0)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "citadel",
+            "type": "optional",
+            "versionRange": "[2.0.0,3.0.0)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 58,
+      "slug": "create-aeronautics-encased-fluid-pipes",
+      "official_file_url": "https://cdn.modrinth.com/data/DdAlVT8M/versions/pKFEfjEB/aeroencasedpipe-1.0.7.jar",
+      "mods": [
+        {
+          "modId": "aeroencasedpipe",
+          "version": "1.0.7",
+          "displayName": "Create Aeronautics: Encased Fluid Pipes",
+          "description": "Processes main resources.",
+          "authors": "EvanTrow"
+        }
+      ],
+      "dependencies": {
+        "aeroencasedpipe": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[4,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1,1.22)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "aeronautics",
+            "type": "required",
+            "versionRange": "[1.0.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 59,
+      "slug": "aeroclaims",
+      "official_file_url": "https://cdn.modrinth.com/data/CwZ8q37q/versions/dWMRSgEu/aeroclaims-0.9.4.jar",
+      "mods": [
+        {
+          "modId": "aeroclaims",
+          "version": "0.9.4",
+          "displayName": "Aeronautics Claims",
+          "authors": "Mapter",
+          "description": "Claim system for Create Aeronautics, compatible with OPAC or FTB.\n"
+        }
+      ],
+      "dependencies": {
+        "aeroclaims": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.200,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1,1.22)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "required",
+            "versionRange": "[2.0.5,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "ftbteams",
+            "type": "optional",
+            "versionRange": "[0,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "openpartiesandclaims",
+            "type": "optional",
+            "versionRange": "[0,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "ftbchunks",
+            "type": "optional",
+            "versionRange": "[0,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "createbigcannons",
+            "type": "optional",
+            "versionRange": "[0,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 60,
+      "slug": "create-aeronautics-climbable-rope",
+      "official_file_url": "https://cdn.modrinth.com/data/jImqv1M5/versions/fk5DMIYY/climbable_ropes-2.1.4.jar",
+      "mods": [
+        {
+          "modId": "climbable_ropes",
+          "version": "2.1.4",
+          "displayName": "Climbable Ropes for Create Aeronautics",
+          "authors": "saunhardy",
+          "displayURL": "https://github.com/matejhozlar/Create-Aeronautics-Climbable-Ropes",
+          "issueTrackerURL": "https://github.com/matejhozlar/Create-Aeronautics-Climbable-Ropes/issues",
+          "description": "Addon for Create: Aeronautics (Simulated module). Adds empty-hand climb modes for hanging rope strands and plunger ropes, plus a wrench-zipline mode for plunger ropes. The original Simulated zipline on hanging ropes is left untouched. The mod runs on both client and dedicated server: the server owns climbing config (auto-synced to clients) and tracks rope-riding state; per-tick climb input is handled client-side.\n"
+        }
+      ],
+      "dependencies": {
+        "climbable_ropes": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.228,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "simulated",
+            "type": "required",
+            "versionRange": "[1.3.0,1.4.0)",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "reason": "Uses Simulated's ZiplineClientManager and RopeRidingPacket to drive the climb mode; these internals can move between Simulated versions, so the range is bounded to an untested-stack-safe window."
+          },
+          {
+            "modId": "sable",
+            "type": "required",
+            "versionRange": "[2.0.0,3.0.0)",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "reason": "Transitive dependency of Simulated's rope strand system."
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.10,)",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "reason": "CHAIN_RIDEABLE tag and rope holder behaviour come from Create."
+          },
+          {
+            "modId": "playeranimator",
+            "type": "required",
+            "versionRange": "[2.0.4+1.21.1,)",
+            "ordering": "AFTER",
+            "side": "CLIENT",
+            "reason": "Drives the climb animation playback layer."
+          },
+          {
+            "modId": "entity_model_features",
+            "type": "optional",
+            "versionRange": "[1,)",
+            "ordering": "AFTER",
+            "side": "CLIENT",
+            "reason": "Pauses EMF custom player animations (such as Fresh Animations: Player Extension) while a climb animation plays so they do not override it.",
+            "mc-publish": {
+              "curseforge": "entity-model-features",
+              "modrinth": "entity-model-features"
+            }
+          }
+        ]
+      },
+      "bundled": [
+        {
+          "identifier": {
+            "group": "dev.kosmx.player-anim",
+            "artifact": "player-animation-lib-forge"
+          },
+          "version": {
+            "range": "[2.0.4,)",
+            "artifactVersion": "2.0.4+1.21.1"
+          },
+          "path": "META-INF/jarjar/player-animation-lib-forge-2.0.4+1.21.1.jar",
+          "isObfuscated": false
+        }
+      ]
+    },
+    {
+      "source_id": 62,
+      "slug": "drive-by-wire-sable",
+      "official_file_url": "https://cdn.modrinth.com/data/KsqvI0hD/versions/zdSwg9kS/drivebywire-0.3.0.jar",
+      "mods": [
+        {
+          "modId": "drivebywire",
+          "version": "0.3.0",
+          "displayName": "Drive By Wire",
+          "credits": "Porting work in progress for the Sable ecosystem.",
+          "authors": "StratoDonut",
+          "description": "Controller hub migration work for Create and Sable on NeoForge 1.21.1.\n"
+        }
+      ],
+      "dependencies": {
+        "drivebywire": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.228,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.9,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "required",
+            "versionRange": "[2.0.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create_tweaked_controllers",
+            "type": "optional",
+            "versionRange": "[0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 65,
+      "slug": "sable",
+      "official_file_url": "https://cdn.modrinth.com/data/T9PomCSv/versions/fg9dTRz9/sable-neoforge-1.21.1-2.0.6.jar",
+      "mods": [
+        {
+          "modId": "sable",
+          "version": "2.0.6",
+          "displayName": "Sable",
+          "authors": "RyanHCode",
+          "credits": "Ocelot, Eriksonn, Cyvack, Bee, Kyan, Cake, Rhyguy1",
+          "description": "Interactive moving block structures with physics.",
+          "logoFile": "icon.png",
+          "logoBlur": false
+        }
+      ],
+      "dependencies": {
+        "sable": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.228,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "flywheel",
+            "type": "optional",
+            "versionRange": "[1.0.6,)",
+            "ordering": "AFTER",
+            "side": "CLIENT"
+          },
+          {
+            "modId": "create",
+            "type": "optional",
+            "versionRange": "[6.0.10,6.1.0)",
+            "ordering": "AFTER",
+            "side": "CLIENT"
+          },
+          {
+            "modId": "sablecompanion",
+            "type": "incompatible",
+            "versionRange": "(1.6.0,)",
+            "reason": "Sable is out of date"
+          },
+          {
+            "modId": "sodium",
+            "type": "incompatible",
+            "versionRange": "(,0.8.12-alpha.2+mc1.21.1)",
+            "reason": "Sable supports Sodium 0.8.12-alpha.2+mc1.21.1 and above"
+          },
+          {
+            "modId": "scalablelux",
+            "type": "incompatible"
+          }
+        ]
+      },
+      "bundled": [
+        {
+          "identifier": {
+            "group": "dev.ryanhcode.sable-companion",
+            "artifact": "sable-companion-common-1.21.1"
+          },
+          "version": {
+            "range": "[1.6.0,)",
+            "artifactVersion": "1.6.0"
+          },
+          "path": "META-INF/jarjar/sable-companion-common-1.21.1-1.6.0.jar",
+          "isObfuscated": false
+        },
+        {
+          "identifier": {
+            "group": "dev.ryanhcode.sable",
+            "artifact": "sable_rapier"
+          },
+          "version": {
+            "range": "[2.0.6,)",
+            "artifactVersion": "2.0.6"
+          },
+          "path": "META-INF/jarjar/dev.ryanhcode.sable.sable-sable_rapier-1.21.1-2.0.6.jar",
+          "isObfuscated": false
+        },
+        {
+          "identifier": {
+            "group": "foundry.veil",
+            "artifact": "veil-neoforge-1.21.1"
+          },
+          "version": {
+            "range": "[4.3.2,)",
+            "artifactVersion": "4.3.2"
+          },
+          "path": "META-INF/jarjar/veil-neoforge-1.21.1-4.3.2.jar",
+          "isObfuscated": false
+        }
+      ]
+    },
+    {
+      "source_id": 66,
+      "slug": "sable_beyond",
+      "official_file_url": "https://cdn.modrinth.com/data/PrW3B4fH/versions/BWQxgVOj/sablebeyond-neoforge-1.21.1-v0.5.0.jar",
+      "mods": [
+        {
+          "modId": "sable_beyond",
+          "version": "0.5.0",
+          "displayName": "Sable Beyond",
+          "authors": "YassiGame",
+          "description": "Sable Beyond expands the Sable mod with additional features, quality-of-life improvements, and compatibility support. It is designed to add ideas that are not part of the main mod while keeping the gameplay experience consistent with Sable.\n",
+          "logoFile": "icon.png"
+        }
+      ],
+      "dependencies": {
+        "sable_beyond": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "required",
+            "versionRange": "[2.0.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": [
+        {
+          "identifier": {
+            "group": "me.shedaniel.cloth",
+            "artifact": "cloth-config-neoforge"
+          },
+          "version": {
+            "range": "[15.0.140,)",
+            "artifactVersion": "15.0.140"
+          },
+          "path": "META-INF/jars/cloth-config-neoforge-15.0.140-neoforge.jar"
+        }
+      ]
+    },
+    {
+      "source_id": 68,
+      "slug": "sable-create-aeronautics-collision-damage",
+      "official_file_url": "https://cdn.modrinth.com/data/Jm4nvDTr/versions/snRIIWNz/sablecollisiondamage-1.0.8.jar",
+      "mods": [
+        {
+          "modId": "sablecollisiondamage",
+          "version": "1.0.8",
+          "displayName": "Sable-Collision damage",
+          "description": "just simple collision damage for ship-world and ship-ship impacts.\n"
+        }
+      ],
+      "dependencies": {
+        "sablecollisiondamage": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.223,21.2)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "required",
+            "versionRange": "[1.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 69,
+      "slug": "jade-sable-compat",
+      "official_file_url": "https://cdn.modrinth.com/data/jCrJ4iGH/versions/cxUohR7A/sablejade-1.3.0.jar",
+      "mods": [
+        {
+          "modId": "sablejade",
+          "version": "1.3.0",
+          "displayName": "Jade Sable Compat",
+          "logoFile": "mod_logo.png",
+          "description": "Fixes Jade block targeting and tooltip selection for blocks on Sable sublevels and moving constructions.\n"
+        }
+      ],
+      "dependencies": {
+        "sablejade": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.228,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "required",
+            "versionRange": "[1.0.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "jade",
+            "type": "optional",
+            "versionRange": "[15.10.0,)",
+            "ordering": "AFTER",
+            "side": "CLIENT"
+          },
+          {
+            "modId": "create",
+            "type": "optional",
+            "versionRange": "[6.0.10,)",
+            "ordering": "AFTER",
+            "side": "CLIENT"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 72,
+      "slug": "waystones-sable",
+      "official_file_url": "https://cdn.modrinth.com/data/BxhPGfcK/versions/Wot8Pf4C/waystonessable-1.0.7.jar",
+      "mods": [
+        {
+          "modId": "waystonessable",
+          "version": "1.0.7",
+          "displayName": "WaystonesSable",
+          "authors": "Shinonome Shakusora",
+          "description": "A compatibility mod that allows Waystones to work properly within Sable's SubLevel system. Fixes teleportation, validation, distance calculation, and client synchronization for waystones placed inside or targeting SubLevels."
+        }
+      ],
+      "dependencies": {
+        "waystonessable": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1,1.22)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "waystones",
+            "type": "required",
+            "versionRange": "[21.1.39,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "required",
+            "versionRange": "[2.0.3,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 73,
+      "slug": "create-deep-seas-lava-fix",
+      "official_file_url": "https://cdn.modrinth.com/data/NgqP2RZb/versions/9LUKMhCi/submarinefix-1.0.1.jar",
+      "mods": [
+        {
+          "modId": "submarinefix",
+          "version": "1.0.1",
+          "displayName": "Create: Deep Seas - Lava Fix",
+          "authors": "Diyksfol",
+          "credits": "Developed with the help of an AI assistant. Create: Deep Seas by its respective authors.",
+          "description": "Fixes the bug in Create: Deep Seas where players inside a hermetically sealed\nsubmarine still take fire/lava damage while the submarine is submerged in lava,\neven though the interior is correctly emptied of lava.\n\nThe fix detects when the player is inside (or climbing out of) a sealed\ncompartment and suppresses fire/lava damage and the fire overlay in that case.\n\nRequires Create: Deep Seas. Safe to install without it (the fix simply does nothing).\n\nSome related issues are internal to Create: Deep Seas and cannot be fixed from\nthis mod without altering CDS behaviour — see the mod page for details.\n"
+        }
+      ],
+      "dependencies": {
+        "submarinefix": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.0,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1,1.22)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create_submarine",
+            "type": "optional",
+            "versionRange": "[2.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 74,
+      "slug": "sable-water-pressure",
+      "official_file_url": "https://cdn.modrinth.com/data/Da7zRnYm/versions/sqjz0BcW/waterpressure-1.0.0.jar",
+      "mods": [
+        {
+          "modId": "waterpressure",
+          "version": "1.0.0",
+          "displayName": "Water Pressure",
+          "authors": "Canser",
+          "description": "Deep water damages, slows and weakens the player, reduced or negated by a full copper/netherite diving armor set."
+        }
+      ],
+      "dependencies": {
+        "waterpressure": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.0,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1,1.22)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 75,
+      "slug": "ssrd",
+      "official_file_url": "https://cdn.modrinth.com/data/fJ183v3D/versions/iZflRKdV/SSRD-1.8.7-1.21.1.jar",
+      "mods": [
+        {
+          "modId": "ssrd",
+          "version": "1.8.7",
+          "displayName": "Separate Sable Render Distance",
+          "authors": "Ranold",
+          "logoFile": "ssrd_logo.png",
+          "description": "This mod re-writes the Sable mod to allow for physics objects (Aeronautics Planes!) to render further out than the normal view distance when using Distant Horizons.\n"
+        }
+      ],
+      "dependencies": {
+        "ssrd": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sodium",
+            "type": "required",
+            "versionRange": "[0,)",
+            "ordering": "NONE",
+            "side": "CLIENT"
+          },
+          {
+            "modId": "distanthorizons",
+            "type": "optional",
+            "versionRange": "[0,)",
+            "ordering": "NONE",
+            "side": "CLIENT"
+          },
+          {
+            "modId": "sable",
+            "type": "required",
+            "versionRange": "[0,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 77,
+      "slug": "sodium-dynamic-lights",
+      "official_file_url": "https://cdn.modrinth.com/data/PxQSWIcD/versions/XI0WLXdn/sodiumdynamiclights-neoforge-1.0.10-1.21.1.jar",
+      "mods": [
+        {
+          "modId": "sodiumdynamiclights",
+          "version": "1.0.9",
+          "displayName": "Sodium Dynamic Lights",
+          "authors": "toni, LambdAurora",
+          "description": "Fork of LambDynLights to work with Sodium on Neoforge 1.21+",
+          "logoFile": "assets/sodiumdynamiclights/textures/mod_logo.png",
+          "displayURL": "https://github.com/txnimc/SodiumDynamicLights/"
+        },
+        {
+          "modId": "sodiumdynamiclights",
+          "version": "1.0.9",
+          "displayName": "Sodium Dynamic Lights",
+          "authors": "toni, LambdAurora",
+          "description": "Fork of LambDynLights to work with Sodium on Neoforge 1.21+",
+          "logoFile": "assets/sodiumdynamiclights/textures/mod_logo.png",
+          "displayURL": "https://github.com/txnimc/SodiumDynamicLights/"
+        }
+      ],
+      "dependencies": {
+        "sodiumdynamiclights": [
+          {
+            "modId": "minecraft",
+            "mandatory": true,
+            "versionRange": "[1.21.1,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 86,
+      "slug": "roxy",
+      "official_file_url": "https://cdn.modrinth.com/data/Ap78bKTp/versions/cDmwpuYr/roxy-1.21.1-NeoForge-0.4.0.jar",
+      "mods": [
+        {
+          "modId": "roxy",
+          "version": "0.4.0",
+          "displayName": "Roxy",
+          "description": "Loads the Voxy LoD rendering mod on NeoForge by bridging its Fabric entrypoints and APIs.",
+          "logoFile": "assets/roxy/icon.png"
+        }
+      ],
+      "dependencies": {
+        "roxy": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.224,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21.1,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sodium",
+            "type": "required",
+            "versionRange": "[0.6.13,)",
+            "ordering": "NONE",
+            "side": "CLIENT"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 94,
+      "slug": "refined-storage",
+      "official_file_url": "https://cdn.modrinth.com/data/KDvYkUg3/versions/lHHiI26k/refinedstorage-neoforge-2.0.9.jar",
+      "mods": [
+        {
+          "modId": "refinedstorage",
+          "version": "2.0.9",
+          "displayName": "Refined Storage",
+          "displayURL": "https://refinedmods.com/refined-storage",
+          "logoFile": "icon.png",
+          "authors": "Refined Mods",
+          "description": "Refined Storage is a mass storage mod for Minecraft that offers the player a network-based storage system, allowing them to store items and fluids on a massively expandable device network.\n"
+        }
+      ],
+      "dependencies": {
+        "refinedstorage": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.181,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 95,
+      "slug": "refined-storage-jei-integration",
+      "official_file_url": "https://cdn.modrinth.com/data/VzR5wiLo/versions/BYZmHubv/refinedstorage-jei-integration-neoforge-1.0.0.jar",
+      "mods": [
+        {
+          "modId": "refinedstorage_jei_integration",
+          "version": "1.0.0",
+          "displayName": "Refined Storage - JEI Integration",
+          "displayURL": "https://refinedmods.com/refined-storage/addons/just-enough-items.html",
+          "authors": "Refined Mods",
+          "description": "JEI integration for Refined Storage.\n"
+        }
+      ],
+      "dependencies": {
+        "refinedstorage_jei_integration": [
+          {
+            "modId": "refinedstorage",
+            "type": "required",
+            "versionRange": "2.0.0-beta.1",
+            "side": "BOTH"
+          },
+          {
+            "modId": "jei",
+            "type": "required",
+            "versionRange": "[19.20.0,)",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": []
+    },
+    {
+      "source_id": 98,
+      "slug": "jei",
+      "official_file_url": "https://cdn.modrinth.com/data/u6dRKJwZ/versions/RI8WCow6/jei-1.21.1-neoforge-19.57.0.451.jar",
+      "mods": [
+        {
+          "modId": "jei",
+          "version": "19.57.0.451",
+          "displayName": "Just Enough Items",
+          "displayURL": "https://www.curseforge.com/minecraft/mc-mods/jei",
+          "displayTest": "IGNORE_SERVER_VERSION",
+          "logoFile": "jei-icon.png",
+          "authors": "mezz",
+          "description": "JEI is an item and recipe viewing mod for Minecraft, built from the ground up for stability and performance.\n"
+        }
+      ],
+      "dependencies": {
+        "jei": [
+          {
+            "modId": "mezz_config",
+            "type": "required",
+            "versionRange": "[0.5.12,1.0.0)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "mezz_config_gui",
+            "type": "optional",
+            "versionRange": "[0.5.5,)",
+            "ordering": "AFTER",
+            "side": "CLIENT"
+          },
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.1.238,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21, 1.21.1)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          }
+        ]
+      },
+      "bundled": [
+        {
+          "identifier": {
+            "group": "net.mezzdev.config",
+            "artifact": "mezz_config-1.21.1-neoforge"
+          },
+          "version": {
+            "range": "[0.5.12,1.0.0)",
+            "artifactVersion": "0.5.12"
+          },
+          "path": "META-INF/jarjar/mezz_config-1.21.1-neoforge-0.5.12.jar",
+          "isObfuscated": false
+        }
+      ]
+    },
+    {
+      "source_id": 107,
+      "slug": "sound-physics-aeronautics",
+      "official_file_url": "https://cdn.modrinth.com/data/JHKPj7kB/versions/MDdwFCrR/sound-physics-aeronautics-2.0.1.jar",
+      "mods": [
+        {
+          "modId": "sound_physics_remastered",
+          "version": "2.0.0",
+          "displayName": "Sound Physics Aeronautics",
+          "displayURL": "https://github.com/Halew3/Sound-Physics-Aeronautics",
+          "logoFile": "icon.png",
+          "authors": "Sonic Ether, vlad2305m, Max Henke, Halew3",
+          "credits": "Sonic Ether, vlad2305m, Max Henkel; SPR Aeronautics fork by Halew3",
+          "description": "Sound Physics Aeronautics is a fork of Sound Physics Remastered focused on Create Aeronautics and Sable moving sublevels.\n\nIt preserves Sound Physics Remastered-style occlusion, reverb, and absorption while adding moving sublevel acoustic support, long-range Aeronautics propeller and optional Create Propulsion thruster audio, Doppler handling for supported moving sources, and safer sound policy behavior for modded Create/Aeronautics packs.\n\nThis fork keeps the mod id sound_physics_remastered, so it is a drop-in replacement and cannot be installed alongside upstream Sound Physics Remastered.",
+          "displayTest": "IGNORE_ALL_VERSION"
+        }
+      ],
+      "dependencies": {
+        "sound_physics_remastered": [
+          {
+            "modId": "neoforge",
+            "type": "required",
+            "versionRange": "[21.0.0-beta,)",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "minecraft",
+            "type": "required",
+            "versionRange": "[1.21,1.21.1]",
+            "ordering": "NONE",
+            "side": "BOTH"
+          },
+          {
+            "modId": "cloth_config",
+            "type": "optional",
+            "versionRange": "[15.0.127,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "voicechat",
+            "type": "optional",
+            "versionRange": "[1.21-2.3.0,)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "sable",
+            "type": "optional",
+            "versionRange": "[2.0.0,3.0.0)",
+            "ordering": "AFTER",
+            "side": "BOTH"
+          },
+          {
+            "modId": "distanthorizons",
+            "type": "optional",
+            "versionRange": "[3.2.0-b,)",
+            "ordering": "AFTER",
+            "side": "CLIENT",
+            "reason": "Optional Distant Horizons far-propeller terrain occlusion integration"
+          },
+          {
+            "modId": "create",
+            "type": "required",
+            "versionRange": "[6.0.10,6.0.11)",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "reason": "Required exact Create 6.0.10 runtime for train and stationary-whistle integration"
+          },
+          {
+            "modId": "aeronautics",
+            "type": "required",
+            "versionRange": "[1.3.0,2.0.0)",
+            "ordering": "AFTER",
+            "side": "BOTH",
+            "reason": "Supports Aeronautics 1.x from 1.3.0; verified through 1.3.2"
+          },
+          {
+            "modId": "createpropulsion",
+            "type": "optional",
+            "versionRange": "[1.1.5,1.2)",
+            "ordering": "AFTER",
+            "side": "CLIENT",
+            "reason": "Optional Create Propulsion 1.1.5 continuous-thruster acoustic integration"
+          }
+        ]
+      },
+      "bundled": []
+    }
+  ]
+}
