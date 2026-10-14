@@ -24,14 +24,20 @@ public final class FleetModule {
     private final io.github.low2uu.dbv.fleet.compat.VesselInspection inspection = new io.github.low2uu.dbv.fleet.compat.VesselInspection();
     private FlagshipRegistry registry;
     private VesselTelemetry telemetry;
+    private final io.github.low2uu.dbv.fleet.dock.StarterSubmarine starter;
+    private final io.github.low2uu.dbv.fleet.dock.RefitService refit;
 
     private FleetModule(MinecraftServer server) throws IOException {
         store = new RegistryStore(server.getWorldPath(LevelResource.ROOT));
         registry = store.load();
+        starter = new io.github.low2uu.dbv.fleet.dock.StarterSubmarine(server);
+        refit = new io.github.low2uu.dbv.fleet.dock.RefitService(server);
     }
 
     public static void initialize() {
+        io.github.low2uu.dbv.fleet.dock.StarterSubmarine.initializeTickets();
         NeoForge.EVENT_BUS.addListener(FleetCommands::register);
+        io.github.low2uu.dbv.fleet.dock.DockInteraction.initialize();
         NeoForge.EVENT_BUS.addListener(io.github.low2uu.dbv.fleet.command.ControllerInteraction::interact);
         NeoForge.EVENT_BUS.addListener(FleetModule::start);
         NeoForge.EVENT_BUS.addListener(FleetModule::tick);
@@ -45,6 +51,8 @@ public final class FleetModule {
     }
 
     public FlagshipRegistry registry() { return registry; }
+    public io.github.low2uu.dbv.fleet.dock.StarterSubmarine starter() { return starter; }
+    public io.github.low2uu.dbv.fleet.dock.RefitService refit() { return refit; }
     public SableVesselAdapter adapter() { return adapter; }
     public io.github.low2uu.dbv.fleet.compat.VesselInspection inspection() { return inspection; }
 
@@ -75,10 +83,15 @@ public final class FleetModule {
     }
 
     private static void tick(ServerTickEvent.Post event) {
-        if (event.getServer().getTickCount() % 20 != 0) { return; }
         // A broken disk registry is reported by explicit commands; do not spam retries every tick.
         FleetModule module = SERVERS.get(event.getServer());
         if (module == null) { return; }
+        try {
+            module.starter.tick(module);
+            module.refit.recover(module);
+            module.refit.process(module);
+        } catch (Exception error) { LogUtils.getLogger().error("DBV dock stopped safely: {}", error.getMessage()); }
+        if (event.getServer().getTickCount() % 20 != 0) { return; }
         VesselTelemetry.State before = module.telemetry == null ? null : module.telemetry.state();
         VesselTelemetry now = module.sample(event.getServer());
         if (before != now.state()) { LogUtils.getLogger().info("DBV flagship state: {} ({})", now.state(), now.detail()); }

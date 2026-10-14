@@ -35,6 +35,8 @@ public final class DeepBlueVoyageWorld {
             level.setDefaultSpawnPos(new BlockPos(IslandTerrain.SPAWN_X,
                     IslandTerrain.PLATFORM_Y + 1, IslandTerrain.SPAWN_Z), 0);
             event.setCanceled(true);
+            try { io.github.low2uu.dbv.fleet.dock.StarterSubmarine.requestNewWorld(level.getServer()); }
+            catch (java.io.IOException error) { LogUtils.getLogger().error("DBV starter submarine request failed", error); }
         }
     }
 }

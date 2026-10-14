@@ -38,6 +38,8 @@ public final class ControllerInteraction {
             int page = previous == null || now - previous > 200 ? 1 : LAST_PAGE.getOrDefault(player, 0) % pages + 1;
             LAST_PAGE.put(player, page);
             display(report, player::sendSystemMessage, page);
+            if (player instanceof net.minecraft.server.level.ServerPlayer serverPlayer)
+                io.github.low2uu.dbv.fleet.dock.DockInteraction.menu(serverPlayer, body);
             if (pages > 1) player.sendSystemMessage(Component.literal("再次潜行右键翻页；停止操作10秒后回到第一页。"));
         }
         catch (RuntimeException exception) { player.sendSystemMessage(Component.literal("设备检测失败，未更改主艇身份：" + exception.getClass().getSimpleName())); }

@@ -1,0 +1,108 @@
+{
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.259",
+  "results": {
+    "first-run": {
+      "passed_assertions": 20,
+      "assertions": [
+        "starter preset generation hook",
+        "starter automatically qualified and registered",
+        "starter Sable body loaded",
+        "local fixed mooring active",
+        "real Deep Seas three conditions pass with shore service",
+        "exactly one vessel",
+        "begin writes durable active snapshot",
+        "anchor protected",
+        "unsupported container denied",
+        "outside envelope denied",
+        "cancel closes session",
+        "cancel restores wall",
+        "cancel removes added block",
+        "valid modification committed",
+        "committed block retained",
+        "invalid modification automatically rolls back",
+        "controller restored",
+        "permanent identity unchanged",
+        "restored block entities work",
+        "baseline restored"
+      ],
+      "complete": true
+    },
+    "reopen": {
+      "passed_assertions": 16,
+      "assertions": [
+        "starter automatically qualified and registered",
+        "starter Sable body loaded",
+        "local fixed mooring active",
+        "real Deep Seas three conditions pass with shore service",
+        "exactly one vessel",
+        "interrupted session recovered on restart",
+        "restart restored wall",
+        "restart removed added block",
+        "survival player rejected without snapshot",
+        "pending scan keeps backup",
+        "pending scan locks editing",
+        "oxygen outage scan timeout rolls back",
+        "timeout restores redstone",
+        "asynchronous valid commit finishes",
+        "async valid edit retained",
+        "final session closed"
+      ],
+      "complete": true
+    },
+    "fresh-world": {
+      "passed_assertions": 6,
+      "assertions": [
+        "fresh island automatically registers while player stays at spawn",
+        "starter remains loaded for initial validation",
+        "one ship after fresh world creation",
+        "fresh starter three conditions",
+        "fresh starter moored",
+        "playable save has no test refit"
+      ],
+      "complete": true
+    }
+  },
+  "unit_tests": [
+    {
+      "suite": "io.github.low2uu.dbv.fleet.dock.AtomicSnapshotFileTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "suite": "io.github.low2uu.dbv.fleet.QualificationTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "suite": "io.github.low2uu.dbv.fleet.RegistryStoreTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0
+    }
+  ],
+  "unit_test_count": 14,
+  "jar_sha256": "4d26484b0cbb08df98f443f075df63086a5373a6cadab19e2afd7a87dca93bc6",
+  "test_resources_excluded_from_main_jar": true,
+  "temporary_scripts_removed": true,
+  "playable_world": "runtime/client/saves/DBV-Island-v2",
+  "active_refit_in_playable_world": false,
+  "flagship_registry": {
+    "schemaVersion": 1,
+    "flagship": {
+      "vesselId": "4f3da63e-22d0-4149-a8bb-12574dc02383",
+      "bodyId": "ab7c9962-520c-4dd6-b906-24167e822ae8",
+      "dimension": "minecraft:overworld",
+      "name": "酒狐号·初始艇",
+      "generation": 1
+    }
+  },
+  "scope": "Construction-only, bounded supported blocks, shore-assisted oxygen, not survival or disaster recovery",
+  "observations": [
+    "One Create registrate startup failure; subsequent restart loaded normally. Retained startup-failure.txt; no claim of a complete upstream fix.",
+    "Initial spawn-distance failure fixed using a temporary Sable force-load ticket, released after registration."
+  ],
+  "git_pushed": false
+}

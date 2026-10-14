@@ -69,7 +69,7 @@ public final class FleetCommands {
                         "物理质量=%.2f kpg | Sable速度=%.3f | 深度=%s | 裂纹=%s | 破舱=%s | tick=%d",
                         sample.mass(), sample.speed(), value(sample.depth()), value(sample.cracks()), value(sample.breached()), sample.observedTick())), false);
             }
-            source.sendSuccess(() -> Component.literal("当前为登记与监控初版：未提供完整船体备份、改装或恢复。"), false);
+            source.sendSuccess(() -> Component.literal("建设船坞：/dbv refit；仅支持初始小艇有限方块快照，尚非完整灾难恢复。"), false);
             return 1;
         } catch (Exception exception) { return fail(source, exception); }
     }
