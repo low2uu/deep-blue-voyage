@@ -2,11 +2,11 @@
   "checked_at": "2026-10-14",
   "target": "Minecraft 1.21.1 NeoForge / Java 21",
   "source_workbook": "用户提供的 MC客户端Mod清单.xlsx / Mod清单 / 111 行",
-  "scope": "全清单保留原静态核查；首批核心及本次五个开发工具已完成客户端加载检查，未完成世界内联调。",
+  "scope": "全清单保留静态核查；实际启用依赖以Gradle为准。本次六项辅助Mod及Cloth Config已通过正式客户端加载与进世界检查，未宣称所有功能与大型船体均已验收。",
   "counts": {
     "确定加入": 99,
-    "待定": 16,
-    "备选区": 33
+    "备选区": 36,
+    "待定": 15
   },
   "source_count": 111,
   "rows": [
@@ -29,7 +29,8 @@
       "source": "https://modrinth.com/mod/create",
       "evidence": "https://modrinth.com/mod/create/version/UjX6dr61",
       "slug": "create",
-      "sha1": "0e97e49837bed766e6f28a4c95b04885d6acc353"
+      "sha1": "0e97e49837bed766e6f28a4c95b04885d6acc353",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     },
     {
       "id": "U002",
@@ -50,7 +51,8 @@
       "source": "https://modrinth.com/mod/architectury-api",
       "evidence": "https://modrinth.com/mod/architectury-api/version/1IiqEQGl",
       "slug": "architectury-api",
-      "sha1": "008656a0702801174b8ec245ed7aad1921d6e9f1"
+      "sha1": "008656a0702801174b8ec245ed7aad1921d6e9f1",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     },
     {
       "id": "U003",
@@ -71,7 +73,8 @@
       "source": "https://modrinth.com/mod/balm",
       "evidence": "https://modrinth.com/mod/balm/version/CquiaiDj",
       "slug": "balm",
-      "sha1": "dd3606a349f4a3c8fb5bd0ab22905675c02b0d74"
+      "sha1": "dd3606a349f4a3c8fb5bd0ab22905675c02b0d74",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U004",
@@ -92,7 +95,8 @@
       "source": "https://modrinth.com/mod/forgified-fabric-api",
       "evidence": "https://modrinth.com/mod/forgified-fabric-api/version/V9WdDUTx",
       "slug": "forgified-fabric-api",
-      "sha1": "1a2c41d2efbe1c60159b90a165557e7c06d03a5c"
+      "sha1": "1a2c41d2efbe1c60159b90a165557e7c06d03a5c",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U005",
@@ -113,7 +117,8 @@
       "source": "https://modrinth.com/mod/kotlin-for-forge",
       "evidence": "https://modrinth.com/mod/kotlin-for-forge/version/uhJhCT7X",
       "slug": "kotlin-for-forge",
-      "sha1": "d10d062caf1aad9aec82d7852f2fee1781735c1f"
+      "sha1": "d10d062caf1aad9aec82d7852f2fee1781735c1f",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U006",
@@ -134,7 +139,8 @@
       "source": "https://modrinth.com/mod/rhino",
       "evidence": "https://modrinth.com/mod/rhino/version/SqkDvOLG",
       "slug": "rhino",
-      "sha1": "56eab1d464ed0811c64040c64bd047df5cbc3aad"
+      "sha1": "56eab1d464ed0811c64040c64bd047df5cbc3aad",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     },
     {
       "id": "U007",
@@ -155,7 +161,8 @@
       "source": "https://modrinth.com/mod/kubejs",
       "evidence": "https://modrinth.com/mod/kubejs/version/THIGFPwf",
       "slug": "kubejs",
-      "sha1": "7313fcd99318834c642ee9f3a05ed7fd7bcb6ef4"
+      "sha1": "7313fcd99318834c642ee9f3a05ed7fd7bcb6ef4",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     },
     {
       "id": "U008",
@@ -176,7 +183,8 @@
       "source": "https://modrinth.com/mod/supermartijn642s-core-lib",
       "evidence": "https://modrinth.com/mod/supermartijn642s-core-lib/version/OG6Edgmm",
       "slug": "supermartijn642s-core-lib",
-      "sha1": "60d45feac8cd2f0b497b013c7fd501b3ae8b6f6d"
+      "sha1": "60d45feac8cd2f0b497b013c7fd501b3ae8b6f6d",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U009",
@@ -197,7 +205,8 @@
       "source": "https://modrinth.com/mod/supermartijn642s-config-lib",
       "evidence": "https://modrinth.com/mod/supermartijn642s-config-lib/version/qKL9jM75",
       "slug": "supermartijn642s-config-lib",
-      "sha1": "07452242e389975e8a88b97066f4bae6a4ebe574"
+      "sha1": "07452242e389975e8a88b97066f4bae6a4ebe574",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U010",
@@ -218,7 +227,8 @@
       "source": "https://www.curseforge.com/minecraft/mc-mods/ldlib/files/9059591",
       "evidence": "https://www.curseforge.com/minecraft/mc-mods/ldlib/files/9059591",
       "slug": "",
-      "sha1": ""
+      "sha1": "",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U011",
@@ -239,7 +249,8 @@
       "source": "https://modrinth.com/mod/geckolib",
       "evidence": "https://modrinth.com/mod/geckolib/version/Grwn5rUB",
       "slug": "geckolib",
-      "sha1": "5cfe835472a5c5457ae9ac192d9d7b317454d5ac"
+      "sha1": "5cfe835472a5c5457ae9ac192d9d7b317454d5ac",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U012",
@@ -260,7 +271,8 @@
       "source": "https://modrinth.com/mod/ponder",
       "evidence": "https://modrinth.com/mod/ponder/version/BqhDf7W8",
       "slug": "ponder",
-      "sha1": "9c35c5c31a613d58fc06e591e455bccfc3de6022"
+      "sha1": "9c35c5c31a613d58fc06e591e455bccfc3de6022",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U013",
@@ -281,7 +293,8 @@
       "source": "https://modrinth.com/mod/curios",
       "evidence": "https://modrinth.com/mod/curios/version/yohfFbgD",
       "slug": "curios",
-      "sha1": "418fcd42e3a7844c9bdc71c9b6401fdb3894e0c4"
+      "sha1": "418fcd42e3a7844c9bdc71c9b6401fdb3894e0c4",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U014",
@@ -302,7 +315,8 @@
       "source": "https://modrinth.com/mod/lithostitched",
       "evidence": "https://modrinth.com/mod/lithostitched/version/sPmtDq1X",
       "slug": "lithostitched",
-      "sha1": "fe7eb612a0fa0c41ce94d914162d298755bb25a3"
+      "sha1": "fe7eb612a0fa0c41ce94d914162d298755bb25a3",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U015",
@@ -323,7 +337,8 @@
       "source": "https://modrinth.com/mod/yungs-api",
       "evidence": "https://modrinth.com/mod/yungs-api/version/2prKITKh",
       "slug": "yungs-api",
-      "sha1": "2c4b740c8ad27bbcb2a21b85b64f011b809aed91"
+      "sha1": "2c4b740c8ad27bbcb2a21b85b64f011b809aed91",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U016",
@@ -331,20 +346,30 @@
       "category": "Create 机械动力扩展",
       "name": "Create Crafts & Additions",
       "description": "电力扩展：发电机、电动机、电线",
-      "status": "确定加入",
+      "status": "备选区",
       "approval": "用户本次明确同意：原表除两类待定外其余都要",
       "approved": true,
       "original_file": "createaddition-1.7.2.jar",
       "selected_file": "createaddition-1.7.2.jar",
       "version": "neoforge-1.21.1-1.7.2",
       "platform": "1.21.1 / NeoForge",
-      "readiness": "版本标签核对；整包待测",
-      "notes": " 与其他动力模组存在功能交集但不等于硬冲突；保留用户已批准项，后续统一供电、燃料及进度配方。",
+      "readiness": "同类路线备选；不在当前默认安装计划",
+      "notes": "电力主选为Create: Power Grid；Crafts & Additions保留为同类电力路线备选。功能并不完全等价，并非硬性不兼容。 原兼容性说明： 与其他动力模组存在功能交集但不等于硬冲突；保留用户已批准项，后续统一供电、燃料及进度配方。",
       "deps": "平台未列必需前置；不能视为无前置",
       "source": "https://modrinth.com/mod/createaddition",
       "evidence": "https://modrinth.com/mod/createaddition/version/hsjVajlP",
       "slug": "createaddition",
-      "sha1": "8e7158d3144b1ee97e58092fe006675b0e09f6d8"
+      "sha1": "8e7158d3144b1ee97e58092fe006675b0e09f6d8",
+      "selection_history": [
+        {
+          "date": "2026-10-14",
+          "previous_status": "确定加入",
+          "reason": "电力主选为Create: Power Grid；Crafts & Additions保留为同类电力路线备选。功能并不完全等价，并非硬性不兼容。"
+        }
+      ],
+      "alternative_to": "U042",
+      "selection_reason": "用户要求将已确定Mod的同类Mod移入备选；历史授权保留，不等于当前主选。",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U017",
@@ -365,7 +390,8 @@
       "source": "https://modrinth.com/mod/create-connected",
       "evidence": "https://modrinth.com/mod/create-connected/version/Xe7EqzfQ",
       "slug": "create-connected",
-      "sha1": "96ae45fa44cd7028a31b9613cb672009e811b145"
+      "sha1": "96ae45fa44cd7028a31b9613cb672009e811b145",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U018",
@@ -386,7 +412,8 @@
       "source": "https://modrinth.com/mod/create-big-cannons",
       "evidence": "https://modrinth.com/mod/create-big-cannons/version/bOiDu0LS",
       "slug": "create-big-cannons",
-      "sha1": "c90ee0b2142e2c58d233e150cb3a24c7cb07eb2d"
+      "sha1": "c90ee0b2142e2c58d233e150cb3a24c7cb07eb2d",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U019",
@@ -407,7 +434,8 @@
       "source": "https://modrinth.com/mod/cbc-more-shells",
       "evidence": "https://modrinth.com/mod/cbc-more-shells/version/lOHOokMh",
       "slug": "cbc-more-shells",
-      "sha1": "4c8bfbf53170b187ff31d01c4ef00cdfb06e364d"
+      "sha1": "4c8bfbf53170b187ff31d01c4ef00cdfb06e364d",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U020",
@@ -428,7 +456,8 @@
       "source": "https://www.curseforge.com/minecraft/mc-mods/cbc-enhanced-shell-armor-create-big-cannons/files/all",
       "evidence": "https://www.curseforge.com/minecraft/mc-mods/cbc-enhanced-shell-armor-create-big-cannons/files/all",
       "slug": "",
-      "sha1": ""
+      "sha1": "",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U021",
@@ -449,7 +478,8 @@
       "source": "https://modrinth.com/mod/create-diesel-generators",
       "evidence": "https://modrinth.com/mod/create-diesel-generators/version/UoPH8lO1",
       "slug": "create-diesel-generators",
-      "sha1": "7f751dabfa83c141c1d13025cd16f06553ba459b"
+      "sha1": "7f751dabfa83c141c1d13025cd16f06553ba459b",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U022",
@@ -470,7 +500,8 @@
       "source": "https://modrinth.com/mod/create-ore-excavation",
       "evidence": "https://modrinth.com/mod/create-ore-excavation/version/tivxiPTo",
       "slug": "create-ore-excavation",
-      "sha1": "9a76b86ec7470d4bd7332f22d6e50a3693098c10"
+      "sha1": "9a76b86ec7470d4bd7332f22d6e50a3693098c10",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U023",
@@ -491,7 +522,8 @@
       "source": "https://modrinth.com/mod/create-enchantment-industry",
       "evidence": "https://modrinth.com/mod/create-enchantment-industry/version/WJ2VPWAG",
       "slug": "create-enchantment-industry",
-      "sha1": "929a1ff0329f0033329f8c22bef785b2a8c4e776"
+      "sha1": "929a1ff0329f0033329f8c22bef785b2a8c4e776",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U024",
@@ -512,7 +544,8 @@
       "source": "https://modrinth.com/mod/create-framed",
       "evidence": "https://modrinth.com/mod/create-framed/version/yioQUGiO",
       "slug": "create-framed",
-      "sha1": "222c998ffc62cd734e1318134c7f182c68f2b527"
+      "sha1": "222c998ffc62cd734e1318134c7f182c68f2b527",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U025",
@@ -533,7 +566,8 @@
       "source": "https://modrinth.com/mod/create-pattern-schematics",
       "evidence": "https://modrinth.com/mod/create-pattern-schematics/version/VSJhIkG2",
       "slug": "create-pattern-schematics",
-      "sha1": "e3dea574c3b3d590444796a42e8f7456280b1063"
+      "sha1": "e3dea574c3b3d590444796a42e8f7456280b1063",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U026",
@@ -554,7 +588,8 @@
       "source": "https://modrinth.com/mod/create-power-loader",
       "evidence": "https://modrinth.com/mod/create-power-loader/version/3Y4r0ItR",
       "slug": "create-power-loader",
-      "sha1": "5bd3ecef6fc66985e6fdf416706c98fb774ba03d"
+      "sha1": "5bd3ecef6fc66985e6fdf416706c98fb774ba03d",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U027",
@@ -575,7 +610,8 @@
       "source": "https://modrinth.com/mod/hypertube",
       "evidence": "https://modrinth.com/mod/hypertube/version/qYjOyvgW",
       "slug": "hypertube",
-      "sha1": "8004b4b3959364609906ea4d7bf409add879a222"
+      "sha1": "8004b4b3959364609906ea4d7bf409add879a222",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U028",
@@ -596,7 +632,8 @@
       "source": "https://modrinth.com/mod/create-radars",
       "evidence": "https://modrinth.com/mod/create-radars/version/AntNFNAx",
       "slug": "create-radars",
-      "sha1": "9726fced4bf86c9e2c0ea09b35bc39ed3ac007b6"
+      "sha1": "9726fced4bf86c9e2c0ea09b35bc39ed3ac007b6",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U029",
@@ -617,7 +654,8 @@
       "source": "https://modrinth.com/mod/create-tweaked-controllers",
       "evidence": "https://modrinth.com/mod/create-tweaked-controllers/version/csCe2v7f",
       "slug": "create-tweaked-controllers",
-      "sha1": "6358da213d0eff982c3431a8d004a3e912f7957a"
+      "sha1": "6358da213d0eff982c3431a8d004a3e912f7957a",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U030",
@@ -638,7 +676,8 @@
       "source": "https://modrinth.com/mod/create-jetpack",
       "evidence": "https://modrinth.com/mod/create-jetpack/version/sCwiqLqq",
       "slug": "create-jetpack",
-      "sha1": "cbd949c62723d805c2ab019def6e6718c50037b8"
+      "sha1": "cbd949c62723d805c2ab019def6e6718c50037b8",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U031",
@@ -659,7 +698,8 @@
       "source": "https://modrinth.com/mod/create-curios-jetpack",
       "evidence": "https://modrinth.com/mod/create-curios-jetpack/version/JEmLrfe6",
       "slug": "create-curios-jetpack",
-      "sha1": "5146fc22a9385de8103b5ca0151f80dcd0f03978"
+      "sha1": "5146fc22a9385de8103b5ca0151f80dcd0f03978",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U032",
@@ -680,7 +720,8 @@
       "source": "https://modrinth.com/mod/create-deep-seas",
       "evidence": "https://modrinth.com/mod/create-deep-seas/version/8CV1LRTl",
       "slug": "create-deep-seas",
-      "sha1": "b1aaaf64423d9e80aa750c71de426f6aaa33989e"
+      "sha1": "b1aaaf64423d9e80aa750c71de426f6aaa33989e",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     },
     {
       "id": "U033",
@@ -701,7 +742,8 @@
       "source": "https://modrinth.com/mod/create-advanced-optimization",
       "evidence": "https://modrinth.com/mod/create-advanced-optimization/version/wBkaAnjm",
       "slug": "create-advanced-optimization",
-      "sha1": "67ab2fde10c42d59a93fa20050d6ac9282d66257"
+      "sha1": "67ab2fde10c42d59a93fa20050d6ac9282d66257",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U034",
@@ -722,7 +764,8 @@
       "source": "https://modrinth.com/mod/create-dragons-plus",
       "evidence": "https://modrinth.com/mod/create-dragons-plus/version/b0u9vk8C",
       "slug": "create-dragons-plus",
-      "sha1": "67ffcb61207a7dbc6b1e70f0473ddbacb19d44eb"
+      "sha1": "67ffcb61207a7dbc6b1e70f0473ddbacb19d44eb",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U035",
@@ -743,7 +786,8 @@
       "source": "https://modrinth.com/mod/create-sable-dynamic-lights",
       "evidence": "https://modrinth.com/mod/create-sable-dynamic-lights/version/sKw2ERw2",
       "slug": "create-sable-dynamic-lights",
-      "sha1": "d8db69c0b72b750feaa2c4ed41de906bdebd1e5f"
+      "sha1": "d8db69c0b72b750feaa2c4ed41de906bdebd1e5f",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U036",
@@ -764,7 +808,8 @@
       "source": "https://modrinth.com/mod/rechiseled-create",
       "evidence": "https://modrinth.com/mod/rechiseled-create/version/VnOezhJR",
       "slug": "rechiseled-create",
-      "sha1": "6f7e53f39eb477d7cee8e21af215cd3db698deda"
+      "sha1": "6f7e53f39eb477d7cee8e21af215cd3db698deda",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U037",
@@ -785,7 +830,8 @@
       "source": "https://modrinth.com/mod/copycats",
       "evidence": "https://modrinth.com/mod/copycats/version/bPYeUWZx",
       "slug": "copycats",
-      "sha1": "74de17876c43f5f780bac478b9f9eb11e687b8d7"
+      "sha1": "74de17876c43f5f780bac478b9f9eb11e687b8d7",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U038",
@@ -806,7 +852,8 @@
       "source": "https://modrinth.com/mod/interiors",
       "evidence": "https://modrinth.com/mod/interiors/version/gBrfZy6S",
       "slug": "interiors",
-      "sha1": "a558777ef4510da2f4d32ca3da6ac7384c9a9940"
+      "sha1": "a558777ef4510da2f4d32ca3da6ac7384c9a9940",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U039",
@@ -827,7 +874,8 @@
       "source": "https://modrinth.com/mod/create-bits-n-bobs",
       "evidence": "https://modrinth.com/mod/create-bits-n-bobs/version/g9Lmjjc5",
       "slug": "create-bits-n-bobs",
-      "sha1": "50119ba6849f2b165ab692ab312dbe4867444ac0"
+      "sha1": "50119ba6849f2b165ab692ab312dbe4867444ac0",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U040",
@@ -848,7 +896,8 @@
       "source": "https://modrinth.com/mod/bellsandwhistles",
       "evidence": "https://modrinth.com/mod/bellsandwhistles/version/w0mifib8",
       "slug": "bellsandwhistles",
-      "sha1": "85944080f8bd47dad64a8193a70662cd9ddbb200"
+      "sha1": "85944080f8bd47dad64a8193a70662cd9ddbb200",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U041",
@@ -869,7 +918,8 @@
       "source": "https://modrinth.com/mod/mechanicals-lib",
       "evidence": "https://modrinth.com/mod/mechanicals-lib/version/GBSlpwLT",
       "slug": "mechanicals-lib",
-      "sha1": "65818a9a904983c39acfd7b2da3fe784bd35e83b"
+      "sha1": "65818a9a904983c39acfd7b2da3fe784bd35e83b",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U042",
@@ -890,7 +940,8 @@
       "source": "https://modrinth.com/mod/power-grid",
       "evidence": "https://modrinth.com/mod/power-grid/version/jCkPHjmP",
       "slug": "power-grid",
-      "sha1": "e09452dac8202e31f282149d45c49dcdb218bd54"
+      "sha1": "e09452dac8202e31f282149d45c49dcdb218bd54",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     },
     {
       "id": "U043",
@@ -911,7 +962,8 @@
       "source": "https://modrinth.com/mod/create-aeronautics-portable-engine-liquid-fuel",
       "evidence": "https://modrinth.com/mod/create-aeronautics-portable-engine-liquid-fuel/version/L6KPVFxI",
       "slug": "create-aeronautics-portable-engine-liquid-fuel",
-      "sha1": "f9602c7f9a8268507a835bfa47db1512d356dae7"
+      "sha1": "f9602c7f9a8268507a835bfa47db1512d356dae7",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U044",
@@ -932,7 +984,8 @@
       "source": "https://modrinth.com/mod/aeronautics-dyeable-components",
       "evidence": "https://modrinth.com/mod/aeronautics-dyeable-components/version/kOW3VwPl",
       "slug": "aeronautics-dyeable-components",
-      "sha1": "caf60f71d89a3068cd07283f45bffc31704a7474"
+      "sha1": "caf60f71d89a3068cd07283f45bffc31704a7474",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U045",
@@ -953,7 +1006,8 @@
       "source": "https://modrinth.com/mod/create-aeronautics-gadgets-and-gizmos",
       "evidence": "https://modrinth.com/mod/create-aeronautics-gadgets-and-gizmos/version/MgD655V5",
       "slug": "create-aeronautics-gadgets-and-gizmos",
-      "sha1": "f19a50a30352916e136de831fe87f8c39dca2a97"
+      "sha1": "f19a50a30352916e136de831fe87f8c39dca2a97",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U046",
@@ -961,20 +1015,30 @@
       "category": "Create 机械动力扩展",
       "name": "CC: Tweaked",
       "description": "ComputerCraft 编程电脑/机器人",
-      "status": "确定加入",
+      "status": "备选区",
       "approval": "用户本次明确同意：原表除两类待定外其余都要",
       "approved": true,
       "original_file": "cc-tweaked-1.21.1-forge-1.120.2.jar",
       "selected_file": "cc-tweaked-1.21.1-forge-1.120.2.jar",
       "version": "1.120.2",
       "platform": "1.21.1 / NeoForge",
-      "readiness": "版本标签核对；整包待测",
-      "notes": " 文件名带 forge，但该精确发布记录的加载器为 NeoForge，不因名字误删。",
+      "readiness": "同类路线备选；不在当前默认安装计划",
+      "notes": "主艇控制确定采用Deep Seas船载电脑及自研系统；CC:Tweaked保留为可编程电脑路线备选，不代表其机器人等独立功能已由主艇电脑替代。 原兼容性说明： 文件名带 forge，但该精确发布记录的加载器为 NeoForge，不因名字误删。",
       "deps": "平台未列必需前置；不能视为无前置",
       "source": "https://modrinth.com/mod/cc-tweaked",
       "evidence": "https://modrinth.com/mod/cc-tweaked/version/1ewzHZYg",
       "slug": "cc-tweaked",
-      "sha1": "f35d4f636c2eb1b30c5d3f5c08e110c6acb8e02f"
+      "sha1": "f35d4f636c2eb1b30c5d3f5c08e110c6acb8e02f",
+      "selection_history": [
+        {
+          "date": "2026-10-14",
+          "previous_status": "确定加入",
+          "reason": "主艇控制确定采用Deep Seas船载电脑及自研系统；CC:Tweaked保留为可编程电脑路线备选，不代表其机器人等独立功能已由主艇电脑替代。"
+        }
+      ],
+      "alternative_to": "U032 + dbv_world",
+      "selection_reason": "用户要求将已确定Mod的同类Mod移入备选；历史授权保留，不等于当前主选。",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U047",
@@ -995,7 +1059,8 @@
       "source": "https://modrinth.com/mod/rpl",
       "evidence": "https://modrinth.com/mod/rpl/version/hZ6B2Z0x",
       "slug": "rpl",
-      "sha1": "ec2e4996f8bee8714173e603e379fef8a6901765"
+      "sha1": "ec2e4996f8bee8714173e603e379fef8a6901765",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U048",
@@ -1016,7 +1081,8 @@
       "source": "https://modrinth.com/mod/create-aeronautics",
       "evidence": "https://modrinth.com/mod/create-aeronautics/version/44pLdPGg",
       "slug": "create-aeronautics",
-      "sha1": "ddbe9cbc25e8f663218aa1e9fdfc4b99f0e11e4b"
+      "sha1": "ddbe9cbc25e8f663218aa1e9fdfc4b99f0e11e4b",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     },
     {
       "id": "U049",
@@ -1037,7 +1103,8 @@
       "source": "https://modrinth.com/mod/create-aeronautics-lift-patch",
       "evidence": "https://modrinth.com/mod/create-aeronautics-lift-patch/version/b5GqYXEI",
       "slug": "create-aeronautics-lift-patch",
-      "sha1": "1baa3312d1b29414dd41a77ed5c665bbbd63cf44"
+      "sha1": "1baa3312d1b29414dd41a77ed5c665bbbd63cf44",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U050",
@@ -1058,7 +1125,8 @@
       "source": "https://modrinth.com/mod/create-aeronautics-automated-logistics",
       "evidence": "https://modrinth.com/mod/create-aeronautics-automated-logistics/version/EgPi4wq9",
       "slug": "create-aeronautics-automated-logistics",
-      "sha1": "1954f5c4f72620942851241bd18217197ed59b46"
+      "sha1": "1954f5c4f72620942851241bd18217197ed59b46",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U051",
@@ -1079,7 +1147,8 @@
       "source": "https://modrinth.com/mod/create-aeronautics-throwable-rope-connector",
       "evidence": "https://modrinth.com/mod/create-aeronautics-throwable-rope-connector/version/EDzeTV17",
       "slug": "create-aeronautics-throwable-rope-connector",
-      "sha1": "63fcbbc960461d42a59b417665fb938c79919514"
+      "sha1": "63fcbbc960461d42a59b417665fb938c79919514",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U052",
@@ -1100,7 +1169,8 @@
       "source": "https://modrinth.com/mod/create-aeronautics-toolgun",
       "evidence": "https://modrinth.com/mod/create-aeronautics-toolgun/version/pcD0Yutw",
       "slug": "create-aeronautics-toolgun",
-      "sha1": "81103160768a52a5bc7fffb5fadc1c441883d5d5"
+      "sha1": "81103160768a52a5bc7fffb5fadc1c441883d5d5",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U053",
@@ -1121,7 +1191,8 @@
       "source": "https://modrinth.com/mod/create-aeronautics-transmission-linkage",
       "evidence": "https://modrinth.com/mod/create-aeronautics-transmission-linkage/version/FCZZ3ED4",
       "slug": "create-aeronautics-transmission-linkage",
-      "sha1": "bccaf90652905ae5f28dcc7e1134099d188ca020"
+      "sha1": "bccaf90652905ae5f28dcc7e1134099d188ca020",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U054",
@@ -1142,7 +1213,8 @@
       "source": "https://modrinth.com/mod/create-aeronautics-gyroscope-stabilizers",
       "evidence": "https://modrinth.com/mod/create-aeronautics-gyroscope-stabilizers/version/9P9dNVUn",
       "slug": "create-aeronautics-gyroscope-stabilizers",
-      "sha1": "2629c09571cf4378c99b76dad57780e04ae9f619"
+      "sha1": "2629c09571cf4378c99b76dad57780e04ae9f619",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U055",
@@ -1163,7 +1235,8 @@
       "source": "https://modrinth.com/mod/create-aeronautics-physics-gantry",
       "evidence": "https://modrinth.com/mod/create-aeronautics-physics-gantry/version/QoeKSEzn",
       "slug": "create-aeronautics-physics-gantry",
-      "sha1": "05e572497baa32df3e2240c026b6e2f45110a733"
+      "sha1": "05e572497baa32df3e2240c026b6e2f45110a733",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U056",
@@ -1171,20 +1244,30 @@
       "category": "Create 航空系列",
       "name": "Create: Avionics — ComputerCraft for Aeronautics",
       "description": "航空电子/仪表",
-      "status": "确定加入",
+      "status": "备选区",
       "approval": "用户本次明确同意：原表除两类待定外其余都要",
       "approved": true,
       "original_file": "create_avionics-neoforge-1.21.1-0.6.0.jar",
       "selected_file": "create_avionics-neoforge-1.21.1-0.6.0.jar",
       "version": "0.6.0",
       "platform": "1.21.1 / NeoForge",
-      "readiness": "版本标签核对；整包待测",
-      "notes": "",
+      "readiness": "同类路线备选；不在当前默认安装计划",
+      "notes": "随CC:Tweaked可编程船载控制路线移入备选；当前主艇使用Deep Seas船载电脑与自研适配。 原兼容性说明：",
       "deps": "Sable；Create；CC: Tweaked",
       "source": "https://modrinth.com/mod/create-avionics",
       "evidence": "https://modrinth.com/mod/create-avionics/version/9siqVCcu",
       "slug": "create-avionics",
-      "sha1": "a6b59ae72dae7e54b98fc88825fa6106d68298e4"
+      "sha1": "a6b59ae72dae7e54b98fc88825fa6106d68298e4",
+      "selection_history": [
+        {
+          "date": "2026-10-14",
+          "previous_status": "确定加入",
+          "reason": "随CC:Tweaked可编程船载控制路线移入备选；当前主艇使用Deep Seas船载电脑与自研适配。"
+        }
+      ],
+      "alternative_to": "U032 + dbv_world",
+      "selection_reason": "用户要求将已确定Mod的同类Mod移入备选；历史授权保留，不等于当前主选。",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U057",
@@ -1205,7 +1288,8 @@
       "source": "https://modrinth.com/mod/create-aeronautics-compatability",
       "evidence": "https://modrinth.com/mod/create-aeronautics-compatability/version/j10zlI9h",
       "slug": "create-aeronautics-compatability",
-      "sha1": "4d1aea2d6e27705e284d4603aa3422d84464e406"
+      "sha1": "4d1aea2d6e27705e284d4603aa3422d84464e406",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U058",
@@ -1226,7 +1310,8 @@
       "source": "https://modrinth.com/mod/create-aeronautics-encased-fluid-pipes",
       "evidence": "https://modrinth.com/mod/create-aeronautics-encased-fluid-pipes/version/pKFEfjEB",
       "slug": "create-aeronautics-encased-fluid-pipes",
-      "sha1": "94012ef7cb564267caa91e29a63d48c32be0b341"
+      "sha1": "94012ef7cb564267caa91e29a63d48c32be0b341",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U059",
@@ -1247,7 +1332,8 @@
       "source": "https://modrinth.com/mod/aeroclaims",
       "evidence": "https://modrinth.com/mod/aeroclaims/version/dWMRSgEu",
       "slug": "aeroclaims",
-      "sha1": "83b48a5a406f4adab9f320a4d91d0dda27f5beb5"
+      "sha1": "83b48a5a406f4adab9f320a4d91d0dda27f5beb5",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U060",
@@ -1268,7 +1354,8 @@
       "source": "https://modrinth.com/mod/create-aeronautics-climbable-rope",
       "evidence": "https://modrinth.com/mod/create-aeronautics-climbable-rope/version/fk5DMIYY",
       "slug": "create-aeronautics-climbable-rope",
-      "sha1": "7b830925ecde368f0848470d52d840f6b74a6de8"
+      "sha1": "7b830925ecde368f0848470d52d840f6b74a6de8",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U061",
@@ -1289,7 +1376,8 @@
       "source": "https://modrinth.com/mod/strut-your-stuff",
       "evidence": "https://modrinth.com/mod/strut-your-stuff/version/BOTN7zzN",
       "slug": "strut-your-stuff",
-      "sha1": "131663d29e0dd944e03299b35bda18aefacd1932"
+      "sha1": "131663d29e0dd944e03299b35bda18aefacd1932",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U062",
@@ -1310,7 +1398,8 @@
       "source": "https://modrinth.com/mod/drive-by-wire-sable",
       "evidence": "https://modrinth.com/mod/drive-by-wire-sable/version/zdSwg9kS",
       "slug": "drive-by-wire-sable",
-      "sha1": "b8b01f1e2d6fad22c3fa5f4a566262edbb9fda16"
+      "sha1": "b8b01f1e2d6fad22c3fa5f4a566262edbb9fda16",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U063",
@@ -1331,7 +1420,8 @@
       "source": "https://modrinth.com/mod/azimuth-api",
       "evidence": "https://modrinth.com/mod/azimuth-api/version/dxtZVosY",
       "slug": "azimuth-api",
-      "sha1": "911e255bd09a6bcb2ca85ea172d1812e0f4665f1"
+      "sha1": "911e255bd09a6bcb2ca85ea172d1812e0f4665f1",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U064",
@@ -1352,7 +1442,8 @@
       "source": "https://modrinth.com/mod/create-smart-bounds",
       "evidence": "https://modrinth.com/mod/create-smart-bounds/version/HXviiJ3I",
       "slug": "create-smart-bounds",
-      "sha1": "9d271d70b1d2870d5c232e71e2923abaac3a6767"
+      "sha1": "9d271d70b1d2870d5c232e71e2923abaac3a6767",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U065",
@@ -1373,7 +1464,8 @@
       "source": "https://modrinth.com/mod/sable",
       "evidence": "https://modrinth.com/mod/sable/version/fg9dTRz9",
       "slug": "sable",
-      "sha1": "cf46f7e8c1511f170abcdbee739944f0540549bf"
+      "sha1": "cf46f7e8c1511f170abcdbee739944f0540549bf",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     },
     {
       "id": "U066",
@@ -1394,7 +1486,8 @@
       "source": "https://modrinth.com/mod/sable_beyond",
       "evidence": "https://modrinth.com/mod/sable_beyond/version/BWQxgVOj",
       "slug": "sable_beyond",
-      "sha1": "6040db8c52ddd2fe6e9c266a52df8865107e4124"
+      "sha1": "6040db8c52ddd2fe6e9c266a52df8865107e4124",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U067",
@@ -1415,7 +1508,8 @@
       "source": "https://modrinth.com/mod/sablecompat",
       "evidence": "https://modrinth.com/mod/sablecompat/version/Ucq7afTi",
       "slug": "sablecompat",
-      "sha1": "ca5753e923c501acf43ff0d2fcf09f32240504c3"
+      "sha1": "ca5753e923c501acf43ff0d2fcf09f32240504c3",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U068",
@@ -1436,7 +1530,8 @@
       "source": "https://modrinth.com/mod/sable-create-aeronautics-collision-damage",
       "evidence": "https://modrinth.com/mod/sable-create-aeronautics-collision-damage/version/snRIIWNz",
       "slug": "sable-create-aeronautics-collision-damage",
-      "sha1": "ea36294547303f823c742619946db77b5cc7b279"
+      "sha1": "ea36294547303f823c742619946db77b5cc7b279",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U069",
@@ -1445,19 +1540,20 @@
       "name": "Jade Sable Compat",
       "description": "Jade 信息显示集成",
       "status": "确定加入",
-      "approval": "用户本次明确同意：原表除两类待定外其余都要",
+      "approval": "用户2026-10-14明确要求加入；Cloth Config为BetterF3必需前置",
       "approved": true,
       "original_file": "sablejade-1.3.0.jar",
       "selected_file": "sablejade-1.3.0.jar",
       "version": "1.3.0",
       "platform": "1.21.1 / NeoForge",
-      "readiness": "本体批准已补齐；本附属尚未启用",
-      "notes": "Jade 已于 2026-10-14 批准并加载；本附属继续保持此前批准状态，后续按需启用。",
-      "deps": "平台未列必需前置；不能视为无前置",
+      "readiness": "已启用；正式客户端加载与进世界通过",
+      "notes": "当前正式客户端加载并进入存档通过；具体交互和大型船体兼容仍需持续验证。",
+      "deps": "现有依赖已满足",
       "source": "https://modrinth.com/mod/jade-sable-compat",
       "evidence": "https://modrinth.com/mod/jade-sable-compat/version/cxUohR7A",
       "slug": "jade-sable-compat",
-      "sha1": "beb78d81a4d5768780c8566fa869ced5dbe08263"
+      "sha1": "beb78d81a4d5768780c8566fa869ced5dbe08263",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     },
     {
       "id": "U070",
@@ -1478,7 +1574,8 @@
       "source": "https://modrinth.com/mod/create-aeronautics-sable-mass-view",
       "evidence": "https://modrinth.com/mod/create-aeronautics-sable-mass-view/version/Dc1FsCO5",
       "slug": "create-aeronautics-sable-mass-view",
-      "sha1": "e568ce1389bcb259483766cf35542dbc8cefb2b1"
+      "sha1": "e568ce1389bcb259483766cf35542dbc8cefb2b1",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U071",
@@ -1486,20 +1583,30 @@
       "category": "Sable 物理载具系列",
       "name": "CC: Sable",
       "description": "ComputerCraft 驾驶兼容",
-      "status": "确定加入",
+      "status": "备选区",
       "approval": "用户本次明确同意：原表除两类待定外其余都要",
       "approved": true,
       "original_file": "cc_sable-neoforge-1.3.4.jar",
       "selected_file": "cc_sable-neoforge-1.3.4.jar",
       "version": "1.3.4",
       "platform": "1.21.1 / NeoForge",
-      "readiness": "版本标签核对；整包待测",
-      "notes": "",
+      "readiness": "同类路线备选；不在当前默认安装计划",
+      "notes": "随CC:Tweaked可编程船载控制路线移入备选；与Avionics属于接口补充，不声明二者硬互斥。 原兼容性说明：",
       "deps": "CC: Tweaked；Sable",
       "source": "https://modrinth.com/mod/cc-sable",
       "evidence": "https://modrinth.com/mod/cc-sable/version/j0UWQoMG",
       "slug": "cc-sable",
-      "sha1": "cdc65c3a991519fb96a72904a02a5a16145431fa"
+      "sha1": "cdc65c3a991519fb96a72904a02a5a16145431fa",
+      "selection_history": [
+        {
+          "date": "2026-10-14",
+          "previous_status": "确定加入",
+          "reason": "随CC:Tweaked可编程船载控制路线移入备选；与Avionics属于接口补充，不声明二者硬互斥。"
+        }
+      ],
+      "alternative_to": "U032 + dbv_world",
+      "selection_reason": "用户要求将已确定Mod的同类Mod移入备选；历史授权保留，不等于当前主选。",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U072",
@@ -1520,7 +1627,8 @@
       "source": "https://modrinth.com/mod/waystones-sable",
       "evidence": "https://modrinth.com/mod/waystones-sable/version/Wot8Pf4C",
       "slug": "waystones-sable",
-      "sha1": "cebbc2cf9a7a8b2255caff04f2109d9611b28091"
+      "sha1": "cebbc2cf9a7a8b2255caff04f2109d9611b28091",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U073",
@@ -1541,7 +1649,8 @@
       "source": "https://modrinth.com/mod/create-deep-seas-lava-fix",
       "evidence": "https://modrinth.com/mod/create-deep-seas-lava-fix/version/9LUKMhCi",
       "slug": "create-deep-seas-lava-fix",
-      "sha1": "b7d1c5567a9b37f5476ad89a41c869b85eb627f7"
+      "sha1": "b7d1c5567a9b37f5476ad89a41c869b85eb627f7",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U074",
@@ -1562,7 +1671,8 @@
       "source": "https://modrinth.com/mod/sable-water-pressure",
       "evidence": "https://modrinth.com/mod/sable-water-pressure/version/sqjz0BcW",
       "slug": "sable-water-pressure",
-      "sha1": "192e4726013b354c2a9d1fc41f4923c6fa6866b3"
+      "sha1": "192e4726013b354c2a9d1fc41f4923c6fa6866b3",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U075",
@@ -1583,7 +1693,8 @@
       "source": "https://modrinth.com/mod/ssrd",
       "evidence": "https://modrinth.com/mod/ssrd/version/iZflRKdV",
       "slug": "ssrd",
-      "sha1": "7da02fc5f783bedb55a29268e4c8ba7b0c3c9e6f"
+      "sha1": "7da02fc5f783bedb55a29268e4c8ba7b0c3c9e6f",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U076",
@@ -1604,7 +1715,8 @@
       "source": "https://modrinth.com/mod/sodium",
       "evidence": "https://modrinth.com/mod/sodium/version/uMOpc5uV",
       "slug": "sodium",
-      "sha1": "1757289be21ed18db5b0d90703fa3db1b2de5693"
+      "sha1": "1757289be21ed18db5b0d90703fa3db1b2de5693",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U077",
@@ -1625,7 +1737,8 @@
       "source": "https://modrinth.com/mod/sodium-dynamic-lights",
       "evidence": "https://modrinth.com/mod/sodium-dynamic-lights/version/XI0WLXdn",
       "slug": "sodium-dynamic-lights",
-      "sha1": "02e9bc7ba28147cdf2d608ecf4f2c1eab34b4652"
+      "sha1": "02e9bc7ba28147cdf2d608ecf4f2c1eab34b4652",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U078",
@@ -1646,7 +1759,8 @@
       "source": "https://modrinth.com/mod/lithium",
       "evidence": "https://modrinth.com/mod/lithium/version/DDUrRVCA",
       "slug": "lithium",
-      "sha1": "97212e45c963730bbfc7c44780df99317814c21b"
+      "sha1": "97212e45c963730bbfc7c44780df99317814c21b",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U079",
@@ -1667,7 +1781,8 @@
       "source": "https://modrinth.com/mod/ferrite-core",
       "evidence": "https://modrinth.com/mod/ferrite-core/version/x7kQWVju",
       "slug": "ferrite-core",
-      "sha1": "9563692efb708b6b568df27a01ec52f6311928ef"
+      "sha1": "9563692efb708b6b568df27a01ec52f6311928ef",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U080",
@@ -1688,7 +1803,8 @@
       "source": "https://modrinth.com/mod/modernfix",
       "evidence": "https://modrinth.com/mod/modernfix/version/5HLHxQ2F",
       "slug": "modernfix",
-      "sha1": "1fe7f8b4176e86507cc8ed5460b6acdd3dac5529"
+      "sha1": "1fe7f8b4176e86507cc8ed5460b6acdd3dac5529",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U081",
@@ -1709,7 +1825,8 @@
       "source": "https://modrinth.com/mod/badoptimizations",
       "evidence": "https://modrinth.com/mod/badoptimizations/version/S2qthD5S",
       "slug": "badoptimizations",
-      "sha1": "1461d8e46391efd32a3085150e86094c9f6f5c9d"
+      "sha1": "1461d8e46391efd32a3085150e86094c9f6f5c9d",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U082",
@@ -1730,7 +1847,8 @@
       "source": "https://modrinth.com/mod/voxy",
       "evidence": "https://modrinth.com/mod/voxy/version/H3w2nVdU ; https://modrinth.com/mod/roxy",
       "slug": "voxy",
-      "sha1": "280a55279e0860d29146d908cd8a0246a12e2537"
+      "sha1": "280a55279e0860d29146d908cd8a0246a12e2537",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U083",
@@ -1751,7 +1869,8 @@
       "source": "",
       "evidence": "",
       "slug": "",
-      "sha1": ""
+      "sha1": "",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U084",
@@ -1772,7 +1891,8 @@
       "source": "",
       "evidence": "",
       "slug": "",
-      "sha1": ""
+      "sha1": "",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U085",
@@ -1793,7 +1913,8 @@
       "source": "https://modrinth.com/mod/voxy-worldgen",
       "evidence": "https://modrinth.com/mod/voxy-worldgen/version/PzNUZlWw",
       "slug": "voxy-worldgen",
-      "sha1": "1e9483ed7b46e1f997637a4f064f38a15680c8b7"
+      "sha1": "1e9483ed7b46e1f997637a4f064f38a15680c8b7",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U086",
@@ -1814,7 +1935,8 @@
       "source": "https://modrinth.com/mod/roxy",
       "evidence": "https://modrinth.com/mod/roxy/version/cDmwpuYr",
       "slug": "roxy",
-      "sha1": "05d2b4028dbfc309184f8cf745de92f880a72520"
+      "sha1": "05d2b4028dbfc309184f8cf745de92f880a72520",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U087",
@@ -1835,7 +1957,8 @@
       "source": "https://modrinth.com/mod/terralith",
       "evidence": "https://modrinth.com/mod/terralith/version/IY93YaEe",
       "slug": "terralith",
-      "sha1": "d4a9fe71b841f70edfb4b280f9bf5c58e4a28224"
+      "sha1": "d4a9fe71b841f70edfb4b280f9bf5c58e4a28224",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U088",
@@ -1856,7 +1979,8 @@
       "source": "https://modrinth.com/mod/tectonic",
       "evidence": "https://modrinth.com/mod/tectonic/version/n4iyW7aB",
       "slug": "tectonic",
-      "sha1": "db15156eec4320c2997c4dd4948119472de01224"
+      "sha1": "db15156eec4320c2997c4dd4948119472de01224",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U089",
@@ -1877,7 +2001,8 @@
       "source": "https://modrinth.com/mod/when-dungeons-arise",
       "evidence": "https://modrinth.com/mod/when-dungeons-arise/version/XIRJSFQ0",
       "slug": "when-dungeons-arise",
-      "sha1": "c651339154da7b9e9cf47a80fdef22c4d59cad5c"
+      "sha1": "c651339154da7b9e9cf47a80fdef22c4d59cad5c",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U090",
@@ -1898,7 +2023,8 @@
       "source": "https://modrinth.com/mod/when-dungeons-arise-seven-seas",
       "evidence": "https://modrinth.com/mod/when-dungeons-arise-seven-seas/version/erk04BGa",
       "slug": "when-dungeons-arise-seven-seas",
-      "sha1": "ac9edb266a1360e9e4c80ed0b2f931f1505307eb"
+      "sha1": "ac9edb266a1360e9e4c80ed0b2f931f1505307eb",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U091",
@@ -1919,7 +2045,8 @@
       "source": "https://modrinth.com/mod/yungs-better-dungeons",
       "evidence": "https://modrinth.com/mod/yungs-better-dungeons/version/D6aZn0Em",
       "slug": "yungs-better-dungeons",
-      "sha1": "73a660c13063450e555e5e2c015ae24d606b32b4"
+      "sha1": "73a660c13063450e555e5e2c015ae24d606b32b4",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U092",
@@ -1940,7 +2067,8 @@
       "source": "https://modrinth.com/mod/yungs-better-ocean-monuments",
       "evidence": "https://modrinth.com/mod/yungs-better-ocean-monuments/version/yFjEcj2g",
       "slug": "yungs-better-ocean-monuments",
-      "sha1": "fba629defdb92ad99ec4f411895afb6e19555a18"
+      "sha1": "fba629defdb92ad99ec4f411895afb6e19555a18",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U093",
@@ -1961,7 +2089,8 @@
       "source": "https://modrinth.com/mod/aeronautics-structures",
       "evidence": "https://modrinth.com/mod/aeronautics-structures/version/JWhmlx4p",
       "slug": "aeronautics-structures",
-      "sha1": "68b60ff54029b92c0ed0c8f025f4028a8e300011"
+      "sha1": "68b60ff54029b92c0ed0c8f025f4028a8e300011",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U094",
@@ -1982,7 +2111,8 @@
       "source": "https://modrinth.com/mod/refined-storage",
       "evidence": "https://modrinth.com/mod/refined-storage/version/lHHiI26k",
       "slug": "refined-storage",
-      "sha1": "59d8e734ccb6eaab4cdf04093c55872af7a3e23a"
+      "sha1": "59d8e734ccb6eaab4cdf04093c55872af7a3e23a",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U095",
@@ -1997,13 +2127,14 @@
       "selected_file": "refinedstorage-jei-integration-neoforge-1.0.0.jar",
       "version": "1.0.0",
       "platform": "1.21.1 / NeoForge",
-      "readiness": "暂缓安装：等 JEI 文件核实",
-      "notes": "已同意该集成项目；依赖 JEI，随 U098 解决后安装。RS 版本约束使用裸版本字符串，不能误当成必须等于旧 beta。",
+      "readiness": "JEI已启用；RS及其集成尚未加入当前运行依赖",
+      "notes": "本次只启用JEI，未额外安装Refined Storage或其JEI集成。后续按已批准清单分批联调。",
       "deps": "Just Enough Items (JEI)；Refined Storage",
       "source": "https://modrinth.com/mod/refined-storage-jei-integration",
       "evidence": "https://modrinth.com/mod/refined-storage-jei-integration/version/BYZmHubv",
       "slug": "refined-storage-jei-integration",
-      "sha1": "40dd3e88285159c99d32f6b677af4d214f58b906"
+      "sha1": "40dd3e88285159c99d32f6b677af4d214f58b906",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U096",
@@ -2024,7 +2155,8 @@
       "source": "https://modrinth.com/mod/storagedrawers",
       "evidence": "https://modrinth.com/mod/storagedrawers/version/px0CCB06",
       "slug": "storagedrawers",
-      "sha1": "b8e11e3d1fd63fd1a0d9277ec3f966c7e5cff385"
+      "sha1": "b8e11e3d1fd63fd1a0d9277ec3f966c7e5cff385",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U097",
@@ -2045,7 +2177,8 @@
       "source": "https://modrinth.com/mod/lootr",
       "evidence": "https://modrinth.com/mod/lootr/version/SPOrIzX8",
       "slug": "lootr",
-      "sha1": "7a305b581abd90e1a8b7c1bb5eb4511d2653aa58"
+      "sha1": "7a305b581abd90e1a8b7c1bb5eb4511d2653aa58",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U098",
@@ -2053,20 +2186,21 @@
       "category": "界面、工具与多人",
       "name": "Just Enough Items (JEI)",
       "description": "JEI 物品/配方查询",
-      "status": "待定",
-      "approval": "用户本次明确同意：原表除两类待定外其余都要",
+      "status": "确定加入",
+      "approval": "用户2026-10-14明确要求加入；Cloth Config为BetterF3必需前置",
       "approved": true,
       "original_file": "jei-1.21.1-neoforge-19.57.0.451.jar",
-      "selected_file": "待核实；暂不写入安装锁定表",
-      "version": "19.57.0.451",
+      "selected_file": "jei-1.21.1-neoforge-19.51.0.418.jar",
+      "version": "19.51.0.418",
       "platform": "1.21.1 / NeoForge",
-      "readiness": "暂缓锁包：发布标签与内部范围矛盾",
-      "notes": "项目已获用户同意，但原 19.57.0.451 的 JAR 将 minecraft 声明为 [1.21, 1.21.1)，与发布页 1.21.1 标签矛盾；19.64.0.453 也相同。未验证启动，不能直接断言不可运行或擅自放宽范围。保留待核而非当作已证实不兼容删除。MezzConfig 已内置。",
-      "deps": "MezzConfig",
+      "readiness": "已启用；正式客户端加载与进世界通过",
+      "notes": "锁定19.51.0.418：原版JAR的Minecraft范围声明仍为[1.21,1.21.1)，但当前NeoForge 21.1.259正式开发环境实测加载、进世界及JEI GUI初始化通过；未修改JAR或依赖限制，不外推其他运行环境。",
+      "deps": "无需额外安装MezzConfig（本次选定文件）",
       "source": "https://modrinth.com/mod/jei",
-      "evidence": "https://modrinth.com/mod/jei/version/RI8WCow6",
+      "evidence": "https://modrinth.com/mod/jei/version/ufHUqt9b",
       "slug": "jei",
-      "sha1": "d639d83bf108b258e722a53f40a41a69e83f8ca6"
+      "sha1": "d19552586f686eae4ef5e7199f31604d1d3cfca7",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     },
     {
       "id": "U099",
@@ -2075,19 +2209,20 @@
       "name": "Xaero's Minimap",
       "description": "Xaero 小地图（实时小地图与路径点）",
       "status": "确定加入",
-      "approval": "用户本次明确同意：原表除两类待定外其余都要",
+      "approval": "用户2026-10-14明确要求加入；Cloth Config为BetterF3必需前置",
       "approved": true,
       "original_file": "xaerominimap-neoforge-1.21.1-26.6.0.jar",
       "selected_file": "xaerominimap-neoforge-1.21.1-26.6.0.jar",
       "version": "neoforge-1.21.1-26.6.0",
       "platform": "1.21.1 / NeoForge",
-      "readiness": "版本标签核对；整包待测",
-      "notes": " Xaero 小地图/世界地图保留；FTB Chunks 主要负责领地/加载，重复地图界面可在配置层处理。",
-      "deps": "平台未列必需前置；不能视为无前置",
+      "readiness": "已启用；正式客户端加载与进世界通过",
+      "notes": "当前正式客户端加载并进入存档通过；具体交互和大型船体兼容仍需持续验证。 XaeroLib 1.7.3已内置；在线更新检查超时不阻断加载。",
+      "deps": "XaeroLib 1.7.3（内置）",
       "source": "https://modrinth.com/mod/xaeros-minimap",
       "evidence": "https://modrinth.com/mod/xaeros-minimap/version/irjR7dHk",
       "slug": "xaeros-minimap",
-      "sha1": "551e8e2aa3498b506cc949a74606cdc0380e5e00"
+      "sha1": "551e8e2aa3498b506cc949a74606cdc0380e5e00",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     },
     {
       "id": "U100",
@@ -2096,19 +2231,20 @@
       "name": "Xaero's World Map",
       "description": "Xaero 世界地图（全图浏览与标记）",
       "status": "确定加入",
-      "approval": "用户本次明确同意：原表除两类待定外其余都要",
+      "approval": "用户2026-10-14明确要求加入；Cloth Config为BetterF3必需前置",
       "approved": true,
       "original_file": "xaeroworldmap-neoforge-1.21.1-1.47.0.jar",
       "selected_file": "xaeroworldmap-neoforge-1.21.1-1.47.0.jar",
       "version": "neoforge-1.21.1-1.47.0",
       "platform": "1.21.1 / NeoForge",
-      "readiness": "版本标签核对；整包待测",
-      "notes": " Xaero 小地图/世界地图保留；FTB Chunks 主要负责领地/加载，重复地图界面可在配置层处理。",
-      "deps": "平台未列必需前置；不能视为无前置",
+      "readiness": "已启用；正式客户端加载与进世界通过",
+      "notes": "当前正式客户端加载并进入存档通过；具体交互和大型船体兼容仍需持续验证。 XaeroLib 1.7.3已内置；在线更新检查超时不阻断加载。",
+      "deps": "XaeroLib 1.7.3（内置）",
       "source": "https://modrinth.com/mod/xaeros-world-map",
       "evidence": "https://modrinth.com/mod/xaeros-world-map/version/SnQ4SoDe",
       "slug": "xaeros-world-map",
-      "sha1": "2936c9cb9dfbdab145fe6f1e8ae2c68915246a5f"
+      "sha1": "2936c9cb9dfbdab145fe6f1e8ae2c68915246a5f",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     },
     {
       "id": "U101",
@@ -2129,7 +2265,8 @@
       "source": "https://www.curseforge.com/minecraft/mc-mods/ftb-library-forge/files/all",
       "evidence": "https://www.curseforge.com/minecraft/mc-mods/ftb-library-forge/files/all",
       "slug": "",
-      "sha1": ""
+      "sha1": "",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U102",
@@ -2150,7 +2287,8 @@
       "source": "https://www.curseforge.com/minecraft/mc-mods/ftb-quests-forge/files/all",
       "evidence": "https://www.curseforge.com/minecraft/mc-mods/ftb-quests-forge/files/all",
       "slug": "",
-      "sha1": ""
+      "sha1": "",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U103",
@@ -2171,7 +2309,8 @@
       "source": "https://www.curseforge.com/minecraft/mc-mods/ftb-chunks-forge/files/all",
       "evidence": "https://www.curseforge.com/minecraft/mc-mods/ftb-chunks-forge/files/all",
       "slug": "",
-      "sha1": ""
+      "sha1": "",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U104",
@@ -2192,7 +2331,8 @@
       "source": "https://www.curseforge.com/minecraft/mc-mods/ftb-teams-forge/files/all",
       "evidence": "https://www.curseforge.com/minecraft/mc-mods/ftb-teams-forge/files/all",
       "slug": "",
-      "sha1": ""
+      "sha1": "",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U105",
@@ -2213,28 +2353,8 @@
       "source": "https://modrinth.com/mod/open-parties-and-claims",
       "evidence": "https://modrinth.com/mod/open-parties-and-claims/version/qMR7tHTs",
       "slug": "open-parties-and-claims",
-      "sha1": "1c564ecb944277993716e2c7fc9d35dc403e515c"
-    },
-    {
-      "id": "U106",
-      "source_id": 106,
-      "category": "音效",
-      "name": "Sound Physics Remastered",
-      "description": "真实声音传播/回声",
-      "status": "备选区",
-      "approval": "用户本次明确同意：原表除两类待定外其余都要",
-      "approved": true,
-      "original_file": "sound-physics-remastered-neoforge-1.21.1-1.5.1.jar",
-      "selected_file": "sound-physics-remastered-neoforge-1.21.1-1.5.1.jar",
-      "version": "neoforge-1.21.1-1.5.1",
-      "platform": "1.21.1 / NeoForge",
-      "readiness": "互斥：不可与 U107 同装",
-      "notes": "主选 Sound Physics Aeronautics；两者为原版与分支，使用相同 modId sound_physics_remastered，作者明确禁止同时安装。",
-      "deps": "平台未列必需前置；不能视为无前置",
-      "source": "https://modrinth.com/mod/sound-physics-remastered",
-      "evidence": "https://modrinth.com/mod/sound-physics-remastered/version/Dd2tmpsk",
-      "slug": "sound-physics-remastered",
-      "sha1": "a5ac35ccb902231047709530a5708fb71dc3e3b5"
+      "sha1": "1c564ecb944277993716e2c7fc9d35dc403e515c",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U107",
@@ -2255,7 +2375,8 @@
       "source": "https://modrinth.com/mod/sound-physics-aeronautics",
       "evidence": "https://modrinth.com/mod/sound-physics-aeronautics/version/MDdwFCrR",
       "slug": "sound-physics-aeronautics",
-      "sha1": "0f711a13f2b0360eb0a54a1a7d6db71570c5f4d3"
+      "sha1": "0f711a13f2b0360eb0a54a1a7d6db71570c5f4d3",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U108",
@@ -2276,7 +2397,8 @@
       "source": "https://modrinth.com/mod/tacz-1.21.1",
       "evidence": "https://modrinth.com/mod/tacz-1.21.1/version/62q6mB5Q",
       "slug": "tacz-1.21.1",
-      "sha1": "c6ef4976de69a46c4e267bd7f91c730d2dc43a4e"
+      "sha1": "c6ef4976de69a46c4e267bd7f91c730d2dc43a4e",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U109",
@@ -2297,7 +2419,8 @@
       "source": "https://modrinth.com/mod/rechiseled",
       "evidence": "https://modrinth.com/mod/rechiseled/version/6muGRqvu",
       "slug": "rechiseled",
-      "sha1": "a7ca83d2f99520233bfa9ce769a157fe05201639"
+      "sha1": "a7ca83d2f99520233bfa9ce769a157fe05201639",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U110",
@@ -2318,7 +2441,8 @@
       "source": "https://modrinth.com/mod/waystones",
       "evidence": "https://modrinth.com/mod/waystones/version/6Z6MQ6os",
       "slug": "waystones",
-      "sha1": "75718161662d9ec957ba22e10e497788ec1687ba"
+      "sha1": "75718161662d9ec957ba22e10e497788ec1687ba",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "U111",
@@ -2339,7 +2463,8 @@
       "source": "https://modrinth.com/mod/aquaculture",
       "evidence": "https://modrinth.com/mod/aquaculture/version/5pbz0ETj",
       "slug": "aquaculture",
-      "sha1": "93c2043c6a5cfbfbfba93321d044bc61d8a6547b"
+      "sha1": "93c2043c6a5cfbfbfba93321d044bc61d8a6547b",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "D001",
@@ -2360,7 +2485,8 @@
       "slug": "sodium-options-api",
       "source": "https://modrinth.com/mod/sodium-options-api",
       "evidence": "https://modrinth.com/mod/sodium-options-api/version/lrsX3TMS",
-      "sha1": "5d014d031fa77ab600e07835b032ef4dcb79b442"
+      "sha1": "5d014d031fa77ab600e07835b032ef4dcb79b442",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "D002",
@@ -2381,7 +2507,8 @@
       "slug": "jade",
       "source": "https://modrinth.com/mod/jade",
       "evidence": "https://modrinth.com/mod/jade/version/eYz2YBGT",
-      "sha1": "88ee316e68900080b017f60c12162e2731924cf8"
+      "sha1": "88ee316e68900080b017f60c12162e2731924cf8",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     },
     {
       "id": "D003",
@@ -2402,7 +2529,8 @@
       "slug": "create-ironworks",
       "source": "https://modrinth.com/mod/create-ironworks",
       "evidence": "https://modrinth.com/mod/create-ironworks/version/91r9PehB",
-      "sha1": "c9b0802126a463af3670143c2fd8d0cfef58d1ae"
+      "sha1": "c9b0802126a463af3670143c2fd8d0cfef58d1ae",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B001",
@@ -2423,7 +2551,8 @@
       "slug": "deeper-oceans",
       "source": "https://modrinth.com/mod/deeper-oceans",
       "evidence": "https://modrinth.com/mod/deeper-oceans/version/rHJ7RgjW",
-      "sha1": "85d90c1e9155d3de8c6b0e6e84c003d4f2ff1ba1"
+      "sha1": "85d90c1e9155d3de8c6b0e6e84c003d4f2ff1ba1",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B002",
@@ -2444,7 +2573,8 @@
       "slug": "continents",
       "source": "https://modrinth.com/mod/continents",
       "evidence": "https://modrinth.com/mod/continents/version/bVXaqvWr",
-      "sha1": "8c2f1a5483b453b5cdb341da3aa36670d402336d"
+      "sha1": "8c2f1a5483b453b5cdb341da3aa36670d402336d",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B003",
@@ -2465,7 +2595,8 @@
       "slug": "oceanus",
       "source": "https://modrinth.com/mod/oceanus",
       "evidence": "https://modrinth.com/mod/oceanus/version/EAKpVSjV",
-      "sha1": "bf3a7412a6129c51f20de333390b16a75080617e"
+      "sha1": "bf3a7412a6129c51f20de333390b16a75080617e",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B004",
@@ -2486,7 +2617,8 @@
       "slug": "regions-unexplored",
       "source": "https://modrinth.com/mod/regions-unexplored",
       "evidence": "https://modrinth.com/mod/regions-unexplored/version/5A8LFnXX",
-      "sha1": "122586c147f0aa1efdc655792b6ef24aebbbba84"
+      "sha1": "122586c147f0aa1efdc655792b6ef24aebbbba84",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B005",
@@ -2507,7 +2639,8 @@
       "slug": "biomes-o-plenty",
       "source": "https://modrinth.com/mod/biomes-o-plenty",
       "evidence": "https://modrinth.com/mod/biomes-o-plenty/version/BtZKRp69",
-      "sha1": "294ae397c011980623bf155f9dfce82bb81865a0"
+      "sha1": "294ae397c011980623bf155f9dfce82bb81865a0",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B006",
@@ -2528,7 +2661,8 @@
       "slug": "aquamirae",
       "source": "https://modrinth.com/mod/aquamirae",
       "evidence": "https://modrinth.com/mod/aquamirae/version/RSbxcVPE",
-      "sha1": "8038c9427b4ceebccc650510ed715d856ccd5946"
+      "sha1": "8038c9427b4ceebccc650510ed715d856ccd5946",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B007",
@@ -2549,7 +2683,8 @@
       "slug": "l_enders-cataclysm",
       "source": "https://modrinth.com/mod/l_enders-cataclysm",
       "evidence": "https://modrinth.com/mod/l_enders-cataclysm/version/PsPYpoCC",
-      "sha1": "f0310277167c82fd16a5c2bab220b5c5c262f133"
+      "sha1": "f0310277167c82fd16a5c2bab220b5c5c262f133",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B008",
@@ -2570,7 +2705,8 @@
       "slug": "hybrid-aquatic",
       "source": "https://modrinth.com/mod/hybrid-aquatic",
       "evidence": "https://modrinth.com/mod/hybrid-aquatic/version/jdOU7Pzu",
-      "sha1": "9feffbffb1ce1a249b2002b5480ab9af56922aa6"
+      "sha1": "9feffbffb1ce1a249b2002b5480ab9af56922aa6",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B009",
@@ -2591,7 +2727,8 @@
       "slug": "tide",
       "source": "https://modrinth.com/mod/tide",
       "evidence": "https://modrinth.com/mod/tide/version/1ki6UyqV",
-      "sha1": "6916fb787c0c3da859166b57a9aaac287d7ed144"
+      "sha1": "6916fb787c0c3da859166b57a9aaac287d7ed144",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B010",
@@ -2612,7 +2749,8 @@
       "slug": "dungeons-and-taverns-ocean-monument-overhaul",
       "source": "https://modrinth.com/mod/dungeons-and-taverns-ocean-monument-overhaul",
       "evidence": "https://modrinth.com/mod/dungeons-and-taverns-ocean-monument-overhaul/version/SFXYDC6X",
-      "sha1": "2f10fbffa319a2f47e12d137a6a2368ee9bf77d1"
+      "sha1": "2f10fbffa319a2f47e12d137a6a2368ee9bf77d1",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B011",
@@ -2633,7 +2771,8 @@
       "slug": "hopo-better-underwater-ruins",
       "source": "https://modrinth.com/mod/hopo-better-underwater-ruins",
       "evidence": "https://modrinth.com/mod/hopo-better-underwater-ruins/version/cCUmdH6y",
-      "sha1": "1e033af9a73d11f68af304d1a46821c0118a70ca"
+      "sha1": "1e033af9a73d11f68af304d1a46821c0118a70ca",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B012",
@@ -2654,7 +2793,8 @@
       "slug": "awesome-dungeon-edition-ocean",
       "source": "https://modrinth.com/mod/awesome-dungeon-edition-ocean",
       "evidence": "https://modrinth.com/mod/awesome-dungeon-edition-ocean/version/4oZY86TA",
-      "sha1": "bbc8c12ac4521a600ccf4cab3bcb33669df25ed2"
+      "sha1": "bbc8c12ac4521a600ccf4cab3bcb33669df25ed2",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B013",
@@ -2675,7 +2815,8 @@
       "slug": "mos-moogs-ocean-structures",
       "source": "https://modrinth.com/mod/mos-moogs-ocean-structures",
       "evidence": "https://modrinth.com/mod/mos-moogs-ocean-structures/version/QfMITqh9",
-      "sha1": "e272a06fee7e4b0a4c2efe8c1d338f7e250a0bd9"
+      "sha1": "e272a06fee7e4b0a4c2efe8c1d338f7e250a0bd9",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B014",
@@ -2696,7 +2837,8 @@
       "slug": "create-deco",
       "source": "https://modrinth.com/mod/create-deco",
       "evidence": "https://modrinth.com/mod/create-deco/version/qrcMVoBD",
-      "sha1": "93d9eff58b46c6953e907d071e6be4e3ce07be38"
+      "sha1": "93d9eff58b46c6953e907d071e6be4e3ce07be38",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B015",
@@ -2717,7 +2859,8 @@
       "slug": "create-design-n-decor",
       "source": "https://modrinth.com/mod/create-design-n-decor",
       "evidence": "https://modrinth.com/mod/create-design-n-decor/version/uQsIRky8",
-      "sha1": "ff5f0411a3d82e15d69b65617128f6d54e818e1b"
+      "sha1": "ff5f0411a3d82e15d69b65617128f6d54e818e1b",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B016",
@@ -2738,7 +2881,8 @@
       "slug": "create-aquatic-ambitions",
       "source": "https://modrinth.com/mod/create-aquatic-ambitions",
       "evidence": "https://modrinth.com/mod/create-aquatic-ambitions/version/DoI3PpXj",
-      "sha1": "a02ce8ffc8395566c4fbe7907e721e82fd1b590b"
+      "sha1": "a02ce8ffc8395566c4fbe7907e721e82fd1b590b",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B017",
@@ -2759,7 +2903,8 @@
       "slug": "cc-deep-seas",
       "source": "https://modrinth.com/mod/cc-deep-seas",
       "evidence": "https://modrinth.com/mod/cc-deep-seas/version/qKkaeGSS",
-      "sha1": "a867c01dc72bf07338e74694588cfe78080b2dce"
+      "sha1": "a867c01dc72bf07338e74694588cfe78080b2dce",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B018",
@@ -2780,7 +2925,8 @@
       "slug": "create-aero-cables",
       "source": "https://modrinth.com/mod/create-aero-cables",
       "evidence": "https://modrinth.com/mod/create-aero-cables/version/Wn81ihHo",
-      "sha1": "f38a48ff5ef72a79f1d56582f9cda47b88fe9268"
+      "sha1": "f38a48ff5ef72a79f1d56582f9cda47b88fe9268",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B019",
@@ -2801,7 +2947,8 @@
       "slug": "create-power-components",
       "source": "https://modrinth.com/mod/create-power-components",
       "evidence": "https://modrinth.com/mod/create-power-components/version/W3GV5Ldp",
-      "sha1": "29c65bbba06ce84cb4bd3e23644b548105f03655"
+      "sha1": "29c65bbba06ce84cb4bd3e23644b548105f03655",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B020",
@@ -2822,7 +2969,8 @@
       "slug": "aeronautics-calibrated",
       "source": "https://modrinth.com/mod/aeronautics-calibrated",
       "evidence": "https://modrinth.com/mod/aeronautics-calibrated/version/78Nl65uk",
-      "sha1": "aeed0c4221ce765f7b6dc229c467550e27addf42"
+      "sha1": "aeed0c4221ce765f7b6dc229c467550e27addf42",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B021",
@@ -2843,7 +2991,8 @@
       "slug": "create-lift-n-load",
       "source": "https://modrinth.com/mod/create-lift-n-load",
       "evidence": "https://modrinth.com/mod/create-lift-n-load/version/G7N1k717",
-      "sha1": "60ad240e61882701b611f762651bccd58a3dd232"
+      "sha1": "60ad240e61882701b611f762651bccd58a3dd232",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B022",
@@ -2864,7 +3013,8 @@
       "slug": "simple-dive-gear",
       "source": "https://modrinth.com/mod/simple-dive-gear",
       "evidence": "https://modrinth.com/mod/simple-dive-gear/version/4ZexmS2I",
-      "sha1": "4d0bf15162041125cec02a2d46a98a5c8c3b2da9"
+      "sha1": "4d0bf15162041125cec02a2d46a98a5c8c3b2da9",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B023",
@@ -2885,7 +3035,8 @@
       "slug": "sophisticated-storage",
       "source": "https://modrinth.com/mod/sophisticated-storage",
       "evidence": "https://modrinth.com/mod/sophisticated-storage/version/EvzAB4E6",
-      "sha1": "cfcd5fa08087601ac876fe9624505f58b4045ed6"
+      "sha1": "cfcd5fa08087601ac876fe9624505f58b4045ed6",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B024",
@@ -2906,7 +3057,8 @@
       "slug": "patchouli",
       "source": "https://modrinth.com/mod/patchouli",
       "evidence": "https://modrinth.com/mod/patchouli/version/BIogJv2D",
-      "sha1": "5413bb9b8fc35ebe46b06b48bf9afafbd8471140"
+      "sha1": "5413bb9b8fc35ebe46b06b48bf9afafbd8471140",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B025",
@@ -2927,7 +3079,8 @@
       "slug": "small-ships",
       "source": "https://modrinth.com/mod/small-ships",
       "evidence": "https://modrinth.com/mod/small-ships/version/QNjKZdCr",
-      "sha1": "feaa657df7d6b54b56df11094d390ae52ff6d728"
+      "sha1": "feaa657df7d6b54b56df11094d390ae52ff6d728",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B026",
@@ -2948,7 +3101,8 @@
       "slug": "immersive-aircraft",
       "source": "https://modrinth.com/mod/immersive-aircraft",
       "evidence": "https://modrinth.com/mod/immersive-aircraft/version/ZCSI1mBS",
-      "sha1": "de202dba639d78863cd1a5705415adaebd74b0f0"
+      "sha1": "de202dba639d78863cd1a5705415adaebd74b0f0",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B027",
@@ -2969,7 +3123,8 @@
       "slug": "distanthorizons",
       "source": "https://modrinth.com/mod/distanthorizons",
       "evidence": "https://modrinth.com/mod/distanthorizons/version/9w34y8ai",
-      "sha1": "4357b4d19fab818780c94f0e43dad1cc931634b2"
+      "sha1": "4357b4d19fab818780c94f0e43dad1cc931634b2",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B028",
@@ -2990,7 +3145,8 @@
       "slug": "chunky",
       "source": "https://modrinth.com/mod/chunky",
       "evidence": "https://modrinth.com/mod/chunky/version/LuFhm4eU",
-      "sha1": "ab0c74743a653020fe2dfc4986b43e893947f3e9"
+      "sha1": "ab0c74743a653020fe2dfc4986b43e893947f3e9",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B029",
@@ -3011,7 +3167,8 @@
       "slug": "iris-flw-compat",
       "source": "https://modrinth.com/mod/iris-flw-compat",
       "evidence": "https://modrinth.com/mod/iris-flw-compat/version/6ZQz5Ow2",
-      "sha1": "b8630517b6017f4d075ce594e5ef333b38748029"
+      "sha1": "b8630517b6017f4d075ce594e5ef333b38748029",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B030",
@@ -3032,7 +3189,8 @@
       "slug": "sable-dynamic-lights",
       "source": "https://modrinth.com/mod/sable-dynamic-lights",
       "evidence": "https://modrinth.com/mod/sable-dynamic-lights/version/vjb0hAWB",
-      "sha1": "d0d8d1d47078d7bb617b9665a0fb9383bf84aaea"
+      "sha1": "d0d8d1d47078d7bb617b9665a0fb9383bf84aaea",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "B031",
@@ -3053,7 +3211,8 @@
       "slug": "lod-server-support",
       "source": "https://modrinth.com/mod/lod-server-support",
       "evidence": "https://modrinth.com/mod/lod-server-support/version/4WpqxQiA",
-      "sha1": "7f4345863e0683343ce3fd36336c50942a294481"
+      "sha1": "7f4345863e0683343ce3fd36336c50942a294481",
+      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
     },
     {
       "id": "D004",
@@ -3074,7 +3233,8 @@
       "source": "https://modrinth.com/mod/worldedit",
       "evidence": "https://modrinth.com/mod/worldedit/version/WTAFvuRx",
       "slug": "worldedit",
-      "sha1": "924fe181a29bd66be6783f6d589968ab0ee02250"
+      "sha1": "924fe181a29bd66be6783f6d589968ab0ee02250",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     },
     {
       "id": "D005",
@@ -3095,7 +3255,8 @@
       "source": "https://modrinth.com/mod/probejs",
       "evidence": "https://modrinth.com/mod/probejs/version/xC9KUA7R",
       "slug": "probejs",
-      "sha1": "f0529482eff9596fa01de8a34abdce50529bdf55"
+      "sha1": "f0529482eff9596fa01de8a34abdce50529bdf55",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     },
     {
       "id": "D006",
@@ -3116,7 +3277,74 @@
       "source": "https://modrinth.com/mod/spark",
       "evidence": "https://modrinth.com/mod/spark/version/v5qtqRQi",
       "slug": "spark",
-      "sha1": "9430cc2ab64ff89d698be593769fb9f9ee4efae6"
+      "sha1": "9430cc2ab64ff89d698be593769fb9f9ee4efae6",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
+    },
+    {
+      "id": "D007",
+      "source_id": null,
+      "category": "界面、工具与多人",
+      "name": "Just Enough Resources (JER)",
+      "description": "JEI资源与掉落信息",
+      "original_file": "本次新增",
+      "platform": "1.21.1 / NeoForge",
+      "slug": "just-enough-resources-jer",
+      "source": "https://modrinth.com/mod/just-enough-resources-jer",
+      "status": "确定加入",
+      "approved": true,
+      "approval": "用户2026-10-14明确要求加入；Cloth Config为BetterF3必需前置",
+      "selected_file": "JustEnoughResources-NeoForge-1.21.1-1.6.0.17.jar",
+      "version": "1.6.0.17",
+      "readiness": "已启用；正式客户端加载与进世界通过",
+      "notes": "当前正式客户端加载并进入存档通过；具体交互和大型船体兼容仍需持续验证。 已确认JER分类和配方注册完成。",
+      "deps": "JEI >=16.0.0",
+      "evidence": "https://modrinth.com/mod/just-enough-resources-jer/version/TgNFki8j",
+      "sha1": "e739d69b2de31ca8c0cb4691ab08e823f153bc44",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
+    },
+    {
+      "id": "D008",
+      "source_id": null,
+      "category": "界面、工具与多人",
+      "name": "BetterF3",
+      "description": "更清晰的F3调试信息",
+      "original_file": "本次新增",
+      "platform": "1.21.1 / NeoForge",
+      "slug": "betterf3",
+      "source": "https://modrinth.com/mod/betterf3",
+      "status": "确定加入",
+      "approved": true,
+      "approval": "用户2026-10-14明确要求加入；Cloth Config为BetterF3必需前置",
+      "selected_file": "BetterF3-11.0.3-NeoForge-1.21.1.jar",
+      "version": "11.0.3",
+      "readiness": "已启用；正式客户端加载与进世界通过",
+      "notes": "当前正式客户端加载并进入存档通过；具体交互和大型船体兼容仍需持续验证。",
+      "deps": "Cloth Config API >=15.0.0",
+      "evidence": "https://modrinth.com/mod/betterf3/version/maXNB1dn",
+      "sha1": "8fa17df26d3650416bc124be7a264bc1566a3b26",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
+    },
+    {
+      "id": "D009",
+      "source_id": null,
+      "category": "界面、工具与多人",
+      "name": "Cloth Config API",
+      "description": "BetterF3必需配置界面前置",
+      "original_file": "本次新增",
+      "platform": "1.21.1 / NeoForge",
+      "slug": "cloth-config",
+      "source": "https://modrinth.com/mod/cloth-config",
+      "status": "确定加入",
+      "approved": true,
+      "approval": "用户2026-10-14明确要求加入；Cloth Config为BetterF3必需前置",
+      "selected_file": "cloth-config-15.0.140-neoforge.jar",
+      "version": "15.0.140+neoforge",
+      "readiness": "已启用；正式客户端加载与进世界通过",
+      "notes": "当前正式客户端加载并进入存档通过；具体交互和大型船体兼容仍需持续验证。",
+      "deps": "现有依赖已满足",
+      "evidence": "https://modrinth.com/mod/cloth-config/version/izKINKFg",
+      "sha1": "c3e5733ba4503b102589a026000fd5ce0212f6f2",
+      "runtime_status": "已启用（Gradle直接运行依赖）"
     }
   ],
   "audit": [
@@ -3150,5 +3378,37 @@
       "reason": "未锁定官方对应文件；未知不等于不兼容。需要原 JAR/下载来源后判断同类关系。",
       "source": "原表文件名；无可靠精确发布匹配"
     }
-  ]
+  ],
+  "excluded_rows": [
+    {
+      "id": "U106",
+      "source_id": 106,
+      "category": "音效",
+      "name": "Sound Physics Remastered",
+      "description": "真实声音传播/回声",
+      "status": "已剔除",
+      "approval": "用户本次明确同意：原表除两类待定外其余都要",
+      "approved": true,
+      "original_file": "sound-physics-remastered-neoforge-1.21.1-1.5.1.jar",
+      "selected_file": "sound-physics-remastered-neoforge-1.21.1-1.5.1.jar",
+      "version": "neoforge-1.21.1-1.5.1",
+      "platform": "1.21.1 / NeoForge",
+      "readiness": "互斥：不可与 U107 同装",
+      "notes": "主选 Sound Physics Aeronautics；两者为原版与分支，使用相同 modId sound_physics_remastered，作者明确禁止同时安装。",
+      "deps": "平台未列必需前置；不能视为无前置",
+      "source": "https://modrinth.com/mod/sound-physics-remastered",
+      "evidence": "https://modrinth.com/mod/sound-physics-remastered/version/Dd2tmpsk",
+      "slug": "sound-physics-remastered",
+      "sha1": "a5ac35ccb902231047709530a5708fb71dc3e3b5",
+      "exclusion_date": "2026-10-14",
+      "exclusion_reason": "与已选Sound Physics: Aeronautics使用相同modId且作者明确禁止同装；移出当前确定/待定/备选区，不表示它不支持1.21.1 NeoForge。",
+      "exclusion_source": "https://modrinth.com/mod/sound-physics-aeronautics"
+    }
+  ],
+  "classification_policy": {
+    "same_function": "已确定主路线的同类替代项目放入备选；前置、兼容补丁和互补功能不因分类相同而移除。",
+    "incompatible": "删除已证实与选定路线冲突的项目至excluded_rows；条件互斥和未知状态不冒充普遍不兼容。",
+    "runtime": "本次整理清单，不卸载已启用Mod，不改变实际运行依赖。"
+  },
+  "excluded_count": 1
 }

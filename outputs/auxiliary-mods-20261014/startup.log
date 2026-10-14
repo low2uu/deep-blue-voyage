@@ -1,0 +1,25 @@
+		BetterF3 11.0.3 (betterf3)
+		Cloth Config v15 API 15.0.140 (cloth_config)
+		Jade Sable Compat 1.3.0 (sablejade)
+		Just Enough Items 19.51.0.418 (jei)
+		Just Enough Resources 1.6.0.17 (jeresources)
+		Xaero's Minimap 26.6.0 (xaerominimap)
+		Xaero's World Map 1.47.0 (xaeroworldmap)
+		XaeroLib 1.7.3 (xaerolib)
+[1410月2026 16:10:52.293] [modloading-worker-0/INFO] [xaero.hud.minimap.MinimapLogs/]: Xaero's Minimap: World Map found!
+[1410月2026 16:10:52.293] [modloading-worker-0/INFO] [xaero.hud.minimap.MinimapLogs/]: Xaero's Minimap: No Vivecraft!
+[1410月2026 16:10:52.595] [modloading-worker-0/ERROR] [org.patryk3211.powergrid.PowerGrid/]: Native backend failed to load. Accelerated solver will not be available!
+[1410月2026 16:10:57.476] [Worker-Main-18/INFO] [xaero.map.WorldMap/]: Loading Xaero's World Map - Stage 1/2
+[1410月2026 16:10:57.476] [Worker-Main-17/INFO] [xaero.minimap.XaeroMinimap/]: Loading Xaero's Minimap - Stage 1/2
+[1410月2026 16:10:58.425] [Render thread/INFO] [xaero.map.WorldMap/]: Loading Xaero's World Map - Stage 2/2
+[1410月2026 16:10:59.330] [Render thread/ERROR] [xaero.map.WorldMap/]: io exception while checking versions: Read timed out
+[1410月2026 16:10:59.335] [Render thread/INFO] [xaero.map.WorldMap/]: Xaero's World Map: No Vivecraft!
+[1410月2026 16:10:59.352] [Render thread/INFO] [xaero.minimap.XaeroMinimap/]: Loading Xaero's Minimap - Stage 2/2
+[1410月2026 16:11:01.037] [Render thread/WARN] [xaero.hud.minimap.MinimapLogs/]: io exception while checking versions: Online mod data expired! Date: Wed Oct 07 18:36:48 CST 2026
+[1410月2026 16:11:01.547] [Worker-Main-16/INFO] [snownee.jade.Jade/]: Bootstrapped plugin from dev.mgcode.sablejade.SableJadePlugin in 1.162 ms
+[1410月2026 16:11:11.329] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: DBVDeveloper加入了游戏
+[1410月2026 16:11:13.282] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering categories: jeresources:minecraft took 1.011 seconds
+[1410月2026 16:11:13.830] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering recipes: jeresources:minecraft took 148.1 milliseconds
+[1410月2026 16:11:13.889] [Render thread/INFO] [mezz.jei.gui.startup.JeiGuiStarter/]: Starting JEI GUI
+[1410月2026 16:11:14.182] [Render thread/INFO] [mezz.jei.common.util.LoggedTimer/]: Starting JEI took 2.365 seconds
+[1410月2026 16:11:29.329] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server

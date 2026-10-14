@@ -1,0 +1,77 @@
+{
+  "checked_at": "2026-10-14",
+  "files": [
+    {
+      "slug": "jei",
+      "version_id": "ufHUqt9b",
+      "version": "19.51.0.418",
+      "filename": "jei-1.21.1-neoforge-19.51.0.418.jar",
+      "sha1": "d19552586f686eae4ef5e7199f31604d1d3cfca7",
+      "metadata": {
+        "META-INF/neoforge.mods.toml": "# There are several mandatory fields (#mandatory), and many more that are optional (#optional).\n# The overall format is standard TOML format, v0.5.0.\n# Note that there are a couple of TOML lists in this file.\n# Find more information on toml format here:  https://github.com/toml-lang/toml\n\n# The name of the mod loader type to load - for regular FML @Mod mods it should be javafml\nmodLoader=\"javafml\" #mandatory\n\n# A version range to match for said mod loader - for regular FML @Mod it will be the minecraft version (without the 1.)\nloaderVersion=\"[4,)\" #mandatory\n\n# A URL to refer people to when problems occur with this mod\nissueTrackerURL=\"https://github.com/mezz/JustEnoughItems/issues?q=is%3Aissue\" #optional\n\n# License\nlicense=\"The MIT License (MIT)\"\n\n# A file name (in the root of the mod JAR) containing a logo for display\n#logoFile=\"examplemod.png\" #optional\n\n# A text field displayed in the mod UI\n#credits=\"Thanks for this example mod goes to Java\" #optional\n\n[[mods]] #mandatory\n\n# The modid of the mod\nmodId=\"jei\" #mandatory\n\n# The version number of the mod\nversion=\"19.51.0.418\" #mandatory\n\n# A display name for the mod\ndisplayName=\"Just Enough Items\" #mandatory\n\n# A URL for the \"homepage\" for this mod, displayed in the mod UI\ndisplayURL=\"https://www.curseforge.com/minecraft/mc-mods/jei\" #optional\n\n# Lets the client join servers that do not have JEI installed.\ndisplayTest=\"IGNORE_SERVER_VERSION\" #optional\n\n# A URL to query for updates for this mod. See the JSON update specification <here>\n#updateJSONURL=\"\" #optional\n\n# A text field displayed in the mod UI\n# credits=\"\" #optional\n\n# A text field displayed in the mod UI\nauthors=\"mezz\" #optional\n\n# The description text for the mod (multi line!) (#mandatory)\ndescription='''\nJEI is an item and recipe viewing mod for Minecraft, built from the ground up for stability and performance.\n'''\n\n# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.\n[[dependencies.jei]]\n    modId=\"neoforge\" #mandatory\n    type=\"required\" #mandatory\n    versionRange=\"[21.1.238,)\" #mandatory\n    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory\n    ordering=\"NONE\"\n    # Side this dependency is applied on - BOTH, CLIENT or SERVER\n    side=\"BOTH\"\n\n[[dependencies.jei]]\n    modId=\"minecraft\" #mandatory\n    type=\"required\" #mandatory\n    versionRange=\"[1.21, 1.21.1)\" #mandatory\n    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory\n    ordering=\"NONE\"\n    # Side this dependency is applied on - BOTH, CLIENT or SERVER\n    side=\"BOTH\"\n\n[modproperties.jei]\n    catalogueImageIcon=\"jei-icon.png\"\n"
+      }
+    },
+    {
+      "slug": "just-enough-resources-jer",
+      "version_id": "TgNFki8j",
+      "version": "1.6.0.17",
+      "filename": "JustEnoughResources-NeoForge-1.21.1-1.6.0.17.jar",
+      "sha1": "e739d69b2de31ca8c0cb4691ab08e823f153bc44",
+      "metadata": {
+        "META-INF/neoforge.mods.toml": "# The name of the mod loader type to load - for regular FML @Mod mods it should be javafml\nmodLoader=\"javafml\" #mandatory\n# A version range to match for said mod loader - for regular FML @Mod it will be the forge version\nloaderVersion=\"[4,)\" #mandatory\n# The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.\nlicense=\"'Don't Be a Jerk' non-commercial care-free license\" #mandatory\n# A URL to refer people to when problems occur with this mod\nissueTrackerURL=\"https://github.com/way2muchnoise/JustEnoughResources/issues\" #optional\n# A list of mods - how many allowed here is determined by the individual mod loader\n[[mods]] #mandatory\n# The modid of the mod\nmodId=\"jeresources\" #mandatory\n# The version number of the mod - there's a few well known null variables useable here or just hardcode it\nversion=\"1.6.0.17\" #mandatory\n # A display name for the mod\ndisplayName=\"Just Enough Resources\" #mandatory\ndisplayURL=\"https://www.curseforge.com/minecraft/mc-mods/just-enough-resources-jer\" #optional\n# A text field displayed in the mod UI\nauthors=\"way2muchnoise\" #optional\n# The description text for the mod (multi line!) (#mandatory)\ndescription='''\nAdds Resources and Mob Drops to JEI\n'''\n[[dependencies.jeresources]]\n    modId=\"jei\"\n    type=\"required\"\n    versionRange=\"[16.0.0,)\"\n    ordering=\"NONE\"\n    side=\"BOTH\"\n"
+      }
+    },
+    {
+      "slug": "xaeros-minimap",
+      "version_id": "irjR7dHk",
+      "version": "neoforge-1.21.1-26.6.0",
+      "filename": "xaerominimap-neoforge-1.21.1-26.6.0.jar",
+      "sha1": "551e8e2aa3498b506cc949a74606cdc0380e5e00",
+      "metadata": {
+        "META-INF/neoforge.mods.toml": "modLoader = \"javafml\" #mandatory\nloaderVersion = \"[4,)\" #mandatory\nlicense = \"All Rights Reserved\" # Review your options at https://choosealicense.com/.\nissueTrackerURL = \"https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap/issues\"\n[[mods]] #mandatory\nmodId = \"xaerominimap\" #mandatory\nversion = \"26.6.0\" #mandatory\ndisplayName = \"Xaero's Minimap\" #mandatory\n#updateJSONURL=\"https://change.me.example.invalid/updates.json\" #optional (see https://docs.neoforged.net/docs/misc/updatechecker/)\n#displayURL=\"https://change.me.to.your.mods.homepage.example.invalid/\" #optional (displayed in the mod UI)\ncredits=\"\" #optional\nauthors = \"xaero96\" #optional\ndescription = '''The most vanilla-looking minimap for Minecraft.''' #mandatory (Supports multiline text)\n[[mixins]]\nconfig = \"xaerohud.mixins.json\"\n[[mixins]]\nconfig = \"xaerohud.neoforge.mixins.json\"\n[[mixins]]\nconfig = \"xaerominimap.mixins.json\"\n[[mixins]]\nconfig = \"xaerominimap.neoforge.mixins.json\"\n[[dependencies.xaerominimap]] #optional\nmodId = \"neoforge\" #mandatory\ntype=\"required\" #mandatory (Can be one of \"required\", \"optional\", \"incompatible\" or \"discouraged\")\nversionRange = \"[21.0.110-beta,21.2.0)\" #mandatory\nordering = \"NONE\" # The order that this dependency should load in relation to your mod, required to be either 'BEFORE' or 'AFTER' if the dependency is not mandatory\nside = \"BOTH\" # Side this dependency is applied on - 'BOTH', 'CLIENT' or 'SERVER'\n[[dependencies.xaerominimap]]\nmodId = \"minecraft\"\ntype=\"required\" #mandatory (Can be one of \"required\", \"optional\", \"incompatible\" or \"discouraged\")\nversionRange = \"1.21.1\"\nordering = \"NONE\"\nside = \"BOTH\"\n[[dependencies.xaerominimap]]\nmodId = \"openpartiesandclaims\"\ntype=\"optional\"\nversionRange = \"[0.32.4,)\"\nordering = \"NONE\"\nside = \"BOTH\"\n[[dependencies.xaerominimap]]\nmodId = \"xaeroworldmap\"\ntype=\"optional\"\nversionRange = \"[1.44.0,)\"\nordering = \"NONE\"\nside = \"BOTH\"\n[[dependencies.xaerobetterpvp]]\nmodId = \"xaerolib\"\ntype=\"required\"\nversionRange = \"[1.0,)\"\nordering = \"NONE\"\nside = \"BOTH\"\n\n# Features are specific properties of the game environment, that you may want to declare you require. This example declares\n# that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't\n# stop your mod loading on the server for example.\n#[features.xaerominimap]\n#openGLVersion=\"[3.2,)\"",
+        "META-INF/jarjar/metadata.json": "{\r\n  \"jars\": [\r\n    {\r\n      \"identifier\": {\r\n        \"group\": \"xaero.lib\",\r\n        \"artifact\": \"xaerolib-neoforge-1.21.1\"\r\n      },\r\n      \"version\": {\r\n        \"range\": \"[1.7.0,1.8)\",\r\n        \"artifactVersion\": \"1.7.3\"\r\n      },\r\n      \"path\": \"META-INF/jarjar/xaerolib-neoforge-1.21.1-1.7.3.jar\",\r\n      \"isObfuscated\": false\r\n    }\r\n  ]\r\n}\r\n"
+      }
+    },
+    {
+      "slug": "xaeros-world-map",
+      "version_id": "SnQ4SoDe",
+      "version": "neoforge-1.21.1-1.47.0",
+      "filename": "xaeroworldmap-neoforge-1.21.1-1.47.0.jar",
+      "sha1": "2936c9cb9dfbdab145fe6f1e8ae2c68915246a5f",
+      "metadata": {
+        "META-INF/neoforge.mods.toml": "modLoader = \"javafml\" #mandatory\nloaderVersion = \"[4,)\" #mandatory\nlicense = \"All Rights Reserved\" # Review your options at https://choosealicense.com/.\n#issueTrackerURL=\"https://change.me.to.your.issue.tracker.example.invalid/\" #optional\n[[mods]] #mandatory\nmodId = \"xaeroworldmap\" #mandatory\nversion = \"1.47.0\" #mandatory\ndisplayName = \"Xaero's World Map\" #mandatory\n#updateJSONURL=\"https://change.me.example.invalid/updates.json\" #optional (see https://docs.neoforged.net/docs/misc/updatechecker/)\n#displayURL=\"https://change.me.to.your.mods.homepage.example.invalid/\" #optional (displayed in the mod UI)\nlogoFile=\"xaeroworldmap.png\" #optional\ncredits=\"\" #optional\nauthors = \"xaero96\" #optional\ndescription = '''A self-writing fullscreen map which also works as an add-on to Xaero's Minimap.''' #mandatory (Supports multiline text)\n[[mixins]]\nconfig = \"xaeroworldmap.mixins.json\"\n[[mixins]]\nconfig = \"xaeroworldmap.neoforge.mixins.json\"\n[[dependencies.xaeroworldmap]] #optional\nmodId = \"neoforge\" #mandatory\ntype=\"required\" #mandatory (Can be one of \"required\", \"optional\", \"incompatible\" or \"discouraged\")\nversionRange = \"[21.0.110-beta, 21.2.0)\" #mandatory\nordering = \"NONE\" # The order that this dependency should load in relation to your mod, required to be either 'BEFORE' or 'AFTER' if the dependency is not mandatory\nside = \"BOTH\" # Side this dependency is applied on - 'BOTH', 'CLIENT' or 'SERVER'\n[[dependencies.xaeroworldmap]]\nmodId = \"minecraft\"\ntype=\"required\" #mandatory (Can be one of \"required\", \"optional\", \"incompatible\" or \"discouraged\")\nversionRange = \"[1.21, 1.21.2)\"\nordering = \"NONE\"\nside = \"BOTH\"\n[[dependencies.xaeroworldmap]]\nmodId = \"openpartiesandclaims\"\ntype=\"optional\"\nversionRange = \"[0.32.4,)\"\nordering = \"NONE\"\nside = \"BOTH\"\n[[dependencies.xaeroworldmap]]\nmodId = \"xaerominimap\"\ntype=\"optional\"\nversionRange = \"[26.4.0,)\"\nordering = \"NONE\"\nside = \"BOTH\"\n[[dependencies.xaeroworldmap]]\nmodId = \"xaerobetterpvp\"\ntype=\"optional\"\nversionRange = \"[26.4.0,)\"\nordering = \"NONE\"\nside = \"BOTH\"\n[[dependencies.xaeroworldmap]]\nmodId = \"xaerolib\"\ntype=\"required\"\nversionRange = \"[1.0,)\"\nordering = \"NONE\"\nside = \"BOTH\"\n\n# Features are specific properties of the game environment, that you may want to declare you require. This example declares\n# that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't\n# stop your mod loading on the server for example.\n#[features.xaeroworldmap]\n#openGLVersion=\"[3.2,)\"",
+        "META-INF/jarjar/metadata.json": "{\r\n  \"jars\": [\r\n    {\r\n      \"identifier\": {\r\n        \"group\": \"xaero.lib\",\r\n        \"artifact\": \"xaerolib-neoforge-1.21.1\"\r\n      },\r\n      \"version\": {\r\n        \"range\": \"[1.7.0,1.8)\",\r\n        \"artifactVersion\": \"1.7.3\"\r\n      },\r\n      \"path\": \"META-INF/jarjar/xaerolib-neoforge-1.21.1-1.7.3.jar\",\r\n      \"isObfuscated\": false\r\n    }\r\n  ]\r\n}\r\n"
+      }
+    },
+    {
+      "slug": "betterf3",
+      "version_id": "maXNB1dn",
+      "version": "11.0.3",
+      "filename": "BetterF3-11.0.3-NeoForge-1.21.1.jar",
+      "sha1": "8fa17df26d3650416bc124be7a264bc1566a3b26",
+      "metadata": {
+        "META-INF/neoforge.mods.toml": "modLoader = \"javafml\"\nloaderVersion = \"*\"\nlicense = \"MIT\"\ndisplayURL = \"https://github.com/TreyRuffy/BetterF3/\"\nissueTrackerURL=\"https://github.com/TreyRuffy/BetterF3/issues/\"\n\n[[mods]]\nmodId = \"betterf3\"\nversion = \"11.0.3\"\ndisplayName = \"BetterF3\"\nupdateJSONURL=\"https://api.modrinth.com/updates/betterf3/forge_updates.json\"\ndisplayURL=\"https://modrinth.com/mod/betterf3\"\nlogoFile=\"icon.png\"\nauthors = \"TreyRuffy and cominixo\"\ndescription = '''\nBetter F3 for Minecraft NeoForge\nReplaces Minecraft's original debug HUD with a highly customizable, more human-readable HUD.\n\nThe creator would like to thank:\n- cominixo for creating the Fabric version of the mod\n- Nirewen for creating the icon\n'''\n\n[[accessTransformers]]\nfile = \"META-INF/accesstransformer.cfg\"\n\n[[mixins]]\nconfig = \"betterf3.neoforge.mixins.json\"\n\n[[mixins]]\nconfig = \"betterf3.mixins.json\"\n\n[[dependencies.betterf3]]\nmodId = \"minecraft\"\nmandatory = true\nversionRange = \"[1.21,)\"\nordering = \"NONE\"\nside = \"BOTH\"\n\n[[dependencies.betterf3]]\nmodId = \"cloth_config\"\nversionRange = \"[15.0.0,)\"\nmandatory = true\n"
+      }
+    },
+    {
+      "slug": "jade-sable-compat",
+      "version_id": "cxUohR7A",
+      "version": "1.3.0",
+      "filename": "sablejade-1.3.0.jar",
+      "sha1": "beb78d81a4d5768780c8566fa869ced5dbe08263",
+      "metadata": {
+        "META-INF/neoforge.mods.toml": "modLoader = \"javafml\"\nloaderVersion = \"[1,)\"\nlicense = \"MIT\"\n\n[[mods]]\nmodId = \"sablejade\"\nversion = \"1.3.0\"\ndisplayName = \"Jade Sable Compat\"\nlogoFile = \"mod_logo.png\"\ndescription = '''\nFixes Jade block targeting and tooltip selection for blocks on Sable sublevels and moving constructions.\n'''\n\n[[dependencies.sablejade]]\nmodId = \"neoforge\"\ntype = \"required\"\nversionRange = \"[21.1.228,)\"\nordering = \"NONE\"\nside = \"BOTH\"\n\n[[dependencies.sablejade]]\nmodId = \"minecraft\"\ntype = \"required\"\nversionRange = \"[1.21.1]\"\nordering = \"NONE\"\nside = \"BOTH\"\n\n[[dependencies.sablejade]]\nmodId = \"sable\"\ntype = \"required\"\nversionRange = \"[1.0.0,)\"\nordering = \"AFTER\"\nside = \"BOTH\"\n\n[[dependencies.sablejade]]\nmodId = \"jade\"\ntype = \"optional\"\nversionRange = \"[15.10.0,)\"\nordering = \"AFTER\"\nside = \"CLIENT\"\n\n[[dependencies.sablejade]]\nmodId = \"create\"\ntype = \"optional\"\nversionRange = \"[6.0.10,)\"\nordering = \"AFTER\"\nside = \"CLIENT\"\n\n[[credits]]\nname = \"Maks_gaming a.k.a mgcode\"\n"
+      }
+    },
+    {
+      "slug": "cloth-config",
+      "version_id": "izKINKFg",
+      "version": "15.0.140+neoforge",
+      "filename": "cloth-config-15.0.140-neoforge.jar",
+      "sha1": "c3e5733ba4503b102589a026000fd5ce0212f6f2",
+      "metadata": {
+        "META-INF/neoforge.mods.toml": "modLoader = \"javafml\"\nloaderVersion = \"[1,)\"\nissueTrackerURL = \"https://github.com/architectury/ClothConfig/issues/\"\ndisplayURL = \"https://www.curseforge.com/minecraft/mc-mods/cloth-config-forge/\"\nlogoFile = \"icon.png\"\nauthors = \"shedaniel\"\nlicense = \"GNU LGPLv3\"\n\n[[mods]]\nmodId = \"cloth_config\"\nversion = \"15.0.140\"\ndisplayName = \"Cloth Config v15 API\"\ndescription = '''\nAn API for config screens.\n'''\n\n[[dependencies.cloth_config]]\nmodId = \"neoforge\"\ntype = \"required\"\nversionRange = \"[21.0.110-beta,)\"\nordering = \"NONE\"\nside = \"BOTH\"\n"
+      }
+    }
+  ]
+}

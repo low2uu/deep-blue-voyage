@@ -11,7 +11,7 @@
 | Jade | 15.10.6 | 方块、实体和设备信息显示 | [eYz2YBGT](https://modrinth.com/mod/jade/version/eYz2YBGT) |
 | Rhino 必需前置 | 2101.2.8-build.91 | KubeJS JavaScript 引擎，沿用此前已批准版本 | [SqkDvOLG](https://modrinth.com/mod/rhino/version/SqkDvOLG) |
 
-所有文件均匹配 Minecraft 1.21.1 NeoForge 发布标签，下载后已核对 SHA-1 并保存 JAR 元数据证据：[development-mod-evidence.json](development-mod-evidence.json)。Better Advanced Tooltips 已由 KubeJS 内置，不重复安装。Observable 和 NBTEdit 未加入；Jade Sable Compat 保持此前批准状态，本次未额外启用。
+所有文件均匹配 Minecraft 1.21.1 NeoForge 发布标签，下载后已核对 SHA-1 并保存 JAR 元数据证据：[development-mod-evidence.json](development-mod-evidence.json)。Better Advanced Tooltips 已由 KubeJS 内置，不重复安装。Observable 和 NBTEdit 未加入；Jade Sable Compat随后已按用户要求启用，见[辅助Mod启用记录](辅助Mod启用记录-auxiliary-mods.md)。
 
 客户端启动日志已识别五项工具和 Rhino，WorldEdit 平台、Jade 插件和 KubeJS 客户端脚本初始化完成，纹理与着色器加载结束，未出现阻断启动的新依赖错误。交错电网此前的本机加速库提示仍在；本次另有 Mojang 公钥请求失败的网络错误，未阻断资源加载，联机认证尚未验证。世界内命令、ProbeJS 导出和机器交互仍需实际建档检查。
 

@@ -45,6 +45,14 @@ dependencies {
     localRuntime 'maven.modrinth:rhino:SqkDvOLG'
     localRuntime 'maven.modrinth:spark:v5qtqRQi'
     localRuntime 'maven.modrinth:jade:eYz2YBGT'
+    // User-approved recipe, navigation and information helpers (2026-10-14).
+    localRuntime 'maven.modrinth:jei:ufHUqt9b'
+    localRuntime 'maven.modrinth:just-enough-resources-jer:TgNFki8j'
+    localRuntime 'maven.modrinth:xaeros-minimap:irjR7dHk'
+    localRuntime 'maven.modrinth:xaeros-world-map:SnQ4SoDe'
+    localRuntime 'maven.modrinth:betterf3:maXNB1dn'
+    localRuntime 'maven.modrinth:cloth-config:izKINKFg'
+    localRuntime 'maven.modrinth:jade-sable-compat:cxUohR7A'
 }
 
 neoForge {

@@ -31,3 +31,7 @@ Markdown 说明文档统一采用 `中文说明-english-name.md`；各级 `READM
 | [潜艇相关 Mod 能力核对](game-mechanics/潜艇相关Mod能力核对-submarine-mod-capability-research.md) | 航空学、Sable、Deep Seas等能力与接口依据 |
 
 文档中的“设计、候选、待验证”不代表功能已经实现；以各文档的状态和实际验收记录为准。
+
+辅助工具新增与加载验证：[辅助Mod启用记录](辅助Mod启用记录-auxiliary-mods.md)。
+
+当前清单已按主选/同类备选整理；明确冲突的项目见[Mod剔除记录](Mod剔除记录-mod-exclusions.md)。

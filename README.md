@@ -44,7 +44,7 @@
 
 玩法整体方案见 [初版地图与科技路线](docs/game-mechanics/初版地图与科技路线-first-playable-design.md)：以海域限制组织探索，用母艇、子艇与离艇潜水分工，串联六个科技阶段；先制作一条约 2～4 小时的可玩样板路线。文中数值为待测试的设计目标，不代表地图生成或机制已实现。
 
-当前选型以 [当前 Mod 清单](docs/当前Mod清单-current-mod-list.md) 为准：按用户提供的 111 项文件表划分确定加入、待定和备选区，记录授权、文件替换、依赖缺口与明确互斥。另有 [结构化清单](docs/current-mod-list.json)、[关键 JAR 静态证据](docs/current-mod-evidence.json) 和 [当前清单 Excel](outputs/current-mod-list-20261013/深蓝远航-当前Mod清单.xlsx)。初筛候选不代表已同意加入。
+当前选型以 [当前 Mod 清单](docs/当前Mod清单-current-mod-list.md) 为准：按用户提供的 111 项文件表划分确定加入、待定和备选区，记录授权、文件替换、依赖缺口与明确互斥。另有 [结构化清单](docs/current-mod-list.json)、[关键 JAR 静态证据](docs/current-mod-evidence.json) 和 [原清单 Excel（2026-10-13历史快照）](outputs/current-mod-list-20261013/深蓝远航-当前Mod清单.xlsx)。初筛候选不代表已同意加入。
 
 已完成第一轮 [Mod 初筛表](docs/Mod初筛表-mod-candidates.md)：170 项候选，包含 161 个有 1.21.1 NeoForge 发布文件的模组项目和 9 个支持 1.21.1 的数据包。表内记录简介、版本、前置、来源及兼容性备注；[结构化目录](docs/mod-catalog.json) 与 [可筛选 Excel](outputs/mod-screening-20261013/深蓝远航-Mod初筛.xlsx) 同步保存。此阶段尚未进行整包运行验证。
 
