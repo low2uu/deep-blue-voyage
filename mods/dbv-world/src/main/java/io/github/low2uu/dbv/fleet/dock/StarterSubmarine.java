@@ -87,7 +87,7 @@ public final class StarterSubmarine {
                 server.getPlayerList().broadcastSystemMessage(net.minecraft.network.chat.Component.literal(
                         "酒狐号已通过三项检查并登记。船坞岸供已连接（建设模式）；潜行右键船载电脑打开改装菜单。"), false);
             }
-            if (module.registry().flagship().isPresent()) {
+            if (module.registry().flagship().isPresent()&&!module.refit().active()) {
                 dev.ryanhcode.sable.api.sublevel.SubLevelContainer.getContainer(body.getLevel())
                         .removeForceLoadTicket(body, INITIAL_VALIDATION, net.minecraft.util.Unit.INSTANCE);
             }
@@ -100,6 +100,20 @@ public final class StarterSubmarine {
                 && box.minY() >= 13 && box.maxY() <= 100;
     }
     public boolean moored(ServerSubLevel body) { return body.getUniqueId().equals(mooredBody) && mooring != null && mooring.isValid(); }
+    public void releaseMooring(){
+        if(mooring!=null&&mooring.isValid())mooring.remove();
+        mooring=null;mooredBody=null;mooredInstance=null;
+    }
+    public void adoptRefitBody(ServerSubLevel body) throws IOException {
+        releaseMooring();
+        var b=body.getPlot().getBoundingBox();var p=new Vector3d(b.minX()+.5,b.minY()+.5,b.minZ()+.5);
+        var w=body.logicalPose().transformPosition(p,new Vector3d());
+        var tag=new CompoundTag();tag.putUUID("body",body.getUniqueId());
+        tag.putInt("x",b.minX());tag.putInt("y",b.minY());tag.putInt("z",b.minZ());
+        tag.putDouble("worldX",w.x);tag.putDouble("worldY",w.y);tag.putDouble("worldZ",w.z);
+        DockFiles.replace(directory.resolve("starter.nbt"),tag);vesselData=tag;
+        dev.ryanhcode.sable.api.sublevel.SubLevelContainer.getContainer(body.getLevel()).addForceLoadTicket(body,INITIAL_VALIDATION,net.minecraft.util.Unit.INSTANCE);
+    }
     private void create(FleetModule module) throws IOException {
         if (module.registry().flagship().isPresent() || !module.adapter().loaded(server.overworld()).isEmpty())
             throw new IOException("世界已有船体或主艇，拒绝自动生成");

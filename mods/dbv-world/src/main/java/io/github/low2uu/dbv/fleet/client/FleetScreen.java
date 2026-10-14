@@ -6,6 +6,7 @@ import java.util.UUID;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -37,8 +38,8 @@ public final class FleetScreen extends Screen {
         addRenderableWidget(Button.builder(Component.literal(">"),b->{equipment=true;page=Math.min(pages()-1,page+1);}).bounds(left+panelWidth-40,top+38,22,20).build());
         int w=(panelWidth-46)/4,y=top+panelHeight-52;
         begin=addRenderableWidget(Button.builder(Component.literal("开始改装"),b->request(PanelAction.BEGIN)).bounds(left+14,y,w,20).build());
-        check=addRenderableWidget(Button.builder(Component.literal("重新检查"),b->{confirmCancel=false;request(PanelAction.REFRESH);}).bounds(left+20+w,y,w,20).build());
-        commit=addRenderableWidget(Button.builder(Component.literal("提交改装"),b->request(PanelAction.COMMIT)).bounds(left+26+2*w,y,w,20).build());
+        check=addRenderableWidget(Button.builder(Component.literal("重新检查"),b->{confirmCancel=false;request(PanelAction.CHECK);}).bounds(left+20+w,y,w,20).build());
+        commit=addRenderableWidget(Button.builder(Component.literal("完成改装"),b->request(PanelAction.COMMIT)).bounds(left+26+2*w,y,w,20).build());
         cancel=addRenderableWidget(Button.builder(Component.literal("取消还原"),b->{
             if(confirmCancel){confirmCancel=false;request(PanelAction.CANCEL);}else{confirmCancel=true;equipment=false;updateButtons();}
         }).bounds(left+32+3*w,y,w,20).build());
@@ -47,12 +48,21 @@ public final class FleetScreen extends Screen {
     private void updateButtons(){
         if(begin==null)return;
         boolean editable=view.has(PanelView.EDITABLE)&&!busy;
-        begin.active=editable&&!view.has(PanelView.ACTIVE)&&!view.has(PanelView.PENDING)
-                &&view.has(PanelView.CONTROLLER)&&view.has(PanelView.OXYGEN)&&view.has(PanelView.SEALED);
+        begin.active=editable&&!view.has(PanelView.ACTIVE);
         commit.active=editable&&view.has(PanelView.ACTIVE)&&!view.has(PanelView.CHECKING);
-        cancel.active=editable&&view.has(PanelView.ACTIVE);
+        cancel.active=editable&&view.has(PanelView.ACTIVE)&&!view.has(PanelView.CHECKING);
         check.active=!busy&&view.has(PanelView.CONNECTED);
+        check.setTooltip(Tooltip.create(Component.literal(view.notice().startsWith("检查完成")?view.notice():"检查当前资格与权限，并显示结果；不会自动修复舱室或设备。")));
+        begin.setTooltip(Tooltip.create(Component.literal(beginProblem().isEmpty()?"先保存改装前备份，再允许编辑船体。":beginProblem())));
         cancel.setMessage(Component.literal(confirmCancel?"确认还原":"取消还原"));
+    }
+    private String beginProblem(){
+        if(!view.has(PanelView.CONNECTED))return "无法开始："+view.status()+"；"+view.notice();
+        if(busy)return "正在等待服务器处理，请稍候。";
+        if(!view.has(PanelView.REGISTERED))return "无法开始：此船尚未登记为唯一主潜艇。";
+        if(!view.has(PanelView.EDITABLE))return "无法开始："+view.status();
+        if(view.has(PanelView.ACTIVE))return "已在改装中：关闭窗口即可施工，完成后提交或取消还原。";
+        return ""; // Operating qualification is checked at completion, never admission to the dock.
     }
     private void request(int action){busy=true;ticks=0;updateButtons();PacketDistributor.sendToServer(new PanelAction(view.session(),action));}
     @Override public void tick(){if(++ticks>=20&&view.has(PanelView.CONNECTED)){ticks=0;PacketDistributor.sendToServer(new PanelAction(view.session(),PanelAction.REFRESH));}}
@@ -73,10 +83,10 @@ public final class FleetScreen extends Screen {
         g.fill(left,top,left+panelWidth,top+32,0xFF193542);
         clipped(g,view.title()+"  ·  潜艇管理",left+14,top+13,panelWidth-56,0xE6F7F6);
         if(equipment)renderDevices(g,mouseX,mouseY);else renderOverview(g);
-        clipped(g,"建设阶段 · 船坞岸供 · 关闭窗口不会取消改装",left+14,top+panelHeight-19,panelWidth-28,0x8AABB8);
+        clipped(g,"船坞改装 · 三项条件在完成时验收 · 关闭窗口可施工",left+14,top+panelHeight-19,panelWidth-28,0x8AABB8);
         super.render(g,mouseX,mouseY,partial);
         if(!equipment&&mouseX>=left+14&&mouseX<left+panelWidth-14&&mouseY>=top+112&&mouseY<top+panelHeight-60)
-            g.renderTooltip(font,font.split(Component.literal(view.status()+"\n"+view.notice()),Math.min(320,panelWidth-30)),mouseX,mouseY);
+            g.renderTooltip(font,font.split(Component.literal(beginProblem()+"\n"+view.status()+"\n"+view.notice()),Math.min(320,panelWidth-30)),mouseX,mouseY);
     }
     private void renderOverview(GuiGraphics g){
         int cardWidth=(panelWidth-40)/3;
@@ -85,13 +95,14 @@ public final class FleetScreen extends Screen {
             int x=left+14+i*(cardWidth+6),y=top+67;
             g.fill(x,y,x+cardWidth,y+35,0xFF1B3440);
             clipped(g,labels[i],x+6,y+5,cardWidth-12,0xC8DAE2);
-            String state=view.has(flags[i])?"符合":(i>0&&view.has(PanelView.PENDING)?"检测中":"未满足");
+            String state=view.has(PanelView.BLOCK_MODE)&&i>0?"完成时检测":view.has(flags[i])?"符合":(i>0&&view.has(PanelView.PENDING)?"检测中":"未满足");
             g.drawString(font,state,x+6,y+21,view.has(flags[i])?0x75DFC3:0xF0BA77,false);
         }
         int y=top+112;
         String identity=view.has(PanelView.REGISTERED)?"身份：唯一主潜艇":"身份：尚未登记为主潜艇";
         g.drawString(font,identity,left+14,y,0x96D7E1,false);y+=16;
-        String[] paragraphs={confirmCancel?"确认还原？本次改装的新增和修改都将撤销。再次点击“确认还原”执行。":view.notice(),view.status()};
+        String problem=beginProblem();
+        String[] paragraphs={confirmCancel?"确认还原？本次改装的新增和修改都将撤销。再次点击“确认还原”执行。":(view.notice().startsWith("检查完成")?view.notice():(!problem.isEmpty()&&!view.has(PanelView.ACTIVE)?problem:view.notice())),view.status()};
         for(int p=0;p<paragraphs.length;p++){
             for(var line:font.split(Component.literal(paragraphs[p]),panelWidth-28)){
                 if(y>top+panelHeight-70)break;

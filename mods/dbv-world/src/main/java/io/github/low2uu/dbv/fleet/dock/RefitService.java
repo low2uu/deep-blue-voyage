@@ -1,196 +1,262 @@
 package io.github.low2uu.dbv.fleet.dock;
 
+import dev.ryanhcode.sable.api.SubLevelAssemblyHelper;
+import dev.ryanhcode.sable.companion.math.BoundingBox3i;
 import dev.ryanhcode.sable.sublevel.ServerSubLevel;
+import dev.ryanhcode.sable.sublevel.plot.ServerLevelPlot;
 import io.github.low2uu.dbv.fleet.FleetModule;
+import io.github.low2uu.dbv.fleet.compat.VesselInspection;
+import io.github.low2uu.dbv.fleet.domain.Qualification;
 import io.github.low2uu.dbv.world.ConstructionMode;
 import java.io.IOException;
 import java.nio.file.*;
+import java.util.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.*;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.LevelResource;
 
-/** One durable body-only transaction. Interrupted sessions roll back before editing can resume. */
+/** Durable physical -> world blocks -> validated physical transaction. Unknown transitions fail closed. */
 public final class RefitService {
+    private static final BlockPos PAD=new BlockPos(60,68,150);
     private final MinecraftServer server;
-    private final Path active;
-    private CompoundTag session;
-    private boolean recoveryRequired;
-    private boolean blocked;
-    private long checkingUntil;
+    private final Path file;
+    private final LegacyRefitService legacy;
+    private CompoundTag journal;
+    private boolean recovering,blocked;
+    private long deadline;
     public RefitService(MinecraftServer server) throws IOException {
-        this.server=server;
-        active=server.getWorldPath(LevelResource.ROOT).resolve("dbv/fleet/dock/active-refit.nbt");
-        if (Files.exists(active.resolveSibling("active-refit.nbt.pending"))) throw new IOException("改装备份写入中断，禁止继续编辑");
-        if (Files.exists(active)) { session=DockFiles.read(active); validate(session); recoveryRequired=true; }
-    }
-    public boolean active() { return session!=null; }
-    public boolean checking() { return checkingUntil>0; }
-    public String accessProblem(ServerPlayer player,FleetModule module) {
-        try { authorize(player,module);return null; }
-        catch(Exception e) { return e.getMessage(); }
-    }
-    public String status() { return blocked ? "恢复异常，已锁定；请保留船坞备份" : recoveryRequired ? "上次改装中断，等待原船加载后自动还原" : checkingUntil>0 ? "正在等待舱室扫描，编辑暂时锁定" : active() ? "改装中；范围限原船包围盒，提交失败会还原" : "未改装；建设模式/创造模式可开始"; }
-    private ServerSubLevel body(FleetModule module) {
-        var identity=module.registry().flagship().orElseThrow(()->new IllegalStateException("主艇尚未登记，请等待供氧和密闭扫描"));
-        var body=module.adapter().find(server.overworld(),identity.bodyId());
-        if(body==null) throw new IllegalStateException("原主艇未加载，不能用新船替代");
-        if(session!=null && (!session.getUUID("body").equals(identity.bodyId()) || !session.getUUID("vessel").equals(identity.vesselId())))
-            throw new IllegalStateException("备份与主艇身份不符");
-        return body;
-    }
-    private ServerSubLevel authorize(ServerPlayer player,FleetModule module) {
-        if(!ConstructionMode.ENABLED || !player.isCreative() || !player.hasPermissions(2)) throw new IllegalStateException("首版仅限建设模式下的创造模式管理员");
-        if(blocked || recoveryRequired) throw new IllegalStateException(status());
-        var body=body(module);
-        if(module.sample(server).state()!=io.github.low2uu.dbv.fleet.telemetry.VesselTelemetry.State.ACTIVE)
-            throw new IllegalStateException("主艇身份或载体状态异常，请先核对档案");
-        if(player.serverLevel()!=server.overworld() || !StarterSubmarine.inDock(body) || !module.starter().moored(body))
-            throw new IllegalStateException("请在初始船坞内对已系泊主艇操作");
-        var local=body.logicalPose().transformPositionInverse(player.position());
-        var b=body.getPlot().getBoundingBox();
-        if(local.x<b.minX()-12 || local.x>b.maxX()+12 || local.y<b.minY()-12 || local.y>b.maxY()+12 || local.z<b.minZ()-12 || local.z>b.maxZ()+12)
-            throw new IllegalStateException("请靠近主艇后操作");
-        if(session!=null && !session.getUUID("owner").equals(player.getUUID())) throw new IllegalStateException("另一位开发者正在改装，不能接管");
-        return body;
-    }
-    public String execute(String action,ServerPlayer player,FleetModule module) throws IOException {
-        var body=authorize(player,module);
-        if(action.equals("check")) {
-            var report=module.inspection().inspect(body);
-            io.github.low2uu.dbv.fleet.command.ControllerInteraction.display(report,player::sendSystemMessage,1);
-            return status();
+        this.server=server;legacy=new LegacyRefitService(server);
+        file=server.getWorldPath(LevelResource.ROOT).resolve("dbv/fleet/dock/block-refit.nbt");
+        AtomicSnapshotFile.requireComplete(file);
+        if(Files.exists(file)){
+            journal=DockFiles.read(file);validate();recovering=true;
+            if(legacy.active())throw new IOException("检测到两份活动改装记录，停止自动操作");
+            if(!phase().equals("STATIC"))blocked=true; // A half-converted world must never be guessed at.
         }
-        if(action.equals("begin")) {
-            if(active()) throw new IllegalStateException("已有改装备份，请提交或取消");
-            module.inspection().inspect(body).requireEligible();
-            if(!body.getPlot().getContraptions().isEmpty()) throw new IllegalStateException("首版暂不备份运动机械结构，请先移除");
-            var b=body.getPlot().getBoundingBox();
-            long volume=(long)(b.maxX()-b.minX()+1)*(b.maxY()-b.minY()+1)*(b.maxZ()-b.minZ()+1);
-            if(volume>4096 || volume<=0) throw new IllegalStateException("首版仅支持4096格以内的单船体");
-            var data=new CompoundTag(); data.putInt("schema",1);data.putUUID("body",body.getUniqueId());
-            data.putUUID("vessel",module.registry().flagship().orElseThrow().vesselId());data.putUUID("owner",player.getUUID());
-            data.putIntArray("bounds",new int[]{b.minX(),b.minY(),b.minZ(),b.maxX(),b.maxY(),b.maxZ()});
-            var entries=new ListTag();
-            for(var p:BlockPos.betweenClosed(b.minX(),b.minY(),b.minZ(),b.maxX(),b.maxY(),b.maxZ())) {
-                var state=body.getLevel().getBlockState(p);
-                if(!supported(state)) throw new IllegalStateException("首版快照不支持该设备："+state.getBlock());
-                var entry=new CompoundTag();entry.putLong("pos",p.asLong());entry.put("state",NbtUtils.writeBlockState(state));
-                var be=body.getLevel().getBlockEntity(p);
-                if(be!=null) entry.put("be",be.saveWithFullMetadata(body.getLevel().registryAccess()));
-                entries.add(entry);
-            }
-            data.put("blocks",entries);
-            DockFiles.create(active,data);session=data;
-            return "备份已落盘，开始改装。可替换船壳、玻璃和三项核心设备；暂不支持扩容、容器、实体或子船。";
+    }
+    public boolean active(){return journal!=null||legacy.active();}
+    public boolean checking(){return journal!=null?phase().equals("VALIDATING"):legacy.checking();}
+    public boolean blockMode(){return journal!=null&&!phase().equals("VALIDATING");}
+    private String phase(){return journal==null?"":journal.getString("phase");}
+    public String status(){
+        if(journal==null)return legacy.active()?legacy.status():"物理船体；可开始拆解改装，三项条件只在完成时验收。";
+        if(blocked)return "转换中断或恢复异常，已锁定；保留船坞档案，禁止重复装配。";
+        if(recovering)return "正在恢复上次未完成的方块改装。";
+        return checking()?"完成改装验收中：临时装配并等待密闭与供氧检测，暂不可编辑。":"方块改装中：船体已拆为世界方块；关闭窗口施工，完成后提交验收。";
+    }
+    public ServerSubLevel currentBody(FleetModule m){
+        UUID id=journal!=null&&journal.hasUUID("candidate")?journal.getUUID("candidate"):m.registry().flagship().map(i->i.bodyId()).orElse(null);
+        return id==null?null:m.adapter().find(server.overworld(),id);
+    }
+    private static net.minecraft.world.phys.AABB worldBox(ServerSubLevel body){var b=body.boundingBox();return new net.minecraft.world.phys.AABB(b.minX(),b.minY(),b.minZ(),b.maxX(),b.maxY(),b.maxZ());}
+    private BoundingBox3i bounds(){var a=journal.getIntArray("worldBounds");return new BoundingBox3i(a[0],a[1],a[2],a[3],a[4],a[5]);}
+    public boolean contains(BlockPos p){if(journal==null)return false;var b=bounds();return p.getX()>=b.minX()&&p.getX()<=b.maxX()&&p.getY()>=b.minY()&&p.getY()<=b.maxY()&&p.getZ()>=b.minZ()&&p.getZ()<=b.maxZ();}
+    public boolean near(ServerPlayer player){return journal!=null&&player.serverLevel()==server.overworld()&&bounds().toAABB().inflate(12).contains(player.position());}
+    public String accessProblem(ServerPlayer p,FleetModule m){
+        if(journal==null&&legacy.active())return legacy.accessProblem(p,m);
+        try{authorize(p,m);return null;}catch(Exception e){return e.getMessage()==null?"船坞状态无法确认":e.getMessage();}
+    }
+    private void authorize(ServerPlayer p,FleetModule m){
+        if(!ConstructionMode.ENABLED||!p.isCreative()||!p.hasPermissions(2))throw new IllegalStateException("首版仅限建设模式下的创造模式管理员");
+        if(blocked||recovering)throw new IllegalStateException(status());
+        if(journal!=null){
+            verifyIdentity(m);
+            if(!journal.getUUID("owner").equals(p.getUUID()))throw new IllegalStateException("另一位开发者正在改装，不能接管");
+            if(!near(p))throw new IllegalStateException("请靠近船坞改装区域");
+        }else{
+            var body=currentBody(m);
+            if(body==null||body.isRemoved())throw new IllegalStateException("原主艇未加载，不能用新船替代");
+            if(m.sample(server).state()!=io.github.low2uu.dbv.fleet.telemetry.VesselTelemetry.State.ACTIVE)throw new IllegalStateException("主艇身份异常，请核对档案");
+            if(p.serverLevel()!=server.overworld()||!StarterSubmarine.inDock(body)||!m.starter().moored(body))throw new IllegalStateException("请在初始船坞内对已系泊主艇操作");
+            if(!worldBox(body).inflate(12).contains(p.position()))throw new IllegalStateException("请靠近主艇后操作");
         }
-        if(!active()) throw new IllegalStateException("请先开始改装");
-        if(action.equals("commit")) {
-            var report=module.inspection().inspect(body);
-            if(report.qualification().pending()) {
-                if(checkingUntil==0) checkingUntil=server.overworld().getGameTime()+200;
-                return "验收中，等待结构扫描（最多10秒）；期间锁定编辑，完成后自动通知。";
-            }
-            if(!report.qualification().eligible()) {
-                String reasons=String.join("；",report.qualification().reasons());restore(body);finish("rejected");
-                return "验收失败，已还原改装前状态："+reasons;
-            }
-            finish("committed");return "验收通过，改装已保存；主艇身份保持不变，旧备份保留在history。";
+    }
+    public String execute(String action,ServerPlayer p,FleetModule m) throws IOException {
+        if(legacy.active())return legacy.execute(action,p,m);
+        authorize(p,m);
+        if(action.equals("check"))return status();
+        if(action.equals("begin")){if(active())throw new IllegalStateException("已有改装，请完成或取消");return begin(p,m);}
+        if(journal==null)throw new IllegalStateException("请先开始改装");
+        if(checking())throw new IllegalStateException("正在验收，请等待结果");
+        if(action.equals("cancel")){rollback(m,"cancelled");return "已取消：恢复改装前船体，主艇永久身份不变。";}
+        if(action.equals("commit")){
+            try{
+                // Validate supported block data before handing anything to the external assembly API.
+                capture(bounds());
+                assemble(m,false);
+                deadline=server.overworld().getGameTime()+400;
+                return "正在完成改装：已临时装配，等待三项检测（最多20秒）；通过后交付，失败还原。";
+            }catch(IllegalArgumentException e){rollback(m,"rejected");return "验收失败，已恢复改装前船体："+e.getMessage();}
         }
-        if(action.equals("cancel")) { restore(body);finish("cancelled");return "已取消改装并还原船体与支持设备的数据。"; }
         throw new IllegalArgumentException("未知改装操作");
     }
-    public void recover(FleetModule module) throws IOException {
-        if(!recoveryRequired || blocked) return;
-        var identity=module.registry().flagship();
-        if(identity.isEmpty() || module.adapter().find(server.overworld(),identity.get().bodyId())==null) return;
-        try { restore(body(module));finish("interrupted");recoveryRequired=false; }
-        catch(IOException | RuntimeException error) { blocked=true;throw error; }
+    private String begin(ServerPlayer p,FleetModule m) throws IOException {
+        var body=currentBody(m);var b=body.getPlot().getBoundingBox();
+        if(!body.getPlot().getContraptions().isEmpty())throw new IllegalStateException("首版暂不支持运动机械与子船快照");
+        long volume=(long)(b.maxX()-b.minX()+1)*(b.maxY()-b.minY()+1)*(b.maxZ()-b.minZ()+1);
+        if(volume<=0||volume>4096)throw new IllegalStateException("首版支持4096格以内的船体");
+        for(int x=b.minX()>>4;x<=b.maxX()>>4;x++)for(int z=b.minZ()>>4;z<=b.maxZ()>>4;z++)
+            if(body.getPlot().getChunk(body.getPlot().toLocal(new net.minecraft.world.level.ChunkPos(x,z)))==null)
+                throw new IllegalStateException("船体区块尚未加载，无法完整备份，请稍候再开始");
+        var target=new BoundingBox3i(PAD.getX(),PAD.getY(),PAD.getZ(),PAD.getX()+b.maxX()-b.minX(),PAD.getY()+b.maxY()-b.minY(),PAD.getZ()+b.maxZ()-b.minZ());
+        if(target.maxX()>128||target.maxY()>100||target.maxZ()>240)throw new IllegalStateException("船体超出改装泊位");
+        for(var pos:positions(target))if(!server.overworld().getBlockState(pos).isAir())throw new IllegalStateException("改装泊位被占用："+pos.toShortString());
+        for(var other:m.adapter().loaded(server.overworld()))if(other!=body&&!other.isRemoved()&&worldBox(other).intersects(target.toAABB()))throw new IllegalStateException("改装泊位有其他物理船体");
+        var original=capture(new BoundingBox3i(b));
+        var data=new CompoundTag();data.putInt("schema",2);data.putString("phase","PREPARING");
+        data.putUUID("owner",p.getUUID());data.putUUID("vessel",m.registry().flagship().orElseThrow().vesselId());data.putUUID("originalBody",body.getUniqueId());
+        data.putIntArray("worldBounds",new int[]{target.minX(),target.minY(),target.minZ(),target.maxX(),target.maxY(),target.maxZ()});data.put("original",original);
+        DockFiles.create(file,data);journal=data;
+        try{
+            m.starter().releaseMooring();
+            disassemble(body,new BlockPos(b.minX(),b.minY(),b.minZ()));
+            saveWorld();setPhase("STATIC");
+            return "备份已保存，物理船体已拆为船坞世界方块。无需预先密闭或供氧；完成时才检查三项条件。";
+        }catch(IOException|RuntimeException e){blocked=true;throw e;}
     }
-    public void process(FleetModule module) throws IOException {
-        if(checkingUntil==0 || blocked || recoveryRequired || !active() || server.getTickCount()%20!=0) return;
-        try {
-            var body=body(module);var report=module.inspection().inspect(body);
-            if(report.qualification().pending() && server.overworld().getGameTime()<checkingUntil) return;
-            var owner=server.getPlayerList().getPlayer(session.getUUID("owner"));
-            boolean eligible=report.qualification().eligible();
-            if(!eligible) restore(body);
-            finish(eligible?"committed":"rejected");
-            if(owner!=null) {
-                String result=eligible?"验收完成，改装已保存。":"验收未通过，已自动还原："+String.join("；",report.qualification().reasons());
-                if(!io.github.low2uu.dbv.fleet.ui.FleetPanel.notifyResult(owner,result))
-                    owner.sendSystemMessage(net.minecraft.network.chat.Component.literal(result));
-            }
-        } catch(IOException | RuntimeException error) { blocked=true;throw error; }
-    }
-    private void restore(ServerSubLevel body) throws IOException {
-        try { restoreBody(body); }
-        catch(IOException | RuntimeException error) { blocked=true;throw error; }
-    }
-    private void restoreBody(ServerSubLevel body) throws IOException {
-        validate(session);
-        // Validate every state before touching the live body. Do not use a whole-plot load over live chunks.
-        var entries=session.getList("blocks",Tag.TAG_COMPOUND);
-        var registry=body.getLevel().holderLookup(Registries.BLOCK);
-        var states=new java.util.ArrayList<net.minecraft.world.level.block.state.BlockState>();
-        for(int i=0;i<entries.size();i++) {
-            var state=NbtUtils.readBlockState(registry,entries.getCompound(i).getCompound("state"));
-            if(!supported(state)) throw new IOException("快照含未支持设备，停止恢复");
-            states.add(state);
+    private List<BlockPos> positions(BoundingBox3i b){return BlockPos.betweenClosedStream(b.minX(),b.minY(),b.minZ(),b.maxX(),b.maxY(),b.maxZ()).map(BlockPos::immutable).toList();}
+    /** Snapshot positions are relative, so a new Sable plot can receive the original data. */
+    private ListTag capture(BoundingBox3i b){
+        var entries=new ListTag();var level=server.overworld();var origin=new BlockPos(b.minX(),b.minY(),b.minZ());
+        for(var p:positions(b)){
+            var state=level.getBlockState(p);if(!supported(state))throw new IllegalArgumentException("快照暂不支持："+state.getBlock());
+            var e=new CompoundTag();e.putLong("offset",p.subtract(origin).asLong());e.put("state",NbtUtils.writeBlockState(state));
+            var be=level.getBlockEntity(p);if(be!=null)e.put("be",be.saveWithFullMetadata(level.registryAccess()));entries.add(e);
         }
-        var level=body.getLevel();
-        for(int i=0;i<entries.size();i++) {
-            var e=entries.getCompound(i);var p=BlockPos.of(e.getLong("pos"));
-            level.removeBlockEntity(p);
-            level.setBlock(p,states.get(i),3);
-            if(e.contains("be")) {
-                var be=BlockEntity.loadStatic(p,states.get(i),e.getCompound("be"),level.registryAccess());
-                if(be==null) throw new IOException("方块实体恢复失败："+p);
-                level.setBlockEntity(be);be.setChanged();
-                level.sendBlockUpdated(p,states.get(i),states.get(i),3);
+        return entries;
+    }
+    private void disassemble(ServerSubLevel body,BlockPos origin) throws IOException {
+        var level=server.overworld();var b=new BoundingBox3i(body.getPlot().getBoundingBox());
+        var blocks=positions(b).stream().filter(p->!level.getBlockState(p).isAir()).toList();
+        var states=blocks.stream().map(level::getBlockState).toList();
+        var transform=new SubLevelAssemblyHelper.AssemblyTransform(origin,PAD,0,Rotation.NONE,level);
+        ((ServerLevelPlot)body.getPlot()).kickAllEntities();
+        if(!blocks.isEmpty())SubLevelAssemblyHelper.moveBlocks(level,transform,blocks);
+        SubLevelAssemblyHelper.moveTrackingPoints(level,b,null,transform);
+        for(int i=0;i<blocks.size();i++)if(!level.getBlockState(transform.apply(blocks.get(i))).equals(states.get(i)))throw new IOException("拆解结果不完整，停止转换并保留备份");
+        dev.ryanhcode.sable.api.sublevel.SubLevelContainer.getContainer(level).removeSubLevel(body,dev.ryanhcode.sable.sublevel.storage.SubLevelRemovalReason.REMOVED);
+    }
+    private ServerSubLevel assemble(FleetModule m,boolean restored) throws IOException {
+        var level=server.overworld();var blocks=positions(bounds()).stream().filter(p->!level.getBlockState(p).isAir()).toList();
+        if(blocks.isEmpty())throw new IllegalArgumentException("船体为空");
+        var states=blocks.stream().map(level::getBlockState).toList();
+        setPhase(restored?"RESTORING":"ASSEMBLING");
+        try{
+            var body=SubLevelAssemblyHelper.assembleBlocks(level,PAD,blocks,bounds());
+            if(body==null||body.isRemoved())throw new IOException("Sable装配失败");
+            journal.putUUID("candidate",body.getUniqueId());
+            // Commit the allocated UUID before changing authoritative identity metadata.
+            DockFiles.replace(file,journal);
+            var plotOrigin=body.getPlot().getCenterBlock();
+            for(int i=0;i<blocks.size();i++){
+                var target=plotOrigin.offset(blocks.get(i).subtract(PAD));
+                if(!level.getBlockState(blocks.get(i)).isAir()||!level.getBlockState(target).equals(states.get(i))
+                        ||states.get(i).hasBlockEntity()&&level.getBlockEntity(target)==null)
+                    throw new IOException("装配结果不完整，已保留原始备份和候选船体记录");
+            }
+            var expected=m.registry().flagship().orElseThrow().bodyId();m.rebindForRefit(expected,body);
+            m.starter().adoptRefitBody(body);m.starter().tick(m);
+            saveWorld();setPhase(restored?"RESTORED":"VALIDATING");
+            return body;
+        }catch(IOException|RuntimeException e){blocked=true;throw e;}
+    }
+    private void restoreWorld() throws IOException {
+        var level=server.overworld();var entries=journal.getList("original",Tag.TAG_COMPOUND);
+        var states=new ArrayList<BlockState>();
+        for(int i=0;i<entries.size();i++){
+            var state=NbtUtils.readBlockState(level.holderLookup(Registries.BLOCK),entries.getCompound(i).getCompound("state"));
+            if(!supported(state))throw new IOException("备份方块不受支持，停止恢复");states.add(state);
+        }
+        for(var p:positions(bounds())){level.removeBlockEntity(p);level.setBlock(p,Blocks.AIR.defaultBlockState(),3);}
+        for(int i=0;i<entries.size();i++){
+            var e=entries.getCompound(i);var p=PAD.offset(BlockPos.of(e.getLong("offset")));var state=states.get(i);
+            level.setBlock(p,state,3);
+            if(e.contains("be")){
+                var tag=e.getCompound("be").copy();tag.putInt("x",p.getX());tag.putInt("y",p.getY());tag.putInt("z",p.getZ());
+                var be=BlockEntity.loadStatic(p,state,tag,level.registryAccess());if(be==null)throw new IOException("设备恢复失败");
+                level.setBlockEntity(be);be.setChanged();level.sendBlockUpdated(p,state,state,3);
             }
         }
+    }
+    private void rollback(FleetModule m,String outcome) throws IOException {
+        try{
+            setPhase("ROLLING_BACK");
+            if(journal.hasUUID("candidate")){
+                var candidate=m.adapter().find(server.overworld(),journal.getUUID("candidate"));
+                if(candidate==null)throw new IOException("待还原物理船体未加载，保留备份");
+                m.starter().releaseMooring();disassemble(candidate,candidate.getPlot().getCenterBlock());
+                journal.remove("candidate");
+            }
+            restoreWorld();assemble(m,true);finish(outcome);
+        }catch(IOException|RuntimeException e){blocked=true;throw e;}
+    }
+    public void recover(FleetModule m) throws IOException {
+        legacy.recover(m);
+        if(!recovering||blocked||journal==null)return;
+        try{
+            verifyIdentity(m);
+            for(var p:positions(bounds()))server.overworld().getChunkAt(p);
+            var old=m.adapter().find(server.overworld(),journal.getUUID("originalBody"));
+            if(old!=null&&!old.isRemoved())throw new IOException("原物理船体仍存在，禁止重复恢复");
+            rollback(m,"interrupted");recovering=false;
+        }catch(IOException|RuntimeException e){blocked=true;throw e;}
+    }
+    public void process(FleetModule m) throws IOException {
+        if(journal==null){legacy.process(m);return;}
+        if(!checking()||blocked||recovering||server.getTickCount()%20!=0)return;
+        try{verifyIdentity(m);}catch(RuntimeException e){blocked=true;throw e;}
+        var body=currentBody(m);if(body==null)return;
+        var q=m.inspection().inspect(body).qualification();
+        if(!q.eligible()&&server.overworld().getGameTime()<deadline)return;
+        var owner=server.getPlayerList().getPlayer(journal.getUUID("owner"));String result;
+        if(q.eligible()){finish("committed");result="三项验收通过：改装完成，已恢复物理船体；主艇永久身份不变。";}
+        else{rollback(m,"rejected");result="完成验收失败，已恢复改装前物理船体："+String.join("；",q.reasons());}
+        if(owner!=null&&!io.github.low2uu.dbv.fleet.ui.FleetPanel.notifyResult(owner,result))owner.sendSystemMessage(net.minecraft.network.chat.Component.literal(result));
     }
     private void finish(String outcome) throws IOException {
-        try { closeSnapshot(outcome); }
-        catch(IOException | RuntimeException error) { blocked=true;throw error; }
+        saveWorld();var history=file.getParent().resolve("history");Files.createDirectories(history);
+        Files.move(file,history.resolve(UUID.randomUUID()+"-blocks-"+outcome+".nbt"),StandardCopyOption.ATOMIC_MOVE);
+        journal=null;deadline=0;
     }
-    private void closeSnapshot(String outcome) throws IOException {
-        if(!server.saveEverything(false,true,true)) throw new IOException("世界存盘失败，保留活动备份");
-        Path history=active.getParent().resolve("history");Files.createDirectories(history);
-        Files.move(active,history.resolve(java.util.UUID.randomUUID()+"-"+outcome+".nbt"),StandardCopyOption.ATOMIC_MOVE);
-        session=null;
-        checkingUntil=0;
+    private void setPhase(String phase) throws IOException {journal.putString("phase",phase);DockFiles.replace(file,journal);}
+    private void saveWorld() throws IOException {if(!server.saveEverything(false,true,true))throw new IOException("世界保存失败，保留改装备份");}
+    private void verifyIdentity(FleetModule m){
+        if(m.registry().flagship().isEmpty()||!m.registry().flagship().orElseThrow().vesselId().equals(journal.getUUID("vessel")))
+            throw new IllegalStateException("活动改装与永久主艇身份不符，禁止转换");
     }
-    private static void validate(CompoundTag data) throws IOException {
-        if(data.getInt("schema")!=1 || !data.hasUUID("body") || !data.hasUUID("vessel") || !data.hasUUID("owner")) throw new IOException("改装快照头损坏");
-        var b=data.getIntArray("bounds");
-        if(b.length!=6) throw new IOException("改装边界损坏");
-        long volume=(long)(b[3]-b[0]+1)*(b[4]-b[1]+1)*(b[5]-b[2]+1);
-        var entries=data.getList("blocks",Tag.TAG_COMPOUND);
-        if(b[3]<b[0] || b[4]<b[1] || b[5]<b[2] || volume<=0 || volume>4096 || entries.size()!=volume) throw new IOException("改装快照范围不合法");
-        var seen=new java.util.HashSet<Long>();
-        for(int i=0;i<entries.size();i++) {
-            var e=entries.getCompound(i);var p=BlockPos.of(e.getLong("pos"));
-            if(!e.contains("state",Tag.TAG_COMPOUND) || !seen.add(p.asLong()) || p.getX()<b[0] || p.getX()>b[3] || p.getY()<b[1] || p.getY()>b[4] || p.getZ()<b[2] || p.getZ()>b[5]) throw new IOException("改装快照条目损坏");
+    private void validate() throws IOException {
+        if(journal.getInt("schema")!=2||!journal.hasUUID("vessel")||!journal.hasUUID("owner")||!journal.hasUUID("originalBody"))throw new IOException("方块改装档案头损坏");
+        if(!Set.of("PREPARING","STATIC","ASSEMBLING","VALIDATING","ROLLING_BACK","RESTORING","RESTORED").contains(phase()))throw new IOException("未知改装转换阶段");
+        var b=journal.getIntArray("worldBounds");
+        if(b.length!=6||b[0]!=60||b[1]!=68||b[2]!=150||b[3]<b[0]||b[4]<b[1]||b[5]<b[2]||b[3]>128||b[4]>100||b[5]>240)throw new IOException("改装区域无效");
+        long volume=(long)(b[3]-b[0]+1)*(b[4]-b[1]+1)*(b[5]-b[2]+1);var list=journal.getList("original",Tag.TAG_COMPOUND);
+        if(volume>4096||list.size()!=volume)throw new IOException("改装备份数量无效");
+        var seen=new HashSet<Long>();
+        for(int i=0;i<list.size();i++){
+            var e=list.getCompound(i);var p=BlockPos.of(e.getLong("offset"));
+            if(!e.contains("state",Tag.TAG_COMPOUND)||!seen.add(p.asLong())||p.getX()<0||p.getY()<0||p.getZ()<0||p.getX()>b[3]-b[0]||p.getY()>b[4]-b[1]||p.getZ()>b[5]-b[2])throw new IOException("改装备份条目无效");
         }
     }
-    public boolean mayEdit(ServerPlayer player,BlockPos p,net.minecraft.world.level.block.state.BlockState state) {
-        if(!active() || blocked || recoveryRequired || checkingUntil>0 || !ConstructionMode.ENABLED || !player.isCreative() || !player.hasPermissions(2) || !session.getUUID("owner").equals(player.getUUID()) || !supported(state)) return false;
-        var b=session.getIntArray("bounds");
-        // Retain the mooring anchor block and keep the first implementation inside the original envelope.
-        return p.getX()>=b[0] && p.getX()<=b[3] && p.getY()>=b[1] && p.getY()<=b[4] && p.getZ()>=b[2] && p.getZ()<=b[5]
-                && !(p.getX()==b[0] && p.getY()==b[1] && p.getZ()==b[2]);
+    public boolean mayEdit(ServerPlayer p,BlockPos pos,BlockState state){
+        if(legacy.active())return legacy.mayEdit(p,pos,state);
+        return journal!=null&&phase().equals("STATIC")&&!blocked&&!recovering&&contains(pos)&&supported(state)&&p.serverLevel()==server.overworld()&&p.isCreative()&&p.hasPermissions(2)&&ConstructionMode.ENABLED&&journal.getUUID("owner").equals(p.getUUID());
     }
-    public static boolean supported(net.minecraft.world.level.block.state.BlockState state) {
-        var id=net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(state.getBlock()).toString();
-        return java.util.Set.of("minecraft:air", "minecraft:iron_block", "minecraft:glass", "minecraft:deepslate_tiles",
-                "minecraft:oak_trapdoor", "minecraft:redstone_block", "minecraft:sea_lantern", "minecraft:copper_block",
-                "minecraft:cut_copper", "minecraft:stone", "minecraft:stone_bricks", "minecraft:polished_deepslate",
-                "minecraft:white_concrete", "minecraft:gray_concrete", "minecraft:light_gray_concrete").contains(id)
-                || id.equals("create_submarine:command_sub") || id.equals("create_submarine:electrolyzer") || id.equals("create_submarine:oxygene_diffuser");
+    public VesselInspection.Report report(FleetModule m){
+        if(!blockMode()){var body=currentBody(m);return body==null?new VesselInspection.Report(new Qualification(false,false,false,true),List.of(),server.overworld().getGameTime()):m.inspection().inspect(body);}
+        boolean controller=false;var devices=new ArrayList<VesselInspection.Device>();var level=server.overworld();
+        for(var p:positions(bounds())){
+            var id=net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(level.getBlockState(p).getBlock()).toString();
+            if(id.equals("create_submarine:command_sub"))controller=true;
+            if(level.getBlockState(p).hasBlockEntity())devices.add(new VesselInspection.Device(id,id.equals("create_submarine:command_sub")?"中央控制器":id.equals("create_submarine:electrolyzer")?"氧气制造":"供氧",p,p.subtract(PAD),"方块改装阶段；运行资格在完成时检测"));
+        }
+        return new VesselInspection.Report(new Qualification(controller,false,false,true),devices,level.getGameTime());
     }
+    public static boolean supported(BlockState state){return LegacyRefitService.supported(state);}
 }

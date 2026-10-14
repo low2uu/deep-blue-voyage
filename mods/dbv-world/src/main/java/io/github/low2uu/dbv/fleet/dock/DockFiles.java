@@ -16,4 +16,14 @@ final class DockFiles {
         AtomicSnapshotFile.requireComplete(path);
         return NbtIo.readCompressed(path, NbtAccounter.create(16 * 1024 * 1024));
     }
+    static void replace(Path path,CompoundTag data) throws IOException {
+        AtomicSnapshotFile.requireComplete(path);
+        var pending=path.resolveSibling(path.getFileName()+".pending");
+        var bytes=new java.io.ByteArrayOutputStream();NbtIo.writeCompressed(data,bytes);
+        try(var channel=java.nio.channels.FileChannel.open(pending,StandardOpenOption.CREATE_NEW,StandardOpenOption.WRITE)){
+            var buffer=java.nio.ByteBuffer.wrap(bytes.toByteArray());
+            while(buffer.hasRemaining())channel.write(buffer);channel.force(true);
+        }
+        Files.move(pending,path,StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);
+    }
 }

@@ -22,6 +22,7 @@ public final class RegistryStore {
     public RegistryStore(Path worldRoot) { file = worldRoot.resolve("dbv/fleet/registry.json"); }
 
     public FlagshipRegistry load() throws IOException {
+        if(Files.exists(file.resolveSibling("registry.refit.pending.json")))throw new IOException("主艇换装登记中断，请保留船坞档案");
         if (!Files.exists(file)) {
             if (Files.exists(file.resolveSibling("registration.lock")) || Files.exists(file.resolveSibling("registry.pending.json"))) {
                 throw new IOException("Unfinished flagship registration; preserve pending files for inspection");
@@ -40,6 +41,21 @@ public final class RegistryStore {
         } catch (RuntimeException exception) {
             throw new IOException("Invalid flagship registry; registration remains locked", exception);
         }
+    }
+
+    /** Compare-and-replace the physics carrier while retaining the campaign identity. */
+    public FlagshipRegistry rebind(UUID expectedBody,UUID nextBody) throws IOException {
+        var current=load().flagship().orElseThrow();
+        if(!current.bodyId().equals(expectedBody))throw new IOException("主艇载体已变化，拒绝覆盖登记");
+        var next=new VesselIdentity(current.vesselId(),nextBody,current.dimension(),current.name(),Math.addExact(current.generation(),1));
+        var root=JsonParser.parseString(Files.readString(file)).getAsJsonObject();
+        var ship=root.getAsJsonObject("flagship");ship.addProperty("bodyId",nextBody.toString());ship.addProperty("generation",next.generation());
+        Path pending=file.resolveSibling("registry.refit.pending.json");
+        try(var channel=FileChannel.open(pending,StandardOpenOption.CREATE_NEW,StandardOpenOption.WRITE)){
+            var bytes=StandardCharsets.UTF_8.encode(root.toString());while(bytes.hasRemaining())channel.write(bytes);channel.force(true);
+        }
+        Files.move(pending,file,StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);
+        return new FlagshipRegistry(Optional.of(next));
     }
 
     private static String string(JsonObject object, String key) {

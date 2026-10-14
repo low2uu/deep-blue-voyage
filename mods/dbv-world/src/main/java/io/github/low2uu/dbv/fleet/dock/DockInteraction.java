@@ -26,7 +26,7 @@ public final class DockInteraction {
     }
     private static void commands(RegisterCommandsEvent event) {
         var root=Commands.literal("refit").executes(c->{
-            try { var m=FleetModule.get(c.getSource().getServer()); c.getSource().sendSuccess(()->Component.literal(m.refit().status()+"；操作：begin/check/commit/cancel"),false);return 1; }
+            try { io.github.low2uu.dbv.fleet.ui.FleetPanel.openMain(c.getSource().getPlayerOrException());return 1; }
             catch(Exception e) { c.getSource().sendFailure(Component.literal(e.getMessage()));return 0; }
         });
         for(String action:new String[]{"begin","check","commit","cancel"}) root.then(Commands.literal(action).executes(c->{
@@ -38,6 +38,13 @@ public final class DockInteraction {
         event.getDispatcher().register(Commands.literal("dbv").requires(s->s.hasPermission(2)).then(root));
     }
     private static boolean deny(ServerPlayer player,BlockPos pos,BlockState state) {
+        try{
+            var m=FleetModule.get(player.getServer());
+            if(player.serverLevel()==player.getServer().overworld()&&m.refit().contains(pos)){
+                if(m.refit().mayEdit(player,pos,state))return false;
+                player.sendSystemMessage(Component.literal("船坞改装区域已锁定，或该方块暂不支持备份。"));return true;
+            }
+        }catch(Exception e){return true;}
         var owner=SableCompanion.INSTANCE.getContaining(player.level(),pos);
         if(!(owner instanceof ServerSubLevel body)) return false;
         try {

@@ -29,6 +29,10 @@ public final class ControllerInteraction {
         LAST_USE.put(player, now);
         var owner = SableCompanion.INSTANCE.getContaining(event.getLevel(), event.getPos());
         if (!(owner instanceof ServerSubLevel body)) {
+            if(player instanceof net.minecraft.server.level.ServerPlayer p)try{
+                var m=io.github.low2uu.dbv.fleet.FleetModule.get(p.getServer());
+                if(m.refit().contains(event.getPos())){io.github.low2uu.dbv.fleet.ui.FleetPanel.openMain(p);return;}
+            }catch(Exception ignored){}
             if(player instanceof net.minecraft.server.level.ServerPlayer p) io.github.low2uu.dbv.fleet.ui.FleetPanel.unavailable(p,"中央控制器尚未安装在已装配船体上。"); return;
         }
         try {

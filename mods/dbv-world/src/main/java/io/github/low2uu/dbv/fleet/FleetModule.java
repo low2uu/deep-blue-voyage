@@ -54,6 +54,9 @@ public final class FleetModule {
     public io.github.low2uu.dbv.fleet.dock.StarterSubmarine starter() { return starter; }
     public io.github.low2uu.dbv.fleet.dock.RefitService refit() { return refit; }
     public SableVesselAdapter adapter() { return adapter; }
+    public void rebindForRefit(java.util.UUID expected,dev.ryanhcode.sable.sublevel.ServerSubLevel next) throws IOException {
+        registry=store.rebind(expected,next.getUniqueId());adapter.mark(next,registry.flagship().orElseThrow());
+    }
     public io.github.low2uu.dbv.fleet.compat.VesselInspection inspection() { return inspection; }
 
     public void bind(MinecraftServer server, dev.ryanhcode.sable.sublevel.ServerSubLevel body, String name) throws IOException {
@@ -72,6 +75,7 @@ public final class FleetModule {
     }
 
     public VesselTelemetry sample(MinecraftServer server) {
+        if(refit.blockMode())return telemetry=VesselTelemetry.unavailable(VesselTelemetry.State.REFITTING,server.overworld().getGameTime(),"船坞方块改装中；主艇身份保留，物理载体已拆解");
         try {
             telemetry = registry.flagship().map(identity -> adapter.sample(server, identity)).orElseGet(() ->
                     VesselTelemetry.unavailable(VesselTelemetry.State.UNREGISTERED, server.overworld().getGameTime(), "尚未登记主潜艇"));

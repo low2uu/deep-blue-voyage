@@ -17,6 +17,22 @@ import static org.junit.jupiter.api.Assertions.*;
 class RegistryStoreTest {
     @TempDir Path world;
 
+    @Test void refitChangesOnlyCarrierAndGeneration() throws Exception {
+        var store=new RegistryStore(world);var first=ship("酒狐号");store.create(first);
+        var before=first.flagship().orElseThrow();var body=UUID.randomUUID();
+        var after=store.rebind(before.bodyId(),body).flagship().orElseThrow();
+        assertEquals(before.vesselId(),after.vesselId());assertEquals(before.name(),after.name());
+        assertEquals(before.dimension(),after.dimension());assertEquals(before.generation()+1,after.generation());
+        assertEquals(body,after.bodyId());assertEquals(after,new RegistryStore(world).load().flagship().orElseThrow());
+        assertThrows(IOException.class,()->store.rebind(before.bodyId(),UUID.randomUUID()));
+        assertEquals(after,store.load().flagship().orElseThrow());
+    }
+    @Test void interruptedCarrierReplacementCannotBecomeANewShip() throws Exception {
+        var store=new RegistryStore(world);store.create(ship("酒狐号"));
+        Files.writeString(world.resolve("dbv/fleet/registry.refit.pending.json"),"partial");
+        assertThrows(IOException.class,store::load);
+    }
+
     private FlagshipRegistry ship(String name) {
         return FlagshipRegistry.empty().register(UUID.randomUUID(), "minecraft:overworld", name);
     }

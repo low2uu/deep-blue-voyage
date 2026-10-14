@@ -4,6 +4,8 @@
 
 英文工作名为 Deep Blue Voyage，目录名为 `deep-blue-voyage`。
 
+启动游戏、进入当前 v2 地图、新电脑建图及更新最新版代码，先看 [部署启动与版本更新](docs/部署启动与版本更新-deployment-launch-update.md)。
+
 文档入口见 [文档索引](docs/README.md)。新增或整理 Markdown 说明文档时，统一使用 `中文说明-english-name.md`，英文部分使用小写字母和连字符；各级 `README.md` 保持原名。文档改名时同步更新相对链接和文件路径引用，机器读取的 JSON、源代码及第三方依赖文件沿用原有命名。
 
 ## 开发环境
@@ -20,7 +22,7 @@
 
 临时建设设置集中在 `config/development-session.json`，不代表最终生存规则。当前只制作起始岛与简单近海，不预生成远海。
 
-主潜艇系统已开始开发：当前支持三项潜艇资格检查、潜行右键船载电脑查看设备、管理员登记唯一主艇、独立身份档案和每秒船况观测，现已增加建设模式初始小艇生成及有限方块快照改装（开始、检查、提交、取消、重启回滚），尚未开放生存改装及完整损毁恢复。操作见 [初始潜艇与改装流程](docs/development/初始潜艇与改装流程-starter-submarine-refit.md)。目录、命令、数据格式及验收记录见 [系统开发文档](docs/development/主潜艇系统开发文档-flagship-system-development.md)。
+主潜艇系统已开始开发：当前支持三项潜艇资格检查、潜行右键船载电脑查看设备、管理员登记唯一主艇、独立身份档案和每秒船况观测，现已增加建设模式初始小艇生成及真实方块改装（物理船体拆解为世界方块，完成时检测并重新装配，失败／取消还原及方块阶段重启回滚），尚未开放生存改装及完整损毁恢复。操作见 [初始潜艇与改装流程](docs/development/初始潜艇与改装流程-starter-submarine-refit.md)。目录、命令、数据格式及验收记录见 [系统开发文档](docs/development/主潜艇系统开发文档-flagship-system-development.md)。
 
 已完成源码构建、客户端加载及起始岛建筑与环境初版：废旧工厂、温馨生活区、自然地形和128×128船坞，机器工位留空。进入方式、地图快照和最新验收结果见 [起始岛建设记录](docs/game-mechanics/起始岛建筑与环境初版-starter-island-built-v1.md)；早期检查见 [开发工程检查记录](docs/开发验证记录-development-verification.md)。潜艇与机器玩法仍待开发。
 

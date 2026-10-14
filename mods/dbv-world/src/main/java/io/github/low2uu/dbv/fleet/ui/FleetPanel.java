@@ -14,6 +14,7 @@ public final class FleetPanel {
     private static final Map<ServerPlayer,Session> SESSIONS=new WeakHashMap<>();
     private static final class Session {
         final UUID token=UUID.randomUUID(),body;
+        boolean flagship;
         long lastPacket=-100,expires;
         String notice="关闭窗口后可继续建设；关闭窗口不会取消已开始的改装。";
         Session(UUID body,long now){this.body=body;expires=now+200;}
@@ -33,7 +34,14 @@ public final class FleetPanel {
     public static void open(ServerPlayer player,ServerSubLevel body,BlockPos controller){
         if(!(body.getLevel().getBlockEntity(controller) instanceof CommandSubBlockEntity)||!near(player,body))return;
         var session=new Session(body.getUniqueId(),player.serverLevel().getGameTime());
+        try {session.flagship=FleetModule.get(player.getServer()).registry().flagship().map(i->i.bodyId().equals(body.getUniqueId())).orElse(false);}catch(Exception ignored){}
         SESSIONS.put(player,session);send(player,session,body,true);
+    }
+    public static void openMain(ServerPlayer player) throws java.io.IOException {
+        var m=FleetModule.get(player.getServer());var body=m.refit().currentBody(m);
+        if(m.refit().blockMode()? !m.refit().near(player):body==null||!near(player,body))throw new IllegalStateException("请靠近主艇或船坞改装区域");
+        var s=new Session(m.registry().flagship().orElseThrow().bodyId(),player.serverLevel().getGameTime());s.flagship=true;
+        SESSIONS.put(player,s);send(player,s,body,true);
     }
     private static boolean near(ServerPlayer player,ServerSubLevel body){
         if(player.serverLevel()!=body.getLevel()||body.isRemoved())return false;
@@ -42,7 +50,7 @@ public final class FleetPanel {
     }
     public static void handle(ServerPlayer player,PanelAction action){
         var s=SESSIONS.get(player);long now=player.serverLevel().getGameTime();
-        if(s==null||!s.token.equals(action.session())||action.action()<0||action.action()>4)return;
+        if(s==null||!s.token.equals(action.session())||action.action()<0||action.action()>PanelAction.CHECK)return;
         if(action.action()==PanelAction.CLOSE){SESSIONS.remove(player);return;}
         if(now>s.expires){
             PacketDistributor.sendToPlayer(player,new PanelView(s.token,false,"潜艇管理","连接已过期","请重新打开管理界面。",0,List.of()));
@@ -50,19 +58,25 @@ public final class FleetPanel {
         }
         if(now-s.lastPacket<4&&action.action()==PanelAction.REFRESH)return;s.lastPacket=now;s.expires=now+200;
         try{
-            var m=FleetModule.get(player.getServer());var body=m.adapter().find(player.serverLevel(),s.body);
-            if(body==null||!near(player,body)){
+            var m=FleetModule.get(player.getServer());var body=s.flagship?m.refit().currentBody(m):m.adapter().find(player.serverLevel(),s.body);
+            if(s.flagship&&m.refit().blockMode()?!m.refit().near(player):body==null||!near(player,body)){
                 PacketDistributor.sendToPlayer(player,new PanelView(s.token,false,"潜艇管理","连接已断开","请靠近原潜艇，重新打开管理界面。",0,List.of()));
                 SESSIONS.remove(player);return;
             }
-            if(action.action()!=PanelAction.REFRESH){
-                if(m.registry().flagship().isEmpty()||!m.registry().flagship().get().bodyId().equals(s.body))throw new IllegalStateException("此船尚未登记为主潜艇，不能改装");
+            if(action.action()==PanelAction.CHECK){
+                var q=(s.flagship?m.refit().report(m):m.inspection().inspect(body)).qualification();
+                String access=m.refit().accessProblem(player,m);
+                s.notice="检查完成："+(s.flagship&&m.refit().blockMode()?"当前为世界方块；点击完成改装后才执行运行资格验收。":q.eligible()?"控制器、供氧和密闭均符合。":String.join("；",q.reasons()))
+                        +(access==null?"":"；操作限制："+access);
+            }else if(action.action()!=PanelAction.REFRESH){
+                if(!s.flagship||m.registry().flagship().isEmpty())throw new IllegalStateException("此船尚未登记为主潜艇，不能改装");
                 s.notice=m.refit().execute(switch(action.action()){case 1->"begin";case 2->"commit";case 3->"cancel";default->throw new IllegalStateException();},player,m);
             }
             send(player,s,body,false);
         }catch(Exception error){
+            com.mojang.logging.LogUtils.getLogger().error("DBV panel action {} failed",action.action(),error);
             s.notice="操作未完成："+safeMessage(error);
-            try {var m=FleetModule.get(player.getServer());var body=m.adapter().find(player.serverLevel(),s.body);if(body!=null)send(player,s,body,false);}
+            try {var m=FleetModule.get(player.getServer());var body=s.flagship?m.refit().currentBody(m):m.adapter().find(player.serverLevel(),s.body);send(player,s,body,false);}
             catch(Exception ignored){PacketDistributor.sendToPlayer(player,new PanelView(s.token,false,"潜艇管理","暂时无法读取船况",s.notice,0,List.of()));}
         }
     }
@@ -72,12 +86,13 @@ public final class FleetPanel {
     }
     private static void send(ServerPlayer player,Session s,ServerSubLevel body,boolean open){
         try{
-            var m=FleetModule.get(player.getServer());var report=m.inspection().inspect(body);var q=report.qualification();
-            boolean registered=m.registry().flagship().map(i->i.bodyId().equals(s.body)).orElse(false);
+            var m=FleetModule.get(player.getServer());boolean registered=s.flagship;
+            var report=registered?m.refit().report(m):m.inspection().inspect(body);var q=report.qualification();
             int flags=PanelView.CONNECTED|(q.controller()?1:0)|(q.oxygen()?2:0)|(q.sealed()?4:0)|(q.pending()?8:0)|(registered?16:0);
             String status=registered?m.refit().status():"此船尚未登记为主潜艇";
             if(registered&&m.refit().active())flags|=PanelView.ACTIVE;
             if(registered&&m.refit().checking())flags|=PanelView.CHECKING;
+            if(registered&&m.refit().blockMode())flags|=PanelView.BLOCK_MODE;
             if(registered&&m.refit().accessProblem(player,m)==null)flags|=PanelView.EDITABLE;
             String title=registered?m.registry().flagship().orElseThrow().name():"潜艇设备检查";
             var devices=report.devices().stream().limit(128).map(d->d.type()+" · "+d.relativePosition().toShortString()+"\n"+d.status()).toList();

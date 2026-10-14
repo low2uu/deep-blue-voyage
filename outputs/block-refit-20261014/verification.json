@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-14",
+  "build": "passed",
+  "unit_tests": 16,
+  "in_game_assertions": {
+    "acceptance.log": 23,
+    "restart-seed.log": 2,
+    "restart-recovered.log": 8
+  },
+  "in_game_total": 33,
+  "initial_failure": "Attempt 1 exposed saving an empty carrier before removal; fixed by removing it through Sable container before saving. Retained attempt1.log.",
+  "verified": [
+    "unsealed and oxygen-disabled ship can begin",
+    "ordinary world blocks at dock, no live Sable carrier while editing",
+    "cancel restores original unqualified state",
+    "completion accepts repaired sealed oxygen-supplied ship",
+    "missing controller rejects completion and restores backup",
+    "permanent vessel ID unchanged, physics UUID updated, one carrier only",
+    "normal quit during static editing recovers on restart",
+    "player inside vessel remains alive at dock"
+  ],
+  "limitations": [
+    "construction-mode creative administrators only",
+    "fixed original volume, supported blocks only, maximum 4096 cells",
+    "abrupt interruption during conversion locks for investigation rather than guessing recovery",
+    "no dedicated server, arbitrary mod connections, expansion or full disaster recovery acceptance",
+    "UI events/buttons automated; not physical mouse input"
+  ],
+  "temporary_scripts_removed": true,
+  "original_world_modified": false,
+  "github_pushed": false
+}

@@ -11,6 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 public record PanelView(UUID session, boolean open, String title, String status, String notice,
         int flags, List<String> devices) implements CustomPacketPayload {
     public static final int CONTROLLER=1, OXYGEN=2, SEALED=4, PENDING=8, REGISTERED=16, ACTIVE=32, EDITABLE=64, CHECKING=128, CONNECTED=256;
+    public static final int BLOCK_MODE=512;
     public static final Type<PanelView> TYPE=new Type<>(ResourceLocation.parse("dbv_world:panel_view"));
     public static final StreamCodec<RegistryFriendlyByteBuf,PanelView> CODEC=StreamCodec.of((b,v)->{
         b.writeUUID(v.session);b.writeBoolean(v.open);b.writeUtf(v.title,256);b.writeUtf(v.status,2048);b.writeUtf(v.notice,2048);

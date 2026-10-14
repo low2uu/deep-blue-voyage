@@ -4,7 +4,7 @@
 
 编写日期：2026-10-14。
 
-部署前提：截至本文编写时，正式开发工程和启动脚本仍在维护者本地，尚未提交并推送到 GitHub。维护者需要先完成工程构建和启动验收，再发布这些文件；协作者现在可以先完成软件安装。克隆后若没有 `tools/dev.ps1`、`mods/dbv-world/gradlew.bat`、`deep-blue-voyage.code-workspace`，说明还没有拿到开发工程，应联系维护者，不要自行另建 MDK 项目。
+正式开发工程和启动脚本现已发布到 GitHub。克隆后应包含 `tools/dev.ps1`、`mods/dbv-world/gradlew.bat` 和 `deep-blue-voyage.code-workspace`，无需另建 MDK 项目。当前地图选择、源码更新和新电脑建图流程见 [部署启动与版本更新](部署启动与版本更新-deployment-launch-update.md)；本机运行存档不随 Git 同步。
 
 ## 1 安装软件
 
@@ -109,6 +109,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\dev.ps1 run
 修改 Java 后，先退出游戏，再执行 `build` 和 `run` 验证。日常通常不必重新执行 `prepare`。
 
 也可以使用 VS Code 的 `终端 → 运行任务`：`DBV: Build` 构建，`DBV: Run Minecraft` 启动；`Ctrl+Shift+B` 使用默认构建任务。
+
+打开工作区或执行 `build` 不会自动打开游戏。正常游玩请使用 `run`，并保留启动终端；`debug` 会暂停等待调试器连接，连接前不会出现游戏主菜单。游戏窗口独立于 VS Code，本机进入单人游戏后选择 `Deep Blue Voyage - Starter Submarine v2`；新电脑没有该存档时，按新版启动文档创建起始岛世界或接收完整存档。
+
+若日志已经完成渲染初始化，但桌面没有窗口，检查是否复用了从自动化环境启动的 Gradle 常驻进程。启动脚本的 `run` / `debug` 使用 `--no-daemon` 避免复用该进程；应从本机 VS Code 终端或桌面 PowerShell 启动。不要反复启动多个客户端占用同一运行目录。
 
 需要断点时，先选择 `DBV: Start Minecraft for Debugger`，待 JVM 等待连接，再在运行和调试面板选择 `DBV: Attach to Minecraft`。它连接本机 5005 端口，使用同一套源码和 `runtime/client`，不会另建一套游戏环境。
 

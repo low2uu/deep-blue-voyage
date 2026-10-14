@@ -8,6 +8,7 @@ Markdown 说明文档统一采用 `中文说明-english-name.md`；各级 `READM
 | --- | --- |
 | [系统开发文档](development/README.md) | 自研模块架构、代码目录、数据格式和开发验收 |
 | [开发环境部署](开发环境部署-development-setup.md) | Windows、Zulu Java 21、VS Code 与协作开发流程 |
+| [部署、启动地图与版本更新](部署启动与版本更新-deployment-launch-update.md) | 本机启动、新电脑部署、进入 v2、新建起始岛及更新代码 |
 | [开发工具记录](开发工具记录-development-tools.md) | 已批准的建设、脚本和性能工具 |
 | [开发验证记录](开发验证记录-development-verification.md) | 客户端、起始岛与工程验证记录 |
 
@@ -24,7 +25,7 @@ Markdown 说明文档统一采用 `中文说明-english-name.md`；各级 `READM
 
 | 文档 | 内容 |
 | --- | --- |
-| [初始潜艇与改装流程](development/初始潜艇与改装流程-starter-submarine-refit.md) | 建设小艇、聊天改装菜单、备份与回滚边界 |
+| [初始潜艇与改装流程](development/初始潜艇与改装流程-starter-submarine-refit.md) | 建设小艇、中文管理界面、备份与回滚边界 |
 | [起始岛建筑与环境初版](game-mechanics/起始岛建筑与环境初版-starter-island-built-v1.md) | 已建成地图、船坞、机器预留空间与验收 |
 | [起始岛工厂与蓝图方案](game-mechanics/起始岛工厂与蓝图方案-starter-factory-blueprint-plan.md) | 首期工厂规模与机器选型 |
 | [机器蓝图库](game-mechanics/机器蓝图库-machine-blueprint-catalog.md) | 尺寸、版本、来源与使用说明 |
