@@ -7,14 +7,18 @@
 ## 开发环境
 
 - Minecraft：1.21.1。
-- 加载器：NeoForge，具体构建版本在候选 Mod 兼容性确认后锁定。
+- 加载器：NeoForge 21.1.259，首批核心组合仍需运行验证。
 - 自研 Mod 语言：Java 21。
 - 本机 JDK：Zulu 21.0.3。
 - 编辑器：VS Code，已配置 Java 和 Gradle 扩展。
 
 使用 VS Code 打开本目录，并安装推荐的 Java 和 Gradle 扩展。将 `JAVA_HOME` 指向本机 JDK 21。可通过不纳入版本管理的 `.vscode/settings.json` 设置本机 JDK 路径；仓库不携带开发者的绝对路径。运行 `powershell -ExecutionPolicy Bypass -File tools/check-environment.ps1` 可检查本机 Java 与 Git。
 
-当前完成目录和环境配置；尚未下载 Mod、创建 NeoForge MDK 或安装测试实例。各 Mod 工程后续使用自己的 Gradle Wrapper。
+正式工程位于 `mods/dbv-world`，使用随项目提供的 Gradle Wrapper。打开 `deep-blue-voyage.code-workspace` 后，运行 `powershell -NoProfile -ExecutionPolicy Bypass -File tools/dev.ps1 build` 构建，使用同一命令的 `run` 动作启动客户端。详见 [部署流程](docs/development-setup.md) 和 [起始岛建设阶段方案](docs/game-mechanics/starter-island-plan.md)。
+
+临时建设设置集中在 `config/development-session.json`，不代表最终生存规则。当前只制作起始岛与简单近海，不预生成远海。
+
+已完成源码构建、客户端加载及起始岛建筑与环境初版：废旧工厂、温馨生活区、自然地形和128×128船坞，机器工位留空。进入方式、地图快照和最新验收结果见 [起始岛建设记录](docs/game-mechanics/starter-island-built-v1.md)；早期检查见 [开发工程检查记录](docs/development-verification.md)。潜艇与机器玩法仍待开发。
 
 ## 目录用途
 
@@ -24,8 +28,8 @@
 | `pack/overrides/` | 整合包配置、脚本与资源，作为打包输入 |
 | `mods/` | 自研 Java Mod 工程，每个 Mod 单独建目录 |
 | `assets/` | 原始纹理、模型、音效和宣传素材 |
-| `runtime/client/` | 独立客户端测试实例 |
-| `runtime/server/` | 独立服务端测试实例 |
+| `runtime/client/` | 正式开发工程的客户端运行目录与本机存档 |
+| `runtime/server/` | 服务端目录预留，尚未配置启动任务 |
 | `runtime/backups/` | 测试存档备份 |
 | `dist/` | 后续导出的整合包与发布文件 |
 | `tools/` | 环境检查和后续构建辅助脚本 |
@@ -33,6 +37,8 @@
 `runtime/` 和 `dist/` 不纳入版本管理。将需要发布的配置同步回 `pack/overrides/`，不要把测试存档、日志或账号信息混入发布包。
 
 ## 下一步
+
+玩法整体方案见 [初版地图与科技路线](docs/game-mechanics/first-playable-design.md)：以海域限制组织探索，用母艇、子艇与离艇潜水分工，串联六个科技阶段；先制作一条约 2～4 小时的可玩样板路线。文中数值为待测试的设计目标，不代表地图生成或机制已实现。
 
 当前选型以 [当前 Mod 清单](docs/current-mod-list.md) 为准：按用户提供的 111 项文件表划分确定加入、待定和备选区，记录授权、文件替换、依赖缺口与明确互斥。另有 [结构化清单](docs/current-mod-list.json)、[关键 JAR 静态证据](docs/current-mod-evidence.json) 和 [当前清单 Excel](outputs/current-mod-list-20261013/深蓝远航-当前Mod清单.xlsx)。初筛候选不代表已同意加入。
 

@@ -1,0 +1,6 @@
+{
+  "constructionMode": true,
+  "renderDistance": 6,
+  "simulationDistance": 5,
+  "maxFps": 30
+}

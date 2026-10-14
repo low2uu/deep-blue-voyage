@@ -1,0 +1,56 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+group = 'io.github.low2uu.deepbluevoyage'
+version = '0.1.0'
+base { archivesName = 'dbv-world' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+repositories {
+    maven {
+        url = 'https://api.modrinth.com/maven'
+        content { includeGroup 'maven.modrinth' }
+    }
+}
+
+configurations { runtimeClasspath.extendsFrom localRuntime }
+
+dependencies {
+    // Exact approved releases; these are the first enabled batch of the pack.
+    localRuntime 'maven.modrinth:create:UjX6dr61'
+    localRuntime 'maven.modrinth:architectury-api:1IiqEQGl'
+    localRuntime 'maven.modrinth:sable:fg9dTRz9'
+    localRuntime 'maven.modrinth:create-aeronautics:44pLdPGg'
+    localRuntime 'maven.modrinth:create-deep-seas:8CV1LRTl'
+    localRuntime 'maven.modrinth:power-grid:jCkPHjmP'
+    // Development tools approved on 2026-10-14; Rhino is KubeJS's required engine.
+    localRuntime 'maven.modrinth:worldedit:WTAFvuRx'
+    localRuntime 'maven.modrinth:probejs:xC9KUA7R'
+    localRuntime 'maven.modrinth:kubejs:THIGFPwf'
+    localRuntime 'maven.modrinth:rhino:SqkDvOLG'
+    localRuntime 'maven.modrinth:spark:v5qtqRQi'
+    localRuntime 'maven.modrinth:jade:eYz2YBGT'
+}
+
+neoForge {
+    version = project.neo_version
+    runs {
+        client {
+            client()
+            gameDirectory = file('../../runtime/client')
+            programArguments.addAll '--username', 'DBVDeveloper'
+            jvmArguments.addAll '-Xmx4G'
+            jvmArguments.add '-Ddbv.construction=' + providers.gradleProperty('dbvConstruction').getOrElse('false')
+        }
+        configureEach {
+            logLevel = org.slf4j.event.Level.INFO
+        }
+    }
+    mods {
+        dbv_world { sourceSet(sourceSets.main) }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }

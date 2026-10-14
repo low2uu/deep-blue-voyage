@@ -4,6 +4,11 @@
 
 | 文档 | 内容 |
 | --- | --- |
+| [起始岛建筑与环境初版](starter-island-built-v1.md) | 已建成存档、旧工业建筑、温馨生活区、自然景观、机器净空和128×128船坞 |
+| [当前工厂与蓝图方案](starter-factory-blueprint-plan.md) | 当前阶段6个优先机械与4个按需模块；保留原工厂用地，缩小首期施工范围 |
+| [机器蓝图库](machine-blueprint-catalog.md) | 41个CMS作品的同功能对照、网页尺寸、版本、具体下载项与使用说明；项目实测状态单独记录 |
+| [起始岛建设阶段方案](starter-island-plan.md) | 当前施工范围、临时低负载设置、设施预留坐标与恢复方式 |
+| [初版地图与科技路线](first-playable-design.md) | 海域布局、参考潜艇尺度、科技阶段、材料工艺、AI 成长、协同 Boss 与首个可玩版本范围 |
 | [功能架构](functional-architecture.md) | 核心循环、功能模块、成长阶段与建设顺序 |
 | [海域准入与潜艇能力限制](ocean-access-gates.md) | 洋流速度锁、深度压力锁、通行尺寸锁，以及后续可扩展的限制 |
 | [艇载 AI 与玩家协同战斗](onboard-ai-and-cooperative-combat.md) | 辅助驾驶、航行托管、自动打怪、玩家与潜艇协同挑战 Boss |

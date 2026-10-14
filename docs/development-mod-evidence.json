@@ -1,0 +1,69 @@
+{
+  "checked_at": "2026-10-14",
+  "approval": "用户明确要求增加前五个开发工具；Rhino 为 KubeJS 必需且此前已批准",
+  "files": [
+    {
+      "slug": "worldedit",
+      "version_id": "WTAFvuRx",
+      "version": "7.3.8",
+      "filename": "worldedit-mod-7.3.8.jar",
+      "sha1": "924fe181a29bd66be6783f6d589968ab0ee02250",
+      "metadata": {
+        "META-INF/neoforge.mods.toml": "modLoader = \"javafml\"\nloaderVersion = \"[3,)\"\nissueTrackerURL = \"https://discord.gg/enginehub\"\nlicense = \"GPLv3\"\n\n[[mods]]\nmodId = \"worldedit\"\nversion = \"7.3.8+6939-7d32b45\"\ndisplayName = \"WorldEdit\"\ndisplayURL = \"https://enginehub.org/worldedit/\"\ndescription = '''\nWorldEdit is an easy-to-use in-game world editor for Minecraft, supporting both single- and multi-player.\n'''\nauthors = \"EngineHub\"\nlogoFile = \"worldedit-icon.png\"\ndisplayTest = \"IGNORE_SERVER_VERSION\"\n\n[[mixins]]\nconfig = \"worldedit-neoforge.mixins.json\"\n\n[[accessTransformers]]\nfile = \"META-INF/accesstransformer.cfg\"\n\n[[dependencies.worldedit]]\nmodId = \"minecraft\"\ntype = \"required\"\nversionRange = \"[1.21,1.22)\"\nordering = \"NONE\"\nside = \"BOTH\"\n\n[[dependencies.worldedit]]\nmodId = \"neoforge\"\ntype = \"required\"\nversionRange = \"[21.0.16-beta,)\"\nordering = \"NONE\"\nside = \"BOTH\"\n"
+      }
+    },
+    {
+      "slug": "probejs",
+      "version_id": "xC9KUA7R",
+      "version": "8.0.3",
+      "filename": "ProbeJS-8.0.3.jar",
+      "sha1": "f0529482eff9596fa01de8a34abdce50529bdf55",
+      "metadata": {
+        "META-INF/neoforge.mods.toml": "modLoader = \"javafml\"\nloaderVersion = \"[2,)\"\nissueTrackerURL = \"https://github.com/Prunoideae/ProbeJS\"\nlicense = \"GPLv3\"\n\n[[mods]]\nmodId = \"probejs\"\nversion = \"8.0.3\"\ndisplayName = \"ProbeJS\"\nauthors = \"Prunoideae\"\ndescription = '''\nImproving your KubeJS scripting experience by generating auto-completions of all kinds.\n'''\nlogoFile = \"icon.png\"\n\n[[dependencies.probejs]]\nmodId = \"neoforge\"\nmandatory = true\nversionRange = \"[21.1.199,)\"\nordering = \"NONE\"\nside = \"BOTH\"\n\n[[dependencies.probejs]]\nmodId = \"minecraft\"\nmandatory = true\nversionRange = \"[1.21,)\"\nordering = \"NONE\"\nside = \"BOTH\"\n\n[[dependencies.probejs]]\nmodId = \"kubejs\"\nmandatory = true\nversionRange = \"[2101.7.2-build.365,)\"\n\n[[mixins]]\nconfig = \"probejs.mixins.json\"",
+        "META-INF/jarjar/metadata.json": "{\r\n  \"jars\": [\r\n    {\r\n      \"identifier\": {\r\n        \"group\": \"com.github.javaparser\",\r\n        \"artifact\": \"javaparser-core\"\r\n      },\r\n      \"version\": {\r\n        \"range\": \"[3.24.8,)\",\r\n        \"artifactVersion\": \"3.24.8\"\r\n      },\r\n      \"path\": \"META-INF/jarjar/javaparser-core-3.24.8.jar\",\r\n      \"isObfuscated\": false\r\n    },\r\n    {\r\n      \"identifier\": {\r\n        \"group\": \"com.github.javaparser\",\r\n        \"artifact\": \"javaparser-symbol-solver-core\"\r\n      },\r\n      \"version\": {\r\n        \"range\": \"[3.24.8,)\",\r\n        \"artifactVersion\": \"3.24.8\"\r\n      },\r\n      \"path\": \"META-INF/jarjar/javaparser-symbol-solver-core-3.24.8.jar\",\r\n      \"isObfuscated\": false\r\n    }\r\n  ]\r\n}\r\n"
+      }
+    },
+    {
+      "slug": "kubejs",
+      "version_id": "THIGFPwf",
+      "version": "2101.7.2-build.377",
+      "filename": "kubejs-neoforge-2101.7.2-build.377.jar",
+      "sha1": "7313fcd99318834c642ee9f3a05ed7fd7bcb6ef4",
+      "metadata": {
+        "META-INF/neoforge.mods.toml": "modLoader = \"javafml\"\nloaderVersion = \"[2,)\"\nissueTrackerURL = \"https://kubejs.com/support?source=kubejs&mc=2101&loader=neoforge\"\nlicense = \"GNU LGPLv3\"\n\n[[mods]]\nmodId = \"kubejs\"\nversion = \"2101.7.2-build.377\"\ndisplayName = \"KubeJS\"\nauthors = \"latvian.dev\"\ndescription = '''\nCustomize your modpack or server with JavaScript!\n'''\nlogoFile = \"kubejs_logo.png\"\nmodUrl = \"https://kubejs.com\"\ndisplayURL = \"https://kubejs.com\"\n\n[[dependencies.kubejs]]\nmodId = \"neoforge\"\ntype = \"required\"\nversionRange = \"[21.1.199,)\"\nordering = \"AFTER\"\nside = \"BOTH\"\n\n[[dependencies.kubejs]]\nmodId = \"rhino\"\ntype = \"required\"\nversionRange = \"[2101.2.7-build.81,)\"\nordering = \"AFTER\"\nside = \"BOTH\"\n\n[[dependencies.kubejs]]\nmodId = \"jei\"\ntype = \"optional\"\nversionRange = \"[19.25.0.322,)\"\nordering = \"AFTER\"\nside = \"CLIENT\"\n\n[[dependencies.kubejs]]\nmodId = \"roughlyenoughitems\"\ntype = \"optional\"\nversionRange = \"[16.0.799,)\"\nordering = \"AFTER\"\nside = \"CLIENT\"\n\n[[dependencies.kubejs]]\nmodId = \"emi\"\ntype = \"optional\"\nversionRange = \"[1.1.22,)\"\nordering = \"AFTER\"\nside = \"CLIENT\"\n\n[[dependencies.kubejs]]\nmodId = \"betteradvancedtooltips\"\ntype = \"optional\"\nversionRange = \"[2101.1.0-build.1,)\"\nordering = \"BEFORE\"\nside = \"CLIENT\"\n\n[[mixins]]\nconfig = \"kubejs.mixins.json\"",
+        "META-INF/jarjar/metadata.json": "{\n  \"jars\": [\n    {\n      \"identifier\": {\n        \"group\": \"com.github.rtyley\",\n        \"artifact\": \"animated-gif-lib-for-java\"\n      },\n      \"version\": {\n        \"range\": \"[animated-gif-lib-1.7,)\",\n        \"artifactVersion\": \"animated-gif-lib-1.7\"\n      },\n      \"path\": \"META-INF/jarjar/animated-gif-lib-for-java-animated-gif-lib-1.7.jar\",\n      \"isObfuscated\": false\n    },\n    {\n      \"identifier\": {\n        \"group\": \"dev.latvian.apps\",\n        \"artifact\": \"tiny-java-server\"\n      },\n      \"version\": {\n        \"range\": \"[1.0.0-build.33,)\",\n        \"artifactVersion\": \"1.0.0-build.33\"\n      },\n      \"path\": \"META-INF/jarjar/tiny-java-server-1.0.0-build.33.jar\",\n      \"isObfuscated\": false\n    },\n    {\n      \"identifier\": {\n        \"group\": \"dev.latvian.mods\",\n        \"artifact\": \"better-advanced-tooltips\"\n      },\n      \"version\": {\n        \"range\": \"[2101.1.0-build.1,)\",\n        \"artifactVersion\": \"2101.1.0-build.1\"\n      },\n      \"path\": \"META-INF/jarjar/better-advanced-tooltips-2101.1.0-build.1.jar\",\n      \"isObfuscated\": false\n    }\n  ]\n}\n"
+      }
+    },
+    {
+      "slug": "spark",
+      "version_id": "v5qtqRQi",
+      "version": "1.10.124-neoforge-1.21.1",
+      "filename": "spark-1.10.124-neoforge.jar",
+      "sha1": "9430cc2ab64ff89d698be593769fb9f9ee4efae6",
+      "metadata": {
+        "META-INF/neoforge.mods.toml": "modLoader=\"javafml\"\nloaderVersion=\"[2,)\"\nauthors=\"Luck\"\nlicense=\"GPLv3\"\n\n[[mods]]\nmodId=\"spark\"\ndisplayName=\"spark\"\nversion=\"1.10.124\"\ndescription=\"spark is a performance profiling plugin/mod for Minecraft clients, servers and proxies.\"\n\n[[accessTransformers]]\nfile=\"META-INF/accesstransformer.cfg\"\n\n[[dependencies.spark]]\nmodId = \"neoforge\"\nmandatory=true\nversionRange = \"[20,)\"\nordering = \"NONE\"\nside = \"BOTH\""
+      }
+    },
+    {
+      "slug": "jade",
+      "version_id": "eYz2YBGT",
+      "version": "15.10.6+neoforge",
+      "filename": "Jade-1.21.1-NeoForge-15.10.6.jar",
+      "sha1": "88ee316e68900080b017f60c12162e2731924cf8",
+      "metadata": {
+        "META-INF/neoforge.mods.toml": "modLoader = \"javafml\"\r\nloaderVersion = \"[1,)\"\r\nlicense = \"CC-BY-NC-SA-4.0\"\r\n\r\n[[mods]]\r\nmodId = \"jade\"\r\nversion = \"${file.jarVersion}\"\r\ndisplayName = \"Jade\"\r\nauthors = \"Snownee\"\r\ndisplayURL = \"https://www.curseforge.com/minecraft/mc-mods/jade\"\r\ndescription = \"Minecraft mod shows what you are looking at. (Hwyla fork)\"\r\nlogoFile = \"icon.png\"\r\ncredits = \"TehNut, ProfMobius, kalkafox\"\r\n\r\n[[mixins]]\r\nconfig = \"jade.mixins.json\"\r\n\r\n[[dependencies.jade]]\r\nmodId = \"neoforge\"\r\ntype = \"required\"\r\nversionRange = \"[21.0.143, )\"\r\nordering = \"NONE\"\r\nside = \"BOTH\"\r\n"
+      }
+    },
+    {
+      "slug": "rhino",
+      "version_id": "SqkDvOLG",
+      "version": "2101.2.8-build.91+Rhino-1.21",
+      "filename": "rhino-2101.2.8-build.91.jar",
+      "sha1": "56eab1d464ed0811c64040c64bd047df5cbc3aad",
+      "metadata": {
+        "META-INF/neoforge.mods.toml": "modLoader = \"lowcodefml\"\nloaderVersion = \"[2,)\"\nissueTrackerURL = \"https://kubejs.com/support?source=rhino&mc=2101&loader=neoforge\"\nlicense = \"MPL-2.0\"\n\n[[mods]]\nmodId = \"rhino\"\nversion = \"2101.2.8-build.91\"\ndisplayName = \"Rhino\"\nauthors = \"latvian.dev, Mozilla\"\ndescription = '''\nA fork of Mozilla's Rhino library, modified for use in mods\n'''\nlogoFile = \"rhino_logo.png\"\nmodUrl = \"https://kubejs.com\"\ndisplayURL = \"https://kubejs.com\"",
+        "META-INF/mods.toml": "modLoader = \"lowcodefml\"\nloaderVersion = \"[2,)\"\nissueTrackerURL = \"https://kubejs.com/support?source=rhino&mc=2101&loader=forge\"\nlicense = \"MPL-2.0\"\n\n[[mods]]\nmodId = \"rhino\"\nversion = \"2101.2.8-build.91\"\ndisplayName = \"Rhino\"\nauthors = \"latvian.dev, Mozilla\"\ndescription = '''\nA fork of Mozilla's Rhino library, modified for use in mods\n'''\nlogoFile = \"rhino_logo.png\"\ndisplayTest = \"NONE\""
+      }
+    }
+  ]
+}

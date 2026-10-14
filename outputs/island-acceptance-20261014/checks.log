@@ -1,0 +1,41 @@
+[1410月2026 10:41:25.176] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_acceptance.js#2: Loaded Java class 'net.minecraft.client.Minecraft'
+[1410月2026 10:41:25.193] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_acceptance.js#3: Loaded Java class 'net.minecraft.client.gui.screens.TitleScreen'
+[1410月2026 10:41:25.194] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_acceptance.js#4: Loaded Java class 'net.minecraft.world.level.LevelSettings'
+[1410月2026 10:41:25.195] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_acceptance.js#5: Loaded Java class 'net.minecraft.world.level.GameType'
+[1410月2026 10:41:25.196] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_acceptance.js#6: Loaded Java class 'net.minecraft.world.Difficulty'
+[1410月2026 10:41:25.197] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_acceptance.js#7: Loaded Java class 'net.minecraft.world.level.GameRules'
+[1410月2026 10:41:25.200] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_acceptance.js#8: Loaded Java class 'net.minecraft.world.level.WorldDataConfiguration'
+[1410月2026 10:41:25.202] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_acceptance.js#9: Loaded Java class 'net.minecraft.world.level.levelgen.WorldOptions'
+[1410月2026 10:41:25.202] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_acceptance.js#10: Loaded Java class 'net.minecraft.core.registries.Registries'
+[1410月2026 10:41:25.202] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_acceptance.js#11: Loaded Java class 'net.minecraft.resources.ResourceLocation'
+[1410月2026 10:41:25.205] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_acceptance.js#12: Loaded Java class 'net.minecraft.client.Screenshot'
+[1410月2026 10:41:25.211] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_acceptance.js#16: Loaded Java class 'net.neoforged.neoforge.client.event.ClientTickEvent$Post'
+[1410月2026 10:41:25.217] [modloading-worker-0/INFO] [KubeJS Client/]: Loaded script client_scripts:dbv_acceptance.js in 0.05 s
+[1410月2026 10:41:36.095] [Render thread/INFO] [KubeJS Client/]: DBV_ACCEPTANCE screen=com.maxenonyme.createsubmarine.submarine.client.DeepSeasWelcomeScreen@5b3063b7
+[1410月2026 10:41:36.148] [Render thread/INFO] [KubeJS Client/]: DBV_ACCEPTANCE: creating real construction world
+[1410月2026 10:41:36.229] [Render thread/INFO] [KubeJS Server/]: server_scripts:dbv_acceptance.js#1: Loaded Java class 'net.minecraft.core.BlockPos'
+[1410月2026 10:41:36.230] [Render thread/INFO] [KubeJS Server/]: Loaded script server_scripts:dbv_acceptance.js in 0.002 s
+[1410月2026 10:41:39.030] [Server thread/INFO] [io.github.low2uu.dbv.world.ConstructionMode/]: DBV construction mode active: spawning disabled, spawn chunk radius 0; original rules preserved.
+[1410月2026 10:41:44.577] [Server thread/INFO] [KubeJS Server/]: DBV_ACCEPTANCE spawn=BlockPos{x=-80, y=69, z=-40} generator=io.github.low2uu.dbv.world.StarterIslandGenerator@1ff2b49e
+[1410月2026 10:41:44.583] [Server thread/INFO] [KubeJS Server/]: DBV_ACCEPTANCE block -80,68,-40 = Block{minecraft:grass_block}[snowy=false]
+[1410月2026 10:41:44.656] [Server thread/INFO] [KubeJS Server/]: DBV_ACCEPTANCE block 64,12,128 = Block{minecraft:bedrock}
+[1410月2026 10:41:44.656] [Server thread/INFO] [KubeJS Server/]: DBV_ACCEPTANCE block 64,13,128 = Block{minecraft:water}[level=0]
+[1410月2026 10:41:44.776] [Server thread/INFO] [KubeJS Server/]: DBV_ACCEPTANCE block 512,-45,0 = Block{minecraft:bedrock}
+[1410月2026 10:41:44.777] [Server thread/INFO] [KubeJS Server/]: DBV_ACCEPTANCE block 512,-44,0 = Block{minecraft:water}[level=0]
+[1410月2026 10:41:44.792] [Server thread/INFO] [KubeJS Server/]: DBV_ACCEPTANCE rules={announceAdvancements:"true",blockExplosionDropDecay:"true",commandBlockOutput:"true",commandModificationBlockLimit:"32768",disableElytraMovementCheck:"false",disableRaids:"true",doDaylightCycle:"true",doEntityDrops:"true",doFireTick:"true",doImmediateRespawn:"false",doInsomnia:"false",doLimitedCrafting:"false",doMobLoot:"true",doMobSpawning:"false",doPatrolSpawning:"false",doTileDrops:"true",doTraderSpawning:"false",doVinesSpread:"true",doWardenSpawning:"false",doWeatherCycle:"true",drowningDamage:"true",enderPearlsVanishOnDeath:"true",fallDamage:"true",fireDamage:"true",forgiveDeadPlayers:"true",freezeDamage:"true",globalSoundEvents:"true",keepInventory:"false",lavaSourceConversion:"false",logAdminCommands:"true",maxCommandChainLength:"65536",maxCommandForkCount:"65536",maxEntityCramming:"24",mobExplosionDropDecay:"true",mobGriefing:"true",naturalRegeneration:"true",playersNetherPortalCreativeDelay:"1",playersNetherPortalDefaultDelay:"80",playersSleepingPercentage:"100",projectilesCanBreakBlocks:"true",randomTickSpeed:"3",reducedDebugInfo:"false",sendCommandFeedback:"true",showDeathMessages:"true",snowAccumulationHeight:"1",spawnChunkRadius:"0",spawnRadius:"10",spectatorsGenerateChunks:"true",tntExplosionDropDecay:"false",universalAnger:"false",waterSourceConversion:"true"}
+[1410月2026 10:41:44.808] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage Construction]'/minecraft:overworld
+[1410月2026 10:41:44.827] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage Construction]'/create_abyss:abyss
+[1410月2026 10:41:44.833] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage Construction]'/minecraft:the_end
+[1410月2026 10:41:44.838] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage Construction]'/minecraft:the_nether
+[1410月2026 10:41:44.846] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[1410月2026 10:41:44.847] [Server thread/INFO] [KubeJS Server/]: DBV_ACCEPTANCE save result=true
+[1410月2026 10:41:44.847] [Server thread/INFO] [KubeJS Server/]: DBV_ACCEPTANCE server checks completed
+[1410月2026 10:41:53.057] [Render thread/INFO] [KubeJS Client/]: DBV_ACCEPTANCE: client entered world at (-79.5, 69.0, -39.5)
+[1410月2026 10:42:11.059] [Render thread/INFO] [KubeJS Client/]: DBV_ACCEPTANCE: saving and disconnecting
+[1410月2026 10:42:11.182] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[1410月2026 10:42:11.182] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[1410月2026 10:42:11.319] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage Construction]'/minecraft:overworld
+[1410月2026 10:42:11.592] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage Construction]'/create_abyss:abyss
+[1410月2026 10:42:11.599] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage Construction]'/minecraft:the_end
+[1410月2026 10:42:11.604] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage Construction]'/minecraft:the_nether
+[1410月2026 10:42:11.613] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved

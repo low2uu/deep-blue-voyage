@@ -1,6 +1,9 @@
 /runtime/
 /dist/
 /.local/
+**/.local/
+/mods/*/.vscode/
+**/bin/
 /.vscode/settings.json
 .env
 .env.*

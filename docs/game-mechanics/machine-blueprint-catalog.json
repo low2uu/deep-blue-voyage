@@ -1,0 +1,995 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-14",
+  "target": {
+    "minecraft": "1.21.1",
+    "loader": "NeoForge",
+    "neoforge": "21.1.259",
+    "create": "6.0.10"
+  },
+  "scope": "起始岛当前建设与基础生产选型；不会实装全部机器",
+  "dimension_order": "xyz；用地为xz，单位方块",
+  "validation_policy": "本阶段优先表示作者平台/功能匹配并锁定下载项；不是本项目已测试。所有条目本地测试状态独立记录。",
+  "rows": [
+    {
+      "id": "CMS-967",
+      "function": "动力",
+      "name": "3x3x5 6W5应力 地板型四级锅炉 V1.0",
+      "author": "熊楚心",
+      "source": "https://www.creativemechanicserver.com/detail/967/",
+      "download_url": "https://www.creativemechanicserver.com/download/1450/",
+      "declared_size_xyz": [
+        3,
+        5,
+        3
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge / Create 6.0.8",
+      "selection": "本阶段优先",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "页面有 6.0.8 同意1/反对0记录，非本项目实测。补水、燃料；转速控制器调10后手摇启动。作者说明动力臂配置已修正，仍复核取料点。标称65536 SU，不代表整个工厂够用。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-218",
+      "function": "动力",
+      "name": "335蒸汽引擎 5w应力",
+      "author": "涵涵子",
+      "source": "https://www.creativemechanicserver.com/detail/218/",
+      "download_url": "https://www.creativemechanicserver.com/download/217/",
+      "declared_size_xyz": [
+        3,
+        5,
+        3
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.18.2–1.20.1 Forge / 0.5.1i、j",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "旧版锅炉结构参考；另有手摇版 download/218。迁移后核对水车、泵、供料和动力臂。不因旧标签直接判死刑，也不认定已适配。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-1413",
+      "function": "林业",
+      "name": "无骨粉云杉竹木树场",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/1413/",
+      "download_url": "https://www.creativemechanicserver.com/download/2119/",
+      "declared_size_xyz": [
+        11,
+        6,
+        11
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.0–6.0.10（另标Fabric）",
+      "selection": "本阶段优先",
+      "planned_cell_xz": [
+        32,
+        32
+      ],
+      "usage_and_risks": "含满箱停机、双库存。补树苗与竹子，设置库存及物流网络；树冠高度、树木生长空间和机械扫掠范围另测，11×6×11不是完整运行空间。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-649",
+      "function": "林业",
+      "name": "物流式无骨粉云杉树场",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/649/",
+      "download_url": "https://www.creativemechanicserver.com/download/869/",
+      "declared_size_xyz": [
+        11,
+        11,
+        6
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.0–6.0.4",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        32,
+        32
+      ],
+      "usage_and_risks": "不需要竹子时选此原版；补树苗并检查满箱停机和移动式接口。与1413二选一，避免重复常驻。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-113",
+      "function": "林业",
+      "name": "旋转树场豪华版，可收集树叶",
+      "author": "柠喵喵LemoMew",
+      "source": "https://www.creativemechanicserver.com/detail/113/",
+      "download_url": "https://www.creativemechanicserver.com/download/101/",
+      "declared_size_xyz": null,
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.19.2 Forge / 0.5.1c",
+      "selection": "跨版本参考",
+      "planned_cell_xz": [
+        32,
+        32
+      ],
+      "usage_and_risks": "作者明确说明结构可用于多数版本，细节需调整。页面尺寸0视为未填。需重设树苗过滤；移动接口位置有防误收甘蔗用途，不能随意居中。旋转范围待量。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-993",
+      "function": "铁料",
+      "name": "前期可用的石磨刷铁机",
+      "author": "4022sun",
+      "source": "https://www.creativemechanicserver.com/detail/993/",
+      "download_url": "https://www.creativemechanicserver.com/download/1426/",
+      "declared_size_xyz": [
+        8,
+        8,
+        5
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge / Create 6.0.8",
+      "selection": "本阶段优先",
+      "planned_cell_xz": [
+        16,
+        16
+      ],
+      "usage_and_risks": "无黄铜，作者要求Create 6.0以上的刷石机制。核对水/岩浆、转向和铁粒收集，先单台低产运行。作者标称1800铁粒/小时，不能写成1800铁锭。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-695",
+      "function": "铁料",
+      "name": "6.0懒人刷铁机 打印即用",
+      "author": "屿秋",
+      "source": "https://www.creativemechanicserver.com/detail/695/",
+      "download_url": "https://www.creativemechanicserver.com/download/951/",
+      "declared_size_xyz": [
+        16,
+        5,
+        16
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge / Create 6.0.0–6.0.4",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        24,
+        24
+      ],
+      "usage_and_risks": "水车、钻头、树叶补水；圆石相邻处及炼药锅补岩浆，按作者顺序开关离合器。标称927铁锭/小时；带溢出销毁，实装改成满箱停机。体积与水车数较大，不作首选。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-840",
+      "function": "安山合金",
+      "name": "B1_D_7x7无黄铜安山合金机",
+      "author": "夭夭",
+      "source": "https://www.creativemechanicserver.com/detail/840/",
+      "download_url": "https://www.creativemechanicserver.com/download/1178/",
+      "declared_size_xyz": [
+        7,
+        7,
+        1
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.4",
+      "selection": "本阶段优先",
+      "planned_cell_xz": [
+        16,
+        16
+      ],
+      "usage_and_risks": "选1.21主体 download/1178，主体文件名7×7×2；网页7×7×1描述单片。扩容片1179；1180/1181是1.20.1文件。先装主体，输入圆石，核对流体和风车启用。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-588",
+      "function": "安山合金",
+      "name": "B4_5x5x5 岩浆版安山合金机",
+      "author": "夭夭",
+      "source": "https://www.creativemechanicserver.com/detail/588/",
+      "download_url": "https://www.creativemechanicserver.com/download/755/",
+      "declared_size_xyz": [
+        5,
+        5,
+        5
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.3",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        16,
+        16
+      ],
+      "usage_and_risks": "选755；756明确是1.20.1版。需要岩浆和大量圆石、标称44544 SU；当前低负载阶段优先840。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-1025",
+      "function": "综合加工",
+      "name": "多功能多倍速地面式工作站",
+      "author": "multitouches",
+      "source": "https://www.creativemechanicserver.com/detail/1025/",
+      "download_url": "https://www.creativemechanicserver.com/download/1470/",
+      "declared_size_xyz": [
+        12,
+        9,
+        14
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 等 / 6.0.0–6.0.9 与0.5.1系列",
+      "selection": "本阶段优先",
+      "planned_cell_xz": [
+        24,
+        24
+      ],
+      "usage_and_risks": "选作者注释“这个是1.21.1的”的去设施化6.0文件1470，不能默认首个1467就是目标文件。12×9×14是整页尺寸，1470变体未单独量取，24×24为暂估。逐项调好过滤、转向、加热与流体，只开放当前要用工位。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-1003",
+      "function": "仓储",
+      "name": "物流式简约仓库 V3",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/1003/",
+      "download_url": "https://www.creativemechanicserver.com/download/1480/",
+      "declared_size_xyz": [
+        9,
+        11,
+        3
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge、1.20.1 / 6.0.0–6.0.8",
+      "selection": "本阶段优先",
+      "planned_cell_xz": [
+        16,
+        16
+      ],
+      "usage_and_risks": "选V3文件1480；1437/V1和1446/V2作者不推荐。重新勾选显示链接器并绑定本世界库存网络；旋转后调转速控制器及鼓风机方向。尺寸是整页标注，V3需复量。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-372",
+      "function": "仓储",
+      "name": "高速双层可扩展仓库 v1.2",
+      "author": "blac",
+      "source": "https://www.creativemechanicserver.com/detail/372/",
+      "download_url": null,
+      "declared_size_xyz": [
+        11,
+        8,
+        15
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge / Create 6.0.1",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        24,
+        24
+      ],
+      "usage_and_risks": "支持物品/包裹提取；选择页面v1.2文件并查剪贴板说明，复核合包和蛙港遮挡。多个下载版本未逐一锁定，先用1003/V3。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-1005",
+      "function": "黄铜",
+      "name": "物流式六倍速黄铜机 V2",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/1005/",
+      "download_url": "https://www.creativemechanicserver.com/download/1439/",
+      "declared_size_xyz": [
+        3,
+        4,
+        5
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge、1.20.1 / 6.0.0–6.0.8",
+      "selection": "本阶段按需",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "输入铜、锌、燃料；按视频配置物流订货与加热。建设世界不产铜锌，施工验收使用明确标记的测试原料；基础工作站能处理时不重复建。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-650",
+      "function": "黄铜",
+      "name": "物流式简易6倍速加热搅拌黄铜机",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/650/",
+      "download_url": "https://www.creativemechanicserver.com/download/870/",
+      "declared_size_xyz": [
+        3,
+        3,
+        4
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.0–6.0.4",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "双素材等量搅拌、自动停机；作者建议订单产出设3的倍数减少积料。优先新版本1005，配方份量以项目为准。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-1093",
+      "function": "精密构件",
+      "name": "5x4x3精密构件机",
+      "author": "World工作室",
+      "source": "https://www.creativemechanicserver.com/detail/1093/",
+      "download_url": "https://www.creativemechanicserver.com/download/1541/",
+      "declared_size_xyz": [
+        4,
+        3,
+        5
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge / Create 6.0.6",
+      "selection": "本阶段按需",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "作者说明无附属；输入原木、安山合金、铁、金。核对各盆与机械手分配、失败副产物出口和满箱停机。网页“内置”应力不等于已证明有自持动力源。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-591",
+      "function": "精密构件",
+      "name": "单机械手精密构件机",
+      "author": "路过的魔理沙",
+      "source": "https://www.creativemechanicserver.com/detail/591/",
+      "download_url": "https://www.creativemechanicserver.com/download/1061/",
+      "declared_size_xyz": [
+        3,
+        5,
+        1
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge / Create 6.0.6",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "投掷器由上至下放铁粒、大齿轮、小齿轮；还须供金板。作者对其他版本仅表示猜测，不能列为跨版本已验证。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-664",
+      "function": "精密构件",
+      "name": "物流式精密构件机",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/664/",
+      "download_url": "https://www.creativemechanicserver.com/download/893/",
+      "declared_size_xyz": [
+        2,
+        6,
+        3
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.0–6.0.4",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "输入金板、铁粒、大小齿轮；需搭配6.0物流。已有原料厂后可替换1093，不能单凭2×6×3认定整条供应链只占这点空间。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-700",
+      "function": "机壳",
+      "name": "物流式极简四机壳机 新版",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/700/",
+      "download_url": "https://www.creativemechanicserver.com/download/1360/",
+      "declared_size_xyz": [
+        2,
+        6,
+        4
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.0–6.0.6",
+      "selection": "本阶段按需",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "选新版1360，旧文件1032。背后漏斗的去皮原木过滤改为本岛木材；供应合金、铜、黄铜、坚固板，后者未供应时只启用能生产的机壳。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-983",
+      "function": "齿轮",
+      "name": "物流式大小齿轮厂 V2",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/983/",
+      "download_url": "https://www.creativemechanicserver.com/download/1413/",
+      "declared_size_xyz": [
+        4,
+        4,
+        5
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge、1.20.1 / 6.0.0–6.0.8",
+      "selection": "本阶段按需",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "当前选自储存文件1413，后续物流版1411/定量发包1412。木板过滤必须与工厂仪表一致，输入木板和传动杆。注意download/1413与detail/1413不是同一作品编号。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-644",
+      "function": "齿轮",
+      "name": "物流式简易大小齿轮厂",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/644/",
+      "download_url": "https://www.creativemechanicserver.com/download/862/",
+      "declared_size_xyz": [
+        4,
+        4,
+        4
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.0–6.0.4",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "旧版易积存原料；优先983。配齐木材与轴原料后检查连续合成和返料。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-631",
+      "function": "分立加工",
+      "name": "物流式简易6倍速切割站",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/631/",
+      "download_url": "https://www.creativemechanicserver.com/download/850/",
+      "declared_size_xyz": [
+        3,
+        3,
+        5
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.0–6.0.4",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "需要指定锯切过滤，防止切成别的建筑方块；综合工作站不足时再独立部署。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-638",
+      "function": "分立加工",
+      "name": "物流式简易压板机",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/638/",
+      "download_url": "https://www.creativemechanicserver.com/download/856/",
+      "declared_size_xyz": [
+        3,
+        6,
+        3
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.0–6.0.4",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "接料与出料链、设置订单；优先新版651或综合工作站，不重复建。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-651",
+      "function": "分立加工",
+      "name": "物流式简易4倍速压板机 V2",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/651/",
+      "download_url": "https://www.creativemechanicserver.com/download/871/",
+      "declared_size_xyz": [
+        3,
+        5,
+        3
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.0–6.0.4",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "标题写4倍，文中视频写6倍；不按宣传倍数保证产量。接6.0物流，实测压板与回传。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-647",
+      "function": "分立加工",
+      "name": "物流式简易压铸机",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/647/",
+      "download_url": "https://www.creativemechanicserver.com/download/868/",
+      "declared_size_xyz": [
+        5,
+        5,
+        3
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.0–6.0.4",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "这里是工作盆冲压类机械，不应当成CBC炮管铸造。作者提示会囤材料，需限制订单与缓存。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-656",
+      "function": "分立加工",
+      "name": "物流式极简可拓展粉碎机",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/656/",
+      "download_url": "https://www.creativemechanicserver.com/download/880/",
+      "declared_size_xyz": [
+        3,
+        5,
+        3
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.0–6.0.4",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "确认粉碎轮转向、成品过滤及包裹收发；扩容前核对吞吐，不增加无需求的轮组。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-989",
+      "function": "分立加工",
+      "name": "物流式四合一鼓风机组 V2",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/989/",
+      "download_url": "https://www.creativemechanicserver.com/download/1461/",
+      "declared_size_xyz": [
+        5,
+        4,
+        6
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge、1.20.1 / 6.0.0–6.0.8",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        16,
+        16
+      ],
+      "usage_and_risks": "选V2外接动力1461，V2自带动力1462。检查洗涤/熔炼/烟熏/缠魂各介质、风向和订单；原水车版作者要求打印后重放红石块。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-1007",
+      "function": "分立加工",
+      "name": "物流式简约动力合成组",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/1007/",
+      "download_url": "https://www.creativemechanicserver.com/download/1444/",
+      "declared_size_xyz": [
+        11,
+        4,
+        7
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge、1.20.1 / 6.0.0–6.0.8",
+      "selection": "后续参考",
+      "planned_cell_xz": [
+        20,
+        16
+      ],
+      "usage_and_risks": "作者要求打印后重新放保险库与红石块更新打包/理包状态；标称41472 SU。9核并发对当前多余，现阶段工作站先覆盖基本合成。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-1012",
+      "function": "分立加工",
+      "name": "物流式含水搅拌机",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/1012/",
+      "download_url": "https://www.creativemechanicserver.com/download/1449/",
+      "declared_size_xyz": [
+        3,
+        5,
+        4
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge、1.20.1 / 6.0.0–6.0.8",
+      "selection": "同功能备选",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "供水并配置订单，可用于面团/纸浆等实际存在的配方。网页列出的所有产物不代表我们的配方均已具备。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-659",
+      "function": "农业",
+      "name": "简易堆叠式复合农场",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/659/",
+      "download_url": "https://www.creativemechanicserver.com/download/885/",
+      "declared_size_xyz": [
+        14,
+        13,
+        13
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.0–6.0.4",
+      "selection": "后续参考",
+      "planned_cell_xz": [
+        24,
+        24
+      ],
+      "usage_and_risks": "作者已知边角漏收；打印后重放轴承、重设库存启停阈值。当前先保留普通田地，修好漏收后才考虑机械化；不以现状标为即用。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-583",
+      "function": "农业",
+      "name": "堆叠起重机农场",
+      "author": "WhiteElephant",
+      "source": "https://www.creativemechanicserver.com/detail/583/",
+      "download_url": "https://www.creativemechanicserver.com/download/752/",
+      "declared_size_xyz": [
+        22,
+        56,
+        23
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge / Create 6.0.0–6.0.4",
+      "selection": "后续参考",
+      "planned_cell_xz": [
+        32,
+        32
+      ],
+      "usage_and_risks": "页面6.0.4有同意2/反对0；高56格。补水，调整卸货，收割机/犁按教程切换。作者未验证旋转，当前阶段不选高塔。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-175",
+      "function": "电子管",
+      "name": "5×3×5电子管机",
+      "author": "Raptor猛龙",
+      "source": "https://www.creativemechanicserver.com/detail/175/",
+      "download_url": "https://www.creativemechanicserver.com/download/362/",
+      "declared_size_xyz": [
+        5,
+        3,
+        5
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.18.2–1.20.1 Forge/Fabric / 0.5.0–0.5.1j",
+      "selection": "跨版本参考",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "作者称0.5.0及以上；保留跨版本候选，未证明6.0.10即用。准备沙、甘蔗、石英、铁和红石并核对砂纸磨制及配方。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-1287",
+      "function": "电子管",
+      "name": "5x4x4电子管机4速",
+      "author": "摸鱼搭子",
+      "source": "https://www.creativemechanicserver.com/detail/1287/",
+      "download_url": "https://www.creativemechanicserver.com/download/1967/",
+      "declared_size_xyz": [
+        5,
+        4,
+        4
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge / Create 6.0.9",
+      "selection": "后续参考",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "额外依赖附魔工业（已批准但未启用）；接蛙港和铁/石英/红石。磨制出现掉落物时按作者说明反转动力。当前不为此额外启用Mod。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-751",
+      "function": "板材与轨道",
+      "name": "334坚固板·列车机壳·轨道机",
+      "author": "涵涵子",
+      "source": "https://www.creativemechanicserver.com/detail/751/",
+      "download_url": "https://www.creativemechanicserver.com/download/1036/",
+      "declared_size_xyz": [
+        3,
+        3,
+        4
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge / Create 6.0.4",
+      "selection": "后续参考",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "作者提醒跨版本过滤可能丢失，需手动补回；主要作为坚固板单元参考，供黑曜石和熔岩。机壳/轨道部分需另验。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-160",
+      "function": "板材与轨道",
+      "name": "坚固板机",
+      "author": "柠喵喵LemoMew",
+      "source": "https://www.creativemechanicserver.com/detail/160/",
+      "download_url": "https://www.creativemechanicserver.com/download/157/",
+      "declared_size_xyz": [
+        4,
+        6,
+        8
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.18.2–1.20.1 Forge / 0.5.0–0.5.1j",
+      "selection": "跨版本参考",
+      "planned_cell_xz": [
+        16,
+        16
+      ],
+      "usage_and_risks": "有满箱检测；供熔岩，核对黑曜石生成、粉碎和两次冲压链。旧版过滤/流体NBT待迁移，产量只作作者标称。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-673",
+      "function": "板材与轨道",
+      "name": "物流式简易轨道机",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/673/",
+      "download_url": "https://www.creativemechanicserver.com/download/911/",
+      "declared_size_xyz": [
+        4,
+        3,
+        7
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.0–6.0.4",
+      "selection": "后续参考",
+      "planned_cell_xz": [
+        12,
+        16
+      ],
+      "usage_and_risks": "供铁粒、石材，绑定物流与装配；起始岛尚无铁路需求，不安装。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-757",
+      "function": "流体",
+      "name": "物流式四合一熔岩工厂",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/757/",
+      "download_url": "https://www.creativemechanicserver.com/download/1043/",
+      "declared_size_xyz": [
+        8,
+        9,
+        4
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.0–6.0.6",
+      "selection": "后续参考",
+      "planned_cell_xz": [
+        24,
+        24
+      ],
+      "usage_and_risks": "还需收集模块1044，且必须放箱子矿车。网页尺寸不能代表两个文件及外部熔岩源的总范围；所谓无限熔岩必须另核源池/配置条件。当前不建大型熔岩池。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-699",
+      "function": "燃料",
+      "name": "物流式简易6倍速榨油机",
+      "author": "LETIT",
+      "source": "https://www.creativemechanicserver.com/detail/699/",
+      "download_url": "https://www.creativemechanicserver.com/download/953/",
+      "declared_size_xyz": [
+        3,
+        4,
+        7
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.21.1 NeoForge 与 1.20.1 Forge / Create 6.0.0–6.0.6",
+      "selection": "后续参考",
+      "planned_cell_xz": [
+        12,
+        16
+      ],
+      "usage_and_risks": "作者明确要求对应榨油配方；本体方块能放置不代表能产油。待已批准燃料Mod启用并确认配方后采用。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-906",
+      "function": "燃料",
+      "name": "农场物语植物油发动机",
+      "author": "北白蛇神社",
+      "source": "https://www.creativemechanicserver.com/detail/906/",
+      "download_url": "https://www.creativemechanicserver.com/download/1308/",
+      "declared_size_xyz": [
+        11,
+        12,
+        12
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.20.1 Forge / 6.0.8",
+      "selection": "后续参考",
+      "planned_cell_xz": [
+        24,
+        24
+      ],
+      "usage_and_risks": "葡香果园红葡萄与柴油动力路线，有整合包配方依赖；不能当作我们的1.21.1即用模板，当前不采用。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-694",
+      "function": "军工",
+      "name": "354机枪弹药装配机",
+      "author": "摸鱼de酒精灯",
+      "source": "https://www.creativemechanicserver.com/detail/694/",
+      "download_url": "https://www.creativemechanicserver.com/download/949/",
+      "declared_size_xyz": [
+        3,
+        5,
+        4
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.20.1 Forge / 6.0.4",
+      "selection": "后续参考",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "需要CBC；禁止向原料口输入机炮弹药冲压版。核对目标CBC 5.11.7物品ID与序列配方，当前不安装。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-689",
+      "function": "军工",
+      "name": "334机枪弹药装配机",
+      "author": "未署名",
+      "source": "https://www.creativemechanicserver.com/detail/689/",
+      "download_url": "https://www.creativemechanicserver.com/download/943/",
+      "declared_size_xyz": [
+        3,
+        3,
+        4
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.20.1 Forge / 6.0.4",
+      "selection": "后续参考",
+      "planned_cell_xz": [
+        12,
+        12
+      ],
+      "usage_and_risks": "需要CBC，输入铜粒、火药小份、空机枪弹药；同功能低成本候选，尚未证明目标版本配方一致。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    },
+    {
+      "id": "CMS-322",
+      "function": "军工",
+      "name": "大炮工厂",
+      "author": "BZL_rd",
+      "source": "https://www.creativemechanicserver.com/detail/322/",
+      "download_url": "https://www.creativemechanicserver.com/download/345/",
+      "declared_size_xyz": [
+        26,
+        73,
+        55
+      ],
+      "dimension_evidence": "网页作者标注；未读取下载文件 NBT，运行范围未测",
+      "declared_versions": "1.18.2–1.20.1 Forge/Fabric / 0.5.1系列",
+      "selection": "后续参考",
+      "planned_cell_xz": [
+        40,
+        72
+      ],
+      "usage_and_risks": "需CBC；作者说明部署有问题。高73格，另有模板346；仅保留铸造流程参考，不据此扩大起始岛。",
+      "local_validation": "未导入本项目验证",
+      "file_sha256": null,
+      "checked_at": "2026-10-14"
+    }
+  ]
+}

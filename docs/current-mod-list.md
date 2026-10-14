@@ -1,10 +1,10 @@
 # 当前 Mod 清单：深蓝远航
 
-核对日期：2026-10-13。目标：**Minecraft 1.21.1 / NeoForge / Java 21**。
+核对日期：2026-10-14。目标：**Minecraft 1.21.1 / NeoForge / Java 21**。
 
 本清单以你提供的 Excel 111 项为基础。你的“除了世界生成与结构、玩法与其他，这俩先待定，其它都要”视为对其余类别的明确授权；不是对之前 170 项初筛候选的整体授权。新增项目及替代路线未获同意前均不进入确定区。
 
-“确定加入”表示项目已获同意且已有目标平台发布证据，**不代表所有具体文件已完成安装验证**。安装条件列明确区分缺前置、主模组待定与整包待测。保留每个原表序号，原 Excel 和实际游戏文件均未改动。
+“确定加入”表示项目已获同意且已有目标平台发布证据，**不代表所有具体文件已完成安装验证**。安装条件列明确区分缺前置、主模组待定与整包待测。保留每个原表序号，原 Excel 未改动；开发实例现已启用首批核心与本次工具。
 
 发布页按目标版本与加载器核对；重点读取 38 个原文件的 JAR 元数据，并补核 G&G 稳定版、较新 JEI 和 Voxy World Gen。记录见 [静态证据](current-mod-evidence.json)，全量字段和官方文件 SHA-1 见 [结构化清单](current-mod-list.json)。源 Excel 没有文件哈希，所以“文件名匹配”不能证明用户电脑上的同名 JAR 字节相同。
 
@@ -16,7 +16,7 @@
 - G&G 项目已获同意，原 Beta-1.1 文件被作者明确排除整包用途，改选同项目 1.2.10 release；不据此承诺通用潜艇自动驾驶已经实现。
 - Voxy 0.2.16-beta 的 1.21.11 Fabric JAR 是 Roxy 官方支持的特定桥接输入，保留并明确标注；其余跨版本/加载器文件不享受自动例外。两个无法精确识别的服务端远景文件先待核，不能默认同装。
 - JEI 原文件的发布标签和内部 Minecraft 版本范围矛盾，暂缓锁包，相关 RS–JEI 集成随之暂缓；没有运行证据就不把它写成已证实不兼容。
-- Rechiseled: Create、Waystones: Sable 已获同意，但本体仍属用户明确待定项，因此暂缓安装。新增 Jade、Sodium Options API、Ironworks 只列批准申请。
+- Rechiseled: Create、Waystones: Sable 已获同意，但本体仍属用户明确待定项，因此暂缓安装。Jade 已于 2026-10-14 批准并启用；Sodium Options API、Ironworks 仍待批准。
 - 不重复添加已内置的 Better Advanced Tooltips、playerAnimator、MezzConfig、Fusion、Cloth Config、Sable Companion 等。平台“必需”与 JAR 声明不一致时写明差异，不擅自引入光影链。
 - 核心按 Create 6.0.10 + Aeronautics 1.3.2 + Sable 2.0.6 + Deep Seas 3.3.0 + Power Grid 0.6.2 对照。已读原文件中 JEI 要求 NeoForge >=21.1.238；其他已读文件最高下限至少 21.1.229。最终加载器构建仍需全量依赖锁定后确定。
 
@@ -24,11 +24,13 @@
 
 | 区域 | 项数 |
 |---|---:|
-| 确定加入 | 95 |
-| 待定 | 17 |
+| 确定加入 | 99 |
+| 待定 | 16 |
 | 备选区 | 33 |
 
-原表 111 项在三类中各出现一次；新增项仅为 3 个待批准依赖与同类备选。初筛池其余项目仍见 [此前初筛表](mod-candidates.md)，没有默认为本次确认项。
+原表 111 项在三类中各出现一次；新增项包括依赖申请、已批准开发工具与同类备选。初筛池其余项目仍见 [此前初筛表](mod-candidates.md)，没有默认为本次确认项。
+
+2026-10-14 增量授权：WorldEdit、ProbeJS、KubeJS、spark、Jade 已获明确同意并加入正式开发工程；Rhino 为已批准必需前置。发布包是否携带开发工具另行确定。见 [开发工具启用记录](development-tools.md)。
 
 ## 确定加入
 
@@ -39,8 +41,8 @@
 | U003 · 核心与前置库 | **Balm**<br>实用工具库（Waystones 等依赖） | 21.0.66+neoforge-1.21.1 | **版本标签核对；整包待测**<br><br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/balm/version/CquiaiDj) |
 | U004 · 核心与前置库 | **Forgified Fabric API**<br>Fabric API 的 Forge/NeoForge 兼容层 | 0.116.15+2.3.5+1.21.1 | **版本标签核对；整包待测**<br><br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/forgified-fabric-api/version/V9WdDUTx) |
 | U005 · 核心与前置库 | **Kotlin for Forge**<br>Kotlin 语言运行支持 | 5.12.0 | **版本标签核对；整包待测**<br><br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/kotlin-for-forge/version/uhJhCT7X) |
-| U006 · 核心与前置库 | **Rhino**<br>JavaScript 引擎（KubeJS 依赖） | 2101.2.8-build.91+Rhino-1.21 | **版本标签核对；整包待测**<br><br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/rhino/version/SqkDvOLG) |
-| U007 · 核心与前置库 | **KubeJS**<br>用脚本自定义配方、物品、事件 | 2101.7.2-build.377 | **版本标签核对；整包待测**<br>Better Advanced Tooltips 已内置，不另开独立批准项。Rhino 原表版本满足 JAR 下限。<br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/kubejs/version/THIGFPwf) |
+| U006 · 核心与前置库 | **Rhino**<br>JavaScript 引擎（KubeJS 依赖） | 2101.2.8-build.91+Rhino-1.21 | **已启用；客户端加载通过，世界内功能待测**<br><br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/rhino/version/SqkDvOLG) |
+| U007 · 核心与前置库 | **KubeJS**<br>用脚本自定义配方、物品、事件 | 2101.7.2-build.377 | **已启用；客户端加载通过，世界内功能待测**<br>Better Advanced Tooltips 已内置，不另开独立批准项。Rhino 原表版本满足 JAR 下限。<br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/kubejs/version/THIGFPwf) |
 | U008 · 核心与前置库 | **SuperMartijn642's Core Lib**<br>通用核心库 | 1.1.25-neoforge-mc1.21 | **版本标签核对；整包待测**<br><br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/supermartijn642s-core-lib/version/OG6Edgmm) |
 | U009 · 核心与前置库 | **SuperMartijn642's Config Lib**<br>配置文件库 | 1.1.8-neoforge-mc1.21 | **版本标签核对；整包待测**<br><br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/supermartijn642s-config-lib/version/qKL9jM75) |
 | U010 · 核心与前置库 | **LDLib2**<br>客户端渲染/配置 UI 库 | 2.2.42 | **CurseForge 发布记录已核对；整包待测**<br><br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://www.curseforge.com/minecraft/mc-mods/ldlib/files/9059591) |
@@ -102,7 +104,7 @@
 | U066 · Sable 物理载具系列 | **Sable Beyond**<br>Sable 扩展内容 | neoforge1.21.1+v0.5.0 | **版本标签核对；整包待测**<br>0.5.0 为 alpha；流体对船体施力、动态质量等需逐项配置和实测。Cloth Config 已内置，可供相容依赖共用。并非宏观洋流/速度锁的完整实现。<br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/sable_beyond/version/BWQxgVOj) |
 | U067 · Sable 物理载具系列 | **Sable: Physics Compat**<br>为其他模组方块补充 Sable 质量、浮力、摩擦等物理标签；不保证解决所有兼容问题。 | 1.3.0 | **版本标签核对；整包待测**<br><br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/sablecompat/version/Ucq7afTi) |
 | U068 · Sable 物理载具系列 | **Sable: Collision damage  (Create Aeronautics)**<br>碰撞伤害 | 1.0.8-Sable_2.0.0+ | **版本标签核对；整包待测**<br><br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/sable-create-aeronautics-collision-damage/version/snRIIWNz) |
-| U069 · Sable 物理载具系列 | **Jade Sable Compat**<br>Jade 信息显示集成 | 1.3.0 | **暂缓启用：Jade 本体待批准**<br>JAR 将 Jade 标为可选，但没有 Jade 就没有这项 HUD 联动；Jade 新增申请列待定，不默认同意。<br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/jade-sable-compat/version/cxUohR7A) |
+| U069 · Sable 物理载具系列 | **Jade Sable Compat**<br>Jade 信息显示集成 | 1.3.0 | **本体批准已补齐；本附属尚未启用**<br>Jade 已于 2026-10-14 批准并加载；本附属继续保持此前批准状态，后续按需启用。<br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/jade-sable-compat/version/cxUohR7A) |
 | U070 · Sable 物理载具系列 | **Sable: Mass view (Create Aeronautics)**<br>质量/重心显示 | 1.0.0 | **版本标签核对；整包待测**<br><br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/create-aeronautics-sable-mass-view/version/Dc1FsCO5) |
 | U071 · Sable 物理载具系列 | **CC: Sable**<br>ComputerCraft 驾驶兼容 | 1.3.4 | **版本标签核对；整包待测**<br><br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/cc-sable/version/j0UWQoMG) |
 | U072 · Sable 物理载具系列 | **Waystones: Sable (Create Aeronautics Addon)**<br>传送石兼容 Sable | 1.0.7 | **暂缓安装：Waystones 本体待定**<br>U110 Waystones 仍待定；本附属要求 Waystones >=21.1.39，原表 21.1.46 数值满足，但必须等本体批准。传送功能也需考虑航行体验。<br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/waystones-sable/version/Wot8Pf4C) |
@@ -129,6 +131,10 @@
 | U103 · 界面、工具与多人 | **FTB Chunks**<br>区块认领/加载 | 2101.1.22 | **CurseForge 发布记录已核对；整包待测**<br> Xaero 小地图/世界地图保留；FTB Chunks 主要负责领地/加载，重复地图界面可在配置层处理。<br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://www.curseforge.com/minecraft/mc-mods/ftb-chunks-forge/files/all) |
 | U104 · 界面、工具与多人 | **FTB Teams**<br>队伍/权限管理 | 2101.1.11 | **CurseForge 发布记录已核对；整包待测**<br><br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://www.curseforge.com/minecraft/mc-mods/ftb-teams-forge/files/all) |
 | U107 · 音效 | **Sound Physics: Aeronautics**<br>航空载具音效支持 | 2.0.1 | **版本标签核对；整包待测**<br>独立替代分支，不是需要原版的附属；移除 U106 后再安装。JAR 要求 Create [6.0.10,6.0.11)，当前 6.0.10 满足。<br>授权：用户本次明确同意：原表除两类待定外其余都要 | [发布记录](https://modrinth.com/mod/sound-physics-aeronautics/version/MDdwFCrR) |
+| D002 · 界面、工具与多人 | **Jade 🔍**<br>显示指向方块和实体的信息；Jade Sable Compat 的 HUD 主体 | 15.10.6+neoforge | **已启用；客户端加载通过，世界内功能待测**<br>15.10.6 改善航空学兼容性；本次批准并加入运行依赖。<br>授权：用户于 2026-10-14 明确同意增加推荐表前五项开发工具 | [发布记录](https://modrinth.com/mod/jade/version/eYz2YBGT) |
+| D004 · 开发与建设工具 | **WorldEdit**<br>批量建图、建筑蓝图导入导出和地形编辑 | 7.3.8 | **已加入开发运行依赖；客户端加载通过，世界内功能待测**<br>开发阶段工具，不因本次启用自动列为玩家发布包必装。<br>授权：用户于 2026-10-14 明确同意增加推荐表前五项开发工具 | [发布记录](https://modrinth.com/mod/worldedit/version/WTAFvuRx) |
+| D005 · 开发与建设工具 | **ProbeJS**<br>导出 KubeJS 类型与接口资料，辅助 VS Code 和脚本开发 | 8.0.3 | **已加入开发运行依赖；客户端加载通过，世界内功能待测**<br>开发阶段工具，不因本次启用自动列为玩家发布包必装。<br>授权：用户于 2026-10-14 明确同意增加推荐表前五项开发工具 | [发布记录](https://modrinth.com/mod/probejs/version/xC9KUA7R) |
+| D006 · 开发与建设工具 | **spark**<br>CPU、内存及 tick 性能分析 | 1.10.124-neoforge-1.21.1 | **已加入开发运行依赖；客户端加载通过，世界内功能待测**<br>开发阶段工具，不因本次启用自动列为玩家发布包必装。<br>授权：用户于 2026-10-14 明确同意增加推荐表前五项开发工具 | [发布记录](https://modrinth.com/mod/spark/version/v5qtqRQi) |
 
 ## 待定
 
@@ -149,7 +155,6 @@
 | U110 · 玩法与其他 | **Waystones**<br>传送石（快速传送） | 21.1.46+neoforge-1.21.1 | **暂缓安装：等待用户选定**<br><br>授权：用户明确暂缓：世界生成与结构 / 玩法与其他 | [发布记录](https://modrinth.com/mod/waystones/version/6Z6MQ6os) |
 | U111 · 玩法与其他 | **Aquaculture 2**<br>水产养殖/钓鱼扩展 | 2.7.21 | **暂缓安装：等待用户选定**<br><br>授权：用户明确暂缓：世界生成与结构 / 玩法与其他 | [发布记录](https://modrinth.com/mod/aquaculture/version/5pbz0ETj) |
 | D001 · 新增依赖申请 | **Sodium Options API**<br>U077 的发布依赖；未在用户原表，等待批准。 | neoforge-1.21.1-1.0.10 | **等待用户批准；批准后再锁包**<br>U077 的发布依赖；未在用户原表，等待批准。<br>授权：新增依赖/功能主体，未获用户同意 | [发布记录](https://modrinth.com/mod/sodium-options-api/version/lrsX3TMS) |
-| D002 · 新增依赖申请 | **Jade 🔍**<br>U069 的 HUD 主体；不是已获同意的独立项目。 | 15.10.6+neoforge | **等待用户批准；批准后再锁包**<br>U069 的 HUD 主体；不是已获同意的独立项目。<br>授权：新增依赖/功能主体，未获用户同意 | [发布记录](https://modrinth.com/mod/jade/version/eYz2YBGT) |
 | D003 · 新增依赖申请 | **Create: Ironworks**<br>U074 铜潜水套装完整功能所需；会增加内容，等待用户同意。 | 4.0.3 | **等待用户批准；批准后再锁包**<br>U074 铜潜水套装完整功能所需；会增加内容，等待用户同意。<br>授权：新增依赖/功能主体，未获用户同意 | [发布记录](https://modrinth.com/mod/create-ironworks/version/91r9PehB) |
 
 ## 备选区
@@ -206,4 +211,4 @@
 
 当前压力模组控制的是玩家深潜惩罚，不是潜艇外壳承压；动态光照、渲染包围盒、物理标签也不等于洋流速度锁、通道体积锁。自研机制仍按 [游戏机制文档](game-mechanics/README.md) 单独规划。
 
-此轮未安装游戏实例或运行联调，不能承诺任意组合都能启动。下一步先处理表内待核文件和新增依赖批准，再验证核心装配、潜航、移动船内存储、炮击、多人领地、声音和远景性能；未经同意的新增 Mod 不会自动转入确定区。
+首批核心及本次工具已完成客户端启动加载检查，但未完成世界内联调，不能承诺全部清单任意组合都能运行。下一步先处理表内待核文件和新增依赖批准，再验证核心装配、潜航、移动船内存储、炮击、多人领地、声音和远景性能；未经同意的新增 Mod 不会自动转入确定区。

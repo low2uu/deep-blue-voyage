@@ -1,0 +1,22 @@
+[1410月2026 13:00:54.160] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_build_preview.js#2: Loaded Java class 'net.minecraft.client.Minecraft'
+[1410月2026 13:00:54.175] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_build_preview.js#3: Loaded Java class 'net.minecraft.client.gui.screens.TitleScreen'
+[1410月2026 13:00:54.177] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_build_preview.js#4: Loaded Java class 'net.minecraft.world.level.LevelSettings'
+[1410月2026 13:00:54.179] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_build_preview.js#5: Loaded Java class 'net.minecraft.world.level.GameType'
+[1410月2026 13:00:54.180] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_build_preview.js#6: Loaded Java class 'net.minecraft.world.Difficulty'
+[1410月2026 13:00:54.181] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_build_preview.js#7: Loaded Java class 'net.minecraft.world.level.GameRules'
+[1410月2026 13:00:54.185] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_build_preview.js#8: Loaded Java class 'net.minecraft.world.level.WorldDataConfiguration'
+[1410月2026 13:00:54.190] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_build_preview.js#9: Loaded Java class 'net.minecraft.world.level.levelgen.WorldOptions'
+[1410月2026 13:00:54.191] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_build_preview.js#10: Loaded Java class 'net.minecraft.core.registries.Registries'
+[1410月2026 13:00:54.191] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_build_preview.js#11: Loaded Java class 'net.minecraft.resources.ResourceLocation'
+[1410月2026 13:00:54.192] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_build_preview.js#12: Loaded Java class 'net.minecraft.client.CloudStatus'
+[1410月2026 13:00:54.195] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_build_preview.js#13: Loaded Java class 'net.minecraft.client.Screenshot'
+[1410月2026 13:00:54.200] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:dbv_build_preview.js#17: Loaded Java class 'net.neoforged.neoforge.client.event.ClientTickEvent$Post'
+[1410月2026 13:00:54.206] [modloading-worker-0/INFO] [KubeJS Client/]: Loaded script client_scripts:dbv_build_preview.js in 0.056 s
+[1410月2026 13:01:05.967] [Render thread/INFO] [KubeJS Server/]: server_scripts:dbv_build_preview.js#1: Loaded Java class 'io.github.low2uu.dbv.world.IslandBuildAudit'
+[1410月2026 13:01:05.967] [Render thread/INFO] [KubeJS Server/]: server_scripts:dbv_build_preview.js#2: Loaded Java class 'net.minecraft.world.level.GameType'
+[1410月2026 13:01:05.968] [Render thread/INFO] [KubeJS Server/]: Loaded script server_scripts:dbv_build_preview.js in 0.003 s
+[1410月2026 13:01:15.988] [Server thread/INFO] [KubeJS Server/]: DBV_BUILD reopen PASS 102080 block checks: five empty machine bays, 128x128 dock water/sky, open sea exit, dry spawn
+[1410月2026 13:01:46.585] [IO-Worker-1/INFO] [KubeJS Client/]: DBV_BUILD screenshot Saved screenshot as dbv-harbor-final-dock.png
+[1410月2026 13:01:48.971] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[1410月2026 13:01:48.972] [Server thread/INFO] [KubeJS Server/]: DBV_BUILD final save=true
+[1410月2026 13:01:54.488] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved

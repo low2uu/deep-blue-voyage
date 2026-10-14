@@ -1,0 +1,38 @@
+{
+  "dimensions": {
+    "minecraft:overworld": {
+      "type": "minecraft:overworld",
+      "generator": {
+        "type": "dbv_world:starter_island",
+        "settings": {
+          "biome": "minecraft:deep_ocean",
+          "features": false,
+          "lakes": false,
+          "structure_overrides": [],
+          "layers": [
+            {"block": "minecraft:bedrock", "height": 1},
+            {"block": "minecraft:stone", "height": 15},
+            {"block": "minecraft:sand", "height": 4},
+            {"block": "minecraft:water", "height": 107}
+          ]
+        }
+      }
+    },
+    "minecraft:the_nether": {
+      "type": "minecraft:the_nether",
+      "generator": {
+        "type": "minecraft:noise",
+        "settings": "minecraft:nether",
+        "biome_source": {"type": "minecraft:multi_noise", "preset": "minecraft:nether"}
+      }
+    },
+    "minecraft:the_end": {
+      "type": "minecraft:the_end",
+      "generator": {
+        "type": "minecraft:noise",
+        "settings": "minecraft:end",
+        "biome_source": {"type": "minecraft:the_end"}
+      }
+    }
+  }
+}
