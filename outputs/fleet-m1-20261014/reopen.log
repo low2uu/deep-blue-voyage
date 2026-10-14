@@ -1,0 +1,10 @@
+[1410月2026 15:26:05.152] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS identity persisted across client restart
+[1410月2026 15:26:09.146] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS loaded identity and telemetry
+[1410月2026 15:26:09.147] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS physical mass
+[1410月2026 15:26:09.147] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS uninitialized pressure stays unknown
+[1410月2026 15:26:09.153] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS missing body is not destroyed
+[1410月2026 15:26:09.162] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS wrong generation rejected
+[1410月2026 15:26:09.169] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS operator permission required
+[1410月2026 15:26:09.172] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS status command
+[1410月2026 15:26:09.237] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS world save
+[1410月2026 15:26:09.237] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST COMPLETE

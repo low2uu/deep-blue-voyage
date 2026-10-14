@@ -1,0 +1,12 @@
+[1410月2026 15:24:37.855] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS real Sable assembly
+[1410月2026 15:24:37.870] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS registration command
+[1410月2026 15:24:37.871] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS duplicate registration denied
+[1410月2026 15:24:41.806] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS loaded identity and telemetry
+[1410月2026 15:24:41.806] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS physical mass
+[1410月2026 15:24:41.806] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS uninitialized pressure stays unknown
+[1410月2026 15:24:41.808] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS missing body is not destroyed
+[1410月2026 15:24:41.810] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS wrong generation rejected
+[1410月2026 15:24:41.815] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS operator permission required
+[1410月2026 15:24:41.816] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS status command
+[1410月2026 15:24:41.896] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST PASS world save
+[1410月2026 15:24:41.897] [Server thread/INFO] [KubeJS Server/]: DBV_FLEET_TEST COMPLETE

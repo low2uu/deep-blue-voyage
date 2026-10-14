@@ -1,0 +1,26 @@
+[1410月2026 15:54:14.914] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS same body loaded after restart
+[1410月2026 15:54:14.921] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS devices found in assembled plot
+[1410月2026 15:54:23.913] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST REPORT Report[qualification=Qualification[controller=true, oxygen=true, sealed=true, pending=false], devices=[Device[id=create_submarine:command_sub, type=中央控制器, position=BlockPos{x=20481034, y=129, z=20481034}, relativePosition=BlockPos{x=2, y=1, z=2}, status=有效], Device[id=create_submarine:electrolyzer, type=氧气制造, position=BlockPos{x=20481035, y=129, z=20481034}, relativePosition=BlockPos{x=3, y=1, z=2}, status=可制氧/满罐待机], Device[id=create_submarine:oxygene_diffuser, type=供氧, position=BlockPos{x=20481036, y=129, z=20481034}, relativePosition=BlockPos{x=4, y=1, z=2}, status=氧气=1000mB；启动=true；密闭舱供氧=true], Device[id=create_submarine:submarine_propeller, type=推进, position=BlockPos{x=20481037, y=129, z=20481034}, relativePosition=BlockPos{x=5, y=1, z=2}, status=已识别；运行状态未适配], Device[id=create_submarine:underwater_mine, type=武器, position=BlockPos{x=20481038, y=129, z=20481034}, relativePosition=BlockPos{x=6, y=1, z=2}, status=已识别；运行状态未适配]], tick=5945]
+[1410月2026 15:54:23.913] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS all three conditions accepted
+[1410月2026 15:54:23.913] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS real electrolyzer produced oxygen
+[1410月2026 15:54:23.914] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS propeller identified
+[1410月2026 15:54:23.914] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS weapon identified
+[1410月2026 15:54:23.919] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS inspection command
+[1410月2026 15:54:23.941] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS ordinary computer interaction preserved
+[1410月2026 15:54:23.942] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS sneak interaction opens equipment report
+[1410月2026 15:54:23.948] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS nearby world equipment excluded
+[1410月2026 15:54:23.949] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS generator without water rejected
+[1410月2026 15:54:23.950] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS disabled generator rejected
+[1410月2026 15:54:23.951] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS generator without energy rejected
+[1410月2026 15:54:23.951] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS empty diffuser rejected
+[1410月2026 15:54:23.958] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS diffuser without redstone rejected
+[1410月2026 15:54:23.959] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS missing controller rejected
+[1410月2026 15:54:26.908] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS propulsion and weapons are not admission requirements
+[1410月2026 15:54:26.909] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS identity persisted after restart
+[1410月2026 15:54:26.910] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS second registration denied
+[1410月2026 15:54:26.916] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS hull change denies stale qualification
+[1410月2026 15:54:30.410] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS open hull rejected after rescan
+[1410月2026 15:54:30.410] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS damage retains permanent identity
+[1410月2026 15:54:33.410] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS repaired hull qualifies again
+[1410月2026 15:54:33.485] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST PASS save accepted world
+[1410月2026 15:54:33.485] [Server thread/INFO] [KubeJS Server/]: DBV_QUAL_TEST COMPLETE

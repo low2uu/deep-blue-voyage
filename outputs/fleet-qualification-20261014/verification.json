@@ -1,0 +1,11 @@
+{
+  "tests": 10,
+  "failures": 0,
+  "errors": 0,
+  "first_run_assertions": 26,
+  "reopen_assertions": 24,
+  "test_scripts_excluded_from_mod_jar": true,
+  "client_test_script_removed": true,
+  "server_test_script_removed": true,
+  "acceptance_world_archived": true
+}

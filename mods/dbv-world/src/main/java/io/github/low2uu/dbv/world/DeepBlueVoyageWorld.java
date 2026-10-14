@@ -23,6 +23,7 @@ public final class DeepBlueVoyageWorld {
 
     public DeepBlueVoyageWorld(IEventBus modBus) {
         GENERATORS.register(modBus);
+        io.github.low2uu.dbv.fleet.FleetModule.initialize();
         NeoForge.EVENT_BUS.addListener(ConstructionMode::onServerStarted);
         NeoForge.EVENT_BUS.addListener(DeepBlueVoyageWorld::onCreateSpawn);
         LogUtils.getLogger().info("Deep Blue Voyage world module loaded; starter island preset registered.");

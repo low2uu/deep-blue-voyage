@@ -7,7 +7,21 @@ modId="dbv_world"
 version="0.1.0"
 displayName="Deep Blue Voyage World"
 authors="Deep Blue Voyage"
-description='''The official world-generation module for the Deep Blue Voyage modpack.'''
+description='''World generation and flagship development systems for Deep Blue Voyage.'''
+
+[[dependencies.dbv_world]]
+modId="sable"
+type="required"
+versionRange="[2.0.6]"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.dbv_world]]
+modId="create_submarine"
+type="required"
+versionRange="[3.3.0]"
+ordering="AFTER"
+side="BOTH"
 
 [[dependencies.dbv_world]]
 modId="neoforge"

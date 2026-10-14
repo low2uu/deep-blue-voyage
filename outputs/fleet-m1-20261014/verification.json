@@ -1,0 +1,18 @@
+{
+  "milestone": "M1",
+  "date": "2026-10-14",
+  "unit_tests": 9,
+  "failures": 0,
+  "errors": 0,
+  "first-run": {
+    "assertions_passed": 11,
+    "complete": true
+  },
+  "reopen": {
+    "assertions_passed": 9,
+    "complete": true
+  },
+  "test_scripts_excluded_from_mod_jar": true,
+  "client_scripts_removed": true,
+  "server_scripts_removed": true
+}

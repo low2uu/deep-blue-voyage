@@ -6,6 +6,7 @@ Markdown 说明文档统一采用 `中文说明-english-name.md`；各级 `READM
 
 | 文档 | 内容 |
 | --- | --- |
+| [系统开发文档](development/README.md) | 自研模块架构、代码目录、数据格式和开发验收 |
 | [开发环境部署](开发环境部署-development-setup.md) | Windows、Zulu Java 21、VS Code 与协作开发流程 |
 | [开发工具记录](开发工具记录-development-tools.md) | 已批准的建设、脚本和性能工具 |
 | [开发验证记录](开发验证记录-development-verification.md) | 客户端、起始岛与工程验证记录 |
