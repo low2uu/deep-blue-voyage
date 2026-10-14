@@ -61,9 +61,36 @@ public final class CabinStorage {
         store(m).requireStorageReady();captureUnchecked(m);
     }
     private void captureUnchecked(FleetModule m) throws IOException {
-        var store=store(m);store.putModule("storage",scan(m));
+        var store=store(m);var storage=scan(m);var structure=structure(m);var key=new JsonObject();key.add("storage",storage);
+        var geometry=new JsonArray();
+        for(var value:structure.getAsJsonArray("blocks")){var entry=value.getAsJsonObject().deepCopy();entry.remove("metadata");geometry.add(entry);}
+        key.add("geometry",geometry);
+        var current=store.read().getAsJsonObject("modules");var business=new JsonObject();
+        for(var entry:current.entrySet())if(!Set.of("structure","storage","vessel","automaticBackup","storageBackup").contains(entry.getKey()))business.add(entry.getKey(),entry.getValue());
+        key.add("business",business);String fingerprint=VesselDataStore.fingerprint(key);
+        var previous=current.getAsJsonObject("automaticBackup");
         var id=m.registry().flagship().orElseThrow();var identity=new JsonObject();identity.addProperty("name",id.name());identity.addProperty("dimension",id.dimension());
-        identity.addProperty("bodyId",id.bodyId().toString());identity.addProperty("generation",id.generation());store.putModule("vessel",identity);
+        identity.addProperty("bodyId",id.bodyId().toString());identity.addProperty("generation",id.generation());
+        store.putModules(Map.of("storage",storage,"structure",structure,"vessel",identity));
+        if(previous==null||!fingerprint.equals(previous.get("fingerprint").getAsString())){
+            var marker=new JsonObject();marker.addProperty("latest",store.backupAutomatic().toString());marker.addProperty("fingerprint",fingerprint);store.putModule("automaticBackup",marker);
+        }
+    }
+    public JsonObject structure(FleetModule m) throws IOException {
+        var root=new JsonObject();root.addProperty("schemaVersion",1);root.addProperty("metadataAdapter","typed-json-v1");
+        var origin=m.refit().storageOrigin(m);var blocks=new JsonArray();var level=server.overworld();
+        var ops=server.registryAccess().createSerializationContext(JsonOps.INSTANCE);
+        for(var pos:m.refit().storagePositions(m)){
+            if(!level.hasChunkAt(pos))throw new IOException("船体区块未加载，不能更新结构备份");
+            var state=level.getBlockState(pos);if(state.isAir())continue;
+            var entry=new JsonObject();var relative=pos.subtract(origin);
+            entry.addProperty("x",relative.getX());entry.addProperty("y",relative.getY());entry.addProperty("z",relative.getZ());
+            entry.add("state",net.minecraft.world.level.block.state.BlockState.CODEC.encodeStart(ops,state).getOrThrow());
+            var be=level.getBlockEntity(pos);if(state.hasBlockEntity()&&be==null)throw new IOException("设备未加载，不能更新结构备份");
+            if(be!=null)entry.add("metadata",BlockEntityJson.encode(be.saveWithFullMetadata(level.registryAccess())));
+            blocks.add(entry);
+        }
+        root.add("blocks",blocks);return root;
     }
     public UUID backup(FleetModule m) throws IOException {capture(m);return store(m).backup();}
     public String manualBackup(ServerPlayer p,FleetModule m) throws IOException {

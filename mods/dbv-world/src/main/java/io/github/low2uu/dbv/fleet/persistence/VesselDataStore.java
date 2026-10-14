@@ -40,17 +40,33 @@ public final class VesselDataStore {
         }catch(RuntimeException e){throw new IOException("主艇独立数据损坏或版本不支持，禁止覆盖",e);}
     }
     public void putModule(String key,JsonObject value) throws IOException {
+        putModules(java.util.Map.of(key,value));
+    }
+    public void putModules(java.util.Map<String,JsonObject> values) throws IOException {
         var root=read();var modules=root.getAsJsonObject("modules");
-        if(value.equals(modules.get(key)))return;
-        modules.add(key,value.deepCopy());write(directory.resolve("state.json"),JSON.toJson(root),true);
+        boolean changed=false;
+        for(var entry:values.entrySet())if(!entry.getValue().equals(modules.get(entry.getKey()))){modules.add(entry.getKey(),entry.getValue().deepCopy());changed=true;}
+        if(changed)write(directory.resolve("state.json"),JSON.toJson(root),true);
     }
     public UUID backup() throws IOException {
         var root=read();UUID id=UUID.randomUUID();String data=JSON.toJson(root);
         var envelope=new JsonObject();envelope.addProperty("schemaVersion",1);envelope.addProperty("sha256",hash(data));envelope.addProperty("payload",data);
         write(directory.resolve("backups").resolve(id+".json"),JSON.toJson(envelope),false);return id;
     }
+    public UUID backupAutomatic() throws IOException {
+        UUID id=UUID.randomUUID();String data=JSON.toJson(read());var envelope=new JsonObject();
+        envelope.addProperty("schemaVersion",1);envelope.addProperty("sha256",hash(data));envelope.addProperty("payload",data);
+        Path folder=directory.resolve("automatic");write(folder.resolve(id+".json"),JSON.toJson(envelope),false);
+        try(var files=Files.list(folder)){
+            var snapshots=files.filter(p->p.getFileName().toString().matches("[0-9a-f-]{36}\\.json")).sorted(java.util.Comparator.comparingLong(p->{try{return Files.getLastModifiedTime(p).toMillis();}catch(IOException e){return Long.MAX_VALUE;}})).toList();
+            for(int i=0;i<snapshots.size()-20;i++)Files.delete(snapshots.get(i));
+        }
+        return id;
+    }
+    public static String fingerprint(JsonElement value){return hash(value.toString());}
     public JsonObject readBackup(UUID id) throws IOException {
         var path=directory.resolve("backups").resolve(id+".json");requireComplete(path);
+        if(!Files.exists(path)){path=directory.resolve("automatic").resolve(id+".json");requireComplete(path);}
         try{
             var envelope=JsonParser.parseString(Files.readString(path)).getAsJsonObject();String data=envelope.get("payload").getAsString();
             if(envelope.get("schemaVersion").getAsInt()!=1||!hash(data).equals(envelope.get("sha256").getAsString()))throw new IOException("主艇备份校验失败");

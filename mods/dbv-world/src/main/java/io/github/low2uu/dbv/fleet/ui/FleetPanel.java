@@ -50,7 +50,7 @@ public final class FleetPanel {
     }
     public static void handle(ServerPlayer player,PanelAction action){
         var s=SESSIONS.get(player);long now=player.serverLevel().getGameTime();
-        if(s==null||!s.token.equals(action.session())||action.action()<0||action.action()>PanelAction.STORAGE_RESTORE)return;
+        if(s==null||!s.token.equals(action.session())||action.action()<0||action.action()>PanelAction.DEPART)return;
         if(action.action()==PanelAction.CLOSE){SESSIONS.remove(player);return;}
         if(now>s.expires){
             PacketDistributor.sendToPlayer(player,new PanelView(s.token,false,"潜艇管理","连接已过期","请重新打开管理界面。",0,List.of()));
@@ -63,7 +63,10 @@ public final class FleetPanel {
                 PacketDistributor.sendToPlayer(player,new PanelView(s.token,false,"潜艇管理","连接已断开","请靠近原潜艇，重新打开管理界面。",0,List.of()));
                 SESSIONS.remove(player);return;
             }
-            if(action.action()==PanelAction.STORAGE_BACKUP||action.action()==PanelAction.STORAGE_RESTORE){
+            if(action.action()==PanelAction.DEPART){
+                if(!s.flagship)throw new IllegalStateException("仅主潜艇可从此处出航");
+                s.notice=m.starter().depart(player,m);
+            }else if(action.action()==PanelAction.STORAGE_BACKUP||action.action()==PanelAction.STORAGE_RESTORE){
                 if(!s.flagship)throw new IllegalStateException("仅主艇可操作独立存储档案");
                 s.notice=action.action()==PanelAction.STORAGE_BACKUP?m.storage().manualBackup(player,m):m.storage().restoreLatest(player,m);
             }else if(action.action()==PanelAction.CHECK){
@@ -93,6 +96,8 @@ public final class FleetPanel {
             var report=registered?m.refit().report(m):m.inspection().inspect(body);var q=report.qualification();
             int flags=PanelView.CONNECTED|(q.controller()?1:0)|(q.oxygen()?2:0)|(q.sealed()?4:0)|(q.pending()?8:0)|(registered?16:0);
             String status=registered?m.refit().status():"此船尚未登记为主潜艇";
+            if(registered&&m.starter().departed(m)){flags|=PanelView.DEPARTED;status="已出航：自由物理状态，船坞固定和岸供已断开。";}
+            if(registered&&m.starter().departureProblem(player,m)==null)flags|=PanelView.CAN_DEPART;
             if(registered&&m.refit().active())flags|=PanelView.ACTIVE;
             if(registered&&m.refit().checking())flags|=PanelView.CHECKING;
             if(registered&&m.refit().blockMode())flags|=PanelView.BLOCK_MODE;

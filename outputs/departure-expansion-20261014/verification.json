@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-14",
+  "build": "passed",
+  "unitTests": 21,
+  "runtimeAssertions": 22,
+  "runtimeFailures": 0,
+  "runtimeLog": "acceptance.log",
+  "screenshot": "departed.png",
+  "world": "DBV-Expansion-Acceptance (copy; archived under runtime/backups)",
+  "formalWorldModified": false,
+  "temporaryRuntimeScriptsRemoved": true,
+  "limitations": [
+    "Placement/breaking verified through events, not manual mouse input",
+    "Departure reload verified through a fresh service instance, not a process restart",
+    "Return docking and full JSON vessel reconstruction UI are not implemented"
+  ],
+  "previousAttempts": [
+    "departure-attempt1.log: UI checked after vessel moved out of range",
+    "expansion-attempt1.log: test script API error",
+    "expansion-attempt2-loading.log: Create startup registration failure; final restart passed"
+  ]
+}

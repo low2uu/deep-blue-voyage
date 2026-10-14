@@ -39,6 +39,29 @@ public final class StarterSubmarine {
     private ServerSubLevel mooredInstance;
     private boolean failed;
     private CompoundTag vesselData;
+    private Boolean departed;
+    public boolean departed(FleetModule module) throws IOException {
+        if(module.registry().flagship().isEmpty())return false;
+        if(departed==null){
+            var navigation=module.storage().store(module).read().getAsJsonObject("modules").getAsJsonObject("navigation");
+            departed=navigation!=null&&navigation.get("departed").getAsBoolean();
+        }
+        return departed;
+    }
+    public String departureProblem(net.minecraft.server.level.ServerPlayer player,FleetModule module){
+        try{
+            if(departed(module))return "已出航，船坞固定与岸供已断开";
+            if(module.refit().active())return "请先完成或取消改装";
+            return module.refit().accessProblem(player,module);
+        }catch(Exception error){return "无法读取出航档案，请检查独立数据目录";}
+    }
+    public String depart(net.minecraft.server.level.ServerPlayer player,FleetModule module) throws IOException {
+        String problem=departureProblem(player,module);if(problem!=null)throw new IllegalStateException(problem);
+        var state=new com.google.gson.JsonObject();state.addProperty("schemaVersion",1);state.addProperty("departed",true);
+        module.storage().store(module).putModule("navigation",state);
+        departed=true;releaseMooring();
+        return "已出航：船坞固定与岸供已断开，潜艇进入自由物理状态。请使用艇上的驾驶设备控制。";
+    }
     public StarterSubmarine(MinecraftServer server) {
         this.server = server;
         directory = server.getWorldPath(LevelResource.ROOT).resolve("dbv/fleet/dock");
@@ -60,6 +83,12 @@ public final class StarterSubmarine {
             var tag = vesselData;
             var body = module.adapter().find(server.overworld(), tag.getUUID("body"));
             if (body == null) return; // Unloaded is not destroyed; never create a replacement.
+            if(departed(module)){
+                releaseMooring();
+                dev.ryanhcode.sable.api.sublevel.SubLevelContainer.getContainer(body.getLevel())
+                        .removeForceLoadTicket(body,INITIAL_VALIDATION,net.minecraft.util.Unit.INSTANCE);
+                return;
+            }
             if (!inDock(body)) return;
             if (mooring == null || !mooring.isValid() || body != mooredInstance) {
                 if (mooring != null && mooring.isValid()) mooring.remove();

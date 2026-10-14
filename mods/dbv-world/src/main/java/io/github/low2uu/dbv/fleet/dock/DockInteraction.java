@@ -50,8 +50,9 @@ public final class DockInteraction {
         try {
             var m=FleetModule.get(player.getServer());
             if(m.registry().flagship().isEmpty() || !m.registry().flagship().get().bodyId().equals(body.getUniqueId())) return false;
+            if(!m.refit().active())return false; // Normal physical ships retain Sable's ordinary building interactions.
             if(m.refit().mayEdit(player,pos,state)) return false;
-            player.sendSystemMessage(Component.literal("主艇编辑已锁定：请先在中央控制器开始改装，将物理船体拆为世界方块后施工。"));
+            player.sendSystemMessage(Component.literal("主艇正在转换、验收或还原，暂时无法编辑；请等待改装流程结束。"));
             return true;
         } catch(Exception e) { return true; }
     }

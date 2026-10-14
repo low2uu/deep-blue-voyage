@@ -44,6 +44,7 @@ public final class FleetModule {
         NeoForge.EVENT_BUS.addListener(FleetModule::start);
         NeoForge.EVENT_BUS.addListener(FleetModule::tick);
         NeoForge.EVENT_BUS.addListener(FleetModule::stop);
+        NeoForge.EVENT_BUS.addListener(FleetModule::stopping);
     }
 
     public static FleetModule get(MinecraftServer server) throws IOException {
@@ -99,7 +100,7 @@ public final class FleetModule {
             module.refit.process(module);
         } catch (Exception error) { LogUtils.getLogger().error("DBV dock stopped safely: {}", error.getMessage()); }
         if (event.getServer().getTickCount() % 20 != 0) { return; }
-        if(module.registry.flagship().isPresent()&&!module.refit.active())try{module.storage.capture(module);}
+        if(event.getServer().getTickCount()%100==0&&module.registry.flagship().isPresent()&&!module.refit.active())try{module.storage.capture(module);}
         catch(Exception error){if(event.getServer().getTickCount()%1200==0)LogUtils.getLogger().warn("主艇独立存储未更新，保留旧档案：{}",error.getMessage());}
         VesselTelemetry.State before = module.telemetry == null ? null : module.telemetry.state();
         VesselTelemetry now = module.sample(event.getServer());
@@ -107,6 +108,11 @@ public final class FleetModule {
     }
 
     private static void stop(ServerStoppedEvent event) { SERVERS.remove(event.getServer()); }
+    private static void stopping(net.neoforged.neoforge.event.server.ServerStoppingEvent event){
+        var module=SERVERS.get(event.getServer());
+        if(module!=null&&module.registry.flagship().isPresent()&&!module.refit.active())try{module.storage.capture(module);}
+        catch(Exception error){LogUtils.getLogger().error("退出时主艇备份未更新，保留旧档案",error);}
+    }
 
     private static void start(ServerStartedEvent event) {
         try { get(event.getServer()); }

@@ -57,7 +57,12 @@ public final class RefitService {
     }
     private static net.minecraft.world.phys.AABB worldBox(ServerSubLevel body){var b=body.boundingBox();return new net.minecraft.world.phys.AABB(b.minX(),b.minY(),b.minZ(),b.maxX(),b.maxY(),b.maxZ());}
     private BoundingBox3i bounds(){var a=journal.getIntArray("worldBounds");return new BoundingBox3i(a[0],a[1],a[2],a[3],a[4],a[5]);}
-    public boolean contains(BlockPos p){if(journal==null)return false;var b=bounds();return p.getX()>=b.minX()&&p.getX()<=b.maxX()&&p.getY()>=b.minY()&&p.getY()<=b.maxY()&&p.getZ()>=b.minZ()&&p.getZ()<=b.maxZ();}
+    public boolean contains(BlockPos p){
+        if(journal==null)return false;var b=bounds();
+        return p.getX()>=Math.max(0,b.minX()-16)&&p.getX()<=Math.min(127,b.maxX()+16)
+            &&p.getY()>=Math.max(65,b.minY()-16)&&p.getY()<=Math.min(100,b.maxY()+16)
+            &&p.getZ()>=Math.max(112,b.minZ()-16)&&p.getZ()<=Math.min(239,b.maxZ()+16);
+    }
     public boolean near(ServerPlayer player){return journal!=null&&player.serverLevel()==server.overworld()&&bounds().toAABB().inflate(12).contains(player.position());}
     public String accessProblem(ServerPlayer p,FleetModule m){
         if(journal==null&&legacy.active())return legacy.accessProblem(p,m);
@@ -87,9 +92,10 @@ public final class RefitService {
         if(checking())throw new IllegalStateException("正在验收，请等待结果");
         if(action.equals("cancel")){rollback(m,"cancelled");return "已取消：恢复改装前船体，主艇永久身份不变。";}
         if(action.equals("commit")){
+            rememberConnected(); // Refuse an oversized/shore-connected scan before converting anything.
             try{
                 // Verify that every block entity can be saved before handing it to Sable.
-                capture(bounds());
+                capture(selectedBlocks(),PAD);
                 assemble(m,false);
                 deadline=server.overworld().getGameTime()+400;
                 return "正在完成改装：已临时装配，等待三项检测（最多20秒）；通过后交付，失败还原。";
@@ -123,8 +129,39 @@ public final class RefitService {
         }catch(IOException|RuntimeException e){blocked=true;throw e;}
     }
     private List<BlockPos> positions(BoundingBox3i b){return BlockPos.betweenClosedStream(b.minX(),b.minY(),b.minZ(),b.maxX(),b.maxY(),b.maxZ()).map(BlockPos::immutable).toList();}
+    private boolean solidPart(BlockPos p){
+        var level=server.overworld();if(!level.hasChunkAt(p))throw new IllegalArgumentException("连接方块所在区块未加载："+p.toShortString());
+        var state=level.getBlockState(p);return !state.isAir()&&!(state.getBlock() instanceof net.minecraft.world.level.block.LiquidBlock);
+    }
+    /** Six-face connectivity, seeded by the original envelope; free fluids and detached objects stay in the world. */
+    private List<BlockPos> connectedBlocks(){
+        var found=new LinkedHashSet<BlockPos>();var queue=new ArrayDeque<BlockPos>();
+        for(var p:positions(bounds()))if(solidPart(p)){found.add(p);queue.add(p);}
+        var b=bounds();int minX=b.minX(),minY=b.minY(),minZ=b.minZ(),maxX=b.maxX(),maxY=b.maxY(),maxZ=b.maxZ();
+        while(!queue.isEmpty()){
+            var p=queue.remove();
+            for(var direction:net.minecraft.core.Direction.values()){
+                var next=p.relative(direction);if(found.contains(next)||!solidPart(next))continue;
+                if(!contains(next))throw new IllegalArgumentException("连接结构超出船坞改装范围，请断开与岸边建筑的连接："+next.toShortString());
+                minX=Math.min(minX,next.getX());minY=Math.min(minY,next.getY());minZ=Math.min(minZ,next.getZ());
+                maxX=Math.max(maxX,next.getX());maxY=Math.max(maxY,next.getY());maxZ=Math.max(maxZ,next.getZ());
+                if((long)(maxX-minX+1)*(maxY-minY+1)*(maxZ-minZ+1)>4096)throw new IllegalArgumentException("连接后船体包围盒超过4096格，请缩小扩建或断开岸边结构");
+                found.add(next);queue.add(next);
+            }
+        }
+        return List.copyOf(found);
+    }
+    private void rememberConnected() throws IOException {
+        var blocks=connectedBlocks();journal.putLongArray("assembledBlocks",blocks.stream().mapToLong(BlockPos::asLong).toArray());DockFiles.replace(file,journal);
+    }
+    private List<BlockPos> selectedBlocks(){return journal.contains("assembledBlocks")?java.util.Arrays.stream(journal.getLongArray("assembledBlocks")).mapToObj(BlockPos::of).toList():positions(bounds()).stream().filter(this::solidPart).toList();}
+    private BoundingBox3i assemblyBounds(List<BlockPos> blocks){
+        var b=bounds();int x=b.minX(),y=b.minY(),z=b.minZ(),xx=b.maxX(),yy=b.maxY(),zz=b.maxZ();
+        for(var p:blocks){x=Math.min(x,p.getX());y=Math.min(y,p.getY());z=Math.min(z,p.getZ());xx=Math.max(xx,p.getX());yy=Math.max(yy,p.getY());zz=Math.max(zz,p.getZ());}
+        return new BoundingBox3i(x,y,z,xx,yy,zz);
+    }
     public List<BlockPos> storagePositions(FleetModule m){
-        if(blockMode())return positions(bounds());
+        if(blockMode())return connectedBlocks();
         var body=currentBody(m);if(body==null||body.isRemoved())throw new IllegalStateException("主艇未加载，保留已有存储档案");
         var b=body.getPlot().getBoundingBox();
         if((long)(b.maxX()-b.minX()+1)*(b.maxY()-b.minY()+1)*(b.maxZ()-b.minZ()+1)>4096)throw new IllegalStateException("主艇扫描范围超过当前上限");
@@ -137,8 +174,11 @@ public final class RefitService {
     }
     /** Snapshot positions are relative, so a new Sable plot can receive the original data. */
     private ListTag capture(BoundingBox3i b){
-        var entries=new ListTag();var level=server.overworld();var origin=new BlockPos(b.minX(),b.minY(),b.minZ());
-        for(var p:positions(b)){
+        return capture(positions(b),new BlockPos(b.minX(),b.minY(),b.minZ()));
+    }
+    private ListTag capture(List<BlockPos> blocks,BlockPos origin){
+        var entries=new ListTag();var level=server.overworld();
+        for(var p:blocks){
             var state=level.getBlockState(p);
             var e=new CompoundTag();e.putLong("offset",p.subtract(origin).asLong());e.put("state",NbtUtils.writeBlockState(state));
             var be=level.getBlockEntity(p);
@@ -165,12 +205,12 @@ public final class RefitService {
         dev.ryanhcode.sable.api.sublevel.SubLevelContainer.getContainer(level).removeSubLevel(body,dev.ryanhcode.sable.sublevel.storage.SubLevelRemovalReason.REMOVED);
     }
     private ServerSubLevel assemble(FleetModule m,boolean restored) throws IOException {
-        var level=server.overworld();var blocks=positions(bounds()).stream().filter(p->!level.getBlockState(p).isAir()).toList();
+        var level=server.overworld();var blocks=restored?positions(bounds()).stream().filter(p->!level.getBlockState(p).isAir()).toList():selectedBlocks();
         if(blocks.isEmpty())throw new IllegalArgumentException("船体为空");
         var states=blocks.stream().map(level::getBlockState).toList();
         setPhase(restored?"RESTORING":"ASSEMBLING");
         try{
-            var body=SubLevelAssemblyHelper.assembleBlocks(level,PAD,blocks,bounds());
+            var body=SubLevelAssemblyHelper.assembleBlocks(level,PAD,blocks,restored?bounds():assemblyBounds(blocks));
             if(body==null||body.isRemoved())throw new IOException("Sable装配失败");
             journal.putUUID("candidate",body.getUniqueId());
             // Commit the allocated UUID before changing authoritative identity metadata.
@@ -198,7 +238,8 @@ public final class RefitService {
         // Restore all states before any neighbour updates: doors, beds and attached blocks
         // must not break while their other half/support has not been restored yet.
         int restoreFlags=net.minecraft.world.level.block.Block.UPDATE_CLIENTS|net.minecraft.world.level.block.Block.UPDATE_KNOWN_SHAPE;
-        for(var p:positions(bounds())){level.removeBlockEntity(p);level.setBlock(p,Blocks.AIR.defaultBlockState(),restoreFlags);}
+        var cleanup=new HashSet<>(positions(bounds()));cleanup.addAll(selectedBlocks());
+        for(var p:cleanup){level.removeBlockEntity(p);level.setBlock(p,Blocks.AIR.defaultBlockState(),restoreFlags);}
         for(int i=0;i<entries.size();i++){
             var p=PAD.offset(BlockPos.of(entries.getCompound(i).getLong("offset")));
             level.setBlock(p,states.get(i),restoreFlags);
@@ -213,6 +254,7 @@ public final class RefitService {
         }
     }
     private void rollback(FleetModule m,String outcome) throws IOException {
+        if(phase().equals("STATIC"))rememberConnected();
         try{
             setPhase("ROLLING_BACK");
             if(journal.hasUUID("candidate")){
@@ -267,6 +309,12 @@ public final class RefitService {
         if(b.length!=6||b[0]!=60||b[1]!=68||b[2]!=150||b[3]<b[0]||b[4]<b[1]||b[5]<b[2]||b[3]>128||b[4]>100||b[5]>240)throw new IOException("改装区域无效");
         long volume=(long)(b[3]-b[0]+1)*(b[4]-b[1]+1)*(b[5]-b[2]+1);var list=journal.getList("original",Tag.TAG_COMPOUND);
         if(volume>4096||list.size()!=volume)throw new IOException("改装备份数量无效");
+        if(journal.contains("assembledBlocks")){
+            var selection=selectedBlocks();
+            if(selection.size()>4096||new HashSet<>(selection).size()!=selection.size()||selection.stream().anyMatch(p->!contains(p)))throw new IOException("扩建方块记录无效");
+            var box=assemblyBounds(selection);
+            if((long)(box.maxX()-box.minX()+1)*(box.maxY()-box.minY()+1)*(box.maxZ()-box.minZ()+1)>4096)throw new IOException("扩建记录范围过大");
+        }
         var seen=new HashSet<Long>();
         for(int i=0;i<list.size();i++){
             var e=list.getCompound(i);var p=BlockPos.of(e.getLong("offset"));
@@ -280,7 +328,7 @@ public final class RefitService {
     public VesselInspection.Report report(FleetModule m){
         if(!blockMode()){var body=currentBody(m);return body==null?new VesselInspection.Report(new Qualification(false,false,false,true),List.of(),server.overworld().getGameTime()):m.inspection().inspect(body);}
         boolean controller=false;var devices=new ArrayList<VesselInspection.Device>();var level=server.overworld();
-        for(var p:positions(bounds())){
+        for(var p:connectedBlocks()){
             var id=net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(level.getBlockState(p).getBlock()).toString();
             if(id.equals("create_submarine:command_sub"))controller=true;
             if(level.getBlockState(p).hasBlockEntity())devices.add(new VesselInspection.Device(id,id.equals("create_submarine:command_sub")?"中央控制器":id.equals("create_submarine:electrolyzer")?"氧气制造":id.equals("create_submarine:oxygene_diffuser")?"供氧":"其他设备",p,p.subtract(PAD),"方块改装阶段；运行资格在完成时检测"));

@@ -41,4 +41,12 @@ class VesselDataStoreTest {
         assertNotNull(reloaded.readBackup(source));assertNotNull(reloaded.readBackup(before));
         reloaded.finishStorageRecovery();assertDoesNotThrow(reloaded::requireStorageReady);
     }
+    @Test void automaticHistoryIsBoundedAndNeverDeletesManualBackups() throws Exception {
+        var store=new VesselDataStore(world,UUID.randomUUID());store.putModules(java.util.Map.of("structure",data(1),"storage",data(17)));var manual=store.backup();
+        UUID latest=null;for(int i=0;i<23;i++){store.putModule("structure",data(i));latest=store.backupAutomatic();}
+        try(var files=Files.list(store.directory().resolve("automatic"))){assertEquals(20,files.count());}
+        assertNotNull(store.readBackup(manual));
+        assertEquals(22,store.readBackup(latest).getAsJsonObject("modules").getAsJsonObject("structure").get("count").getAsInt());
+        assertEquals(17,store.read().getAsJsonObject("modules").getAsJsonObject("storage").get("count").getAsInt());
+    }
 }

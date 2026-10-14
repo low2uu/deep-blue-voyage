@@ -16,7 +16,7 @@ public final class FleetScreen extends Screen {
     private PanelView view;
     private int left,top,panelWidth,panelHeight,ticks,page;
     private boolean equipment,storageTab,confirmRestore,confirmCancel,busy;
-    private Button begin,check,commit,cancel,backup,restore;
+    private Button begin,check,commit,cancel,backup,restore,depart;
     public FleetScreen(PanelView view){super(Component.literal("潜艇管理"));this.view=view;}
     public UUID session(){return view.session();}
     public PanelView snapshot(){return view;}
@@ -37,13 +37,14 @@ public final class FleetScreen extends Screen {
         addRenderableWidget(Button.builder(Component.literal("舱内存储"),b->{equipment=false;storageTab=true;page=0;updateButtons();}).bounds(left+198,top+38,80,20).build());
         addRenderableWidget(Button.builder(Component.literal("<"),b->{page=Math.max(0,page-1);}).bounds(left+panelWidth-66,top+38,22,20).build());
         addRenderableWidget(Button.builder(Component.literal(">"),b->{page=Math.min(pages()-1,page+1);}).bounds(left+panelWidth-40,top+38,22,20).build());
-        int w=(panelWidth-46)/4,y=top+panelHeight-52;
+        int w=(panelWidth-52)/5,y=top+panelHeight-52;
         begin=addRenderableWidget(Button.builder(Component.literal("开始改装"),b->request(PanelAction.BEGIN)).bounds(left+14,y,w,20).build());
         check=addRenderableWidget(Button.builder(Component.literal("重新检查"),b->{confirmCancel=false;request(PanelAction.CHECK);}).bounds(left+20+w,y,w,20).build());
         commit=addRenderableWidget(Button.builder(Component.literal("完成改装"),b->request(PanelAction.COMMIT)).bounds(left+26+2*w,y,w,20).build());
         cancel=addRenderableWidget(Button.builder(Component.literal("取消还原"),b->{
             if(confirmCancel){confirmCancel=false;request(PanelAction.CANCEL);}else{confirmCancel=true;equipment=false;updateButtons();}
         }).bounds(left+32+3*w,y,w,20).build());
+        depart=addRenderableWidget(Button.builder(Component.literal("出航"),b->request(PanelAction.DEPART)).bounds(left+38+4*w,y,w,20).build());
         backup=addRenderableWidget(Button.builder(Component.literal("备份存储"),b->request(PanelAction.STORAGE_BACKUP)).bounds(left+14,y,110,20).build());
         restore=addRenderableWidget(Button.builder(Component.literal("恢复最近备份"),b->{if(confirmRestore){confirmRestore=false;request(PanelAction.STORAGE_RESTORE);}else{confirmRestore=true;updateButtons();}}).bounds(left+130,y,130,20).build());
         updateButtons();
@@ -51,6 +52,11 @@ public final class FleetScreen extends Screen {
     private void updateButtons(){
         if(begin==null)return;
         begin.visible=check.visible=commit.visible=cancel.visible=!storageTab;
+        if(depart!=null){
+            depart.visible=!storageTab;depart.active=!busy&&view.has(PanelView.CAN_DEPART);
+            depart.setMessage(Component.literal(view.has(PanelView.DEPARTED)?"已出航":"出航"));
+            depart.setTooltip(Tooltip.create(Component.literal(view.has(PanelView.CAN_DEPART)?"解除船坞固定并断开岸供；不会自动驾驶或传送潜艇。":view.has(PanelView.DEPARTED)?"已经解除系泊，重启也不会自动重新固定。":"需在船坞靠近已系泊主艇，结束改装后由建设模式创造管理员操作。")));
+        }
         if(backup!=null){
             backup.visible=restore.visible=storageTab;backup.active=restore.active=!busy&&view.has(PanelView.STORAGE_EDITABLE);
             restore.setMessage(Component.literal(confirmRestore?"确认覆盖当前物品":"恢复最近备份"));
