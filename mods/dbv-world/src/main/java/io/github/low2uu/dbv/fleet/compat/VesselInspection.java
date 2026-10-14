@@ -89,7 +89,7 @@ public final class VesselInspection {
                         boolean active = !be.isRemoved() && level.hasNeighborSignal(pos) && oxygen.oxygenTank.getFluidAmount() > 0
                                 && oxygen.saveWithoutMetadata(level.registryAccess()).getInt("ActiveTicks") >= 100;
                         diffuser |= active && serving;
-                        status = "氧气=" + oxygen.oxygenTank.getFluidAmount() + "mB；启动=" + active + "；密闭舱供氧=" + serving;
+                        status = "氧气=" + oxygen.oxygenTank.getFluidAmount() + "毫桶；" + (active?"已启动":"未启动") + "；" + (serving?"正在向密闭舱供氧":"未向密闭舱供氧");
                     }
                     devices.add(new Device(key.toString(), type == null ? "未适配设备" : type, pos, pos.subtract(origin), status));
                 }

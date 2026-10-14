@@ -20,16 +20,9 @@ public final class DockInteraction {
         NeoForge.EVENT_BUS.addListener(DockInteraction::placeBlock);
     }
     public static void menu(ServerPlayer player,ServerSubLevel body) {
-        try {
-            var module=FleetModule.get(player.getServer());
-            if(module.registry().flagship().isEmpty() || !module.registry().flagship().get().bodyId().equals(body.getUniqueId())) return;
-            player.sendSystemMessage(Component.literal("酒狐号船坞 · "+module.refit().status()+"\n岸供为建设辅助，不代表已具备出海自持能力。"));
-            var line=Component.literal("");
-            String[][] actions={{"开始改装","begin"},{"检查","check"},{"提交","commit"},{"取消并还原","cancel"}};
-            for(var a:actions) line.append(Component.literal(" ["+a[0]+"] ").withStyle(style->style.withColor(net.minecraft.ChatFormatting.AQUA)
-                    .withClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND,"/dbv refit "+a[1]))));
-            player.sendSystemMessage(line);
-        } catch(Exception e) { player.sendSystemMessage(Component.literal("船坞暂不可用："+e.getMessage())); }
+        var report=new io.github.low2uu.dbv.fleet.compat.VesselInspection().inspect(body);
+        report.devices().stream().filter(d->d.id().equals("create_submarine:command_sub")).findFirst().ifPresent(d->
+                io.github.low2uu.dbv.fleet.ui.FleetPanel.open(player,body,d.position()));
     }
     private static void commands(RegisterCommandsEvent event) {
         var root=Commands.literal("refit").executes(c->{

@@ -23,6 +23,7 @@ public final class DeepBlueVoyageWorld {
 
     public DeepBlueVoyageWorld(IEventBus modBus) {
         GENERATORS.register(modBus);
+        modBus.addListener(io.github.low2uu.dbv.fleet.ui.FleetPanel::register);
         io.github.low2uu.dbv.fleet.FleetModule.initialize();
         NeoForge.EVENT_BUS.addListener(ConstructionMode::onServerStarted);
         NeoForge.EVENT_BUS.addListener(DeepBlueVoyageWorld::onCreateSpawn);

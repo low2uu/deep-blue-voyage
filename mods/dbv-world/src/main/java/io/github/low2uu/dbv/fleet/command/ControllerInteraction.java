@@ -12,10 +12,9 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
-/** Sneak-right-click adds an inspection entry; ordinary computer use stays upstream. */
+/** Sneak-right-click opens the server-backed panel; ordinary computer use stays upstream. */
 public final class ControllerInteraction {
     private static final Map<Player, Long> LAST_USE = new WeakHashMap<>();
-    private static final Map<Player, Integer> LAST_PAGE = new WeakHashMap<>();
     private ControllerInteraction() {}
     public static void interact(PlayerInteractEvent.RightClickBlock event) {
         if (event.getHand() != InteractionHand.MAIN_HAND || !event.getEntity().isShiftKeyDown()
@@ -30,19 +29,13 @@ public final class ControllerInteraction {
         LAST_USE.put(player, now);
         var owner = SableCompanion.INSTANCE.getContaining(event.getLevel(), event.getPos());
         if (!(owner instanceof ServerSubLevel body)) {
-            player.sendSystemMessage(Component.literal("中央控制器尚未安装在已装配船体上。")); return;
+            if(player instanceof net.minecraft.server.level.ServerPlayer p) io.github.low2uu.dbv.fleet.ui.FleetPanel.unavailable(p,"中央控制器尚未安装在已装配船体上。"); return;
         }
         try {
-            var report = new VesselInspection().inspect(body);
-            int pages = Math.max(1, (report.devices().size() + 11) / 12);
-            int page = previous == null || now - previous > 200 ? 1 : LAST_PAGE.getOrDefault(player, 0) % pages + 1;
-            LAST_PAGE.put(player, page);
-            display(report, player::sendSystemMessage, page);
             if (player instanceof net.minecraft.server.level.ServerPlayer serverPlayer)
-                io.github.low2uu.dbv.fleet.dock.DockInteraction.menu(serverPlayer, body);
-            if (pages > 1) player.sendSystemMessage(Component.literal("再次潜行右键翻页；停止操作10秒后回到第一页。"));
+                io.github.low2uu.dbv.fleet.ui.FleetPanel.open(serverPlayer,body,event.getPos());
         }
-        catch (RuntimeException exception) { player.sendSystemMessage(Component.literal("设备检测失败，未更改主艇身份：" + exception.getClass().getSimpleName())); }
+        catch (RuntimeException exception) { if(player instanceof net.minecraft.server.level.ServerPlayer p) io.github.low2uu.dbv.fleet.ui.FleetPanel.unavailable(p,"设备读取失败，请稍后重试。"); }
     }
     public static int display(VesselInspection.Report report, java.util.function.Consumer<Component> output, int page) {
         int pages = Math.max(1, (report.devices().size() + 11) / 12);

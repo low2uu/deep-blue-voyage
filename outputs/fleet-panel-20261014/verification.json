@@ -1,0 +1,26 @@
+{
+  "build": "passed",
+  "existing_unit_tests": 14,
+  "controller_translation_keys": 64,
+  "translation_key_coverage": "all create_submarine.command_sub.* keys from pinned Deep Seas 3.3.0",
+  "placeholder_validation": "passed",
+  "resources_packaged": true,
+  "acceptance_scripts_excluded_from_main_jar": true,
+  "in_game_acceptance": "passed",
+  "screenshots": [
+    "overview.png",
+    "refit-active.png",
+    "equipment.png"
+  ],
+  "github_pushed": false,
+  "assertions_passed": 22,
+  "assertions_failed": 0,
+  "scope": "Formal client, copy of DBV-Island-v2. Server right-click event opens real client screen; buttons invoke real network payloads. No physical mouse click automation.",
+  "fixture": "Closed roof hatch only in acceptance copy; original save left unchanged.",
+  "temporary_scripts_removed": true,
+  "acceptance_world_archived": "runtime/backups/DBV-Panel-Acceptance",
+  "limitations": [
+    "No dedicated-server or multiplayer acceptance",
+    "Controller navigation/diagnostic/speed translations resolved in live client; not every physical controller page visually inspected"
+  ]
+}

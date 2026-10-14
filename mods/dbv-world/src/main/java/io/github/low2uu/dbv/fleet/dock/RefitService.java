@@ -28,6 +28,11 @@ public final class RefitService {
         if (Files.exists(active)) { session=DockFiles.read(active); validate(session); recoveryRequired=true; }
     }
     public boolean active() { return session!=null; }
+    public boolean checking() { return checkingUntil>0; }
+    public String accessProblem(ServerPlayer player,FleetModule module) {
+        try { authorize(player,module);return null; }
+        catch(Exception e) { return e.getMessage(); }
+    }
     public String status() { return blocked ? "恢复异常，已锁定；请保留船坞备份" : recoveryRequired ? "上次改装中断，等待原船加载后自动还原" : checkingUntil>0 ? "正在等待舱室扫描，编辑暂时锁定" : active() ? "改装中；范围限原船包围盒，提交失败会还原" : "未改装；建设模式/创造模式可开始"; }
     private ServerSubLevel body(FleetModule module) {
         var identity=module.registry().flagship().orElseThrow(()->new IllegalStateException("主艇尚未登记，请等待供氧和密闭扫描"));
@@ -114,7 +119,11 @@ public final class RefitService {
             boolean eligible=report.qualification().eligible();
             if(!eligible) restore(body);
             finish(eligible?"committed":"rejected");
-            if(owner!=null) owner.sendSystemMessage(net.minecraft.network.chat.Component.literal(eligible?"验收完成，改装已保存。":"验收未通过，已自动还原："+String.join("；",report.qualification().reasons())));
+            if(owner!=null) {
+                String result=eligible?"验收完成，改装已保存。":"验收未通过，已自动还原："+String.join("；",report.qualification().reasons());
+                if(!io.github.low2uu.dbv.fleet.ui.FleetPanel.notifyResult(owner,result))
+                    owner.sendSystemMessage(net.minecraft.network.chat.Component.literal(result));
+            }
         } catch(IOException | RuntimeException error) { blocked=true;throw error; }
     }
     private void restore(ServerSubLevel body) throws IOException {

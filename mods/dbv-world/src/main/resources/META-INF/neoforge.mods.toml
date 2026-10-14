@@ -2,6 +2,9 @@ modLoader="javafml"
 loaderVersion="[4,)"
 license="All Rights Reserved"
 
+[[mixins]]
+config="dbv_world.client.mixins.json"
+
 [[mods]]
 modId="dbv_world"
 version="0.1.0"
