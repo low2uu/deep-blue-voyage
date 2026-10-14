@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "vesselId": "4f3da63e-22d0-4149-a8bb-12574dc02383",
+  "modules": {
+    "storage": {
+      "schemaVersion": 1,
+      "containers": [
+        {
+          "position": "1, 1, 4",
+          "block": "minecraft:chest",
+          "slots": 27,
+          "restorable": true,
+          "items": [
+            {
+              "slot": 0,
+              "label": "酒狐的储备",
+              "stack": {
+                "id": "minecraft:diamond",
+                "count": 23,
+                "components": {
+                  "minecraft:custom_name": "\"酒狐的储备\""
+                }
+              }
+            }
+          ]
+        },
+        {
+          "position": "1, 1, 5",
+          "block": "minecraft:barrel",
+          "slots": 27,
+          "restorable": true,
+          "items": [
+            {
+              "slot": 0,
+              "label": "铁锭",
+              "stack": {
+                "id": "minecraft:iron_ingot",
+                "count": 9
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "vessel": {
+      "name": "酒狐号·初始艇",
+      "dimension": "minecraft:overworld",
+      "bodyId": "d4a4dad5-6641-4b2d-b06c-864db7d5f588",
+      "generation": 15
+    },
+    "storageBackup": {
+      "latest": "da7126c6-7e17-4d57-959b-027009fafc6f"
+    }
+  }
+}

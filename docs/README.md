@@ -26,6 +26,7 @@ Markdown 说明文档统一采用 `中文说明-english-name.md`；各级 `READM
 | 文档 | 内容 |
 | --- | --- |
 | [初始潜艇与改装流程](development/初始潜艇与改装流程-starter-submarine-refit.md) | 建设小艇、中文管理界面、备份与回滚边界 |
+| [主艇独立数据与舱内面板](development/主艇独立数据与舱内面板-vessel-data-and-cabin-panel.md) | 独立 JSON 档案、容器汇总、信息面板与存储恢复 |
 | [起始岛建筑与环境初版](game-mechanics/起始岛建筑与环境初版-starter-island-built-v1.md) | 已建成地图、船坞、机器预留空间与验收 |
 | [起始岛工厂与蓝图方案](game-mechanics/起始岛工厂与蓝图方案-starter-factory-blueprint-plan.md) | 首期工厂规模与机器选型 |
 | [机器蓝图库](game-mechanics/机器蓝图库-machine-blueprint-catalog.md) | 尺寸、版本、来源与使用说明 |

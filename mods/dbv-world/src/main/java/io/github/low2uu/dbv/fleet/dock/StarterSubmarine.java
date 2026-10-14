@@ -133,6 +133,9 @@ public final class StarterSubmarine {
             var p = new BlockPos(x,y,z); level.setBlock(p,state,3); positions.add(p);
         }
         place(level,positions,new BlockPos(64,69,152),"create_submarine:command_sub");
+        place(level,positions,new BlockPos(61,69,154),"minecraft:chest");
+        place(level,positions,new BlockPos(61,69,155),"minecraft:barrel");
+        place(level,positions,new BlockPos(62,69,152),"dbv_world:cabin_panel");
         place(level,positions,new BlockPos(62,69,160),"create_submarine:electrolyzer");
         place(level,positions,new BlockPos(66,69,160),"create_submarine:oxygene_diffuser");
         place(level,positions,new BlockPos(66,69,161),"minecraft:redstone_block");

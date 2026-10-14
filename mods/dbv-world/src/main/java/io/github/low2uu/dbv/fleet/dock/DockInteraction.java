@@ -42,7 +42,7 @@ public final class DockInteraction {
             var m=FleetModule.get(player.getServer());
             if(player.serverLevel()==player.getServer().overworld()&&m.refit().contains(pos)){
                 if(m.refit().mayEdit(player,pos,state))return false;
-                player.sendSystemMessage(Component.literal("船坞改装区域已锁定，或该方块暂不支持备份。"));return true;
+                player.sendSystemMessage(Component.literal("船坞改装区域已锁定：仅当前改装者可在施工阶段编辑，请检查改装状态与权限。"));return true;
             }
         }catch(Exception e){return true;}
         var owner=SableCompanion.INSTANCE.getContaining(player.level(),pos);
@@ -51,7 +51,7 @@ public final class DockInteraction {
             var m=FleetModule.get(player.getServer());
             if(m.registry().flagship().isEmpty() || !m.registry().flagship().get().bodyId().equals(body.getUniqueId())) return false;
             if(m.refit().mayEdit(player,pos,state)) return false;
-            player.sendSystemMessage(Component.literal("主艇编辑已锁定：请先在船载电脑开始改装，并使用支持方块；不得越界或拆除系泊角块。"));
+            player.sendSystemMessage(Component.literal("主艇编辑已锁定：请先在中央控制器开始改装，将物理船体拆为世界方块后施工。"));
             return true;
         } catch(Exception e) { return true; }
     }

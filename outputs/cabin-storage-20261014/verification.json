@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-14",
+  "build": "passed",
+  "unit_tests": 20,
+  "main_runtime_assertions": 9,
+  "restart_runtime_assertions": 5,
+  "final_runtime_failures": 0,
+  "screenshots_reviewed": ["storage.png", "vessel.png"],
+  "verified": ["JSON inventory backup and restoration", "23 diamonds with custom name", "restart persistence", "terminal removal preserves business data", "terminal right-click event opens populated UI"],
+  "formal_save_modified": false,
+  "temporary_runtime_scripts_removed": true,
+  "test_world": "runtime/backups/DBV-Cabin-Storage-Acceptance",
+  "limitations": ["Creative construction-mode dock inventory restore only", "No migration of legacy physical NBT backups", "No arbitrary crash auto-recovery", "New-world template compiled but not generated in a separate runtime test", "Synthetic right-click event; not physical mouse automation"],
+  "earlier_attempts": "Rhino script method conversion and forbidden Files-class assertions corrected; one Create registration callback startup failure retained in attempt2-loading.log; final two runs passed"
+}

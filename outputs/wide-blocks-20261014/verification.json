@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-14",
+  "build": "passed",
+  "unit_tests": 16,
+  "runtime_assertions_passed": 17,
+  "runtime_assertions_failed": 0,
+  "world": "runtime/backups/DBV-Wide-Blocks-Acceptance",
+  "formal_save_modified": false,
+  "temporary_runtime_scripts_removed": true,
+  "method": "KubeJS calls actual server refit lifecycle and edit permission checks in a copied singleplayer world; not physical mouse placement",
+  "first_attempt": "Immediate begin after cancel rejected because mooring rebuild needs a tick. Test now waits 40 ticks; complete rerun passed.",
+  "limits": "Original volume only; no exhaustive mod certification, external links, moving contraptions, entity snapshots or survival item-transfer rollback"
+}

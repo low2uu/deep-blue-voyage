@@ -24,7 +24,7 @@ public final class FleetPanel {
         PacketDistributor.sendToPlayer(player,new PanelView(UUID.randomUUID(),true,"潜艇管理",message,"请先将船载电脑装配到潜艇船体。",0,List.of()));
     }
     public static void register(RegisterPayloadHandlersEvent event){
-        var registrar=event.registrar("1");
+        var registrar=event.registrar("2");
         registrar.playToServer(PanelAction.TYPE,PanelAction.CODEC,(payload,context)->{
             if(context.player() instanceof ServerPlayer p)handle(p,payload);
         });
@@ -50,7 +50,7 @@ public final class FleetPanel {
     }
     public static void handle(ServerPlayer player,PanelAction action){
         var s=SESSIONS.get(player);long now=player.serverLevel().getGameTime();
-        if(s==null||!s.token.equals(action.session())||action.action()<0||action.action()>PanelAction.CHECK)return;
+        if(s==null||!s.token.equals(action.session())||action.action()<0||action.action()>PanelAction.STORAGE_RESTORE)return;
         if(action.action()==PanelAction.CLOSE){SESSIONS.remove(player);return;}
         if(now>s.expires){
             PacketDistributor.sendToPlayer(player,new PanelView(s.token,false,"潜艇管理","连接已过期","请重新打开管理界面。",0,List.of()));
@@ -63,7 +63,10 @@ public final class FleetPanel {
                 PacketDistributor.sendToPlayer(player,new PanelView(s.token,false,"潜艇管理","连接已断开","请靠近原潜艇，重新打开管理界面。",0,List.of()));
                 SESSIONS.remove(player);return;
             }
-            if(action.action()==PanelAction.CHECK){
+            if(action.action()==PanelAction.STORAGE_BACKUP||action.action()==PanelAction.STORAGE_RESTORE){
+                if(!s.flagship)throw new IllegalStateException("仅主艇可操作独立存储档案");
+                s.notice=action.action()==PanelAction.STORAGE_BACKUP?m.storage().manualBackup(player,m):m.storage().restoreLatest(player,m);
+            }else if(action.action()==PanelAction.CHECK){
                 var q=(s.flagship?m.refit().report(m):m.inspection().inspect(body)).qualification();
                 String access=m.refit().accessProblem(player,m);
                 s.notice="检查完成："+(s.flagship&&m.refit().blockMode()?"当前为世界方块；点击完成改装后才执行运行资格验收。":q.eligible()?"控制器、供氧和密闭均符合。":String.join("；",q.reasons()))
@@ -98,7 +101,17 @@ public final class FleetPanel {
             var devices=report.devices().stream().limit(128).map(d->d.type()+" · "+d.relativePosition().toShortString()+"\n"+d.status()).toList();
             String reason=registered?m.refit().accessProblem(player,m):null;
             if(reason!=null)status+="；"+reason;
-            PacketDistributor.sendToPlayer(player,new PanelView(s.token,open,title,status,s.notice,flags,devices));
+            List<String> storage=List.of();String info="";
+            if(registered){
+                try{storage=m.storage().lines(m);}catch(Exception error){storage=List.of("存储扫描暂不可用\n"+safeMessage(error));}
+                var identity=m.registry().flagship().orElseThrow();var telemetry=m.sample(player.getServer());
+                info="永久主艇 ID："+identity.vesselId()+"\n载体代次："+identity.generation()+" · 状态："+m.refit().status()
+                    +"\n质量："+(Double.isFinite(telemetry.mass())?String.format(java.util.Locale.ROOT,"%.1f",telemetry.mass()):"暂不可用")
+                    +" · 速度："+(Double.isFinite(telemetry.speed())?String.format(java.util.Locale.ROOT,"%.2f",telemetry.speed()):"暂不可用");
+                if(!m.refit().active()&&m.refit().accessProblem(player,m)==null)flags|=PanelView.STORAGE_EDITABLE;
+            }
+            storage=storage.stream().map(line->line.length()>1000?line.substring(0,1000):line).toList();
+            PacketDistributor.sendToPlayer(player,new PanelView(s.token,open,title,status,s.notice,flags,devices,storage,info));
         }catch(Exception error){PacketDistributor.sendToPlayer(player,new PanelView(s.token,open,"潜艇管理","船况读取失败",safeMessage(error),0,List.of()));}
     }
     public static boolean notifyResult(ServerPlayer player,String result){

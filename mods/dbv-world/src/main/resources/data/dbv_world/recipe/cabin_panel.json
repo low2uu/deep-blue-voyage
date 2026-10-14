@@ -1,0 +1,1 @@
+{"type":"minecraft:crafting_shaped","category":"redstone","pattern":["IGI","IRI","III"],"key":{"I":{"item":"minecraft:iron_ingot"},"G":{"item":"minecraft:glass_pane"},"R":{"item":"minecraft:redstone"}},"result":{"id":"dbv_world:cabin_panel","count":1}}

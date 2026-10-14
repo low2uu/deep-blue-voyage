@@ -88,7 +88,7 @@ public final class RefitService {
         if(action.equals("cancel")){rollback(m,"cancelled");return "已取消：恢复改装前船体，主艇永久身份不变。";}
         if(action.equals("commit")){
             try{
-                // Validate supported block data before handing anything to the external assembly API.
+                // Verify that every block entity can be saved before handing it to Sable.
                 capture(bounds());
                 assemble(m,false);
                 deadline=server.overworld().getGameTime()+400;
@@ -113,6 +113,7 @@ public final class RefitService {
         var data=new CompoundTag();data.putInt("schema",2);data.putString("phase","PREPARING");
         data.putUUID("owner",p.getUUID());data.putUUID("vessel",m.registry().flagship().orElseThrow().vesselId());data.putUUID("originalBody",body.getUniqueId());
         data.putIntArray("worldBounds",new int[]{target.minX(),target.minY(),target.minZ(),target.maxX(),target.maxY(),target.maxZ()});data.put("original",original);
+        data.putUUID("businessBackup",m.storage().backup(m));
         DockFiles.create(file,data);journal=data;
         try{
             m.starter().releaseMooring();
@@ -122,13 +123,33 @@ public final class RefitService {
         }catch(IOException|RuntimeException e){blocked=true;throw e;}
     }
     private List<BlockPos> positions(BoundingBox3i b){return BlockPos.betweenClosedStream(b.minX(),b.minY(),b.minZ(),b.maxX(),b.maxY(),b.maxZ()).map(BlockPos::immutable).toList();}
+    public List<BlockPos> storagePositions(FleetModule m){
+        if(blockMode())return positions(bounds());
+        var body=currentBody(m);if(body==null||body.isRemoved())throw new IllegalStateException("主艇未加载，保留已有存储档案");
+        var b=body.getPlot().getBoundingBox();
+        if((long)(b.maxX()-b.minX()+1)*(b.maxY()-b.minY()+1)*(b.maxZ()-b.minZ()+1)>4096)throw new IllegalStateException("主艇扫描范围超过当前上限");
+        return positions(new BoundingBox3i(b));
+    }
+    public BlockPos storageOrigin(FleetModule m){
+        if(blockMode())return PAD;
+        var body=currentBody(m);if(body==null)throw new IllegalStateException("主艇未加载");
+        var b=body.getPlot().getBoundingBox();return new BlockPos(b.minX(),b.minY(),b.minZ());
+    }
     /** Snapshot positions are relative, so a new Sable plot can receive the original data. */
     private ListTag capture(BoundingBox3i b){
         var entries=new ListTag();var level=server.overworld();var origin=new BlockPos(b.minX(),b.minY(),b.minZ());
         for(var p:positions(b)){
-            var state=level.getBlockState(p);if(!supported(state))throw new IllegalArgumentException("快照暂不支持："+state.getBlock());
+            var state=level.getBlockState(p);
             var e=new CompoundTag();e.putLong("offset",p.subtract(origin).asLong());e.put("state",NbtUtils.writeBlockState(state));
-            var be=level.getBlockEntity(p);if(be!=null)e.put("be",be.saveWithFullMetadata(level.registryAccess()));entries.add(e);
+            var be=level.getBlockEntity(p);
+            if(state.hasBlockEntity()&&be==null)throw new IllegalArgumentException("设备数据未加载，无法完整备份："+p.toShortString());
+            if(be!=null){
+                var tag=be.saveWithFullMetadata(level.registryAccess());
+                if(BlockEntity.loadStatic(p,state,tag.copy(),level.registryAccess())==null)
+                    throw new IllegalArgumentException("设备数据无法恢复："+state.getBlock()+"，位置 "+p.toShortString());
+                e.put("be",tag);
+            }
+            entries.add(e);
         }
         return entries;
     }
@@ -172,12 +193,18 @@ public final class RefitService {
         var states=new ArrayList<BlockState>();
         for(int i=0;i<entries.size();i++){
             var state=NbtUtils.readBlockState(level.holderLookup(Registries.BLOCK),entries.getCompound(i).getCompound("state"));
-            if(!supported(state))throw new IOException("备份方块不受支持，停止恢复");states.add(state);
+            states.add(state);
         }
-        for(var p:positions(bounds())){level.removeBlockEntity(p);level.setBlock(p,Blocks.AIR.defaultBlockState(),3);}
+        // Restore all states before any neighbour updates: doors, beds and attached blocks
+        // must not break while their other half/support has not been restored yet.
+        int restoreFlags=net.minecraft.world.level.block.Block.UPDATE_CLIENTS|net.minecraft.world.level.block.Block.UPDATE_KNOWN_SHAPE;
+        for(var p:positions(bounds())){level.removeBlockEntity(p);level.setBlock(p,Blocks.AIR.defaultBlockState(),restoreFlags);}
+        for(int i=0;i<entries.size();i++){
+            var p=PAD.offset(BlockPos.of(entries.getCompound(i).getLong("offset")));
+            level.setBlock(p,states.get(i),restoreFlags);
+        }
         for(int i=0;i<entries.size();i++){
             var e=entries.getCompound(i);var p=PAD.offset(BlockPos.of(e.getLong("offset")));var state=states.get(i);
-            level.setBlock(p,state,3);
             if(e.contains("be")){
                 var tag=e.getCompound("be").copy();tag.putInt("x",p.getX());tag.putInt("y",p.getY());tag.putInt("z",p.getZ());
                 var be=BlockEntity.loadStatic(p,state,tag,level.registryAccess());if(be==null)throw new IOException("设备恢复失败");
@@ -194,7 +221,9 @@ public final class RefitService {
                 m.starter().releaseMooring();disassemble(candidate,candidate.getPlot().getCenterBlock());
                 journal.remove("candidate");
             }
-            restoreWorld();assemble(m,true);finish(outcome);
+            restoreWorld();assemble(m,true);
+            if(journal.hasUUID("businessBackup"))m.storage().store(m).restore(journal.getUUID("businessBackup"));
+            finish(outcome);m.storage().capture(m);
         }catch(IOException|RuntimeException e){blocked=true;throw e;}
     }
     public void recover(FleetModule m) throws IOException {
@@ -246,7 +275,7 @@ public final class RefitService {
     }
     public boolean mayEdit(ServerPlayer p,BlockPos pos,BlockState state){
         if(legacy.active())return legacy.mayEdit(p,pos,state);
-        return journal!=null&&phase().equals("STATIC")&&!blocked&&!recovering&&contains(pos)&&supported(state)&&p.serverLevel()==server.overworld()&&p.isCreative()&&p.hasPermissions(2)&&ConstructionMode.ENABLED&&journal.getUUID("owner").equals(p.getUUID());
+        return journal!=null&&phase().equals("STATIC")&&!blocked&&!recovering&&contains(pos)&&p.serverLevel()==server.overworld()&&p.isCreative()&&p.hasPermissions(2)&&ConstructionMode.ENABLED&&journal.getUUID("owner").equals(p.getUUID());
     }
     public VesselInspection.Report report(FleetModule m){
         if(!blockMode()){var body=currentBody(m);return body==null?new VesselInspection.Report(new Qualification(false,false,false,true),List.of(),server.overworld().getGameTime()):m.inspection().inspect(body);}
@@ -254,9 +283,8 @@ public final class RefitService {
         for(var p:positions(bounds())){
             var id=net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(level.getBlockState(p).getBlock()).toString();
             if(id.equals("create_submarine:command_sub"))controller=true;
-            if(level.getBlockState(p).hasBlockEntity())devices.add(new VesselInspection.Device(id,id.equals("create_submarine:command_sub")?"中央控制器":id.equals("create_submarine:electrolyzer")?"氧气制造":"供氧",p,p.subtract(PAD),"方块改装阶段；运行资格在完成时检测"));
+            if(level.getBlockState(p).hasBlockEntity())devices.add(new VesselInspection.Device(id,id.equals("create_submarine:command_sub")?"中央控制器":id.equals("create_submarine:electrolyzer")?"氧气制造":id.equals("create_submarine:oxygene_diffuser")?"供氧":"其他设备",p,p.subtract(PAD),"方块改装阶段；运行资格在完成时检测"));
         }
         return new VesselInspection.Report(new Qualification(controller,false,false,true),devices,level.getGameTime());
     }
-    public static boolean supported(BlockState state){return LegacyRefitService.supported(state);}
 }

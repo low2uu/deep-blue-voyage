@@ -26,12 +26,14 @@ public final class FleetModule {
     private VesselTelemetry telemetry;
     private final io.github.low2uu.dbv.fleet.dock.StarterSubmarine starter;
     private final io.github.low2uu.dbv.fleet.dock.RefitService refit;
+    private final io.github.low2uu.dbv.fleet.storage.CabinStorage storage;
 
     private FleetModule(MinecraftServer server) throws IOException {
         store = new RegistryStore(server.getWorldPath(LevelResource.ROOT));
         registry = store.load();
         starter = new io.github.low2uu.dbv.fleet.dock.StarterSubmarine(server);
         refit = new io.github.low2uu.dbv.fleet.dock.RefitService(server);
+        storage = new io.github.low2uu.dbv.fleet.storage.CabinStorage(server);
     }
 
     public static void initialize() {
@@ -54,6 +56,7 @@ public final class FleetModule {
     public io.github.low2uu.dbv.fleet.dock.StarterSubmarine starter() { return starter; }
     public io.github.low2uu.dbv.fleet.dock.RefitService refit() { return refit; }
     public SableVesselAdapter adapter() { return adapter; }
+    public io.github.low2uu.dbv.fleet.storage.CabinStorage storage(){return storage;}
     public void rebindForRefit(java.util.UUID expected,dev.ryanhcode.sable.sublevel.ServerSubLevel next) throws IOException {
         registry=store.rebind(expected,next.getUniqueId());adapter.mark(next,registry.flagship().orElseThrow());
     }
@@ -96,6 +99,8 @@ public final class FleetModule {
             module.refit.process(module);
         } catch (Exception error) { LogUtils.getLogger().error("DBV dock stopped safely: {}", error.getMessage()); }
         if (event.getServer().getTickCount() % 20 != 0) { return; }
+        if(module.registry.flagship().isPresent()&&!module.refit.active())try{module.storage.capture(module);}
+        catch(Exception error){if(event.getServer().getTickCount()%1200==0)LogUtils.getLogger().warn("主艇独立存储未更新，保留旧档案：{}",error.getMessage());}
         VesselTelemetry.State before = module.telemetry == null ? null : module.telemetry.state();
         VesselTelemetry now = module.sample(event.getServer());
         if (before != now.state()) { LogUtils.getLogger().info("DBV flagship state: {} ({})", now.state(), now.detail()); }

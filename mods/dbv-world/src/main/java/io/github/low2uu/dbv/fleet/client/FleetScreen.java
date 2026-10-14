@@ -15,8 +15,8 @@ import net.neoforged.neoforge.network.PacketDistributor;
 public final class FleetScreen extends Screen {
     private PanelView view;
     private int left,top,panelWidth,panelHeight,ticks,page;
-    private boolean equipment,confirmCancel,busy;
-    private Button begin,check,commit,cancel;
+    private boolean equipment,storageTab,confirmRestore,confirmCancel,busy;
+    private Button begin,check,commit,cancel,backup,restore;
     public FleetScreen(PanelView view){super(Component.literal("潜艇管理"));this.view=view;}
     public UUID session(){return view.session();}
     public PanelView snapshot(){return view;}
@@ -32,10 +32,11 @@ public final class FleetScreen extends Screen {
         panelWidth=Math.min(520,width-16);panelHeight=Math.min(340,height-16);
         left=(width-panelWidth)/2;top=(height-panelHeight)/2;
         addRenderableWidget(Button.builder(Component.literal("×"),b->onClose()).bounds(left+panelWidth-30,top+9,20,20).build());
-        addRenderableWidget(Button.builder(Component.literal("船况与改装"),b->{equipment=false;page=0;}).bounds(left+14,top+38,92,20).build());
-        addRenderableWidget(Button.builder(Component.literal("艇内设备"),b->{equipment=true;page=0;}).bounds(left+112,top+38,80,20).build());
-        addRenderableWidget(Button.builder(Component.literal("<"),b->{equipment=true;page=Math.max(0,page-1);}).bounds(left+panelWidth-66,top+38,22,20).build());
-        addRenderableWidget(Button.builder(Component.literal(">"),b->{equipment=true;page=Math.min(pages()-1,page+1);}).bounds(left+panelWidth-40,top+38,22,20).build());
+        addRenderableWidget(Button.builder(Component.literal("船况与改装"),b->{equipment=false;storageTab=false;page=0;updateButtons();}).bounds(left+14,top+38,92,20).build());
+        addRenderableWidget(Button.builder(Component.literal("艇内设备"),b->{equipment=true;storageTab=false;page=0;updateButtons();}).bounds(left+112,top+38,80,20).build());
+        addRenderableWidget(Button.builder(Component.literal("舱内存储"),b->{equipment=false;storageTab=true;page=0;updateButtons();}).bounds(left+198,top+38,80,20).build());
+        addRenderableWidget(Button.builder(Component.literal("<"),b->{page=Math.max(0,page-1);}).bounds(left+panelWidth-66,top+38,22,20).build());
+        addRenderableWidget(Button.builder(Component.literal(">"),b->{page=Math.min(pages()-1,page+1);}).bounds(left+panelWidth-40,top+38,22,20).build());
         int w=(panelWidth-46)/4,y=top+panelHeight-52;
         begin=addRenderableWidget(Button.builder(Component.literal("开始改装"),b->request(PanelAction.BEGIN)).bounds(left+14,y,w,20).build());
         check=addRenderableWidget(Button.builder(Component.literal("重新检查"),b->{confirmCancel=false;request(PanelAction.CHECK);}).bounds(left+20+w,y,w,20).build());
@@ -43,10 +44,18 @@ public final class FleetScreen extends Screen {
         cancel=addRenderableWidget(Button.builder(Component.literal("取消还原"),b->{
             if(confirmCancel){confirmCancel=false;request(PanelAction.CANCEL);}else{confirmCancel=true;equipment=false;updateButtons();}
         }).bounds(left+32+3*w,y,w,20).build());
+        backup=addRenderableWidget(Button.builder(Component.literal("备份存储"),b->request(PanelAction.STORAGE_BACKUP)).bounds(left+14,y,110,20).build());
+        restore=addRenderableWidget(Button.builder(Component.literal("恢复最近备份"),b->{if(confirmRestore){confirmRestore=false;request(PanelAction.STORAGE_RESTORE);}else{confirmRestore=true;updateButtons();}}).bounds(left+130,y,130,20).build());
         updateButtons();
     }
     private void updateButtons(){
         if(begin==null)return;
+        begin.visible=check.visible=commit.visible=cancel.visible=!storageTab;
+        if(backup!=null){
+            backup.visible=restore.visible=storageTab;backup.active=restore.active=!busy&&view.has(PanelView.STORAGE_EDITABLE);
+            restore.setMessage(Component.literal(confirmRestore?"确认覆盖当前物品":"恢复最近备份"));
+            restore.setTooltip(Tooltip.create(Component.literal("将覆盖容器当前内容；恢复前另存快照。需在船坞内，结束改装后由创造管理员操作。")));
+        }
         boolean editable=view.has(PanelView.EDITABLE)&&!busy;
         begin.active=editable&&!view.has(PanelView.ACTIVE);
         commit.active=editable&&view.has(PanelView.ACTIVE)&&!view.has(PanelView.CHECKING);
@@ -71,7 +80,8 @@ public final class FleetScreen extends Screen {
     // Screen.render calls this after our panel is drawn; do not blur the panel itself.
     @Override public void renderBackground(GuiGraphics g,int mouseX,int mouseY,float partial){}
     private int rows(){return Math.max(1,(panelHeight-130)/38);}
-    private int pages(){return Math.max(1,(view.devices().size()+rows()-1)/rows());}
+    private java.util.List<String> displayRows(){return storageTab?view.storage():view.devices();}
+    private int pages(){return Math.max(1,(displayRows().size()+rows()-1)/rows());}
     private void clipped(GuiGraphics g,String text,int x,int y,int maxWidth,int color){
         String value=font.width(text)>maxWidth?font.plainSubstrByWidth(text,Math.max(0,maxWidth-12))+"…":text;
         g.drawString(font,value,x,y,color,false);
@@ -82,10 +92,10 @@ public final class FleetScreen extends Screen {
         g.fill(left,top,left+panelWidth,top+panelHeight,0xFF10212B);
         g.fill(left,top,left+panelWidth,top+32,0xFF193542);
         clipped(g,view.title()+"  ·  潜艇管理",left+14,top+13,panelWidth-56,0xE6F7F6);
-        if(equipment)renderDevices(g,mouseX,mouseY);else renderOverview(g);
+        if(equipment||storageTab)renderDevices(g,mouseX,mouseY);else renderOverview(g);
         clipped(g,"船坞改装 · 三项条件在完成时验收 · 关闭窗口可施工",left+14,top+panelHeight-19,panelWidth-28,0x8AABB8);
         super.render(g,mouseX,mouseY,partial);
-        if(!equipment&&mouseX>=left+14&&mouseX<left+panelWidth-14&&mouseY>=top+112&&mouseY<top+panelHeight-60)
+        if(!equipment&&!storageTab&&mouseX>=left+14&&mouseX<left+panelWidth-14&&mouseY>=top+112&&mouseY<top+panelHeight-60)
             g.renderTooltip(font,font.split(Component.literal(beginProblem()+"\n"+view.status()+"\n"+view.notice()),Math.min(320,panelWidth-30)),mouseX,mouseY);
     }
     private void renderOverview(GuiGraphics g){
@@ -102,7 +112,7 @@ public final class FleetScreen extends Screen {
         String identity=view.has(PanelView.REGISTERED)?"身份：唯一主潜艇":"身份：尚未登记为主潜艇";
         g.drawString(font,identity,left+14,y,0x96D7E1,false);y+=16;
         String problem=beginProblem();
-        String[] paragraphs={confirmCancel?"确认还原？本次改装的新增和修改都将撤销。再次点击“确认还原”执行。":(view.notice().startsWith("检查完成")?view.notice():(!problem.isEmpty()&&!view.has(PanelView.ACTIVE)?problem:view.notice())),view.status()};
+        String[] paragraphs={view.vesselInfo(),confirmCancel?"确认还原？本次改装的新增和修改都将撤销。再次点击“确认还原”执行。":(view.notice().startsWith("检查完成")?view.notice():(!problem.isEmpty()&&!view.has(PanelView.ACTIVE)?problem:view.notice())),view.status()};
         for(int p=0;p<paragraphs.length;p++){
             for(var line:font.split(Component.literal(paragraphs[p]),panelWidth-28)){
                 if(y>top+panelHeight-70)break;
@@ -113,10 +123,11 @@ public final class FleetScreen extends Screen {
     }
     private void renderDevices(GuiGraphics g,int mouseX,int mouseY){
         page=Math.min(page,pages()-1);
-        g.drawString(font,"设备清单 · "+view.devices().size()+" 项 · 第 "+(page+1)+" / "+pages()+" 页",left+14,top+68,0x96D7E1,false);
-        if(view.devices().isEmpty())g.drawString(font,"暂未识别到设备，请重新检查。",left+14,top+92,0xC8DAE2,false);
-        for(int i=page*rows();i<Math.min(view.devices().size(),(page+1)*rows());i++){
-            int y=top+84+(i-page*rows())*38;String text=view.devices().get(i);String[] lines=text.split("\n",2);
+        g.drawString(font,(storageTab?"存储清单":"设备清单")+" · "+displayRows().size()+" 项 · 第 "+(page+1)+" / "+pages()+" 页",left+14,top+68,0x96D7E1,false);
+        if(storageTab)clipped(g,view.notice(),left+14,top+panelHeight-65,panelWidth-28,0xF0CD91);
+        if(displayRows().isEmpty())g.drawString(font,storageTab?"未发现可读取的舱内容器。":"暂未识别到设备，请重新检查。",left+14,top+92,0xC8DAE2,false);
+        for(int i=page*rows();i<Math.min(displayRows().size(),(page+1)*rows());i++){
+            int y=top+84+(i-page*rows())*38;String text=displayRows().get(i);String[] lines=text.split("\n",2);
             g.fill(left+14,y,left+panelWidth-14,y+33,0xFF1B3440);
             clipped(g,lines[0],left+20,y+5,panelWidth-40,0xE6F7F6);
             if(lines.length>1)clipped(g,lines[1],left+20,y+19,panelWidth-40,0xA3C3CD);

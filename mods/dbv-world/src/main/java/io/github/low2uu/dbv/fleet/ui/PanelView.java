@@ -9,20 +9,25 @@ import net.minecraft.resources.ResourceLocation;
 
 /** Bounded server-authored display data; clients never supply qualification or block data. */
 public record PanelView(UUID session, boolean open, String title, String status, String notice,
-        int flags, List<String> devices) implements CustomPacketPayload {
+        int flags, List<String> devices, List<String> storage, String vesselInfo) implements CustomPacketPayload {
     public static final int CONTROLLER=1, OXYGEN=2, SEALED=4, PENDING=8, REGISTERED=16, ACTIVE=32, EDITABLE=64, CHECKING=128, CONNECTED=256;
     public static final int BLOCK_MODE=512;
+    public static final int STORAGE_EDITABLE=1024;
+    public PanelView(UUID session,boolean open,String title,String status,String notice,int flags,List<String> devices){this(session,open,title,status,notice,flags,devices,List.of(),"");}
     public static final Type<PanelView> TYPE=new Type<>(ResourceLocation.parse("dbv_world:panel_view"));
     public static final StreamCodec<RegistryFriendlyByteBuf,PanelView> CODEC=StreamCodec.of((b,v)->{
         b.writeUUID(v.session);b.writeBoolean(v.open);b.writeUtf(v.title,256);b.writeUtf(v.status,2048);b.writeUtf(v.notice,2048);
         b.writeVarInt(v.flags);b.writeVarInt(v.devices.size());for(String s:v.devices)b.writeUtf(s,1024);
+        b.writeVarInt(v.storage.size());for(String s:v.storage)b.writeUtf(s,1024);b.writeUtf(v.vesselInfo,2048);
     },b->{
         var id=b.readUUID();boolean open=b.readBoolean();String title=b.readUtf(256),status=b.readUtf(2048),notice=b.readUtf(2048);
         int flags=b.readVarInt(),count=b.readVarInt();if(count<0||count>128)throw new IllegalArgumentException("Invalid device count");
         var devices=new java.util.ArrayList<String>();for(int i=0;i<count;i++)devices.add(b.readUtf(1024));
-        return new PanelView(id,open,title,status,notice,flags,devices);
+        int n=b.readVarInt();if(n<0||n>128)throw new IllegalArgumentException("Invalid storage count");
+        var storage=new java.util.ArrayList<String>();for(int i=0;i<n;i++)storage.add(b.readUtf(1024));
+        return new PanelView(id,open,title,status,notice,flags,devices,storage,b.readUtf(2048));
     });
-    public PanelView { devices=List.copyOf(devices);if(devices.size()>128)throw new IllegalArgumentException("Too many devices"); }
+    public PanelView { devices=List.copyOf(devices);storage=List.copyOf(storage);if(devices.size()>128||storage.size()>128)throw new IllegalArgumentException("Too many rows"); }
     public boolean has(int flag){return (flags&flag)!=0;}
     @Override public Type<PanelView> type(){return TYPE;}
 }
