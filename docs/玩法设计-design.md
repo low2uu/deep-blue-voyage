@@ -26,6 +26,6 @@
 
 ## 待确定的玩法
 
-游戏机制集中记录在[游戏机制目录](game-mechanics/README.md)。目前已提出以洋流速度、材料耐压与海洋深度、通行尺寸建立海域准入限制；详细规则见[海域准入与潜艇能力限制](game-mechanics/ocean-access-gates.md)，整体功能划分见[功能架构](game-mechanics/functional-architecture.md)。
+游戏机制集中记录在[游戏机制目录](game-mechanics/README.md)。目前已提出以洋流速度、材料耐压与海洋深度、通行尺寸建立海域准入限制；详细规则见[海域准入与潜艇能力限制](game-mechanics/海域准入与潜艇限制-ocean-access-gates.md)，整体功能划分见[功能架构](game-mechanics/整合包功能架构-functional-architecture.md)。
 
 潜艇推进与浮潜的实现方式、舱室与耐压算法、能源与维修参数、探索奖励、Boss 顺序和海陆比例仍需原型验证。候选扩展机制与已提出的核心方向在机制文档中分别标注。

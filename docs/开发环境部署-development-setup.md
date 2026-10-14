@@ -100,9 +100,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\dev.ps1 run
 
 当前工程配置为 NeoForge `21.1.259`、Gradle `9.2.1`、ModDevGradle `2.0.148`。协作者以仓库版本为准，不要各自升级。当前首批运行依赖是 Create、Architectury API、Sable、Create Aeronautics、Create Deep Seas、Power Grid，由 Gradle 按指定版本获取，不要再往运行目录重复放一份。
 
-验收时确认 `build` 出现 `BUILD SUCCESSFUL`，`run` 能加载本项目 Mod，并能创建或进入世界。2026-10-14 已实际创建起始岛存档，完成出生点、海床采样与建设规则检查；潜艇操控和全部工具功能仍待验证，详见 [检查记录](development-verification.md)。
+验收时确认 `build` 出现 `BUILD SUCCESSFUL`，`run` 能加载本项目 Mod，并能创建或进入世界。2026-10-14 已实际创建起始岛存档，完成出生点、海床采样与建设规则检查；潜艇操控和全部工具功能仍待验证，详见 [检查记录](开发验证记录-development-verification.md)。
 
-当前采用临时低负载建设配置，集中在 `config/development-session.json`，详细设置和恢复方式见 [起始岛建设阶段方案](game-mechanics/starter-island-plan.md)。它使用同一套正式工程和本机存档。
+当前采用临时低负载建设配置，集中在 `config/development-session.json`，详细设置和恢复方式见 [起始岛建设阶段方案](game-mechanics/起始岛建设方案-starter-island-plan.md)。它使用同一套正式工程和本机存档。
 
 ## 6 日常开发
 

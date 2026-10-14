@@ -2,7 +2,7 @@
 
 设计版本：0.1 草案。目标平台：Minecraft 1.21.1 NeoForge。核心体验是驾驶自己建造的潜艇远航，在海域限制中选择航线、改装设备，带着子艇和艇载助手完成探索与战斗。
 
-本版承接[海域准入规则](ocean-access-gates.md)、[艇载 AI 与协同战斗](onboard-ai-and-cooperative-combat.md)及[当前 Mod 清单](../current-mod-list.md)。下文的区域、材料名、Boss 和配方均为设计提案；不会据此把待定或备选 Mod 转为确定加入。数值用于制作测试地图，不是现有模组的能力承诺。
+本版承接[海域准入规则](海域准入与潜艇限制-ocean-access-gates.md)、[艇载 AI 与协同战斗](艇载AI与协同战斗-onboard-ai-and-cooperative-combat.md)及[当前 Mod 清单](../当前Mod清单-current-mod-list.md)。下文的区域、材料名、Boss 和配方均为设计提案；不会据此把待定或备选 Mod 转为确定加入。数值用于制作测试地图，不是现有模组的能力承诺。
 
 ## 一次远航应该发生什么
 

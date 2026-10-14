@@ -4,6 +4,8 @@
 
 英文工作名为 Deep Blue Voyage，目录名为 `deep-blue-voyage`。
 
+文档入口见 [文档索引](docs/README.md)。新增或整理 Markdown 说明文档时，统一使用 `中文说明-english-name.md`，英文部分使用小写字母和连字符；各级 `README.md` 保持原名。文档改名时同步更新相对链接和文件路径引用，机器读取的 JSON、源代码及第三方依赖文件沿用原有命名。
+
 ## 开发环境
 
 - Minecraft：1.21.1。
@@ -14,11 +16,11 @@
 
 使用 VS Code 打开本目录，并安装推荐的 Java 和 Gradle 扩展。将 `JAVA_HOME` 指向本机 JDK 21。可通过不纳入版本管理的 `.vscode/settings.json` 设置本机 JDK 路径；仓库不携带开发者的绝对路径。运行 `powershell -ExecutionPolicy Bypass -File tools/check-environment.ps1` 可检查本机 Java 与 Git。
 
-正式工程位于 `mods/dbv-world`，使用随项目提供的 Gradle Wrapper。打开 `deep-blue-voyage.code-workspace` 后，运行 `powershell -NoProfile -ExecutionPolicy Bypass -File tools/dev.ps1 build` 构建，使用同一命令的 `run` 动作启动客户端。详见 [部署流程](docs/development-setup.md) 和 [起始岛建设阶段方案](docs/game-mechanics/starter-island-plan.md)。
+正式工程位于 `mods/dbv-world`，使用随项目提供的 Gradle Wrapper。打开 `deep-blue-voyage.code-workspace` 后，运行 `powershell -NoProfile -ExecutionPolicy Bypass -File tools/dev.ps1 build` 构建，使用同一命令的 `run` 动作启动客户端。详见 [部署流程](docs/开发环境部署-development-setup.md) 和 [起始岛建设阶段方案](docs/game-mechanics/起始岛建设方案-starter-island-plan.md)。
 
 临时建设设置集中在 `config/development-session.json`，不代表最终生存规则。当前只制作起始岛与简单近海，不预生成远海。
 
-已完成源码构建、客户端加载及起始岛建筑与环境初版：废旧工厂、温馨生活区、自然地形和128×128船坞，机器工位留空。进入方式、地图快照和最新验收结果见 [起始岛建设记录](docs/game-mechanics/starter-island-built-v1.md)；早期检查见 [开发工程检查记录](docs/development-verification.md)。潜艇与机器玩法仍待开发。
+已完成源码构建、客户端加载及起始岛建筑与环境初版：废旧工厂、温馨生活区、自然地形和128×128船坞，机器工位留空。进入方式、地图快照和最新验收结果见 [起始岛建设记录](docs/game-mechanics/起始岛建筑与环境初版-starter-island-built-v1.md)；早期检查见 [开发工程检查记录](docs/开发验证记录-development-verification.md)。潜艇与机器玩法仍待开发。
 
 ## 目录用途
 
@@ -38,10 +40,10 @@
 
 ## 下一步
 
-玩法整体方案见 [初版地图与科技路线](docs/game-mechanics/first-playable-design.md)：以海域限制组织探索，用母艇、子艇与离艇潜水分工，串联六个科技阶段；先制作一条约 2～4 小时的可玩样板路线。文中数值为待测试的设计目标，不代表地图生成或机制已实现。
+玩法整体方案见 [初版地图与科技路线](docs/game-mechanics/初版地图与科技路线-first-playable-design.md)：以海域限制组织探索，用母艇、子艇与离艇潜水分工，串联六个科技阶段；先制作一条约 2～4 小时的可玩样板路线。文中数值为待测试的设计目标，不代表地图生成或机制已实现。
 
-当前选型以 [当前 Mod 清单](docs/current-mod-list.md) 为准：按用户提供的 111 项文件表划分确定加入、待定和备选区，记录授权、文件替换、依赖缺口与明确互斥。另有 [结构化清单](docs/current-mod-list.json)、[关键 JAR 静态证据](docs/current-mod-evidence.json) 和 [当前清单 Excel](outputs/current-mod-list-20261013/深蓝远航-当前Mod清单.xlsx)。初筛候选不代表已同意加入。
+当前选型以 [当前 Mod 清单](docs/当前Mod清单-current-mod-list.md) 为准：按用户提供的 111 项文件表划分确定加入、待定和备选区，记录授权、文件替换、依赖缺口与明确互斥。另有 [结构化清单](docs/current-mod-list.json)、[关键 JAR 静态证据](docs/current-mod-evidence.json) 和 [当前清单 Excel](outputs/current-mod-list-20261013/深蓝远航-当前Mod清单.xlsx)。初筛候选不代表已同意加入。
 
-已完成第一轮 [Mod 初筛表](docs/mod-candidates.md)：170 项候选，包含 161 个有 1.21.1 NeoForge 发布文件的模组项目和 9 个支持 1.21.1 的数据包。表内记录简介、版本、前置、来源及兼容性备注；[结构化目录](docs/mod-catalog.json) 与 [可筛选 Excel](outputs/mod-screening-20261013/深蓝远航-Mod初筛.xlsx) 同步保存。此阶段尚未进行整包运行验证。
+已完成第一轮 [Mod 初筛表](docs/Mod初筛表-mod-candidates.md)：170 项候选，包含 161 个有 1.21.1 NeoForge 发布文件的模组项目和 9 个支持 1.21.1 的数据包。表内记录简介、版本、前置、来源及兼容性备注；[结构化目录](docs/mod-catalog.json) 与 [可筛选 Excel](outputs/mod-screening-20261013/深蓝远航-Mod初筛.xlsx) 同步保存。此阶段尚未进行整包运行验证。
 
 下一步先验证 Create、Sable、Create Aeronautics、Create Deep Seas 与交错电网的核心组合，再制作大型潜艇原型验证海洋地形尺度，最后扩展群系、Boss 与成长路线。

@@ -4,7 +4,7 @@
 
 结论是：造船、潜浮、基础耐压、供氧、声呐和部分辅助驾驶可以复用现有功能。我们重点编写海域规则、任务和控制程序，并开发完整航线规划、战斗决策、Boss 与运动船体交互等缺口。不要先重写一套潜艇物理或所有传感器。
 
-覆盖范围对应[功能架构](functional-architecture.md)、[海域准入机制](ocean-access-gates.md)和[艇载 AI 与协同战斗](onboard-ai-and-cooperative-combat.md)。
+覆盖范围对应[功能架构](整合包功能架构-functional-architecture.md)、[海域准入机制](海域准入与潜艇限制-ocean-access-gates.md)和[艇载 AI 与协同战斗](艇载AI与协同战斗-onboard-ai-and-cooperative-combat.md)。
 
 ## 实现类别
 
