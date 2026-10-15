@@ -63,7 +63,10 @@ public final class FleetPanel {
                 PacketDistributor.sendToPlayer(player,new PanelView(s.token,false,"潜艇管理","连接已断开","请靠近原潜艇，重新打开管理界面。",0,List.of()));
                 SESSIONS.remove(player);return;
             }
-            if(action.action()==PanelAction.DEPART){
+            if(action.action()==PanelAction.STORAGE_OPEN){
+                if(!s.flagship)throw new IllegalStateException("仅主潜艇可打开存储终端");
+                StorageTerminalMenu.open(player,m);SESSIONS.remove(player);return;
+            }else if(action.action()==PanelAction.DEPART){
                 if(!s.flagship)throw new IllegalStateException("仅主潜艇可从此处出航");
                 s.notice=m.starter().depart(player,m);
             }else if(action.action()==PanelAction.STORAGE_BACKUP||action.action()==PanelAction.STORAGE_RESTORE){

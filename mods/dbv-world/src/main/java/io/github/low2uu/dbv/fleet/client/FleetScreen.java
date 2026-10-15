@@ -32,9 +32,11 @@ public final class FleetScreen extends Screen {
         panelWidth=Math.min(520,width-16);panelHeight=Math.min(340,height-16);
         left=(width-panelWidth)/2;top=(height-panelHeight)/2;
         addRenderableWidget(Button.builder(Component.literal("×"),b->onClose()).bounds(left+panelWidth-30,top+9,20,20).build());
-        addRenderableWidget(Button.builder(Component.literal("船况与改装"),b->{equipment=false;storageTab=false;page=0;updateButtons();}).bounds(left+14,top+38,92,20).build());
-        addRenderableWidget(Button.builder(Component.literal("艇内设备"),b->{equipment=true;storageTab=false;page=0;updateButtons();}).bounds(left+112,top+38,80,20).build());
-        addRenderableWidget(Button.builder(Component.literal("舱内存储"),b->{equipment=false;storageTab=true;page=0;updateButtons();}).bounds(left+198,top+38,80,20).build());
+        int tabWidth=Math.max(32,(panelWidth-100)/4);
+        addRenderableWidget(Button.builder(Component.literal("船况与改装"),b->{equipment=false;storageTab=false;page=0;updateButtons();}).bounds(left+14,top+38,tabWidth,20).build());
+        addRenderableWidget(Button.builder(Component.literal("艇内设备"),b->{equipment=true;storageTab=false;page=0;updateButtons();}).bounds(left+20+tabWidth,top+38,tabWidth,20).build());
+        addRenderableWidget(Button.builder(Component.literal("存储终端"),b->request(PanelAction.STORAGE_OPEN)).bounds(left+26+2*tabWidth,top+38,tabWidth,20).build());
+        addRenderableWidget(Button.builder(Component.literal("存储备份"),b->{equipment=false;storageTab=true;page=0;updateButtons();}).bounds(left+32+3*tabWidth,top+38,tabWidth,20).build());
         addRenderableWidget(Button.builder(Component.literal("<"),b->{page=Math.max(0,page-1);}).bounds(left+panelWidth-66,top+38,22,20).build());
         addRenderableWidget(Button.builder(Component.literal(">"),b->{page=Math.min(pages()-1,page+1);}).bounds(left+panelWidth-40,top+38,22,20).build());
         int w=(panelWidth-52)/5,y=top+panelHeight-52;

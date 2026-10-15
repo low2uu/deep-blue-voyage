@@ -19,6 +19,11 @@ import io.github.low2uu.dbv.fleet.telemetry.DepthReference;
 @Mixin(value = CommandSubBlockEntity.class, remap = false)
 public abstract class CommandSubDepthMixin {
     @Shadow private int command;
+    @Shadow @org.spongepowered.asm.mixin.Final private java.util.Map<net.minecraft.core.BlockPos,Long> pumps;
+    @org.spongepowered.asm.mixin.Unique private final io.github.low2uu.dbv.fleet.telemetry.BallastDepthControl dbv$control=new io.github.low2uu.dbv.fleet.telemetry.BallastDepthControl();
+    @org.spongepowered.asm.mixin.Unique private double dbv$lastHeight=Double.NaN;
+    @org.spongepowered.asm.mixin.Unique private long dbv$lastTick;
+    @org.spongepowered.asm.mixin.Unique private boolean dbv$feedback;
 
     @Redirect(method = {"measure", "followFloor"}, at = @At(value = "INVOKE",
             target = "Ldev/ryanhcode/sable/companion/math/Pose3dc;position()Lorg/joml/Vector3dc;"), remap = false)
@@ -48,6 +53,30 @@ public abstract class CommandSubDepthMixin {
     @Inject(method = "steer", at = @At("HEAD"), cancellable = true, remap = false)
     private void dbv$holdWithoutSurface(SubLevelAccess sub, CallbackInfo ci) {
         var self = (CommandSubBlockEntity)(Object)this;
+        dbv$feedback=false;
+        if(sub!=null&&self.getLevel() instanceof net.minecraft.server.level.ServerLevel level){
+            try{
+                var module=io.github.low2uu.dbv.fleet.FleetModule.get(level.getServer());
+                dbv$feedback=module.registry().flagship().map(id->id.bodyId().equals(sub.getUniqueId())).orElse(false);
+            }catch(java.io.IOException error){dbv$control.reset();}
+        }
+        if(dbv$feedback){
+            long now=self.getLevel().getGameTime();
+            pumps.values().removeIf(seen->now-seen>40);
+            double height=ControllerDepth.worldPosition(sub.logicalPose(),self.getBlockPos()).y();
+            double fill=com.maxenonyme.createsubmarine.submarine.block.entity.BallastTankBlockEntity.fillRatio(sub.getUniqueId());
+            double dt=(now-dbv$lastTick)/20.0;
+            command=0;
+            if(self.surfaceY!=Integer.MIN_VALUE&&!pumps.isEmpty()&&Double.isFinite(fill)&&Double.isFinite(dbv$lastHeight)&&dt>0&&dt<=1){
+                double target=dbv$control.targetFill(DepthReference.depth(self.surfaceY,height),self.activeTarget(),(height-dbv$lastHeight)/dt,fill,dt,self.speedMode);
+                command=fill<target-.003?1:fill>target+.003?-1:0;
+            }else dbv$control.reset();
+            dbv$lastHeight=height;dbv$lastTick=now;
+            self.syncedFill=Double.isFinite(fill)?(int)Math.round(fill*100):-1;
+            self.syncedPumps=pumps.size();self.syncedStatus=command+1;
+            self.getLevel().sendBlockUpdated(self.getBlockPos(),self.getBlockState(),self.getBlockState(),3);
+            ci.cancel();return;
+        }
         if (sub != null && self.surfaceY != Integer.MIN_VALUE) return;
         command = com.maxenonyme.createsubmarine.submarine.block.entity.PumpControllerBlockEntity.HOLD;
         self.syncedStatus = command + 1;
@@ -57,6 +86,6 @@ public abstract class CommandSubDepthMixin {
 
     @Inject(method = "trim", at = @At("HEAD"), cancellable = true, remap = false)
     private void dbv$noBlindImpulse(SubLevelAccess sub, CallbackInfo ci) {
-        if (((CommandSubBlockEntity)(Object)this).surfaceY == Integer.MIN_VALUE) ci.cancel();
+        if (dbv$feedback||((CommandSubBlockEntity)(Object)this).surfaceY == Integer.MIN_VALUE) ci.cancel();
     }
 }

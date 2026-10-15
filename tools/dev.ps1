@@ -4,6 +4,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
+if ($Action -in @('prepare', 'run', 'debug')) { & (Join-Path $PSScriptRoot 'sync-submarine-config.ps1') }
 $jdkPath = $env:JAVA_HOME
 $localSettings = Join-Path $projectRoot '.vscode/settings.json'
 if (Test-Path -LiteralPath $localSettings) {

@@ -24,6 +24,7 @@ public final class DeepBlueVoyageWorld {
     public DeepBlueVoyageWorld(IEventBus modBus) {
         GENERATORS.register(modBus);
         io.github.low2uu.dbv.fleet.ui.CabinPanelBlock.register(modBus);
+        io.github.low2uu.dbv.fleet.ui.StorageTerminalMenu.register(modBus);
         modBus.addListener(io.github.low2uu.dbv.fleet.ui.FleetPanel::register);
         io.github.low2uu.dbv.fleet.FleetModule.initialize();
         IslandProtection.initialize();

@@ -1,0 +1,17 @@
+PlayerEvents.loggedIn(e=>{var s=e.server,l=s.overworld(),p=e.player,F=Java.loadClass('io.github.low2uu.dbv.fleet.FleetModule'),T=Java.loadClass('io.github.low2uu.dbv.fleet.ui.StorageTerminalMenu'),ItemStack=Java.loadClass('net.minecraft.world.item.ItemStack'),Items=Java.loadClass('net.minecraft.world.item.Items'),Click=Java.loadClass('net.minecraft.world.inventory.ClickType'),m;
+ if(!String(s.getWorldPath(Java.loadClass('net.minecraft.world.level.storage.LevelResource').ROOT)).includes('Dive-Diagnosis'))return;
+ function test(t,fn){s.scheduleInTicks(t,()=>{try{m=F.get(s);fn();}catch(x){console.error('DBV_TERMINAL FAIL '+x);}});}
+ var chest,barrel,menu;
+ test(120,()=>{var b=m.refit().currentBody(m),o=b.getPlot().getCenterBlock(),w=Java.loadClass('io.github.low2uu.dbv.fleet.compat.ControllerDepth').worldPosition(b.logicalPose(),o.offset(7,4,9));p.setGameMode(Java.loadClass('net.minecraft.world.level.GameType').CREATIVE);p.connection.teleport(w.x(),w.y(),w.z(),0,0);p.getAbilities().flying=true;p.onUpdateAbilities();
+ chest=l.getBlockEntity(o.offset(9,4,9));barrel=l.getBlockEntity(o.offset(9,4,10));chest.clearContent();barrel.clearContent();chest.setItem(0,new ItemStack(Items.DIAMOND,64));barrel.setItem(0,new ItemStack(Items.IRON_INGOT,32));
+ l.setBlock(o.offset(8,4,10),Java.loadClass('net.minecraft.world.level.block.Blocks').BARREL.defaultBlockState(),3);
+ p.getInventory().clearContent();T.open(p,m);menu=p.containerMenu;if(!menu.stillValid(p))throw Error('not valid');console.info('DBV_TERMINAL OPEN pages='+menu.pages());});
+ test(160,()=>{var idx=-1;for(var i=0;i<54;i++)if(String(menu.getSlot(i).getItem().getItem())=='minecraft:diamond')idx=i;if(idx<0)throw Error('diamond missing');
+ menu.clicked(idx,0,Click.PICKUP,p);if(menu.getCarried().getCount()!=64||!chest.getItem(0).isEmpty())throw Error('pickup');menu.clicked(54,0,Click.PICKUP,p);if(p.getInventory().getItem(9).getCount()!=64)throw Error('deposit to player');
+ menu.clicked(54,0,Click.QUICK_MOVE,p);if(!p.getInventory().getItem(9).isEmpty())throw Error('shift deposit');
+ var total=0;for(var i=0;i<54;i++)if(String(menu.getSlot(i).getItem().getItem())=='minecraft:diamond')total+=menu.getSlot(i).getItem().getCount();if(total!=64)throw Error('count '+total);
+ console.info('DBV_TERMINAL PASS pickup, player deposit, shift deposit, 64 diamonds conserved');});
+ test(180,()=>{var i=0;while(i<54&&String(menu.getSlot(i).getItem().getItem())!='minecraft:diamond')i++;menu.clicked(i,1,Click.PICKUP,p);if(menu.getCarried().getCount()!=32)throw Error('right split');menu.clicked(i,0,Click.PICKUP,p);if(menu.getSlot(i).getItem().getCount()!=64||!menu.getCarried().isEmpty())throw Error('merge');console.info('DBV_TERMINAL PASS right split and merge conserve 64');});
+ test(200,()=>{if(!menu.clickMenuButton(p,1)||menu.page()!=1)throw Error('page');menu.clickMenuButton(p,0);console.info('DBV_TERMINAL PASS pagination');console.info('DBV_TERMINAL SNAPSHOT '+m.storage().scan(m));});
+ test(450,()=>{var b=m.refit().currentBody(m),w=Java.loadClass('io.github.low2uu.dbv.fleet.compat.ControllerDepth').worldPosition(b.logicalPose(),b.getPlot().getCenterBlock().offset(7,4,9));p.connection.teleport(500,100,500,0,0);try{if(menu.stillValid(p))throw Error('remote access');menu.clicked(0,0,Click.PICKUP,p);console.info('DBV_TERMINAL PASS remote access denied and close');}finally{p.connection.teleport(w.x(),w.y(),w.z(),0,0);}});
+});

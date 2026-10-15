@@ -1,0 +1,79 @@
+[13:15:08] [INIT] KubeJS 2101.7.2-build.377; MC 2101 NeoForge
+[13:15:08] [INIT] Loaded plugins:
+[13:15:08] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSPlugin
+[13:15:08] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSClientPlugin
+[13:15:08] [INIT] - dev.latvian.mods.kubejs.integration.architectury.ArchitecturyIntegration
+[13:15:08] [INIT] - com.jesz.createdieselgenerators.compat.kubejs.CDGKubeJSPlugin
+[13:15:08] [INIT] - moe.wolfgirl.probejs.plugin.ProbeJSKJSPlugin
+[13:15:08] [INFO] Loaded script server_scripts:dive.js in 0.005 s
+[13:15:08] [INFO] Loaded 1/1 KubeJS server scripts in 0.022 s with 0 errors and 0 warnings
+[13:15:11] [INFO] Server resource reload complete!
+[13:15:12] [INFO] Loaded Java class 'io.github.low2uu.dbv.fleet.FleetModule'
+[13:15:12] [INFO] Loaded Java class 'com.maxenonyme.createsubmarine.submarine.util.SablePhysicsHelper'
+[13:15:12] [INFO] Loaded Java class 'net.minecraft.world.level.storage.LevelResource'
+[13:15:17] [INFO] DBV_DIVE t=100 depth=45 surface=62 fill=18 pumps=4 command=0 mass=2833.25 velocity=(-1.865E-3  1.576E-1  1.741E-3)
+[13:15:17] [INFO] DBV_DIVE machine [3, 2, 6] speed=0
+[13:15:17] [INFO] DBV_DIVE machine [11, 2, 6] speed=0
+[13:15:17] [INFO] DBV_DIVE machine [3, 2, 16] speed=0
+[13:15:17] [INFO] DBV_DIVE machine [11, 2, 16] speed=0
+[13:15:17] [INFO] DBV_DIVE machine [3, 4, 7] speed=-96
+[13:15:17] [INFO] DBV_DIVE machine [11, 4, 7] speed=-96
+[13:15:17] [INFO] DBV_DIVE tank [3, 1, 4] water=0
+[13:15:17] [INFO] DBV_DIVE tank [11, 1, 4] water=0
+[13:15:17] [INFO] DBV_DIVE tank [3, 1, 14] water=2850
+[13:15:17] [INFO] DBV_DIVE tank [11, 1, 14] water=2888
+[13:15:22] [INFO] DBV_DIVE t=200 depth=45 surface=62 fill=18 pumps=4 command=0 mass=2833.25 velocity=( 1.285E-4  1.597E-1  6.343E-5)
+[13:15:22] [INFO] DBV_DIVE machine [3, 2, 6] speed=0
+[13:15:22] [INFO] DBV_DIVE machine [11, 2, 6] speed=0
+[13:15:22] [INFO] DBV_DIVE machine [3, 2, 16] speed=0
+[13:15:22] [INFO] DBV_DIVE machine [11, 2, 16] speed=0
+[13:15:22] [INFO] DBV_DIVE machine [3, 4, 7] speed=-96
+[13:15:22] [INFO] DBV_DIVE machine [11, 4, 7] speed=-96
+[13:15:22] [INFO] DBV_DIVE tank [3, 1, 4] water=0
+[13:15:22] [INFO] DBV_DIVE tank [11, 1, 4] water=0
+[13:15:22] [INFO] DBV_DIVE tank [3, 1, 14] water=2850
+[13:15:22] [INFO] DBV_DIVE tank [11, 1, 14] water=2888
+[13:15:32] [INFO] DBV_DIVE t=400 depth=45 surface=62 fill=18 pumps=4 command=0 mass=2833.25 velocity=( 3.135E-2  1.104E-1 -2.994E-2)
+[13:15:32] [INFO] DBV_DIVE machine [3, 2, 6] speed=0
+[13:15:32] [INFO] DBV_DIVE machine [11, 2, 6] speed=0
+[13:15:32] [INFO] DBV_DIVE machine [3, 2, 16] speed=0
+[13:15:32] [INFO] DBV_DIVE machine [11, 2, 16] speed=0
+[13:15:32] [INFO] DBV_DIVE machine [3, 4, 7] speed=-96
+[13:15:32] [INFO] DBV_DIVE machine [11, 4, 7] speed=-96
+[13:15:32] [INFO] DBV_DIVE tank [3, 1, 4] water=0
+[13:15:32] [INFO] DBV_DIVE tank [11, 1, 4] water=0
+[13:15:32] [INFO] DBV_DIVE tank [3, 1, 14] water=2850
+[13:15:32] [INFO] DBV_DIVE tank [11, 1, 14] water=2888
+[13:15:42] [INFO] DBV_DIVE t=600 depth=45 surface=62 fill=18 pumps=4 command=0 mass=2833.25 velocity=( 3.106E-2  1.109E-1 -2.958E-2)
+[13:15:42] [INFO] DBV_DIVE machine [3, 2, 6] speed=0
+[13:15:42] [INFO] DBV_DIVE machine [11, 2, 6] speed=0
+[13:15:42] [INFO] DBV_DIVE machine [3, 2, 16] speed=0
+[13:15:42] [INFO] DBV_DIVE machine [11, 2, 16] speed=0
+[13:15:42] [INFO] DBV_DIVE machine [3, 4, 7] speed=-96
+[13:15:42] [INFO] DBV_DIVE machine [11, 4, 7] speed=-96
+[13:15:42] [INFO] DBV_DIVE tank [3, 1, 4] water=0
+[13:15:42] [INFO] DBV_DIVE tank [11, 1, 4] water=0
+[13:15:42] [INFO] DBV_DIVE tank [3, 1, 14] water=2850
+[13:15:42] [INFO] DBV_DIVE tank [11, 1, 14] water=2888
+[13:15:52] [INFO] DBV_DIVE t=800 depth=45 surface=62 fill=18 pumps=4 command=0 mass=2833.25 velocity=( 3.103E-2  1.108E-1 -2.945E-2)
+[13:15:52] [INFO] DBV_DIVE machine [3, 2, 6] speed=0
+[13:15:52] [INFO] DBV_DIVE machine [11, 2, 6] speed=0
+[13:15:52] [INFO] DBV_DIVE machine [3, 2, 16] speed=0
+[13:15:52] [INFO] DBV_DIVE machine [11, 2, 16] speed=0
+[13:15:52] [INFO] DBV_DIVE machine [3, 4, 7] speed=-96
+[13:15:52] [INFO] DBV_DIVE machine [11, 4, 7] speed=-96
+[13:15:52] [INFO] DBV_DIVE tank [3, 1, 4] water=0
+[13:15:52] [INFO] DBV_DIVE tank [11, 1, 4] water=0
+[13:15:52] [INFO] DBV_DIVE tank [3, 1, 14] water=2850
+[13:15:52] [INFO] DBV_DIVE tank [11, 1, 14] water=2888
+[13:16:02] [INFO] DBV_DIVE t=1000 depth=45 surface=62 fill=18 pumps=4 command=0 mass=2833.25 velocity=( 3.130E-2  1.105E-1 -2.982E-2)
+[13:16:02] [INFO] DBV_DIVE machine [3, 2, 6] speed=0
+[13:16:02] [INFO] DBV_DIVE machine [11, 2, 6] speed=0
+[13:16:02] [INFO] DBV_DIVE machine [3, 2, 16] speed=0
+[13:16:02] [INFO] DBV_DIVE machine [11, 2, 16] speed=0
+[13:16:02] [INFO] DBV_DIVE machine [3, 4, 7] speed=-96
+[13:16:02] [INFO] DBV_DIVE machine [11, 4, 7] speed=-96
+[13:16:02] [INFO] DBV_DIVE tank [3, 1, 4] water=0
+[13:16:02] [INFO] DBV_DIVE tank [11, 1, 4] water=0
+[13:16:02] [INFO] DBV_DIVE tank [3, 1, 14] water=2850
+[13:16:02] [INFO] DBV_DIVE tank [11, 1, 14] water=2888

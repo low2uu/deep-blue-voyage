@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-15",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.259",
+  "ballastLiftPerTank": 300,
+  "depthChecks": [
+    {
+      "target": 1,
+      "actual": 0.9043853220063269,
+      "moored": false
+    },
+    {
+      "target": 15,
+      "actual": 14.909747207489033,
+      "moored": false
+    }
+  ],
+  "storageChecks": [
+    "pickup, player deposit, shift deposit, 64 diamonds conserved",
+    "right split and merge conserve 64",
+    "pagination",
+    "remote access denied and close"
+  ],
+  "unitTests": 29,
+  "formalWorldModified": false
+}
