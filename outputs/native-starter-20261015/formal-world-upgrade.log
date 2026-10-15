@@ -1,0 +1,22 @@
+[16:26:14] [INIT] KubeJS 2101.7.2-build.377; MC 2101 NeoForge
+[16:26:14] [INIT] Loaded plugins:
+[16:26:14] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSPlugin
+[16:26:14] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSClientPlugin
+[16:26:14] [INIT] - dev.latvian.mods.kubejs.integration.architectury.ArchitecturyIntegration
+[16:26:14] [INIT] - com.jesz.createdieselgenerators.compat.kubejs.CDGKubeJSPlugin
+[16:26:14] [INIT] - moe.wolfgirl.probejs.plugin.ProbeJSKJSPlugin
+[16:26:14] [INFO] Loaded script server_scripts:native.js in 0.01 s
+[16:26:14] [INFO] Loaded 1/1 KubeJS server scripts in 0.029 s with 0 errors and 0 warnings
+[16:26:17] [INFO] Server resource reload complete!
+[16:26:19] [INFO] Loaded Java class 'io.github.low2uu.dbv.fleet.FleetModule'
+[16:26:19] [INFO] Loaded Java class 'io.github.low2uu.dbv.fleet.compat.ControllerDepth'
+[16:26:19] [INFO] Loaded Java class 'net.minecraft.world.level.block.state.properties.BlockStateProperties'
+[16:26:19] [INFO] Loaded Java class 'net.minecraft.world.level.storage.LevelResource'
+[16:26:19] [INFO] Loaded Java class 'net.minecraft.world.level.GameType'
+[16:26:24] [INFO] UPGRADE OLD position=( 5.118E+1  4.229E+1  1.513E+2) bounds=dev.ryanhcode.sable.companion.math.BoundingBox3d@7c61aa7c
+[16:26:29] [INFO] UPGRADE MOOR 已停泊：保持当前船坞位置与朝向，船体固定、岸供恢复；现在可以改装，或再次出航。
+[16:26:29] [INFO] Loaded Java class 'com.maxenonyme.createsubmarine.submarine.config.SubmarineConfig'
+[16:26:29] [INFO] Loaded Java class 'java.lang.Double'
+[16:26:29] [INFO] UPGRADE INSTALL 灯笼鱼型已放入改装泊位，原艇与存储已备份，原物品已转入新艇箱子与木桶。检查布局后提交改装；取消可恢复原艇。
+[16:26:39] [INFO] UPGRADE COMMIT 正在完成改装：已临时装配，等待三项检测（最多20秒）；通过后交付，失败还原。
+[16:27:06] [INFO] UPGRADE PASS identity=4f3da63e-22d0-4149-a8bb-12574dc02383 generation=5 qualification=Qualification[controller=true, oxygen=true, sealed=true, pending=false] propellers=2 engines=2 ballast=4 moored=true

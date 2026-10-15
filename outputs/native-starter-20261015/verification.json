@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-15",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.259",
+  "deepSeas": "3.3.0",
+  "sable": "2.0.6",
+  "algorithm": "Upstream steer/trim; controller-centered depth retained",
+  "ballastLiftPerTank": 9000,
+  "ballastVerticalSpeed": 0.2,
+  "floaterLift": 300,
+  "ballastBlocks": 4,
+  "floaters": 16,
+  "defaultTarget": 1,
+  "defaultMode": 1,
+  "unitTests": 25,
+  "vesselId": "4f3da63e-22d0-4149-a8bb-12574dc02383",
+  "bodyId": "3162c70b-8d6c-4e51-a2d4-b1f06d01ede7",
+  "generation": 5,
+  "worldSha256": "F39A4BA8DD018595A40645CDDB219A5B92FE8DCA5B7A28730157A15924E1B25E",
+  "delivery": "moored, qualified, player inside cabin",
+  "limitations": [
+    "No long endurance or changed-load qualification",
+    "Only 1-15m depth range exercised",
+    "Complete airlock cycle and seabed-following not tested"
+  ]
+}

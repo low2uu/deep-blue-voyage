@@ -1,0 +1,331 @@
+[15:20:38] [INIT] KubeJS 2101.7.2-build.377; MC 2101 NeoForge
+[15:20:38] [INIT] Loaded plugins:
+[15:20:38] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSPlugin
+[15:20:38] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSClientPlugin
+[15:20:38] [INIT] - dev.latvian.mods.kubejs.integration.architectury.ArchitecturyIntegration
+[15:20:38] [INIT] - com.jesz.createdieselgenerators.compat.kubejs.CDGKubeJSPlugin
+[15:20:38] [INIT] - moe.wolfgirl.probejs.plugin.ProbeJSKJSPlugin
+[15:20:38] [INFO] Loaded script server_scripts:native.js in 0.012 s
+[15:20:38] [INFO] Loaded 1/1 KubeJS server scripts in 0.028 s with 0 errors and 0 warnings
+[15:20:41] [INFO] Server resource reload complete!
+[15:20:43] [INFO] Loaded Java class 'io.github.low2uu.dbv.fleet.FleetModule'
+[15:20:43] [INFO] Loaded Java class 'io.github.low2uu.dbv.fleet.compat.ControllerDepth'
+[15:20:43] [INFO] Loaded Java class 'com.maxenonyme.createsubmarine.submarine.util.SablePhysicsHelper'
+[15:20:43] [INFO] Loaded Java class 'net.minecraft.world.level.storage.LevelResource'
+[15:20:43] [INFO] Loaded Java class 'net.minecraft.world.level.GameType'
+[15:20:43] [INFO] Loaded Java class 'net.minecraft.world.level.block.state.properties.BlockStateProperties'
+[15:20:50] [INFO] DBV_NATIVE INSTALL 灯笼鱼型已放入改装泊位，原艇与存储已备份，原物品已转入新艇箱子与木桶。检查布局后提交改装；取消可恢复原艇。
+[15:21:02] [INFO] DBV_NATIVE COMMIT 正在完成改装：已临时装配，等待三项检测（最多20秒）；通过后交付，失败还原。
+[15:21:12] [INFO] Loaded Java class 'com.maxenonyme.createsubmarine.submarine.config.SubmarineConfig'
+[15:21:12] [INFO] DBV_NATIVE CONFIG lift=9000 speed=0.6
+[15:21:12] [INFO] DBV_NATIVE QUAL Qualification[controller=true, oxygen=true, sealed=true, pending=false]
+[15:21:12] [INFO] DBV_NATIVE DEPART 已出航：船坞固定与岸供已断开，潜艇进入自由物理状态。请使用艇上的驾驶设备控制。
+[15:21:12] [INFO] DBV_NATIVE WATER 600 [3, 2, 5]=1600
+[15:21:12] [INFO] DBV_NATIVE WATER 600 [11, 2, 5]=1600
+[15:21:12] [INFO] DBV_NATIVE WATER 600 [3, 2, 15]=1600
+[15:21:12] [INFO] DBV_NATIVE WATER 600 [11, 2, 15]=1600
+[15:21:12] [INFO] DBV_NATIVE t=600 target=1 depth=-9.499993562677531 fill=20 pumps=4 command=1 mass=2827.25 pos=( 6.750E+1  7.250E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:21:17] [INFO] DBV_NATIVE WATER 700 [3, 2, 5]=2406
+[15:21:17] [INFO] DBV_NATIVE WATER 700 [11, 2, 5]=2406
+[15:21:17] [INFO] DBV_NATIVE WATER 700 [3, 2, 15]=2189
+[15:21:17] [INFO] DBV_NATIVE WATER 700 [11, 2, 15]=2189
+[15:21:17] [INFO] DBV_NATIVE t=700 target=1 depth=1.7767961043515328 fill=29 pumps=4 command=1 mass=2827.25 pos=( 6.750E+1  6.122E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:21:22] [INFO] DBV_NATIVE WATER 800 [3, 2, 5]=2561
+[15:21:22] [INFO] DBV_NATIVE WATER 800 [11, 2, 5]=2561
+[15:21:22] [INFO] DBV_NATIVE WATER 800 [3, 2, 15]=2282
+[15:21:22] [INFO] DBV_NATIVE WATER 800 [11, 2, 15]=2282
+[15:21:22] [INFO] DBV_NATIVE t=800 target=1 depth=1.7879759579160108 fill=30 pumps=4 command=0 mass=2827.25 pos=( 6.750E+1  6.121E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:21:22] [INFO] DBV_NATIVE MACHINE [3, 4, 7] speed=-96 stressed=false
+[15:21:22] [INFO] DBV_NATIVE MACHINE [11, 4, 7] speed=-96 stressed=false
+[15:21:22] [INFO] DBV_NATIVE MACHINE [3, 2, 6] speed=0 stressed=false
+[15:21:22] [INFO] DBV_NATIVE MACHINE [11, 2, 16] speed=0 stressed=false
+[15:21:22] [INFO] DBV_NATIVE MACHINE [5, 4, 5] speed=-96 stressed=false
+[15:21:22] [INFO] DBV_NATIVE OXYGEN water=4000 energy=10000 diffuser=1000
+[15:21:27] [INFO] DBV_NATIVE WATER 900 [3, 2, 5]=2561
+[15:21:27] [INFO] DBV_NATIVE WATER 900 [11, 2, 5]=2561
+[15:21:27] [INFO] DBV_NATIVE WATER 900 [3, 2, 15]=2282
+[15:21:27] [INFO] DBV_NATIVE WATER 900 [11, 2, 15]=2282
+[15:21:27] [INFO] DBV_NATIVE t=900 target=1 depth=1.7854922585926474 fill=30 pumps=4 command=0 mass=2827.25 pos=( 6.750E+1  6.121E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:21:32] [INFO] DBV_NATIVE WATER 1000 [3, 2, 5]=2561
+[15:21:32] [INFO] DBV_NATIVE WATER 1000 [11, 2, 5]=2561
+[15:21:32] [INFO] DBV_NATIVE WATER 1000 [3, 2, 15]=2282
+[15:21:32] [INFO] DBV_NATIVE WATER 1000 [11, 2, 15]=2282
+[15:21:32] [INFO] DBV_NATIVE t=1000 target=1 depth=1.7835776164236066 fill=30 pumps=4 command=0 mass=2827.25 pos=( 6.750E+1  6.122E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:21:37] [INFO] DBV_NATIVE WATER 1100 [3, 2, 5]=2561
+[15:21:37] [INFO] DBV_NATIVE WATER 1100 [11, 2, 5]=2561
+[15:21:37] [INFO] DBV_NATIVE WATER 1100 [3, 2, 15]=2282
+[15:21:37] [INFO] DBV_NATIVE WATER 1100 [11, 2, 15]=2282
+[15:21:37] [INFO] DBV_NATIVE t=1100 target=1 depth=1.7816485457430318 fill=30 pumps=4 command=0 mass=2827.25 pos=( 6.750E+1  6.122E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:21:42] [INFO] DBV_NATIVE WATER 1200 [3, 2, 5]=2561
+[15:21:42] [INFO] DBV_NATIVE WATER 1200 [11, 2, 5]=2561
+[15:21:42] [INFO] DBV_NATIVE WATER 1200 [3, 2, 15]=2282
+[15:21:42] [INFO] DBV_NATIVE WATER 1200 [11, 2, 15]=2282
+[15:21:42] [INFO] DBV_NATIVE t=1200 target=1 depth=1.7797219933427328 fill=30 pumps=4 command=0 mass=2827.25 pos=( 6.750E+1  6.122E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:21:42] [INFO] DBV_NATIVE MACHINE [3, 4, 7] speed=-96 stressed=false
+[15:21:42] [INFO] DBV_NATIVE MACHINE [11, 4, 7] speed=-96 stressed=false
+[15:21:42] [INFO] DBV_NATIVE MACHINE [3, 2, 6] speed=0 stressed=false
+[15:21:42] [INFO] DBV_NATIVE MACHINE [11, 2, 16] speed=0 stressed=false
+[15:21:42] [INFO] DBV_NATIVE MACHINE [5, 4, 5] speed=-96 stressed=false
+[15:21:42] [INFO] DBV_NATIVE OXYGEN water=4000 energy=10000 diffuser=1000
+[15:21:47] [INFO] DBV_NATIVE WATER 1300 [3, 2, 5]=2561
+[15:21:47] [INFO] DBV_NATIVE WATER 1300 [11, 2, 5]=2561
+[15:21:47] [INFO] DBV_NATIVE WATER 1300 [3, 2, 15]=2282
+[15:21:47] [INFO] DBV_NATIVE WATER 1300 [11, 2, 15]=2282
+[15:21:47] [INFO] DBV_NATIVE t=1300 target=1 depth=1.777952139836458 fill=30 pumps=4 command=0 mass=2827.25 pos=( 6.750E+1  6.122E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:21:52] [INFO] DBV_NATIVE WATER 1400 [3, 2, 5]=2561
+[15:21:52] [INFO] DBV_NATIVE WATER 1400 [11, 2, 5]=2561
+[15:21:52] [INFO] DBV_NATIVE WATER 1400 [3, 2, 15]=2282
+[15:21:52] [INFO] DBV_NATIVE WATER 1400 [11, 2, 15]=2282
+[15:21:52] [INFO] DBV_NATIVE t=1400 target=1 depth=1.7764440627570295 fill=30 pumps=4 command=0 mass=2827.25 pos=( 6.750E+1  6.122E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:21:57] [INFO] DBV_NATIVE WATER 1500 [3, 2, 5]=2561
+[15:21:57] [INFO] DBV_NATIVE WATER 1500 [11, 2, 5]=2561
+[15:21:57] [INFO] DBV_NATIVE WATER 1500 [3, 2, 15]=2282
+[15:21:57] [INFO] DBV_NATIVE WATER 1500 [11, 2, 15]=2282
+[15:21:57] [INFO] DBV_NATIVE t=1500 target=1 depth=1.7752867720857353 fill=30 pumps=4 command=0 mass=2827.25 pos=( 6.750E+1  6.122E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:22:02] [INFO] DBV_NATIVE WATER 1600 [3, 2, 5]=2561
+[15:22:02] [INFO] DBV_NATIVE WATER 1600 [11, 2, 5]=2561
+[15:22:02] [INFO] DBV_NATIVE WATER 1600 [3, 2, 15]=2282
+[15:22:02] [INFO] DBV_NATIVE WATER 1600 [11, 2, 15]=2282
+[15:22:02] [INFO] DBV_NATIVE t=1600 target=1 depth=1.7741303263747739 fill=30 pumps=4 command=0 mass=2827.25 pos=( 6.750E+1  6.123E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:22:02] [INFO] DBV_NATIVE MACHINE [3, 4, 7] speed=-96 stressed=false
+[15:22:02] [INFO] DBV_NATIVE MACHINE [11, 4, 7] speed=-96 stressed=false
+[15:22:02] [INFO] DBV_NATIVE MACHINE [3, 2, 6] speed=0 stressed=false
+[15:22:02] [INFO] DBV_NATIVE MACHINE [11, 2, 16] speed=0 stressed=false
+[15:22:02] [INFO] DBV_NATIVE MACHINE [5, 4, 5] speed=-96 stressed=false
+[15:22:02] [INFO] DBV_NATIVE OXYGEN water=4000 energy=10000 diffuser=1000
+[15:22:07] [INFO] DBV_NATIVE WATER 1700 [3, 2, 5]=2561
+[15:22:07] [INFO] DBV_NATIVE WATER 1700 [11, 2, 5]=2561
+[15:22:07] [INFO] DBV_NATIVE WATER 1700 [3, 2, 15]=2282
+[15:22:07] [INFO] DBV_NATIVE WATER 1700 [11, 2, 15]=2282
+[15:22:07] [INFO] DBV_NATIVE t=1700 target=1 depth=1.7729753498653693 fill=30 pumps=4 command=0 mass=2827.25 pos=( 6.749E+1  6.123E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:22:12] [INFO] DBV_NATIVE WATER 1800 [3, 2, 5]=2561
+[15:22:12] [INFO] DBV_NATIVE WATER 1800 [11, 2, 5]=2561
+[15:22:12] [INFO] DBV_NATIVE WATER 1800 [3, 2, 15]=2282
+[15:22:12] [INFO] DBV_NATIVE WATER 1800 [11, 2, 15]=2282
+[15:22:12] [INFO] DBV_NATIVE t=1800 target=1 depth=1.7718187999662476 fill=30 pumps=4 command=0 mass=2827.25 pos=( 6.749E+1  6.123E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:22:17] [INFO] DBV_NATIVE WATER 1900 [3, 2, 5]=2561
+[15:22:17] [INFO] DBV_NATIVE WATER 1900 [11, 2, 5]=2561
+[15:22:17] [INFO] DBV_NATIVE WATER 1900 [3, 2, 15]=2282
+[15:22:17] [INFO] DBV_NATIVE WATER 1900 [11, 2, 15]=2282
+[15:22:17] [INFO] DBV_NATIVE t=1900 target=1 depth=1.770666553908697 fill=30 pumps=4 command=0 mass=2827.25 pos=( 6.749E+1  6.123E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:22:22] [INFO] DBV_NATIVE WATER 2000 [3, 2, 5]=2561
+[15:22:22] [INFO] DBV_NATIVE WATER 2000 [11, 2, 5]=2561
+[15:22:22] [INFO] DBV_NATIVE WATER 2000 [3, 2, 15]=2282
+[15:22:22] [INFO] DBV_NATIVE WATER 2000 [11, 2, 15]=2282
+[15:22:22] [INFO] DBV_NATIVE t=2000 target=1 depth=1.7695153465934084 fill=30 pumps=4 command=0 mass=2827.25 pos=( 6.749E+1  6.123E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:22:22] [INFO] DBV_NATIVE MACHINE [3, 4, 7] speed=-96 stressed=false
+[15:22:22] [INFO] DBV_NATIVE MACHINE [11, 4, 7] speed=-96 stressed=false
+[15:22:22] [INFO] DBV_NATIVE MACHINE [3, 2, 6] speed=0 stressed=false
+[15:22:22] [INFO] DBV_NATIVE MACHINE [11, 2, 16] speed=0 stressed=false
+[15:22:22] [INFO] DBV_NATIVE MACHINE [5, 4, 5] speed=-96 stressed=false
+[15:22:22] [INFO] DBV_NATIVE OXYGEN water=4000 energy=10000 diffuser=1000
+[15:22:22] [INFO] DBV_NATIVE PASS depth target=1 actual=1.7695153465934084
+[15:22:27] [INFO] DBV_NATIVE WATER 2100 [3, 2, 5]=2561
+[15:22:27] [INFO] DBV_NATIVE WATER 2100 [11, 2, 5]=2561
+[15:22:27] [INFO] DBV_NATIVE WATER 2100 [3, 2, 15]=2282
+[15:22:27] [INFO] DBV_NATIVE WATER 2100 [11, 2, 15]=2282
+[15:22:27] [INFO] DBV_NATIVE t=2100 target=1 depth=1.7683581084377025 fill=30 pumps=4 command=0 mass=2827.25 pos=( 6.749E+1  6.123E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:22:32] [INFO] DBV_NATIVE WATER 2200 [3, 2, 5]=2561
+[15:22:32] [INFO] DBV_NATIVE WATER 2200 [11, 2, 5]=2561
+[15:22:32] [INFO] DBV_NATIVE WATER 2200 [3, 2, 15]=2282
+[15:22:32] [INFO] DBV_NATIVE WATER 2200 [11, 2, 15]=2282
+[15:22:32] [INFO] DBV_NATIVE t=2200 target=15 depth=1.7672042732764695 fill=30 pumps=4 command=0 mass=2827.25 pos=( 6.749E+1  6.123E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:22:37] [INFO] DBV_NATIVE WATER 2300 [3, 2, 5]=5251
+[15:22:37] [INFO] DBV_NATIVE WATER 2300 [11, 2, 5]=5251
+[15:22:37] [INFO] DBV_NATIVE WATER 2300 [3, 2, 15]=4886
+[15:22:37] [INFO] DBV_NATIVE WATER 2300 [11, 2, 15]=4886
+[15:22:37] [INFO] DBV_NATIVE t=2300 target=15 depth=5.264961943823565 fill=63 pumps=4 command=1 mass=2827.25 pos=( 6.749E+1  5.774E+1  1.535E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:22:42] [INFO] DBV_NATIVE WATER 2400 [3, 2, 5]=6158
+[15:22:42] [INFO] DBV_NATIVE WATER 2400 [11, 2, 5]=6158
+[15:22:42] [INFO] DBV_NATIVE WATER 2400 [3, 2, 15]=3739
+[15:22:42] [INFO] DBV_NATIVE WATER 2400 [11, 2, 15]=3739
+[15:22:42] [INFO] DBV_NATIVE t=2400 target=15 depth=45.50000073827265 fill=62 pumps=4 command=-1 mass=2827.25 pos=( 6.739E+1  1.750E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:22:42] [INFO] DBV_NATIVE MACHINE [3, 4, 7] speed=-96 stressed=false
+[15:22:42] [INFO] DBV_NATIVE MACHINE [11, 4, 7] speed=-96 stressed=false
+[15:22:42] [INFO] DBV_NATIVE MACHINE [3, 2, 6] speed=-63.36000061035156 stressed=false
+[15:22:42] [INFO] DBV_NATIVE MACHINE [11, 2, 16] speed=-63.36000061035156 stressed=false
+[15:22:42] [INFO] DBV_NATIVE MACHINE [5, 4, 5] speed=-96 stressed=false
+[15:22:42] [INFO] DBV_NATIVE OXYGEN water=4000 energy=10000 diffuser=1000
+[15:22:47] [INFO] DBV_NATIVE WATER 2500 [3, 2, 5]=6158
+[15:22:47] [INFO] DBV_NATIVE WATER 2500 [11, 2, 5]=6158
+[15:22:47] [INFO] DBV_NATIVE WATER 2500 [3, 2, 15]=639
+[15:22:47] [INFO] DBV_NATIVE WATER 2500 [11, 2, 15]=639
+[15:22:47] [INFO] DBV_NATIVE t=2500 target=15 depth=45.41014535406041 fill=43 pumps=4 command=-1 mass=2827.25 pos=( 6.739E+1  1.759E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:22:52] [INFO] DBV_NATIVE WATER 2600 [3, 2, 5]=6158
+[15:22:52] [INFO] DBV_NATIVE WATER 2600 [11, 2, 5]=6158
+[15:22:52] [INFO] DBV_NATIVE WATER 2600 [3, 2, 15]=0
+[15:22:52] [INFO] DBV_NATIVE WATER 2600 [11, 2, 15]=0
+[15:22:52] [INFO] DBV_NATIVE t=2600 target=15 depth=44.156598041127 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.743E+1  1.884E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:22:57] [INFO] DBV_NATIVE WATER 2700 [3, 2, 5]=6158
+[15:22:57] [INFO] DBV_NATIVE WATER 2700 [11, 2, 5]=6158
+[15:22:57] [INFO] DBV_NATIVE WATER 2700 [3, 2, 15]=0
+[15:22:57] [INFO] DBV_NATIVE WATER 2700 [11, 2, 15]=0
+[15:22:57] [INFO] DBV_NATIVE t=2700 target=15 depth=43.27651736237824 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.743E+1  1.972E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:23:02] [INFO] DBV_NATIVE WATER 2800 [3, 2, 5]=6158
+[15:23:02] [INFO] DBV_NATIVE WATER 2800 [11, 2, 5]=6158
+[15:23:02] [INFO] DBV_NATIVE WATER 2800 [3, 2, 15]=0
+[15:23:02] [INFO] DBV_NATIVE WATER 2800 [11, 2, 15]=0
+[15:23:02] [INFO] DBV_NATIVE t=2800 target=15 depth=42.40932703871611 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.743E+1  2.059E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:23:02] [INFO] DBV_NATIVE MACHINE [3, 4, 7] speed=-96 stressed=false
+[15:23:02] [INFO] DBV_NATIVE MACHINE [11, 4, 7] speed=-96 stressed=false
+[15:23:02] [INFO] DBV_NATIVE MACHINE [3, 2, 6] speed=-63.36000061035156 stressed=false
+[15:23:02] [INFO] DBV_NATIVE MACHINE [11, 2, 16] speed=-63.36000061035156 stressed=false
+[15:23:02] [INFO] DBV_NATIVE MACHINE [5, 4, 5] speed=-96 stressed=false
+[15:23:02] [INFO] DBV_NATIVE OXYGEN water=4000 energy=10000 diffuser=1000
+[15:23:07] [INFO] DBV_NATIVE WATER 2900 [3, 2, 5]=6158
+[15:23:07] [INFO] DBV_NATIVE WATER 2900 [11, 2, 5]=6158
+[15:23:07] [INFO] DBV_NATIVE WATER 2900 [3, 2, 15]=0
+[15:23:07] [INFO] DBV_NATIVE WATER 2900 [11, 2, 15]=0
+[15:23:07] [INFO] DBV_NATIVE t=2900 target=15 depth=41.54186590578803 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.743E+1  2.146E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:23:12] [INFO] DBV_NATIVE WATER 3000 [3, 2, 5]=6158
+[15:23:12] [INFO] DBV_NATIVE WATER 3000 [11, 2, 5]=6158
+[15:23:12] [INFO] DBV_NATIVE WATER 3000 [3, 2, 15]=0
+[15:23:12] [INFO] DBV_NATIVE WATER 3000 [11, 2, 15]=0
+[15:23:12] [INFO] DBV_NATIVE t=3000 target=15 depth=40.67440381212104 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.743E+1  2.233E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:23:17] [INFO] DBV_NATIVE WATER 3100 [3, 2, 5]=6158
+[15:23:17] [INFO] DBV_NATIVE WATER 3100 [11, 2, 5]=6158
+[15:23:17] [INFO] DBV_NATIVE WATER 3100 [3, 2, 15]=0
+[15:23:17] [INFO] DBV_NATIVE WATER 3100 [11, 2, 15]=0
+[15:23:17] [INFO] DBV_NATIVE t=3100 target=15 depth=39.80694190684263 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.743E+1  2.319E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:23:22] [INFO] DBV_NATIVE WATER 3200 [3, 2, 5]=6158
+[15:23:22] [INFO] DBV_NATIVE WATER 3200 [11, 2, 5]=6158
+[15:23:22] [INFO] DBV_NATIVE WATER 3200 [3, 2, 15]=0
+[15:23:22] [INFO] DBV_NATIVE WATER 3200 [11, 2, 15]=0
+[15:23:22] [INFO] DBV_NATIVE t=3200 target=15 depth=38.939479720731704 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.744E+1  2.406E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:23:22] [INFO] DBV_NATIVE MACHINE [3, 4, 7] speed=-96 stressed=false
+[15:23:22] [INFO] DBV_NATIVE MACHINE [11, 4, 7] speed=-96 stressed=false
+[15:23:22] [INFO] DBV_NATIVE MACHINE [3, 2, 6] speed=-63.36000061035156 stressed=false
+[15:23:22] [INFO] DBV_NATIVE MACHINE [11, 2, 16] speed=-63.36000061035156 stressed=false
+[15:23:22] [INFO] DBV_NATIVE MACHINE [5, 4, 5] speed=-96 stressed=false
+[15:23:22] [INFO] DBV_NATIVE OXYGEN water=4000 energy=10000 diffuser=1000
+[15:23:27] [INFO] DBV_NATIVE WATER 3300 [3, 2, 5]=6158
+[15:23:27] [INFO] DBV_NATIVE WATER 3300 [11, 2, 5]=6158
+[15:23:27] [INFO] DBV_NATIVE WATER 3300 [3, 2, 15]=0
+[15:23:27] [INFO] DBV_NATIVE WATER 3300 [11, 2, 15]=0
+[15:23:27] [INFO] DBV_NATIVE t=3300 target=15 depth=38.072016481425976 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.744E+1  2.493E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:23:32] [INFO] DBV_NATIVE WATER 3400 [3, 2, 5]=6158
+[15:23:32] [INFO] DBV_NATIVE WATER 3400 [11, 2, 5]=6158
+[15:23:32] [INFO] DBV_NATIVE WATER 3400 [3, 2, 15]=0
+[15:23:32] [INFO] DBV_NATIVE WATER 3400 [11, 2, 15]=0
+[15:23:32] [INFO] DBV_NATIVE t=3400 target=15 depth=37.20455429647265 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.744E+1  2.580E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:23:32] [ERROR] ! DBV_NATIVE FAIL Error: depth 37.20455429647265 target 15
+[15:23:37] [INFO] DBV_NATIVE WATER 3500 [3, 2, 5]=6158
+[15:23:37] [INFO] DBV_NATIVE WATER 3500 [11, 2, 5]=6158
+[15:23:37] [INFO] DBV_NATIVE WATER 3500 [3, 2, 15]=0
+[15:23:37] [INFO] DBV_NATIVE WATER 3500 [11, 2, 15]=0
+[15:23:37] [INFO] DBV_NATIVE t=3500 target=15 depth=36.33709307049173 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.744E+1  2.666E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:23:42] [INFO] DBV_NATIVE WATER 3600 [3, 2, 5]=6158
+[15:23:42] [INFO] DBV_NATIVE WATER 3600 [11, 2, 5]=6158
+[15:23:42] [INFO] DBV_NATIVE WATER 3600 [3, 2, 15]=0
+[15:23:42] [INFO] DBV_NATIVE WATER 3600 [11, 2, 15]=0
+[15:23:42] [INFO] DBV_NATIVE t=3600 target=1 depth=35.46963029675748 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.744E+1  2.753E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:23:42] [INFO] DBV_NATIVE MACHINE [3, 4, 7] speed=-96 stressed=false
+[15:23:42] [INFO] DBV_NATIVE MACHINE [11, 4, 7] speed=-96 stressed=false
+[15:23:42] [INFO] DBV_NATIVE MACHINE [3, 2, 6] speed=-63.36000061035156 stressed=false
+[15:23:42] [INFO] DBV_NATIVE MACHINE [11, 2, 16] speed=-63.36000061035156 stressed=false
+[15:23:42] [INFO] DBV_NATIVE MACHINE [5, 4, 5] speed=-96 stressed=false
+[15:23:42] [INFO] DBV_NATIVE OXYGEN water=4000 energy=10000 diffuser=1000
+[15:23:47] [INFO] DBV_NATIVE WATER 3700 [3, 2, 5]=6158
+[15:23:47] [INFO] DBV_NATIVE WATER 3700 [11, 2, 5]=6158
+[15:23:47] [INFO] DBV_NATIVE WATER 3700 [3, 2, 15]=0
+[15:23:47] [INFO] DBV_NATIVE WATER 3700 [11, 2, 15]=0
+[15:23:47] [INFO] DBV_NATIVE t=3700 target=1 depth=34.60216873007832 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.744E+1  2.840E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:23:52] [INFO] DBV_NATIVE WATER 3800 [3, 2, 5]=6158
+[15:23:52] [INFO] DBV_NATIVE WATER 3800 [11, 2, 5]=6158
+[15:23:52] [INFO] DBV_NATIVE WATER 3800 [3, 2, 15]=0
+[15:23:52] [INFO] DBV_NATIVE WATER 3800 [11, 2, 15]=0
+[15:23:52] [INFO] DBV_NATIVE t=3800 target=1 depth=33.73470626638727 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.744E+1  2.927E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:23:57] [INFO] DBV_NATIVE WATER 3900 [3, 2, 5]=6158
+[15:23:57] [INFO] DBV_NATIVE WATER 3900 [11, 2, 5]=6158
+[15:23:57] [INFO] DBV_NATIVE WATER 3900 [3, 2, 15]=0
+[15:23:57] [INFO] DBV_NATIVE WATER 3900 [11, 2, 15]=0
+[15:23:57] [INFO] DBV_NATIVE t=3900 target=1 depth=32.86724467034904 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.744E+1  3.013E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:24:02] [INFO] DBV_NATIVE WATER 4000 [3, 2, 5]=6158
+[15:24:02] [INFO] DBV_NATIVE WATER 4000 [11, 2, 5]=6158
+[15:24:02] [INFO] DBV_NATIVE WATER 4000 [3, 2, 15]=0
+[15:24:02] [INFO] DBV_NATIVE WATER 4000 [11, 2, 15]=0
+[15:24:02] [INFO] DBV_NATIVE t=4000 target=1 depth=31.999782794516587 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.744E+1  3.100E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:24:02] [INFO] DBV_NATIVE MACHINE [3, 4, 7] speed=-96 stressed=false
+[15:24:02] [INFO] DBV_NATIVE MACHINE [11, 4, 7] speed=-96 stressed=false
+[15:24:02] [INFO] DBV_NATIVE MACHINE [3, 2, 6] speed=-63.36000061035156 stressed=false
+[15:24:02] [INFO] DBV_NATIVE MACHINE [11, 2, 16] speed=-63.36000061035156 stressed=false
+[15:24:02] [INFO] DBV_NATIVE MACHINE [5, 4, 5] speed=-96 stressed=false
+[15:24:02] [INFO] DBV_NATIVE OXYGEN water=4000 energy=10000 diffuser=1000
+[15:24:07] [INFO] DBV_NATIVE WATER 4100 [3, 2, 5]=6158
+[15:24:07] [INFO] DBV_NATIVE WATER 4100 [11, 2, 5]=6158
+[15:24:07] [INFO] DBV_NATIVE WATER 4100 [3, 2, 15]=0
+[15:24:07] [INFO] DBV_NATIVE WATER 4100 [11, 2, 15]=0
+[15:24:07] [INFO] DBV_NATIVE t=4100 target=1 depth=31.132320175687987 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.744E+1  3.187E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:24:12] [INFO] DBV_NATIVE WATER 4200 [3, 2, 5]=6158
+[15:24:12] [INFO] DBV_NATIVE WATER 4200 [11, 2, 5]=6158
+[15:24:12] [INFO] DBV_NATIVE WATER 4200 [3, 2, 15]=0
+[15:24:12] [INFO] DBV_NATIVE WATER 4200 [11, 2, 15]=0
+[15:24:12] [INFO] DBV_NATIVE t=4200 target=1 depth=30.264593024276756 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.744E+1  3.274E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:24:17] [INFO] DBV_NATIVE WATER 4300 [3, 2, 5]=6158
+[15:24:17] [INFO] DBV_NATIVE WATER 4300 [11, 2, 5]=6158
+[15:24:17] [INFO] DBV_NATIVE WATER 4300 [3, 2, 15]=0
+[15:24:17] [INFO] DBV_NATIVE WATER 4300 [11, 2, 15]=0
+[15:24:17] [INFO] DBV_NATIVE t=4300 target=1 depth=29.396748532418314 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.744E+1  3.360E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:24:22] [INFO] DBV_NATIVE WATER 4400 [3, 2, 5]=6158
+[15:24:22] [INFO] DBV_NATIVE WATER 4400 [11, 2, 5]=6158
+[15:24:22] [INFO] DBV_NATIVE WATER 4400 [3, 2, 15]=0
+[15:24:22] [INFO] DBV_NATIVE WATER 4400 [11, 2, 15]=0
+[15:24:22] [INFO] DBV_NATIVE t=4400 target=1 depth=28.528905312440394 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.744E+1  3.447E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:24:22] [INFO] DBV_NATIVE MACHINE [3, 4, 7] speed=-96 stressed=false
+[15:24:22] [INFO] DBV_NATIVE MACHINE [11, 4, 7] speed=-96 stressed=false
+[15:24:22] [INFO] DBV_NATIVE MACHINE [3, 2, 6] speed=-63.36000061035156 stressed=false
+[15:24:22] [INFO] DBV_NATIVE MACHINE [11, 2, 16] speed=-63.36000061035156 stressed=false
+[15:24:22] [INFO] DBV_NATIVE MACHINE [5, 4, 5] speed=-96 stressed=false
+[15:24:22] [INFO] DBV_NATIVE OXYGEN water=4000 energy=10000 diffuser=1000
+[15:24:27] [INFO] DBV_NATIVE WATER 4500 [3, 2, 5]=6158
+[15:24:27] [INFO] DBV_NATIVE WATER 4500 [11, 2, 5]=6158
+[15:24:27] [INFO] DBV_NATIVE WATER 4500 [3, 2, 15]=0
+[15:24:27] [INFO] DBV_NATIVE WATER 4500 [11, 2, 15]=0
+[15:24:27] [INFO] DBV_NATIVE t=4500 target=1 depth=27.66106162606941 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.744E+1  3.534E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:24:32] [INFO] DBV_NATIVE WATER 4600 [3, 2, 5]=6158
+[15:24:32] [INFO] DBV_NATIVE WATER 4600 [11, 2, 5]=6158
+[15:24:32] [INFO] DBV_NATIVE WATER 4600 [3, 2, 15]=0
+[15:24:32] [INFO] DBV_NATIVE WATER 4600 [11, 2, 15]=0
+[15:24:32] [INFO] DBV_NATIVE t=4600 target=1 depth=26.79321812696878 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.744E+1  3.621E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:24:37] [INFO] DBV_NATIVE WATER 4700 [3, 2, 5]=6158
+[15:24:37] [INFO] DBV_NATIVE WATER 4700 [11, 2, 5]=6158
+[15:24:37] [INFO] DBV_NATIVE WATER 4700 [3, 2, 15]=0
+[15:24:37] [INFO] DBV_NATIVE WATER 4700 [11, 2, 15]=0
+[15:24:37] [INFO] DBV_NATIVE t=4700 target=1 depth=25.925374936927376 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.745E+1  3.707E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:24:42] [INFO] DBV_NATIVE WATER 4800 [3, 2, 5]=6158
+[15:24:42] [INFO] DBV_NATIVE WATER 4800 [11, 2, 5]=6158
+[15:24:42] [INFO] DBV_NATIVE WATER 4800 [3, 2, 15]=0
+[15:24:42] [INFO] DBV_NATIVE WATER 4800 [11, 2, 15]=0
+[15:24:42] [INFO] DBV_NATIVE t=4800 target=1 depth=25.057531188695876 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.745E+1  3.794E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:24:42] [INFO] DBV_NATIVE MACHINE [3, 4, 7] speed=-96 stressed=false
+[15:24:42] [INFO] DBV_NATIVE MACHINE [11, 4, 7] speed=-96 stressed=false
+[15:24:42] [INFO] DBV_NATIVE MACHINE [3, 2, 6] speed=-63.36000061035156 stressed=false
+[15:24:42] [INFO] DBV_NATIVE MACHINE [11, 2, 16] speed=-63.36000061035156 stressed=false
+[15:24:42] [INFO] DBV_NATIVE MACHINE [5, 4, 5] speed=-96 stressed=false
+[15:24:42] [INFO] DBV_NATIVE OXYGEN water=4000 energy=10000 diffuser=1000
+[15:24:42] [ERROR] ! DBV_NATIVE FAIL Error: depth 25.057531188695876 target 1
+[15:24:47] [INFO] DBV_NATIVE WATER 4900 [3, 2, 5]=6158
+[15:24:47] [INFO] DBV_NATIVE WATER 4900 [11, 2, 5]=6158
+[15:24:47] [INFO] DBV_NATIVE WATER 4900 [3, 2, 15]=0
+[15:24:47] [INFO] DBV_NATIVE WATER 4900 [11, 2, 15]=0
+[15:24:47] [INFO] DBV_NATIVE t=4900 target=1 depth=24.18968768945652 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.745E+1  3.881E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:24:52] [INFO] DBV_NATIVE WATER 5000 [3, 2, 5]=6158
+[15:24:52] [INFO] DBV_NATIVE WATER 5000 [11, 2, 5]=6158
+[15:24:52] [INFO] DBV_NATIVE WATER 5000 [3, 2, 15]=0
+[15:24:52] [INFO] DBV_NATIVE WATER 5000 [11, 2, 15]=0
+[15:24:52] [INFO] DBV_NATIVE t=5000 target=1 depth=23.321843631405194 fill=38 pumps=4 command=-1 mass=2827.25 pos=( 6.745E+1  3.968E+1  1.524E+2) qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] weakest=68
+[15:24:52] [INFO] DBV_NATIVE DRIVE t=5000 position=( 6.745E+1  3.968E+1  1.524E+2) yaw=( 2.981E-2  1.568E-3 -3.972E-4  9.996E-1) propL=0 propR=0 oxygen=Qualification[controller=true, oxygen=true, sealed=true, pending=false]
+[15:24:56] [INFO] DBV_NATIVE FORWARD [67.44694105359305, 152.3793160695026] -> [67.44225041337732, 151.87005892949836]
+[15:24:56] [INFO] DBV_NATIVE MOOR_REJECT 请先断开两侧推进离合器，停止螺旋桨
+[15:24:56] [INFO] DBV_NATIVE DRIVE t=5080 position=( 6.744E+1  4.039E+1  1.519E+2) yaw=( 3.083E-2  1.850E-3 -3.955E-4  9.995E-1) propL=0 propR=0 oxygen=Qualification[controller=true, oxygen=true, sealed=true, pending=false]
+[15:25:00] [INFO] DBV_NATIVE REVERSE [67.44225041337732, 151.87005892949836] -> [67.44409900695427, 152.19216125900422]
+[15:25:00] [INFO] DBV_NATIVE DRIVE t=5160 position=( 6.744E+1  4.105E+1  1.522E+2) yaw=( 2.891E-2  1.738E-3 -4.156E-4  9.996E-1) propL=0 propR=-96 oxygen=Qualification[controller=true, oxygen=true, sealed=true, pending=false]
+[15:25:04] [INFO] DBV_NATIVE TURN_LEFT orientation=( 2.970E-2 -6.044E-2 -1.231E-4  9.977E-1)
+[15:25:04] [INFO] DBV_NATIVE DRIVE t=5240 position=( 6.845E+1  4.176E+1  1.524E+2) yaw=( 2.970E-2 -6.044E-2 -1.231E-4  9.977E-1) propL=0 propR=0 oxygen=Qualification[controller=true, oxygen=true, sealed=true, pending=false]
+[15:25:08] [INFO] DBV_NATIVE TURN_RIGHT orientation=( 2.972E-2 -4.339E-2  2.321E-3  9.986E-1)
+[15:25:08] [INFO] DBV_NATIVE DRIVE t=5320 position=( 6.817E+1  4.245E+1  1.524E+2) yaw=( 2.972E-2 -4.339E-2  2.321E-3  9.986E-1) propL=0 propR=0 oxygen=Qualification[controller=true, oxygen=true, sealed=true, pending=false]
+[15:25:18] [INFO] DBV_NATIVE MOOR 已停泊：保持当前船坞位置与朝向，船体固定、岸供恢复；现在可以改装，或再次出航。
+[15:25:28] [INFO] DBV_NATIVE PASS mooring anchor=( 6.746E+1  4.419E+1  1.524E+2)
+[15:25:28] [INFO] DBV_NATIVE REDEPART 已出航：船坞固定与岸供已断开，潜艇进入自由物理状态。请使用艇上的驾驶设备控制。
+[15:25:38] [INFO] DBV_NATIVE REMOOR 已停泊：保持当前船坞位置与朝向，船体固定、岸供恢复；现在可以改装，或再次出航。
+[15:25:48] [INFO] DBV_NATIVE PASS repeated departure/mooring

@@ -1,0 +1,16 @@
+[16:11:19] [INIT] KubeJS 2101.7.2-build.377; MC 2101 NeoForge
+[16:11:19] [INIT] Loaded plugins:
+[16:11:19] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSPlugin
+[16:11:19] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSClientPlugin
+[16:11:19] [INIT] - dev.latvian.mods.kubejs.integration.architectury.ArchitecturyIntegration
+[16:11:19] [INIT] - com.jesz.createdieselgenerators.compat.kubejs.CDGKubeJSPlugin
+[16:11:19] [INIT] - moe.wolfgirl.probejs.plugin.ProbeJSKJSPlugin
+[16:11:19] [INFO] client_scripts:native.js#2: Loaded Java class 'net.neoforged.neoforge.client.event.ClientTickEvent$Post'
+[16:11:19] [INFO] Loaded script client_scripts:native.js in 0.034 s
+[16:11:19] [INFO] Loaded 1/1 KubeJS client scripts in 0.048 s with 0 errors and 0 warnings
+[16:11:22] [INFO] Client resource reload complete!
+[16:11:31] [INFO] Loaded Java class 'net.minecraft.client.Minecraft'
+[16:11:41] [INFO] Loaded Java class 'net.minecraft.client.Screenshot'
+[16:11:41] [INFO] CAL GUIDE translation{key='screenshot.success', args=[literal{2026-10-15_16.11.41.png}[style={underlined,clickEvent=ClickEvent{action=OPEN_FILE, value='E:\mc\project\deep-blue-voyage\.local\angler-client\screenshots\2026-10-15_16.11.41.png'}}]]}
+[16:11:43] [INFO] CAL PASS storage terminal UI
+[16:11:43] [INFO] CAL STORAGE translation{key='screenshot.success', args=[literal{2026-10-15_16.11.43.png}[style={underlined,clickEvent=ClickEvent{action=OPEN_FILE, value='E:\mc\project\deep-blue-voyage\.local\angler-client\screenshots\2026-10-15_16.11.43.png'}}]]}

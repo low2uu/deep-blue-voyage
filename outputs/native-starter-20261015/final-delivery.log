@@ -1,0 +1,30 @@
+[16:29:07] [INIT] KubeJS 2101.7.2-build.377; MC 2101 NeoForge
+[16:29:07] [INIT] Loaded plugins:
+[16:29:07] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSPlugin
+[16:29:07] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSClientPlugin
+[16:29:07] [INIT] - dev.latvian.mods.kubejs.integration.architectury.ArchitecturyIntegration
+[16:29:07] [INIT] - com.jesz.createdieselgenerators.compat.kubejs.CDGKubeJSPlugin
+[16:29:07] [INIT] - moe.wolfgirl.probejs.plugin.ProbeJSKJSPlugin
+[16:29:07] [INFO] Loaded script server_scripts:native.js in 0.01 s
+[16:29:07] [INFO] Loaded 1/1 KubeJS server scripts in 0.032 s with 0 errors and 0 warnings
+[16:29:10] [INFO] Server resource reload complete!
+[16:29:12] [INFO] Loaded Java class 'io.github.low2uu.dbv.fleet.FleetModule'
+[16:29:12] [INFO] Loaded Java class 'io.github.low2uu.dbv.fleet.compat.ControllerDepth'
+[16:29:12] [INFO] Loaded Java class 'net.minecraft.world.level.block.state.properties.BlockStateProperties'
+[16:29:12] [INFO] Loaded Java class 'net.minecraft.world.level.storage.LevelResource'
+[16:29:12] [INFO] Loaded Java class 'net.minecraft.world.level.GameType'
+[16:29:16] [INFO] DELIVERY PASS defaults and restart mooring
+[16:29:21] [INFO] Loaded Java class 'io.github.low2uu.dbv.fleet.ui.FleetPanel'
+[16:29:31] [INFO] DELIVERY SAMPLE t=400 depth=2.5935998967615532 qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] position=( 6.750E+1  6.041E+1  1.535E+2) yaw=( 2.093E-2 -3.245E-5 -1.049E-3  9.998E-1)
+[16:29:41] [INFO] DELIVERY SAMPLE t=600 depth=1.4531386971093099 qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] position=( 6.750E+1  6.155E+1  1.535E+2) yaw=( 2.211E-2  1.167E-4 -5.913E-4  9.998E-1)
+[16:29:51] [INFO] DELIVERY SAMPLE t=800 depth=0.9973136952698738 qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] position=( 6.750E+1  6.200E+1  1.535E+2) yaw=( 2.271E-2 -1.262E-4  6.872E-4  9.997E-1)
+[16:30:01] [INFO] DELIVERY SAMPLE t=1000 depth=1.0023826464725616 qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] position=( 6.751E+1  6.200E+1  1.535E+2) yaw=( 2.271E-2 -6.277E-4  6.891E-4  9.997E-1)
+[16:30:01] [INFO] DELIVERY PASS default depth 1.0023826464725616
+[16:30:05] [INFO] DELIVERY SAMPLE t=1080 depth=1.0063980022854366 qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] position=( 6.750E+1  6.199E+1  1.530E+2) yaw=( 2.275E-2  1.688E-4  6.939E-4  9.997E-1)
+[16:30:05] [INFO] DELIVERY PASS forward 153.49247755434422 -> 152.99392765808025
+[16:30:09] [INFO] DELIVERY SAMPLE t=1160 depth=1.0017862248544986 qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] position=( 6.751E+1  6.200E+1  1.533E+2) yaw=( 2.255E-2 -6.226E-4  6.664E-4  9.997E-1)
+[16:30:09] [INFO] DELIVERY PASS reverse 152.99392765808025 -> 153.28075443608927
+[16:30:13] [INFO] DELIVERY SAMPLE t=1240 depth=1.0056624132544272 qual=Qualification[controller=true, oxygen=false, sealed=false, pending=true] position=( 6.857E+1  6.199E+1  1.536E+2) yaw=( 2.288E-2 -6.542E-2  1.178E-4  9.976E-1)
+[16:30:17] [INFO] DELIVERY SAMPLE t=1320 depth=1.0035373053347527 qual=Qualification[controller=true, oxygen=true, sealed=true, pending=false] position=( 6.851E+1  6.200E+1  1.536E+2) yaw=( 2.247E-2 -6.264E-2  3.538E-3  9.978E-1)
+[16:30:36] [INFO] DELIVERY PASS moored qualified player inside cabin identity=4f3da63e-22d0-4149-a8bb-12574dc02383
+[16:30:46] [INFO] DELIVERY PASS saved ready

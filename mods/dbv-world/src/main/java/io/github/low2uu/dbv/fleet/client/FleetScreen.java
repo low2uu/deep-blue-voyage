@@ -32,6 +32,7 @@ public final class FleetScreen extends Screen {
         panelWidth=Math.min(520,width-16);panelHeight=Math.min(340,height-16);
         left=(width-panelWidth)/2;top=(height-panelHeight)/2;
         addRenderableWidget(Button.builder(Component.literal("×"),b->onClose()).bounds(left+panelWidth-30,top+9,20,20).build());
+        addRenderableWidget(Button.builder(Component.literal("驾驶指南"),b->minecraft.setScreen(new StarterGuideScreen(this))).bounds(left+panelWidth-110,top+9,74,20).build());
         int tabWidth=Math.max(32,(panelWidth-100)/4);
         addRenderableWidget(Button.builder(Component.literal("船况与改装"),b->{equipment=false;storageTab=false;page=0;updateButtons();}).bounds(left+14,top+38,tabWidth,20).build());
         addRenderableWidget(Button.builder(Component.literal("艇内设备"),b->{equipment=true;storageTab=false;page=0;updateButtons();}).bounds(left+20+tabWidth,top+38,tabWidth,20).build());
@@ -46,7 +47,7 @@ public final class FleetScreen extends Screen {
         cancel=addRenderableWidget(Button.builder(Component.literal("取消还原"),b->{
             if(confirmCancel){confirmCancel=false;request(PanelAction.CANCEL);}else{confirmCancel=true;equipment=false;updateButtons();}
         }).bounds(left+32+3*w,y,w,20).build());
-        depart=addRenderableWidget(Button.builder(Component.literal("出航"),b->request(PanelAction.DEPART)).bounds(left+38+4*w,y,w,20).build());
+        depart=addRenderableWidget(Button.builder(Component.literal("出航"),b->request(view.has(PanelView.DEPARTED)?PanelAction.MOOR:PanelAction.DEPART)).bounds(left+38+4*w,y,w,20).build());
         backup=addRenderableWidget(Button.builder(Component.literal("备份存储"),b->request(PanelAction.STORAGE_BACKUP)).bounds(left+14,y,110,20).build());
         restore=addRenderableWidget(Button.builder(Component.literal("恢复最近备份"),b->{if(confirmRestore){confirmRestore=false;request(PanelAction.STORAGE_RESTORE);}else{confirmRestore=true;updateButtons();}}).bounds(left+130,y,130,20).build());
         updateButtons();
@@ -55,9 +56,9 @@ public final class FleetScreen extends Screen {
         if(begin==null)return;
         begin.visible=check.visible=commit.visible=cancel.visible=!storageTab;
         if(depart!=null){
-            depart.visible=!storageTab;depart.active=!busy&&view.has(PanelView.CAN_DEPART);
-            depart.setMessage(Component.literal(view.has(PanelView.DEPARTED)?"已出航":"出航"));
-            depart.setTooltip(Tooltip.create(Component.literal(view.has(PanelView.CAN_DEPART)?"解除船坞固定并断开岸供；不会自动驾驶或传送潜艇。":view.has(PanelView.DEPARTED)?"已经解除系泊，重启也不会自动重新固定。":"需在船坞靠近已系泊主艇，结束改装后由建设模式创造管理员操作。")));
+            depart.visible=!storageTab;depart.active=!busy&&(view.has(PanelView.DEPARTED)?view.has(PanelView.CAN_MOOR):view.has(PanelView.CAN_DEPART));
+            depart.setMessage(Component.literal(view.has(PanelView.DEPARTED)?"停泊":"出航"));
+            depart.setTooltip(Tooltip.create(Component.literal(view.has(PanelView.DEPARTED)?(view.has(PanelView.CAN_MOOR)?"在当前位置固定船体并恢复岸供；停泊前保存独立数据备份。":view.status()):view.has(PanelView.CAN_DEPART)?"解除船坞固定并断开岸供；不会自动驾驶或传送潜艇。":"需在船坞靠近已系泊主艇，结束改装后由建设模式创造管理员操作。")));
         }
         if(backup!=null){
             backup.visible=restore.visible=storageTab;backup.active=restore.active=!busy&&view.has(PanelView.STORAGE_EDITABLE);
@@ -99,7 +100,7 @@ public final class FleetScreen extends Screen {
         g.fill(left-1,top-1,left+panelWidth+1,top+panelHeight+1,0xFF3A7886);
         g.fill(left,top,left+panelWidth,top+panelHeight,0xFF10212B);
         g.fill(left,top,left+panelWidth,top+32,0xFF193542);
-        clipped(g,view.title()+"  ·  潜艇管理",left+14,top+13,panelWidth-56,0xE6F7F6);
+        clipped(g,view.title()+"  ·  潜艇管理",left+14,top+13,panelWidth-130,0xE6F7F6);
         if(equipment||storageTab)renderDevices(g,mouseX,mouseY);else renderOverview(g);
         clipped(g,"船坞改装 · 三项条件在完成时验收 · 关闭窗口可施工",left+14,top+panelHeight-19,panelWidth-28,0x8AABB8);
         super.render(g,mouseX,mouseY,partial);

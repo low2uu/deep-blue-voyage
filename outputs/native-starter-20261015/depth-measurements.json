@@ -1,0 +1,38 @@
+[
+  {
+    "sequence": 4,
+    "mode": 0,
+    "target": 1,
+    "minimum": 0.991943031945901,
+    "maximum": 1.0243957990996009,
+    "sampleCount": 6,
+    "observedTicks": 500
+  },
+  {
+    "sequence": 5,
+    "mode": 0,
+    "target": 5,
+    "minimum": 4.982833695835751,
+    "maximum": 4.991902806090742,
+    "sampleCount": 6,
+    "observedTicks": 500
+  },
+  {
+    "sequence": 6,
+    "mode": 2,
+    "target": 15,
+    "minimum": 14.977384977531152,
+    "maximum": 14.990022156968791,
+    "sampleCount": 6,
+    "observedTicks": 500
+  },
+  {
+    "sequence": 7,
+    "mode": 1,
+    "target": 1,
+    "minimum": 1.0344454292676346,
+    "maximum": 1.035418192005011,
+    "sampleCount": 6,
+    "observedTicks": 500
+  }
+]

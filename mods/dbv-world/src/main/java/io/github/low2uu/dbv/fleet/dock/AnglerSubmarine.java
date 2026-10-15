@@ -60,6 +60,7 @@ public final class AnglerSubmarine {
         b.iron(67,76,154);b.iron(67,77,154);b.iron(67,78,154);
         for(int z=151;z<=153;z++)b.iron(67,78,z);
         b.put(67,77,151,"create_submarine:sonar");
+        for(int x:new int[]{65,69})for(int z=154;z<=161;z++)b.put(x,69,z,"create_submarine:floater");
         b.put(67,72,153,"create_submarine:command_sub");
         b.put(66,72,153,"dbv_world:cabin_panel");
         b.put(69,72,159,"minecraft:chest");b.put(69,72,160,"minecraft:barrel");
@@ -70,10 +71,14 @@ public final class AnglerSubmarine {
         for(int side:new int[]{-1,1}){
             int engine=67+4*side, bus=67+3*side, outer=67+7*side;
             b.put(engine,72,157,"createdieselgenerators:diesel_engine","facing=north");
-            b.put(engine,72,156,"gearshift","axis=z");b.put(engine,73,156,"minecraft:lever","face=floor");b.gear(engine,72,155,"y");
+            b.put(engine,72,156,"andesite_encased_shaft","axis=z");b.put(engine,73,156,"minecraft:lever","face=floor");b.gear(engine,72,155,"y");
+            b.put(engine,73,155,"redstone_link","facing=up","receiver=false");
             b.put(engine,71,154,"fluid_tank");
+            b.put(engine,72,154,"fluid_tank");
             b.put(engine,71,155,"mechanical_pump","facing=south");
-            b.pipe(engine,71,156);b.pipe(engine,71,157);
+            b.pipe(engine,71,156);
+            // Explicit ports prevent the diesel line joining the ballast seawater pipe directly below.
+            b.put(engine,71,157,"encased_fluid_pipe","north=true","up=true","down=false","south=false","east=false","west=false");
             b.gear(bus,72,155,"y");
             b.put(bus,72,156,"cogwheel","axis=z");b.put(bus,71,156,"cogwheel","axis=z");
             b.put(bus,71,155,"cogwheel","axis=z");b.put(bus,70,155,"cogwheel","axis=z");
@@ -84,12 +89,13 @@ public final class AnglerSubmarine {
             b.iron(engine+2*side,73,155); // Armour behind the recessed lever keeps the pressure hull closed.
             b.gear(outer,72,155,"y");
             for(int z=156;z<=162;z++)b.shaft(outer,72,z,"z");
+            b.put(outer,72,158,"gearshift","axis=z");
+            b.put(outer,73,158,"redstone_link","facing=up","receiver=true");
             b.put(outer,72,163,"create_submarine:submarine_propeller","facing=south");
             for(int z=156;z<=167;z++)b.shaft(bus,70,z,"z");
             for(int z:new int[]{154,164}){
-                // Four isolated clusters, eight tanks each, at the bottom corners.
-                for(int dx=0;dx<=1;dx++)for(int y=69;y<=70;y++)for(int dz=0;dz<=1;dz++)
-                    b.put(engine+side*dx,y,z+dz,"create_submarine:ballast_tank");
+                // Independent small water volumes respond quickly; native floaters support the hull.
+                b.put(engine,70,z+1,"create_submarine:ballast_tank");
                 b.put(bus,70,z+2,"cogwheel","axis=z");
                 b.put(engine,70,z+2,"create_submarine:pump_controller","facing=south");
                 b.pipe(engine,70,z+3);b.pipe(engine,69,z+3);
@@ -101,7 +107,8 @@ public final class AnglerSubmarine {
         b.gear(66,72,155,"y");b.put(66,72,156,"cogwheel","axis=z");b.put(66,72,157,"cogwheel","axis=z");
         b.pipe(65,72,156);b.put(65,72,157,"mechanical_pump","facing=south");
         b.put(65,72,158,"create_submarine:oxygene_diffuser");b.put(64,72,158,"minecraft:redstone_block");
-        b.put(65,73,153,"fluid_tank");b.put(65,73,154,"mechanical_pump","facing=south");b.pipe(65,73,155);
+        for(int x=64;x<=65;x++)for(int y=73;y<=74;y++)for(int z=152;z<=153;z++)b.put(x,y,z,"fluid_tank");
+        b.put(65,73,154,"mechanical_pump","facing=south");b.pipe(65,73,155);
         b.put(66,73,156,"cogwheel","axis=z");b.shaft(66,73,155,"z");b.put(66,73,154,"cogwheel","axis=z");
         // Sealed aft airlock, with a dry inner door and a sea-facing outer door.
         for(int x=65;x<=69;x++)for(int y=71;y<=75;y++)for(int z=165;z<=169;z++){
@@ -121,14 +128,37 @@ public final class AnglerSubmarine {
     }
 
     public static void provision(ServerLevel level){
-        ((com.maxenonyme.createsubmarine.submarine.block.entity.CommandSubBlockEntity)level.getBlockEntity(new BlockPos(67,72,153))).targetDepth=0;
+        var controller=(com.maxenonyme.createsubmarine.submarine.block.entity.CommandSubBlockEntity)level.getBlockEntity(new BlockPos(67,72,153));
+        controller.targetDepth=1;
+        controller.speedMode=1;
+        controller.autopilot=false;
+        controller.setChanged();
+        // A light initial ballast fill avoids both a long empty-tank wait and a full-neutral launch dive.
+        plan().forEach((pos,state)->{
+            if(level.getBlockEntity(pos) instanceof com.maxenonyme.createsubmarine.submarine.block.entity.BallastTankBlockEntity ballast)
+                ballast.tank.fill(new FluidStack(Fluids.WATER,4000),FluidAction.EXECUTE);
+        });
         var diesel=BuiltInRegistries.FLUID.get(ResourceLocation.parse("createdieselgenerators:diesel"));
         if(diesel==Fluids.EMPTY)throw new IllegalStateException("柴油流体未注册");
         for(int x:new int[]{63,71}){
+            com.simibubi.create.api.connectivity.ConnectivityHandler.formMulti(
+                    (com.simibubi.create.content.fluids.tank.FluidTankBlockEntity)level.getBlockEntity(new BlockPos(x,71,154)));
             fill(level,new BlockPos(x,71,154),new FluidStack(diesel,16000));
             fill(level,new BlockPos(x,72,157),new FluidStack(diesel,1000));
+            // Native Create links reverse only the propeller branch, never the service machinery.
+            for(var pos:new BlockPos[]{new BlockPos(x,73,155),new BlockPos(x==63?60:74,73,158)}){
+                var link=level.getBlockEntity(pos);
+                var tag=link.saveWithFullMetadata(level.registryAccess());
+                tag.putBoolean("Transmitter",pos.getZ()==155);
+                tag.put("FrequencyFirst",new ItemStack(net.minecraft.world.item.Items.COMPASS).save(level.registryAccess()));
+                tag.put("FrequencyLast",new ItemStack(x==63?net.minecraft.world.item.Items.RED_DYE:net.minecraft.world.item.Items.BLUE_DYE).save(level.registryAccess()));
+                link.loadWithComponents(tag,level.registryAccess());link.setChanged();
+            }
         }
-        fill(level,new BlockPos(65,73,153),new FluidStack(Fluids.WATER,16000));
+        // Form the tank before filling: querying individual segments during connectivity updates is ambiguous.
+        var waterTank=(com.simibubi.create.content.fluids.tank.FluidTankBlockEntity)level.getBlockEntity(new BlockPos(64,73,152));
+        com.simibubi.create.api.connectivity.ConnectivityHandler.formMulti(waterTank);
+        fill(level,new BlockPos(64,73,152),new FluidStack(Fluids.WATER,64000));
         var electrolyzer=(ElectrolyzerBlockEntity)level.getBlockEntity(new BlockPos(65,72,155));
         electrolyzer.module.setStackInSlot(0,new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.parse("create:shaft"))));
         electrolyzer.data.set(6,1);
@@ -136,6 +166,6 @@ public final class AnglerSubmarine {
     }
     private static void fill(ServerLevel level,BlockPos p,FluidStack fluid){
         var handler=level.getCapability(Capabilities.FluidHandler.BLOCK,p,null);
-        if(handler==null||handler.fill(fluid,FluidAction.EXECUTE)==0)throw new IllegalStateException("储罐初始化失败："+p);
+        if(handler==null||handler.fill(fluid,FluidAction.EXECUTE)!=fluid.getAmount())throw new IllegalStateException("储罐容量不足或初始化失败："+p);
     }
 }

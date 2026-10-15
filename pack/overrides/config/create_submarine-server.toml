@@ -40,17 +40,17 @@
 	#Total lift scales with the number of tanks: a heavy submarine needs more of them.
 	# Default: 75.0
 	# Range: 1.0 ~ 100000.0
-	ballastLiftPerTank = 300.0
+	ballastLiftPerTank = 9000.0
 	#Mass each floater can push toward the surface (Sable mass units, roughly 1 per block).
 	#Total lift scales with the number of floaters.
 	# Default: 25.0
 	# Range: 1.0 ~ 100000.0
-	floaterLift = 25.0
+	floaterLift = 300.0
 	#Maximum vertical speed (blocks per tick) ballast tanks drive the submarine at when diving or ascending.
 	#Higher = faster dive and climb. The old fixed value was 2.0.
 	# Default: 2.0
 	# Range: 0.1 ~ 20.0
-	ballastVerticalSpeed = 2.0
+	ballastVerticalSpeed = 0.2
 	#Multiplier on the ballast vent fill/drain transfer rate.
 	#Lower = slower filling/emptying, higher = faster.
 	# Default: 2.0

@@ -62,6 +62,50 @@ public final class StarterSubmarine {
         departed=true;releaseMooring();
         return "已出航：船坞固定与岸供已断开，潜艇进入自由物理状态。请使用艇上的驾驶设备控制。";
     }
+    public String mooringProblem(net.minecraft.server.level.ServerPlayer player,FleetModule module){
+        try{
+            if(!ConstructionMode.ENABLED||!player.isCreative()||!player.hasPermissions(2))return "首版停泊仅限建设模式创造管理员";
+            if(failed)return "船坞服务异常，请保存退出后重新进入世界，再检查日志";
+            if(!departed(module))return "主艇已经停泊";
+            if(module.refit().active())return "请先结束改装";
+            var body=module.refit().currentBody(module);
+            if(body==null||body.isRemoved())return "主艇未加载";
+            if(player.serverLevel()!=body.getLevel()||!inDock(body))return "请将整艘潜艇驶入初始船坞范围后停泊";
+            var local=body.logicalPose().transformPositionInverse(player.position());var box=body.getPlot().getBoundingBox();
+            if(local.x<box.minX()-12||local.x>box.maxX()+12||local.y<box.minY()-12||local.y>box.maxY()+12||local.z<box.minZ()-12||local.z>box.maxZ()+12)return "请靠近主艇操作停泊";
+            for(var holder:body.getPlot().getLoadedChunks()){
+                if(holder.getChunk()==null)return "船体区块未完整加载";
+                for(var be:holder.getChunk().getBlockEntities().values())
+                    if(be instanceof com.simibubi.create.content.kinetics.base.KineticBlockEntity prop
+                            &&BuiltInRegistries.BLOCK.getKey(be.getBlockState().getBlock()).equals(ResourceLocation.parse("create_submarine:submarine_propeller"))
+                            &&java.lang.Math.abs(prop.getSpeed())>.01)return "请先断开两侧推进离合器，停止螺旋桨";
+            }
+            var helper=com.maxenonyme.createsubmarine.submarine.util.SablePhysicsHelper.getHandle(body);
+            var velocity=com.maxenonyme.createsubmarine.submarine.util.SablePhysicsHelper.getVelocity(helper);
+            var angular=com.maxenonyme.createsubmarine.submarine.util.SablePhysicsHelper.getAngularVelocity(helper);
+            if(velocity==null||angular==null||!Double.isFinite(velocity.length())||!Double.isFinite(angular.length()))return "暂时无法确认船体速度";
+            if(velocity.length()>1||angular.length()>.15)return "船体仍在移动，请减速并等待稳定后停泊";
+            return null;
+        }catch(Exception error){return "无法读取停泊状态，请检查独立数据档案";}
+    }
+    public String moor(net.minecraft.server.level.ServerPlayer player,FleetModule module) throws IOException {
+        String problem=mooringProblem(player,module);if(problem!=null)throw new IllegalStateException(problem);
+        var body=module.refit().currentBody(module);
+        module.storage().backup(module);
+        // Capture the current world anchor and attitude before enabling persistent mooring.
+        adoptRefitBody(body);
+        var state=new com.google.gson.JsonObject();state.addProperty("schemaVersion",1);state.addProperty("departed",false);
+        module.storage().store(module).putModule("navigation",state);departed=false;
+        try{
+            tick(module);
+            if(!moored(body))throw new IOException("停泊约束未建立，请保留备份并检查船坞状态");
+        }catch(IOException|RuntimeException error){
+            releaseMooring();departed=true;state.addProperty("departed",true);
+            try{module.storage().store(module).putModule("navigation",state);}catch(IOException rollback){error.addSuppressed(rollback);}
+            throw error;
+        }
+        return "已停泊：保持当前船坞位置与朝向，船体固定、岸供恢复；现在可以改装，或再次出航。";
+    }
     public StarterSubmarine(MinecraftServer server) {
         this.server = server;
         directory = server.getWorldPath(LevelResource.ROOT).resolve("dbv/fleet/dock");
@@ -95,7 +139,8 @@ public final class StarterSubmarine {
                 var p = new Vector3d(tag.getInt("x") + .5, tag.getInt("y") + .5, tag.getInt("z") + .5);
                 var w = new Vector3d(tag.getDouble("worldX"), tag.getDouble("worldY"), tag.getDouble("worldZ"));
                 mooring = SubLevelPhysicsSystem.require(body.getLevel()).getPipeline().addConstraint(body, null,
-                        new FixedConstraintConfiguration(p, w, new Quaterniond()));
+                        new FixedConstraintConfiguration(p, w, tag.contains("qw")
+                                ?new Quaterniond(tag.getDouble("qx"),tag.getDouble("qy"),tag.getDouble("qz"),tag.getDouble("qw")):new Quaterniond()));
                 mooredBody = body.getUniqueId();
                 mooredInstance = body;
             }
@@ -140,6 +185,8 @@ public final class StarterSubmarine {
         var tag=new CompoundTag();tag.putUUID("body",body.getUniqueId());
         tag.putInt("x",b.minX());tag.putInt("y",b.minY());tag.putInt("z",b.minZ());
         tag.putDouble("worldX",w.x);tag.putDouble("worldY",w.y);tag.putDouble("worldZ",w.z);
+        var orientation=body.logicalPose().orientation().conjugate(new Quaterniond());
+        tag.putDouble("qx",orientation.x);tag.putDouble("qy",orientation.y);tag.putDouble("qz",orientation.z);tag.putDouble("qw",orientation.w);
         DockFiles.replace(directory.resolve("starter.nbt"),tag);vesselData=tag;
         dev.ryanhcode.sable.api.sublevel.SubLevelContainer.getContainer(body.getLevel()).addForceLoadTicket(body,INITIAL_VALIDATION,net.minecraft.util.Unit.INSTANCE);
     }

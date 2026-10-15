@@ -1,0 +1,17 @@
+[16:28:57] [INIT] KubeJS 2101.7.2-build.377; MC 2101 NeoForge
+[16:28:57] [INIT] Loaded plugins:
+[16:28:57] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSPlugin
+[16:28:57] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSClientPlugin
+[16:28:57] [INIT] - dev.latvian.mods.kubejs.integration.architectury.ArchitecturyIntegration
+[16:28:57] [INIT] - com.jesz.createdieselgenerators.compat.kubejs.CDGKubeJSPlugin
+[16:28:57] [INIT] - moe.wolfgirl.probejs.plugin.ProbeJSKJSPlugin
+[16:28:57] [INFO] client_scripts:native.js#2: Loaded Java class 'net.neoforged.neoforge.client.event.ClientTickEvent$Post'
+[16:28:57] [INFO] Loaded script client_scripts:native.js in 0.025 s
+[16:28:57] [INFO] Loaded 1/1 KubeJS client scripts in 0.039 s with 0 errors and 0 warnings
+[16:29:00] [INFO] Client resource reload complete!
+[16:29:07] [INFO] Loaded Java class 'net.minecraft.client.Minecraft'
+[16:29:22] [INFO] DBV_NATIVE UI 出航 enabled=true
+[16:29:22] [INFO] Loaded Java class 'net.minecraft.client.Screenshot'
+[16:29:22] [INFO] DBV_NATIVE SCREENSHOT translation{key='screenshot.success', args=[literal{2026-10-15_16.29.22.png}[style={underlined,clickEvent=ClickEvent{action=OPEN_FILE, value='E:\mc\project\deep-blue-voyage\.local\angler-client\screenshots\2026-10-15_16.29.22.png'}}]]}
+[16:30:27] [INFO] DBV_NATIVE UI 停泊 enabled=true
+[16:30:27] [INFO] DBV_NATIVE SCREENSHOT translation{key='screenshot.success', args=[literal{2026-10-15_16.30.27.png}[style={underlined,clickEvent=ClickEvent{action=OPEN_FILE, value='E:\mc\project\deep-blue-voyage\.local\angler-client\screenshots\2026-10-15_16.30.27.png'}}]]}
