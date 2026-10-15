@@ -1,6 +1,6 @@
 # 当前 Mod 清单：深蓝远航
 
-更新日期：2026-10-14。目标：**Minecraft 1.21.1 / NeoForge 21.1.259 / Java 21**。
+更新日期：2026-10-15。目标：**Minecraft 1.21.1 / NeoForge 21.1.259 / Java 21**。
 
 ## 本次整理规则
 
@@ -63,7 +63,7 @@ JEI当前锁定19.51.0.418，原版JAR已在正式开发环境启动、进世界
 | U018 · Create 机械动力扩展 | **Create Big Cannons**<br>大炮组装与发射系统 | 5.11.7 | **版本标签核对；整包待测**<br><br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/create-big-cannons/version/bOiDu0LS) |
 | U019 · Create 机械动力扩展 | **CBC Military Supplement**<br>大炮军事补充（弹药/配件） | 2.1.4-1.21.1 | **版本标签核对；整包待测**<br><br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/cbc-more-shells/version/lOHOokMh) |
 | U020 · Create 机械动力扩展 | **CBC: Enhanced Shell Armor**<br>炮弹压缩装甲模块 | 1.0.0 | **暂缓锁包：需指定同名构建**<br>官方同名 1.0.0 文件有多个发布日期；项目支持目标版本，但安装前必须锁定具体文件 ID/哈希，不能只凭文件名。<br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://www.curseforge.com/minecraft/mc-mods/cbc-enhanced-shell-armor-create-big-cannons/files/all) |
-| U021 · Create 机械动力扩展 | **Create: Diesel Generators**<br>柴油发电机与燃料系统 | 1.21.1-1.3.15 | **版本标签核对；整包待测**<br> 与其他动力模组存在功能交集但不等于硬冲突；保留用户已批准项，后续统一供电、燃料及进度配方。<br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/create-diesel-generators/version/UoPH8lO1) |
+| U021 · Create 机械动力扩展 | **Create: Diesel Generators**<br>柴油发电机与燃料系统 | 1.21.1-1.3.15 | **已启用；客户端加载与原生抽油接口通过**<br>2026-10-15再次明确批准，起始岛四个指定区块为无限原油；设施由玩家搭建。整条炼油线与移动潜艇燃油系统待测，未修改全局油量规则。见[油田说明](game-mechanics/起始岛无限油田-starter-oilfield.md)及[JAR证据](oilfield-mod-evidence.json)。<br><br>历史授权：原表除两类待定外其余都要；本次明确要求增加柴油动力与无限油田 | [依据](https://modrinth.com/mod/create-diesel-generators/version/UoPH8lO1) |
 | U022 · Create 机械动力扩展 | **Create Ore Excavation**<br>机械钻头开采矿石 | 1.21.1-1.6.8 | **版本标签核对；整包待测**<br><br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/create-ore-excavation/version/tivxiPTo) |
 | U023 · Create 机械动力扩展 | **Create: Enchantment Industry**<br>自动化附魔/经验工业 | 2.5.4 | **版本标签核对；整包待测**<br> 官方存在同名 Forge 1.20.1 文件；本清单仅指 NeoForge 1.21.1 发布记录，下载必须按版本链接/哈希。<br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/create-enchantment-industry/version/WJ2VPWAG) |
 | U024 · Create 机械动力扩展 | **Create: Framed**<br>框架式结构方块 | 1.8.2+1.21.1 | **版本标签核对；整包待测**<br><br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/create-framed/version/yioQUGiO) |

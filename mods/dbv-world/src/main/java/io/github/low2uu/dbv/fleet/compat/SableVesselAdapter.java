@@ -71,9 +71,10 @@ public final class SableVesselAdapter {
             mark(body, identity);
         }
         boolean hasPressureData = CompartmentTracker.getSub(identity.bodyId()) != null;
-        return new VesselTelemetry(VesselTelemetry.State.ACTIVE, tick, "Sable已加载；压力读数取自Deep Seas缓存",
+        int depth = hasPressureData ? SubmarinePressureSystem.getCachedDepth(identity.bodyId()) : -1;
+        return new VesselTelemetry(VesselTelemetry.State.ACTIVE, tick, "Sable已加载；深度以中央控制器为基准，压力状态取自Deep Seas",
                 body.getMassTracker().getMass(), body.latestLinearVelocity.length(),
-                hasPressureData ? SubmarinePressureSystem.getCachedDepth(identity.bodyId()) : null,
+                depth >= 0 ? depth : null,
                 hasPressureData ? SubmarinePressureSystem.getCrackCount(identity.bodyId()) : null,
                 hasPressureData ? SubmarinePressureSystem.isBreached(identity.bodyId()) : null);
     }

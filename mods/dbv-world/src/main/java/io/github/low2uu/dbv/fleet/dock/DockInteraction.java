@@ -29,7 +29,7 @@ public final class DockInteraction {
             try { io.github.low2uu.dbv.fleet.ui.FleetPanel.openMain(c.getSource().getPlayerOrException());return 1; }
             catch(Exception e) { c.getSource().sendFailure(Component.literal(e.getMessage()));return 0; }
         });
-        for(String action:new String[]{"begin","check","commit","cancel"}) root.then(Commands.literal(action).executes(c->{
+        for(String action:new String[]{"begin","check","commit","cancel","angler"}) root.then(Commands.literal(action).executes(c->{
             try {
                 var m=FleetModule.get(c.getSource().getServer());var p=c.getSource().getPlayerOrException();
                 String result=m.refit().execute(action,p,m);c.getSource().sendSuccess(()->Component.literal(result),false);return 1;

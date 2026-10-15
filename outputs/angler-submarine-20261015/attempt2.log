@@ -1,0 +1,26 @@
+[10:54:45] [INIT] KubeJS 2101.7.2-build.377; MC 2101 NeoForge
+[10:54:45] [INIT] Loaded plugins:
+[10:54:45] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSPlugin
+[10:54:45] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSClientPlugin
+[10:54:45] [INIT] - dev.latvian.mods.kubejs.integration.architectury.ArchitecturyIntegration
+[10:54:45] [INIT] - com.jesz.createdieselgenerators.compat.kubejs.CDGKubeJSPlugin
+[10:54:45] [INIT] - moe.wolfgirl.probejs.plugin.ProbeJSKJSPlugin
+[10:54:45] [INFO] server_scripts:angler-server.js#1: Loaded Java class 'io.github.low2uu.dbv.fleet.FleetModule'
+[10:54:45] [INFO] server_scripts:angler-server.js#1: Loaded Java class 'net.minecraft.core.BlockPos'
+[10:54:45] [INFO] Loaded script server_scripts:angler-server.js in 0.013 s
+[10:54:45] [INFO] Loaded 1/1 KubeJS server scripts in 0.026 s with 0 errors and 0 warnings
+[10:54:47] [INFO] Server resource reload complete!
+[10:54:49] [INFO] Loaded Java class 'net.minecraft.world.level.GameType'
+[10:54:57] [INFO] DBV_ANGLER 灯笼鱼型已放入改装泊位，原艇与存储已备份，原物品已转入新艇箱子与木桶。检查布局后提交改装；取消可恢复原艇。
+[10:54:57] [INFO] DBV_ANGLER PASS template installed
+[10:55:09] [INFO] DBV_ANGLER DEVICE [63, 72, 157] -96
+[10:55:09] [INFO] DBV_ANGLER DEVICE [71, 72, 157] -96
+[10:55:09] [INFO] DBV_ANGLER DEVICE [65, 72, 155] -96
+[10:55:09] [INFO] DBV_ANGLER DEVICE [63, 70, 156] 0
+[10:55:09] [INFO] DBV_ANGLER DEVICE [71, 70, 166] 0
+[10:55:09] [INFO] DBV_ANGLER DEVICE [60, 72, 163] 0
+[10:55:09] [INFO] DBV_ANGLER DEVICE [74, 72, 163] 0
+[10:55:09] [INFO] DBV_ANGLER DEVICE [65, 72, 157] 0
+[10:55:09] [ERROR] ! DBV_ANGLER FAIL JavaException: java.io.IOException: 装配结果不完整，已保留原始备份和候选船体记录
+[10:55:34] [INFO] DBV_ANGLER FINAL 转换中断或恢复异常，已锁定；保留船坞档案，禁止重复装配。
+[10:55:34] [INFO] DBV_ANGLER QUAL Qualification[controller=true, oxygen=false, sealed=false, pending=true]

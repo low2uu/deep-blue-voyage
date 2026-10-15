@@ -11,6 +11,10 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 repositories {
     mavenCentral()
     maven {
+        url = 'https://maven.createmod.net'
+        content { includeGroup 'net.createmod.ponder' }
+    }
+    maven {
         url = 'https://maven.ryanhcode.dev/releases'
         content { includeGroup 'dev.ryanhcode.sable-companion' }
     }
@@ -28,6 +32,9 @@ dependencies {
     compileOnly 'dev.ryanhcode.sable-companion:sable-companion-common-1.21.1:1.6.0'
     compileOnly 'maven.modrinth:create-deep-seas:8CV1LRTl'
     compileOnly 'maven.modrinth:create:UjX6dr61'
+    compileOnly 'maven.modrinth:create-diesel-generators:UoPH8lO1'
+    // Create already bundles this at runtime; expose its superclass API for CDG engine calls.
+    compileOnly('net.createmod.ponder:ponder-neoforge:1.0.82+mc1.21.1') { transitive = false }
     testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
     testImplementation 'com.google.code.gson:gson:2.10.1'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.11.4'
@@ -38,6 +45,8 @@ dependencies {
     localRuntime 'maven.modrinth:create-aeronautics:44pLdPGg'
     localRuntime 'maven.modrinth:create-deep-seas:8CV1LRTl'
     localRuntime 'maven.modrinth:power-grid:jCkPHjmP'
+    // User-approved island oil supply, 2026-10-15. Exact 1.21.1 NeoForge release.
+    localRuntime 'maven.modrinth:create-diesel-generators:UoPH8lO1'
     // Development tools approved on 2026-10-14; Rhino is KubeJS's required engine.
     localRuntime 'maven.modrinth:worldedit:WTAFvuRx'
     localRuntime 'maven.modrinth:probejs:xC9KUA7R'

@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-15",
+  "build": "passed",
+  "unitTests": 25,
+  "runtimeTransformAssertions": 4,
+  "runtimeWorldAssertions": 7,
+  "finalFailures": 0,
+  "temporaryRuntimeScriptsRemoved": true,
+  "formalWorldModified": false,
+  "scope": "Coordinate transform and actual controller tick pump decisions with supplied surface readings; not a free-sailing performance test",
+  "earlierAttempts": [
+    "world-attempt1.log: Rhino blocks getClass; replaced reflection with actual controller ticks",
+    "world-attempt2.log: scheduled measurement overwrote injected unknown reading; fixed test to observe the unknown-reading control interval"
+  ]
+}

@@ -1,0 +1,7 @@
+[1510月2026 10:50:13.065] [Server thread/INFO] [io.github.low2uu.dbv.world.oil.StarterOilfield/]: DBV_OIL initialized four native infinite reserves: X176..207 Z-64..-33; no forced chunk tickets.
+[1510月2026 10:50:17.566] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS native infinite chunk 11,-4
+[1510月2026 10:50:17.567] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS native infinite chunk 11,-3
+[1510月2026 10:50:17.568] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS native infinite chunk 12,-4
+[1510月2026 10:50:17.568] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS native infinite chunk 12,-3
+[1510月2026 10:50:17.569] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS exact block boundaries
+[1510月2026 10:50:17.580] [Server thread/ERROR] [KubeJS Server/]: dbv-oilfield-acceptance.js#18: DBV_OIL FAIL InternalError: The choice of Java method net.minecraft.server.MinecraftServer.getLevel matching JavaScript argument types (net.minecraft.resources.ResourceKey) is ambiguous; candidate methods are:

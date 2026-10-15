@@ -1,0 +1,25 @@
+[10:56:40] [INIT] KubeJS 2101.7.2-build.377; MC 2101 NeoForge
+[10:56:40] [INIT] Loaded plugins:
+[10:56:40] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSPlugin
+[10:56:40] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSClientPlugin
+[10:56:40] [INIT] - dev.latvian.mods.kubejs.integration.architectury.ArchitecturyIntegration
+[10:56:40] [INIT] - com.jesz.createdieselgenerators.compat.kubejs.CDGKubeJSPlugin
+[10:56:40] [INIT] - moe.wolfgirl.probejs.plugin.ProbeJSKJSPlugin
+[10:56:40] [INFO] server_scripts:angler-server.js#1: Loaded Java class 'io.github.low2uu.dbv.fleet.FleetModule'
+[10:56:40] [INFO] server_scripts:angler-server.js#1: Loaded Java class 'net.minecraft.core.BlockPos'
+[10:56:40] [INFO] Loaded script server_scripts:angler-server.js in 0.011 s
+[10:56:40] [INFO] Loaded 1/1 KubeJS server scripts in 0.026 s with 0 errors and 0 warnings
+[10:56:43] [INFO] Server resource reload complete!
+[10:56:46] [INFO] Loaded Java class 'net.minecraft.world.level.GameType'
+[10:56:53] [ERROR] ! DBV_ANGLER FAIL JavaException: java.lang.NullPointerException: Cannot invoke "net.minecraft.world.level.block.state.properties.Property.getValue(String)" because "property" is null
+[10:57:06] [INFO] DBV_ANGLER DEVICE [63, 72, 157] missing
+[10:57:06] [INFO] DBV_ANGLER DEVICE [71, 72, 157] missing
+[10:57:06] [INFO] DBV_ANGLER DEVICE [65, 72, 155] missing
+[10:57:06] [INFO] DBV_ANGLER DEVICE [63, 70, 156] missing
+[10:57:06] [INFO] DBV_ANGLER DEVICE [71, 70, 166] missing
+[10:57:06] [INFO] DBV_ANGLER DEVICE [60, 72, 163] missing
+[10:57:06] [INFO] DBV_ANGLER DEVICE [74, 72, 163] missing
+[10:57:06] [INFO] DBV_ANGLER DEVICE [65, 72, 157] missing
+[10:57:06] [ERROR] ! DBV_ANGLER FAIL JavaException: java.lang.IllegalStateException: 请先开始改装
+[10:57:31] [INFO] DBV_ANGLER FINAL 物理船体；可开始拆解改装，三项条件只在完成时验收。
+[10:57:31] [INFO] DBV_ANGLER QUAL Qualification[controller=true, oxygen=true, sealed=true, pending=false]

@@ -63,6 +63,15 @@ $taskName = switch ($Action) {
 Push-Location (Join-Path $projectRoot 'mods/dbv-world')
 try {
     $gradleArgs = @($taskName, '--console=plain')
+    # A daemon started by automation can belong to a non-interactive desktop.
+    # Launch the game from this invocation instead of reusing that daemon.
+    if ($Action -in @('run', 'debug')) {
+        $gradleArgs += '--no-daemon'
+        Write-Host 'Starting Minecraft in a separate window. Keep this terminal open.'
+        if ($Action -eq 'debug') {
+            Write-Host 'Debug mode waits on port 5005. Attach the VS Code debugger to continue.'
+        }
+    }
     $gradleArgs += '-PdbvConstruction=' + $construction.ToString().ToLowerInvariant()
     if ($Action -eq 'debug') { $gradleArgs += '--debug-jvm' }
     & .\gradlew.bat @gradleArgs

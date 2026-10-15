@@ -1,0 +1,23 @@
+[11:45:14] [INIT] KubeJS 2101.7.2-build.377; MC 2101 NeoForge
+[11:45:14] [INIT] Loaded plugins:
+[11:45:14] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSPlugin
+[11:45:14] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSClientPlugin
+[11:45:14] [INIT] - dev.latvian.mods.kubejs.integration.architectury.ArchitecturyIntegration
+[11:45:14] [INIT] - com.jesz.createdieselgenerators.compat.kubejs.CDGKubeJSPlugin
+[11:45:14] [INIT] - moe.wolfgirl.probejs.plugin.ProbeJSKJSPlugin
+[11:45:14] [INFO] Loaded script server_scripts:angler-server.js in 0.005 s
+[11:45:14] [INFO] Loaded script server_scripts:protection-server.js in 0.002 s
+[11:45:14] [INFO] Loaded 2/2 KubeJS server scripts in 0.023 s with 0 errors and 0 warnings
+[11:45:17] [INFO] Server resource reload complete!
+[11:45:18] [INFO] Loaded Java class 'net.minecraft.world.level.storage.LevelResource'
+[11:45:21] [INFO] Loaded Java class 'net.minecraft.core.BlockPos'
+[11:45:21] [INFO] Loaded Java class 'net.minecraft.world.level.GameType'
+[11:45:21] [INFO] Loaded Java class 'net.neoforged.neoforge.event.level.BlockEvent$BreakEvent'
+[11:45:21] [INFO] Loaded Java class 'net.neoforged.neoforge.common.NeoForge'
+[11:45:21] [INFO] Loaded Java class 'io.github.low2uu.dbv.world.IslandProtection'
+[11:45:21] [INFO] Loaded Java class 'io.github.low2uu.dbv.fleet.FleetModule'
+[11:45:21] [INFO] DBV_PROTECTION PASS survival denied; creative admin allowed; ship and ocean excluded
+[11:45:23] [INFO] DBV_PROTECTION SETUP fill=undefined
+[11:45:23] [INFO] DBV_PROTECTION SETUP wood=undefined
+[11:45:23] [INFO] DBV_PROTECTION SETUP tnt=undefined
+[11:45:30] [INFO] DBV_PROTECTION PASS actual TNT left 25 stone intact; fire left wood intact

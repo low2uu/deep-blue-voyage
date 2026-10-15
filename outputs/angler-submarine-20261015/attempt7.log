@@ -1,0 +1,644 @@
+[1510月2026 11:08:00.027] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientdev, --version, 21.1.259, --assetIndex, 17, --assetsDir, E:\\mc\\project\\deep-blue-voyage\\.local\\gradle-home\\caches\\neoformruntime\\assets, --gameDir, ., --fml.fmlVersion, 4.0.45, --fml.mcVersion, 1.21.1, --fml.neoForgeVersion, 21.1.259, --fml.neoFormVersion, 20240808.144430, --username, DBVDeveloper]
+[1510月2026 11:08:00.029] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Azul Systems, Inc. OpenJDK 64-Bit Server VM 21.0.3+9-LTS
+[1510月2026 11:08:00.031] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.3 by Azul Systems, Inc.; OS Windows 10 arch amd64 version 10.0
+[1510月2026 11:08:00.151] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[1510月2026 11:08:00.253] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[1510月2026 11:08:00.448] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
+[1510月2026 11:08:00.513] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/E:/mc/project/deep-blue-voyage/.local/gradle-home/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.16.4+mixin.0.8.7/26d01f0567ab46e9ca0d2ed89d0ecc11aadbd433/sponge-mixin-0.16.4+mixin.0.8.7.jar%23138!/ Service=ModLauncher Env=CLIENT
+[1510月2026 11:08:00.694] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 4070 Ti SUPER/PCIe/SSE2 GL version 4.6.0 NVIDIA 617.42, NVIDIA Corporation
+[1510月2026 11:08:01.387] [main/INFO] [net.neoforged.fml.loading.moddiscovery.locators.JarInJarDependencyLocator/]: Found 25 dependencies adding them to mods collection
+[1510月2026 11:08:01.388] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/]:
+     Mod List:
+		Name Version (Mod Id)
+
+		Architectury 13.0.11 (architectury)
+		Better Advanced Tooltips 2101.1.0-build.1 (betteradvancedtooltips)
+		BetterF3 11.0.3 (betterf3)
+		Cloth Config v15 API 15.0.140 (cloth_config)
+		Create 6.0.10 (create)
+		Create Aeronautics 1.3.2 (aeronautics)
+		Create Aeronautics 1.3.2 (aeronautics_bundled)
+		Create Deep Seas 3.3.0 (create_submarine)
+		Create Diesel Generators 1.21.1-1.3.15 (createdieselgenerators)
+		Create Offroad 1.3.2 (offroad)
+		Create Simulated 1.3.2 (simulated)
+		Create: Power Grid 0.6.2 (powergrid)
+		Deep Blue Voyage World 0.1.0 (dbv_world)
+		Flywheel 1.0.6 (flywheel)
+		Fusion 1.2.12 (fusion)
+		Jade 15.10.6+neoforge (jade)
+		Jade Sable Compat 1.3.0 (sablejade)
+		Just Enough Items 19.51.0.418 (jei)
+		Just Enough Resources 1.6.0.17 (jeresources)
+		KubeJS 2101.7.2-build.377 (kubejs)
+		Lithostitched 1.4.8 (lithostitched)
+		Minecraft 1.21.1 (minecraft)
+		NeoForge 21.1.259 (neoforge)
+		Ponder 1.0.82+mc1.21.1 (ponder)
+		ProbeJS 8.0.3 (probejs)
+		Rhino 2101.2.8-build.91 (rhino)
+		Sable 2.0.6 (sable)
+		Sable Companion 1.6.0 (sablecompanion)
+		spark 1.10.124 (spark)
+		Veil 4.3.2 (veil)
+		WorldEdit 7.3.8+6939-7d32b45 (worldedit)
+		Xaero's Minimap 26.6.0 (xaerominimap)
+		Xaero's World Map 1.47.0 (xaeroworldmap)
+		XaeroLib 1.7.3 (xaerolib)
+[1510月2026 11:08:01.587] [main/INFO] [net.neoforged.fml.loading.FMLServiceProvider/CORE]: Loading coremod script-engine for [xaerominimap, xaeroworldmap]
+[1510月2026 11:08:03.046] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[1510月2026 11:08:03.049] [main/INFO] [mixin/]: Compatibility level set to JAVA_18
+[1510月2026 11:08:03.050] [main/INFO] [mixin/]: Compatibility level set to JAVA_21
+[1510月2026 11:08:03.089] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientdev' with arguments [--version, 21.1.259, --gameDir, ., --assetsDir, E:\mc\project\deep-blue-voyage\.local\gradle-home\caches\neoformruntime\assets, --assetIndex, 17, --username, DBVDeveloper]
+[1510月2026 11:08:03.147] [main/WARN] [mixin/]: Reference map 'lithostitched.refmap.json' for lithostitched.mixins.json could not be read. If this is a development environment you can ignore this message
+[1510月2026 11:08:03.161] [main/WARN] [mixin/]: Reference map 'aeronautics.refmap.json' for aeronautics.mixins.json could not be read. If this is a development environment you can ignore this message
+[1510月2026 11:08:03.164] [main/WARN] [mixin/]: Reference map 'xaerolib.refmap.json' for xaerolib.mixins.json could not be read. If this is a development environment you can ignore this message
+[1510月2026 11:08:03.174] [main/WARN] [mixin/]: Reference map 'ponder.refmap.json' for ponder-common.mixins.json could not be read. If this is a development environment you can ignore this message
+[1510月2026 11:08:03.193] [main/INFO] [dev.ryanhcode.sable.mixin.AbstractSableMixinPlugin/]: Using Vanilla renderer mixins
+[1510月2026 11:08:03.194] [main/INFO] [dev.ryanhcode.sable.mixin.AbstractSableMixinPlugin/]: Using Vanilla renderer mixins
+[1510月2026 11:08:03.195] [main/WARN] [mixin/]: Reference map 'xaerominimap.refmap.json' for xaerohud.mixins.json could not be read. If this is a development environment you can ignore this message
+[1510月2026 11:08:03.195] [main/WARN] [mixin/]: Reference map 'xaerominimap.refmap.json' for xaerominimap.mixins.json could not be read. If this is a development environment you can ignore this message
+[1510月2026 11:08:03.196] [main/WARN] [mixin/]: Reference map 'xaeroworldmap.refmap.json' for xaeroworldmap.mixins.json could not be read. If this is a development environment you can ignore this message
+[1510月2026 11:08:03.226] [main/WARN] [mixin/]: Reference map 'simulated.refmap.json' for simulated.mixins.json could not be read. If this is a development environment you can ignore this message
+[1510月2026 11:08:03.227] [main/WARN] [mixin/]: Reference map 'worldedit-neoforge.mixins.refmap.json' for worldedit-neoforge.mixins.json could not be read. If this is a development environment you can ignore this message
+[1510月2026 11:08:03.227] [main/WARN] [mixin/]: Reference map 'createdieselgenerators.refmap.json' for createdieselgenerators.mixins.json could not be read. If this is a development environment you can ignore this message
+[1510月2026 11:08:03.235] [main/WARN] [mixin/]: Reference map 'offroad.refmap.json' for offroad.mixins.json could not be read. If this is a development environment you can ignore this message
+[1510月2026 11:08:03.931] [main/WARN] [mixin/]: Error loading class: net/irisshaders/iris/pipeline/PipelineManager (java.lang.ClassNotFoundException: net.irisshaders.iris.pipeline.PipelineManager)
+[1510月2026 11:08:03.933] [main/WARN] [mixin/]: @Mixin target net.irisshaders.iris.pipeline.PipelineManager was not found veil.neoforge.mixins.json:client.perspective.iris.PipelineManagerMixin from mod veil
+[1510月2026 11:08:04.022] [main/WARN] [mixin/]: Error loading class: vectorwing/farmersdelight/common/block/entity/HeatableBlockEntity (java.lang.ClassNotFoundException: vectorwing.farmersdelight.common.block.entity.HeatableBlockEntity)
+[1510月2026 11:08:04.022] [main/WARN] [mixin/]: @Mixin target vectorwing.farmersdelight.common.block.entity.HeatableBlockEntity was not found powergrid-forge.mixins.json:HeatableBlockEntityMixin from mod powergrid
+[1510月2026 11:08:04.079] [main/WARN] [mixin/]: Error loading class: org/jetbrains/annotations/ApiStatus$ScheduledForRemoval (java.lang.ClassNotFoundException: org.jetbrains.annotations.ApiStatus$ScheduledForRemoval)
+[1510月2026 11:08:04.172] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.5).
+[1510月2026 11:08:05.698] [main/WARN] [oshi.util.platform.windows.WmiQueryHandler/]: COM exception querying Win32_Processor, which might not be on your system. Will not attempt to query it again. Error was -2147217405: (HRESULT: 80041003)
+[1510月2026 11:08:05.699] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 229 Datafixer optimizations took 346 milliseconds
+[1510月2026 11:08:05.736] [main/WARN] [oshi.util.platform.windows.WmiQueryHandler/]: COM exception querying Win32_Processor, which might not be on your system. Will not attempt to query it again. Error was -2147217405: (HRESULT: 80041003)
+[1510月2026 11:08:05.751] [main/WARN] [oshi.util.platform.windows.WmiQueryHandler/]: COM exception querying Win32_PhysicalMemory, which might not be on your system. Will not attempt to query it again. Error was -2147217405: (HRESULT: 80041003)
+[1510月2026 11:08:09.865] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [give, targets, item] and [give, targets, tag] with inputs: [stick, minecraft:stick]
+[1510月2026 11:08:09.874] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[1510月2026 11:08:09.875] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[1510月2026 11:08:09.877] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[1510月2026 11:08:09.878] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[1510月2026 11:08:09.878] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[1510月2026 11:08:10.000] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/E:/mc/project/deep-blue-voyage/mods/dbv-world/build/moddev/artifacts/neoforge-21.1.259.jar%23189!/assets/.mcassetsroot' uses unexpected schema
+[1510月2026 11:08:10.001] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/E:/mc/project/deep-blue-voyage/mods/dbv-world/build/moddev/artifacts/neoforge-21.1.259.jar%23189!/data/.mcassetsroot' uses unexpected schema
+[1510月2026 11:08:10.018] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[1510月2026 11:08:10.027] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: DBVDeveloper
+[1510月2026 11:08:10.128] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.3+5
+[1510月2026 11:08:10.257] [Render thread/WARN] [oshi.util.platform.windows.WmiQueryHandler/]: COM exception querying Win32_Processor, which might not be on your system. Will not attempt to query it again. Error was -2147217405: (HRESULT: 80041003)
+[1510月2026 11:08:10.262] [Render thread/WARN] [oshi.util.platform.windows.WmiQueryHandler/]: COM exception querying Win32_Processor, which might not be on your system. Will not attempt to query it again. Error was -2147217405: (HRESULT: 80041003)
+[1510月2026 11:08:10.423] [modloading-worker-0/INFO] [Veil/]: Veil is initializing.
+[1510月2026 11:08:10.425] [modloading-worker-0/INFO] [me.treyruffy.betterf3.BetterF3NeoForge/]: [BetterF3] Starting...
+[1510月2026 11:08:10.427] [modloading-worker-0/INFO] [me.treyruffy.betterf3.BetterF3NeoForge/]: [BetterF3] Loading...
+[1510月2026 11:08:10.468] [modloading-worker-0/INFO] [me.treyruffy.betterf3.BetterF3NeoForge/]: [BetterF3] All done!
+[1510月2026 11:08:10.497] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.259, for MC 1.21.1
+[1510月2026 11:08:10.501] [modloading-worker-0/INFO] [xaero.hud.minimap.MinimapLogs/]: Xaero's Minimap: World Map found!
+[1510月2026 11:08:10.501] [modloading-worker-0/INFO] [xaero.hud.minimap.MinimapLogs/]: No Optifine!
+[1510月2026 11:08:10.501] [modloading-worker-0/INFO] [xaero.hud.minimap.MinimapLogs/]: Xaero's Minimap: No Vivecraft!
+[1510月2026 11:08:10.671] [modloading-worker-0/INFO] [com.simibubi.create.Create/]: Create 6.0.10 initializing! Commit hash: ac0c444d9828da3453ae8cc65338e8de063286fb
+[1510月2026 11:08:10.708] [modloading-worker-0/INFO] [xaero.common.HudMod/]: Registering common data for channel xaerominimap:main!
+[1510月2026 11:08:10.836] [modloading-worker-0/INFO] [org.patryk3211.powergrid.PowerGrid/]: Power grid starting, prepare to be electrocuted
+[1510月2026 11:08:10.848] [modloading-worker-0/INFO] [xaero.common.HudMod/]: Registering client data for channel xaerominimap:main!
+[1510月2026 11:08:10.859] [modloading-worker-0/ERROR] [org.patryk3211.powergrid.PowerGrid/]: Native backend failed to load. Accelerated solver will not be available!
+java.lang.UnsatisfiedLinkError: no powergridNative7 in java.library.path: F:\zulu21.34.19-ca-jdk21.0.3-win_x64\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell;C:\Users\10629\.codex\tmp\arg0\codex-arg0GgBJVi;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\libheif\libheif\bin;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\jxrlib\jxrlib\bin;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\poppler\Library\bin;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\bin\override;F:\zulu21.34.19-ca-jdk21.0.3-win_x64\bin;D:\python\python\Scripts\;D:\python\python\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;D:\harmonyOS\command-line-tools\bin;D:\harmonyOS\ohpm-repo-5.4.4.0\bin;F:\ce\ffmpeg-8.1-full_build\bin;C:\Program Files\usbipd-win\;C:\Program Files\WSL\;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell;C:\Users\10629\AppData\Local\Microsoft\WindowsApps;D:\python\pycharm\PyCharm Community Edition 2024.2\bin;C:\Users\10629\AppData\Local\GitHubDesktop\bin;%DevEco Studio%;E:\DevTools\VSCode\bin;E:\DevTools\msys64\ucrt64\bin;F:\soft\pycham\PyCharm 2026.2.2\bin;C:\Users\10629\AppData\Local\Microsoft\WinGet\Packages\GitHub.cli_Microsoft.Winget.Source_8wekyb3d8bbwe\bin;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\bin\fallback;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\cmd;C:\Users\10629\AppData\Local\OpenAI\Codex\bin\9a7ba4b9ea0c44a3;C:\Users\10629\AppData\Local\OpenAI\Codex\bin\2e5e00daee91c61d;.
+	at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2458) ~[?:?]
+	at java.base/java.lang.Runtime.loadLibrary0(Runtime.java:916) ~[?:?]
+	at java.base/java.lang.System.loadLibrary(System.java:2063) ~[?:?]
+	at TRANSFORMER/powergrid@0.6.2/org.patryk3211.powergrid.electricity.sim.solver.NativeMNA.tryLoad(NativeMNA.java:69) ~[power-grid-jCkPHjmP.jar%23198!/:?]
+	at TRANSFORMER/powergrid@0.6.2/org.patryk3211.powergrid.PowerGrid.init(PowerGrid.java:87) ~[power-grid-jCkPHjmP.jar%23198!/:?]
+	at TRANSFORMER/powergrid@0.6.2/org.patryk3211.powergrid.forge.PowerGridImpl.<init>(PowerGridImpl.java:120) ~[power-grid-jCkPHjmP.jar%23198!/:?]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at MC-BOOTSTRAP/fml_loader@4.0.45/net.neoforged.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:122) ~[loader-4.0.45.jar%23146!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.45/net.neoforged.fml.ModLoader.lambda$constructMods$3(ModLoader.java:153) ~[loader-4.0.45.jar%23146!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.45/net.neoforged.fml.ModLoader.lambda$dispatchParallelTask$7(ModLoader.java:231) ~[loader-4.0.45.jar%23146!/:4.0]
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) [?:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) [?:?]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) [?:?]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?]
+[1510月2026 11:08:10.884] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[1510月2026 11:08:10.891] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 4.062 milliseconds
+[1510月2026 11:08:10.923] [modloading-worker-0/INFO] [xaero.common.HudMod/]: Loading primary common config for channel xaerominimap:main!
+[1510月2026 11:08:10.944] [modloading-worker-0/INFO] [xaero.common.HudMod/]: Loading server config profiles for channel xaerominimap:main!
+[1510月2026 11:08:10.949] [modloading-worker-0/INFO] [xaero.common.HudMod/]: Loading primary client config for channel xaerominimap:main!
+[1510月2026 11:08:10.953] [modloading-worker-0/INFO] [xaero.common.HudMod/]: Loading client config profiles for channel xaerominimap:main!
+[1510月2026 11:08:10.965] [modloading-worker-0/INFO] [xaero.map.WorldMap/]: Registering common data for channel xaeroworldmap:main!
+[1510月2026 11:08:10.981] [modloading-worker-0/INFO] [xaero.map.WorldMap/]: Registering client data for channel xaeroworldmap:main!
+[1510月2026 11:08:11.021] [modloading-worker-0/INFO] [xaero.map.WorldMap/]: Loading primary common config for channel xaeroworldmap:main!
+[1510月2026 11:08:11.025] [modloading-worker-0/INFO] [xaero.map.WorldMap/]: Loading server config profiles for channel xaeroworldmap:main!
+[1510月2026 11:08:11.028] [modloading-worker-0/INFO] [xaero.map.WorldMap/]: Loading primary client config for channel xaeroworldmap:main!
+[1510月2026 11:08:11.031] [modloading-worker-0/INFO] [xaero.map.WorldMap/]: Loading client config profiles for channel xaeroworldmap:main!
+[1510月2026 11:08:11.034] [modloading-worker-0/INFO] [xaero.lib.XaeroLib/]: Registering common data for channel xaerolib:main!
+[1510月2026 11:08:11.036] [modloading-worker-0/INFO] [xaero.lib.XaeroLib/]: Registering client data for channel xaerolib:main!
+[1510月2026 11:08:11.037] [modloading-worker-0/INFO] [xaero.lib.XaeroLib/]: Loading primary common config for channel xaerolib:main!
+[1510月2026 11:08:11.042] [modloading-worker-0/INFO] [xaero.lib.XaeroLib/]: Loading server config profiles for channel xaerolib:main!
+[1510月2026 11:08:11.045] [modloading-worker-0/INFO] [xaero.lib.XaeroLib/]: Loading primary client config for channel xaerolib:main!
+[1510月2026 11:08:11.048] [modloading-worker-0/INFO] [xaero.lib.XaeroLib/]: Loading client config profiles for channel xaerolib:main!
+[1510月2026 11:08:11.083] [modloading-worker-0/INFO] [KubeJS Startup/]: Capturing errors for startup scripts enabled
+[1510月2026 11:08:11.083] [modloading-worker-0/INFO] [KubeJS Client/]: Capturing errors for client scripts enabled
+[1510月2026 11:08:11.083] [modloading-worker-0/INFO] [KubeJS/]: Loading vanilla registries...
+[1510月2026 11:08:11.102] [modloading-worker-0/INFO] [KubeJS/]: Looking for KubeJS plugins...
+[1510月2026 11:08:11.109] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source kubejs
+[1510月2026 11:08:11.126] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source createdieselgenerators
+[1510月2026 11:08:11.165] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source probejs
+[1510月2026 11:08:11.170] [modloading-worker-0/INFO] [KubeJS/]: Done in 64.54 ms
+[1510月2026 11:08:11.720] [modloading-worker-0/INFO] [KubeJS Startup/]: startup_scripts:main.js#2: Hello, World! (Loaded startup example script)
+[1510月2026 11:08:11.721] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:main.js in 0.064 s
+[1510月2026 11:08:11.725] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded 1/1 KubeJS startup scripts in 0.53 s with 0 errors and 0 warnings
+[1510月2026 11:08:11.749] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:angler-client.js#2: Loaded Java class 'net.neoforged.neoforge.client.event.ClientTickEvent$Post'
+[1510月2026 11:08:11.753] [modloading-worker-0/INFO] [KubeJS Client/]: Loaded script client_scripts:angler-client.js in 0.016 s
+[1510月2026 11:08:11.753] [modloading-worker-0/INFO] [KubeJS Client/]: Loaded 1/1 KubeJS client scripts in 0.027 s with 0 errors and 0 warnings
+[1510月2026 11:08:11.763] [modloading-worker-0/INFO] [KubeJS Startup/]: Validated 0 files in kubejs/assets/ in 4ms
+[1510月2026 11:08:11.764] [modloading-worker-0/INFO] [KubeJS Startup/]: Validated 0 files in kubejs/data/ in 0ms
+[1510月2026 11:08:12.421] [modloading-worker-0/INFO] [dev.ryanhcode.sable.Sable/]: Sable loaded!
+[1510月2026 11:08:12.432] [modloading-worker-0/WARN] [dev.ryanhcode.sable.Sable/]: NOTE: Sable is loaded with Flywheel. Sable contains extensive shader overrides and a full light-storage replacement. Expect this to cause compatibility issues. If issues arise, please report them to the Sable issue tracker (https://github.com/ryanhcode/sable/issues) instead of the Flywheel issue tracker.
+[1510月2026 11:08:12.433] [modloading-worker-0/INFO] [dev.mgcode.sablejade.SableJadeMod/]: Loading sablejade
+[1510月2026 11:08:12.513] [modloading-worker-0/INFO] [io.github.low2uu.dbv.world.DeepBlueVoyageWorld/]: Deep Blue Voyage world module loaded; starter island preset registered.
+[1510月2026 11:08:14.086] [Render thread/INFO] [Veil/]: GL Debug supported
+[1510月2026 11:08:14.251] [Render thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: []
+[1510月2026 11:08:14.606] [Render thread/INFO] [KubeJS/]: Loaded 40 asset packs: vanilla, KubeJS Virtual Resource Pack [Before Mods, assets], mod_resources, mod/rhino, mod/jade, mod/jei, mod/lithostitched, mod/aeronautics, mod/xaerolib, mod/aeronautics_bundled, mod/spark, mod/flywheel, mod/ponder, mod/sablecompanion, mod/create, mod/sable, mod/xaerominimap, mod/xaeroworldmap, mod/neoforge, mod/kubejs, mod/veil, mod/simulated, mod/worldedit, mod/betteradvancedtooltips, mod/createdieselgenerators, mod/create_submarine,create_abyss,create_high_seas, mod/dbv_world, mod/architectury, mod/powergrid, mod/fusion, mod/betterf3, mod/jeresources, mod/cloth_config, mod/probejs, mod/sablejade, mod/offroad, KubeJS Virtual Resource Pack [Internal, assets], KubeJS Virtual Resource Pack [After Mods, assets], KubeJS File Resource Pack [assets], KubeJS Virtual Resource Pack [Last, assets]
+[1510月2026 11:08:14.608] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, KubeJS Virtual Resource Pack [Before Mods, assets], mod_resources, mod/rhino, mod/jade, mod/jei, mod/lithostitched, mod/aeronautics, mod/xaerolib, mod/aeronautics_bundled, mod/spark, mod/flywheel, mod/ponder, mod/sablecompanion, mod/create, mod/sable, mod/xaerominimap, mod/xaeroworldmap, mod/neoforge, mod/kubejs, mod/veil, mod/simulated, mod/worldedit, mod/betteradvancedtooltips, mod/createdieselgenerators, mod/create_submarine,create_abyss,create_high_seas, mod/dbv_world, mod/architectury, mod/powergrid, mod/fusion, mod/betterf3, mod/jeresources, mod/cloth_config, mod/probejs, mod/sablejade, mod/offroad, KubeJS Virtual Resource Pack [Internal, assets], KubeJS Virtual Resource Pack [After Mods, assets], KubeJS File Resource Pack [assets], KubeJS Virtual Resource Pack [Last, assets]
+[1510月2026 11:08:14.620] [Worker-Main-4/INFO] [xaero.lib.XaeroLib/]: Loading XaeroLib common 1/2!
+[1510月2026 11:08:14.626] [NeoForge Version Check/INFO] [net.neoforged.fml.VersionChecker/]: [create] Starting version check at https://api.modrinth.com/updates/create/forge_updates.json?neoforge=only
+[1510月2026 11:08:14.725] [Worker-Main-18/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.1.05.hex, loading
+[1510月2026 11:08:14.738] [Worker-Main-27/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_jp_patch-15.1.05.hex, loading
+[1510月2026 11:08:14.760] [Render thread/INFO] [KubeJS Client/]: Client resource reload complete!
+[1510月2026 11:08:15.078] [Worker-Main-17/WARN] [net.minecraft.client.renderer.texture.SpriteLoader/]: Texture create_submarine:block/rockcutting_base with size 51x84 limits mip level from 4 to 0
+[1510月2026 11:08:15.764] [Worker-Main-9/INFO] [com.sk89q.worldedit.extension.platform.PlatformManager/]: Got request to register class com.sk89q.worldedit.neoforge.NeoForgePlatform with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@428137f2]
+[1510月2026 11:08:15.766] [Worker-Main-9/INFO] [com.sk89q.worldedit.neoforge.NeoForgeWorldEdit/]: WorldEdit for NeoForge (version 7.3.8+6939-7d32b45) is loaded
+[1510月2026 11:08:15.838] [Worker-Main-9/INFO] [xaero.minimap.XaeroMinimap/]: Loading Xaero's Minimap - Stage 1/2
+[1510月2026 11:08:15.838] [Worker-Main-24/INFO] [xaero.map.WorldMap/]: Loading Xaero's World Map - Stage 1/2
+[1510月2026 11:08:15.841] [Worker-Main-21/INFO] [xaero.lib.XaeroLib/]: Loading XaeroLib client 1/2!
+[1510月2026 11:08:16.416] [NeoForge Version Check/INFO] [net.neoforged.fml.VersionChecker/]: [create] Found status: OUTDATED Current: 6.0.10 Target: 6.0.10+mc1.21.1
+[1510月2026 11:08:16.416] [NeoForge Version Check/INFO] [net.neoforged.fml.VersionChecker/]: [betterf3] Starting version check at https://api.modrinth.com/updates/betterf3/forge_updates.json
+[1510月2026 11:08:16.764] [Worker-Main-21/WARN] [xaero.lib.XaeroLib/]: io exception while checking patreon: Read timed out
+[1510月2026 11:08:16.791] [Render thread/INFO] [KubeJS/]: Started the local web server at http://localhost:61423
+[1510月2026 11:08:16.794] [Render thread/INFO] [xaero.map.WorldMap/]: Loading Xaero's World Map - Stage 2/2
+[1510月2026 11:08:16.798] [Render thread/INFO] [xaero.map.WorldMap/]: New world map region cache hash code: 631281423
+[1510月2026 11:08:16.987] [NeoForge Version Check/INFO] [net.neoforged.fml.VersionChecker/]: [betterf3] Found status: UP_TO_DATE Current: 11.0.3 Target: null
+[1510月2026 11:08:17.701] [Render thread/ERROR] [xaero.map.WorldMap/]: io exception while checking versions: Read timed out
+[1510月2026 11:08:17.702] [Render thread/INFO] [xaero.map.WorldMap/]: Registered player tracker system: map_synced
+[1510月2026 11:08:17.704] [Render thread/INFO] [xaero.map.WorldMap/]: Xaero's WorldMap Mod: Xaero's minimap found!
+[1510月2026 11:08:17.706] [Render thread/INFO] [xaero.map.WorldMap/]: Registered player tracker system: minimap_synced
+[1510月2026 11:08:17.707] [Render thread/INFO] [xaero.map.WorldMap/]: No Optifine!
+[1510月2026 11:08:17.707] [Render thread/INFO] [xaero.map.WorldMap/]: Xaero's World Map: No Vivecraft!
+[1510月2026 11:08:17.727] [Render thread/INFO] [xaero.minimap.XaeroMinimap/]: Loading Xaero's Minimap - Stage 2/2
+[1510月2026 11:08:18.677] [Render thread/WARN] [xaero.hud.minimap.MinimapLogs/]: io exception while checking versions: Read timed out
+[1510月2026 11:08:18.678] [Render thread/INFO] [xaero.hud.minimap.MinimapLogs/]: Registered player tracker system: minimap_synced
+[1510月2026 11:08:18.680] [Render thread/INFO] [xaero.lib.XaeroLib/]: Loading XaeroLib common 2/2!
+[1510月2026 11:08:18.680] [Render thread/INFO] [xaero.lib.XaeroLib/]: Loading XaeroLib client 2/2!
+[1510月2026 11:08:18.698] [Render thread/INFO] [Veil/]: Loaded 0 shader redirects, 0 replacements
+[1510月2026 11:08:19.095] [Render thread/INFO] [Veil/]: Loaded 30 shaders from: pinwheel/shaders/program
+[1510月2026 11:08:19.140] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.vanilla.VanillaPlugin
+[1510月2026 11:08:19.167] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Bootstrapped plugin from snownee.jade.addon.vanilla.VanillaPlugin in 24.91 ms
+[1510月2026 11:08:19.171] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.vanilla.VanillaPlugin in 29.33 ms
+[1510月2026 11:08:19.171] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.universal.UniversalPlugin
+[1510月2026 11:08:19.176] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Bootstrapped plugin from snownee.jade.addon.universal.UniversalPlugin in 4.037 ms
+[1510月2026 11:08:19.176] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.universal.UniversalPlugin in 4.393 ms
+[1510月2026 11:08:19.176] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.debug.DebugPlugin
+[1510月2026 11:08:19.178] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Bootstrapped plugin from snownee.jade.addon.debug.DebugPlugin in 1.131 ms
+[1510月2026 11:08:19.178] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.debug.DebugPlugin in 1.338 ms
+[1510月2026 11:08:19.178] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.core.CorePlugin
+[1510月2026 11:08:19.181] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Bootstrapped plugin from snownee.jade.addon.core.CorePlugin in 2.517 ms
+[1510月2026 11:08:19.181] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.core.CorePlugin in 2.780 ms
+[1510月2026 11:08:19.181] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Start loading plugin from snownee.jade.addon.access.AccessibilityPlugin
+[1510月2026 11:08:19.183] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Bootstrapped plugin from snownee.jade.addon.access.AccessibilityPlugin in 1.705 ms
+[1510月2026 11:08:19.183] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Loaded plugin from snownee.jade.addon.access.AccessibilityPlugin in 1.915 ms
+[1510月2026 11:08:19.184] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Start loading plugin from dev.mgcode.sablejade.SableJadePlugin
+[1510月2026 11:08:19.186] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Bootstrapped plugin from dev.mgcode.sablejade.SableJadePlugin in 1.411 ms
+[1510月2026 11:08:19.186] [Worker-Main-24/INFO] [snownee.jade.Jade/]: Loaded plugin from dev.mgcode.sablejade.SableJadePlugin in 1.570 ms
+[1510月2026 11:08:19.220] [Worker-Main-4/INFO] [PonderIndex/]: Registering Ponder Scenes took 104.9 ms
+[1510月2026 11:08:19.224] [Worker-Main-4/INFO] [PonderIndex/]: Registering Ponder Tags took 3.957 ms
+[1510月2026 11:08:19.242] [Render thread/INFO] [KubeJS Startup/]: Capturing errors for startup scripts disabled
+[1510月2026 11:08:19.242] [Render thread/INFO] [KubeJS Client/]: Capturing errors for client scripts disabled
+[1510月2026 11:08:19.361] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[1510月2026 11:08:19.361] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[1510月2026 11:08:19.440] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on 扬声器 (AB13X USB Audio)
+[1510月2026 11:08:19.441] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[1510月2026 11:08:19.501] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x2048x4 minecraft:textures/atlas/blocks.png-atlas
+[1510月2026 11:08:19.515] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[1510月2026 11:08:19.516] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[1510月2026 11:08:19.516] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[1510月2026 11:08:19.516] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[1510月2026 11:08:19.520] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[1510月2026 11:08:19.521] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[1510月2026 11:08:19.521] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[1510月2026 11:08:19.521] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[1510月2026 11:08:19.591] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x0 minecraft:textures/atlas/particles.png-atlas
+[1510月2026 11:08:19.593] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[1510月2026 11:08:19.593] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[1510月2026 11:08:19.593] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[1510月2026 11:08:19.594] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[1510月2026 11:08:19.786] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[1510月2026 11:08:20.237] [Render thread/INFO] [Veil/]: Compiled 59 vanilla shaders in 63.00 ms
+[1510月2026 11:08:20.241] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 jei:textures/atlas/gui.png-atlas
+[1510月2026 11:08:20.332] [Render thread/INFO] [xaero.lib.XaeroLib/]: Successfully reloaded the XaeroLib shaders!
+[1510月2026 11:08:20.371] [Render thread/INFO] [flywheel/backend/shaders/]: Loaded 77 shader sources in 30.980 ms
+[1510月2026 11:08:20.417] [Render thread/INFO] [com.simibubi.create.Create/]: Loaded 58 train hat configurations.
+[1510月2026 11:08:20.418] [Render thread/INFO] [net.neoforged.neoforge.client.entity.animation.json.AnimationLoader/]: Loaded 0 entity animations
+[1510月2026 11:08:20.418] [Render thread/INFO] [Veil/]: Loaded 3 framebuffers
+[1510月2026 11:08:20.428] [Render thread/INFO] [Veil/]: Loaded 6 post pipelines
+[1510月2026 11:08:20.433] [Render thread/INFO] [Veil/]: Loaded 4 render types
+[1510月2026 11:08:20.433] [Render thread/INFO] [Veil/]: Enabled bloom pipeline
+[1510月2026 11:08:20.433] [Render thread/INFO] [Veil/]: Loaded 0 quasar particles
+[1510月2026 11:08:20.433] [Render thread/INFO] [Veil/]: Loaded 0 templates
+[1510月2026 11:08:20.433] [Render thread/INFO] [Veil/]: Loaded 0 modules
+[1510月2026 11:08:20.523] [Render thread/INFO] [KubeJS Client/]: Loaded Java class 'net.minecraft.client.Minecraft'
+[1510月2026 11:08:20.639] [Render thread/INFO] [com.simibubi.create.Create/]: Created 157 recipes which will be injected into the game
+[1510月2026 11:08:20.643] [Render thread/INFO] [com.simibubi.create.Create/]: Created 0 tags which will be injected into the game
+[1510月2026 11:08:20.664] [Render thread/INFO] [KubeJS Server/]: Capturing errors for server scripts enabled
+[1510月2026 11:08:20.684] [Render thread/INFO] [KubeJS Server/]: server_scripts:angler-server.js#1: Loaded Java class 'io.github.low2uu.dbv.fleet.FleetModule'
+[1510月2026 11:08:20.685] [Render thread/INFO] [KubeJS Server/]: server_scripts:angler-server.js#1: Loaded Java class 'net.minecraft.core.BlockPos'
+[1510月2026 11:08:20.686] [Render thread/INFO] [KubeJS Server/]: Loaded script server_scripts:angler-server.js in 0.015 s
+[1510月2026 11:08:20.694] [Render thread/INFO] [KubeJS Server/]: Loaded 1/1 KubeJS server scripts in 0.03 s with 0 errors and 0 warnings
+[1510月2026 11:08:20.695] [Render thread/INFO] [KubeJS/]: Loaded 42 data packs: create:dynamic_data, vanilla, KubeJS Virtual Resource Pack [Before Mods, data], mod_data, mod/rhino, mod/jade, mod/jei, mod/lithostitched, mod/aeronautics, mod/xaerolib, mod/aeronautics_bundled, mod/spark, mod/flywheel, mod/ponder, mod/sablecompanion, mod/create, mod/sable, mod/xaerominimap, mod/xaeroworldmap, mod/neoforge, mod/kubejs, mod/veil, mod/simulated, mod/worldedit, mod/betteradvancedtooltips, mod/createdieselgenerators, mod/create_submarine,create_abyss,create_high_seas, mod/dbv_world, mod/architectury, mod/powergrid, mod/fusion, mod/betterf3, mod/jeresources, mod/cloth_config, mod/probejs, mod/sablejade, KubeJS Virtual Resource Pack [Internal, data], KubeJS Virtual Resource Pack [Registries, data], KubeJS Virtual Resource Pack [After Mods, data], KubeJS File Resource Pack [data], mod/offroad, KubeJS Virtual Resource Pack [Last, data]
+[1510月2026 11:08:21.088] [Worker-Main-7/ERROR] [net.minecraft.world.level.storage.loot.LootDataType/]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:createdieselgenerators:blocks/andesite_girder_strut - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: createdieselgenerators:andesite_girder_strut
+[1510月2026 11:08:21.153] [Worker-Main-7/INFO] [com.sk89q.worldedit.extension.platform.PlatformCommandManager/]: Registering commands with com.sk89q.worldedit.neoforge.NeoForgePlatform
+[1510月2026 11:08:21.576] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 3205 recipes
+[1510月2026 11:08:21.730] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 2737 advancements
+[1510月2026 11:08:22.510] [Render thread/INFO] [snownee.jade.Jade/]: LootTableMineableCollector took 4.738 ms
+[1510月2026 11:08:22.607] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.21.1
+[1510月2026 11:08:22.607] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[1510月2026 11:08:22.701] [Server thread/INFO] [spark/]: Starting background profiler...
+[1510月2026 11:08:22.715] [Server thread/INFO] [spark/]: The async-profiler engine is not supported for your os/arch (windows10/amd64), so the built-in Java engine will be used instead.
+[1510月2026 11:08:22.808] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:overworld] using RapierPhysicsPipelineProvider
+[1510月2026 11:08:22.815] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Using game directory relative Sable Rapier native directory E:\mc\project\deep-blue-voyage\.local\angler-client\.sable\natives
+[1510月2026 11:08:23.057] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / create_abyss:abyss] using RapierPhysicsPipelineProvider
+[1510月2026 11:08:23.081] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:the_nether] using RapierPhysicsPipelineProvider
+[1510月2026 11:08:23.092] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:the_end] using RapierPhysicsPipelineProvider
+[1510月2026 11:08:23.107] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[1510月2026 11:08:23.108] [Server thread/INFO] [KubeJS Server/]: Capturing errors for server scripts disabled
+[1510月2026 11:08:23.110] [Server thread/INFO] [KubeJS Server/]: Server resource reload complete!
+[1510月2026 11:08:23.134] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[1510月2026 11:08:23.157] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 31 ms
+[1510月2026 11:08:24.274] [Server thread/INFO] [io.github.low2uu.dbv.world.ConstructionMode/]: DBV construction mode active: spawning disabled, spawn chunk radius 0; original rules preserved.
+[1510月2026 11:08:24.276] [Server thread/INFO] [io.github.low2uu.dbv.world.oil.StarterOilfield/]: DBV_OIL initialized four native infinite reserves: X176..207 Z-64..-33; no forced chunk tickets.
+[1510月2026 11:08:24.278] [Render thread/INFO] [Veil/]: Finished uploading vanilla shaders
+[1510月2026 11:08:25.235] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 6, from 10
+[1510月2026 11:08:25.235] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 5, from 0
+[1510月2026 11:08:25.504] [Render thread/INFO] [dev.ryanhcode.sable.Sable/]: Adding local UDP server channel future
+[1510月2026 11:08:25.526] [Render thread/WARN] [io.netty.bootstrap.Bootstrap/]: Unknown channel option 'SO_BROADCAST' for channel '[id: 0xcfd07a09]'
+[1510月2026 11:08:25.539] [Netty Server IO #1/INFO] [dev.ryanhcode.sable.Sable/]: Server UDP channel active
+[1510月2026 11:08:25.602] [Render thread/INFO] [dev.ryanhcode.sable.Sable/]: Starting local client UDP channel future
+[1510月2026 11:08:25.606] [Netty Local Client IO #1/INFO] [dev.ryanhcode.sable.Sable/]: Client UDP channel active
+[1510月2026 11:08:25.756] [Render thread/INFO] [com.simibubi.create.Create/]: Created 157 recipes which will be injected into the game
+[1510月2026 11:08:25.757] [Render thread/INFO] [com.simibubi.create.Create/]: Created 0 tags which will be injected into the game
+[1510月2026 11:08:26.018] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: DBVDeveloper[local:E:334c8a06] logged in with entity id 1 at (64.0, 77.0, 157.0)
+[1510月2026 11:08:26.028] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Beginning attempted authentication with player DBVDeveloper
+[1510月2026 11:08:26.098] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: DBVDeveloper加入了游戏
+[1510月2026 11:08:26.118] [Render thread/INFO] [xaero.hud.minimap.MinimapLogs/]: Minimap required item set to nothing.
+[1510月2026 11:08:26.118] [Render thread/INFO] [xaero.hud.minimap.MinimapLogs/]: New Xaero hud session initialized!
+[1510月2026 11:08:26.198] [Render thread/INFO] [xaero.map.WorldMap/]: Fullscreen map required item set to nothing.
+[1510月2026 11:08:26.206] [Render thread/INFO] [xaero.map.WorldMap/]: New world map session initialized!
+[1510月2026 11:08:26.245] [Server thread/INFO] [KubeJS Server/]: Loaded Java class 'net.minecraft.world.level.GameType'
+[1510月2026 11:08:26.255] [Render thread/WARN] [mixin/]: Method overwrite conflict for getChunks in sable.mixins.json:loaded_chunk_debug.ClientChunkCacheStorageAccessor from mod sable, previously written by me.cominixo.betterf3.mixin.chunk.ClientChunkMapMixin. Skipping method.
+[1510月2026 11:08:26.580] [Render thread/INFO] [flywheel/]: Started 10 worker threads
+[1510月2026 11:08:26.646] [Render thread/INFO] [mezz.jei.common.util.LoggedTimer/]: Starting JEI...
+[1510月2026 11:08:26.651] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Configuring JEI...
+[1510月2026 11:08:26.654] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Configuring JEI took 2.377 milliseconds
+[1510月2026 11:08:26.654] [Server thread/INFO] [io.github.low2uu.dbv.fleet.FleetModule/]: DBV flagship state: ACTIVE (Sable已加载；深度以中央控制器为基准，压力状态取自Deep Seas)
+[1510月2026 11:08:26.665] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering item subtypes...
+[1510月2026 11:08:26.677] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering item subtypes took 11.77 milliseconds
+[1510月2026 11:08:26.677] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering fluid subtypes...
+[1510月2026 11:08:26.681] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering fluid subtypes took 2.852 milliseconds
+[1510月2026 11:08:26.685] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering ingredients...
+[1510月2026 11:08:26.807] [Render thread/WARN] [mezz.jei.library.plugins.vanilla.ingredients.ItemStackListFactory/]: Item Group has no display items and no search tab display items. Items from this group will be missing from the JEI ingredient list. K.KubeJS
+[1510月2026 11:08:26.815] [Render thread/WARN] [mezz.jei.library.plugins.vanilla.ingredients.ItemStackListFactory/]: 1 duplicate items were found in '机械动力：柴油动力' creative tab's: displayItems
+This may indicate that these types of item need a subtype interpreter added to JEI:
+[createdieselgenerators:track_layers_bag]
+[1510月2026 11:08:26.869] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering ingredients: jei:minecraft took 183.8 milliseconds
+[1510月2026 11:08:26.870] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering ingredients took 184.6 milliseconds
+[1510月2026 11:08:26.870] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering extra ingredients...
+[1510月2026 11:08:26.877] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering extra ingredients took 6.402 milliseconds
+[1510月2026 11:08:26.877] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering search ingredient aliases...
+[1510月2026 11:08:26.878] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering search ingredient aliases took 836.9 microseconds
+[1510月2026 11:08:26.916] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering Mod Info...
+[1510月2026 11:08:26.917] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering Mod Info took 962.8 microseconds
+[1510月2026 11:08:26.949] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering advanced search...
+[1510月2026 11:08:26.949] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering advanced search took 302.0 microseconds
+[1510月2026 11:08:26.952] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering categories...
+[1510月2026 11:08:27.003] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering categories: jei:minecraft took 51.84 milliseconds
+[1510月2026 11:08:27.086] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering categories: create:jei_plugin took 81.41 milliseconds
+[1510月2026 11:08:27.108] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering categories: createdieselgenerators:jei_plugin took 22.17 milliseconds
+[1510月2026 11:08:27.126] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering categories: powergrid:jei took 17.62 milliseconds
+[1510月2026 11:08:28.219] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering categories: jeresources:minecraft took 1.094 seconds
+[1510月2026 11:08:28.228] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering categories took 1.277 seconds
+[1510月2026 11:08:28.230] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering vanilla category extensions...
+[1510月2026 11:08:28.237] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering vanilla category extensions took 6.783 milliseconds
+[1510月2026 11:08:28.239] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering recipe catalysts...
+[1510月2026 11:08:28.241] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering recipe catalysts took 1.724 milliseconds
+[1510月2026 11:08:28.242] [Render thread/INFO] [mezz.jei.common.util.LoggedTimer/]: Building recipe registry...
+[1510月2026 11:08:28.266] [Render thread/INFO] [mezz.jei.common.util.LoggedTimer/]: Building recipe registry took 23.69 milliseconds
+[1510月2026 11:08:28.267] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering advanced plugins...
+[1510月2026 11:08:28.268] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering advanced plugins took 671.8 microseconds
+[1510月2026 11:08:28.269] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering recipes...
+[1510月2026 11:08:28.523] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering recipes: jei:minecraft took 254.3 milliseconds
+[1510月2026 11:08:28.625] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering recipes: create:jei_plugin took 99.73 milliseconds
+[1510月2026 11:08:28.763] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering recipes: jeresources:minecraft took 131.4 milliseconds
+[1510月2026 11:08:28.791] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering recipes: jei:internal took 28.02 milliseconds
+[1510月2026 11:08:28.791] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering recipes took 521.6 milliseconds
+[1510月2026 11:08:28.802] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering recipes transfer handlers...
+[1510月2026 11:08:28.805] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering recipes transfer handlers took 2.470 milliseconds
+[1510月2026 11:08:28.805] [Render thread/INFO] [mezz.jei.common.util.LoggedTimer/]: Building runtime...
+[1510月2026 11:08:28.810] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering gui handlers...
+[1510月2026 11:08:28.816] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering gui handlers took 5.436 milliseconds
+[1510月2026 11:08:28.818] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering Runtime...
+[1510月2026 11:08:28.819] [Render thread/INFO] [mezz.jei.gui.startup.JeiGuiStarter/]: Starting JEI GUI
+[1510月2026 11:08:28.819] [Render thread/INFO] [mezz.jei.common.util.LoggedTimer/]: Building ingredient list...
+[1510月2026 11:08:28.836] [Render thread/INFO] [mezz.jei.common.util.LoggedTimer/]: Building ingredient list took 16.53 milliseconds
+[1510月2026 11:08:28.836] [Render thread/INFO] [mezz.jei.common.util.LoggedTimer/]: Building ingredient filter...
+[1510月2026 11:08:28.997] [Render thread/INFO] [mezz.jei.gui.ingredients.IngredientFilter/]: Adding 2728 ingredients
+[1510月2026 11:08:29.002] [Render thread/INFO] [mezz.jei.gui.ingredients.IngredientFilter/]: Added 2728 ingredients
+[1510月2026 11:08:29.004] [Render thread/INFO] [mezz.jei.common.util.LoggedTimer/]: Building ingredient filter took 166.6 milliseconds
+[1510月2026 11:08:29.099] [Render thread/INFO] [mezz.jei.library.load.PluginCallerTimerRunnable/]: Registering Runtime: jei:neoforge_gui took 280.8 milliseconds
+[1510月2026 11:08:29.100] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Registering Runtime took 281.2 milliseconds
+[1510月2026 11:08:29.100] [Render thread/INFO] [mezz.jei.common.util.LoggedTimer/]: Building runtime took 294.8 milliseconds
+[1510月2026 11:08:29.100] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Sending Runtime...
+[1510月2026 11:08:29.101] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Sending Runtime took 406.7 microseconds
+[1510月2026 11:08:29.101] [Render thread/INFO] [mezz.jei.common.util.LoggedTimer/]: Starting JEI took 2.454 seconds
+[1510月2026 11:08:29.118] [Render thread/INFO] [xaero.hud.minimap.MinimapLogs/]: Minimap updated server level id: -180380938 for world ResourceKey[minecraft:dimension / minecraft:overworld]
+[1510月2026 11:08:29.122] [Render thread/INFO] [snownee.jade.Jade/]: Received config from the server:
+[1510月2026 11:08:29.125] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 36 advancements
+[1510月2026 11:08:29.364] [Render thread/INFO] [Veil/]: Multi-Bind supported, using core
+[1510月2026 11:08:29.419] [Render thread/INFO] [xaero.hud.minimap.MinimapLogs/]: Reloading radar icon resources...
+[1510月2026 11:08:29.431] [Render thread/INFO] [xaero.hud.minimap.MinimapLogs/]: Reloaded radar icon resources!
+[1510月2026 11:08:33.110] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:overworld
+[1510月2026 11:08:33.110] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:overworld
+[1510月2026 11:08:33.150] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/create_abyss:abyss
+[1510月2026 11:08:33.150] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/create_abyss:abyss
+[1510月2026 11:08:33.160] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_nether
+[1510月2026 11:08:33.160] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_nether
+[1510月2026 11:08:33.168] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_end
+[1510月2026 11:08:33.169] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_end
+[1510月2026 11:08:33.215] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DBV-Angler-Acceptance7): All chunks are saved
+[1510月2026 11:08:33.215] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (abyss): All chunks are saved
+[1510月2026 11:08:33.215] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[1510月2026 11:08:33.215] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[1510月2026 11:08:33.215] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[1510月2026 11:08:33.359] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:overworld
+[1510月2026 11:08:33.359] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:overworld
+[1510月2026 11:08:33.373] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/create_abyss:abyss
+[1510月2026 11:08:33.373] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/create_abyss:abyss
+[1510月2026 11:08:33.377] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_nether
+[1510月2026 11:08:33.377] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_nether
+[1510月2026 11:08:33.381] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_end
+[1510月2026 11:08:33.382] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_end
+[1510月2026 11:08:33.390] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DBV-Angler-Acceptance7): All chunks are saved
+[1510月2026 11:08:33.390] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (abyss): All chunks are saved
+[1510月2026 11:08:33.390] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[1510月2026 11:08:33.390] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[1510月2026 11:08:33.390] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[1510月2026 11:08:33.393] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER 灯笼鱼型已放入改装泊位，原艇与存储已备份，原物品已转入新艇箱子与木桶。检查布局后提交改装；取消可恢复原艇。
+[1510月2026 11:08:33.394] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER PASS template installed
+[1510月2026 11:08:33.519] [Server thread/INFO] [io.github.low2uu.dbv.fleet.FleetModule/]: DBV flagship state: REFITTING (船坞方块改装中；主艇身份保留，物理载体已拆解)
+[1510月2026 11:08:40.900] [Server thread/INFO] [KubeJS Server/]: Loaded Java class 'com.maxenonyme.createsubmarine.submarine.compartment.CompartmentDetector'
+[1510月2026 11:08:40.956] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER LEAK 59,73,155 <- 60,73,155 <- 61,73,155 <- 62,73,155 <- 63,73,155 <- 63,73,156 <- 63,73,157 <- 63,73,158 <- 63,73,159 <- 63,72,159 <- 64,72,159 <- 65,72,159
+[1510月2026 11:08:45.901] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER DEVICE [63, 72, 157] -96
+[1510月2026 11:08:45.902] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER DEVICE [71, 72, 157] -96
+[1510月2026 11:08:45.902] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER DEVICE [65, 72, 155] -96
+[1510月2026 11:08:45.903] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER DEVICE [63, 70, 156] -96
+[1510月2026 11:08:45.903] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER DEVICE [71, 70, 166] -96
+[1510月2026 11:08:45.903] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER DEVICE [60, 72, 163] 0
+[1510月2026 11:08:45.903] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER DEVICE [74, 72, 163] 0
+[1510月2026 11:08:45.903] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER DEVICE [65, 72, 157] 96
+[1510月2026 11:08:45.905] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER SUPPLY water=4000 energy=9750 oxygen=1590 diffuser=1000
+[1510月2026 11:08:45.978] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:overworld
+[1510月2026 11:08:45.978] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:overworld
+[1510月2026 11:08:46.001] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/create_abyss:abyss
+[1510月2026 11:08:46.001] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/create_abyss:abyss
+[1510月2026 11:08:46.008] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_nether
+[1510月2026 11:08:46.008] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_nether
+[1510月2026 11:08:46.014] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_end
+[1510月2026 11:08:46.014] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_end
+[1510月2026 11:08:46.024] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DBV-Angler-Acceptance7): All chunks are saved
+[1510月2026 11:08:46.024] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (abyss): All chunks are saved
+[1510月2026 11:08:46.024] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[1510月2026 11:08:46.024] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[1510月2026 11:08:46.024] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[1510月2026 11:08:46.028] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER 正在完成改装：已临时装配，等待三项检测（最多20秒）；通过后交付，失败还原。
+[1510月2026 11:08:46.114] [Server thread/INFO] [io.github.low2uu.dbv.fleet.FleetModule/]: DBV flagship state: ACTIVE (Sable已加载；深度以中央控制器为基准，压力状态取自Deep Seas)
+[1510月2026 11:08:55.903] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER MIDQUAL Qualification[controller=true, oxygen=false, sealed=true, pending=false]
+[1510月2026 11:08:55.904] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER MID moored=true bounds=dev.ryanhcode.sable.companion.math.BoundingBox3d@4db62925
+[1510月2026 11:08:55.910] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:clutch, type=未适配设备, position=BlockPos{x=20481034, y=132, z=20481037}, relativePosition=BlockPos{x=2, y=4, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.910] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:clutch, type=未适配设备, position=BlockPos{x=20481041, y=133, z=20481049}, relativePosition=BlockPos{x=9, y=5, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.911] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:clutch, type=未适配设备, position=BlockPos{x=20481044, y=132, z=20481037}, relativePosition=BlockPos{x=12, y=4, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.911] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481036, y=130, z=20481037}, relativePosition=BlockPos{x=4, y=2, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.911] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481036, y=131, z=20481037}, relativePosition=BlockPos{x=4, y=3, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.911] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481036, y=130, z=20481038}, relativePosition=BlockPos{x=4, y=2, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.911] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481036, y=131, z=20481038}, relativePosition=BlockPos{x=4, y=3, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.911] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481036, y=132, z=20481038}, relativePosition=BlockPos{x=4, y=4, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.911] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481036, y=130, z=20481048}, relativePosition=BlockPos{x=4, y=2, z=16}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.911] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481038, y=133, z=20481036}, relativePosition=BlockPos{x=6, y=5, z=4}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.912] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481038, y=132, z=20481038}, relativePosition=BlockPos{x=6, y=4, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.912] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481038, y=133, z=20481038}, relativePosition=BlockPos{x=6, y=5, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.912] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481038, y=132, z=20481039}, relativePosition=BlockPos{x=6, y=4, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.912] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481040, y=135, z=20481049}, relativePosition=BlockPos{x=8, y=7, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.912] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481040, y=135, z=20481050}, relativePosition=BlockPos{x=8, y=7, z=18}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.912] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481041, y=135, z=20481050}, relativePosition=BlockPos{x=9, y=7, z=18}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.912] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481042, y=130, z=20481037}, relativePosition=BlockPos{x=10, y=2, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.913] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481042, y=131, z=20481037}, relativePosition=BlockPos{x=10, y=3, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.913] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481042, y=130, z=20481038}, relativePosition=BlockPos{x=10, y=2, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.914] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481042, y=131, z=20481038}, relativePosition=BlockPos{x=10, y=3, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.914] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481042, y=132, z=20481038}, relativePosition=BlockPos{x=10, y=4, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.915] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:cogwheel, type=未适配设备, position=BlockPos{x=20481042, y=130, z=20481048}, relativePosition=BlockPos{x=10, y=2, z=16}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.915] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481035, y=131, z=20481038}, relativePosition=BlockPos{x=3, y=3, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.915] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481035, y=129, z=20481039}, relativePosition=BlockPos{x=3, y=1, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.916] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481035, y=130, z=20481039}, relativePosition=BlockPos{x=3, y=2, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.916] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481035, y=131, z=20481039}, relativePosition=BlockPos{x=3, y=3, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.916] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481035, y=129, z=20481049}, relativePosition=BlockPos{x=3, y=1, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.916] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481035, y=130, z=20481049}, relativePosition=BlockPos{x=3, y=2, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.916] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481037, y=133, z=20481037}, relativePosition=BlockPos{x=5, y=5, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.916] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481037, y=132, z=20481038}, relativePosition=BlockPos{x=5, y=4, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.916] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481039, y=135, z=20481048}, relativePosition=BlockPos{x=7, y=7, z=16}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.917] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481039, y=135, z=20481050}, relativePosition=BlockPos{x=7, y=7, z=18}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.917] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481039, y=136, z=20481050}, relativePosition=BlockPos{x=7, y=8, z=18}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.917] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481040, y=136, z=20481050}, relativePosition=BlockPos{x=8, y=8, z=18}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.917] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481043, y=131, z=20481038}, relativePosition=BlockPos{x=11, y=3, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.917] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481043, y=129, z=20481039}, relativePosition=BlockPos{x=11, y=1, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.918] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481043, y=130, z=20481039}, relativePosition=BlockPos{x=11, y=2, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.918] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481043, y=131, z=20481039}, relativePosition=BlockPos{x=11, y=3, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.918] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481043, y=129, z=20481049}, relativePosition=BlockPos{x=11, y=1, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.918] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_pipe, type=未适配设备, position=BlockPos{x=20481043, y=130, z=20481049}, relativePosition=BlockPos{x=11, y=2, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.918] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_tank, type=未适配设备, position=BlockPos{x=20481035, y=131, z=20481036}, relativePosition=BlockPos{x=3, y=3, z=4}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.918] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_tank, type=未适配设备, position=BlockPos{x=20481037, y=133, z=20481035}, relativePosition=BlockPos{x=5, y=5, z=3}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.918] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:fluid_tank, type=未适配设备, position=BlockPos{x=20481043, y=131, z=20481036}, relativePosition=BlockPos{x=11, y=3, z=4}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.918] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:gearbox, type=未适配设备, position=BlockPos{x=20481032, y=132, z=20481037}, relativePosition=BlockPos{x=0, y=4, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.919] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:gearbox, type=未适配设备, position=BlockPos{x=20481035, y=132, z=20481037}, relativePosition=BlockPos{x=3, y=4, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.919] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:gearbox, type=未适配设备, position=BlockPos{x=20481036, y=132, z=20481037}, relativePosition=BlockPos{x=4, y=4, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.919] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:gearbox, type=未适配设备, position=BlockPos{x=20481038, y=132, z=20481037}, relativePosition=BlockPos{x=6, y=4, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.919] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:gearbox, type=未适配设备, position=BlockPos{x=20481041, y=130, z=20481049}, relativePosition=BlockPos{x=9, y=2, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.919] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:gearbox, type=未适配设备, position=BlockPos{x=20481041, y=135, z=20481049}, relativePosition=BlockPos{x=9, y=7, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.919] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:gearbox, type=未适配设备, position=BlockPos{x=20481042, y=132, z=20481037}, relativePosition=BlockPos{x=10, y=4, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.919] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:gearbox, type=未适配设备, position=BlockPos{x=20481042, y=130, z=20481049}, relativePosition=BlockPos{x=10, y=2, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.919] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:gearbox, type=未适配设备, position=BlockPos{x=20481043, y=132, z=20481037}, relativePosition=BlockPos{x=11, y=4, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.920] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:gearbox, type=未适配设备, position=BlockPos{x=20481046, y=132, z=20481037}, relativePosition=BlockPos{x=14, y=4, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.920] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:gearshift, type=未适配设备, position=BlockPos{x=20481033, y=132, z=20481037}, relativePosition=BlockPos{x=1, y=4, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.920] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:gearshift, type=未适配设备, position=BlockPos{x=20481045, y=132, z=20481037}, relativePosition=BlockPos{x=13, y=4, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.920] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:mechanical_pump, type=未适配设备, position=BlockPos{x=20481035, y=131, z=20481037}, relativePosition=BlockPos{x=3, y=3, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.920] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:mechanical_pump, type=未适配设备, position=BlockPos{x=20481037, y=133, z=20481036}, relativePosition=BlockPos{x=5, y=5, z=4}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.920] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:mechanical_pump, type=未适配设备, position=BlockPos{x=20481037, y=132, z=20481039}, relativePosition=BlockPos{x=5, y=4, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.920] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:mechanical_pump, type=未适配设备, position=BlockPos{x=20481039, y=135, z=20481049}, relativePosition=BlockPos{x=7, y=7, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.920] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:mechanical_pump, type=未适配设备, position=BlockPos{x=20481043, y=131, z=20481037}, relativePosition=BlockPos{x=11, y=3, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.920] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481032, y=132, z=20481038}, relativePosition=BlockPos{x=0, y=4, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.921] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481032, y=132, z=20481039}, relativePosition=BlockPos{x=0, y=4, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.921] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481032, y=132, z=20481040}, relativePosition=BlockPos{x=0, y=4, z=8}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.921] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481032, y=132, z=20481041}, relativePosition=BlockPos{x=0, y=4, z=9}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.921] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481032, y=132, z=20481042}, relativePosition=BlockPos{x=0, y=4, z=10}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.921] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481032, y=132, z=20481043}, relativePosition=BlockPos{x=0, y=4, z=11}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.922] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481032, y=132, z=20481044}, relativePosition=BlockPos{x=0, y=4, z=12}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.922] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481035, y=132, z=20481038}, relativePosition=BlockPos{x=3, y=4, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.922] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481036, y=130, z=20481039}, relativePosition=BlockPos{x=4, y=2, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.922] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481036, y=130, z=20481040}, relativePosition=BlockPos{x=4, y=2, z=8}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.922] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481036, y=130, z=20481041}, relativePosition=BlockPos{x=4, y=2, z=9}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.923] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481036, y=130, z=20481042}, relativePosition=BlockPos{x=4, y=2, z=10}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.923] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481036, y=130, z=20481043}, relativePosition=BlockPos{x=4, y=2, z=11}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.923] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481036, y=130, z=20481044}, relativePosition=BlockPos{x=4, y=2, z=12}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.923] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481036, y=130, z=20481045}, relativePosition=BlockPos{x=4, y=2, z=13}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.923] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481036, y=130, z=20481046}, relativePosition=BlockPos{x=4, y=2, z=14}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.923] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481036, y=130, z=20481047}, relativePosition=BlockPos{x=4, y=2, z=15}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.923] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481036, y=130, z=20481049}, relativePosition=BlockPos{x=4, y=2, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.924] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481038, y=133, z=20481037}, relativePosition=BlockPos{x=6, y=5, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.924] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481041, y=131, z=20481049}, relativePosition=BlockPos{x=9, y=3, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.924] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481041, y=132, z=20481049}, relativePosition=BlockPos{x=9, y=4, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.924] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481041, y=134, z=20481049}, relativePosition=BlockPos{x=9, y=6, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.924] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481042, y=130, z=20481039}, relativePosition=BlockPos{x=10, y=2, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.924] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481042, y=130, z=20481040}, relativePosition=BlockPos{x=10, y=2, z=8}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.924] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481042, y=130, z=20481041}, relativePosition=BlockPos{x=10, y=2, z=9}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.924] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481042, y=130, z=20481042}, relativePosition=BlockPos{x=10, y=2, z=10}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.924] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481042, y=130, z=20481043}, relativePosition=BlockPos{x=10, y=2, z=11}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.925] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481042, y=130, z=20481044}, relativePosition=BlockPos{x=10, y=2, z=12}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.925] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481042, y=130, z=20481045}, relativePosition=BlockPos{x=10, y=2, z=13}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.925] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481042, y=130, z=20481046}, relativePosition=BlockPos{x=10, y=2, z=14}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.925] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481042, y=130, z=20481047}, relativePosition=BlockPos{x=10, y=2, z=15}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.925] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481043, y=132, z=20481038}, relativePosition=BlockPos{x=11, y=4, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.925] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481046, y=132, z=20481038}, relativePosition=BlockPos{x=14, y=4, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.925] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481046, y=132, z=20481039}, relativePosition=BlockPos{x=14, y=4, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.925] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481046, y=132, z=20481040}, relativePosition=BlockPos{x=14, y=4, z=8}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.925] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481046, y=132, z=20481041}, relativePosition=BlockPos{x=14, y=4, z=9}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.926] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481046, y=132, z=20481042}, relativePosition=BlockPos{x=14, y=4, z=10}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.926] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481046, y=132, z=20481043}, relativePosition=BlockPos{x=14, y=4, z=11}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.926] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create:shaft, type=未适配设备, position=BlockPos{x=20481046, y=132, z=20481044}, relativePosition=BlockPos{x=14, y=4, z=12}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.926] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481034, y=129, z=20481036}, relativePosition=BlockPos{x=2, y=1, z=4}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.926] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481034, y=130, z=20481036}, relativePosition=BlockPos{x=2, y=2, z=4}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.927] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481034, y=129, z=20481037}, relativePosition=BlockPos{x=2, y=1, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.927] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481034, y=130, z=20481037}, relativePosition=BlockPos{x=2, y=2, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.927] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481034, y=129, z=20481046}, relativePosition=BlockPos{x=2, y=1, z=14}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.927] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481034, y=130, z=20481046}, relativePosition=BlockPos{x=2, y=2, z=14}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.927] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481034, y=129, z=20481047}, relativePosition=BlockPos{x=2, y=1, z=15}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.927] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481034, y=130, z=20481047}, relativePosition=BlockPos{x=2, y=2, z=15}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.927] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481035, y=129, z=20481036}, relativePosition=BlockPos{x=3, y=1, z=4}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.927] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481035, y=130, z=20481036}, relativePosition=BlockPos{x=3, y=2, z=4}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.927] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481035, y=129, z=20481037}, relativePosition=BlockPos{x=3, y=1, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.927] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481035, y=130, z=20481037}, relativePosition=BlockPos{x=3, y=2, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.928] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481035, y=129, z=20481046}, relativePosition=BlockPos{x=3, y=1, z=14}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.928] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481035, y=130, z=20481046}, relativePosition=BlockPos{x=3, y=2, z=14}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.928] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481035, y=129, z=20481047}, relativePosition=BlockPos{x=3, y=1, z=15}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.928] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481035, y=130, z=20481047}, relativePosition=BlockPos{x=3, y=2, z=15}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.928] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481043, y=129, z=20481036}, relativePosition=BlockPos{x=11, y=1, z=4}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.928] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481043, y=130, z=20481036}, relativePosition=BlockPos{x=11, y=2, z=4}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.928] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481043, y=129, z=20481037}, relativePosition=BlockPos{x=11, y=1, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.928] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481043, y=130, z=20481037}, relativePosition=BlockPos{x=11, y=2, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.928] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481043, y=129, z=20481046}, relativePosition=BlockPos{x=11, y=1, z=14}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.928] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481043, y=130, z=20481046}, relativePosition=BlockPos{x=11, y=2, z=14}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.929] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481043, y=129, z=20481047}, relativePosition=BlockPos{x=11, y=1, z=15}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.929] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481043, y=130, z=20481047}, relativePosition=BlockPos{x=11, y=2, z=15}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.929] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481044, y=129, z=20481036}, relativePosition=BlockPos{x=12, y=1, z=4}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.929] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481044, y=130, z=20481036}, relativePosition=BlockPos{x=12, y=2, z=4}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.929] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481044, y=129, z=20481037}, relativePosition=BlockPos{x=12, y=1, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.929] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481044, y=130, z=20481037}, relativePosition=BlockPos{x=12, y=2, z=5}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.930] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481044, y=129, z=20481046}, relativePosition=BlockPos{x=12, y=1, z=14}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.930] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481044, y=130, z=20481046}, relativePosition=BlockPos{x=12, y=2, z=14}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.930] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481044, y=129, z=20481047}, relativePosition=BlockPos{x=12, y=1, z=15}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.930] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_tank, type=压载, position=BlockPos{x=20481044, y=130, z=20481047}, relativePosition=BlockPos{x=12, y=2, z=15}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.930] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_vent, type=压载, position=BlockPos{x=20481035, y=128, z=20481039}, relativePosition=BlockPos{x=3, y=0, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.930] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_vent, type=压载, position=BlockPos{x=20481035, y=128, z=20481049}, relativePosition=BlockPos{x=3, y=0, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.930] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_vent, type=压载, position=BlockPos{x=20481043, y=128, z=20481039}, relativePosition=BlockPos{x=11, y=0, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.930] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:ballast_vent, type=压载, position=BlockPos{x=20481043, y=128, z=20481049}, relativePosition=BlockPos{x=11, y=0, z=17}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.930] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:command_sub, type=中央控制器, position=BlockPos{x=20481039, y=132, z=20481035}, relativePosition=BlockPos{x=7, y=4, z=3}, status=有效]
+[1510月2026 11:08:55.930] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:decompression_chamber, type=气闸, position=BlockPos{x=20481039, y=134, z=20481048}, relativePosition=BlockPos{x=7, y=6, z=16}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.930] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:decompression_chamber, type=气闸, position=BlockPos{x=20481041, y=136, z=20481050}, relativePosition=BlockPos{x=9, y=8, z=18}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.931] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:electrolyzer, type=氧气制造, position=BlockPos{x=20481037, y=132, z=20481037}, relativePosition=BlockPos{x=5, y=4, z=5}, status=可制氧/满罐待机]
+[1510月2026 11:08:55.931] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:oxygene_diffuser, type=供氧, position=BlockPos{x=20481037, y=132, z=20481040}, relativePosition=BlockPos{x=5, y=4, z=8}, status=氧气=1000毫桶；已启动；未向密闭舱供氧]
+[1510月2026 11:08:55.931] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:pump_controller, type=泵控制, position=BlockPos{x=20481035, y=130, z=20481038}, relativePosition=BlockPos{x=3, y=2, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.931] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:pump_controller, type=泵控制, position=BlockPos{x=20481035, y=130, z=20481048}, relativePosition=BlockPos{x=3, y=2, z=16}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.931] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:pump_controller, type=泵控制, position=BlockPos{x=20481043, y=130, z=20481038}, relativePosition=BlockPos{x=11, y=2, z=6}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.931] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:pump_controller, type=泵控制, position=BlockPos{x=20481043, y=130, z=20481048}, relativePosition=BlockPos{x=11, y=2, z=16}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.931] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:sonar, type=声呐, position=BlockPos{x=20481039, y=137, z=20481033}, relativePosition=BlockPos{x=7, y=9, z=1}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.931] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:submarine_propeller, type=推进, position=BlockPos{x=20481032, y=132, z=20481045}, relativePosition=BlockPos{x=0, y=4, z=13}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.931] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=create_submarine:submarine_propeller, type=推进, position=BlockPos{x=20481046, y=132, z=20481045}, relativePosition=BlockPos{x=14, y=4, z=13}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.932] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=createdieselgenerators:diesel_engine, type=未适配设备, position=BlockPos{x=20481035, y=132, z=20481039}, relativePosition=BlockPos{x=3, y=4, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.932] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=createdieselgenerators:diesel_engine, type=未适配设备, position=BlockPos{x=20481043, y=132, z=20481039}, relativePosition=BlockPos{x=11, y=4, z=7}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.932] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=minecraft:barrel, type=未适配设备, position=BlockPos{x=20481041, y=132, z=20481042}, relativePosition=BlockPos{x=9, y=4, z=10}, status=已识别；运行状态未适配]
+[1510月2026 11:08:55.933] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER REPORT Device[id=minecraft:chest, type=未适配设备, position=BlockPos{x=20481041, y=132, z=20481041}, relativePosition=BlockPos{x=9, y=4, z=9}, status=已识别；运行状态未适配]
+[1510月2026 11:09:06.184] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:overworld
+[1510月2026 11:09:06.184] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:overworld
+[1510月2026 11:09:06.197] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/create_abyss:abyss
+[1510月2026 11:09:06.197] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/create_abyss:abyss
+[1510月2026 11:09:06.204] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_nether
+[1510月2026 11:09:06.204] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_nether
+[1510月2026 11:09:06.211] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_end
+[1510月2026 11:09:06.211] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_end
+[1510月2026 11:09:06.221] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DBV-Angler-Acceptance7): All chunks are saved
+[1510月2026 11:09:06.221] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (abyss): All chunks are saved
+[1510月2026 11:09:06.221] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[1510月2026 11:09:06.221] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[1510月2026 11:09:06.221] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[1510月2026 11:09:06.238] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:overworld
+[1510月2026 11:09:06.238] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:overworld
+[1510月2026 11:09:06.247] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/create_abyss:abyss
+[1510月2026 11:09:06.247] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/create_abyss:abyss
+[1510月2026 11:09:06.251] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_nether
+[1510月2026 11:09:06.253] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_nether
+[1510月2026 11:09:06.256] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_end
+[1510月2026 11:09:06.256] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_end
+[1510月2026 11:09:06.265] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DBV-Angler-Acceptance7): All chunks are saved
+[1510月2026 11:09:06.265] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (abyss): All chunks are saved
+[1510月2026 11:09:06.265] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[1510月2026 11:09:06.265] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[1510月2026 11:09:06.265] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[1510月2026 11:09:06.302] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] 完成验收失败，已恢复改装前物理船体：缺少可工作的电解器或已启动并向密闭舱室供氧的扩散器
+[1510月2026 11:09:10.898] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER FINAL 物理船体；可开始拆解改装，三项条件只在完成时验收。
+[1510月2026 11:09:10.899] [Server thread/INFO] [KubeJS Server/]: DBV_ANGLER QUAL Qualification[controller=true, oxygen=true, sealed=true, pending=false]
+[1510月2026 11:09:18.992] [Render thread/INFO] [mezz.jei.library.startup.JeiStarter/]: Stopping JEI
+[1510月2026 11:09:18.993] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Sending Runtime Unavailable...
+[1510月2026 11:09:18.993] [Render thread/INFO] [mezz.jei.neoforge.plugins.neoforge.NeoForgeGuiPlugin/]: Stopping JEI GUI
+[1510月2026 11:09:18.995] [Render thread/INFO] [mezz.jei.library.load.PluginCaller/]: Sending Runtime Unavailable took 2.305 milliseconds
+[1510月2026 11:09:19.024] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[1510月2026 11:09:19.025] [Netty Local Client IO #1/INFO] [dev.ryanhcode.sable.Sable/]: Client UDP channel inactive
+[1510月2026 11:09:19.025] [Netty Local Client IO #1/INFO] [dev.ryanhcode.sable.Sable/]: Closed UDP channel!
+[1510月2026 11:09:19.025] [Render thread/INFO] [xaero.hud.minimap.MinimapLogs/]: Xaero hud session finalized.
+[1510月2026 11:09:19.025] [Render thread/INFO] [xaero.map.WorldMap/]: Finalizing world map session...
+[1510月2026 11:09:19.049] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: DBVDeveloper lost connection: 连接中断
+[1510月2026 11:09:19.049] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: DBVDeveloper退出了游戏
+[1510月2026 11:09:19.057] [Server thread/INFO] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Stopping singleplayer server as player logged out
+[1510月2026 11:09:19.066] [Thread-6/INFO] [xaero.map.WorldMap/]: World map cleaned normally!
+[1510月2026 11:09:19.124] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[1510月2026 11:09:19.125] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[1510月2026 11:09:19.125] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[1510月2026 11:09:19.128] [Render thread/INFO] [xaero.map.WorldMap/]: World map session finalized.
+[1510月2026 11:09:19.145] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:overworld
+[1510月2026 11:09:19.145] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:overworld
+[1510月2026 11:09:19.155] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/create_abyss:abyss
+[1510月2026 11:09:19.156] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/create_abyss:abyss
+[1510月2026 11:09:19.163] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_nether
+[1510月2026 11:09:19.164] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_nether
+[1510月2026 11:09:19.170] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_end
+[1510月2026 11:09:19.171] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_end
+[1510月2026 11:09:19.182] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DBV-Angler-Acceptance7): All chunks are saved
+[1510月2026 11:09:19.183] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (abyss): All chunks are saved
+[1510月2026 11:09:19.183] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[1510月2026 11:09:19.183] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[1510月2026 11:09:19.183] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[1510月2026 11:09:19.197] [Server thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [Before Mods, data]
+[1510月2026 11:09:19.198] [Server thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [Internal, data]
+[1510月2026 11:09:19.198] [Server thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [Registries, data]
+[1510月2026 11:09:19.198] [Server thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [After Mods, data]
+[1510月2026 11:09:19.198] [Server thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [Last, data]
+[1510月2026 11:09:19.273] [Render thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [Before Mods, assets]
+[1510月2026 11:09:19.273] [Render thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [Internal, assets]
+[1510月2026 11:09:19.273] [Render thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [After Mods, assets]
+[1510月2026 11:09:19.273] [Render thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [Last, assets]

@@ -1,0 +1,17 @@
+[1510月2026 10:59:22.450] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS native infinite chunk 11,-4
+[1510月2026 10:59:22.452] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS native infinite chunk 11,-3
+[1510月2026 10:59:22.453] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS native infinite chunk 12,-4
+[1510月2026 10:59:22.453] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS native infinite chunk 12,-3
+[1510月2026 10:59:22.455] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS exact block boundaries
+[1510月2026 10:59:22.459] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS nether untouched
+[1510月2026 10:59:22.460] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS initialization is once-only, no refill
+[1510月2026 10:59:24.949] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS pipe reaches real bedrock
+[1510月2026 10:59:24.949] [Server thread/INFO] [KubeJS Server/]: DBV_OIL extracting through native Java probe
+[1510月2026 10:59:24.955] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS twenty real buckets through native extraction and capability
+[1510月2026 10:59:24.956] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS reserve unchanged after twenty buckets
+[1510月2026 10:59:24.957] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS neighbor finite oil still depletes
+[1510月2026 10:59:26.938] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS broken well pipe prevents extraction
+[1510月2026 10:59:26.940] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS marker re-run does not duplicate or rebuild
+[1510月2026 10:59:26.942] [Server thread/INFO] [KubeJS Server/]: DBV_OIL STATUS 起始岛油田：X176～207 / Z-64～-33；无限区块 4/4；标识 4/4。井口下方铺直管至基岩，动力和炼油设施由玩家建设。
+[1510月2026 10:59:27.063] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS save completed
+[1510月2026 10:59:27.065] [Server thread/INFO] [KubeJS Server/]: DBV_OIL ACCEPTANCE COMPLETE

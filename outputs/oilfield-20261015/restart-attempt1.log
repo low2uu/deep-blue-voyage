@@ -1,0 +1,3 @@
+[1510月2026 11:00:46.394] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS restart preserves all four infinite fields, finite neighbor, and once-only initialization
+[1510月2026 11:00:46.396] [Server thread/INFO] [KubeJS Server/]: DBV_OIL STATUS 起始岛油田：X176～207 / Z-64～-33；无限区块 4/4；标识 4/4。井口下方铺直管至基岩，动力和炼油设施由玩家建设。
+[1510月2026 11:00:46.408] [Server thread/ERROR] [KubeJS Server/]: DBV_OIL FAIL restart Error: status command failed

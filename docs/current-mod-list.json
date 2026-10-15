@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-14",
+  "checked_at": "2026-10-15",
   "target": "Minecraft 1.21.1 NeoForge / Java 21",
   "source_workbook": "用户提供的 MC客户端Mod清单.xlsx / Mod清单 / 111 行",
   "scope": "全清单保留静态核查；实际启用依赖以Gradle为准。本次六项辅助Mod及Cloth Config已通过正式客户端加载与进世界检查，未宣称所有功能与大型船体均已验收。",
@@ -472,14 +472,14 @@
       "selected_file": "createdieselgenerators-1.21.1-1.3.15.jar",
       "version": "1.21.1-1.3.15",
       "platform": "1.21.1 / NeoForge",
-      "readiness": "版本标签核对；整包待测",
-      "notes": " 与其他动力模组存在功能交集但不等于硬冲突；保留用户已批准项，后续统一供电、燃料及进度配方。",
+      "readiness": "客户端加载与原生抽油接口验收通过；整条炼油线及移动潜艇燃油系统待测",
+      "notes": "2026-10-15再次明确批准：启用柴油动力，起始岛四个指定区块为无限原油，设施由玩家搭建。未修改全局油量规则；版本及JAR证据见oilfield-mod-evidence.json。",
       "deps": "Create",
       "source": "https://modrinth.com/mod/create-diesel-generators",
       "evidence": "https://modrinth.com/mod/create-diesel-generators/version/UoPH8lO1",
       "slug": "create-diesel-generators",
       "sha1": "7f751dabfa83c141c1d13025cd16f06553ba459b",
-      "runtime_status": "未作为独立Gradle运行依赖启用（可能由其他Mod内置）"
+      "runtime_status": "已启用（Gradle直接运行依赖），1.21.1-1.3.15固定文件"
     },
     {
       "id": "U022",

@@ -9,12 +9,10 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -24,8 +22,7 @@ public final class CabinPanelBlock {
     private static final DeferredRegister<Item> ITEMS=DeferredRegister.create(Registries.ITEM,"dbv_world");
     public static final java.util.function.Supplier<Block> PANEL=BLOCKS.register("cabin_panel",()->new Block(BlockBehaviour.Properties.of().strength(2.5f).lightLevel(s->5)));
     public static final java.util.function.Supplier<Item> ITEM=ITEMS.register("cabin_panel",()->new BlockItem(PANEL.get(),new Item.Properties()));
-    public static void register(IEventBus bus){BLOCKS.register(bus);ITEMS.register(bus);bus.addListener(CabinPanelBlock::creative);NeoForge.EVENT_BUS.addListener(CabinPanelBlock::interact);}
-    private static void creative(BuildCreativeModeTabContentsEvent e){if(e.getTabKey()==CreativeModeTabs.FUNCTIONAL_BLOCKS)e.accept(ITEM.get());}
+    public static void register(IEventBus bus){BLOCKS.register(bus);ITEMS.register(bus);DbvCreativeTabs.register(bus);NeoForge.EVENT_BUS.addListener(CabinPanelBlock::interact);}
     private static void interact(PlayerInteractEvent.RightClickBlock e){
         if(e.getHand()!=InteractionHand.MAIN_HAND||!e.getLevel().getBlockState(e.getPos()).is(PANEL.get()))return;
         e.setCanceled(true);e.setCancellationResult(InteractionResult.SUCCESS);

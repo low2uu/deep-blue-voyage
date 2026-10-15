@@ -2,7 +2,13 @@
   "folders": [{"path": "."}],
   "settings": {
     "java.configuration.updateBuildConfiguration": "automatic",
-    "java.compile.nullAnalysis.mode": "automatic"
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.import.exclusions": ["**/node_modules/**", "**/.metadata/**", "**/archetype-resources/**", "**/META-INF/maven/**", "**/.local/**", "**/.gradle/**", "**/build/**", "**/runtime/**"],
+    "files.watcherExclude": {
+      "**/.local/**": true,
+      "**/.gradle/**": true,
+      "**/runtime/**": true
+    }
   },
   "extensions": {
     "recommendations": ["vscjava.vscode-java-pack", "vscjava.vscode-gradle"]

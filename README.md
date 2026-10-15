@@ -22,6 +22,8 @@
 
 临时建设设置集中在 `config/development-session.json`，不代表最终生存规则。当前只制作起始岛与简单近海，不预生成远海。
 
+已启用机械动力柴油动力，起始岛东侧提供32×32无限原油区；油田随起始岛存档加载初始化，抽油及炼油设施由玩家搭建。位置和建井要求见[无限油田交接说明](docs/game-mechanics/起始岛无限油田-starter-oilfield.md)。
+
 主潜艇系统已开始开发：当前支持三项潜艇资格检查、潜行右键船载电脑查看设备、管理员登记唯一主艇、独立身份档案和每秒船况观测，现已增加建设模式初始小艇生成及真实方块改装（物理船体拆解为世界方块，完成时检测并重新装配，失败／取消还原及方块阶段重启回滚），尚未开放生存改装及完整损毁恢复。操作见 [初始潜艇与改装流程](docs/development/初始潜艇与改装流程-starter-submarine-refit.md)。目录、命令、数据格式及验收记录见 [系统开发文档](docs/development/主潜艇系统开发文档-flagship-system-development.md)。
 
 已完成源码构建、客户端加载及起始岛建筑与环境初版：废旧工厂、温馨生活区、自然地形和128×128船坞，机器工位留空。进入方式、地图快照和最新验收结果见 [起始岛建设记录](docs/game-mechanics/起始岛建筑与环境初版-starter-island-built-v1.md)；早期检查见 [开发工程检查记录](docs/开发验证记录-development-verification.md)。潜艇与机器玩法仍待开发。
@@ -50,4 +52,4 @@
 
 已完成第一轮 [Mod 初筛表](docs/Mod初筛表-mod-candidates.md)：170 项候选，包含 161 个有 1.21.1 NeoForge 发布文件的模组项目和 9 个支持 1.21.1 的数据包。表内记录简介、版本、前置、来源及兼容性备注；[结构化目录](docs/mod-catalog.json) 与 [可筛选 Excel](outputs/mod-screening-20261013/深蓝远航-Mod初筛.xlsx) 同步保存。此阶段尚未进行整包运行验证。
 
-下一步先验证 Create、Sable、Create Aeronautics、Create Deep Seas 与交错电网的核心组合，再制作大型潜艇原型验证海洋地形尺度，最后扩展群系、Boss 与成长路线。
+目前已有可装配的[灯笼鱼型潜艇](docs/development/灯笼鱼型潜艇与操作说明-angler-submarine-and-operation.md)，支持柴油传动、四角压载、双桨、制氧和独立气闸布局；已验证装配、双桨换向和断岸供运行。旧存档须主动执行升级命令，不会自动覆盖主艇。另见[起始岛保护](docs/game-mechanics/起始岛保护-starter-island-protection.md)和[控制器深度与升降控制](docs/development/控制器深度与升降控制-controller-depth-and-ballast.md)。下一步继续完整海试、气闸水下往返及升降平衡调校，再扩展群系、Boss 与成长路线。

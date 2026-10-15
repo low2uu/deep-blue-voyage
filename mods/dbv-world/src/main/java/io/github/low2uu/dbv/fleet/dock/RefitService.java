@@ -86,6 +86,7 @@ public final class RefitService {
     public String execute(String action,ServerPlayer p,FleetModule m) throws IOException {
         if(legacy.active())return legacy.execute(action,p,m);
         authorize(p,m);
+        if(action.equals("angler"))return installAngler(p,m);
         if(action.equals("check"))return status();
         if(action.equals("begin")){if(active())throw new IllegalStateException("已有改装，请完成或取消");return begin(p,m);}
         if(journal==null)throw new IllegalStateException("请先开始改装");
@@ -102,6 +103,48 @@ public final class RefitService {
             }catch(IllegalArgumentException e){rollback(m,"rejected");return "验收失败，已恢复改装前船体："+e.getMessage();}
         }
         throw new IllegalArgumentException("未知改装操作");
+    }
+
+    /** Explicit template replacement, protected by the same original-vessel transaction backup. */
+    private String installAngler(ServerPlayer p,FleetModule m) throws IOException {
+        if(active())throw new IllegalStateException("请先完成或取消当前改装，再升级灯笼鱼型");
+        var plan=AnglerSubmarine.plan(); // Resolve every dependency before dismantling the old vessel.
+        var body=currentBody(m);if(body==null)throw new IllegalStateException("主艇未加载");
+        var carried=new ArrayList<net.minecraft.world.item.ItemStack>();
+        for(var holder:body.getPlot().getLoadedChunks()){
+            if(holder.getChunk()==null)throw new IllegalStateException("船体区块未加载，不能迁移存储");
+            for(var be:holder.getChunk().getBlockEntities().values()){
+                if(be instanceof net.minecraft.world.Container container){
+                    for(int i=0;i<container.getContainerSize();i++)if(!container.getItem(i).isEmpty())carried.add(container.getItem(i).copy());
+                }else{
+                    var items=server.overworld().getCapability(net.neoforged.neoforge.capabilities.Capabilities.ItemHandler.BLOCK,be.getBlockPos(),null);
+                    if(items!=null)for(int i=0;i<items.getSlots();i++)if(!items.getStackInSlot(i).isEmpty())carried.add(items.getStackInSlot(i).copy());
+                }
+            }
+        }
+        if(carried.size()>54)throw new IllegalStateException("旧艇物品超过新艇54个存储槽，请先整理；未开始替换");
+        var old=body.getPlot().getBoundingBox();
+        var oldTarget=new BoundingBox3i(PAD.getX(),PAD.getY(),PAD.getZ(),PAD.getX()+old.maxX()-old.minX(),PAD.getY()+old.maxY()-old.minY(),PAD.getZ()+old.maxZ()-old.minZ());
+        for(var pos:BlockPos.betweenClosed(AnglerSubmarine.MIN,AnglerSubmarine.MAX))
+            if(!server.overworld().getBlockState(pos).isAir())throw new IllegalStateException("蓝图泊位被占用："+pos.toShortString());
+        if(oldTarget.maxX()>AnglerSubmarine.MAX.getX()||oldTarget.maxY()>AnglerSubmarine.MAX.getY()||oldTarget.maxZ()>AnglerSubmarine.MAX.getZ())
+            throw new IllegalStateException("旧艇大于灯笼鱼模板，请手工改装，避免删除扩建");
+        begin(p,m);
+        // Record the whole replacement envelope before changing blocks, including disconnected devices.
+        journal.putLongArray("assembledBlocks",BlockPos.betweenClosedStream(AnglerSubmarine.MIN,AnglerSubmarine.MAX).mapToLong(BlockPos::asLong).toArray());
+        DockFiles.replace(file,journal);
+        for(var pos:positions(bounds()))server.overworld().setBlock(pos,Blocks.AIR.defaultBlockState(),2);
+        plan.forEach((pos,state)->server.overworld().setBlock(pos,state,2));
+        plan.forEach((pos,state)->server.overworld().updateNeighborsAt(pos,state.getBlock()));
+        AnglerSubmarine.provision(server.overworld());
+        int itemIndex=0;
+        for(var chestPos:List.of(new BlockPos(69,72,159),new BlockPos(69,72,160))){
+            var container=(net.minecraft.world.Container)server.overworld().getBlockEntity(chestPos);
+            for(int slot=0;slot<container.getContainerSize()&&itemIndex<carried.size();slot++)container.setItem(slot,carried.get(itemIndex++));
+            container.setChanged();
+        }
+        saveWorld();
+        return "灯笼鱼型已放入改装泊位，原艇与存储已备份，原物品已转入新艇箱子与木桶。检查布局后提交改装；取消可恢复原艇。";
     }
     private String begin(ServerPlayer p,FleetModule m) throws IOException {
         var body=currentBody(m);var b=body.getPlot().getBoundingBox();
@@ -201,7 +244,7 @@ public final class RefitService {
         ((ServerLevelPlot)body.getPlot()).kickAllEntities();
         if(!blocks.isEmpty())SubLevelAssemblyHelper.moveBlocks(level,transform,blocks);
         SubLevelAssemblyHelper.moveTrackingPoints(level,b,null,transform);
-        for(int i=0;i<blocks.size();i++)if(!level.getBlockState(transform.apply(blocks.get(i))).equals(states.get(i)))throw new IOException("拆解结果不完整，停止转换并保留备份");
+        for(int i=0;i<blocks.size();i++)if(!sameTransferredState(states.get(i),level.getBlockState(transform.apply(blocks.get(i)))))throw new IOException("拆解结果不完整，停止转换并保留备份："+blocks.get(i).toShortString()+" / 预期="+states.get(i)+" / 实际="+level.getBlockState(transform.apply(blocks.get(i))));
         dev.ryanhcode.sable.api.sublevel.SubLevelContainer.getContainer(level).removeSubLevel(body,dev.ryanhcode.sable.sublevel.storage.SubLevelRemovalReason.REMOVED);
     }
     private ServerSubLevel assemble(FleetModule m,boolean restored) throws IOException {
@@ -218,15 +261,30 @@ public final class RefitService {
             var plotOrigin=body.getPlot().getCenterBlock();
             for(int i=0;i<blocks.size();i++){
                 var target=plotOrigin.offset(blocks.get(i).subtract(PAD));
-                if(!level.getBlockState(blocks.get(i)).isAir()||!level.getBlockState(target).equals(states.get(i))
+                if(!level.getBlockState(blocks.get(i)).isAir()||!sameTransferredState(states.get(i),level.getBlockState(target))
                         ||states.get(i).hasBlockEntity()&&level.getBlockEntity(target)==null)
-                    throw new IOException("装配结果不完整，已保留原始备份和候选船体记录");
+                    throw new IOException("装配结果不完整，已保留原始备份和候选船体记录："+blocks.get(i).toShortString()+" / 预期="+states.get(i)+" / 实际="+level.getBlockState(target)+" / 原位="+level.getBlockState(blocks.get(i)));
             }
             var expected=m.registry().flagship().orElseThrow().bodyId();m.rebindForRefit(expected,body);
             m.starter().adoptRefitBody(body);m.starter().tick(m);
             saveWorld();setPhase(restored?"RESTORED":"VALIDATING");
             return body;
         }catch(IOException|RuntimeException e){blocked=true;throw e;}
+    }
+    private static boolean sameTransferredState(BlockState expected,BlockState actual){
+        if(expected.equals(actual))return true;
+        if(expected.getBlock()!=actual.getBlock())return false;
+        // Create recalculates pipe arms when moving into a plot. Arms are derived from neighbours,
+        // not inventory or orientation; still verify block identity, waterlogging and every other property.
+        String block=net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(expected.getBlock()).toString();
+        Set<String> arms=switch(block){
+            case "create:fluid_pipe" -> Set.of("north","south","east","west","up","down");
+            case "create:clutch", "create:gearshift" -> Set.of("powered");
+            default -> Set.of();
+        };
+        if(arms.isEmpty())return false;
+        for(var property:expected.getProperties())if(!arms.contains(property.getName())&&!expected.getValue(property).equals(actual.getValue(property)))return false;
+        return true;
     }
     private void restoreWorld() throws IOException {
         var level=server.overworld();var entries=journal.getList("original",Tag.TAG_COMPOUND);

@@ -1,0 +1,6 @@
+[1510月2026 10:52:38.397] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS native infinite chunk 11,-4
+[1510月2026 10:52:38.398] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS native infinite chunk 11,-3
+[1510月2026 10:52:38.399] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS native infinite chunk 12,-4
+[1510月2026 10:52:38.399] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS native infinite chunk 12,-3
+[1510月2026 10:52:38.401] [Server thread/INFO] [KubeJS Server/]: DBV_OIL PASS exact block boundaries
+[1510月2026 10:52:38.415] [Server thread/ERROR] [KubeJS Server/]: DBV_OIL FAIL TypeError: Cannot call property dimension in object ServerLevel[Deep Blue Voyage - Starter Submarine v2]. It is not a function, it is "object".

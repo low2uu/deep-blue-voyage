@@ -1,0 +1,436 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.2.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build
+> Task :createMinecraftArtifacts UP-TO-DATE
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :downloadAssets UP-TO-DATE
+> Task :writeClientLegacyClasspath UP-TO-DATE
+> Task :prepareClientRun UP-TO-DATE
+
+> Task :runClient
+WARN StatusConsoleListener Advanced terminal features are not available in this environment
+[11:43:41] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientdev, --version, 21.1.259, --assetIndex, 17, --assetsDir, E:\\mc\\project\\deep-blue-voyage\\.local\\gradle-home\\caches\\neoformruntime\\assets, --gameDir, ., --fml.fmlVersion, 4.0.45, --fml.mcVersion, 1.21.1, --fml.neoForgeVersion, 21.1.259, --fml.neoFormVersion, 20240808.144430, --username, DBVDeveloper]
+[11:43:41] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: JVM identified as Azul Systems, Inc. OpenJDK 64-Bit Server VM 21.0.3+9-LTS
+[11:43:41] [main/INFO] [cp.mo.mo.Launcher/MODLAUNCHER]: ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.3 by Azul Systems, Inc.; OS Windows 10 arch amd64 version 10.0
+[11:43:41] [main/INFO] [ne.ne.fm.lo.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[11:43:42] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[11:43:42] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
+[11:43:42] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/E:/mc/project/deep-blue-voyage/.local/gradle-home/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.16.4+mixin.0.8.7/26d01f0567ab46e9ca0d2ed89d0ecc11aadbd433/sponge-mixin-0.16.4+mixin.0.8.7.jar%23138!/ Service=ModLauncher Env=CLIENT
+[11:43:42] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 4070 Ti SUPER/PCIe/SSE2 GL version 4.6.0 NVIDIA 617.42, NVIDIA Corporation
+[11:43:43] [main/INFO] [ne.ne.fm.lo.mo.lo.JarInJarDependencyLocator/]: Found 25 dependencies adding them to mods collection
+[11:43:43] [main/INFO] [ne.ne.fm.lo.mo.ModDiscoverer/]:
+     Mod List:
+		Name Version (Mod Id)
+
+		Architectury 13.0.11 (architectury)
+		Better Advanced Tooltips 2101.1.0-build.1 (betteradvancedtooltips)
+		BetterF3 11.0.3 (betterf3)
+		Cloth Config v15 API 15.0.140 (cloth_config)
+		Create 6.0.10 (create)
+		Create Aeronautics 1.3.2 (aeronautics)
+		Create Aeronautics 1.3.2 (aeronautics_bundled)
+		Create Deep Seas 3.3.0 (create_submarine)
+		Create Diesel Generators 1.21.1-1.3.15 (createdieselgenerators)
+		Create Offroad 1.3.2 (offroad)
+		Create Simulated 1.3.2 (simulated)
+		Create: Power Grid 0.6.2 (powergrid)
+		Deep Blue Voyage World 0.1.0 (dbv_world)
+		Flywheel 1.0.6 (flywheel)
+		Fusion 1.2.12 (fusion)
+		Jade 15.10.6+neoforge (jade)
+		Jade Sable Compat 1.3.0 (sablejade)
+		Just Enough Items 19.51.0.418 (jei)
+		Just Enough Resources 1.6.0.17 (jeresources)
+		KubeJS 2101.7.2-build.377 (kubejs)
+		Lithostitched 1.4.8 (lithostitched)
+		Minecraft 1.21.1 (minecraft)
+		NeoForge 21.1.259 (neoforge)
+		Ponder 1.0.82+mc1.21.1 (ponder)
+		ProbeJS 8.0.3 (probejs)
+		Rhino 2101.2.8-build.91 (rhino)
+		Sable 2.0.6 (sable)
+		Sable Companion 1.6.0 (sablecompanion)
+		spark 1.10.124 (spark)
+		Veil 4.3.2 (veil)
+		WorldEdit 7.3.8+6939-7d32b45 (worldedit)
+		Xaero's Minimap 26.6.0 (xaerominimap)
+		Xaero's World Map 1.47.0 (xaeroworldmap)
+		XaeroLib 1.7.3 (xaerolib)
+[11:43:43] [main/INFO] [ne.ne.fm.lo.FMLServiceProvider/CORE]: Loading coremod script-engine for [xaerominimap, xaeroworldmap]
+[11:43:44] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[11:43:44] [main/INFO] [mixin/]: Compatibility level set to JAVA_18
+[11:43:44] [main/INFO] [mixin/]: Compatibility level set to JAVA_21
+[11:43:44] [main/INFO] [cp.mo.mo.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientdev' with arguments [--version, 21.1.259, --gameDir, ., --assetsDir, E:\mc\project\deep-blue-voyage\.local\gradle-home\caches\neoformruntime\assets, --assetIndex, 17, --username, DBVDeveloper]
+[11:43:44] [main/WARN] [mixin/]: Reference map 'lithostitched.refmap.json' for lithostitched.mixins.json could not be read. If this is a development environment you can ignore this message
+[11:43:44] [main/WARN] [mixin/]: Reference map 'aeronautics.refmap.json' for aeronautics.mixins.json could not be read. If this is a development environment you can ignore this message
+[11:43:44] [main/WARN] [mixin/]: Reference map 'xaerolib.refmap.json' for xaerolib.mixins.json could not be read. If this is a development environment you can ignore this message
+[11:43:44] [main/WARN] [mixin/]: Reference map 'ponder.refmap.json' for ponder-common.mixins.json could not be read. If this is a development environment you can ignore this message
+[11:43:44] [main/INFO] [de.ry.sa.mi.AbstractSableMixinPlugin/]: Using Vanilla renderer mixins
+[11:43:44] [main/INFO] [de.ry.sa.mi.AbstractSableMixinPlugin/]: Using Vanilla renderer mixins
+[11:43:44] [main/WARN] [mixin/]: Reference map 'xaerominimap.refmap.json' for xaerohud.mixins.json could not be read. If this is a development environment you can ignore this message
+[11:43:44] [main/WARN] [mixin/]: Reference map 'xaerominimap.refmap.json' for xaerominimap.mixins.json could not be read. If this is a development environment you can ignore this message
+[11:43:44] [main/WARN] [mixin/]: Reference map 'xaeroworldmap.refmap.json' for xaeroworldmap.mixins.json could not be read. If this is a development environment you can ignore this message
+[11:43:44] [main/WARN] [mixin/]: Reference map 'simulated.refmap.json' for simulated.mixins.json could not be read. If this is a development environment you can ignore this message
+[11:43:44] [main/WARN] [mixin/]: Reference map 'worldedit-neoforge.mixins.refmap.json' for worldedit-neoforge.mixins.json could not be read. If this is a development environment you can ignore this message
+[11:43:44] [main/WARN] [mixin/]: Reference map 'createdieselgenerators.refmap.json' for createdieselgenerators.mixins.json could not be read. If this is a development environment you can ignore this message
+[11:43:44] [main/WARN] [mixin/]: Reference map 'offroad.refmap.json' for offroad.mixins.json could not be read. If this is a development environment you can ignore this message
+[11:43:45] [main/WARN] [mixin/]: Error loading class: net/irisshaders/iris/pipeline/PipelineManager (java.lang.ClassNotFoundException: net.irisshaders.iris.pipeline.PipelineManager)
+[11:43:45] [main/WARN] [mixin/]: @Mixin target net.irisshaders.iris.pipeline.PipelineManager was not found veil.neoforge.mixins.json:client.perspective.iris.PipelineManagerMixin from mod veil
+[11:43:45] [main/WARN] [mixin/]: Error loading class: vectorwing/farmersdelight/common/block/entity/HeatableBlockEntity (java.lang.ClassNotFoundException: vectorwing.farmersdelight.common.block.entity.HeatableBlockEntity)
+[11:43:45] [main/WARN] [mixin/]: @Mixin target vectorwing.farmersdelight.common.block.entity.HeatableBlockEntity was not found powergrid-forge.mixins.json:HeatableBlockEntityMixin from mod powergrid
+[11:43:45] [main/WARN] [mixin/]: Error loading class: org/jetbrains/annotations/ApiStatus$ScheduledForRemoval (java.lang.ClassNotFoundException: org.jetbrains.annotations.ApiStatus$ScheduledForRemoval)
+[11:43:45] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.5).
+[11:43:46] [Datafixer Bootstrap/INFO] [mojang/DataFixerBuilder]: 229 Datafixer optimizations took 302 milliseconds
+[11:43:46] [main/WARN] [os.ut.pl.wi.WmiQueryHandler/]: COM exception querying Win32_Processor, which might not be on your system. Will not attempt to query it again. Error was -2147217405: (HRESULT: 80041003)
+[11:43:46] [main/WARN] [os.ut.pl.wi.WmiQueryHandler/]: COM exception querying Win32_Processor, which might not be on your system. Will not attempt to query it again. Error was -2147217405: (HRESULT: 80041003)
+[11:43:46] [main/WARN] [os.ut.pl.wi.WmiQueryHandler/]: COM exception querying Win32_PhysicalMemory, which might not be on your system. Will not attempt to query it again. Error was -2147217405: (HRESULT: 80041003)
+[11:43:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [give, targets, item] and [give, targets, tag] with inputs: [stick, minecraft:stick]
+[11:43:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[11:43:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[11:43:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[11:43:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[11:43:50] [main/WARN] [minecraft/Commands]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[11:43:50] [Render thread/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/E:/mc/project/deep-blue-voyage/mods/dbv-world/build/moddev/artifacts/neoforge-21.1.259.jar%23189!/assets/.mcassetsroot' uses unexpected schema
+[11:43:50] [Render thread/WARN] [minecraft/VanillaPackResourcesBuilder]: Assets URL 'union:/E:/mc/project/deep-blue-voyage/mods/dbv-world/build/moddev/artifacts/neoforge-21.1.259.jar%23189!/data/.mcassetsroot' uses unexpected schema
+[11:43:50] [Render thread/INFO] [mojang/YggdrasilAuthenticationService]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[11:43:50] [Render thread/INFO] [minecraft/Minecraft]: Setting user: DBVDeveloper
+[11:43:50] [Render thread/INFO] [minecraft/Minecraft]: Backend library: LWJGL version 3.3.3+5
+[11:43:51] [Render thread/WARN] [os.ut.pl.wi.WmiQueryHandler/]: COM exception querying Win32_Processor, which might not be on your system. Will not attempt to query it again. Error was -2147217405: (HRESULT: 80041003)
+[11:43:51] [Render thread/WARN] [os.ut.pl.wi.WmiQueryHandler/]: COM exception querying Win32_Processor, which might not be on your system. Will not attempt to query it again. Error was -2147217405: (HRESULT: 80041003)
+[11:43:51] [modloading-worker-0/INFO] [Veil/]: Veil is initializing.
+[11:43:51] [modloading-worker-0/INFO] [me.tr.be.BetterF3NeoForge/]: [BetterF3] Starting...
+[11:43:51] [modloading-worker-0/INFO] [me.tr.be.BetterF3NeoForge/]: [BetterF3] Loading...
+[11:43:51] [modloading-worker-0/INFO] [me.tr.be.BetterF3NeoForge/]: [BetterF3] All done!
+[11:43:51] [modloading-worker-0/INFO] [ne.ne.ne.co.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.259, for MC 1.21.1
+[11:43:51] [modloading-worker-0/INFO] [xa.hu.mi.MinimapLogs/]: Xaero's Minimap: World Map found!
+[11:43:51] [modloading-worker-0/INFO] [xa.hu.mi.MinimapLogs/]: No Optifine!
+[11:43:51] [modloading-worker-0/INFO] [xa.hu.mi.MinimapLogs/]: Xaero's Minimap: No Vivecraft!
+[11:43:51] [modloading-worker-0/INFO] [co.si.cr.Create/]: Create 6.0.10 initializing! Commit hash: ac0c444d9828da3453ae8cc65338e8de063286fb
+[11:43:51] [modloading-worker-0/INFO] [xa.co.HudMod/]: Registering common data for channel xaerominimap:main!
+[11:43:51] [modloading-worker-0/INFO] [or.pa.po.PowerGrid/]: Power grid starting, prepare to be electrocuted
+[11:43:51] [modloading-worker-0/ERROR] [or.pa.po.PowerGrid/]: Native backend failed to load. Accelerated solver will not be available!
+java.lang.UnsatisfiedLinkError: no powergridNative7 in java.library.path: F:\zulu21.34.19-ca-jdk21.0.3-win_x64\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell;C:\Users\10629\.codex\tmp\arg0\codex-arg02GQboi;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\libheif\libheif\bin;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\jxrlib\jxrlib\bin;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\poppler\Library\bin;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\bin\override;F:\zulu21.34.19-ca-jdk21.0.3-win_x64\bin;D:\python\python\Scripts\;D:\python\python\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;D:\harmonyOS\command-line-tools\bin;D:\harmonyOS\ohpm-repo-5.4.4.0\bin;F:\ce\ffmpeg-8.1-full_build\bin;C:\Program Files\usbipd-win\;C:\Program Files\WSL\;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell;C:\Users\10629\AppData\Local\Microsoft\WindowsApps;D:\python\pycharm\PyCharm Community Edition 2024.2\bin;C:\Users\10629\AppData\Local\GitHubDesktop\bin;%DevEco Studio%;E:\DevTools\VSCode\bin;E:\DevTools\msys64\ucrt64\bin;F:\soft\pycham\PyCharm 2026.2.2\bin;C:\Users\10629\AppData\Local\Microsoft\WinGet\Packages\GitHub.cli_Microsoft.Winget.Source_8wekyb3d8bbwe\bin;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\bin\fallback;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin;C:\Users\10629\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\cmd;C:\Users\10629\AppData\Local\OpenAI\Codex\bin\9a7ba4b9ea0c44a3;C:\Users\10629\AppData\Local\OpenAI\Codex\bin\2e5e00daee91c61d;.
+	at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2458) ~[?:?] {}
+	at java.base/java.lang.Runtime.loadLibrary0(Runtime.java:916) ~[?:?] {}
+	at java.base/java.lang.System.loadLibrary(System.java:2063) ~[?:?] {}
+	at TRANSFORMER/powergrid@0.6.2/org.patryk3211.powergrid.electricity.sim.solver.NativeMNA.tryLoad(NativeMNA.java:69) ~[power-grid-jCkPHjmP.jar%23198!/:?] {re:classloading}
+	at TRANSFORMER/powergrid@0.6.2/org.patryk3211.powergrid.PowerGrid.init(PowerGrid.java:87) ~[power-grid-jCkPHjmP.jar%23198!/:?] {re:classloading}
+	at TRANSFORMER/powergrid@0.6.2/org.patryk3211.powergrid.forge.PowerGridImpl.<init>(PowerGridImpl.java:120) ~[power-grid-jCkPHjmP.jar%23198!/:?] {re:classloading}
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?] {}
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?] {}
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.45/net.neoforged.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:122) ~[loader-4.0.45.jar%23146!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.45/net.neoforged.fml.ModLoader.lambda$constructMods$3(ModLoader.java:153) ~[loader-4.0.45.jar%23146!/:4.0] {re:mixin}
+	at MC-BOOTSTRAP/fml_loader@4.0.45/net.neoforged.fml.ModLoader.lambda$dispatchParallelTask$7(ModLoader.java:231) ~[loader-4.0.45.jar%23146!/:4.0] {re:mixin}
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934) [?:?] {}
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911) [?:?] {}
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?] {}
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?] {re:computing_frames}
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?] {re:computing_frames}
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?] {}
+[11:43:51] [modloading-worker-0/INFO] [xa.co.HudMod/]: Registering client data for channel xaerominimap:main!
+[11:43:51] [modloading-worker-0/INFO] [me.je.li.lo.PluginCaller/]: Sending ConfigManager...
+[11:43:51] [modloading-worker-0/INFO] [me.je.li.lo.PluginCaller/]: Sending ConfigManager took 3.405 milliseconds
+[11:43:51] [modloading-worker-0/INFO] [xa.co.HudMod/]: Loading primary common config for channel xaerominimap:main!
+[11:43:51] [modloading-worker-0/INFO] [xa.co.HudMod/]: Loading server config profiles for channel xaerominimap:main!
+[11:43:51] [modloading-worker-0/INFO] [xa.co.HudMod/]: Loading primary client config for channel xaerominimap:main!
+[11:43:51] [modloading-worker-0/INFO] [xa.co.HudMod/]: Loading client config profiles for channel xaerominimap:main!
+[11:43:51] [modloading-worker-0/INFO] [xa.ma.WorldMap/]: Registering common data for channel xaeroworldmap:main!
+[11:43:51] [modloading-worker-0/INFO] [xa.ma.WorldMap/]: Registering client data for channel xaeroworldmap:main!
+[11:43:51] [modloading-worker-0/INFO] [xa.ma.WorldMap/]: Loading primary common config for channel xaeroworldmap:main!
+[11:43:51] [modloading-worker-0/INFO] [xa.ma.WorldMap/]: Loading server config profiles for channel xaeroworldmap:main!
+[11:43:51] [modloading-worker-0/INFO] [xa.ma.WorldMap/]: Loading primary client config for channel xaeroworldmap:main!
+[11:43:51] [modloading-worker-0/INFO] [xa.ma.WorldMap/]: Loading client config profiles for channel xaeroworldmap:main!
+[11:43:51] [modloading-worker-0/INFO] [xa.li.XaeroLib/]: Registering common data for channel xaerolib:main!
+[11:43:51] [modloading-worker-0/INFO] [xa.li.XaeroLib/]: Registering client data for channel xaerolib:main!
+[11:43:51] [modloading-worker-0/INFO] [xa.li.XaeroLib/]: Loading primary common config for channel xaerolib:main!
+[11:43:51] [modloading-worker-0/INFO] [xa.li.XaeroLib/]: Loading server config profiles for channel xaerolib:main!
+[11:43:51] [modloading-worker-0/INFO] [KubeJS Startup/]: Capturing errors for startup scripts enabled
+[11:43:51] [modloading-worker-0/INFO] [KubeJS Client/]: Capturing errors for client scripts enabled
+[11:43:51] [modloading-worker-0/INFO] [KubeJS/]: Loading vanilla registries...
+[11:43:51] [modloading-worker-0/INFO] [xa.li.XaeroLib/]: Loading primary client config for channel xaerolib:main!
+[11:43:51] [modloading-worker-0/INFO] [xa.li.XaeroLib/]: Loading client config profiles for channel xaerolib:main!
+[11:43:51] [modloading-worker-0/INFO] [KubeJS/]: Looking for KubeJS plugins...
+[11:43:51] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source kubejs
+[11:43:51] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source createdieselgenerators
+[11:43:51] [modloading-worker-0/INFO] [KubeJS/]: Found plugin source probejs
+[11:43:51] [modloading-worker-0/INFO] [KubeJS/]: Done in 46.59 ms
+[11:43:52] [modloading-worker-0/INFO] [KubeJS Startup/]: startup_scripts:main.js#2: Hello, World! (Loaded startup example script)
+[11:43:52] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded script startup_scripts:main.js in 0.036 s
+[11:43:52] [modloading-worker-0/INFO] [KubeJS Startup/]: Loaded 1/1 KubeJS startup scripts in 0.512 s with 0 errors and 0 warnings
+[11:43:52] [modloading-worker-0/INFO] [KubeJS Client/]: client_scripts:angler-client.js#2: Loaded Java class 'net.neoforged.neoforge.client.event.ClientTickEvent$Post'
+[11:43:52] [modloading-worker-0/INFO] [KubeJS Client/]: Loaded script client_scripts:angler-client.js in 0.017 s
+[11:43:52] [modloading-worker-0/INFO] [KubeJS Client/]: Loaded 1/1 KubeJS client scripts in 0.028 s with 0 errors and 0 warnings
+[11:43:52] [modloading-worker-0/INFO] [KubeJS Startup/]: Validated 0 files in kubejs/assets/ in 0ms
+[11:43:52] [modloading-worker-0/INFO] [KubeJS Startup/]: Validated 0 files in kubejs/data/ in 0ms
+[11:43:53] [modloading-worker-0/INFO] [de.ry.sa.Sable/]: Sable loaded!
+[11:43:53] [modloading-worker-0/WARN] [de.ry.sa.Sable/]: NOTE: Sable is loaded with Flywheel. Sable contains extensive shader overrides and a full light-storage replacement. Expect this to cause compatibility issues. If issues arise, please report them to the Sable issue tracker (https://github.com/ryanhcode/sable/issues) instead of the Flywheel issue tracker.
+[11:43:53] [modloading-worker-0/INFO] [de.mg.sa.SableJadeMod/]: Loading sablejade
+[11:43:53] [modloading-worker-0/INFO] [io.gi.lo.db.wo.DeepBlueVoyageWorld/]: Deep Blue Voyage world module loaded; starter island preset registered.
+[11:43:54] [Render thread/INFO] [Veil/]: GL Debug supported
+[11:43:54] [Render thread/INFO] [ne.ne.ne.ga.GameTestHooks/]: Enabled Gametest Namespaces: []
+[11:43:55] [Render thread/INFO] [KubeJS/]: Loaded 40 asset packs: vanilla, KubeJS Virtual Resource Pack [Before Mods, assets], mod_resources, mod/rhino, mod/jade, mod/jei, mod/lithostitched, mod/aeronautics, mod/xaerolib, mod/aeronautics_bundled, mod/spark, mod/flywheel, mod/ponder, mod/sablecompanion, mod/create, mod/sable, mod/xaerominimap, mod/xaeroworldmap, mod/neoforge, mod/kubejs, mod/veil, mod/simulated, mod/worldedit, mod/betteradvancedtooltips, mod/createdieselgenerators, mod/create_submarine,create_abyss,create_high_seas, mod/dbv_world, mod/architectury, mod/powergrid, mod/fusion, mod/betterf3, mod/jeresources, mod/cloth_config, mod/probejs, mod/sablejade, mod/offroad, KubeJS Virtual Resource Pack [Internal, assets], KubeJS Virtual Resource Pack [After Mods, assets], KubeJS File Resource Pack [assets], KubeJS Virtual Resource Pack [Last, assets]
+[11:43:55] [Render thread/INFO] [minecraft/ReloadableResourceManager]: Reloading ResourceManager: vanilla, KubeJS Virtual Resource Pack [Before Mods, assets], mod_resources, mod/rhino, mod/jade, mod/jei, mod/lithostitched, mod/aeronautics, mod/xaerolib, mod/aeronautics_bundled, mod/spark, mod/flywheel, mod/ponder, mod/sablecompanion, mod/create, mod/sable, mod/xaerominimap, mod/xaeroworldmap, mod/neoforge, mod/kubejs, mod/veil, mod/simulated, mod/worldedit, mod/betteradvancedtooltips, mod/createdieselgenerators, mod/create_submarine,create_abyss,create_high_seas, mod/dbv_world, mod/architectury, mod/powergrid, mod/fusion, mod/betterf3, mod/jeresources, mod/cloth_config, mod/probejs, mod/sablejade, mod/offroad, KubeJS Virtual Resource Pack [Internal, assets], KubeJS Virtual Resource Pack [After Mods, assets], KubeJS File Resource Pack [assets], KubeJS Virtual Resource Pack [Last, assets]
+[11:43:55] [Worker-Main-4/INFO] [xa.li.XaeroLib/]: Loading XaeroLib common 1/2!
+[11:43:55] [NeoForge Version Check/INFO] [ne.ne.fm.VersionChecker/]: [create] Starting version check at https://api.modrinth.com/updates/create/forge_updates.json?neoforge=only
+[11:43:55] [Worker-Main-16/INFO] [minecraft/UnihexProvider]: Found unifont_all_no_pua-15.1.05.hex, loading
+[11:43:55] [Worker-Main-12/INFO] [minecraft/UnihexProvider]: Found unifont_jp_patch-15.1.05.hex, loading
+[11:43:55] [Render thread/INFO] [KubeJS Client/]: Client resource reload complete!
+[11:43:55] [Worker-Main-1/WARN] [minecraft/SpriteLoader]: Texture create_submarine:block/rockcutting_base with size 51x84 limits mip level from 4 to 0
+[11:43:56] [NeoForge Version Check/INFO] [ne.ne.fm.VersionChecker/]: [create] Found status: OUTDATED Current: 6.0.10 Target: 6.0.10+mc1.21.1
+[11:43:56] [NeoForge Version Check/INFO] [ne.ne.fm.VersionChecker/]: [betterf3] Starting version check at https://api.modrinth.com/updates/betterf3/forge_updates.json
+[11:43:56] [Worker-Main-9/INFO] [co.sk.wo.ex.pl.PlatformManager/]: Got request to register class com.sk89q.worldedit.neoforge.NeoForgePlatform with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@45125db5]
+[11:43:56] [Worker-Main-9/INFO] [co.sk.wo.ne.NeoForgeWorldEdit/]: WorldEdit for NeoForge (version 7.3.8+6939-7d32b45) is loaded
+[11:43:56] [Worker-Main-1/INFO] [xa.mi.XaeroMinimap/]: Loading Xaero's Minimap - Stage 1/2
+[11:43:56] [Worker-Main-26/INFO] [xa.ma.WorldMap/]: Loading Xaero's World Map - Stage 1/2
+[11:43:56] [Worker-Main-25/INFO] [xa.li.XaeroLib/]: Loading XaeroLib client 1/2!
+[11:43:56] [NeoForge Version Check/INFO] [ne.ne.fm.VersionChecker/]: [betterf3] Found status: UP_TO_DATE Current: 11.0.3 Target: null
+[11:43:57] [Worker-Main-25/WARN] [xa.li.XaeroLib/]: io exception while checking patreon: Read timed out
+[11:43:57] [Render thread/INFO] [KubeJS/]: Started the local web server at http://localhost:61423
+[11:43:57] [Render thread/INFO] [xa.ma.WorldMap/]: Loading Xaero's World Map - Stage 2/2
+[11:43:57] [Render thread/INFO] [xa.ma.WorldMap/]: New world map region cache hash code: 631281423
+[11:43:58] [Render thread/ERROR] [xa.ma.WorldMap/]: io exception while checking versions: Online mod data expired! Date: Wed Oct 07 18:36:48 CST 2026
+[11:43:58] [Render thread/INFO] [xa.ma.WorldMap/]: Registered player tracker system: map_synced
+[11:43:58] [Render thread/INFO] [xa.ma.WorldMap/]: Xaero's WorldMap Mod: Xaero's minimap found!
+[11:43:58] [Render thread/INFO] [xa.ma.WorldMap/]: Registered player tracker system: minimap_synced
+[11:43:58] [Render thread/INFO] [xa.ma.WorldMap/]: No Optifine!
+[11:43:58] [Render thread/INFO] [xa.ma.WorldMap/]: Xaero's World Map: No Vivecraft!
+[11:43:59] [Render thread/WARN] [ne.ne.fm.DeferredWorkQueue/LOADING]: Mod 'xaeroworldmap' took 1.648 s to run a deferred task.
+[11:43:59] [Render thread/INFO] [xa.mi.XaeroMinimap/]: Loading Xaero's Minimap - Stage 2/2
+[11:44:00] [Render thread/WARN] [xa.hu.mi.MinimapLogs/]: io exception while checking versions: Online mod data expired! Date: Wed Oct 07 18:36:48 CST 2026
+[11:44:00] [Render thread/INFO] [xa.hu.mi.MinimapLogs/]: Registered player tracker system: minimap_synced
+[11:44:00] [Render thread/WARN] [ne.ne.fm.DeferredWorkQueue/LOADING]: Mod 'xaerominimap' took 1.629 s to run a deferred task.
+[11:44:00] [Render thread/INFO] [xa.li.XaeroLib/]: Loading XaeroLib common 2/2!
+[11:44:00] [Render thread/INFO] [xa.li.XaeroLib/]: Loading XaeroLib client 2/2!
+[11:44:00] [Render thread/INFO] [Veil/]: Loaded 0 shader redirects, 0 replacements
+[11:44:01] [Render thread/INFO] [Veil/]: Loaded 30 shaders from: pinwheel/shaders/program
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Start loading plugin from snownee.jade.addon.vanilla.VanillaPlugin
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Bootstrapped plugin from snownee.jade.addon.vanilla.VanillaPlugin in 22.27 ms
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Loaded plugin from snownee.jade.addon.vanilla.VanillaPlugin in 26.37 ms
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Start loading plugin from snownee.jade.addon.universal.UniversalPlugin
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Bootstrapped plugin from snownee.jade.addon.universal.UniversalPlugin in 3.419 ms
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Loaded plugin from snownee.jade.addon.universal.UniversalPlugin in 3.891 ms
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Start loading plugin from snownee.jade.addon.debug.DebugPlugin
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Bootstrapped plugin from snownee.jade.addon.debug.DebugPlugin in 2.180 ms
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Loaded plugin from snownee.jade.addon.debug.DebugPlugin in 2.373 ms
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Start loading plugin from snownee.jade.addon.core.CorePlugin
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Bootstrapped plugin from snownee.jade.addon.core.CorePlugin in 4.070 ms
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Loaded plugin from snownee.jade.addon.core.CorePlugin in 4.390 ms
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Start loading plugin from snownee.jade.addon.access.AccessibilityPlugin
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Bootstrapped plugin from snownee.jade.addon.access.AccessibilityPlugin in 1.769 ms
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Loaded plugin from snownee.jade.addon.access.AccessibilityPlugin in 1.945 ms
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Start loading plugin from dev.mgcode.sablejade.SableJadePlugin
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Bootstrapped plugin from dev.mgcode.sablejade.SableJadePlugin in 1.399 ms
+[11:44:01] [Worker-Main-21/INFO] [sn.ja.Jade/]: Loaded plugin from dev.mgcode.sablejade.SableJadePlugin in 1.577 ms
+[11:44:01] [Worker-Main-9/INFO] [PonderIndex/]: Registering Ponder Scenes took 98.54 ms
+[11:44:01] [Worker-Main-9/INFO] [PonderIndex/]: Registering Ponder Tags took 4.394 ms
+[11:44:01] [Render thread/INFO] [KubeJS Startup/]: Capturing errors for startup scripts disabled
+[11:44:01] [Render thread/INFO] [KubeJS Client/]: Capturing errors for client scripts disabled
+[11:44:01] [Render thread/WARN] [minecraft/SoundEngine]: Missing sound for event: minecraft:item.goat_horn.play
+[11:44:01] [Render thread/WARN] [minecraft/SoundEngine]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[11:44:01] [Render thread/INFO] [mojang/Library]: OpenAL initialized on device OpenAL Soft on 扬声器 (AB13X USB Audio)
+[11:44:01] [Render thread/INFO] [minecraft/SoundEngine]: Sound engine started
+[11:44:01] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 2048x2048x4 minecraft:textures/atlas/blocks.png-atlas
+[11:44:01] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[11:44:01] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[11:44:01] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[11:44:01] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 2048x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[11:44:01] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[11:44:01] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[11:44:01] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[11:44:01] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[11:44:01] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x512x0 minecraft:textures/atlas/particles.png-atlas
+[11:44:01] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[11:44:01] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[11:44:01] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[11:44:01] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[11:44:01] [Render thread/WARN] [minecraft/ShaderInstance]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[11:44:02] [Render thread/INFO] [minecraft/TextureAtlas]: Created: 256x256x0 jei:textures/atlas/gui.png-atlas
+[11:44:02] [Render thread/INFO] [xa.li.XaeroLib/]: Successfully reloaded the XaeroLib shaders!
+[11:44:02] [Render thread/INFO] [Veil/]: Compiled 59 vanilla shaders in 153.9 ms
+[11:44:02] [Render thread/INFO] [flywheel/backend/shaders/]: Loaded 77 shader sources in 21.718 ms
+[11:44:02] [Render thread/INFO] [co.si.cr.Create/]: Loaded 58 train hat configurations.
+[11:44:02] [Render thread/INFO] [ne.ne.ne.cl.en.an.js.AnimationLoader/]: Loaded 0 entity animations
+[11:44:02] [Render thread/INFO] [Veil/]: Loaded 3 framebuffers
+[11:44:02] [Render thread/INFO] [Veil/]: Loaded 6 post pipelines
+[11:44:02] [Render thread/INFO] [Veil/]: Loaded 4 render types
+[11:44:02] [Render thread/INFO] [Veil/]: Enabled bloom pipeline
+[11:44:02] [Render thread/INFO] [Veil/]: Loaded 0 quasar particles
+[11:44:02] [Render thread/INFO] [Veil/]: Loaded 0 templates
+[11:44:02] [Render thread/INFO] [Veil/]: Loaded 0 modules
+[11:44:02] [Render thread/INFO] [KubeJS Client/]: Loaded Java class 'net.minecraft.client.Minecraft'
+[11:44:02] [Render thread/INFO] [co.si.cr.Create/]: Created 157 recipes which will be injected into the game
+[11:44:02] [Render thread/INFO] [co.si.cr.Create/]: Created 0 tags which will be injected into the game
+[11:44:02] [Render thread/INFO] [KubeJS Server/]: Capturing errors for server scripts enabled
+[11:44:02] [Render thread/INFO] [KubeJS Server/]: Loaded script server_scripts:angler-server.js in 0.006 s
+[11:44:02] [Render thread/INFO] [KubeJS Server/]: Loaded script server_scripts:protection-server.js in 0.002 s
+[11:44:02] [Render thread/INFO] [KubeJS Server/]: Loaded 2/2 KubeJS server scripts in 0.031 s with 0 errors and 0 warnings
+[11:44:02] [Render thread/INFO] [KubeJS/]: Loaded 42 data packs: create:dynamic_data, vanilla, KubeJS Virtual Resource Pack [Before Mods, data], mod_data, mod/rhino, mod/jade, mod/jei, mod/lithostitched, mod/aeronautics, mod/xaerolib, mod/aeronautics_bundled, mod/spark, mod/flywheel, mod/ponder, mod/sablecompanion, mod/create, mod/sable, mod/xaerominimap, mod/xaeroworldmap, mod/neoforge, mod/kubejs, mod/veil, mod/simulated, mod/worldedit, mod/betteradvancedtooltips, mod/createdieselgenerators, mod/create_submarine,create_abyss,create_high_seas, mod/dbv_world, mod/architectury, mod/powergrid, mod/fusion, mod/betterf3, mod/jeresources, mod/cloth_config, mod/probejs, mod/sablejade, KubeJS Virtual Resource Pack [Internal, data], KubeJS Virtual Resource Pack [Registries, data], KubeJS Virtual Resource Pack [After Mods, data], KubeJS File Resource Pack [data], mod/offroad, KubeJS Virtual Resource Pack [Last, data]
+[11:44:02] [Worker-Main-16/ERROR] [minecraft/LootDataType]: Couldn't parse element ResourceKey[minecraft:root / minecraft:loot_table]:createdieselgenerators:blocks/andesite_girder_strut - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: createdieselgenerators:andesite_girder_strut
+[11:44:02] [Worker-Main-16/INFO] [co.sk.wo.ex.pl.PlatformCommandManager/]: Registering commands with com.sk89q.worldedit.neoforge.NeoForgePlatform
+[11:44:03] [Render thread/INFO] [minecraft/RecipeManager]: Loaded 3205 recipes
+[11:44:03] [Render thread/INFO] [minecraft/AdvancementTree]: Loaded 2737 advancements
+[11:44:04] [Render thread/INFO] [sn.ja.Jade/]: LootTableMineableCollector took 4.642 ms
+[11:44:04] [Server thread/INFO] [minecraft/IntegratedServer]: Starting integrated minecraft server version 1.21.1
+[11:44:04] [Server thread/INFO] [minecraft/MinecraftServer]: Generating keypair
+[11:44:04] [Server thread/INFO] [spark/]: Starting background profiler...
+[11:44:04] [Server thread/INFO] [spark/]: The async-profiler engine is not supported for your os/arch (windows10/amd64), so the built-in Java engine will be used instead.
+[11:44:04] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:overworld] using RapierPhysicsPipelineProvider
+[11:44:04] [Server thread/INFO] [de.ry.sa.Sable/]: Using game directory relative Sable Rapier native directory E:\mc\project\deep-blue-voyage\.local\angler-client\.sable\natives
+[2026-10-15T03:44:04.612190800Z] [[32mINFO[0m] (sable_rapier) Rapier scene initialized
+[11:44:04] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:the_end] using RapierPhysicsPipelineProvider
+[2026-10-15T03:44:04.747826200Z] [[32mINFO[0m] (sable_rapier) Rapier scene initialized
+[11:44:04] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:the_nether] using RapierPhysicsPipelineProvider
+[2026-10-15T03:44:04.773007700Z] [[32mINFO[0m] (sable_rapier) Rapier scene initialized
+[11:44:04] [Server thread/INFO] [de.ry.sa.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / create_abyss:abyss] using RapierPhysicsPipelineProvider
+[2026-10-15T03:44:04.785226600Z] [[32mINFO[0m] (sable_rapier) Rapier scene initialized
+[11:44:04] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing start region for dimension minecraft:overworld
+[11:44:04] [Server thread/INFO] [KubeJS Server/]: Capturing errors for server scripts disabled
+[11:44:04] [Server thread/INFO] [KubeJS Server/]: Server resource reload complete!
+[11:44:04] [Server thread/INFO] [ne.ne.ne.se.pe.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[11:44:04] [progressListener/INFO] [minecraft/LoggerChunkProgressListener]: Time elapsed: 0 ms
+[11:44:05] [Server thread/INFO] [io.gi.lo.db.wo.ConstructionMode/]: DBV construction mode active: spawning disabled, spawn chunk radius 0; original rules preserved.
+[11:44:05] [Server thread/INFO] [minecraft/IntegratedServer]: Changing view distance to 6, from 10
+[11:44:05] [Server thread/INFO] [minecraft/IntegratedServer]: Changing simulation distance to 5, from 0
+[11:44:05] [Render thread/INFO] [de.ry.sa.Sable/]: Adding local UDP server channel future
+[11:44:05] [Render thread/WARN] [io.ne.bo.Bootstrap/]: Unknown channel option 'SO_BROADCAST' for channel '[id: 0x38c8b3d0]'
+[11:44:05] [Netty Server IO #1/INFO] [de.ry.sa.Sable/]: Server UDP channel active
+[11:44:05] [Render thread/INFO] [de.ry.sa.Sable/]: Starting local client UDP channel future
+[11:44:05] [Netty Local Client IO #1/INFO] [de.ry.sa.Sable/]: Client UDP channel active
+[11:44:06] [Render thread/INFO] [Veil/]: Finished uploading vanilla shaders
+[11:44:06] [Render thread/INFO] [co.si.cr.Create/]: Created 157 recipes which will be injected into the game
+[11:44:06] [Render thread/INFO] [co.si.cr.Create/]: Created 0 tags which will be injected into the game
+[11:44:06] [Server thread/INFO] [minecraft/PlayerList]: DBVDeveloper[local:E:9f4732d1] logged in with entity id 1 at (67.0, 80.0, 158.0)
+[11:44:06] [Server thread/INFO] [de.ry.sa.Sable/]: Beginning attempted authentication with player DBVDeveloper
+[11:44:06] [Server thread/INFO] [minecraft/MinecraftServer]: DBVDeveloper加入了游戏
+[11:44:06] [Render thread/INFO] [xa.hu.mi.MinimapLogs/]: Minimap required item set to nothing.
+[11:44:06] [Render thread/INFO] [xa.hu.mi.MinimapLogs/]: New Xaero hud session initialized!
+[11:44:06] [Server thread/INFO] [KubeJS Server/]: Loaded Java class 'net.minecraft.world.level.storage.LevelResource'
+[11:44:06] [Render thread/INFO] [xa.ma.WorldMap/]: Fullscreen map required item set to nothing.
+[11:44:06] [Render thread/INFO] [xa.ma.WorldMap/]: New world map session initialized!
+[11:44:06] [Render thread/WARN] [mixin/]: Method overwrite conflict for getChunks in sable.mixins.json:loaded_chunk_debug.ClientChunkCacheStorageAccessor from mod sable, previously written by me.cominixo.betterf3.mixin.chunk.ClientChunkMapMixin. Skipping method.
+[11:44:06] [Server thread/INFO] [io.gi.lo.db.fl.FleetModule/]: DBV flagship state: NOT_LOADED (未找到已加载载体；不等于损毁，不允许重新登记)
+[11:44:06] [Render thread/INFO] [flywheel/]: Started 10 worker threads
+[11:44:06] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Starting JEI...
+[11:44:06] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Configuring JEI...
+[11:44:06] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Configuring JEI took 1.302 milliseconds
+[11:44:06] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering item subtypes...
+[11:44:06] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering item subtypes took 10.61 milliseconds
+[11:44:06] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering fluid subtypes...
+[11:44:06] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering fluid subtypes took 2.522 milliseconds
+[11:44:06] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering ingredients...
+[11:44:07] [Render thread/WARN] [me.je.li.pl.va.in.ItemStackListFactory/]: Item Group has no display items and no search tab display items. Items from this group will be missing from the JEI ingredient list. K.KubeJS
+[11:44:07] [Render thread/WARN] [me.je.li.pl.va.in.ItemStackListFactory/]: 1 duplicate items were found in '机械动力：柴油动力' creative tab's: displayItems
+This may indicate that these types of item need a subtype interpreter added to JEI:
+[createdieselgenerators:track_layers_bag]
+[11:44:07] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering ingredients: jei:minecraft took 178.5 milliseconds
+[11:44:07] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering ingredients took 179.3 milliseconds
+[11:44:07] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering extra ingredients...
+[11:44:07] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering extra ingredients took 4.970 milliseconds
+[11:44:07] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering search ingredient aliases...
+[11:44:07] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering search ingredient aliases took 677.1 microseconds
+[11:44:07] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering Mod Info...
+[11:44:07] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering Mod Info took 831.3 microseconds
+[11:44:07] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering advanced search...
+[11:44:07] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering advanced search took 298.1 microseconds
+[11:44:07] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering categories...
+[11:44:07] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering categories: jei:minecraft took 41.14 milliseconds
+[11:44:07] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering categories: create:jei_plugin took 95.49 milliseconds
+[11:44:07] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering categories: createdieselgenerators:jei_plugin took 24.57 milliseconds
+[11:44:07] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering categories: powergrid:jei took 16.72 milliseconds
+[11:44:07] [Server thread/INFO] [io.gi.lo.db.fl.FleetModule/]: DBV flagship state: ACTIVE (Sable已加载；深度以中央控制器为基准，压力状态取自Deep Seas)
+[11:44:08] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering categories: jeresources:minecraft took 1.071 seconds
+[11:44:08] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering categories took 1.258 seconds
+[11:44:08] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering vanilla category extensions...
+[11:44:08] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering vanilla category extensions took 5.910 milliseconds
+[11:44:08] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering recipe catalysts...
+[11:44:08] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering recipe catalysts took 1.943 milliseconds
+[11:44:08] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building recipe registry...
+[11:44:08] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building recipe registry took 11.46 milliseconds
+[11:44:08] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering advanced plugins...
+[11:44:08] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering advanced plugins took 189.5 microseconds
+[11:44:08] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering recipes...
+[11:44:08] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering recipes: jei:minecraft took 251.4 milliseconds
+[11:44:08] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering recipes: create:jei_plugin took 97.89 milliseconds
+[11:44:09] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering recipes: jeresources:minecraft took 151.9 milliseconds
+[11:44:09] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering recipes: jei:internal took 26.91 milliseconds
+[11:44:09] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering recipes took 535.2 milliseconds
+[11:44:09] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering recipes transfer handlers...
+[11:44:09] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering recipes transfer handlers took 3.431 milliseconds
+[11:44:09] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building runtime...
+[11:44:09] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering gui handlers...
+[11:44:09] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering gui handlers took 7.111 milliseconds
+[11:44:09] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering Runtime...
+[11:44:09] [Render thread/INFO] [me.je.gu.st.JeiGuiStarter/]: Starting JEI GUI
+[11:44:09] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building ingredient list...
+[11:44:09] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building ingredient list took 14.14 milliseconds
+[11:44:09] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building ingredient filter...
+[11:44:09] [Server thread/INFO] [KubeJS Server/]: Loaded Java class 'net.minecraft.core.BlockPos'
+[11:44:09] [Server thread/INFO] [KubeJS Server/]: Loaded Java class 'net.minecraft.world.level.GameType'
+[11:44:09] [Server thread/INFO] [KubeJS Server/]: Loaded Java class 'net.neoforged.neoforge.event.level.BlockEvent$BreakEvent'
+[11:44:09] [Server thread/INFO] [KubeJS Server/]: Loaded Java class 'net.neoforged.neoforge.common.NeoForge'
+[11:44:09] [Render thread/INFO] [me.je.gu.in.IngredientFilter/]: Adding 2728 ingredients
+[11:44:09] [Render thread/INFO] [me.je.gu.in.IngredientFilter/]: Added 2728 ingredients
+[11:44:09] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building ingredient filter took 156.9 milliseconds
+[11:44:09] [Server thread/INFO] [KubeJS Server/]: Loaded Java class 'io.github.low2uu.dbv.world.IslandProtection'
+[11:44:09] [Server thread/INFO] [KubeJS Server/]: Loaded Java class 'io.github.low2uu.dbv.fleet.FleetModule'
+[11:44:09] [Server thread/INFO] [KubeJS Server/]: DBV_PROTECTION PASS survival denied; creative admin allowed; ship and ocean excluded
+[11:44:09] [Render thread/INFO] [me.je.li.lo.PluginCallerTimerRunnable/]: Registering Runtime: jei:neoforge_gui took 303.9 milliseconds
+[11:44:09] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Registering Runtime took 304.3 milliseconds
+[11:44:09] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Building runtime took 319.6 milliseconds
+[11:44:09] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Sending Runtime...
+[11:44:09] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Sending Runtime took 361.0 microseconds
+[11:44:09] [Render thread/INFO] [me.je.co.ut.LoggedTimer/]: Starting JEI took 2.445 seconds
+[11:44:09] [Render thread/INFO] [xa.hu.mi.MinimapLogs/]: Minimap updated server level id: -180380938 for world ResourceKey[minecraft:dimension / minecraft:overworld]
+[11:44:09] [Render thread/INFO] [sn.ja.Jade/]: Received config from the server:
+[11:44:09] [Render thread/INFO] [minecraft/AdvancementTree]: Loaded 36 advancements
+[11:44:09] [Render thread/INFO] [Veil/]: Multi-Bind supported, using core
+[11:44:09] [Render thread/INFO] [xa.hu.mi.MinimapLogs/]: Reloading radar icon resources...
+[11:44:09] [Render thread/INFO] [xa.hu.mi.MinimapLogs/]: Reloaded radar icon resources!
+[11:44:18] [Server thread/ERROR] [KubeJS Server/]: DBV_PROTECTION FAIL Error: explosion damaged -102,-2
+[11:44:27] [Render thread/INFO] [me.je.li.st.JeiStarter/]: Stopping JEI
+[11:44:27] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Sending Runtime Unavailable...
+[11:44:27] [Render thread/INFO] [me.je.ne.pl.ne.NeoForgeGuiPlugin/]: Stopping JEI GUI
+[11:44:27] [Render thread/INFO] [me.je.li.lo.PluginCaller/]: Sending Runtime Unavailable took 808.3 microseconds
+[11:44:27] [Render thread/INFO] [minecraft/Minecraft]: Stopping!
+[11:44:27] [Netty Local Client IO #1/INFO] [de.ry.sa.Sable/]: Closed UDP channel!
+[11:44:27] [Render thread/INFO] [xa.hu.mi.MinimapLogs/]: Xaero hud session finalized.
+[11:44:27] [Netty Local Client IO #1/INFO] [de.ry.sa.Sable/]: Client UDP channel inactive
+[11:44:27] [Render thread/INFO] [xa.ma.WorldMap/]: Finalizing world map session...
+[11:44:27] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: DBVDeveloper lost connection: 连接中断
+[11:44:27] [Server thread/INFO] [minecraft/MinecraftServer]: DBVDeveloper退出了游戏
+[11:44:27] [Server thread/INFO] [minecraft/ServerCommonPacketListenerImpl]: Stopping singleplayer server as player logged out
+[11:44:27] [Thread-6/INFO] [xa.ma.WorldMap/]: World map cleaned normally!
+[11:44:27] [Render thread/INFO] [xa.ma.WorldMap/]: World map session finalized.
+[11:44:27] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[11:44:27] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[11:44:27] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[11:44:27] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:overworld
+[11:44:27] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:overworld
+[11:44:27] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_end
+[11:44:27] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_end
+[11:44:27] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_nether
+[11:44:27] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/minecraft:the_nether
+[11:44:27] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/create_abyss:abyss
+[11:44:27] [Server thread/INFO] [de.ry.sa.Sable/]: Saving sub-levels for level 'ServerLevel[Deep Blue Voyage - Starter Submarine v2]'/create_abyss:abyss
+[11:44:27] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DBV-Angler-Acceptance8): All chunks are saved
+[11:44:27] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[11:44:27] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[11:44:27] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (abyss): All chunks are saved
+[11:44:27] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
+[11:44:27] [Server thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [Before Mods, data]
+[11:44:27] [Server thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [Internal, data]
+[11:44:27] [Server thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [Registries, data]
+[11:44:27] [Server thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [After Mods, data]
+[11:44:27] [Server thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [Last, data]
+[11:44:27] [Render thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [Before Mods, assets]
+[11:44:27] [Render thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [Internal, assets]
+[11:44:27] [Render thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [After Mods, assets]
+[11:44:27] [Render thread/INFO] [KubeJS/]: Closed KubeJS Virtual Resource Pack [Last, assets]
+
+BUILD SUCCESSFUL in 52s
+7 actionable tasks: 1 executed, 6 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.2.1/userguide/configuration_cache_enabling.html

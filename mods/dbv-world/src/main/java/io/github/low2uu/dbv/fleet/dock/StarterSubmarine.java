@@ -147,31 +147,16 @@ public final class StarterSubmarine {
         if (module.registry().flagship().isPresent() || !module.adapter().loaded(server.overworld()).isEmpty())
             throw new IOException("世界已有船体或主艇，拒绝自动生成");
         var level = server.overworld();
-        for (var p : BlockPos.betweenClosed(60, 68, 150, 68, 74, 164)) {
+        var plan = AnglerSubmarine.plan();
+        for (var p : BlockPos.betweenClosed(AnglerSubmarine.MIN, AnglerSubmarine.MAX)) {
             if (!level.getBlockState(p).isAir()) throw new IOException("初始艇泊位被占用：" + p.toShortString());
         }
         DockFiles.create(directory.resolve("starter-building.nbt"), new CompoundTag());
-        var positions = new ArrayList<BlockPos>();
-        for (int x=60;x<=68;x++) for (int y=68;y<=74;y++) for (int z=150;z<=164;z++) {
-            boolean hull = x==60 || x==68 || y==68 || y==74 || z==150 || z==164;
-            if (!hull) continue;
-            var state = Blocks.IRON_BLOCK.defaultBlockState();
-            if ((x==60 || x==68 || z==150) && y>=70 && y<=72) state = Blocks.GLASS.defaultBlockState();
-            if (y==68) state = Blocks.DEEPSLATE_TILES.defaultBlockState();
-            if (y==74 && x==64 && z==157) state = Blocks.OAK_TRAPDOOR.defaultBlockState();
-            var p = new BlockPos(x,y,z); level.setBlock(p,state,3); positions.add(p);
-        }
-        place(level,positions,new BlockPos(64,69,152),"create_submarine:command_sub");
-        place(level,positions,new BlockPos(61,69,154),"minecraft:chest");
-        place(level,positions,new BlockPos(61,69,155),"minecraft:barrel");
-        place(level,positions,new BlockPos(62,69,152),"dbv_world:cabin_panel");
-        place(level,positions,new BlockPos(62,69,160),"create_submarine:electrolyzer");
-        place(level,positions,new BlockPos(66,69,160),"create_submarine:oxygene_diffuser");
-        place(level,positions,new BlockPos(66,69,161),"minecraft:redstone_block");
-        place(level,positions,new BlockPos(64,73,160),"minecraft:sea_lantern");
-        var gen = (ElectrolyzerBlockEntity)level.getBlockEntity(new BlockPos(62,69,160));
-        gen.data.set(6,1);
-        var body = SubLevelAssemblyHelper.assembleBlocks(level,new BlockPos(60,68,150),positions,new BoundingBox3i(60,68,150,68,74,164));
+        plan.forEach((p,state)->level.setBlock(p,state,2));
+        plan.forEach((p,state)->level.updateNeighborsAt(p,state.getBlock()));
+        AnglerSubmarine.provision(level);
+        var positions = plan.entrySet().stream().filter(e->!e.getValue().isAir()).map(java.util.Map.Entry::getKey).toList();
+        var body = SubLevelAssemblyHelper.assembleBlocks(level,AnglerSubmarine.MIN,positions,new BoundingBox3i(60,68,150,74,78,173));
         if (body==null) throw new IOException("Sable装配失败，未生成第二艘船");
         dev.ryanhcode.sable.api.sublevel.SubLevelContainer.getContainer(level)
                 .addForceLoadTicket(body, INITIAL_VALIDATION, net.minecraft.util.Unit.INSTANCE);

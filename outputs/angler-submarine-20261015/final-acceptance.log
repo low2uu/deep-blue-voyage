@@ -1,0 +1,24 @@
+[11:42:23] [INIT] KubeJS 2101.7.2-build.377; MC 2101 NeoForge
+[11:42:23] [INIT] Loaded plugins:
+[11:42:23] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSPlugin
+[11:42:23] [INIT] - dev.latvian.mods.kubejs.plugin.builtin.BuiltinKubeJSClientPlugin
+[11:42:23] [INIT] - dev.latvian.mods.kubejs.integration.architectury.ArchitecturyIntegration
+[11:42:23] [INIT] - com.jesz.createdieselgenerators.compat.kubejs.CDGKubeJSPlugin
+[11:42:23] [INIT] - moe.wolfgirl.probejs.plugin.ProbeJSKJSPlugin
+[11:42:23] [INFO] server_scripts:angler-server.js#1: Loaded Java class 'io.github.low2uu.dbv.fleet.FleetModule'
+[11:42:23] [INFO] Loaded script server_scripts:angler-server.js in 0.013 s
+[11:42:23] [INFO] Loaded script server_scripts:protection-server.js in 0.002 s
+[11:42:23] [INFO] Loaded 2/2 KubeJS server scripts in 0.029 s with 0 errors and 0 warnings
+[11:42:25] [INFO] Server resource reload complete!
+[11:42:26] [INFO] Loaded Java class 'net.minecraft.world.level.storage.LevelResource'
+[11:42:29] [INFO] Loaded Java class 'net.minecraft.core.BlockPos'
+[11:42:29] [INFO] Loaded Java class 'net.minecraft.world.level.GameType'
+[11:42:29] [INFO] Loaded Java class 'net.neoforged.neoforge.event.level.BlockEvent$BreakEvent'
+[11:42:29] [INFO] Loaded Java class 'net.neoforged.neoforge.common.NeoForge'
+[11:42:29] [INFO] Loaded Java class 'io.github.low2uu.dbv.world.IslandProtection'
+[11:42:29] [INFO] DBV_PROTECTION PASS survival denied; creative admin allowed; ship and ocean excluded
+[11:42:31] [INFO] Loaded Java class 'net.minecraft.world.level.block.state.properties.BlockStateProperties'
+[11:42:35] [INFO] DBV_ANGLER PASS propellers 96,96
+[11:42:39] [INFO] DBV_ANGLER PASS independent reverse -96,96
+[11:42:42] [INFO] DBV_ANGLER DEPART 已出航：船坞固定与岸供已断开，潜艇进入自由物理状态。请使用艇上的驾驶设备控制。
+[11:43:02] [INFO] DBV_ANGLER PASS independent supply water=4000 energy=10000 qualification=Qualification[controller=true, oxygen=true, sealed=true, pending=false] bounds=dev.ryanhcode.sable.companion.math.BoundingBox3d@154b0b49
