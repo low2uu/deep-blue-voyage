@@ -2,6 +2,7 @@ package io.github.low2uu.dbv.fleet.dock;
 
 import com.maxenonyme.createsubmarine.submarine.block.entity.ElectrolyzerBlockEntity;
 import io.github.low2uu.dbv.fleet.FleetModule;
+import io.github.low2uu.dbv.world.WorldHeights;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -19,7 +20,8 @@ import java.util.Map;
 
 /** Dock blueprint. All machines are real registered blocks and use their own mechanics. */
 public final class AnglerSubmarine {
-    public static final BlockPos MIN = new BlockPos(60,68,150), MAX = new BlockPos(74,78,173);
+    public static final BlockPos MIN = dockPos(60,68,150), MAX = dockPos(74,78,173);
+    private static BlockPos dockPos(int x,int y,int z) { return new BlockPos(x,WorldHeights.fromLegacy(y),z); }
     private final Map<BlockPos,BlockState> blocks = new LinkedHashMap<>();
     private void put(int x,int y,int z,String id,String... properties) {
         var key=ResourceLocation.parse(id.contains(":")?id:"create:"+id);
@@ -28,7 +30,7 @@ public final class AnglerSubmarine {
         for(String entry:properties){var pair=entry.split("=");var property=state.getBlock().getStateDefinition().getProperty(pair[0]);
             if(property==null)throw new IllegalStateException("蓝图属性不存在："+id+" / "+entry);
             state=property(state,property,pair[1]);}
-        blocks.put(new BlockPos(x,y,z),state);
+        blocks.put(dockPos(x,y,z),state);
     }
     private static <T extends Comparable<T>> BlockState property(BlockState state,Property<T> property,String value){
         return state.setValue(property,property.getValue(value).orElseThrow());
@@ -128,7 +130,7 @@ public final class AnglerSubmarine {
     }
 
     public static void provision(ServerLevel level){
-        var controller=(com.maxenonyme.createsubmarine.submarine.block.entity.CommandSubBlockEntity)level.getBlockEntity(new BlockPos(67,72,153));
+        var controller=(com.maxenonyme.createsubmarine.submarine.block.entity.CommandSubBlockEntity)level.getBlockEntity(dockPos(67,72,153));
         controller.targetDepth=1;
         controller.speedMode=1;
         controller.autopilot=false;
@@ -142,11 +144,11 @@ public final class AnglerSubmarine {
         if(diesel==Fluids.EMPTY)throw new IllegalStateException("柴油流体未注册");
         for(int x:new int[]{63,71}){
             com.simibubi.create.api.connectivity.ConnectivityHandler.formMulti(
-                    (com.simibubi.create.content.fluids.tank.FluidTankBlockEntity)level.getBlockEntity(new BlockPos(x,71,154)));
-            fill(level,new BlockPos(x,71,154),new FluidStack(diesel,16000));
-            fill(level,new BlockPos(x,72,157),new FluidStack(diesel,1000));
+                    (com.simibubi.create.content.fluids.tank.FluidTankBlockEntity)level.getBlockEntity(dockPos(x,71,154)));
+            fill(level,dockPos(x,71,154),new FluidStack(diesel,16000));
+            fill(level,dockPos(x,72,157),new FluidStack(diesel,1000));
             // Native Create links reverse only the propeller branch, never the service machinery.
-            for(var pos:new BlockPos[]{new BlockPos(x,73,155),new BlockPos(x==63?60:74,73,158)}){
+            for(var pos:new BlockPos[]{dockPos(x,73,155),dockPos(x==63?60:74,73,158)}){
                 var link=level.getBlockEntity(pos);
                 var tag=link.saveWithFullMetadata(level.registryAccess());
                 tag.putBoolean("Transmitter",pos.getZ()==155);
@@ -156,10 +158,10 @@ public final class AnglerSubmarine {
             }
         }
         // Form the tank before filling: querying individual segments during connectivity updates is ambiguous.
-        var waterTank=(com.simibubi.create.content.fluids.tank.FluidTankBlockEntity)level.getBlockEntity(new BlockPos(64,73,152));
+        var waterTank=(com.simibubi.create.content.fluids.tank.FluidTankBlockEntity)level.getBlockEntity(dockPos(64,73,152));
         com.simibubi.create.api.connectivity.ConnectivityHandler.formMulti(waterTank);
-        fill(level,new BlockPos(64,73,152),new FluidStack(Fluids.WATER,64000));
-        var electrolyzer=(ElectrolyzerBlockEntity)level.getBlockEntity(new BlockPos(65,72,155));
+        fill(level,dockPos(64,73,152),new FluidStack(Fluids.WATER,64000));
+        var electrolyzer=(ElectrolyzerBlockEntity)level.getBlockEntity(dockPos(65,72,155));
         electrolyzer.module.setStackInSlot(0,new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.parse("create:shaft"))));
         electrolyzer.data.set(6,1);
         electrolyzer.waterTank.fill(new FluidStack(Fluids.WATER,4000),FluidAction.EXECUTE);

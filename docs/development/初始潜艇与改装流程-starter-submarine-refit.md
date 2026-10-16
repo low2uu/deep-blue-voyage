@@ -15,7 +15,7 @@
 
 ## 初始小艇与泊位
 
-本机地图为 `runtime/client/saves/DBV-Island-v2`，游戏名称 **Deep Blue Voyage - Starter Submarine v2**；也可新建“深蓝远航 起始岛”预设。旧世界不会因更新被自动重建。
+本机地图为 `runtime/client/saves/DBV-Island-v3`，游戏名称 **Deep Blue Voyage - Sea 128**；也可新建“深蓝远航 起始岛”预设。旧世界不会因更新被自动重建。
 
 2026-10-15 起，新世界使用15×11×24的灯笼鱼型初始艇，位于 `(60,68,150)` 至 `(74,78,173)`，包含铁壳、耐压玻璃、四角压载、双侧水下螺旋桨、柴油动力、制氧和独立气闸。具体布局、旧艇升级和操作见[灯笼鱼型潜艇与操作说明](灯笼鱼型潜艇与操作说明-angler-submarine-and-operation.md)。旧世界的9×7×15样艇不会自动覆盖；可在系泊状态执行 `/dbv refit angler` 升级。建设模式岸供仍为系泊艇补充水、FE和氧气，出航后关闭。尚无武器或酒狐 AI。
 

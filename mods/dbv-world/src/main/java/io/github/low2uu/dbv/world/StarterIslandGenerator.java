@@ -27,7 +27,10 @@ public final class StarterIslandGenerator extends FlatLevelSource {
     protected MapCodec<? extends ChunkGenerator> codec() { return CODEC; }
 
     @Override
-    public int getMinY() { return -64; }
+    public int getMinY() { return WorldHeights.MIN_Y; }
+
+    @Override
+    public int getGenDepth() { return WorldHeights.HEIGHT; }
 
     @Override
     public int getSeaLevel() { return IslandTerrain.SEA_LEVEL; }

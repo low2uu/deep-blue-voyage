@@ -1,6 +1,6 @@
 # 深蓝远航：部署、启动地图与进入最新版本
 
-更新日期：2026-10-14。适用于 Windows、Minecraft 1.21.1、NeoForge 21.1.259、Zulu JDK 21 和 VS Code。使用现有正式开发工程，当前版本为起始岛建设与潜艇改装原型。
+更新日期：2026-10-16。适用于 Windows、Minecraft 1.21.1、NeoForge 21.1.259、Zulu JDK 21 和 VS Code。使用现有正式开发工程，当前版本为起始岛建设与潜艇改装原型。
 
 ## 1 已有环境：本机直接启动
 
@@ -20,18 +20,20 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\dev.ps1 run
 
 1. 在语言设置中选择“简体中文”。
 2. 点击“单人游戏”。
-3. 选择 **Deep Blue Voyage - Starter Submarine v2**。
+3. 选择 **Deep Blue Voyage - Sea 128**。
 4. 点击“进入选中的世界”，等待地形和潜艇加载。
 
 本机地图对应关系如下，游戏显示名称与磁盘文件夹名称不同：
 
 | 本机文件夹 | 游戏中名称／用途 | 应如何选择 |
 | --- | --- | --- |
-| `runtime/client/saves/DBV-Island-v2` | **Deep Blue Voyage - Starter Submarine v2** | 当前继续建设与体验潜艇管理 UI 用这个 |
+| `runtime/client/saves/DBV-Island-v3` | **Deep Blue Voyage - Sea 128** | 当前继续建设与体验潜艇管理 UI 用这个 |
 | `runtime/client/saves/DBV-Island-v1` | Deep Blue Voyage - Harbor Island v1 | 旧建筑阶段地图，保留作参考 |
 | `runtime/client/saves/DBV-Construction` | 早期建设存档 | 不作为最新潜艇功能的体验入口 |
 
-如果没有 v2，请按第 4 节新建世界，或按第 5 节接收完整存档。不要把旧存档简单改名为 v2，改名不会增加潜艇。
+如果没有 v3，请按第 4 节新建世界，或按第 5 节接收完整存档。不要把旧存档简单改名为 v3，改名不会增加潜艇。
+
+海面现在为Y=128，世界范围Y=-256～319。v3是已迁移的旧岛；旧v2已移入本机归档，不能用新生成器直接继续旧高度存档。详见[高度迁移说明](development/世界高度与旧岛迁移-world-height-migration.md)。
 
 ## 2 每次更新：获取最新代码并重新启动
 
@@ -41,12 +43,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\dev.ps1 run
 
 ### 2.1 备份正在玩的地图
 
-在项目根目录执行以下命令，示例针对本机 v2。使用其他地图时改为对应文件夹名。
+在项目根目录执行以下命令，示例针对本机 v3。使用其他地图时改为对应文件夹名。
 
 ```powershell
-$worldPath = Join-Path (Get-Location) 'runtime\client\saves\DBV-Island-v2'
-if (!(Test-Path -LiteralPath $worldPath)) { throw '未找到 v2，请核对存档文件夹名。' }
-$backupPath = Join-Path (Get-Location) ('runtime\backups\DBV-Island-v2-before-update-' + (Get-Date -Format 'yyyyMMdd-HHmmss'))
+$worldPath = Join-Path (Get-Location) 'runtime\client\saves\DBV-Island-v3'
+if (!(Test-Path -LiteralPath $worldPath)) { throw '未找到 v3，请核对存档文件夹名。' }
+$backupPath = Join-Path (Get-Location) ('runtime\backups\DBV-Island-v3-before-update-' + (Get-Date -Format 'yyyyMMdd-HHmmss'))
 New-Item -ItemType Directory -Force .\runtime\backups | Out-Null
 Copy-Item -LiteralPath $worldPath -Destination $backupPath -Recurse
 ```
@@ -76,9 +78,9 @@ git rev-parse origin/main
 
 最后两条输出一致，表示本机 HEAD 与本次拉取的 GitHub `main` 一致。`git pull` 报错时先处理错误，不要继续并认为已经更新成功；不要用强制重置覆盖自己的开发成果。
 
-再执行第 1 节的 `build` 和 `run`，进入 v2 或自己当前的正式地图。Java 改动需要退出旧客户端后重新启动才生效。
+再执行第 1 节的 `build` 和 `run`，进入 v3 或自己当前的正式地图。Java 改动需要退出旧客户端后重新启动才生效。
 
-**版本核对：**本文编写时，中文潜艇管理 UI 已在提交 `02bc281` 中发布。此提交用于追溯，不是让你切回该历史版本；日常使用最新 `main`。自研 Mod 显示版本目前仍为 `0.1.0`，地图名中的 `v2` 也不是代码版本号，判断更新应以 Git 提交和实际功能为准。
+**版本核对：**本文编写时，中文潜艇管理 UI 已在提交 `02bc281` 中发布。此提交用于追溯，不是让你切回该历史版本；日常使用最新 `main`。自研 Mod 显示版本目前仍为 `0.1.0`，地图名中的 `v3` 也不是代码版本号，判断更新应以 Git 提交和实际功能为准。
 
 更新 Mod 不会重刷已有建筑，也不会给旧世界自动补造初始艇。想体验新版世界生成，请另建起始岛预设世界，保留旧地图。
 
@@ -143,28 +145,28 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\dev.ps1 run
 6. 进入后等待初始艇生成、制氧启动和密闭扫描。主艇完成检查后自动登记，不需要手动再造第二艘。
 7. 前往船坞查看小艇，并按第 6 节检查新界面。
 
-初始小艇约在 `(64,71,157)`，出生广场约在 `(-84,69,-28)`。需要快速定位时，可在允许命令的创造世界中执行：
+初始小艇约在 `(64,136,157)`，出生广场约在 `(-84,134,-28)`。需要快速定位时，可在允许命令的创造世界中执行：
 
 ```text
 /gamemode creative
-/tp @s 64 77 157
+/tp @s 64 142 157
 ```
 
-传送点在小艇上方。通过顶部舱口进入后，关闭舱门，等待资格刷新。新世界的名字与存档目录可以自定，不必一定叫 `DBV-Island-v2`。
+传送点在小艇上方。通过顶部舱口进入后，关闭舱门，等待资格刷新。新世界的名字与存档目录可以自定，不必一定叫 `DBV-Island-v3`。
 
 目前是船坞样艇和有限改装原型，尚未配备完整推进、武器或酒狐 AI，不能把它当作已完成的出海成品。
 
 ## 5 想使用同一张现成地图：交接完整存档
 
-截至本文编写，GitHub 只有 `assets/worlds/DBV-Island-v1.zip` 这份旧建筑快照，**没有本机 v2 的完整存档**。克隆仓库后没看到 v2 是正常现象。
+截至本文编写，GitHub 只有 `assets/worlds/DBV-Island-v1.zip` 这份旧建筑快照，**没有本机 v3 的完整存档**。克隆仓库后没看到 v3 是正常现象。
 
-要继续维护者当前的 v2 地图：
+要继续维护者当前的 v3 地图：
 
-1. 发送方保存并完全退出游戏，复制或压缩整个 `runtime/client/saves/DBV-Island-v2` 文件夹。
+1. 发送方保存并完全退出游戏，复制或压缩整个 `runtime/client/saves/DBV-Island-v3` 文件夹。
 2. 接收方更新代码、构建成功并关闭游戏。
 3. 接收方如有同名地图，先备份并保留，给接收的地图使用不同文件夹名，避免合并覆盖。
-4. 将完整存档放入本机 `runtime/client/saves/`。确认 `level.dat` 直接位于该地图文件夹下，例如 `saves/DBV-Island-v2/level.dat`，不要多套一层同名文件夹。
-5. 重新 `run`，在单人游戏列表选择 **Deep Blue Voyage - Starter Submarine v2**。只改磁盘文件夹名通常不会改变游戏内显示名称。
+4. 将完整存档放入本机 `runtime/client/saves/`。确认 `level.dat` 直接位于该地图文件夹下，例如 `saves/DBV-Island-v3/level.dat`，不要多套一层同名文件夹。
+5. 重新 `run`，在单人游戏列表选择 **Deep Blue Voyage - Sea 128**。只改磁盘文件夹名通常不会改变游戏内显示名称。
 
 不要只复制 `region` 或 `level.dat`；主艇登记、Sable 物理船体和船坞快照也需要一起交接。不要把两个人分别施工的世界直接覆盖合并。此流程是存档交接，不是联机服务器部署；当前两个默认开发客户端都使用 `DBVDeveloper`，共用服务器和玩家身份仍需另行配置。
 
@@ -184,7 +186,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\dev.ps1 run
 | --- | --- |
 | 构建成功，但没有游戏窗口 | `build` 只编译；还要执行 `run`。保留终端，等待启动。 |
 | 用 debug 一直没有主菜单 | 正在等调试器；正常开启改用 `run`。 |
-| 本机 v2 不在列表 | 检查启动目录和 `saves` 路径；新电脑按第 4 节建图或第 5 节接收存档。 |
+| 本机 v3 不在列表 | 检查启动目录和 `saves` 路径；新电脑按第 4 节建图或第 5 节接收存档。 |
 | 创建世界没有“深蓝远航 起始岛” | 核对从本仓库 `run` 启动、构建成功且自研 Mod 已加载，不能从缺少本 Mod 的普通启动器创建。 |
 | 更新后还是聊天提示，没有面板 | 完全退出旧游戏，核对 Git 提交，重新构建并运行。确认 Shift＋右键的目标是船载电脑。 |
 | 控制器仍显示英文 | 切换为简体中文，核对代码已更新，并重新启动客户端。 |

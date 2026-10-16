@@ -1,5 +1,7 @@
 package io.github.low2uu.dbv.fleet.dock;
 
+import io.github.low2uu.dbv.world.WorldHeights;
+
 import dev.ryanhcode.sable.api.SubLevelAssemblyHelper;
 import dev.ryanhcode.sable.companion.math.BoundingBox3i;
 import dev.ryanhcode.sable.sublevel.ServerSubLevel;
@@ -24,7 +26,7 @@ import net.minecraft.world.level.storage.LevelResource;
 
 /** Durable physical -> world blocks -> validated physical transaction. Unknown transitions fail closed. */
 public final class RefitService {
-    private static final BlockPos PAD=new BlockPos(60,68,150);
+    private static final BlockPos PAD=new BlockPos(60,WorldHeights.fromLegacy(68),150);
     private final MinecraftServer server;
     private final Path file;
     private final LegacyRefitService legacy;
@@ -60,7 +62,7 @@ public final class RefitService {
     public boolean contains(BlockPos p){
         if(journal==null)return false;var b=bounds();
         return p.getX()>=Math.max(0,b.minX()-16)&&p.getX()<=Math.min(127,b.maxX()+16)
-            &&p.getY()>=Math.max(65,b.minY()-16)&&p.getY()<=Math.min(100,b.maxY()+16)
+            &&p.getY()>=Math.max(WorldHeights.fromLegacy(65),b.minY()-16)&&p.getY()<=Math.min(WorldHeights.fromLegacy(100),b.maxY()+16)
             &&p.getZ()>=Math.max(112,b.minZ()-16)&&p.getZ()<=Math.min(239,b.maxZ()+16);
     }
     public boolean near(ServerPlayer player){return journal!=null&&player.serverLevel()==server.overworld()&&bounds().toAABB().inflate(12).contains(player.position());}
@@ -138,7 +140,7 @@ public final class RefitService {
         plan.forEach((pos,state)->server.overworld().updateNeighborsAt(pos,state.getBlock()));
         AnglerSubmarine.provision(server.overworld());
         int itemIndex=0;
-        for(var chestPos:List.of(new BlockPos(69,72,159),new BlockPos(69,72,160))){
+        for(var chestPos:List.of(new BlockPos(69,WorldHeights.fromLegacy(72),159),new BlockPos(69,WorldHeights.fromLegacy(72),160))){
             var container=(net.minecraft.world.Container)server.overworld().getBlockEntity(chestPos);
             for(int slot=0;slot<container.getContainerSize()&&itemIndex<carried.size();slot++)container.setItem(slot,carried.get(itemIndex++));
             container.setChanged();
@@ -155,7 +157,7 @@ public final class RefitService {
             if(body.getPlot().getChunk(body.getPlot().toLocal(new net.minecraft.world.level.ChunkPos(x,z)))==null)
                 throw new IllegalStateException("船体区块尚未加载，无法完整备份，请稍候再开始");
         var target=new BoundingBox3i(PAD.getX(),PAD.getY(),PAD.getZ(),PAD.getX()+b.maxX()-b.minX(),PAD.getY()+b.maxY()-b.minY(),PAD.getZ()+b.maxZ()-b.minZ());
-        if(target.maxX()>128||target.maxY()>100||target.maxZ()>240)throw new IllegalStateException("船体超出改装泊位");
+        if(target.maxX()>128||target.maxY()>WorldHeights.fromLegacy(100)||target.maxZ()>240)throw new IllegalStateException("船体超出改装泊位");
         for(var pos:positions(target))if(!server.overworld().getBlockState(pos).isAir())throw new IllegalStateException("改装泊位被占用："+pos.toShortString());
         for(var other:m.adapter().loaded(server.overworld()))if(other!=body&&!other.isRemoved()&&worldBox(other).intersects(target.toAABB()))throw new IllegalStateException("改装泊位有其他物理船体");
         var original=capture(new BoundingBox3i(b));
@@ -364,7 +366,7 @@ public final class RefitService {
         if(journal.getInt("schema")!=2||!journal.hasUUID("vessel")||!journal.hasUUID("owner")||!journal.hasUUID("originalBody"))throw new IOException("方块改装档案头损坏");
         if(!Set.of("PREPARING","STATIC","ASSEMBLING","VALIDATING","ROLLING_BACK","RESTORING","RESTORED").contains(phase()))throw new IOException("未知改装转换阶段");
         var b=journal.getIntArray("worldBounds");
-        if(b.length!=6||b[0]!=60||b[1]!=68||b[2]!=150||b[3]<b[0]||b[4]<b[1]||b[5]<b[2]||b[3]>128||b[4]>100||b[5]>240)throw new IOException("改装区域无效");
+        if(b.length!=6||b[0]!=60||b[1]!=WorldHeights.fromLegacy(68)||b[2]!=150||b[3]<b[0]||b[4]<b[1]||b[5]<b[2]||b[3]>128||b[4]>WorldHeights.fromLegacy(100)||b[5]>240)throw new IOException("改装区域无效");
         long volume=(long)(b[3]-b[0]+1)*(b[4]-b[1]+1)*(b[5]-b[2]+1);var list=journal.getList("original",Tag.TAG_COMPOUND);
         if(volume>4096||list.size()!=volume)throw new IOException("改装备份数量无效");
         if(journal.contains("assembledBlocks")){

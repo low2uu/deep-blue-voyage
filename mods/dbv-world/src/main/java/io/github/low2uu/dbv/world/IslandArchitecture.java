@@ -72,7 +72,7 @@ public final class IslandArchitecture {
 
     private static void landscape(Painter p) {
         for(int x=p.x0;x<p.x0+16;x++) for(int z=p.z0;z<p.z0+16;z++) {
-            int y=IslandTerrain.groundHeight(x,z), h=hash(x,z,1);
+            int y=IslandTerrain.legacyGroundHeight(x,z), h=hash(x,z,1);
             if(y<65 || reserved(x,z,2) || nearRoad(x,z,4)) continue;
             if(y<68 && h%7<3) p.set(x,y,z,Blocks.COARSE_DIRT);
             else if(h%89==0) p.set(x,y,z,Blocks.MOSS_BLOCK);
@@ -84,13 +84,13 @@ public final class IslandArchitecture {
         for(int x=Math.floorDiv(p.x0-6,11)*11;x<=p.x0+21;x+=11)
             for(int z=Math.floorDiv(p.z0-6,11)*11;z<=p.z0+21;z+=11) {
                 int h=hash(x,z,7), tx=x+h%5-2,tz=z+(h/7)%5-2;
-                int y=IslandTerrain.groundHeight(tx,tz);
+                int y=IslandTerrain.legacyGroundHeight(tx,tz);
                 if(y<68 || y>96 || reserved(tx,tz,7) || nearRoad(tx,tz,8) || h%5>1) continue;
                 tree(p,tx,y+1,tz,5+h%4,h%3==0);
             }
         for(int x=Math.floorDiv(p.x0-4,19)*19;x<=p.x0+20;x+=19)
             for(int z=Math.floorDiv(p.z0-4,19)*19;z<=p.z0+20;z+=19) {
-                int y=IslandTerrain.groundHeight(x,z);
+                int y=IslandTerrain.legacyGroundHeight(x,z);
                 if(y<65 || reserved(x,z,5) || nearRoad(x,z,5) || hash(x,z,9)%4!=0) continue;
                 for(int dx=-3;dx<=3;dx++) for(int dz=-3;dz<=3;dz++) for(int dy=-2;dy<=2;dy++)
                     if(dx*dx+dz*dz+dy*dy*2<9) p.set(x+dx,y+dy,z+dz,hash(x+dx,z+dz,dy)%3==0?Blocks.MOSSY_COBBLESTONE:Blocks.ANDESITE);
@@ -110,23 +110,23 @@ public final class IslandArchitecture {
     private static void roads(Painter p) {
         for(int x=p.x0;x<p.x0+16;x++) for(int z=p.z0;z<p.z0+16;z++) {
             if(!nearRoad(x,z,2.7)) continue;
-            int y=IslandTerrain.groundHeight(x,z);
+            int y=IslandTerrain.legacyGroundHeight(x,z);
             if(y<65)continue;
             int h=hash(x,z,18)%10;
             p.set(x,y,z,h<6?Blocks.DIRT_PATH:h<8?Blocks.COARSE_DIRT:Blocks.GRAVEL);
             p.fill(x,y+1,z,x,y+3,z,Blocks.AIR);
             // Low rough steps handle the natural slopes without flattening whole roads.
-            if(IslandTerrain.groundHeight(x,z+1)>y+1) p.set(x,y+1,z,Blocks.COBBLESTONE_SLAB);
+            if(IslandTerrain.legacyGroundHeight(x,z+1)>y+1) p.set(x,y+1,z,Blocks.COBBLESTONE_SLAB);
         }
         int[][] lamps={{-64,-27},{-20,-29},{16,-37},{60,-14},{-48,22},{-100,5},{-140,12},{10,60},{63,73},{68,-62}};
-        for(int[] a:lamps) lamp(p,a[0],IslandTerrain.groundHeight(a[0],a[1])+1,a[1]);
+        for(int[] a:lamps) lamp(p,a[0],IslandTerrain.legacyGroundHeight(a[0],a[1])+1,a[1]);
     }
 
     private static void foundation(Painter p,int x,int z,int w,int d,Block floor) {
         if(!p.intersects(x,z,x+w-1,z+d-1))return;
         for(int px=Math.max(x,p.x0);px<Math.min(x+w,p.x0+16);px++)
             for(int pz=Math.max(z,p.z0);pz<Math.min(z+d,p.z0+16);pz++) {
-                int g=IslandTerrain.groundHeight(px,pz);
+                int g=IslandTerrain.legacyGroundHeight(px,pz);
                 p.fill(px,Math.min(g,FLOOR)-1,pz,px,FLOOR-1,pz,Blocks.STONE_BRICKS);
                 p.set(px,FLOOR,pz,floor);
                 p.fill(px,FLOOR+1,pz,px,Math.max(g+1,FLOOR+1),pz,Blocks.AIR);
@@ -301,11 +301,11 @@ public final class IslandArchitecture {
     private static void ruinFoundations(Painter p) {
         // Only scattered old footings: the future expansion plot is not paved flat.
         for(int x=140;x<=172;x+=16)for(int z=-56;z<=24;z+=16) {
-            int y=IslandTerrain.groundHeight(x,z);
+            int y=IslandTerrain.legacyGroundHeight(x,z);
             p.fill(x,y,z,x+2,y+1,z+2,Blocks.MOSSY_STONE_BRICKS);
         }
         // Closed, scenic former quarry entrance; there is no functional mine here yet.
-        int x=-150,z=-78,y=IslandTerrain.groundHeight(x,z);
+        int x=-150,z=-78,y=IslandTerrain.legacyGroundHeight(x,z);
         p.fill(x-5,y,z-2,x+5,y+7,z,Blocks.MOSSY_COBBLESTONE);
         p.fill(x-2,y+1,z,x+2,y+5,z,Blocks.DARK_OAK_PLANKS);
         p.fill(x-3,y+6,z,x+3,y+6,z,Blocks.STRIPPED_SPRUCE_LOG);
@@ -318,6 +318,7 @@ public final class IslandArchitecture {
         boolean intersects(int x,int z,int x2,int z2){return x2>=x0&&x<x0+16&&z2>=z0&&z<z0+16;}
         void set(int x,int y,int z,Block block){set(x,y,z,block.defaultBlockState());}
         void set(int x,int y,int z,BlockState state){
+            y = WorldHeights.fromLegacy(y);
             if(x<x0||x>=x0+16||z<z0||z>=z0+16||y<chunk.getMinBuildHeight()||y>=chunk.getMaxBuildHeight())return;
             chunk.setBlockState(pos.set(x,y,z),state,false);
             chunk.getOrCreateHeightmapUnprimed(Heightmap.Types.OCEAN_FLOOR_WG).update(x-x0,y,z-z0,state);

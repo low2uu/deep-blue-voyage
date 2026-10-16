@@ -1,7 +1,7 @@
 {
   "dimensions": {
     "minecraft:overworld": {
-      "type": "minecraft:overworld",
+      "type": "dbv_world:ocean",
       "generator": {
         "type": "dbv_world:starter_island",
         "settings": {
@@ -11,7 +11,7 @@
           "structure_overrides": [],
           "layers": [
             {"block": "minecraft:bedrock", "height": 1},
-            {"block": "minecraft:stone", "height": 15},
+            {"block": "minecraft:stone", "height": 272},
             {"block": "minecraft:sand", "height": 4},
             {"block": "minecraft:water", "height": 107}
           ]

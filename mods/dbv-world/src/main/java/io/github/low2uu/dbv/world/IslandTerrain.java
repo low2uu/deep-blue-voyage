@@ -2,9 +2,9 @@ package io.github.low2uu.dbv.world;
 
 /** Deterministic first-release terrain. All coordinates are overworld block coordinates. */
 public final class IslandTerrain {
-    public static final int SEA_LEVEL = 63;
-    public static final int SEABED_Y = -45;
-    public static final int PLATFORM_Y = 68;
+    public static final int SEA_LEVEL = WorldHeights.SEA_LEVEL;
+    public static final int SEABED_Y = WorldHeights.fromLegacy(-45);
+    public static final int PLATFORM_Y = WorldHeights.fromLegacy(68);
     public static final int SPAWN_X = -84;
     public static final int SPAWN_Z = -28;
     private static final int[][] PADS = {{-112,-64,-64,-24},{-48,-64,-8,-32},{8,-16,40,16},
@@ -14,6 +14,11 @@ public final class IslandTerrain {
     private IslandTerrain() {}
 
     public static int groundHeight(int x, int z) {
+        return WorldHeights.fromLegacy(legacyGroundHeight(x, z));
+    }
+
+    /** Blueprint-space terrain, retained so the existing island is translated without reshaping it. */
+    static int legacyGroundHeight(int x, int z) {
         double radius = Math.sqrt(square(x / 256.0) + square(z / 192.0));
         radius += 0.012 * Math.sin(x / 37.0) * Math.sin(z / 29.0);
         int height;
@@ -24,7 +29,7 @@ public final class IslandTerrain {
             double t = (radius - 0.76) / 0.24;
             height = (int) Math.round(inland * (1 - t) + 61 * t);
         } else {
-            height = Math.max(SEABED_Y, 61 - (int) Math.floor((radius - 1.0) / 0.55 * 106.0));
+            height = Math.max(-45, 61 - (int) Math.floor((radius - 1.0) / 0.55 * 106.0));
         }
         // Small foundations blend into the landscape; the remainder is rolling terrain.
         for (int[] p : PADS) {
@@ -34,7 +39,7 @@ public final class IslandTerrain {
             if (distance < 12) {
                 double t = distance / 12;
                 t = t * t * (3 - 2 * t);
-                height = (int) Math.round(PLATFORM_Y + (height - PLATFORM_Y) * t);
+                height = (int) Math.round(68 + (height - 68) * t);
             }
         }
         // Ease down the shores beside the dock instead of exposing a rectangular cliff.

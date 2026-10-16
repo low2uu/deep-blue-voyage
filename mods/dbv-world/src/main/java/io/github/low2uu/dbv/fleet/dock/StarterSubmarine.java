@@ -1,5 +1,7 @@
 package io.github.low2uu.dbv.fleet.dock;
 
+import io.github.low2uu.dbv.world.WorldHeights;
+
 import com.maxenonyme.createsubmarine.CreateSubmarine;
 import com.maxenonyme.createsubmarine.submarine.block.entity.ElectrolyzerBlockEntity;
 import com.maxenonyme.createsubmarine.submarine.block.entity.OxygeneDiffuserBlockEntity;
@@ -171,7 +173,7 @@ public final class StarterSubmarine {
         var box = body.boundingBox();
         return body.getLevel().dimension() == net.minecraft.world.level.Level.OVERWORLD
                 && box.minX() >= 0 && box.maxX() <= 128 && box.minZ() >= 112 && box.maxZ() <= 240
-                && box.minY() >= 13 && box.maxY() <= 100;
+                && box.minY() >= WorldHeights.fromLegacy(13) && box.maxY() <= WorldHeights.fromLegacy(100);
     }
     public boolean moored(ServerSubLevel body) { return body.getUniqueId().equals(mooredBody) && mooring != null && mooring.isValid(); }
     public void releaseMooring(){
@@ -203,7 +205,7 @@ public final class StarterSubmarine {
         plan.forEach((p,state)->level.updateNeighborsAt(p,state.getBlock()));
         AnglerSubmarine.provision(level);
         var positions = plan.entrySet().stream().filter(e->!e.getValue().isAir()).map(java.util.Map.Entry::getKey).toList();
-        var body = SubLevelAssemblyHelper.assembleBlocks(level,AnglerSubmarine.MIN,positions,new BoundingBox3i(60,68,150,74,78,173));
+        var body = SubLevelAssemblyHelper.assembleBlocks(level,AnglerSubmarine.MIN,positions,new BoundingBox3i(60,WorldHeights.fromLegacy(68),150,74,WorldHeights.fromLegacy(78),173));
         if (body==null) throw new IOException("Sable装配失败，未生成第二艘船");
         dev.ryanhcode.sable.api.sublevel.SubLevelContainer.getContainer(level)
                 .addForceLoadTicket(body, INITIAL_VALIDATION, net.minecraft.util.Unit.INSTANCE);

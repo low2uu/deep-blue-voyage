@@ -2,6 +2,8 @@
 
 完成日期：2026-10-14。存档名为 **Deep Blue Voyage - Harbor Island v1**，目录为 `runtime/client/saves/DBV-Island-v1`。使用同一个正式开发工程、NeoForge 1.21.1客户端及现有Mod组合。原来的 `DBV-Construction` 空岛存档保留。
 
+> 2026-10-16：当前继续开发使用v3，海面改为128，以下历史建筑记录的全部Y坐标加65（例如平台133、出生134、船坞水域78～127）。X/Z与建筑净空不变。详见[世界高度与旧岛迁移](../development/世界高度与旧岛迁移-world-height-migration.md)。
+
 ## 已建设内容
 
 | 区域 | 当前规模 | 建筑与环境 |

@@ -1,0 +1,9 @@
+{
+	"done": true,
+	"minY": -256,
+	"maxYExclusive": 320,
+	"sea": 128,
+	"audit": "PASS 102080 block checks: five empty machine bays, 128x128 dock water/sky, open sea exit, dry spawn",
+	"pose": "Pose3d{position=(67.458 107.784 161.812), orientation=(0.036 -0.005 -0 0.999), rotationPoint=(20,481,039.465 132.855 20,481,043.811), scale=(1 1 1)}",
+	"qualification": "Qualification[controller=true, oxygen=true, sealed=true, pending=false]"
+}
