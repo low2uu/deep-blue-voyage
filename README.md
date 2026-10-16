@@ -53,3 +53,5 @@
 已完成第一轮 [Mod 初筛表](docs/Mod初筛表-mod-candidates.md)：170 项候选，包含 161 个有 1.21.1 NeoForge 发布文件的模组项目和 9 个支持 1.21.1 的数据包。表内记录简介、版本、前置、来源及兼容性备注；[结构化目录](docs/mod-catalog.json) 与 [可筛选 Excel](outputs/mod-screening-20261013/深蓝远航-Mod初筛.xlsx) 同步保存。此阶段尚未进行整包运行验证。
 
 目前已有可装配的[灯笼鱼型潜艇](docs/development/灯笼鱼型潜艇与操作说明-angler-submarine-and-operation.md)，支持柴油传动、四角压载、双桨、制氧和独立气闸布局；已验证装配、双桨换向和断岸供运行。旧存档须主动执行升级命令，不会自动覆盖主艇。另见[起始岛保护](docs/game-mechanics/起始岛保护-starter-island-protection.md)和[控制器深度与升降控制](docs/development/控制器深度与升降控制-controller-depth-and-ballast.md)。现已恢复Deep Seas原生算法、调整初始艇浮力与独立换向传动，加入管理面板“停泊”及中文驾驶指南，完成1～15米范围的分档升降与前后运行检查。见[原生控制与返航停泊](docs/development/原生潜艇控制与返航停泊-native-submarine-control-and-mooring.md)。下一步验证长途、负载变化及气闸水下往返，再扩展群系、Boss与成长路线。
+
+2026-10-16：此前的潜艇全局调参已全部恢复为 Deep Seas 默认值（单舱升力75、浮筒升力25、升降速度上限2.0），启动不再强制覆盖。初始艇由用户设计；上文海试结果对应旧配置，本次未修改船体或世界存档。
