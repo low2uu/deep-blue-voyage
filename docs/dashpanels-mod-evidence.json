@@ -1,0 +1,37 @@
+{
+  "game_versions": [
+    "1.21.1"
+  ],
+  "loaders": [
+    "neoforge"
+  ],
+  "environment": "client_and_server",
+  "id": "aH1Oe6Kk",
+  "project_id": "xZJfGh82",
+  "author_id": "Y0PSETBb",
+  "featured": false,
+  "name": "Dashpanels 2.1 Neoforge 1.21.1",
+  "version_number": "2.1+neoforge1.21.1",
+  "changelog": "- Add the ability to give skins a visual shape\n- Limit the amount of modules to show when scrolling through the panel link entry\n- Redo client skin system",
+  "changelog_url": null,
+  "date_published": "2026-08-07T04:00:18.960037Z",
+  "downloads": 23370,
+  "version_type": "release",
+  "status": "listed",
+  "requested_status": null,
+  "files": [
+    {
+      "id": "8dpKhXtn",
+      "hashes": {
+        "sha1": "2d8b1f07b0ef3f24610324ec3e594edf356b8f36",
+        "sha512": "aecba4c55d94852919a2afb8aa717001900df8a5bac395ad5858545b4bdf95a8f37fd6ee99254746e65f0999fb30aaa2029fab13ca1efb82a0da9dccc718cd98"
+      },
+      "url": "https://cdn.modrinth.com/data/xZJfGh82/versions/aH1Oe6Kk/dashpanels-2.1%2Bneoforge1.21.1.jar",
+      "filename": "dashpanels-2.1+neoforge1.21.1.jar",
+      "primary": true,
+      "size": 891155,
+      "file_type": null
+    }
+  ],
+  "dependencies": []
+}

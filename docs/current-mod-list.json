@@ -1,15 +1,37 @@
 {
-  "checked_at": "2026-10-15",
+  "checked_at": "2026-10-17",
   "target": "Minecraft 1.21.1 NeoForge / Java 21",
   "source_workbook": "用户提供的 MC客户端Mod清单.xlsx / Mod清单 / 111 行",
   "scope": "全清单保留静态核查；实际启用依赖以Gradle为准。本次六项辅助Mod及Cloth Config已通过正式客户端加载与进世界检查，未宣称所有功能与大型船体均已验收。",
   "counts": {
-    "确定加入": 99,
+    "确定加入": 100,
     "备选区": 36,
     "待定": 15
   },
   "source_count": 111,
   "rows": [
+{
+  "id": "A-DASHPANELS",
+  "source_id": null,
+  "category": "驾驶舱控制面板",
+  "name": "Dashpanels",
+  "description": "模块化红石控制面板、电缆及Create链路联动，作者声明支持Sable船体",
+  "status": "确定加入",
+  "approval": "2026-10-17 用户明确同意加入本体",
+  "approved": true,
+  "original_file": "",
+  "selected_file": "dashpanels-2.1+neoforge1.21.1.jar",
+  "version": "2.1+neoforge1.21.1",
+  "platform": "1.21.1 / NeoForge",
+  "readiness": "官方文件校验及依赖范围核对通过；移动船体与改装恢复待实测",
+  "notes": "仅加入本体，不加入Extra；独立JSON备份与中央系统接口仍需适配",
+  "deps": "NeoForge >=21.1.235；Create可选联动 >=6.0.10；无需新增必需库",
+  "source": "https://modrinth.com/mod/dashpanels",
+  "evidence": "https://modrinth.com/mod/dashpanels/version/aH1Oe6Kk",
+  "slug": "dashpanels",
+  "sha1": "2d8b1f07b0ef3f24610324ec3e594edf356b8f36",
+  "runtime_status": "已启用（Gradle直接运行依赖）"
+},
     {
       "id": "U001",
       "source_id": 1,
@@ -3408,7 +3430,7 @@
   "classification_policy": {
     "same_function": "已确定主路线的同类替代项目放入备选；前置、兼容补丁和互补功能不因分类相同而移除。",
     "incompatible": "删除已证实与选定路线冲突的项目至excluded_rows；条件互斥和未知状态不冒充普遍不兼容。",
-    "runtime": "本次整理清单，不卸载已启用Mod，不改变实际运行依赖。"
+    "runtime": "2026-10-17新增用户批准的Dashpanels本体；其余运行依赖保留。"
   },
   "excluded_count": 1
 }

@@ -62,6 +62,8 @@ dependencies {
     localRuntime 'maven.modrinth:betterf3:maXNB1dn'
     localRuntime 'maven.modrinth:cloth-config:izKINKFg'
     localRuntime 'maven.modrinth:jade-sable-compat:cxUohR7A'
+    // 用户于2026-10-17确认加入驾驶舱模块化控制面板。
+    localRuntime 'maven.modrinth:dashpanels:aH1Oe6Kk'
 }
 
 neoForge {

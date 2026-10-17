@@ -1,12 +1,12 @@
 # 当前 Mod 清单：深蓝远航
 
-更新日期：2026-10-15。目标：**Minecraft 1.21.1 / NeoForge 21.1.259 / Java 21**。
+更新日期：2026-10-17。目标：**Minecraft 1.21.1 / NeoForge 21.1.259 / Java 21**。
 
 ## 本次整理规则
 
 按用户最新澄清，将**已确定主路线的同类替代 Mod**移入备选，并非将所有功能 Mod 移入备选。前置库、必要兼容补丁和互补功能保留各自状态；历史同意记录保留，当前是否主选以所在分区为准。“确定加入”不等于全部已经安装。
 
-本次仅整理清单，实际运行依赖仍以`mods/dbv-world/build.gradle`为准。刚启用的JEI、JER、Xaero双地图、BetterF3、Jade Sable Compat及必需前置均保留；没有卸载现有Mod。核心Create、Aeronautics、Sable、Deep Seas、Power Grid和自研主艇系统保持主选。
+2026-10-17新增用户确认的Dashpanels本体，实际运行依赖仍以`mods/dbv-world/build.gradle`为准。刚启用的JEI、JER、Xaero双地图、BetterF3、Jade Sable Compat及必需前置均保留；没有卸载现有Mod。核心Create、Aeronautics、Sable、Deep Seas、Power Grid和自研主艇系统保持主选。
 
 | 功能 | 主选路线 | 同类备选 / 处理 |
 | --- | --- | --- |
@@ -28,7 +28,7 @@ JEI当前锁定19.51.0.418，原版JAR已在正式开发环境启动、进世界
 
 | 区域 | 项数 |
 | --- | ---: |
-| 确定加入 | 99 |
+| 确定加入 | 100 |
 | 待定 | 15 |
 | 备选区 | 36 |
 | 已剔除（只保留历史记录） | 1 |
@@ -44,6 +44,7 @@ JEI当前锁定19.51.0.418，原版JAR已在正式开发环境启动、进世界
 
 | 编号 / 类别 | Mod / 简介 | 选定版本 | 安装条件与处理原因 | 来源 |
 | --- | --- | --- | --- | --- |
+| A-DASHPANELS · 驾驶舱控制面板 | **Dashpanels**<br>模块化红石面板、电缆及Create联动 | 2.1+neoforge1.21.1 | **已加入运行依赖；船体操作与改装恢复待实测**<br>用户2026-10-17确认；NeoForge≥21.1.235，Create联动≥6.0.10，当前满足。未加入Extra。 | [依据](https://modrinth.com/mod/dashpanels/version/aH1Oe6Kk) |
 | U001 · 核心与前置库 | **Create**<br>Create 机械动力核心，齿轮传动、机械装置 | 6.0.10+mc1.21.1 | **版本标签核对；整包待测**<br><br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/create/version/UjX6dr61) |
 | U002 · 核心与前置库 | **Architectury API**<br>跨加载器 API 库（多 mod 依赖） | 13.0.11+neoforge | **版本标签核对；整包待测**<br><br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/architectury-api/version/1IiqEQGl) |
 | U003 · 核心与前置库 | **Balm**<br>实用工具库（Waystones 等依赖） | 21.0.66+neoforge-1.21.1 | **版本标签核对；整包待测**<br><br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/balm/version/CquiaiDj) |
