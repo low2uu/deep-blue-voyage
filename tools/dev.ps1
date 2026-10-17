@@ -30,6 +30,15 @@ if ($Action -in @('run', 'debug')) {
     $clientDir = Join-Path $projectRoot 'runtime/client'
     New-Item -ItemType Directory -Force -Path $clientDir | Out-Null
     $optionsPath = Join-Path $clientDir 'options.txt'
+    # 仅为尚未选择语言的客户端设置默认中文，保留玩家已有选择。
+    if (!(Test-Path -LiteralPath $optionsPath)) {
+        Copy-Item -LiteralPath (Join-Path $projectRoot 'pack/overrides/options.txt') -Destination $optionsPath
+    } else {
+        $optionsLines = @([IO.File]::ReadAllLines($optionsPath))
+        if (!($optionsLines | Where-Object { $_ -match '^lang:' })) {
+            [IO.File]::WriteAllLines($optionsPath, [string[]]($optionsLines + 'lang:zh_cn'), (New-Object System.Text.UTF8Encoding($false)))
+        }
+    }
     $backupPath = Join-Path $clientDir 'options.before-construction.txt'
     if ($construction) {
         if (!(Test-Path -LiteralPath $backupPath)) {

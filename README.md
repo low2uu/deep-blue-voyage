@@ -18,6 +18,8 @@
 
 使用 VS Code 打开本目录，并安装推荐的 Java 和 Gradle 扩展。将 `JAVA_HOME` 指向本机 JDK 21。可通过不纳入版本管理的 `.vscode/settings.json` 设置本机 JDK 路径；仓库不携带开发者的绝对路径。运行 `powershell -ExecutionPolicy Bypass -File tools/check-environment.ps1` 可检查本机 Java 与 Git。
 
+项目默认语言为简体中文。中文资源在 `zh_cn.json` 中维护，英文资源在 `en_us.json` 中维护；英文文件保持英文。新开发客户端从整合包默认设置初始化中文，已有客户端保留玩家选择的语言。
+
 正式工程位于 `mods/dbv-world`，使用随项目提供的 Gradle Wrapper。打开 `deep-blue-voyage.code-workspace` 后，运行 `powershell -NoProfile -ExecutionPolicy Bypass -File tools/dev.ps1 build` 构建，使用同一命令的 `run` 动作启动客户端。详见 [部署流程](docs/开发环境部署-development-setup.md) 和 [起始岛建设阶段方案](docs/game-mechanics/起始岛建设方案-starter-island-plan.md)。
 
 临时建设设置集中在 `config/development-session.json`，不代表最终生存规则。当前只制作起始岛与简单近海，不预生成远海。
