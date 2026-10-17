@@ -62,11 +62,11 @@ public final class FleetCommands {
             var module = FleetModule.get(source.getServer());
             var sample = module.sample(source.getServer());
             module.registry().flagship().ifPresent(identity -> source.sendSuccess(() -> Component.literal(
-                    identity.name() + " | ID=" + identity.vesselId() + " | 代次=" + identity.generation()), false));
-            source.sendSuccess(() -> Component.literal(sample.state() + " | " + sample.detail()), false);
+                    identity.name() + " | 主艇编号=" + identity.vesselId() + " | 代次=" + identity.generation()), false));
+            source.sendSuccess(() -> Component.literal(sample.state().displayName() + " | " + sample.detail()), false);
             if (Double.isFinite(sample.mass()) && Double.isFinite(sample.speed())) {
                 source.sendSuccess(() -> Component.literal(String.format(Locale.ROOT,
-                        "物理质量=%.2f kpg | Sable速度=%.3f | 深度=%s | 裂纹=%s | 破舱=%s | tick=%d",
+                        "物理质量=%.2f（物理引擎单位） | 物理速度=%.3f | 深度=%s | 裂纹=%s | 破舱=%s | 观测游戏刻=%d",
                         sample.mass(), sample.speed(), value(sample.depth()), value(sample.cracks()), value(sample.breached()), sample.observedTick())), false);
             }
             source.sendSuccess(() -> Component.literal("建设船坞：/dbv refit；仅支持初始小艇有限方块快照，尚非完整灾难恢复。"), false);
@@ -74,10 +74,10 @@ public final class FleetCommands {
         } catch (Exception exception) { return fail(source, exception); }
     }
 
-    private static String value(Object value) { return value == null ? "未知/未初始化" : value.toString(); }
+    private static String value(Object value) { return value == null ? "未知/未初始化" : value instanceof Boolean flag ? (flag ? "是" : "否") : value.toString(); }
 
     private static int fail(CommandSourceStack source, Exception exception) {
-        source.sendFailure(Component.literal("DBV操作未完成：" + exception.getMessage()));
+        source.sendFailure(Component.literal("深蓝远航操作未完成：" + exception.getMessage()));
         return 0;
     }
 }

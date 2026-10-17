@@ -121,7 +121,7 @@ public final class FleetPanel {
             if(registered){
                 try{storage=m.storage().lines(m);}catch(Exception error){storage=List.of("存储扫描暂不可用\n"+safeMessage(error));}
                 var identity=m.registry().flagship().orElseThrow();var telemetry=m.sample(player.getServer());
-                info="永久主艇 ID："+identity.vesselId()+"\n载体代次："+identity.generation()+" · 状态："+m.refit().status()
+                info="永久主艇编号："+identity.vesselId()+"\n载体代次："+identity.generation()+" · 状态："+m.refit().status()
                     +"\n质量："+(Double.isFinite(telemetry.mass())?String.format(java.util.Locale.ROOT,"%.1f",telemetry.mass()):"暂不可用")
                     +" · 速度："+(Double.isFinite(telemetry.speed())?String.format(java.util.Locale.ROOT,"%.2f",telemetry.speed()):"暂不可用");
                 if(!m.refit().active()&&m.refit().accessProblem(player,m)==null)flags|=PanelView.STORAGE_EDITABLE;

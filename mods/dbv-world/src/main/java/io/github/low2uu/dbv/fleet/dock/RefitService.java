@@ -276,17 +276,12 @@ public final class RefitService {
     private static boolean sameTransferredState(BlockState expected,BlockState actual){
         if(expected.equals(actual))return true;
         if(expected.getBlock()!=actual.getBlock())return false;
-        // Create recalculates pipe arms when moving into a plot. Arms are derived from neighbours,
-        // not inventory or orientation; still verify block identity, waterlogging and every other property.
+        var expectedProperties=new HashMap<String,Comparable<?>>();
+        var actualProperties=new HashMap<String,Comparable<?>>();
+        for(var property:expected.getProperties())expectedProperties.put(property.getName(),expected.getValue(property));
+        for(var property:actual.getProperties())actualProperties.put(property.getName(),actual.getValue(property));
         String block=net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(expected.getBlock()).toString();
-        Set<String> arms=switch(block){
-            case "create:fluid_pipe" -> Set.of("north","south","east","west","up","down");
-            case "create:clutch", "create:gearshift" -> Set.of("powered");
-            default -> Set.of();
-        };
-        if(arms.isEmpty())return false;
-        for(var property:expected.getProperties())if(!arms.contains(property.getName())&&!expected.getValue(property).equals(actual.getValue(property)))return false;
-        return true;
+        return TransferredBlockState.matches(block,block,expectedProperties,actualProperties);
     }
     private void restoreWorld() throws IOException {
         var level=server.overworld();var entries=journal.getList("original",Tag.TAG_COMPOUND);

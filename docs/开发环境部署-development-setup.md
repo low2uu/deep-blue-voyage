@@ -108,13 +108,13 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\dev.ps1 run
 
 修改 Java 后，先退出游戏，再执行 `build` 和 `run` 验证。日常通常不必重新执行 `prepare`。
 
-也可以使用 VS Code 的 `终端 → 运行任务`：`DBV: Build` 构建，`DBV: Run Minecraft` 启动；`Ctrl+Shift+B` 使用默认构建任务。
+也可以使用 VS Code 的 `终端 → 运行任务`：`深蓝远航：构建模组` 构建，`深蓝远航：启动游戏` 启动；`Ctrl+Shift+B` 使用默认构建任务。
 
 打开工作区或执行 `build` 不会自动打开游戏。正常游玩请使用 `run`，并保留启动终端；`debug` 会暂停等待调试器连接，连接前不会出现游戏主菜单。游戏窗口独立于 VS Code，本机进入单人游戏后选择 `Deep Blue Voyage - Starter Submarine v2`；新电脑没有该存档时，按新版启动文档创建起始岛世界或接收完整存档。
 
 若日志已经完成渲染初始化，但桌面没有窗口，检查是否复用了从自动化环境启动的 Gradle 常驻进程。启动脚本的 `run` / `debug` 使用 `--no-daemon` 避免复用该进程；应从本机 VS Code 终端或桌面 PowerShell 启动。不要反复启动多个客户端占用同一运行目录。
 
-需要断点时，先选择 `DBV: Start Minecraft for Debugger`，待 JVM 等待连接，再在运行和调试面板选择 `DBV: Attach to Minecraft`。它连接本机 5005 端口，使用同一套源码和 `runtime/client`，不会另建一套游戏环境。
+需要断点时，先选择 `深蓝远航：以调试模式启动游戏`，待 JVM 等待连接，再在运行和调试面板选择 `深蓝远航：连接游戏调试器`。它连接本机 5005 端口，使用同一套源码和 `runtime/client`，不会另建一套游戏环境。
 
 以下路径均相对于仓库根目录：
 

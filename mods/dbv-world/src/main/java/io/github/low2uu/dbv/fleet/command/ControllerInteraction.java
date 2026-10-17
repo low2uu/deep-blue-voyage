@@ -46,7 +46,7 @@ public final class ControllerInteraction {
         if (page < 1 || page > pages) throw new IllegalArgumentException("页码应为1～" + pages);
         var q = report.qualification();
         output.accept(Component.literal("主潜艇资格：" + (q.eligible() ? "符合（仍需唯一登记）" : String.join("；", q.reasons()))));
-        output.accept(Component.literal("设备 " + report.devices().size() + " 个 | 第 " + page + "/" + pages + " 页 | tick=" + report.tick()));
+        output.accept(Component.literal("设备 " + report.devices().size() + " 个 | 第 " + page + "/" + pages + " 页 | 观测游戏刻=" + report.tick()));
         report.devices().stream().skip((long) (page - 1) * 12).limit(12).forEach(d -> output.accept(Component.literal(
                 d.type() + " | " + d.id() + " | 艇内相对位置 " + d.relativePosition().toShortString() + " | " + d.status())));
         return q.eligible() ? 1 : 0;

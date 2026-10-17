@@ -1,6 +1,6 @@
 {
-  "generator.dbv_world.starter_island": "Deep Blue Voyage Starter Island",
-  "generator.dbv_world.starter_island.info": "An ocean island with space for port facilities and expansion.",
-  "block.dbv_world.cabin_panel": "Cabin Information Panel",
-  "itemGroup.dbv_world": "Deep Blue Voyage"
+  "generator.dbv_world.starter_island": "深蓝远航 起始岛",
+  "generator.dbv_world.starter_island.info": "海洋中的起始岛，预留港口与设施扩建空间。",
+  "block.dbv_world.cabin_panel": "舱内信息面板",
+  "itemGroup.dbv_world": "深蓝远航"
 }

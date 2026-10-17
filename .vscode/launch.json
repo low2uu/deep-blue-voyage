@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "DBV: Attach to Minecraft",
+      "name": "深蓝远航：连接游戏调试器",
       "type": "java",
       "request": "attach",
       "hostName": "localhost",

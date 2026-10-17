@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "DBV: Build",
+      "label": "深蓝远航：构建模组",
       "type": "process",
       "command": "powershell",
       "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/dev.ps1", "build"],
@@ -10,14 +10,14 @@
       "problemMatcher": []
     },
     {
-      "label": "DBV: Run Minecraft",
+      "label": "深蓝远航：启动游戏",
       "type": "process",
       "command": "powershell",
       "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/dev.ps1", "run"],
       "problemMatcher": []
     },
     {
-      "label": "DBV: Start Minecraft for Debugger",
+      "label": "深蓝远航：以调试模式启动游戏",
       "type": "process",
       "command": "powershell",
       "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/tools/dev.ps1", "debug"],

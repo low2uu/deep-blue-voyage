@@ -1,4 +1,4 @@
-param(
+﻿param(
     [ValidateSet('prepare', 'build', 'run', 'debug')]
     [string]$Action = 'build'
 )
@@ -11,18 +11,18 @@ if (Test-Path -LiteralPath $localSettings) {
     if ($settings.'java.jdt.ls.java.home') { $jdkPath = $settings.'java.jdt.ls.java.home' }
 }
 if (!$jdkPath -or !(Test-Path -LiteralPath (Join-Path $jdkPath 'bin/javac.exe'))) {
-    throw 'Configure a Java 21 JDK in JAVA_HOME or .vscode/settings.json.'
+    throw '请通过 JAVA_HOME 或 .vscode/settings.json 配置 Java 21 开发工具包。'
 }
 $env:JAVA_HOME = $jdkPath
 $env:GRADLE_USER_HOME = Join-Path $projectRoot '.local/gradle-home'
 $session = Get-Content (Join-Path $projectRoot 'config/development-session.json') -Raw | ConvertFrom-Json
-if ($session.constructionMode -isnot [bool]) { throw 'constructionMode must be a JSON boolean.' }
+if ($session.constructionMode -isnot [bool]) { throw '建设模式配置 constructionMode 必须为布尔值（true 或 false）。' }
 foreach ($name in @('renderDistance', 'simulationDistance', 'maxFps')) {
     $value = $session.$name
     $maximum = if ($name -eq 'maxFps') { 260 } else { 32 }
     $minimum = if ($name -eq 'maxFps') { 10 } elseif ($name -eq 'simulationDistance') { 5 } else { 2 }
     if ($null -eq $value -or $value -is [string] -or [double]$value -ne [int]$value -or $value -lt $minimum -or $value -gt $maximum) {
-        throw "$name must be an integer from $minimum to $maximum."
+        throw "配置项 $name 必须是 $minimum 到 $maximum 之间的整数。"
     }
 }
 $construction = [bool]$session.constructionMode
@@ -67,13 +67,13 @@ try {
     # Launch the game from this invocation instead of reusing that daemon.
     if ($Action -in @('run', 'debug')) {
         $gradleArgs += '--no-daemon'
-        Write-Host 'Starting Minecraft in a separate window. Keep this terminal open.'
+        Write-Host '正在独立窗口中启动游戏，请保持此终端开启。'
         if ($Action -eq 'debug') {
-            Write-Host 'Debug mode waits on port 5005. Attach the VS Code debugger to continue.'
+            Write-Host '调试模式正在等待连接端口 5005，请连接编辑器调试器以继续启动。'
         }
     }
     $gradleArgs += '-PdbvConstruction=' + $construction.ToString().ToLowerInvariant()
     if ($Action -eq 'debug') { $gradleArgs += '--debug-jvm' }
     & .\gradlew.bat @gradleArgs
-    if ($LASTEXITCODE -ne 0) { throw "Gradle failed with exit code $LASTEXITCODE" }
+    if ($LASTEXITCODE -ne 0) { throw "构建工具执行失败，退出代码：$LASTEXITCODE" }
 } finally { Pop-Location }

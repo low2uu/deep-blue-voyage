@@ -11,12 +11,12 @@ public record VesselIdentity(UUID vesselId, UUID bodyId, String dimension, Strin
         Objects.requireNonNull(dimension);
         Objects.requireNonNull(name);
         if (!dimension.matches("[a-z0-9_.-]+:[a-z0-9/._-]+")) {
-            throw new IllegalArgumentException("Invalid dimension identifier");
+            throw new IllegalArgumentException("维度标识无效");
         }
         name = name.strip();
         if (name.isEmpty() || name.length() > 64 || name.codePoints().anyMatch(Character::isISOControl)) {
-            throw new IllegalArgumentException("Ship name must contain 1–64 printable characters");
+            throw new IllegalArgumentException("潜艇名称须包含1～64个可显示字符");
         }
-        if (generation < 1) { throw new IllegalArgumentException("Invalid vessel generation"); }
+        if (generation < 1) { throw new IllegalArgumentException("潜艇载体代次无效"); }
     }
 }

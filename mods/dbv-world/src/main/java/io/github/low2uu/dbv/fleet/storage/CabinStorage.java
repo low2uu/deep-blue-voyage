@@ -134,7 +134,7 @@ public final class CabinStorage {
             try{apply(before);captureUnchecked(m);if(!server.saveEverything(false,true,true))throw new IOException("回退保存失败");store.finishStorageRecovery();}catch(Exception rollback){error.addSuppressed(rollback);}
             throw new IOException("存储恢复失败；恢复前备份："+safety,error);
         }
-        return "舱内存储已从 JSON 恢复；恢复前快照："+safety;
+        return "舱内存储已从独立档案恢复；恢复前快照："+safety;
     }
     private void apply(Map<Inventory,List<ItemStack>> plan){
         for(var entry:plan.entrySet())for(int i=0;i<entry.getValue().size();i++)entry.getKey().set(i,entry.getValue().get(i).copy());
@@ -151,7 +151,7 @@ public final class CabinStorage {
                 lines.add(e.get("label").getAsString()+" × "+(stack.has("count")?stack.get("count").getAsInt():1)+"\n容器 "+location+" · 槽位 "+(e.get("slot").getAsInt()+1));
             }
         }
-        if(lines.size()>128){lines=new ArrayList<>(lines.subList(0,127));lines.add("显示已截断\n完整槽位信息保存在独立 JSON 档案中");}
+        if(lines.size()>128){lines=new ArrayList<>(lines.subList(0,127));lines.add("显示已截断\n完整槽位信息保存在独立存储档案中");}
         return lines;
     }
 }
