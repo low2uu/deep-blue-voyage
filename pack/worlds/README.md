@@ -6,7 +6,10 @@
 
 ### `新的世界4.zip`（2026-10-18）
 
-含航空学 / Sable 物理化结构与新建潜艇 **酒狐号·初始艇**（vesselId `14c53bb2-ba12-4e00-aab7-d2944db21c91`，bodyId `6c5312c3-c771-40b4-b5f2-d1925a3a2e59`，用户登记序列 ID `451cbb6f-58f0-4c7f-bb97-f55ec94ea261`）。结构约 15×11×24、883 方块，含双桨、压载、浮筒、制氧与声呐等设备。
+含 Sable / 航空学物理化结构 **2 个**：
+
+1. **初始艇「酒狐号·初始艇」**（DBV 舰队主艇）— bodyId `6c5312c3-c771-40b4-b5f2-d1925a3a2e59`，vesselId `14c53bb2-ba12-4e00-aab7-d2944db21c91`。铁壳、船载电脑、压载与双桨，由 `dbv/fleet` 档案管理。
+2. **新建潜艇「酒狐号」** — Sable SubLevelID `451cbb6f-58f0-4c7f-bb97-f55ec94ea261`。用户在航空学/Sable 中另建的物理结构，含 Power Grid 电力、大型柴油机、DashPanels 驾驶台、名牌「酒狐号」等。
 
 导入：关闭 Minecraft，将 ZIP 内的 `新的世界4` 解压到 `runtime/client/saves/`。已有同名存档先完整备份并移出，禁止合并文件夹。
 
