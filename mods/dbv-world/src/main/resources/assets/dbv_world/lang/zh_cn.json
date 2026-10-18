@@ -2,5 +2,8 @@
   "generator.dbv_world.starter_island": "深蓝远航 起始岛",
   "generator.dbv_world.starter_island.info": "海洋中的起始岛，预留港口与设施扩建空间。",
   "block.dbv_world.cabin_panel": "舱内信息面板",
-  "itemGroup.dbv_world": "深蓝远航"
+  "itemGroup.dbv_world": "深蓝远航",
+  "menu.dbv_world.storage_terminal": "舱内存储终端",
+  "screen.dbv_world.fleet": "潜艇管理",
+  "screen.dbv_world.starter_guide": "初始艇驾驶指南"
 }

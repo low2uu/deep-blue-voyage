@@ -2,5 +2,8 @@
   "generator.dbv_world.starter_island": "Deep Blue Voyage Starter Island",
   "generator.dbv_world.starter_island.info": "An ocean island with space for port facilities and expansion.",
   "block.dbv_world.cabin_panel": "Cabin Information Panel",
-  "itemGroup.dbv_world": "Deep Blue Voyage"
+  "itemGroup.dbv_world": "Deep Blue Voyage",
+  "menu.dbv_world.storage_terminal": "Cabin Storage Terminal",
+  "screen.dbv_world.fleet": "Submarine Management",
+  "screen.dbv_world.starter_guide": "Starter Submarine Guide"
 }

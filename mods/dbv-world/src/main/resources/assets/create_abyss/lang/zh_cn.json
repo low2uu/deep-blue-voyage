@@ -1,0 +1,14 @@
+{
+  "block.create_abyss.creepvine_seed": "藤蔓种子",
+  "block.create_abyss.submarine_liana": "潜艇藤蔓",
+  "create_abyss.command.no_sublevel_container": "当前维度未找到子层级容器。",
+  "create_abyss.command.player_only": "只有玩家可以执行此命令。",
+  "create_abyss.command.queue_submarine_lianas": "已排队生成 %s 条长度为 %s 的潜艇藤蔓，起点为你的位置",
+  "create_abyss.command.spawn_liana_failed": "生成潜艇藤蔓失败。",
+  "create_abyss.command.spawn_liana_success": "成功生成长度为 %s 的潜艇藤蔓",
+  "entity.create_abyss.amphistium": "双生鱼",
+  "entity.create_abyss.cookiecutter_shark": "雪茄达摩鲨",
+  "item.create_abyss.amphistium_spawn_egg": "双生鱼刷怪蛋",
+  "item.create_abyss.cookiecutter_shark_spawn_egg": "雪茄达摩鲨刷怪蛋",
+  "itemGroup.create_abyss.abyss_tab": "机械动力：渊海"
+}
