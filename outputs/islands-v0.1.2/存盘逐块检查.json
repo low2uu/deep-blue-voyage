@@ -1,0 +1,96 @@
+{
+  "passed": true,
+  "savedIslandChunks": 4157,
+  "oreCounts": {
+    "3": {
+      "minecraft:iron_ore": 22888,
+      "minecraft:raw_iron_block": 3817
+    },
+    "4": {
+      "minecraft:raw_copper_block": 3966,
+      "minecraft:copper_ore": 23839
+    },
+    "5": {
+      "minecraft:coal_ore": 70643
+    },
+    "6": {
+      "minecraft:gold_ore": 44109,
+      "minecraft:raw_gold_block": 7340
+    },
+    "7": {
+      "minecraft:redstone_ore": 42786
+    },
+    "8": {
+      "minecraft:lapis_ore": 21973
+    },
+    "9": {
+      "create:zinc_ore": 39696,
+      "create:raw_zinc_block": 6618
+    },
+    "10": {
+      "minecraft:iron_ore": 65202,
+      "minecraft:raw_iron_block": 10883
+    },
+    "11": {
+      "minecraft:copper_ore": 24646,
+      "minecraft:raw_copper_block": 4116
+    },
+    "12": {
+      "minecraft:coal_ore": 66024
+    },
+    "13": {
+      "minecraft:raw_gold_block": 4926,
+      "minecraft:gold_ore": 29532
+    },
+    "14": {
+      "minecraft:redstone_ore": 51426
+    },
+    "15": {
+      "minecraft:lapis_ore": 60071
+    },
+    "16": {
+      "create:zinc_ore": 60901,
+      "create:raw_zinc_block": 10184
+    },
+    "17": {
+      "minecraft:iron_ore": 25960,
+      "minecraft:raw_iron_block": 4317
+    },
+    "18": {
+      "minecraft:copper_ore": 59647,
+      "minecraft:raw_copper_block": 9966
+    },
+    "19": {
+      "minecraft:coal_ore": 34380
+    },
+    "20": {
+      "minecraft:gold_ore": 34432,
+      "minecraft:raw_gold_block": 5753
+    },
+    "21": {
+      "minecraft:redstone_ore": 76800
+    },
+    "22": {
+      "minecraft:lapis_ore": 63153
+    },
+    "23": {
+      "create:zinc_ore": 25769,
+      "create:raw_zinc_block": 4270
+    },
+    "24": {
+      "minecraft:iron_ore": 49068,
+      "minecraft:raw_iron_block": 8173
+    },
+    "25": {
+      "minecraft:copper_ore": 19903,
+      "minecraft:raw_copper_block": 3335
+    },
+    "26": {
+      "minecraft:coal_ore": 42857
+    }
+  },
+  "modOres": [
+    "create:zinc_ore",
+    "create:deepslate_zinc_ore"
+  ]
+}

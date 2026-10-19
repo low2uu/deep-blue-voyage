@@ -33,6 +33,7 @@ public final class DeepBlueVoyageWorld {
         IslandProtection.initialize();
         NeoForge.EVENT_BUS.addListener(ConstructionMode::onServerStarted);
         NeoForge.EVENT_BUS.addListener(OceanDevelopmentArea::started);
+        NeoForge.EVENT_BUS.addListener(VoyageTerrain::onChunkLoad);
         NeoForge.EVENT_BUS.addListener(DeepBlueVoyageWorld::onCreateSpawn);
         LogUtils.getLogger().info("Deep Blue Voyage world module loaded; starter island preset registered.");
     }

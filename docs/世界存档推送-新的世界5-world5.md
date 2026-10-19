@@ -6,7 +6,7 @@
 
 | 项目 | 内容 |
 | --- | --- |
-| 交付文件 | [pack/worlds/新的世界5.zip](../pack/worlds/新的世界5.zip)（约 4.2 MB） |
+| 交付文件 | [pack/worlds/新的世界5.zip](https://github.com/low2uu/deep-blue-voyage/blob/v0.1.1/pack/worlds/%E6%96%B0%E7%9A%84%E4%B8%96%E7%95%8C5.zip)（约 4.2 MB） |
 | 本机路径 | `runtime/client/saves/新的世界5` |
 | 解压体量 | 约 28.5 MB |
 | 平台 | Minecraft 1.21.1 / NeoForge 21.1.259 |
@@ -67,3 +67,5 @@
 
 - [世界存档与汉化资源推送（世界4）](世界存档与汉化资源推送-world4-and-l10n.md)
 - [世界包目录说明](../pack/worlds/README.md)
+
+> v0.1.2 清理说明：旧 ZIP 已从当前分支移除，本文保留历史记录，以上交付链接指向 v0.1.1。当前请使用联合开发存档。

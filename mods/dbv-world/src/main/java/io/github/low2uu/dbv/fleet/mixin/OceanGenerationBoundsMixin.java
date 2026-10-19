@@ -18,6 +18,6 @@ public abstract class OceanGenerationBoundsMixin {
     private void dbv$boundFeatures(BlockPos pos,BlockState state,int flags,int depth,CallbackInfoReturnable<Boolean> ci){
         var region=(WorldGenRegion)(Object)this;
         if(region.getLevel().getChunkSource().getGenerator() instanceof FloodedWorldGenerator
-                &&(!OceanBounds.contains(pos.getX(),pos.getZ())||(pos.getY()>=IslandTerrain.groundHeight(pos.getX(),pos.getZ())-4&&OceanBounds.protectedSurface(pos.getX(),pos.getZ()))))ci.setReturnValue(false);
+                &&(io.github.low2uu.dbv.world.VoyageLayout.protects(region.getSeed(),pos.getX(),pos.getY(),pos.getZ())||!OceanBounds.contains(pos.getX(),pos.getZ())||(pos.getY()>=IslandTerrain.groundHeight(pos.getX(),pos.getZ())-4&&OceanBounds.protectedSurface(pos.getX(),pos.getZ()))))ci.setReturnValue(false);
     }
 }

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "regions": [
+    {
+      "kind": "急流海域",
+      "solidDiamondCoreBlocks": 14344
+    },
+    {
+      "kind": "深海盆地",
+      "solidDiamondCoreBlocks": 14344
+    },
+    {
+      "kind": "冰川海域",
+      "solidDiamondCoreBlocks": 14344
+    }
+  ]
+}

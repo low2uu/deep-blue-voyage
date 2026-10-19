@@ -1,0 +1,8 @@
+{
+  "verified": true,
+  "backup": "runtime/支线主线生成前-v0.1.1.zip",
+  "oldDuplicate": ".local/islands-replaced-v0.1.1",
+  "identicalFiles": 120,
+  "backupSha256": "a62ed088a303e015e37a1aa620f0fb3d84877f51cc9feb02335872518b1da8e2",
+  "note": "除临时 session.lock 外的 120 个文件内容完全一致；保留的 ZIP 可以独立恢复整个旧存档，重复目录已清理。"
+}

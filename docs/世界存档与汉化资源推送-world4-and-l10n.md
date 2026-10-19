@@ -6,7 +6,7 @@
 
 | 项目 | 内容 |
 | --- | --- |
-| 交付文件 | [pack/worlds/新的世界4.zip](../pack/worlds/新的世界4.zip) |
+| 交付文件 | [pack/worlds/新的世界4.zip](https://github.com/low2uu/deep-blue-voyage/blob/v0.1.1/pack/worlds/%E6%96%B0%E7%9A%84%E4%B8%96%E7%95%8C4.zip) |
 | 本机路径 | `runtime/client/saves/新的世界4` |
 | 平台 | Minecraft 1.21.1 / NeoForge 21.1.259 |
 | 体量 | 压缩后约 4.1 MB；解压后约 24.7 MB |
@@ -106,3 +106,5 @@
 - [原生潜艇控制与返航停泊](development/原生潜艇控制与返航停泊-native-submarine-control-and-mooring.md)
 - [部署、启动地图与版本更新](部署启动与版本更新-deployment-launch-update.md)
 - [世界包目录说明](../pack/worlds/README.md)
+
+> v0.1.2 清理说明：旧 ZIP 已从当前分支移除，本文保留历史记录，以上交付链接指向 v0.1.1。当前请使用联合开发存档。

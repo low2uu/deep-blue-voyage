@@ -195,4 +195,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\dev.ps1 run
 
 正常退出使用“保存并退回到标题画面”，然后退出游戏；等终端中的运行任务结束再关终端。
 
-当前协作交付包为 `pack/worlds/深蓝远航-联合开发.zip`；直接解压其中同名目录至 `runtime/client/saves/`。已有同名存档先另行备份，禁止合并覆盖。
+当前协作交付为 `pack/worlds/` 的联合开发存档分卷；使用下文的 `tools/restore-world.ps1` 自动校验并导入。已有同名存档先另行备份，禁止合并覆盖。
+
+
+## v0.1.2 存档交付与新建世界
+
+当前交付采用 `pack/worlds/深蓝远航-联合开发.zip.001` 至 `.004` 四卷。拉取完整仓库后，运行 `powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\restore-world.ps1`，会校验各卷与完整 SHA-256 后导入；已有同名存档则拒绝覆盖。请先另行保存自己的进度，不要手工合并存档。详情见 [世界存档交付](../pack/worlds/README.md)。
+
+不使用交付快照也可以新建：仍须在“世界类型”选择 **深蓝远航 起始岛**。起始岛、随机主线占位和单矿种支线岛都属于该预设的正式生成器，按新种子及探索生成；不是只对交付地图有效的一次性脚本。普通默认世界仍是原版世界类型，不会自动变成本整合包地图。

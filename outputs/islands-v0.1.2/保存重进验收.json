@@ -1,0 +1,15 @@
+{
+	"done": true,
+	"passed": true,
+	"all27Sites": true,
+	"minedOreStayedAbsent": true,
+	"miningProbeRestored": true,
+	"exitMaxStep": 1,
+	"bodyId": "66d01998-fbc7-47d8-b8ac-7097dadc716a",
+	"qualification": "Qualification[controller=true, oxygen=true, sealed=true, pending=false]",
+	"moored": true,
+	"vesselCount": 1,
+	"audit": "PASS 102080 block checks: five empty machine bays, 128x128 dock water/sky, open sea exit, dry spawn",
+	"mass": 2579.25,
+	"tick": 200
+}

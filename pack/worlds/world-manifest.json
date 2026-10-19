@@ -1,0 +1,29 @@
+{
+  "version": "0.1.2",
+  "folder": "深蓝远航-联合开发",
+  "archive": "深蓝远航-联合开发.zip",
+  "size": 156281743,
+  "sha256": "be3b796aa1b694d6b29456f4d7f833e5ab1ed0fd87ff884167865db5399b4395",
+  "parts": [
+    {
+      "file": "深蓝远航-联合开发.zip.001",
+      "size": 50331648,
+      "sha256": "7c57ff71cd70f90d8a0529b2f8bc7e33fbbbd7ba160792fb8d7b6f2679f9855e"
+    },
+    {
+      "file": "深蓝远航-联合开发.zip.002",
+      "size": 50331648,
+      "sha256": "4d0a42a0245d5abcbab5e3264e93a41fc86e92e6652834bda054ed8a6bf9c058"
+    },
+    {
+      "file": "深蓝远航-联合开发.zip.003",
+      "size": 50331648,
+      "sha256": "5744c01448cf35ebfe3cc8ce618e47b5096262acfe40c5d043722ba8b6c08b4b"
+    },
+    {
+      "file": "深蓝远航-联合开发.zip.004",
+      "size": 5286799,
+      "sha256": "daf8bb8e59784b76ce5d658710094b24a1309d2ab01b1b878ef6b99614651487"
+    }
+  ]
+}

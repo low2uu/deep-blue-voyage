@@ -104,6 +104,7 @@ public final class FloodedWorldGenerator extends NoiseBasedChunkGenerator {
         if(!inside(chunk))return;
         super.applyBiomeDecoration(level,chunk,sm);
         if(core(chunk))IslandArchitecture.decorate(chunk);
+        VoyageTerrain.decorate(level.getSeed(),chunk);
     }
     @Override public void createStructures(RegistryAccess access,ChunkGeneratorStructureState state,StructureManager sm,ChunkAccess c,StructureTemplateManager tm){
         if(!inside(c)||OceanBounds.protectedSurface(c.getPos().getMiddleBlockX(),c.getPos().getMiddleBlockZ()))return;

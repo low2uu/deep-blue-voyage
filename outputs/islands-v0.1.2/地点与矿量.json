@@ -1,0 +1,280 @@
+{
+	"modOres": [
+		"create:zinc_ore",
+		"create:deepslate_zinc_ore"
+	],
+	"seed": "7667568505341616740",
+	"generatedChunks": 4216,
+	"sites": [
+		{
+			"index": 0,
+			"kind": "急流海域",
+			"x": -1141,
+			"z": 2038,
+			"radius": 450,
+			"coreY": 100,
+			"ore": -1,
+			"oreBlocks": 0
+		},
+		{
+			"index": 1,
+			"kind": "深海盆地",
+			"x": 886,
+			"z": 3249,
+			"radius": 550,
+			"coreY": -160,
+			"ore": -1,
+			"oreBlocks": 0
+		},
+		{
+			"index": 2,
+			"kind": "冰川海域",
+			"x": 2956,
+			"z": -2797,
+			"radius": 550,
+			"coreY": 136,
+			"ore": -1,
+			"oreBlocks": 0
+		},
+		{
+			"index": 3,
+			"kind": "补给岛",
+			"x": -615,
+			"z": 449,
+			"radius": 55,
+			"coreY": 0,
+			"ore": 0,
+			"oreBlocks": 26705
+		},
+		{
+			"index": 4,
+			"kind": "补给岛",
+			"x": 536,
+			"z": 914,
+			"radius": 56,
+			"coreY": 0,
+			"ore": 1,
+			"oreBlocks": 27805
+		},
+		{
+			"index": 5,
+			"kind": "补给岛",
+			"x": 1941,
+			"z": -1511,
+			"radius": 89,
+			"coreY": 0,
+			"ore": 2,
+			"oreBlocks": 70643
+		},
+		{
+			"index": 6,
+			"kind": "补给岛",
+			"x": -390,
+			"z": 1405,
+			"radius": 76,
+			"coreY": 0,
+			"ore": 3,
+			"oreBlocks": 51449
+		},
+		{
+			"index": 7,
+			"kind": "补给岛",
+			"x": 824,
+			"z": 1813,
+			"radius": 69,
+			"coreY": 0,
+			"ore": 4,
+			"oreBlocks": 42786
+		},
+		{
+			"index": 8,
+			"kind": "补给岛",
+			"x": 698,
+			"z": -914,
+			"radius": 50,
+			"coreY": 0,
+			"ore": 5,
+			"oreBlocks": 21973
+		},
+		{
+			"index": 9,
+			"kind": "补给岛",
+			"x": 1970,
+			"z": -3208,
+			"radius": 72,
+			"coreY": 0,
+			"ore": 6,
+			"oreBlocks": 46314
+		},
+		{
+			"index": 10,
+			"kind": "补给岛",
+			"x": -3591,
+			"z": -3334,
+			"radius": 92,
+			"coreY": 0,
+			"ore": 0,
+			"oreBlocks": 76085
+		},
+		{
+			"index": 11,
+			"kind": "补给岛",
+			"x": 2038,
+			"z": -2311,
+			"radius": 57,
+			"coreY": 0,
+			"ore": 1,
+			"oreBlocks": 28762
+		},
+		{
+			"index": 12,
+			"kind": "补给岛",
+			"x": 2949,
+			"z": 2313,
+			"radius": 86,
+			"coreY": 0,
+			"ore": 2,
+			"oreBlocks": 66024
+		},
+		{
+			"index": 13,
+			"kind": "工业岛",
+			"x": 2301,
+			"z": -236,
+			"radius": 62,
+			"coreY": 0,
+			"ore": 3,
+			"oreBlocks": 34458
+		},
+		{
+			"index": 14,
+			"kind": "工业岛",
+			"x": -3301,
+			"z": -879,
+			"radius": 76,
+			"coreY": 0,
+			"ore": 4,
+			"oreBlocks": 51426
+		},
+		{
+			"index": 15,
+			"kind": "工业岛",
+			"x": 4030,
+			"z": -3813,
+			"radius": 82,
+			"coreY": 0,
+			"ore": 5,
+			"oreBlocks": 60071
+		},
+		{
+			"index": 16,
+			"kind": "工业岛",
+			"x": 3680,
+			"z": 315,
+			"radius": 89,
+			"coreY": 0,
+			"ore": 6,
+			"oreBlocks": 71085
+		},
+		{
+			"index": 17,
+			"kind": "工业岛",
+			"x": -829,
+			"z": -3974,
+			"radius": 58,
+			"coreY": 0,
+			"ore": 0,
+			"oreBlocks": 30277
+		},
+		{
+			"index": 18,
+			"kind": "工业岛",
+			"x": 4517,
+			"z": 247,
+			"radius": 88,
+			"coreY": 0,
+			"ore": 1,
+			"oreBlocks": 69613
+		},
+		{
+			"index": 19,
+			"kind": "工业岛",
+			"x": 2050,
+			"z": 4387,
+			"radius": 62,
+			"coreY": 0,
+			"ore": 2,
+			"oreBlocks": 34380
+		},
+		{
+			"index": 20,
+			"kind": "工业岛",
+			"x": -10,
+			"z": 4116,
+			"radius": 67,
+			"coreY": 0,
+			"ore": 3,
+			"oreBlocks": 40185
+		},
+		{
+			"index": 21,
+			"kind": "挑战岛",
+			"x": -359,
+			"z": -1041,
+			"radius": 93,
+			"coreY": 0,
+			"ore": 4,
+			"oreBlocks": 76800
+		},
+		{
+			"index": 22,
+			"kind": "挑战岛",
+			"x": -4264,
+			"z": -2486,
+			"radius": 84,
+			"coreY": 0,
+			"ore": 5,
+			"oreBlocks": 63153
+		},
+		{
+			"index": 23,
+			"kind": "挑战岛",
+			"x": -1163,
+			"z": -1911,
+			"radius": 58,
+			"coreY": 0,
+			"ore": 6,
+			"oreBlocks": 30039
+		},
+		{
+			"index": 24,
+			"kind": "挑战岛",
+			"x": -2635,
+			"z": 3725,
+			"radius": 80,
+			"coreY": 0,
+			"ore": 0,
+			"oreBlocks": 57241
+		},
+		{
+			"index": 25,
+			"kind": "挑战岛",
+			"x": -4294,
+			"z": 1001,
+			"radius": 51,
+			"coreY": 0,
+			"ore": 1,
+			"oreBlocks": 23238
+		},
+		{
+			"index": 26,
+			"kind": "挑战岛",
+			"x": -3353,
+			"z": -4348,
+			"radius": 69,
+			"coreY": 0,
+			"ore": 2,
+			"oreBlocks": 42857
+		}
+	]
+}
