@@ -5,7 +5,7 @@ import com.jesz.createdieselgenerators.world.OilChunksSavedData;
 import com.mojang.logging.LogUtils;
 import io.github.low2uu.dbv.world.DeepBlueVoyageWorld;
 import io.github.low2uu.dbv.world.IslandTerrain;
-import io.github.low2uu.dbv.world.StarterIslandGenerator;
+import io.github.low2uu.dbv.world.OceanWorlds;
 import net.minecraft.commands.Commands;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -39,7 +39,7 @@ public final class StarterOilfield {
 
     private static boolean eligible(ServerLevel level) {
         return level.dimension() == Level.OVERWORLD
-                && level.getChunkSource().getGenerator() instanceof StarterIslandGenerator;
+                && OceanWorlds.isProjectWorld(level.getChunkSource().getGenerator());
     }
 
     @SubscribeEvent

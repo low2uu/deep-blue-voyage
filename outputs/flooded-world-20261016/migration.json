@@ -1,0 +1,18 @@
+{
+  "source": "E:\\mc\\project\\deep-blue-voyage\\runtime\\client\\saves\\DBV-Island-v3",
+  "destination": "E:\\mc\\project\\deep-blue-voyage\\.local\\flooded-client\\saves\\DBV-Flooded-Acceptance",
+  "backup": "E:\\mc\\project\\deep-blue-voyage\\runtime\\world-archives\\flooded-20261016\\DBV-Island-v3-final-source.zip",
+  "preserved_chunks": 1188,
+  "discarded_placeholder_chunks": 2603,
+  "source_unchanged": true,
+  "ship_business_player_files_unchanged": true,
+  "generation": "on_demand",
+  "border_size": 10000,
+  "core_blocks": [
+    -288,
+    288,
+    -224,
+    304
+  ],
+  "note": "Outside boundary may contain empty engine dependency chunks, never intentional terrain pre-generation."
+}

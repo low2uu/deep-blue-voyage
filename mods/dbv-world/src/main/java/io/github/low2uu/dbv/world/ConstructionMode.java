@@ -27,7 +27,7 @@ public final class ConstructionMode {
 
     public static void onServerStarted(ServerStartedEvent event) {
         var server = event.getServer();
-        if (!(server.overworld().getChunkSource().getGenerator() instanceof StarterIslandGenerator)) { return; }
+        if (!(OceanWorlds.isProjectWorld(server.overworld().getChunkSource().getGenerator()))) { return; }
         var path = server.getWorldPath(LevelResource.ROOT).resolve("dbv-construction-rules.properties");
         GameRules rules = server.getGameRules();
         try {
@@ -40,9 +40,10 @@ public final class ConstructionMode {
                     original.store(writer, "Original rules before temporary construction mode; keep until restored");
                     Files.writeString(path, writer.toString(), StandardOpenOption.CREATE_NEW);
                 }
-                RULES.forEach((name, key) -> rules.getRule(key).set(name.equals("disableRaids"), server));
+                boolean ecology = server.overworld().getChunkSource().getGenerator() instanceof FloodedWorldGenerator;
+                RULES.forEach((name, key) -> rules.getRule(key).set(name.equals("disableRaids") || ecology && name.equals("doMobSpawning"), server));
                 rules.getRule(GameRules.RULE_SPAWN_CHUNK_RADIUS).set(0, server);
-                LogUtils.getLogger().info("DBV construction mode active: spawning disabled, spawn chunk radius 0; original rules preserved.");
+                LogUtils.getLogger().info("DBV construction mode active: natural spawning {}, spawn chunk radius 0; original rules preserved.", ecology ? "enabled for flooded ecology" : "disabled");
             } else if (Files.exists(path)) {
                 Properties original = new Properties();
                 original.load(new StringReader(Files.readString(path)));

@@ -1,0 +1,18 @@
+{
+  "source": "E:\\mc\\project\\deep-blue-voyage\\runtime\\client\\saves\\\u65b0\u7684\u4e16\u754c5-\u521d\u59cb\u8247",
+  "destination": "E:\\mc\\project\\deep-blue-voyage\\.local\\combined-staging",
+  "backup": "E:\\mc\\project\\deep-blue-voyage\\runtime\\\u8054\u5408\u66f4\u65b0\u524d\u5907\u4efd-20261019.zip",
+  "preserved_chunks": 1188,
+  "discarded_placeholder_chunks": 5714,
+  "source_unchanged": true,
+  "ship_business_player_files_unchanged": true,
+  "generation": "on_demand",
+  "border_size": 10000,
+  "core_blocks": [
+    -288,
+    288,
+    -224,
+    304
+  ],
+  "note": "Outside boundary may contain empty engine dependency chunks, never intentional terrain pre-generation."
+}

@@ -3,18 +3,11 @@
     "minecraft:overworld": {
       "type": "dbv_world:ocean",
       "generator": {
-        "type": "dbv_world:starter_island",
-        "settings": {
-          "biome": "minecraft:deep_ocean",
-          "features": false,
-          "lakes": false,
-          "structure_overrides": [],
-          "layers": [
-            {"block": "minecraft:bedrock", "height": 1},
-            {"block": "minecraft:stone", "height": 272},
-            {"block": "minecraft:sand", "height": 4},
-            {"block": "minecraft:water", "height": 107}
-          ]
+        "type": "dbv_world:flooded_world",
+        "settings": "dbv_world:flooded_overworld",
+        "biome_source": {
+          "type": "minecraft:multi_noise",
+          "preset": "minecraft:overworld"
         }
       }
     },
@@ -23,7 +16,10 @@
       "generator": {
         "type": "minecraft:noise",
         "settings": "minecraft:nether",
-        "biome_source": {"type": "minecraft:multi_noise", "preset": "minecraft:nether"}
+        "biome_source": {
+          "type": "minecraft:multi_noise",
+          "preset": "minecraft:nether"
+        }
       }
     },
     "minecraft:the_end": {
@@ -31,7 +27,9 @@
       "generator": {
         "type": "minecraft:noise",
         "settings": "minecraft:end",
-        "biome_source": {"type": "minecraft:the_end"}
+        "biome_source": {
+          "type": "minecraft:the_end"
+        }
       }
     }
   }

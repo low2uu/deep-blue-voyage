@@ -1,0 +1,17 @@
+{
+  "entities": {
+    "minecraft:cod": 26,
+    "minecraft:glow_squid": 8,
+    "minecraft:squid": 3,
+    "minecraft:dolphin": 8,
+    "minecraft:drowned": 4
+  },
+  "chunks": {
+    "minecraft:structure_starts": 2841,
+    "minecraft:biomes": 218,
+    "minecraft:carvers": 178,
+    "minecraft:initialize_light": 148,
+    "minecraft:full": 813
+  },
+  "outsideNonAirSections": 0
+}

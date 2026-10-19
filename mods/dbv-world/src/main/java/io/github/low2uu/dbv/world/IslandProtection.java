@@ -19,7 +19,7 @@ public final class IslandProtection {
     public static boolean inBounds(int x,int z) { return x>=-280&&x<=280&&z>=-216&&z<=256; }
     public static boolean protectedAt(LevelAccessor level,BlockPos pos) {
         return level instanceof ServerLevel s && s.dimension()==Level.OVERWORLD
-                && s.getChunkSource().getGenerator() instanceof StarterIslandGenerator
+                && OceanWorlds.isProjectWorld(s.getChunkSource().getGenerator())
                 && inBounds(pos.getX(),pos.getZ());
     }
     private static boolean bypass(Player player) { return player!=null&&player.isCreative()&&player.hasPermissions(2); }

@@ -1,0 +1,78 @@
+[
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\combined-staging",
+    "bytes": 29119215
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\cruise-attempt2-world",
+    "bytes": 23456322
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\cruise-attempt3-world",
+    "bytes": 28771250
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\cruise-client\\saves\\DBV-Cruise-Trial",
+    "bytes": 29090537
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\flooded-client\\saves\\DBV-Flooded-Acceptance",
+    "bytes": 31058434
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\flooded-client\\saves\\DBV-Flooded-Unmoored-Trial",
+    "bytes": 30249431
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\height-client\\saves\\DBV-Height-Acceptance",
+    "bytes": 26722874
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\height-client\\saves\\DBV-Height-Discarded-PlotIndex",
+    "bytes": 26500844
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\height-client\\saves\\DBV-Height-Incomplete",
+    "bytes": 23102724
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\near-island-client\\saves\\DBV-Near-Island-Acceptance",
+    "bytes": 39783558
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\world5-client\\saves\\DBV-World5-Acceptance",
+    "bytes": 52658361
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\world5-client\\saves\\DBV-World5-Fresh",
+    "bytes": 28631135
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\world5-client\\saves\\DBV-World5-Fresh2",
+    "bytes": 37131771
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\world5-inspection\\新的世界5",
+    "bytes": 29893180
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\world5-server\\world",
+    "bytes": 30312090
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\runtime\\client\\saves\\DBV-Island-v4",
+    "bytes": 28297553
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\runtime\\client\\saves\\新的世界5-初始艇",
+    "bytes": 52658368
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\runtime\\world-archives",
+    "bytes": 230325949
+  },
+  {
+    "path": "E:\\mc\\project\\deep-blue-voyage\\.local\\native-final-world.zip",
+    "bytes": 2596379
+  }
+]

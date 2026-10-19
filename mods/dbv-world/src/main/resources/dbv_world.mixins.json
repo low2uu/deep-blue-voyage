@@ -3,6 +3,14 @@
   "minVersion": "0.8",
   "package": "io.github.low2uu.dbv.fleet.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": ["CommandSubDepthMixin", "SubmarinePressureDepthMixin", "IslandFireMixin", "OceanSeaLevelMixin"],
-  "injectors": { "defaultRequire": 1 }
+  "mixins": [
+    "CommandSubDepthMixin",
+    "SubmarinePressureDepthMixin",
+    "IslandFireMixin",
+    "OceanSeaLevelMixin",
+    "OceanGenerationBoundsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }

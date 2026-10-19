@@ -19,7 +19,10 @@ public final class DeepBlueVoyageWorld {
     private static final DeferredRegister<MapCodec<? extends ChunkGenerator>> GENERATORS =
             DeferredRegister.create(Registries.CHUNK_GENERATOR, MOD_ID);
 
-    static { GENERATORS.register("starter_island", () -> StarterIslandGenerator.CODEC); }
+    static {
+        GENERATORS.register("starter_island", () -> StarterIslandGenerator.CODEC);
+        GENERATORS.register("flooded_world", () -> FloodedWorldGenerator.CODEC);
+    }
 
     public DeepBlueVoyageWorld(IEventBus modBus) {
         GENERATORS.register(modBus);
@@ -29,13 +32,14 @@ public final class DeepBlueVoyageWorld {
         io.github.low2uu.dbv.fleet.FleetModule.initialize();
         IslandProtection.initialize();
         NeoForge.EVENT_BUS.addListener(ConstructionMode::onServerStarted);
+        NeoForge.EVENT_BUS.addListener(OceanDevelopmentArea::started);
         NeoForge.EVENT_BUS.addListener(DeepBlueVoyageWorld::onCreateSpawn);
         LogUtils.getLogger().info("Deep Blue Voyage world module loaded; starter island preset registered.");
     }
 
     private static void onCreateSpawn(LevelEvent.CreateSpawnPosition event) {
         if (event.getLevel() instanceof ServerLevel level && level.dimension() == Level.OVERWORLD
-                && level.getChunkSource().getGenerator() instanceof StarterIslandGenerator) {
+                && OceanWorlds.isProjectWorld(level.getChunkSource().getGenerator())) {
             level.setDefaultSpawnPos(new BlockPos(IslandTerrain.SPAWN_X,
                     IslandTerrain.PLATFORM_Y + 1, IslandTerrain.SPAWN_Z), 0);
             event.setCanceled(true);

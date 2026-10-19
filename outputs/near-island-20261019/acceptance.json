@@ -1,0 +1,46 @@
+{
+	"done": true,
+	"audit": "PASS 102080 block checks: five empty machine bays, 128x128 dock water/sky, open sea exit, dry spawn",
+	"border": 10000,
+	"samples": [
+		{
+			"x": 272,
+			"z": 272,
+			"floor": 38,
+			"biome": "minecraft:deep_ocean",
+			"minFloor": 34,
+			"maxFloor": 40,
+			"marinePlantBlocks": 288
+		},
+		{
+			"x": -272,
+			"z": -208,
+			"floor": 48,
+			"biome": "minecraft:deep_ocean",
+			"minFloor": 48,
+			"maxFloor": 51,
+			"marinePlantBlocks": 291
+		},
+		{
+			"x": 272,
+			"z": -208,
+			"floor": 9,
+			"biome": "minecraft:deep_ocean",
+			"minFloor": 4,
+			"maxFloor": 39,
+			"marinePlantBlocks": 56
+		},
+		{
+			"x": -272,
+			"z": 272,
+			"floor": 47,
+			"biome": "minecraft:deep_ocean",
+			"minFloor": 46,
+			"maxFloor": 47,
+			"marinePlantBlocks": 98
+		}
+	],
+	"qualification": "Qualification[controller=true, oxygen=false, sealed=false, pending=true]",
+	"oil": "起始岛油田：X176～207 / Z-64～-33；无限区块 4/4；标识 4/4。井口下方铺直管至基岩，动力和炼油设施由玩家建设。",
+	"mobSpawning": "true"
+}

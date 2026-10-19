@@ -1,0 +1,4 @@
+{
+	"done": true,
+	"error": "InternalError: Failed to load Java class 'io.github.low2uu.dbv.world.IslandBuildAudit': Class could not be found! (server_scripts:near.js#25)"
+}
