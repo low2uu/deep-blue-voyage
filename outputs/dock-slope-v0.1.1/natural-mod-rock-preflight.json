@@ -1,0 +1,4 @@
+{
+	"done": true,
+	"error": "JavaException: java.lang.IllegalStateException: Unexpected construction at MutableBlockPos{x=233, y=64, z=130}: Block{create:asurine}"
+}

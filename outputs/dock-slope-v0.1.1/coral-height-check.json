@@ -1,0 +1,166 @@
+{
+	"done": true,
+	"passed": true,
+	"slope": {
+		"columns": 53857,
+		"protectedStructureColumns": 0,
+		"blocks": 1221507,
+		"maxAdjacentStepBefore": 99,
+		"maxAdjacentStepAfter": 104,
+		"blendWidth": 96,
+		"exitProfileX64": [
+			{
+				"z": 288,
+				"before": 27,
+				"after": 27
+			},
+			{
+				"z": 292,
+				"before": 24,
+				"after": 24
+			},
+			{
+				"z": 296,
+				"before": 20,
+				"after": 20
+			},
+			{
+				"z": 300,
+				"before": 20,
+				"after": 20
+			},
+			{
+				"z": 304,
+				"before": 115,
+				"after": 20
+			},
+			{
+				"z": 308,
+				"before": 114,
+				"after": 20
+			},
+			{
+				"z": 312,
+				"before": 115,
+				"after": 21
+			},
+			{
+				"z": 316,
+				"before": 115,
+				"after": 23
+			},
+			{
+				"z": 320,
+				"before": 115,
+				"after": 25
+			},
+			{
+				"z": 324,
+				"before": 113,
+				"after": 27
+			},
+			{
+				"z": 328,
+				"before": 110,
+				"after": 29
+			},
+			{
+				"z": 332,
+				"before": 109,
+				"after": 32
+			},
+			{
+				"z": 336,
+				"before": 107,
+				"after": 35
+			},
+			{
+				"z": 340,
+				"before": 104,
+				"after": 38
+			},
+			{
+				"z": 344,
+				"before": 91,
+				"after": 42
+			},
+			{
+				"z": 348,
+				"before": 80,
+				"after": 45
+			},
+			{
+				"z": 352,
+				"before": 80,
+				"after": 48
+			},
+			{
+				"z": 356,
+				"before": 81,
+				"after": 52
+			},
+			{
+				"z": 360,
+				"before": 81,
+				"after": 55
+			},
+			{
+				"z": 364,
+				"before": 85,
+				"after": 58
+			},
+			{
+				"z": 368,
+				"before": 81,
+				"after": 61
+			},
+			{
+				"z": 372,
+				"before": 83,
+				"after": 64
+			},
+			{
+				"z": 376,
+				"before": 85,
+				"after": 67
+			},
+			{
+				"z": 380,
+				"before": 85,
+				"after": 69
+			},
+			{
+				"z": 384,
+				"before": 84,
+				"after": 71
+			},
+			{
+				"z": 388,
+				"before": 82,
+				"after": 73
+			},
+			{
+				"z": 392,
+				"before": 81,
+				"after": 74
+			},
+			{
+				"z": 396,
+				"before": 84,
+				"after": 75
+			},
+			{
+				"z": 400,
+				"before": 76,
+				"after": 76
+			}
+		]
+	},
+	"bodyId": "66d01998-fbc7-47d8-b8ac-7097dadc716a",
+	"qualification": "Qualification[controller=true, oxygen=true, sealed=true, pending=false]",
+	"moored": true,
+	"vesselCount": 1,
+	"audit": "PASS 102080 block checks: five empty machine bays, 128x128 dock water/sky, open sea exit, dry spawn",
+	"mass": 2579.25,
+	"tick": 200
+}

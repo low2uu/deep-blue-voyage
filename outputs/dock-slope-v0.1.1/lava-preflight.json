@@ -1,0 +1,4 @@
+{
+	"done": true,
+	"error": "JavaException: java.lang.IllegalStateException: Unexpected construction at MutableBlockPos{x=224, y=-131, z=128}: Block{minecraft:lava}[level=0]"
+}

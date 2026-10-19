@@ -1,0 +1,4 @@
+{
+	"done": true,
+	"error": "JavaException: java.lang.IllegalStateException: Unexpected construction at MutableBlockPos{x=223, y=-32, z=131}: Block{create:zinc_ore}"
+}

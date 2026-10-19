@@ -34,7 +34,7 @@ public final class FloodedWorldGenerator extends NoiseBasedChunkGenerator {
         double weight=OceanBounds.islandWeight(x,z);
         if(weight==0)return super.getBaseHeight(x,z,type,level,random);
         int natural=super.getBaseHeight(x,z,Heightmap.Types.OCEAN_FLOOR_WG,level,random)-1;
-        int ground=(int)Math.round(natural*(1-weight)+IslandTerrain.groundHeight(x,z)*weight);
+        int ground=OceanBounds.terrainHeight(x,z,natural);
         return type.isOpaque().test(Blocks.WATER.defaultBlockState())?Math.max(ground+1,WorldHeights.SEA_LEVEL):ground+1;
     }
 
@@ -50,7 +50,7 @@ public final class FloodedWorldGenerator extends NoiseBasedChunkGenerator {
                 }
                 int natural=chunk.getHeight(Heightmap.Types.OCEAN_FLOOR_WG,lx,lz);
                 double weight=OceanBounds.islandWeight(x,z);
-                int ground=(int)Math.round(natural*(1-weight)+IslandTerrain.groundHeight(x,z)*weight);
+                int ground=OceanBounds.terrainHeight(x,z,natural);
                 if(weight>0){
                     for(int y=WorldHeights.MIN_Y;y<WorldHeights.MAX_Y_EXCLUSIVE;y++){
                         // Retain the noise-generated underground, including aquifers and caves.

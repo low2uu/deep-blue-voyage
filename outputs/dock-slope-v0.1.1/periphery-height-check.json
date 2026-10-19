@@ -1,0 +1,4 @@
+{
+	"done": true,
+	"error": "JavaException: java.lang.IllegalStateException: Height mismatch at 192,112"
+}

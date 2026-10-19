@@ -10,7 +10,7 @@ config="dbv_world.mixins.json"
 
 [[mods]]
 modId="dbv_world"
-version="0.1.0"
+version="0.1.1"
 displayName="深蓝远航：海洋与主潜艇"
 authors="深蓝远航"
 description='''深蓝远航的海洋世界与主潜艇系统，提供起始岛生成、潜艇登记、船况查看、船坞改装和舱内存储功能。'''

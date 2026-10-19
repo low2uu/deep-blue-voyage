@@ -1,5 +1,7 @@
 # 深蓝远航
 
+当前开发版本：**0.1.1**（[版本记录](docs/版本记录-changelog.md)）。
+
 以《海底两万里》式潜艇探险为主题的 Minecraft 整合包。玩家建造大型潜艇，在广阔、连通的海洋中远航，探索不同海洋群系、海底遗迹与海洋 Boss。
 
 英文工作名为 Deep Blue Voyage，目录名为 `deep-blue-voyage`。

@@ -15,11 +15,28 @@ public final class OceanBounds {
                 || (x>=176&&x<208&&z>=-64&&z<-32);
     }
     private static boolean harbour(int x,int z) { return x>=-16&&x<152&&z>=76&&z<304; }
-    public static double islandWeight(int x,int z) {
-        if(harbour(x,z))return 1;
-        double radius=Math.hypot(x/256.0,z/192.0);
-        double t=Math.clamp((radius-1.0)/0.35,0.0,1.0);
+    public static final int HARBOUR_BLEND = 96;
+    public static double harbourWeight(int x,int z) {
+        double dx=Math.max(Math.max(-16-x,x-151),0);
+        double dz=Math.max(Math.max(76-z,z-303),0);
+        double t=Math.clamp(Math.hypot(dx,dz)/HARBOUR_BLEND,0.0,1.0);
         return 1-t*t*(3-2*t);
+    }
+    private static double landWeight(int x,int z) {
+        double t=Math.clamp((Math.hypot(x/256.0,z/192.0)-1.0)/0.35,0.0,1.0);
+        return 1-t*t*(3-2*t);
+    }
+    public static double islandWeight(int x,int z) {
+        return Math.max(landWeight(x,z),harbourWeight(x,z));
+    }
+    public static int terrainHeight(int x,int z,int natural) {
+        double land=landWeight(x,z);
+        double ground=natural*(1-land)+IslandTerrain.groundHeight(x,z)*land;
+        // Anchor to the nearest dock edge; never abruptly drop the harbour override.
+        double harbour=harbourWeight(x,z);
+        int edgeX=Math.clamp(x,-16,151),edgeZ=Math.clamp(z,76,303);
+        if(!harbour(x,z)&&IslandTerrain.groundHeight(x,z)>=124)return (int)Math.round(ground);
+        return (int)Math.round(ground*(1-harbour)+IslandTerrain.groundHeight(edgeX,edgeZ)*harbour);
     }
     private OceanBounds() {}
 }
