@@ -90,4 +90,7 @@ neoForge {
 }
 
 tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+// NBT snapshot recovery tests need Minecraft's mapped classes, without launching a client.
+sourceSets.test.compileClasspath += sourceSets.main.compileClasspath
+sourceSets.test.runtimeClasspath += sourceSets.main.compileClasspath
 tasks.named('test', Test) { useJUnitPlatform() }
