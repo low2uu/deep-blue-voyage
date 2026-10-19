@@ -29,6 +29,7 @@ configurations { runtimeClasspath.extendsFrom localRuntime }
 dependencies {
     // Compile against the exact installed releases; do not bundle another physics engine.
     compileOnly 'maven.modrinth:sable:fg9dTRz9'
+    compileOnly 'maven.modrinth:create-aeronautics-toolgun:pcD0Yutw'
     compileOnly 'dev.ryanhcode.sable-companion:sable-companion-common-1.21.1:1.6.0'
     compileOnly 'maven.modrinth:create-deep-seas:8CV1LRTl'
     compileOnly 'maven.modrinth:create:UjX6dr61'
@@ -64,6 +65,9 @@ dependencies {
     localRuntime 'maven.modrinth:jade-sable-compat:cxUohR7A'
     // 用户于2026-10-17确认加入驾驶舱模块化控制面板。
     localRuntime 'maven.modrinth:dashpanels:aH1Oe6Kk'
+    // 用户于2026-10-19确认，用于世界5设计艇及原生蓝图导入。
+    localRuntime 'maven.modrinth:create-aeronautics-toolgun:pcD0Yutw'
+    localRuntime 'maven.modrinth:create-aeronautics-transmission-linkage:FCZZ3ED4'
 }
 
 neoForge {

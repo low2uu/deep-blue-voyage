@@ -1,0 +1,147 @@
+---- Minecraft Crash Report ----
+
+// Lets see if this is repro or cosmic radiation
+Please make sure this issue is not caused by Sable before reporting it to other mod authors.
+If you cannot reproduce it without Sable, file a report on the issue tracker
+https://github.com/ryanhcode/sable/issues
+
+// There are four lights!
+
+Time: 2026-10-19 20:15:28
+Description: Exception in server tick loop
+
+java.lang.RuntimeException: Attempted to load class com/mojang/blaze3d/vertex/PoseStack for invalid dist DEDICATED_SERVER
+	at MC-BOOTSTRAP/fml_loader@4.0.45/net.neoforged.fml.common.asm.RuntimeDistCleaner.processClassWithFlags(RuntimeDistCleaner.java:60) ~[loader-4.0.45.jar:4.0] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:94) ~[modlauncher-11.0.5.jar:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-11.0.5.jar:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:57) ~[modlauncher-11.0.5.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:190) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.lambda$findClass$20(ModuleClassLoader.java:298) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:311) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:298) ~[securejarhandler-3.0.8.jar:?] {}
+	at cpw.mods.securejarhandler/cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:214) ~[securejarhandler-3.0.8.jar:?] {}
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[?:?] {}
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[?:?] {}
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578) ~[?:?] {}
+	at java.base/java.lang.Class.getMethodsRecursive(Class.java:3719) ~[?:?] {}
+	at java.base/java.lang.Class.getMethod0(Class.java:3705) ~[?:?] {}
+	at java.base/java.lang.Class.getMethod(Class.java:2393) ~[?:?] {}
+	at TRANSFORMER/create_submarine@3.3.0/com.maxenonyme.createsubmarine.submarine.system.SubmarinePressureSystem.lambda$lookup$3(SubmarinePressureSystem.java:396) ~[create-deep-seas-8CV1LRTl.jar%23133!/:?] {re:mixin,re:classloading,pl:mixin:A}
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[?:?] {}
+	at TRANSFORMER/create_submarine@3.3.0/com.maxenonyme.createsubmarine.submarine.system.SubmarinePressureSystem.lookup(SubmarinePressureSystem.java:394) ~[create-deep-seas-8CV1LRTl.jar%23133!/:?] {re:mixin,re:classloading,pl:mixin:A}
+	at TRANSFORMER/create_submarine@3.3.0/com.maxenonyme.createsubmarine.submarine.system.SubmarinePressureSystem.call(SubmarinePressureSystem.java:404) ~[create-deep-seas-8CV1LRTl.jar%23133!/:?] {re:mixin,re:classloading,pl:mixin:A}
+	at TRANSFORMER/create_submarine@3.3.0/com.maxenonyme.createsubmarine.submarine.system.SubmarinePressureSystem.copiedMaterial(SubmarinePressureSystem.java:415) ~[create-deep-seas-8CV1LRTl.jar%23133!/:?] {re:mixin,re:classloading,pl:mixin:A}
+	at TRANSFORMER/create_submarine@3.3.0/com.maxenonyme.createsubmarine.submarine.system.SubmarinePressureSystem.getActualBlockState(SubmarinePressureSystem.java:438) ~[create-deep-seas-8CV1LRTl.jar%23133!/:?] {re:mixin,re:classloading,pl:mixin:A}
+	at TRANSFORMER/create_submarine@3.3.0/com.maxenonyme.createsubmarine.submarine.system.SubmarinePressureSystem.processSubmarine(SubmarinePressureSystem.java:192) ~[create-deep-seas-8CV1LRTl.jar%23133!/:?] {re:mixin,re:classloading,pl:mixin:A}
+	at TRANSFORMER/create_submarine@3.3.0/com.maxenonyme.createsubmarine.submarine.system.SubmarinePressureSystem.onServerTick(SubmarinePressureSystem.java:147) ~[create-deep-seas-8CV1LRTl.jar%23133!/:?] {re:mixin,re:classloading,pl:mixin:A}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.ConsumerEventHandler.invoke(ConsumerEventHandler.java:27) ~[bus-8.0.5.jar%23106!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:360) ~[bus-8.0.5.jar%23106!/:?] {}
+	at MC-BOOTSTRAP/net.neoforged.bus/net.neoforged.bus.EventBus.post(EventBus.java:328) ~[bus-8.0.5.jar%23106!/:?] {}
+	at TRANSFORMER/neoforge@21.1.259/net.neoforged.neoforge.event.EventHooks.fireServerTickPost(EventHooks.java:1020) ~[neoforge-21.1.259.jar%23126!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:943) ~[neoforge-21.1.259.jar%23125!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:ponder-common.mixins.json:accessor.MinecraftServerAccessor from mod ponder,pl:mixin:APP:sable.mixins.json:udp.MinecraftServerMixin from mod sable,pl:mixin:APP:xaerohud.mixins.json:MixinMinecraftServer from mod xaerominimap,pl:mixin:APP:xaeroworldmap.mixins.json:MixinMinecraftServer from mod xaeroworldmap,pl:mixin:APP:kubejs.mixins.json:MinecraftServerMixin from mod kubejs,pl:mixin:APP:veil.network.mixins.json:NetworkMinecraftServerMixin from mod veil,pl:mixin:APP:veil.scheduler.mixins.json:MinecraftServerMixin from mod veil,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:707) ~[neoforge-21.1.259.jar%23125!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:ponder-common.mixins.json:accessor.MinecraftServerAccessor from mod ponder,pl:mixin:APP:sable.mixins.json:udp.MinecraftServerMixin from mod sable,pl:mixin:APP:xaerohud.mixins.json:MixinMinecraftServer from mod xaerominimap,pl:mixin:APP:xaeroworldmap.mixins.json:MixinMinecraftServer from mod xaeroworldmap,pl:mixin:APP:kubejs.mixins.json:MinecraftServerMixin from mod kubejs,pl:mixin:APP:veil.network.mixins.json:NetworkMinecraftServerMixin from mod veil,pl:mixin:APP:veil.scheduler.mixins.json:MinecraftServerMixin from mod veil,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:267) ~[neoforge-21.1.259.jar%23125!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:ponder-common.mixins.json:accessor.MinecraftServerAccessor from mod ponder,pl:mixin:APP:sable.mixins.json:udp.MinecraftServerMixin from mod sable,pl:mixin:APP:xaerohud.mixins.json:MixinMinecraftServer from mod xaerominimap,pl:mixin:APP:xaeroworldmap.mixins.json:MixinMinecraftServer from mod xaeroworldmap,pl:mixin:APP:kubejs.mixins.json:MinecraftServerMixin from mod kubejs,pl:mixin:APP:veil.network.mixins.json:NetworkMinecraftServerMixin from mod veil,pl:mixin:APP:veil.scheduler.mixins.json:MinecraftServerMixin from mod veil,pl:mixin:A}
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.1
+	Minecraft Version ID: 1.21.1
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 21.0.3, Azul Systems, Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Azul Systems, Inc.
+	Memory: 458901312 bytes (437 MiB) / 1447034880 bytes (1380 MiB) up to 4294967296 bytes (4096 MiB)
+	CPUs: 28
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i7-14700KF
+	Identifier: Intel64 Family 6 Model 183 Stepping 1
+	Microarchitecture: Raptor Lake
+	Frequency (GHz): 3.42
+	Number of physical packages: 1
+	Number of physical CPUs: 20
+	Number of logical CPUs: 28
+	Graphics card #0 name: NVIDIA GeForce RTX 4070 Ti SUPER
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 16376.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.16.1742
+	Virtual memory max (MiB): 69477.79
+	Virtual memory used (MiB): 21857.32
+	Swap memory total (MiB): 4096.00
+	Swap memory used (MiB): 0.00
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 175665.17, total: 409599.38
+	Space in storage for workdir (MiB): available: 580628.31, total: 1000000.00
+	JVM Flags: 1 total; -Xmx4G
+	Server Running: true
+	Player Count: 0 / 20; []
+	Active Data Packs: create:dynamic_data, vanilla, mod_data, mod/rhino, mod/jade (incompatible), mod/jei (incompatible), mod/lithostitched, mod/aeronautics (incompatible), mod/xaerolib (incompatible), mod/aeronautics_bundled, mod/spark (incompatible), mod/flywheel (incompatible), mod/ponder (incompatible), mod/sablecompanion, mod/create (incompatible), mod/sable, mod/xaerominimap (incompatible), mod/xaeroworldmap (incompatible), mod/neoforge, mod/fancytabsections, mod/kubejs, mod/wdutils (incompatible), mod/veil (incompatible), mod/simulated (incompatible), mod/create_aeronautics_toolgun, mod/aeronautics_utility_objects, mod/worldedit (incompatible), mod/betteradvancedtooltips, mod/create_submarine,create_abyss,create_high_seas (incompatible), mod/createdieselgenerators (incompatible), mod/dbv_world, mod/architectury (incompatible), mod/powergrid (incompatible), mod/fusion, mod/betterf3 (incompatible), mod/jeresources (incompatible), mod/probejs (incompatible), mod/cloth_config (incompatible), mod/dashpanels (incompatible), mod/sablejade, mod/offroad (incompatible)
+	Available Data Packs: bundle, trade_rebalance, vanilla, mod/aeronautics (incompatible), mod/aeronautics_bundled, mod/aeronautics_utility_objects, mod/architectury (incompatible), mod/betteradvancedtooltips, mod/betterf3 (incompatible), mod/cloth_config (incompatible), mod/create (incompatible), mod/create_aeronautics_toolgun, mod/create_submarine,create_abyss,create_high_seas (incompatible), mod/createdieselgenerators (incompatible), mod/dashpanels (incompatible), mod/dbv_world, mod/fancytabsections, mod/flywheel (incompatible), mod/fusion, mod/jade (incompatible), mod/jei (incompatible), mod/jeresources (incompatible), mod/kubejs, mod/lithostitched, mod/neoforge, mod/offroad (incompatible), mod/ponder (incompatible), mod/powergrid (incompatible), mod/probejs (incompatible), mod/rhino, mod/sable, mod/sablecompanion, mod/sablejade, mod/simulated (incompatible), mod/spark (incompatible), mod/veil (incompatible), mod/wdutils (incompatible), mod/worldedit (incompatible), mod/xaerolib (incompatible), mod/xaerominimap (incompatible), mod/xaeroworldmap (incompatible), mod_data, create:dynamic_data
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Experimental
+	World Seed: 7667568505341616740
+	Is Modded: Definitely; Server brand changed to 'neoforge'
+	Type: Dedicated Server (map_server.txt)
+	ModLauncher: 11.0.5+main.901c6ea8
+	ModLauncher launch target: forgeserverdev
+	ModLauncher services:
+		sponge-mixin-0.16.4+mixin.0.8.7.jar mixin PLUGINSERVICE
+		loader-4.0.45.jar slf4jfixer PLUGINSERVICE
+		loader-4.0.45.jar runtime_enum_extender PLUGINSERVICE
+		at-modlauncher-10.0.1.jar accesstransformer PLUGINSERVICE
+		loader-4.0.45.jar runtimedistcleaner PLUGINSERVICE
+		modlauncher-11.0.5.jar mixin TRANSFORMATIONSERVICE
+		modlauncher-11.0.5.jar fml TRANSFORMATIONSERVICE
+	FML Language Providers:
+		javafml@4.0
+		lowcodefml@4.0
+		minecraft@4.0
+	Mod List:
+		architectury-api-1IiqEQGl.jar                     |Architectury                  |architectury                  |13.0.11             |Manifest: NOSIGNATURE
+		better-advanced-tooltips-2101.1.0-build.1.jar     |Better Advanced Tooltips      |betteradvancedtooltips        |2101.1.0-build.1    |Manifest: NOSIGNATURE
+		betterf3-maXNB1dn.jar                             |BetterF3                      |betterf3                      |11.0.3              |Manifest: NOSIGNATURE
+		cloth-config-izKINKFg.jar                         |Cloth Config v15 API          |cloth_config                  |15.0.140            |Manifest: NOSIGNATURE
+		create-UjX6dr61.jar                               |Create                        |create                        |6.0.10              |Manifest: NOSIGNATURE
+		dev.eriksonn.aeronautics.aeronautics-neoforge-1.21|Create Aeronautics            |aeronautics                   |1.3.2               |Manifest: NOSIGNATURE
+		create-aeronautics-44pLdPGg.jar                   |Create Aeronautics            |aeronautics_bundled           |1.3.2               |Manifest: NOSIGNATURE
+		create-aeronautics-toolgun-pcD0Yutw.jar           |Create Aeronautics: Toolgun   |create_aeronautics_toolgun    |0.3.6               |Manifest: NOSIGNATURE
+		create-aeronautics-transmission-linkage-FCZZ3ED4.j|Create Aeronautics: Transmissi|aeronautics_utility_objects   |0.2.8               |Manifest: NOSIGNATURE
+		create-deep-seas-8CV1LRTl.jar                     |Create Deep Seas              |create_submarine              |3.3.0               |Manifest: NOSIGNATURE
+		create-diesel-generators-UoPH8lO1.jar             |Create Diesel Generators      |createdieselgenerators        |1.21.1-1.3.15       |Manifest: NOSIGNATURE
+		dev.ryanhcode.offroad.offroad-neoforge-1.21.1-1.3.|Create Offroad                |offroad                       |1.3.2               |Manifest: NOSIGNATURE
+		dev.simulated_team.simulated.simulated-neoforge-1.|Create Simulated              |simulated                     |1.3.2               |Manifest: NOSIGNATURE
+		power-grid-jCkPHjmP.jar                           |Create: Power Grid            |powergrid                     |0.6.2               |Manifest: NOSIGNATURE
+		dashpanels-aH1Oe6Kk.jar                           |Dashpanels                    |dashpanels                    |2.1                 |Manifest: NOSIGNATURE
+		fancytabsections-6.0-NEOFORGE-1.21.1.jar          |Fancy Tab Sections            |fancytabsections              |6.0-NEOFORGE-1.21.1 |Manifest: NOSIGNATURE
+		flywheel-neoforge-1.21.1-1.0.6.jar                |Flywheel                      |flywheel                      |1.0.6               |Manifest: NOSIGNATURE
+		p19vrgc2-1.2.12-neoforge-mc1.21.1.jar             |Fusion                        |fusion                        |1.2.12              |Manifest: NOSIGNATURE
+		jade-eYz2YBGT.jar                                 |Jade                          |jade                          |15.10.6+neoforge    |Manifest: NOSIGNATURE
+		jade-sable-compat-cxUohR7A.jar                    |Jade Sable Compat             |sablejade                     |1.3.0               |Manifest: NOSIGNATURE
+		jei-ufHUqt9b.jar                                  |Just Enough Items             |jei                           |19.51.0.418         |Manifest: NOSIGNATURE
+		just-enough-resources-jer-TgNFki8j.jar            |Just Enough Resources         |jeresources                   |1.6.0.17            |Manifest: NOSIGNATURE
+		kubejs-THIGFPwf.jar                               |KubeJS                        |kubejs                        |2101.7.2-build.377  |Manifest: NOSIGNATURE
+		XaDC71GB-1.4.8-neoforge-1.21.jar                  |Lithostitched                 |lithostitched                 |1.4.8               |Manifest: NOSIGNATURE
+		neoforge-21.1.259.jar                             |Minecraft                     |minecraft                     |1.21.1              |Manifest: NOSIGNATURE
+		neoforge-21.1.259.jar                             |NeoForge                      |neoforge                      |21.1.259            |Manifest: NOSIGNATURE
+		ponder-neoforge-1.0.82+mc1.21.1.jar               |Ponder                        |ponder                        |1.0.82+mc1.21.1     |Manifest: NOSIGNATURE
+		probejs-xC9KUA7R.jar                              |ProbeJS                       |probejs                       |8.0.3               |Manifest: NOSIGNATURE
+		rhino-SqkDvOLG.jar                                |Rhino                         |rhino                         |2101.2.8-build.91   |Manifest: NOSIGNATURE
+		sable-fg9dTRz9.jar                                |Sable                         |sable                         |2.0.6               |Manifest: NOSIGNATURE
+		sable-companion-common-1.21.1-1.6.0.jar           |Sable Companion               |sablecompanion                |1.6.0               |Manifest: NOSIGNATURE
+		spark-v5qtqRQi.jar                                |spark                         |spark                         |1.10.124            |Manifest: NOSIGNATURE
+		veil-neoforge-1.21.1-4.3.2.jar                    |Veil                          |veil                          |4.3.2               |Manifest: NOSIGNATURE
+		wdUtils-1.2-NEOFORGE-1.21.1.jar                   |wd's Utils                    |wdutils                       |1.2-NEOFORGE-1.21.1 |Manifest: NOSIGNATURE
+		worldedit-WTAFvuRx.jar                            |WorldEdit                     |worldedit                     |7.3.8+6939-7d32b45  |Manifest: NOSIGNATURE
+		xaeros-minimap-irjR7dHk.jar                       |Xaero's Minimap               |xaerominimap                  |26.6.0              |Manifest: NOSIGNATURE
+		xaeros-world-map-SnQ4SoDe.jar                     |Xaero's World Map             |xaeroworldmap                 |1.47.0              |Manifest: NOSIGNATURE
+		xaerolib-neoforge-1.21.1-1.7.3.jar                |XaeroLib                      |xaerolib                      |1.7.3               |Manifest: NOSIGNATURE
+		main                                              |深蓝远航：海洋与主潜艇                   |dbv_world                     |0.1.0               |Manifest: NOSIGNATURE
+	Crash Report UUID: 700dc3e7-2126-42c8-bf21-02623a80532b
+	FML: 4.0.45
+	NeoForge: 21.1.259

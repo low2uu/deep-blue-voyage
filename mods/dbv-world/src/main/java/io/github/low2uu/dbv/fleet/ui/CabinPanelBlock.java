@@ -22,7 +22,13 @@ public final class CabinPanelBlock {
     private static final DeferredRegister<Item> ITEMS=DeferredRegister.create(Registries.ITEM,"dbv_world");
     public static final java.util.function.Supplier<Block> PANEL=BLOCKS.register("cabin_panel",()->new Block(BlockBehaviour.Properties.of().strength(2.5f).lightLevel(s->5)));
     public static final java.util.function.Supplier<Item> ITEM=ITEMS.register("cabin_panel",()->new BlockItem(PANEL.get(),new Item.Properties()));
-    public static void register(IEventBus bus){BLOCKS.register(bus);ITEMS.register(bus);DbvCreativeTabs.register(bus);NeoForge.EVENT_BUS.addListener(CabinPanelBlock::interact);}
+    public static final java.util.function.Supplier<Block> CONSOLE=BLOCKS.register("jiuhu_console",()->
+            new com.maxenonyme.createsubmarine.submarine.block.CommandSubBlock(BlockBehaviour.Properties.of().strength(3.5f).noOcclusion()));
+    public static final java.util.function.Supplier<Item> CONSOLE_ITEM=ITEMS.register("jiuhu_console",()->new BlockItem(CONSOLE.get(),new Item.Properties()));
+    public static void register(IEventBus bus){BLOCKS.register(bus);ITEMS.register(bus);DbvCreativeTabs.register(bus);bus.addListener(CabinPanelBlock::consoleEntity);NeoForge.EVENT_BUS.addListener(CabinPanelBlock::interact);}
+    private static void consoleEntity(net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent event){
+        event.modify(com.maxenonyme.createsubmarine.CreateSubmarine.COMMAND_SUB_BE.get(),CONSOLE.get());
+    }
     private static void interact(PlayerInteractEvent.RightClickBlock e){
         if(e.getHand()!=InteractionHand.MAIN_HAND||!e.getLevel().getBlockState(e.getPos()).is(PANEL.get()))return;
         e.setCanceled(true);e.setCancellationResult(InteractionResult.SUCCESS);

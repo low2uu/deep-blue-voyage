@@ -90,7 +90,16 @@ public final class CabinStorage {
             if(be!=null)entry.add("metadata",BlockEntityJson.encode(be.saveWithFullMetadata(level.registryAccess())));
             blocks.add(entry);
         }
-        root.add("blocks",blocks);return root;
+        root.add("blocks",blocks);
+        if(!m.refit().blockMode()) {
+            var body=m.refit().currentBody(m);
+            // Static blocks alone omit bearing-mounted sails and their inventories.
+            var archive=com.enxv.aeronauticsstructuretool.blueprint.capture.NativeBlueprintCaptureService.captureById(
+                    level,body.getUniqueId(),"主艇完整蓝图",0.0);
+            root.add("nativeBlueprint",BlockEntityJson.encode(
+                    com.enxv.aeronauticsstructuretool.blueprint.codec.BlueprintArchiveCodec.decode(archive.fileContents())));
+        }
+        return root;
     }
     public UUID backup(FleetModule m) throws IOException {capture(m);return store(m).backup();}
     public String manualBackup(ServerPlayer p,FleetModule m) throws IOException {

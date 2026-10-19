@@ -5,5 +5,21 @@
   "itemGroup.dbv_world": "深蓝远航",
   "menu.dbv_world.storage_terminal": "舱内存储终端",
   "screen.dbv_world.fleet": "潜艇管理",
-  "screen.dbv_world.starter_guide": "初始艇驾驶指南"
+  "screen.dbv_world.starter_guide": "初始艇驾驶指南",
+  "block.dbv_world.jiuhu_console": "酒壶的控制台",
+  "guide.dbv_world.0.0": "首次出航",
+  "guide.dbv_world.0.1": "初始艇采用世界5的用户设计。先关闭舱门，确认中央控制、供氧和密闭三项满足，检查燃料与淡水。",
+  "guide.dbv_world.0.2": "先检查DashPanels面板与实际推进状态，再点击管理面板“出航”解除船坞固定与岸供。设计快照保留原开关状态，不保证所有推进默认关闭。",
+  "guide.dbv_world.0.3": "普通右键酒壶的控制台设置原生目标深度；潜行右键打开主艇管理。",
+  "guide.dbv_world.0.4": "所有升潜、浮力和推进参数保持Mod默认值；控制器测深不等于艇底净空。",
+  "guide.dbv_world.1.0": "驾驶面板",
+  "guide.dbv_world.1.1": "驾驶台包含左发、右发及双发动力/倒车控制。操作以面板中文标注与实际接线为准，首次先在浅水试航。",
+  "guide.dbv_world.1.2": "单侧动力差和换向用于转向；不要同时开启互相矛盾的单控/双控信号。",
+  "guide.dbv_world.1.3": "停船时停止推进，保留供氧和压载所需动力。返回船坞、推进停转且速度降低后，管理面板点“停泊”。",
+  "guide.dbv_world.1.4": "初始设计含8个推进桨。未完成长途、负载变化和紧急上浮验收，不能将三项资格当成航行性能保证。",
+  "guide.dbv_world.2.0": "改装与备份",
+  "guide.dbv_world.2.1": "本艇包含一组机械轴承运动结构。开始方块改装前，先停机并将轴承装置拆回方块。",
+  "guide.dbv_world.2.2": "完整动态蓝图、设备配置和存储数据纳入主艇独立JSON档案；备份并不表示一键灾难恢复已经实现。",
+  "guide.dbv_world.2.3": "新控制台属于深蓝远航创造模式分类，可搜索“酒壶的控制台”。",
+  "guide.dbv_world.2.4": "目前没有验收独立气闸流程，不要照搬旧灯笼鱼艇的泵和舱门操作说明。"
 }

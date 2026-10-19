@@ -1,6 +1,6 @@
 # 当前 Mod 清单：深蓝远航
 
-更新日期：2026-10-17。目标：**Minecraft 1.21.1 / NeoForge 21.1.259 / Java 21**。
+更新日期：2026-10-19。目标：**Minecraft 1.21.1 / NeoForge 21.1.259 / Java 21**。
 
 ## 本次整理规则
 
@@ -94,8 +94,8 @@ JEI当前锁定19.51.0.418，原版JAR已在正式开发环境启动、进世界
 | U049 · Create 航空系列 | **Create Aeronautics Lift Patch**<br>升力计算补丁 | 1.1.0 | **版本标签核对；整包待测**<br>修改升力/阻力计算；作者注明与 Wind Tunnel 不兼容。当前未选 Wind Tunnel；与 Sable 2.0.6 的具体物理行为待测。<br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/create-aeronautics-lift-patch/version/b5GqYXEI) |
 | U050 · Create 航空系列 | **Create Aeronautics: Automated Logistics**<br>航空自动物流 | 0.6.2 | **版本标签核对；整包待测**<br><br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/create-aeronautics-automated-logistics/version/EgPi4wq9) |
 | U051 · Create 航空系列 | **Create Aeronautics: Throwable Rope Connector**<br>投掷绳索连接器 | 0.4.3 | **版本标签核对；整包待测**<br><br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/create-aeronautics-throwable-rope-connector/version/EDzeTV17) |
-| U052 · Create 航空系列 | **Create Aeronautics: Toolgun**<br>航空工具枪 | 0.3.6 | **版本标签核对；整包待测**<br><br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/create-aeronautics-toolgun/version/pcD0Yutw) |
-| U053 · Create 航空系列 | **Create Aeronautics: Transmission & Linkage**<br>传动连杆机构 | 0.2.8 | **版本标签核对；整包待测**<br><br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/create-aeronautics-transmission-linkage/version/FCZZ3ED4) |
+| U052 · Create 航空系列 | **Create Aeronautics: Toolgun**<br>航空工具枪 | 0.3.6 | **已加入运行依赖；官方校验及版本范围通过**<br>2026-10-19用户确认，用于世界5初始艇。 | [依据](https://modrinth.com/mod/create-aeronautics-toolgun/version/pcD0Yutw) |
+| U053 · Create 航空系列 | **Create Aeronautics: Transmission & Linkage**<br>传动连杆机构 | 0.2.8 | **已加入运行依赖；官方校验及版本范围通过**<br>2026-10-19用户确认，用于世界5初始艇。 | [依据](https://modrinth.com/mod/create-aeronautics-transmission-linkage/version/FCZZ3ED4) |
 | U054 · Create 航空系列 | **Create Aeronautics: Gyro Stabilizers**<br>陀螺仪稳定器 | 1.2.2 | **版本标签核对；整包待测**<br>原文件名不带版本且多次发布复用；本清单选定官方 1.2.2，并在 JSON 记录官方 SHA-1。原表没有哈希，不能证明用户原文件就是该构建。<br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/create-aeronautics-gyroscope-stabilizers/version/9P9dNVUn) |
 | U055 · Create 航空系列 | **Create Aeronautics Physics Gantry**<br>航空物理龙门架 | 1.0.3 | **版本标签核对；整包待测**<br>硬依赖 Sable Companion；Sable 2.0.6 等已内置 1.6.0。与 G&G 内相关机械功能有交集，不据此认定 modId 冲突。<br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/create-aeronautics-physics-gantry/version/QoeKSEzn) |
 | U057 · Create 航空系列 | **Create Aeronautics: Compatibility**<br>航空兼容补丁 | 1.1.3 | **版本标签核对；整包待测**<br><br><br>历史授权：用户本次明确同意：原表除两类待定外其余都要 | [依据](https://modrinth.com/mod/create-aeronautics-compatability/version/j10zlI9h) |

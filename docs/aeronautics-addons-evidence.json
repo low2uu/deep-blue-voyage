@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "create-aeronautics-toolgun",
+    "versions": [
+      {
+        "game_versions": [
+          "1.21.1"
+        ],
+        "loaders": [
+          "neoforge"
+        ],
+        "environment": "client_and_server",
+        "id": "pcD0Yutw",
+        "project_id": "5fUBLqeW",
+        "author_id": "5dqtNA26",
+        "featured": false,
+        "name": "Create Aeronautics: Toolgun 0.3.6",
+        "version_number": "0.3.6",
+        "changelog": "A. Added a vehicle radar showing scan effects, player direction and vehicle status. Radar targets can be clicked to inspect and manage vehicles\n\nB. Improved query, preview and printing performance for large vehicles. Queries no longer scan continuously, reducing server load on large saves and reducing pauses during preview and printing. Dark vehicle previews have also been fixed.\n\nC. Optimized vehicle teleportation. Teleporting a vehicle should no longer cause server stalls. Unloaded vehicles cannot be moved directly, but players can still teleport above them.\n\nD. Improved compatibility for third-party Sable Blueprint welds and no-collision links, reducing abnormal pauses during restoration. Universal joints and giant hydraulic systems are also handled more reliably, and older blueprints remain supported.",
+        "changelog_url": null,
+        "date_published": "2026-08-21T18:17:56.246756Z",
+        "downloads": 100111,
+        "version_type": "release",
+        "status": "listed",
+        "requested_status": null,
+        "files": [
+          {
+            "id": "tUTyTH1A",
+            "hashes": {
+              "sha512": "d239d0438eabf369f4f2a8d07a05f15dca5d8d89fd24fd4f369d2173c92ca7b61a6b6d48a6172896b5f9e43ed15f4b742575390a76983de2de6d4c4639e76e79",
+              "sha1": "81103160768a52a5bc7fffb5fadc1c441883d5d5"
+            },
+            "url": "https://cdn.modrinth.com/data/5fUBLqeW/versions/pcD0Yutw/create_aeronautics_toolgun-0.3.6.jar",
+            "filename": "create_aeronautics_toolgun-0.3.6.jar",
+            "primary": true,
+            "size": 1353291,
+            "file_type": null
+          }
+        ],
+        "dependencies": []
+      }
+    ]
+  },
+  {
+    "slug": "create-aeronautics-transmission-linkage",
+    "versions": [
+      {
+        "game_versions": [
+          "1.21.1"
+        ],
+        "loaders": [
+          "neoforge"
+        ],
+        "environment": "client_and_server",
+        "id": "FCZZ3ED4",
+        "project_id": "Y1dq5ioE",
+        "author_id": "5dqtNA26",
+        "featured": false,
+        "name": "Create Aeronautics: Transmission & Linkage 0.2.8",
+        "version_number": "0.2.8",
+        "changelog": "Improved stability during vehicle unloading.",
+        "changelog_url": null,
+        "date_published": "2026-09-02T06:15:43.417859Z",
+        "downloads": 110009,
+        "version_type": "release",
+        "status": "listed",
+        "requested_status": null,
+        "files": [
+          {
+            "id": "47VIhF9m",
+            "hashes": {
+              "sha512": "af637fc793448928354cb453f794ce08fa14694250a377ae67d4a2d40db7c4a00adcb9f980387947c264e74c575939e9f525ef1f1443b8471c10bf72c52000a5",
+              "sha1": "bccaf90652905ae5f28dcc7e1134099d188ca020"
+            },
+            "url": "https://cdn.modrinth.com/data/Y1dq5ioE/versions/FCZZ3ED4/create_aeronautics_transmission_linkage-0.2.8.jar",
+            "filename": "create_aeronautics_transmission_linkage-0.2.8.jar",
+            "primary": true,
+            "size": 734744,
+            "file_type": null
+          }
+        ],
+        "dependencies": []
+      }
+    ]
+  }
+]

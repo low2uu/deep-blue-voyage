@@ -191,6 +191,6 @@ final class LegacyRefitService {
                 "minecraft:oak_trapdoor", "minecraft:redstone_block", "minecraft:sea_lantern", "minecraft:copper_block",
                 "minecraft:cut_copper", "minecraft:stone", "minecraft:stone_bricks", "minecraft:polished_deepslate",
                 "minecraft:white_concrete", "minecraft:gray_concrete", "minecraft:light_gray_concrete").contains(id)
-                || id.equals("create_submarine:command_sub") || id.equals("create_submarine:electrolyzer") || id.equals("create_submarine:oxygene_diffuser");
+                || (id.equals("create_submarine:command_sub") || id.equals("dbv_world:jiuhu_console")) || id.equals("create_submarine:electrolyzer") || id.equals("create_submarine:oxygene_diffuser");
     }
 }

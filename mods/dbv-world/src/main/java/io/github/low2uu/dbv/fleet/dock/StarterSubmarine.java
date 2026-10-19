@@ -5,23 +5,18 @@ import io.github.low2uu.dbv.world.WorldHeights;
 import com.maxenonyme.createsubmarine.CreateSubmarine;
 import com.maxenonyme.createsubmarine.submarine.block.entity.ElectrolyzerBlockEntity;
 import com.maxenonyme.createsubmarine.submarine.block.entity.OxygeneDiffuserBlockEntity;
-import dev.ryanhcode.sable.api.SubLevelAssemblyHelper;
 import dev.ryanhcode.sable.api.physics.constraint.FixedConstraintHandle;
 import dev.ryanhcode.sable.api.physics.constraint.FixedConstraintConfiguration;
-import dev.ryanhcode.sable.companion.math.BoundingBox3i;
 import dev.ryanhcode.sable.sublevel.ServerSubLevel;
 import dev.ryanhcode.sable.sublevel.system.SubLevelPhysicsSystem;
 import io.github.low2uu.dbv.fleet.FleetModule;
 import io.github.low2uu.dbv.world.ConstructionMode;
 import java.io.IOException;
 import java.nio.file.*;
-import java.util.ArrayList;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.storage.LevelResource;
 import net.neoforged.neoforge.fluids.FluidStack;
@@ -196,29 +191,13 @@ public final class StarterSubmarine {
         if (module.registry().flagship().isPresent() || !module.adapter().loaded(server.overworld()).isEmpty())
             throw new IOException("世界已有船体或主艇，拒绝自动生成");
         var level = server.overworld();
-        var plan = AnglerSubmarine.plan();
-        for (var p : BlockPos.betweenClosed(AnglerSubmarine.MIN, AnglerSubmarine.MAX)) {
-            if (!level.getBlockState(p).isAir()) throw new IOException("初始艇泊位被占用：" + p.toShortString());
-        }
+        DesignedSubmarine.read(); // Validate dependencies before recording creation intent.
         DockFiles.create(directory.resolve("starter-building.nbt"), new CompoundTag());
-        plan.forEach((p,state)->level.setBlock(p,state,2));
-        plan.forEach((p,state)->level.updateNeighborsAt(p,state.getBlock()));
-        AnglerSubmarine.provision(level);
-        var positions = plan.entrySet().stream().filter(e->!e.getValue().isAir()).map(java.util.Map.Entry::getKey).toList();
-        var body = SubLevelAssemblyHelper.assembleBlocks(level,AnglerSubmarine.MIN,positions,new BoundingBox3i(60,WorldHeights.fromLegacy(68),150,74,WorldHeights.fromLegacy(78),173));
-        if (body==null) throw new IOException("Sable装配失败，未生成第二艘船");
-        dev.ryanhcode.sable.api.sublevel.SubLevelContainer.getContainer(level)
-                .addForceLoadTicket(body, INITIAL_VALIDATION, net.minecraft.util.Unit.INSTANCE);
-        var box = body.getPlot().getBoundingBox();
-        var p = new Vector3d(box.minX()+.5,box.minY()+.5,box.minZ()+.5);
-        var w = body.logicalPose().transformPosition(p,new Vector3d());
-        var tag = new CompoundTag(); tag.putUUID("body",body.getUniqueId());
-        tag.putInt("x",box.minX());tag.putInt("y",box.minY());tag.putInt("z",box.minZ());
-        tag.putDouble("worldX",w.x);tag.putDouble("worldY",w.y);tag.putDouble("worldZ",w.z);
+        var body = DesignedSubmarine.create(level);
+        // A freshly imported Sable body's world bounds update on the next physics tick.
+        // tick() checks inDock before mooring or registration; do not reject its stale initial bounds.
+        adoptRefitBody(body);
         if (!server.saveEverything(false,true,true)) throw new IOException("初始艇存盘失败");
-        DockFiles.create(directory.resolve("starter.nbt"),tag);
-    }
-    private static void place(net.minecraft.server.level.ServerLevel level, ArrayList<BlockPos> positions, BlockPos p, String id) {
-        level.setBlock(p,BuiltInRegistries.BLOCK.get(ResourceLocation.parse(id)).defaultBlockState(),3); positions.add(p);
+
     }
 }

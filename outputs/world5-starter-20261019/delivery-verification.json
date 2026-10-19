@@ -1,0 +1,22 @@
+{
+  "source_world": "新的世界5.zip",
+  "delivered_world": "新的世界5-初始艇.zip",
+  "sha256": "e6bde4334d8e5c4b3197ebb7720415900b410499487d3d05d77b104a3eade365",
+  "bytes": 4822329,
+  "registry": {
+    "schemaVersion": 1,
+    "flagship": {
+      "vesselId": "1c0035ba-d85b-4363-b2f1-ce2dc82b6e99",
+      "bodyId": "66d01998-fbc7-47d8-b8ac-7097dadc716a",
+      "dimension": "minecraft:overworld",
+      "name": "酒狐号·初始艇",
+      "generation": 4
+    }
+  },
+  "static_blocks": 1675,
+  "console_count": 1,
+  "native_sublevels": 1,
+  "runtime_contraptions": [
+    1
+  ]
+}

@@ -150,9 +150,9 @@ public final class RefitService {
     }
     private String begin(ServerPlayer p,FleetModule m) throws IOException {
         var body=currentBody(m);var b=body.getPlot().getBoundingBox();
-        if(!body.getPlot().getContraptions().isEmpty())throw new IllegalStateException("首版暂不支持运动机械与子船快照");
+        if(!body.getPlot().getContraptions().isEmpty())throw new IllegalStateException("请先停止并拆回机械轴承等运动结构，再开始方块改装；完整动态蓝图已纳入独立备份");
         long volume=(long)(b.maxX()-b.minX()+1)*(b.maxY()-b.minY()+1)*(b.maxZ()-b.minZ()+1);
-        if(volume<=0||volume>4096)throw new IllegalStateException("首版支持4096格以内的船体");
+        if(volume<=0||volume>32768)throw new IllegalStateException("首版支持32768格以内的船体");
         for(int x=b.minX()>>4;x<=b.maxX()>>4;x++)for(int z=b.minZ()>>4;z<=b.maxZ()>>4;z++)
             if(body.getPlot().getChunk(body.getPlot().toLocal(new net.minecraft.world.level.ChunkPos(x,z)))==null)
                 throw new IllegalStateException("船体区块尚未加载，无法完整备份，请稍候再开始");
@@ -190,7 +190,7 @@ public final class RefitService {
                 if(!contains(next))throw new IllegalArgumentException("连接结构超出船坞改装范围，请断开与岸边建筑的连接："+next.toShortString());
                 minX=Math.min(minX,next.getX());minY=Math.min(minY,next.getY());minZ=Math.min(minZ,next.getZ());
                 maxX=Math.max(maxX,next.getX());maxY=Math.max(maxY,next.getY());maxZ=Math.max(maxZ,next.getZ());
-                if((long)(maxX-minX+1)*(maxY-minY+1)*(maxZ-minZ+1)>4096)throw new IllegalArgumentException("连接后船体包围盒超过4096格，请缩小扩建或断开岸边结构");
+                if((long)(maxX-minX+1)*(maxY-minY+1)*(maxZ-minZ+1)>32768)throw new IllegalArgumentException("连接后船体包围盒超过32768格，请缩小扩建或断开岸边结构");
                 found.add(next);queue.add(next);
             }
         }
@@ -209,7 +209,7 @@ public final class RefitService {
         if(blockMode())return connectedBlocks();
         var body=currentBody(m);if(body==null||body.isRemoved())throw new IllegalStateException("主艇未加载，保留已有存储档案");
         var b=body.getPlot().getBoundingBox();
-        if((long)(b.maxX()-b.minX()+1)*(b.maxY()-b.minY()+1)*(b.maxZ()-b.minZ()+1)>4096)throw new IllegalStateException("主艇扫描范围超过当前上限");
+        if((long)(b.maxX()-b.minX()+1)*(b.maxY()-b.minY()+1)*(b.maxZ()-b.minZ()+1)>32768)throw new IllegalStateException("主艇扫描范围超过当前上限");
         return positions(new BoundingBox3i(b));
     }
     public BlockPos storageOrigin(FleetModule m){
@@ -363,12 +363,12 @@ public final class RefitService {
         var b=journal.getIntArray("worldBounds");
         if(b.length!=6||b[0]!=60||b[1]!=WorldHeights.fromLegacy(68)||b[2]!=150||b[3]<b[0]||b[4]<b[1]||b[5]<b[2]||b[3]>128||b[4]>WorldHeights.fromLegacy(100)||b[5]>240)throw new IOException("改装区域无效");
         long volume=(long)(b[3]-b[0]+1)*(b[4]-b[1]+1)*(b[5]-b[2]+1);var list=journal.getList("original",Tag.TAG_COMPOUND);
-        if(volume>4096||list.size()!=volume)throw new IOException("改装备份数量无效");
+        if(volume>32768||list.size()!=volume)throw new IOException("改装备份数量无效");
         if(journal.contains("assembledBlocks")){
             var selection=selectedBlocks();
-            if(selection.size()>4096||new HashSet<>(selection).size()!=selection.size()||selection.stream().anyMatch(p->!contains(p)))throw new IOException("扩建方块记录无效");
+            if(selection.size()>32768||new HashSet<>(selection).size()!=selection.size()||selection.stream().anyMatch(p->!contains(p)))throw new IOException("扩建方块记录无效");
             var box=assemblyBounds(selection);
-            if((long)(box.maxX()-box.minX()+1)*(box.maxY()-box.minY()+1)*(box.maxZ()-box.minZ()+1)>4096)throw new IOException("扩建记录范围过大");
+            if((long)(box.maxX()-box.minX()+1)*(box.maxY()-box.minY()+1)*(box.maxZ()-box.minZ()+1)>32768)throw new IOException("扩建记录范围过大");
         }
         var seen=new HashSet<Long>();
         for(int i=0;i<list.size();i++){
@@ -385,8 +385,8 @@ public final class RefitService {
         boolean controller=false;var devices=new ArrayList<VesselInspection.Device>();var level=server.overworld();
         for(var p:connectedBlocks()){
             var id=net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(level.getBlockState(p).getBlock()).toString();
-            if(id.equals("create_submarine:command_sub"))controller=true;
-            if(level.getBlockState(p).hasBlockEntity())devices.add(new VesselInspection.Device(id,id.equals("create_submarine:command_sub")?"中央控制器":id.equals("create_submarine:electrolyzer")?"氧气制造":id.equals("create_submarine:oxygene_diffuser")?"供氧":"其他设备",p,p.subtract(PAD),"方块改装阶段；运行资格在完成时检测"));
+            if((id.equals("create_submarine:command_sub") || id.equals("dbv_world:jiuhu_console")))controller=true;
+            if(level.getBlockState(p).hasBlockEntity())devices.add(new VesselInspection.Device(id,(id.equals("create_submarine:command_sub") || id.equals("dbv_world:jiuhu_console"))?"中央控制器":id.equals("create_submarine:electrolyzer")?"氧气制造":id.equals("create_submarine:oxygene_diffuser")?"供氧":"其他设备",p,p.subtract(PAD),"方块改装阶段；运行资格在完成时检测"));
         }
         return new VesselInspection.Report(new Qualification(controller,false,false,true),devices,level.getGameTime());
     }

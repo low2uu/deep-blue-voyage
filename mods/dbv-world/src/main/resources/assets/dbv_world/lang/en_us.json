@@ -5,5 +5,21 @@
   "itemGroup.dbv_world": "Deep Blue Voyage",
   "menu.dbv_world.storage_terminal": "Cabin Storage Terminal",
   "screen.dbv_world.fleet": "Submarine Management",
-  "screen.dbv_world.starter_guide": "Starter Submarine Guide"
+  "screen.dbv_world.starter_guide": "Starter Submarine Guide",
+  "block.dbv_world.jiuhu_console": "Jiuhu's Console",
+  "guide.dbv_world.0.0": "First departure",
+  "guide.dbv_world.0.1": "The starter uses the world 5 player design. Close the doors and check control, oxygen, enclosure, fuel and water.",
+  "guide.dbv_world.0.2": "Check DashPanels controls and actual propulsion before releasing dock mooring. The saved design retains switch states; propulsion is not guaranteed to be off.",
+  "guide.dbv_world.0.3": "Right-click Jiuhu's Console for native target depth. Sneak-right-click for flagship management.",
+  "guide.dbv_world.0.4": "Lift, ballast and propulsion keep upstream defaults. Controller depth is not keel clearance.",
+  "guide.dbv_world.1.0": "Cockpit controls",
+  "guide.dbv_world.1.1": "The dashboard has left, right and combined engine power/reverse controls. Follow the labels and wiring; first test in shallow water.",
+  "guide.dbv_world.1.2": "Differential thrust and reversal steer the vessel. Avoid conflicting individual and combined control signals.",
+  "guide.dbv_world.1.3": "Stop propulsion while retaining power for oxygen and ballast. Return to dock, slow down and use Moor in the management panel.",
+  "guide.dbv_world.1.4": "The design has eight propellers. Endurance, payload changes and emergency ascent are not yet verified. Qualification is not a performance guarantee.",
+  "guide.dbv_world.2.0": "Refit and backups",
+  "guide.dbv_world.2.1": "This vessel includes a mechanical-bearing contraption. Stop and disassemble it into blocks before starting block refit.",
+  "guide.dbv_world.2.2": "The complete dynamic blueprint, device configuration and storage are captured in independent JSON. One-click disaster recovery is not yet implemented.",
+  "guide.dbv_world.2.3": "Find Jiuhu's Console in the Deep Blue Voyage creative tab.",
+  "guide.dbv_world.2.4": "An independent airlock procedure has not been verified. Do not use the old angler starter's pump and door instructions."
 }

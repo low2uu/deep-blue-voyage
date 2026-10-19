@@ -65,7 +65,7 @@ public final class VesselInspection {
                     var state = section.getBlockState(x, y, z);
                     if (state.isAir()) continue;
                     var key = BuiltInRegistries.BLOCK.getKey(state.getBlock());
-                    String type = key.getNamespace().equals("create_submarine") ? TYPES.get(key.getPath()) : null;
+                    String type = key.toString().equals("dbv_world:jiuhu_console") ? "中央控制器" : key.getNamespace().equals("create_submarine") ? TYPES.get(key.getPath()) : null;
                     // Unknown block entities remain visible without pretending to know their function.
                     if (type == null && !state.hasBlockEntity()) continue;
                     var pos = new BlockPos(chunk.getPos().getMinBlockX() + x, chunk.getMinBuildHeight() + s * 16 + y,

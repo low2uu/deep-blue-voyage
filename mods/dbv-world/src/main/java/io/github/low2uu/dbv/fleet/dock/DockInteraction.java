@@ -21,7 +21,7 @@ public final class DockInteraction {
     }
     public static void menu(ServerPlayer player,ServerSubLevel body) {
         var report=new io.github.low2uu.dbv.fleet.compat.VesselInspection().inspect(body);
-        report.devices().stream().filter(d->d.id().equals("create_submarine:command_sub")).findFirst().ifPresent(d->
+        report.devices().stream().filter(d->(d.id().equals("create_submarine:command_sub") || d.id().equals("dbv_world:jiuhu_console"))).findFirst().ifPresent(d->
                 io.github.low2uu.dbv.fleet.ui.FleetPanel.open(player,body,d.position()));
     }
     private static void commands(RegisterCommandsEvent event) {
