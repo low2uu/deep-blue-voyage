@@ -41,7 +41,7 @@
 | `mods/` | 自研 Java Mod 工程，每个 Mod 单独建目录 |
 | `assets/` | 原始纹理、模型、音效和宣传素材 |
 | `runtime/client/` | 正式开发工程的客户端运行目录与本机存档 |
-| `runtime/server/` | 服务端目录预留，尚未配置启动任务 |
+| `runtime/server/` | 双人联机服务端运行目录，见 [服务器部署](server/README.md) |
 | `runtime/backups/` | 测试存档备份 |
 | `dist/` | 后续导出的整合包与发布文件 |
 | `tools/` | 环境检查和后续构建辅助脚本 |

@@ -1,0 +1,25 @@
+// Applied only by server/manage.ps1. Resolve the exact approved production jars.
+allprojects {
+    afterEvaluate {
+        if (plugins.hasPlugin('java-library') && configurations.findByName('localRuntime') != null) {
+            tasks.register('exportCoopPack') {
+                dependsOn tasks.named('build')
+                doLast {
+                    def output = file(providers.gradleProperty('coopOutput').get())
+                    def clientOnly = ['jei', 'just-enough-resources-jer', 'xaeros-minimap',
+                                      'xaeros-world-map', 'betterf3', 'cloth-config']
+                    ['client', 'server'].each { side ->
+                        def dest = new File(output, "${side}/mods")
+                        dest.mkdirs()
+                        configurations.localRuntime.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+                            if (side == 'client' || !clientOnly.contains(artifact.moduleVersion.id.name)) {
+                                copy { from artifact.file; into dest }
+                            }
+                        }
+                        copy { from tasks.named('jar').get().archiveFile; into dest }
+                    }
+                }
+            }
+        }
+    }
+}

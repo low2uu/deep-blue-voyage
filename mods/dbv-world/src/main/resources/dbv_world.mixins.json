@@ -6,6 +6,7 @@
   "mixins": [
     "CommandSubDepthMixin",
     "SubmarinePressureDepthMixin",
+    "SubmarineMaterialLookupMixin",
     "IslandFireMixin",
     "OceanSeaLevelMixin",
     "OceanGenerationBoundsMixin",
