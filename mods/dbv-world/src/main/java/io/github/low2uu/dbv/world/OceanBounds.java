@@ -1,6 +1,6 @@
 package io.github.low2uu.dbv.world;
 
-/** Temporary development area; independent of the eventual public-release story range. */
+/** Central story square and starter-island geometry; no longer a generation boundary. */
 public final class OceanBounds {
     public static final int HALF_SIZE=5000;
     public static boolean contains(int x,int z) { return x>=-HALF_SIZE&&x<HALF_SIZE&&z>=-HALF_SIZE&&z<HALF_SIZE; }

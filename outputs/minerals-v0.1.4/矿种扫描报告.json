@@ -1,0 +1,295 @@
+{
+  "scannedItems": 2425,
+  "eligibleBlocks": [
+    {
+      "block": "minecraft:coal_ore",
+      "mineral": "coal",
+      "features": [
+        "minecraft:ore_coal",
+        "minecraft:ore_coal_buried"
+      ],
+      "lootItems": [
+        "minecraft:coal",
+        "minecraft:coal_ore"
+      ]
+    },
+    {
+      "block": "minecraft:deepslate_coal_ore",
+      "mineral": "coal",
+      "features": [
+        "minecraft:ore_coal",
+        "minecraft:ore_coal_buried"
+      ],
+      "lootItems": [
+        "minecraft:coal",
+        "minecraft:deepslate_coal_ore"
+      ]
+    },
+    {
+      "block": "minecraft:iron_ore",
+      "mineral": "iron",
+      "features": [
+        "minecraft:ore_iron",
+        "minecraft:ore_iron_small"
+      ],
+      "lootItems": [
+        "minecraft:iron_ore",
+        "minecraft:raw_iron"
+      ]
+    },
+    {
+      "block": "minecraft:deepslate_iron_ore",
+      "mineral": "iron",
+      "features": [
+        "minecraft:ore_iron",
+        "minecraft:ore_iron_small"
+      ],
+      "lootItems": [
+        "minecraft:deepslate_iron_ore",
+        "minecraft:raw_iron"
+      ]
+    },
+    {
+      "block": "minecraft:copper_ore",
+      "mineral": "copper",
+      "features": [
+        "minecraft:ore_copper_large",
+        "minecraft:ore_copper_small"
+      ],
+      "lootItems": [
+        "minecraft:copper_ore",
+        "minecraft:raw_copper"
+      ]
+    },
+    {
+      "block": "minecraft:deepslate_copper_ore",
+      "mineral": "copper",
+      "features": [
+        "minecraft:ore_copper_large",
+        "minecraft:ore_copper_small"
+      ],
+      "lootItems": [
+        "minecraft:deepslate_copper_ore",
+        "minecraft:raw_copper"
+      ]
+    },
+    {
+      "block": "minecraft:gold_ore",
+      "mineral": "gold",
+      "features": [
+        "minecraft:ore_gold",
+        "minecraft:ore_gold_buried"
+      ],
+      "lootItems": [
+        "minecraft:gold_ore",
+        "minecraft:raw_gold"
+      ]
+    },
+    {
+      "block": "minecraft:deepslate_gold_ore",
+      "mineral": "gold",
+      "features": [
+        "minecraft:ore_gold",
+        "minecraft:ore_gold_buried"
+      ],
+      "lootItems": [
+        "minecraft:deepslate_gold_ore",
+        "minecraft:raw_gold"
+      ]
+    },
+    {
+      "block": "minecraft:redstone_ore",
+      "mineral": "redstone",
+      "features": [
+        "minecraft:ore_redstone"
+      ],
+      "lootItems": [
+        "minecraft:redstone",
+        "minecraft:redstone_ore"
+      ]
+    },
+    {
+      "block": "minecraft:deepslate_redstone_ore",
+      "mineral": "redstone",
+      "features": [
+        "minecraft:ore_redstone"
+      ],
+      "lootItems": [
+        "minecraft:deepslate_redstone_ore",
+        "minecraft:redstone"
+      ]
+    },
+    {
+      "block": "minecraft:emerald_ore",
+      "mineral": "emerald",
+      "features": [
+        "minecraft:ore_emerald"
+      ],
+      "lootItems": [
+        "minecraft:emerald",
+        "minecraft:emerald_ore"
+      ]
+    },
+    {
+      "block": "minecraft:deepslate_emerald_ore",
+      "mineral": "emerald",
+      "features": [
+        "minecraft:ore_emerald"
+      ],
+      "lootItems": [
+        "minecraft:deepslate_emerald_ore",
+        "minecraft:emerald"
+      ]
+    },
+    {
+      "block": "minecraft:lapis_ore",
+      "mineral": "lapis",
+      "features": [
+        "minecraft:ore_lapis",
+        "minecraft:ore_lapis_buried"
+      ],
+      "lootItems": [
+        "minecraft:lapis_lazuli",
+        "minecraft:lapis_ore"
+      ]
+    },
+    {
+      "block": "minecraft:deepslate_lapis_ore",
+      "mineral": "lapis",
+      "features": [
+        "minecraft:ore_lapis",
+        "minecraft:ore_lapis_buried"
+      ],
+      "lootItems": [
+        "minecraft:deepslate_lapis_ore",
+        "minecraft:lapis_lazuli"
+      ]
+    },
+    {
+      "block": "minecraft:diamond_ore",
+      "mineral": "diamond",
+      "features": [
+        "minecraft:ore_diamond_buried",
+        "minecraft:ore_diamond_large",
+        "minecraft:ore_diamond_medium",
+        "minecraft:ore_diamond_small"
+      ],
+      "lootItems": [
+        "minecraft:diamond",
+        "minecraft:diamond_ore"
+      ]
+    },
+    {
+      "block": "minecraft:deepslate_diamond_ore",
+      "mineral": "diamond",
+      "features": [
+        "minecraft:ore_diamond_buried",
+        "minecraft:ore_diamond_large",
+        "minecraft:ore_diamond_medium",
+        "minecraft:ore_diamond_small"
+      ],
+      "lootItems": [
+        "minecraft:deepslate_diamond_ore",
+        "minecraft:diamond"
+      ]
+    },
+    {
+      "block": "minecraft:amethyst_cluster",
+      "mineral": "amethyst",
+      "features": [
+        "minecraft:amethyst_geode"
+      ],
+      "lootItems": [
+        "minecraft:amethyst_cluster",
+        "minecraft:amethyst_shard"
+      ]
+    },
+    {
+      "block": "create:zinc_ore",
+      "mineral": "zinc",
+      "features": [
+        "create:zinc_ore"
+      ],
+      "lootItems": [
+        "create:raw_zinc",
+        "create:zinc_ore"
+      ]
+    },
+    {
+      "block": "create:deepslate_zinc_ore",
+      "mineral": "zinc",
+      "features": [
+        "create:zinc_ore"
+      ],
+      "lootItems": [
+        "create:deepslate_zinc_ore",
+        "create:raw_zinc"
+      ]
+    }
+  ],
+  "excludedCandidates": [
+    "minecraft:nether_gold_ore：没有已挂载的主世界自然生成证据",
+    "minecraft:nether_quartz_ore：没有已挂载的主世界自然生成证据",
+    "minecraft:ancient_debris：没有已挂载的主世界自然生成证据",
+    "minecraft:small_amethyst_bud：晶芽没有宝石掉落证据",
+    "minecraft:medium_amethyst_bud：晶芽没有宝石掉落证据",
+    "minecraft:large_amethyst_bud：晶芽没有宝石掉落证据"
+  ],
+  "policy": "只自动接纳矿石标签与主世界标准矿脉生成的交集，或晶洞中掉落宝石的晶簇；未知自定义生成器不猜测。原有世界生成注册表不修改。",
+  "activeSnapshot": [
+    {
+      "id": "amethyst",
+      "block": "minecraft:amethyst_cluster",
+      "crystal": true
+    },
+    {
+      "id": "coal",
+      "block": "minecraft:coal_ore",
+      "crystal": false
+    },
+    {
+      "id": "copper",
+      "block": "minecraft:copper_ore",
+      "raw": "minecraft:raw_copper_block",
+      "crystal": false
+    },
+    {
+      "id": "diamond",
+      "block": "minecraft:diamond_ore",
+      "crystal": false
+    },
+    {
+      "id": "emerald",
+      "block": "minecraft:emerald_ore",
+      "crystal": false
+    },
+    {
+      "id": "gold",
+      "block": "minecraft:gold_ore",
+      "raw": "minecraft:raw_gold_block",
+      "crystal": false
+    },
+    {
+      "id": "iron",
+      "block": "minecraft:iron_ore",
+      "raw": "minecraft:raw_iron_block",
+      "crystal": false
+    },
+    {
+      "id": "lapis",
+      "block": "minecraft:lapis_ore",
+      "crystal": false
+    },
+    {
+      "id": "redstone",
+      "block": "minecraft:redstone_ore",
+      "crystal": false
+    },
+    {
+      "id": "zinc",
+      "block": "create:zinc_ore",
+      "raw": "create:raw_zinc_block",
+      "crystal": false
+    }
+  ]
+}

@@ -41,15 +41,34 @@ public final class VoyageLayout {
         }
         var immutable=List.copyOf(result); if(CACHE.size()>=16)CACHE.remove(CACHE.keySet().iterator().next()); CACHE.put(seed,immutable); return immutable;
     }
+    public static int tile(int block) { return Math.floorDiv(block+5000,10000); }
+    public static long tileSeed(long seed,int x,int z) {
+        if(x==0&&z==0)return seed;
+        long value=seed ^ (x*0x632BE59BD9B4E019L) ^ (z*0x9E3779B97F4A7C15L);
+        value=(value^(value>>>30))*0xBF58476D1CE4E5B9L;value=(value^(value>>>27))*0x94D049BB133111EBL;
+        return value^(value>>>31);
+    }
+    /** Same density outside the story square; only the origin has starter guarantees. */
+    public static List<Site> assignedSites(long seed,int tileX,int tileZ,List<String> minerals) {
+        if(minerals.isEmpty())throw new IllegalArgumentException("Empty mineral pool");
+        var local=sites(tileSeed(seed,tileX,tileZ));
+        var nearest=local.stream().filter(s->s.ore>=0).sorted(Comparator.comparingDouble((Site s)->Math.hypot(s.x,s.z)).thenComparingInt(Site::index)).limit(3).toList();
+        var result=new ArrayList<Site>();
+        for(var site:local) {
+            int ore=-1;
+            if(site.ore>=0) {
+                int rank=tileX==0&&tileZ==0?nearest.indexOf(site):-1;
+                if(rank>=0){ore=minerals.indexOf(List.of("iron","copper","gold").get(rank));if(ore<0)throw new IllegalArgumentException("Missing starter mineral");}
+                else ore=new Random(tileSeed(seed,tileX,tileZ)^0x4f524553L^((long)site.x<<32)^site.z).nextInt(minerals.size());
+            }
+            result.add(new Site(site.index,site.kind,site.x+tileX*10000,site.z+tileZ*10000,site.radius,site.y,ore));
+        }
+        return List.copyOf(result);
+    }
     private static boolean fits(Site s,List<Site> previous) {
-        if(Math.abs(s.x)+s.extent()>=5000||Math.abs(s.z)+s.extent()>=5000||Math.hypot(s.x,s.z)<s.extent()+650)return false;
+        if(Math.abs(s.x)+s.extent()>=4600||Math.abs(s.z)+s.extent()>=4600||Math.hypot(s.x,s.z)<s.extent()+650)return false;
         for(var p:previous)if(s.distance(p.x,p.z)<Math.max(s.ore<0&&p.ore<0?1600:800,s.extent()+p.extent()+400))return false;
         return true;
-    }
-    public static boolean protects(long seed,int x,int y,int z) {
-        if(y<72)return false;
-        for(var s:sites(seed))if(s.ore>=0 && s.distance(x,z)<=s.extent())return true;
-        return false;
     }
     public static double shape(Site s,int x,int z) {
         double dx=x-s.x,dz=z-s.z,angle=Math.atan2(dz,dx);

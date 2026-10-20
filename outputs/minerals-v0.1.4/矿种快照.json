@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "minerals": [
+    {
+      "id": "amethyst",
+      "block": "minecraft:amethyst_cluster",
+      "crystal": true
+    },
+    {
+      "id": "coal",
+      "block": "minecraft:coal_ore",
+      "crystal": false
+    },
+    {
+      "id": "copper",
+      "block": "minecraft:copper_ore",
+      "raw": "minecraft:raw_copper_block",
+      "crystal": false
+    },
+    {
+      "id": "diamond",
+      "block": "minecraft:diamond_ore",
+      "crystal": false
+    },
+    {
+      "id": "emerald",
+      "block": "minecraft:emerald_ore",
+      "crystal": false
+    },
+    {
+      "id": "gold",
+      "block": "minecraft:gold_ore",
+      "raw": "minecraft:raw_gold_block",
+      "crystal": false
+    },
+    {
+      "id": "iron",
+      "block": "minecraft:iron_ore",
+      "raw": "minecraft:raw_iron_block",
+      "crystal": false
+    },
+    {
+      "id": "lapis",
+      "block": "minecraft:lapis_ore",
+      "crystal": false
+    },
+    {
+      "id": "redstone",
+      "block": "minecraft:redstone_ore",
+      "crystal": false
+    },
+    {
+      "id": "zinc",
+      "block": "create:zinc_ore",
+      "raw": "create:raw_zinc_block",
+      "crystal": false
+    }
+  ]
+}

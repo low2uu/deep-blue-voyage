@@ -25,13 +25,26 @@ public final class FloodedWorldGenerator extends NoiseBasedChunkGenerator {
     ).apply(i,FloodedWorldGenerator::new));
     public FloodedWorldGenerator(BiomeSource source,Holder<NoiseGeneratorSettings> settings) { super(source,settings); }
     @Override protected MapCodec<? extends ChunkGenerator> codec(){return CODEC;}
-    private boolean inside(ChunkAccess c){return OceanBounds.chunkIntersects(c.getPos().x,c.getPos().z);}
+    private volatile MineralCatalog minerals;
+    private final java.util.Map<String,java.util.List<VoyageLayout.Site>> tileCache=new java.util.LinkedHashMap<>();
+    public void setMinerals(MineralCatalog minerals){this.minerals=minerals; synchronized(tileCache){tileCache.clear();}}
+    public MineralCatalog minerals(){if(minerals==null)throw new IllegalStateException("矿种扫描尚未完成，禁止生成地图");return minerals;}
+    public java.util.List<VoyageLayout.Site> sites(long seed,int minX,int minZ,int maxX,int maxZ){
+        var result=new java.util.ArrayList<VoyageLayout.Site>();
+        synchronized(tileCache){
+            for(int tx=VoyageLayout.tile(minX);tx<=VoyageLayout.tile(maxX);tx++)for(int tz=VoyageLayout.tile(minZ);tz<=VoyageLayout.tile(maxZ);tz++){
+                String key=seed+":"+tx+":"+tz;var sites=tileCache.get(key);
+                if(sites==null){sites=VoyageLayout.assignedSites(seed,tx,tz,minerals().ids());if(tileCache.size()>=64)tileCache.remove(tileCache.keySet().iterator().next());tileCache.put(key,sites);}
+                result.addAll(sites);
+            }
+        }return result;
+    }
+    public java.util.List<VoyageLayout.Site> sites(long seed,ChunkPos pos){return sites(seed,pos.getMinBlockX(),pos.getMinBlockZ(),pos.getMaxBlockX(),pos.getMaxBlockZ());}
     private boolean core(ChunkAccess c){return OceanBounds.preserved(c.getPos().getMinBlockX(),c.getPos().getMinBlockZ());}
     @Override public int getSpawnHeight(LevelHeightAccessor l){return IslandTerrain.PLATFORM_Y+1;}
 
     @Override public int getBaseHeight(int x,int z,Heightmap.Types type,LevelHeightAccessor level,RandomState random){
         type=SubmergedVillages.projection(type);
-        if(!OceanBounds.contains(x,z))return level.getMinBuildHeight();
         double weight=OceanBounds.islandWeight(x,z);
         if(weight==0)return super.getBaseHeight(x,z,type,level,random);
         int natural=super.getBaseHeight(x,z,Heightmap.Types.OCEAN_FLOOR_WG,level,random)-1;
@@ -40,15 +53,10 @@ public final class FloodedWorldGenerator extends NoiseBasedChunkGenerator {
     }
 
     @Override public CompletableFuture<ChunkAccess> fillFromNoise(Blender b,RandomState r,StructureManager s,ChunkAccess c){
-        if(!inside(c))return CompletableFuture.completedFuture(c);
         return super.fillFromNoise(b,r,s,c).thenApply(chunk->{
             var p=new BlockPos.MutableBlockPos();
             for(int lx=0;lx<16;lx++)for(int lz=0;lz<16;lz++){
                 int x=chunk.getPos().getMinBlockX()+lx,z=chunk.getPos().getMinBlockZ()+lz;
-                if(!OceanBounds.contains(x,z)){
-                    for(int y=WorldHeights.MIN_Y;y<WorldHeights.MAX_Y_EXCLUSIVE;y++)chunk.setBlockState(p.set(x,y,z),Blocks.AIR.defaultBlockState(),false);
-                    continue;
-                }
                 int natural=chunk.getHeight(Heightmap.Types.OCEAN_FLOOR_WG,lx,lz);
                 double weight=OceanBounds.islandWeight(x,z);
                 int ground=OceanBounds.terrainHeight(x,z,natural);
@@ -76,7 +84,6 @@ public final class FloodedWorldGenerator extends NoiseBasedChunkGenerator {
     }
 
     @Override public void buildSurface(WorldGenRegion region,StructureManager structures,RandomState random,ChunkAccess chunk){
-        if(!inside(chunk))return;
         var biomes=region.registryAccess().registryOrThrow(Registries.BIOME);
         int[] floors=new int[256];
         for(int x=0;x<16;x++)for(int z=0;z<16;z++)floors[z*16+x]=chunk.getHeight(Heightmap.Types.OCEAN_FLOOR_WG,x,z);
@@ -98,11 +105,10 @@ public final class FloodedWorldGenerator extends NoiseBasedChunkGenerator {
     }
 
     @Override public void applyCarvers(WorldGenRegion r,long seed,RandomState state,BiomeManager bm,StructureManager sm,ChunkAccess c,GenerationStep.Carving step){
-        if(inside(c)&&!OceanBounds.protectedSurface(c.getPos().getMiddleBlockX(),c.getPos().getMiddleBlockZ()))
+        if(!OceanBounds.protectedSurface(c.getPos().getMiddleBlockX(),c.getPos().getMiddleBlockZ()))
             super.applyCarvers(r,seed,state,bm,sm,c,step);
     }
     @Override public void applyBiomeDecoration(WorldGenLevel level,ChunkAccess chunk,StructureManager sm){
-        if(!inside(chunk))return;
         super.applyBiomeDecoration(level,chunk,sm);
         // Templates can carve air after the initial flood. Fill village rooms only,
         // clipped to this chunk; leave unrelated underground cave air untouched.
@@ -121,10 +127,10 @@ public final class FloodedWorldGenerator extends NoiseBasedChunkGenerator {
             }
         Heightmap.primeHeightmaps(chunk,EnumSet.allOf(Heightmap.Types.class));
         if(core(chunk))IslandArchitecture.decorate(chunk);
-        VoyageTerrain.decorate(level.getSeed(),chunk);
+        VoyageTerrain.decorate(this,level.getSeed(),chunk);
     }
     @Override public void createStructures(RegistryAccess access,ChunkGeneratorStructureState state,StructureManager sm,ChunkAccess c,StructureTemplateManager tm){
-        if(!inside(c)||OceanBounds.protectedSurface(c.getPos().getMiddleBlockX(),c.getPos().getMiddleBlockZ()))return;
+        if(OceanBounds.protectedSurface(c.getPos().getMiddleBlockX(),c.getPos().getMiddleBlockZ()))return;
         int x=c.getPos().getMiddleBlockX(),z=c.getPos().getMiddleBlockZ();
         var biome=getBiomeSource().getNoiseBiome(x>>2,32,z>>2,state.randomState().sampler());
         boolean submergedLand=super.getBaseHeight(x,z,Heightmap.Types.OCEAN_FLOOR_WG,c,state.randomState())<WorldHeights.SEA_LEVEL
@@ -137,8 +143,6 @@ public final class FloodedWorldGenerator extends NoiseBasedChunkGenerator {
                 c.setStartForStructure(structure,net.minecraft.world.level.levelgen.structure.StructureStart.INVALID_START);
     }
     @Override public void spawnOriginalMobs(WorldGenRegion region){
-        var c=region.getCenter();
-        if(OceanBounds.contains(c.getMinBlockX(),c.getMinBlockZ())&&OceanBounds.contains(c.getMaxBlockX(),c.getMaxBlockZ())
-                )super.spawnOriginalMobs(region);
+        super.spawnOriginalMobs(region);
     }
 }

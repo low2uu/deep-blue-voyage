@@ -1,6 +1,6 @@
 # 深蓝远航
 
-当前开发版本：**0.1.2**（[版本记录](docs/版本记录-changelog.md)）。
+当前开发版本：**0.1.4**（[版本记录](docs/版本记录-changelog.md)）。
 
 以《海底两万里》式潜艇探险为主题的 Minecraft 整合包。玩家建造大型潜艇，在广阔、连通的海洋中远航，探索不同海洋群系、海底遗迹与海洋 Boss。
 
@@ -24,7 +24,7 @@
 
 正式工程位于 `mods/dbv-world`，使用随项目提供的 Gradle Wrapper。打开 `deep-blue-voyage.code-workspace` 后，运行 `powershell -NoProfile -ExecutionPolicy Bypass -File tools/dev.ps1 build` 构建，使用同一命令的 `run` 动作启动客户端。详见 [部署流程](docs/开发环境部署-development-setup.md) 和 [起始岛建设阶段方案](docs/game-mechanics/起始岛建设方案-starter-island-plan.md)。
 
-临时建设设置集中在 `config/development-session.json`，不代表最终生存规则。当前只制作起始岛与简单近海，不预生成远海。
+临时建设设置集中在 `config/development-session.json`，不代表最终生存规则。当前包含起始岛、随机区域占位和自动矿种资源岛；远海随探索生成，不预生成整张地图。
 
 已启用机械动力柴油动力，起始岛东侧提供32×32无限原油区；油田随起始岛存档加载初始化，抽油及炼油设施由玩家搭建。位置和建井要求见[无限油田交接说明](docs/game-mechanics/起始岛无限油田-starter-oilfield.md)。
 
