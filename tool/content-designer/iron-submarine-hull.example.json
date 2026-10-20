@@ -1,0 +1,947 @@
+{
+  "format": "dbv-content-spec",
+  "schemaVersion": 1,
+  "purpose": "implementation_specification",
+  "metadata": {
+    "createdAt": "2026-10-20T00:00:00.000Z",
+    "updatedAt": "2026-10-20T00:00:00.000Z"
+  },
+  "sections": {
+    "identity": {
+      "registryId": {
+        "status": "specified",
+        "value": "dbv_world:iron_submarine_hull",
+        "reference": "",
+        "notes": ""
+      },
+      "nameZh": {
+        "status": "specified",
+        "value": "铁质潜艇壳",
+        "reference": "",
+        "notes": ""
+      },
+      "nameEn": {
+        "status": "specified",
+        "value": "Iron Submarine Hull",
+        "reference": "",
+        "notes": ""
+      },
+      "kind": {
+        "status": "specified",
+        "value": "block",
+        "reference": "",
+        "notes": ""
+      },
+      "category": {
+        "status": "specified",
+        "value": "潜艇外壳",
+        "reference": "",
+        "notes": ""
+      },
+      "summary": {
+        "status": "specified",
+        "value": "灰色平滑金属潜艇外壳，边缘带螺丝接缝，六面相同。采集按铁块；防护、航空学物理与深海学耐压按黑曜石。",
+        "reference": "",
+        "notes": ""
+      },
+      "motivation": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "keywords": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "author": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "targetRelease": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "creativeTabs": {
+        "status": "specified",
+        "value": [
+          "dbv_world:deep_blue_voyage"
+        ],
+        "reference": "",
+        "notes": ""
+      },
+      "tooltipsZh": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "tooltipsEn": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "platform": {
+      "minecraft": {
+        "status": "specified",
+        "value": "1.21.1",
+        "reference": "",
+        "notes": ""
+      },
+      "loader": {
+        "status": "specified",
+        "value": "neoforge",
+        "reference": "",
+        "notes": ""
+      },
+      "loaderVersion": {
+        "status": "specified",
+        "value": "21.1.259",
+        "reference": "",
+        "notes": ""
+      },
+      "java": {
+        "status": "specified",
+        "value": 21,
+        "reference": "",
+        "notes": ""
+      },
+      "namespace": {
+        "status": "specified",
+        "value": "dbv_world",
+        "reference": "",
+        "notes": ""
+      },
+      "dependencies": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "installationSide": {
+        "status": "specified",
+        "value": "both",
+        "reference": "",
+        "notes": ""
+      },
+      "compatibilityPolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "appearance": {
+      "model": {
+        "status": "specified",
+        "value": "cube_all",
+        "reference": "",
+        "notes": ""
+      },
+      "visualDescription": {
+        "status": "specified",
+        "value": "灰色平滑金属，四边拼接缝、四角螺丝，六面材质相同。",
+        "reference": "",
+        "notes": ""
+      },
+      "textureAll": {
+        "status": "specified",
+        "value": "dbv_world:block/iron_submarine_hull",
+        "reference": "",
+        "notes": ""
+      },
+      "faceTextures": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "textureResolution": {
+        "status": "specified",
+        "value": 64,
+        "reference": "",
+        "notes": ""
+      },
+      "renderLayer": {
+        "status": "specified",
+        "value": "solid",
+        "reference": "",
+        "notes": ""
+      },
+      "mapColor": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "soundType": {
+        "status": "specified",
+        "value": "minecraft:obsidian（石质音效）",
+        "reference": "",
+        "notes": ""
+      },
+      "lightLevel": {
+        "status": "specified",
+        "value": 0,
+        "reference": "",
+        "notes": ""
+      },
+      "occludes": {
+        "status": "specified",
+        "value": true,
+        "reference": "",
+        "notes": ""
+      },
+      "fullCube": {
+        "status": "specified",
+        "value": true,
+        "reference": "",
+        "notes": ""
+      },
+      "collisionShape": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "outlineShape": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "waterlogged": {
+        "status": "specified",
+        "value": false,
+        "reference": "",
+        "notes": ""
+      },
+      "facing": {
+        "status": "specified",
+        "value": "none",
+        "reference": "",
+        "notes": ""
+      },
+      "blockStates": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "assetReferences": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "animations": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "harvesting": {
+      "referenceBlock": {
+        "status": "specified",
+        "value": "minecraft:iron_block",
+        "reference": "",
+        "notes": ""
+      },
+      "hardness": {
+        "status": "specified",
+        "value": 5,
+        "reference": "",
+        "notes": ""
+      },
+      "tool": {
+        "status": "specified",
+        "value": "pickaxe",
+        "reference": "",
+        "notes": ""
+      },
+      "minimumTier": {
+        "status": "specified",
+        "value": "stone",
+        "reference": "",
+        "notes": ""
+      },
+      "requiresCorrectTool": {
+        "status": "specified",
+        "value": true,
+        "reference": "",
+        "notes": ""
+      },
+      "dropsSelf": {
+        "status": "specified",
+        "value": true,
+        "reference": "",
+        "notes": ""
+      },
+      "silkTouch": {
+        "status": "specified",
+        "value": "掉落自身",
+        "reference": "",
+        "notes": ""
+      },
+      "fortune": {
+        "status": "specified",
+        "value": "不增加掉落",
+        "reference": "",
+        "notes": ""
+      },
+      "explosionLoot": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "drops": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "experience": {
+        "status": "specified",
+        "value": 0,
+        "reference": "",
+        "notes": ""
+      },
+      "breakSideEffects": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "protection": {
+      "referenceBlock": {
+        "status": "specified",
+        "value": "minecraft:obsidian",
+        "reference": "",
+        "notes": ""
+      },
+      "explosionResistance": {
+        "status": "specified",
+        "value": 1200,
+        "reference": "",
+        "notes": ""
+      },
+      "pistonReaction": {
+        "status": "specified",
+        "value": "block",
+        "reference": "",
+        "notes": ""
+      },
+      "dragonImmune": {
+        "status": "specified",
+        "value": true,
+        "reference": "",
+        "notes": ""
+      },
+      "witherImmune": {
+        "status": "specified",
+        "value": false,
+        "reference": "",
+        "notes": ""
+      },
+      "flammability": {
+        "status": "specified",
+        "value": 0,
+        "reference": "",
+        "notes": ""
+      },
+      "fireSpread": {
+        "status": "specified",
+        "value": 0,
+        "reference": "",
+        "notes": ""
+      },
+      "slipperiness": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "speedFactor": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "jumpFactor": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "replaceable": {
+        "status": "specified",
+        "value": false,
+        "reference": "",
+        "notes": ""
+      },
+      "gravityAffected": {
+        "status": "specified",
+        "value": false,
+        "reference": "",
+        "notes": ""
+      },
+      "blockTags": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "itemTags": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "specialInteractions": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "physics": {
+      "referenceBlock": {
+        "status": "specified",
+        "value": "minecraft:obsidian",
+        "reference": "",
+        "notes": ""
+      },
+      "bindingPolicy": {
+        "status": "specified",
+        "value": "follow_runtime",
+        "reference": "",
+        "notes": ""
+      },
+      "mass": {
+        "status": "specified",
+        "value": 2,
+        "reference": "minecraft:obsidian",
+        "notes": "当前安装版本的基线值；follow_runtime策略要求实现时读取参考方块最终值。"
+      },
+      "volume": {
+        "status": "specified",
+        "value": 1,
+        "reference": "minecraft:obsidian",
+        "notes": "当前安装版本的基线值；follow_runtime策略要求实现时读取参考方块最终值。"
+      },
+      "friction": {
+        "status": "specified",
+        "value": 1,
+        "reference": "minecraft:obsidian",
+        "notes": "当前安装版本的基线值；follow_runtime策略要求实现时读取参考方块最终值。"
+      },
+      "restitution": {
+        "status": "specified",
+        "value": 0,
+        "reference": "minecraft:obsidian",
+        "notes": "当前安装版本的基线值；follow_runtime策略要求实现时读取参考方块最终值。"
+      },
+      "fragile": {
+        "status": "specified",
+        "value": false,
+        "reference": "minecraft:obsidian",
+        "notes": "当前安装版本的基线值；follow_runtime策略要求实现时读取参考方块最终值。"
+      },
+      "inertia": {
+        "status": "specified",
+        "value": "engine",
+        "reference": "minecraft:obsidian",
+        "notes": "当前安装版本的基线值；follow_runtime策略要求实现时读取参考方块最终值。"
+      },
+      "customInertia": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "floatingMaterial": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "floatingScale": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "assemblyAllowed": {
+        "status": "specified",
+        "value": true,
+        "reference": "",
+        "notes": ""
+      },
+      "connections": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "damageBehavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "overridePolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "pressure": {
+      "referenceBlock": {
+        "status": "specified",
+        "value": "minecraft:obsidian",
+        "reference": "",
+        "notes": ""
+      },
+      "bindingPolicy": {
+        "status": "specified",
+        "value": "follow_runtime",
+        "reference": "",
+        "notes": ""
+      },
+      "maxWaterDepth": {
+        "status": "specified",
+        "value": 500,
+        "reference": "minecraft:obsidian",
+        "notes": "基线值，不是整船性能保证；遵循follow_runtime策略。"
+      },
+      "implosionChance": {
+        "status": "specified",
+        "value": 0.06,
+        "reference": "minecraft:obsidian",
+        "notes": "基线值，不是整船性能保证；遵循follow_runtime策略。"
+      },
+      "useGlobalMultipliers": {
+        "status": "specified",
+        "value": true,
+        "reference": "",
+        "notes": ""
+      },
+      "sealsCompartment": {
+        "status": "specified",
+        "value": true,
+        "reference": "",
+        "notes": ""
+      },
+      "leakBehavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "oxygenBehavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "configurationMigration": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "item": {
+      "maxStackSize": {
+        "status": "specified",
+        "value": 64,
+        "reference": "",
+        "notes": ""
+      },
+      "durability": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "fireResistant": {
+        "status": "specified",
+        "value": false,
+        "reference": "",
+        "notes": ""
+      },
+      "rarity": {
+        "status": "specified",
+        "value": "common",
+        "reference": "",
+        "notes": ""
+      },
+      "equipmentSlot": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "attackDamage": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "attackSpeed": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "armor": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "toughness": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "knockbackResistance": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "repairIngredients": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "enchantments": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "useBehavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "interaction": {
+      "actions": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "ui": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "permissions": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "multiplayer": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "redstone": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "automation": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "accessibility": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "machine": {
+      "ports": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "inventorySlots": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "tankCount": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "energyPerTick": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "stressImpact": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "stressCapacity": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "minimumRpm": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "maximumRpm": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "operatingStates": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "multiblock": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "failureModes": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "acquisition": {
+      "recipes": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "otherSources": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "progression": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "balance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "recipeViewer": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "persistence": {
+      "hasBlockEntity": {
+        "status": "specified",
+        "value": false,
+        "reference": "",
+        "notes": ""
+      },
+      "vesselOwned": {
+        "status": "specified",
+        "value": true,
+        "reference": "",
+        "notes": ""
+      },
+      "jsonModule": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "dataVersion": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "fields": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "authoritativeSource": {
+        "status": "specified",
+        "value": "实际世界方块为权威；主艇独立JSON保存自身ID、状态与相对位置。",
+        "reference": "",
+        "notes": ""
+      },
+      "backupTriggers": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "restorePolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "breakMoveRefit": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "migration": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "duplicationProtection": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "integration": {
+      "adapters": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "excludedBehaviors": {
+        "status": "specified",
+        "value": [
+          "不继承黑曜石传送门或配方身份",
+          "不改变全局物理与耐压算法"
+        ],
+        "reference": "",
+        "notes": ""
+      },
+      "performance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "network": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "knownConflicts": {
+        "status": "specified",
+        "value": "这是待实施目标，不代表v0.1.5已具备这些跨Mod属性。质量和耐压数值为核对基线，运行时应跟随同一世界的黑曜石。",
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "acceptance": {
+      "tests": {
+        "status": "specified",
+        "value": [
+          {
+            "name": "采集与防护分离",
+            "setup": "同状态玩家；石镐、金镐及铁块对照",
+            "steps": "比较速度与掉落；读取爆炸抗性",
+            "expected": "采集同铁块；金镐不掉落；爆炸抗性1200",
+            "priority": "required"
+          },
+          {
+            "name": "物理与耐压一致",
+            "setup": "相同世界中黑曜石与新壳块",
+            "steps": "读取Sable和Deep Seas最终属性并保存重进",
+            "expected": "对应材料属性一致；备份恢复仍是新壳ID",
+            "priority": "required"
+          }
+        ],
+        "reference": "",
+        "notes": ""
+      },
+      "openQuestions": {
+        "status": "specified",
+        "value": [
+          "是否增加合成配方？",
+          "是否改用金属音效？"
+        ],
+        "reference": "",
+        "notes": ""
+      },
+      "nonGoals": {
+        "status": "specified",
+        "value": [
+          "自动替换已有潜艇外壳"
+        ],
+        "reference": "",
+        "notes": ""
+      },
+      "completionCriteria": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "notes": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    }
+  },
+  "extensions": []
+}

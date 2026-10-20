@@ -1,0 +1,63 @@
+{
+    "package":  "dbv-content-designer",
+    "version":  "0.1.7",
+    "schemaVersion":  1,
+    "files":  [
+                  {
+                      "path":  "app.js",
+                      "sha256":  "5c3570881d1e12838097f5c1f63909a251230283007c764d265913a5ea9ab4a1"
+                  },
+                  {
+                      "path":  "catalog.js",
+                      "sha256":  "ec5fc36d0f9524e2e38c63002dc591728cdfd9c14fe866d4c0a9dff486213d60"
+                  },
+                  {
+                      "path":  "content-spec.schema.json",
+                      "sha256":  "0e410156476179c2f89cffe3c16e7207c14a3f16594822c5d90dd8ce8c7b7538"
+                  },
+                  {
+                      "path":  "core.js",
+                      "sha256":  "2660f54276d3623428adff667565e33c3666caa002910f0db1e1f412dcaf83d2"
+                  },
+                  {
+                      "path":  "docs/方块属性规范与对照表-block-property-specification.md",
+                      "sha256":  "4111685825361240d5ee856eb3857d71887a775d13f3580ba1bc07ef33072792"
+                  },
+                  {
+                      "path":  "docs/内容设计器设计与使用-content-designer.md",
+                      "sha256":  "4a2e22f3ac9a411bfb0b9eab66d90724eae44224d8b1bcf62299b3991433d4b4"
+                  },
+                  {
+                      "path":  "docs/内容设计器字段目录-content-designer-fields.md",
+                      "sha256":  "918d566ece78bd6c312c9ecd0e96cd861f5adaedac16b0d9ca11f7c297aa39b8"
+                  },
+                  {
+                      "path":  "index.html",
+                      "sha256":  "46e59168258ef2c88df98c4c3aab31be08e3a3c8036283f601d4bd55820be2d2"
+                  },
+                  {
+                      "path":  "iron-submarine-hull.example.json",
+                      "sha256":  "2b287f32c2b2eb6335e1ddeb4e312b69f0f24a7fe105816e7107364cea7b4046"
+                  },
+                  {
+                      "path":  "README.md",
+                      "sha256":  "b1885def406348f2cf0882cb49b367161878ac7e48fbbcb8ae2e47d6c1c004f4"
+                  },
+                  {
+                      "path":  "start.cmd",
+                      "sha256":  "0edbd8f5b22789c3f11971244871f1b36e23f9e710fdc8b25ca6429165ec81be"
+                  },
+                  {
+                      "path":  "style.css",
+                      "sha256":  "03971f75ff767cd99be3ed98806f0b79b620eac8d41f2cf7e3abf81bd62b4c4c"
+                  },
+                  {
+                      "path":  "test.cjs",
+                      "sha256":  "96845d19665a74a4941c65ae2197f92034afd23032cbd187c795edf8e3b08943"
+                  },
+                  {
+                      "path":  "validate.cjs",
+                      "sha256":  "f9ac7f7019b1df7572d3405b92c5a68889f4bcf4e2193f24f938031785420936"
+                  }
+              ]
+}

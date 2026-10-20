@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>深蓝远航 · 内容设计器</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="catalog.js" defer></script>
+  <script src="core.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <div><span class="eyebrow">DEEP BLUE VOYAGE / DESIGN SPECIFICATION</span><h1>内容设计器</h1><p>把一个方块的想法，写成可以交给开发者的完整规格。</p></div>
+    <div class="header-actions"><button id="new">新建设计</button><button id="preset">载入铁质潜艇壳预设</button><button id="import">导入 JSON</button><input id="file" type="file" accept=".json,application/json" hidden></div>
+  </header>
+  <div class="notice">仅编辑需求，不修改游戏或存档。草稿会尝试保存在当前浏览器；请定期导出 JSON。继承值由开发阶段适配，不会在此自动读取 Mod。</div>
+  <div class="workspace">
+    <aside><label for="search">查找属性</label><input id="search" type="search" placeholder="例如：耐压、质量、配方"><label class="check"><input id="pending" type="checkbox">只看待设计项</label><nav id="nav" aria-label="配置分类"></nav><div id="progress" class="progress"></div></aside>
+    <main id="form" aria-label="属性编辑区"></main>
+    <section class="review" aria-label="校验与导出">
+      <h2>交接检查</h2><p class="muted">所有分类、状态、来源和备注都会导出。尚未决定的内容明确标为待定。</p>
+      <div id="validation" aria-live="polite"></div>
+      <button id="validate">检查填写内容</button>
+      <button id="export" class="primary">导出开发规格 JSON</button>
+      <button id="draft">导出草稿 JSON</button>
+      <button id="preview">预览完整 JSON</button>
+      <button id="schema">下载 JSON Schema</button>
+      <button id="clear" class="quiet">清除浏览器草稿</button>
+      <p class="muted">“开发规格”要求基本身份完整且无格式或冲突错误；允许保留待定项，并显示数量。它不是可直接放进 Minecraft 的配方或模型文件。</p>
+      <div id="message" role="status"></div>
+    </section>
+  </div>
+  <dialog id="json-dialog"><h2>完整 JSON 预览</h2><p>内容较多时可直接导出；这份文件用于开发交接。</p><textarea id="json-preview" readonly aria-label="完整 JSON"></textarea><button id="close-preview">关闭预览</button></dialog>
+</body>
+</html>

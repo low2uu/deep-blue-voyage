@@ -4,3 +4,5 @@
 *.ps1 text eol=crlf
 *.bat text eol=crlf
 *.sh text eol=lf
+# Preserve portable-package bytes so manifest hashes also work after checkout.
+tool/content-designer/** -text whitespace=cr-at-eol
