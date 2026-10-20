@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "dbv_world:block/iron_submarine_hull"
+  }
+}

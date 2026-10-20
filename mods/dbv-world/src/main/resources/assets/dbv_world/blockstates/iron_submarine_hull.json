@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "dbv_world:block/iron_submarine_hull" }
+  }
+}
