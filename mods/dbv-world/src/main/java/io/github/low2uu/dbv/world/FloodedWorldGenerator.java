@@ -30,6 +30,7 @@ public final class FloodedWorldGenerator extends NoiseBasedChunkGenerator {
     @Override public int getSpawnHeight(LevelHeightAccessor l){return IslandTerrain.PLATFORM_Y+1;}
 
     @Override public int getBaseHeight(int x,int z,Heightmap.Types type,LevelHeightAccessor level,RandomState random){
+        type=SubmergedVillages.projection(type);
         if(!OceanBounds.contains(x,z))return level.getMinBuildHeight();
         double weight=OceanBounds.islandWeight(x,z);
         if(weight==0)return super.getBaseHeight(x,z,type,level,random);
@@ -103,6 +104,22 @@ public final class FloodedWorldGenerator extends NoiseBasedChunkGenerator {
     @Override public void applyBiomeDecoration(WorldGenLevel level,ChunkAccess chunk,StructureManager sm){
         if(!inside(chunk))return;
         super.applyBiomeDecoration(level,chunk,sm);
+        // Templates can carve air after the initial flood. Fill village rooms only,
+        // clipped to this chunk; leave unrelated underground cave air untouched.
+        var cursor=new BlockPos.MutableBlockPos();
+        for(var start:sm.startsForStructure(chunk.getPos(),structure->SubmergedVillages.isVillage(level.registryAccess(),structure)))
+            for(var piece:start.getPieces()) {
+                var box=piece.getBoundingBox();
+                for(int x=Math.max(box.minX(),chunk.getPos().getMinBlockX());x<=Math.min(box.maxX(),chunk.getPos().getMaxBlockX());x++)
+                    for(int z=Math.max(box.minZ(),chunk.getPos().getMinBlockZ());z<=Math.min(box.maxZ(),chunk.getPos().getMaxBlockZ());z++)
+                        for(int y=Math.max(box.minY(),WorldHeights.MIN_Y);y<=Math.min(box.maxY(),WorldHeights.SEA_LEVEL-1);y++) {
+                            var block=chunk.getBlockState(cursor.set(x,y,z));
+                            if(block.isAir())chunk.setBlockState(cursor,Blocks.WATER.defaultBlockState(),false);
+                            else if(block.hasProperty(net.minecraft.world.level.block.state.properties.BlockStateProperties.WATERLOGGED))
+                                chunk.setBlockState(cursor,block.setValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.WATERLOGGED,true),false);
+                        }
+            }
+        Heightmap.primeHeightmaps(chunk,EnumSet.allOf(Heightmap.Types.class));
         if(core(chunk))IslandArchitecture.decorate(chunk);
         VoyageTerrain.decorate(level.getSeed(),chunk);
     }
@@ -110,9 +127,14 @@ public final class FloodedWorldGenerator extends NoiseBasedChunkGenerator {
         if(!inside(c)||OceanBounds.protectedSurface(c.getPos().getMiddleBlockX(),c.getPos().getMiddleBlockZ()))return;
         int x=c.getPos().getMiddleBlockX(),z=c.getPos().getMiddleBlockZ();
         var biome=getBiomeSource().getNoiseBiome(x>>2,32,z>>2,state.randomState().sampler());
-        if(super.getBaseHeight(x,z,Heightmap.Types.OCEAN_FLOOR_WG,c,state.randomState())<WorldHeights.SEA_LEVEL
-                &&!biome.is(BiomeTags.IS_OCEAN)&&!biome.is(BiomeTags.IS_RIVER))return;
+        boolean submergedLand=super.getBaseHeight(x,z,Heightmap.Types.OCEAN_FLOOR_WG,c,state.randomState())<WorldHeights.SEA_LEVEL
+                &&!biome.is(BiomeTags.IS_OCEAN)&&!biome.is(BiomeTags.IS_RIVER);
         super.createStructures(access,state,sm,c,tm);
+        // Keep the previous restriction for other land structures, but allow the
+        // original villages to survive the flood at their actual terrain height.
+        if(submergedLand)for(var structure:java.util.List.copyOf(c.getAllStarts().keySet()))
+            if(!SubmergedVillages.isVillage(access,structure))
+                c.setStartForStructure(structure,net.minecraft.world.level.levelgen.structure.StructureStart.INVALID_START);
     }
     @Override public void spawnOriginalMobs(WorldGenRegion region){
         var c=region.getCenter();

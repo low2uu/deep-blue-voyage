@@ -8,7 +8,10 @@
     "SubmarinePressureDepthMixin",
     "IslandFireMixin",
     "OceanSeaLevelMixin",
-    "OceanGenerationBoundsMixin"
+    "OceanGenerationBoundsMixin",
+    "SubmergedVillageStartMixin",
+    "SubmergedVillagePlacementMixin",
+    "SubmergedVillageGravityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

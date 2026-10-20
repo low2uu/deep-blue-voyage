@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "createdFromEmptyFolder": true,
+  "seed": 7667568505341616740,
+  "generatedChunks": 312,
+  "villages": [
+    {
+      "startChunk": "[38, 38]",
+      "pieces": 151,
+      "townBaseY": 62,
+      "terrainFirstFreeY": 63,
+      "normalWorldSurfaceY": 128,
+      "remainingAir": 0,
+      "water": 9013,
+      "survivingDirtPaths": 1222,
+      "terrainMatchingRoadPieces": 95,
+      "submergedRoadColumns": 3792
+    },
+    {
+      "startChunk": "[156, -26]",
+      "pieces": 155,
+      "townBaseY": 54,
+      "terrainFirstFreeY": 55,
+      "normalWorldSurfaceY": 128,
+      "remainingAir": 0,
+      "water": 6531,
+      "survivingDirtPaths": 0,
+      "terrainMatchingRoadPieces": 90,
+      "submergedRoadColumns": 4456
+    }
+  ],
+  "audit": "PASS 102080 block checks: five empty machine bays, 128x128 dock water/sky, open sea exit, dry spawn",
+  "done": true,
+  "savedAndReloaded": true,
+  "offlineRoadSurfaceCheck": [
+    {
+      "village": "minecraft:village_savanna",
+      "roadColumns": 6844,
+      "nonWaterAtSeaSurface": 0,
+      "examples": []
+    },
+    {
+      "village": "minecraft:village_desert",
+      "roadColumns": 5620,
+      "nonWaterAtSeaSurface": 0,
+      "examples": []
+    }
+  ],
+  "unitTests": {
+    "tests": 40,
+    "failures": 0
+  },
+  "initialAssertionNote": "初次断言要求沙漠村庄存在泥土小径，未涵盖沙漠道路材质；改为检查贴地道路构件及实际海面残留，保存重进后通过。"
+}
