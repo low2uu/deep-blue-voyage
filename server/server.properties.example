@@ -1,7 +1,8 @@
 server-port=25565
-server-ip=
+server-ip=::
 level-name=world
-online-mode=true
+online-mode=false
+enforce-secure-profile=false
 white-list=true
 enforce-whitelist=true
 max-players=4

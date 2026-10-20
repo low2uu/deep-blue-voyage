@@ -166,7 +166,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\dev.ps1 run
 4. 将完整存档放入本机 `runtime/client/saves/`。确认 `level.dat` 直接位于该地图文件夹下，例如 `saves/深蓝远航-联合开发/level.dat`，不要多套一层同名文件夹。
 5. 重新 `run`，在单人游戏列表选择 **深蓝远航·联合开发**。只改磁盘文件夹名通常不会改变游戏内显示名称。
 
-不要只复制 `region` 或 `level.dat`；主艇登记、Sable 物理船体和船坞快照也需要一起交接。不要把两个人分别施工的世界直接覆盖合并。此流程用于存档交接。双方同时联机请使用 [独立服务端部署方案](../server/README.md)，通过正版启动器分别登录；默认开发客户端使用 `DBVDeveloper`，不用于服务器身份验证。
+不要只复制 `region` 或 `level.dat`；主艇登记、Sable 物理船体和船坞快照也需要一起交接。不要把两个人分别施工的世界直接覆盖合并。此流程用于存档交接。双方同时联机请使用 [独立服务端部署方案](../server/README.md)，按服务端说明使用不同的固定离线昵称与 IPv6 连接；默认开发客户端使用 `DBVDeveloper`，双方不能共用该昵称。
 
 ## 6 进入后确认新版本功能
 

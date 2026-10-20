@@ -1,8 +1,9 @@
 ﻿param(
     [Parameter(Position=0)]
-    [ValidateSet('prepare','start','update','backup','client-pack','status')]
+    [ValidateSet('prepare','start','update','backup','client-pack','status','offline-ipv6')]
     [string]$Action = 'status',
-    [string]$JavaHome = $env:JAVA_HOME
+    [string]$JavaHome = $env:JAVA_HOME,
+    [string]$Players = ''
 )
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
@@ -39,6 +40,43 @@ function Backup-Server {
     Write-Text "$path.sha256" ((Get-FileHash $path -Algorithm SHA256).Hash.ToLowerInvariant())
     Write-Host "完整备份：$path"
 }
+function Set-OfflineIPv6 {
+    $properties = Join-Path $homeDir 'server.properties'
+    if (!(Test-Path $properties)) { throw '请先执行 prepare。' }
+    $names = @()
+    $whitePath = Join-Path $homeDir 'whitelist.json'
+    if (Test-Path $whitePath) {
+        $existing = Get-Content $whitePath -Raw -Encoding UTF8 | ConvertFrom-Json
+        foreach ($entry in $existing) { $names += $entry.name }
+    }
+    $names += @($Players -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ })
+    foreach ($name in $names) {
+        if ($name -cnotmatch '^[A-Za-z0-9_]{3,16}$') { throw "昵称应为 3 至 16 位英文字母、数字或下划线：$name" }
+    }
+    Backup-Server
+    $text = [IO.File]::ReadAllText($properties)
+    foreach ($entry in @{'online-mode'='false';'enforce-secure-profile'='false';'server-ip'='::';'white-list'='true';'enforce-whitelist'='true'}.GetEnumerator()) {
+        $pattern = '(?m)^' + [regex]::Escape($entry.Key) + '\s*=.*$'
+        $line = $entry.Key + '=' + $entry.Value
+        if ([regex]::IsMatch($text, $pattern)) { $text = [regex]::Replace($text, $pattern, $line) }
+        else { $text += "`n$line`n" }
+    }
+    $entries = @($names | Select-Object -Unique | ForEach-Object {
+        $md5 = [Security.Cryptography.MD5]::Create()
+        try { $bytes = $md5.ComputeHash([Text.Encoding]::UTF8.GetBytes('OfflinePlayer:' + $_)) }
+        finally { $md5.Dispose() }
+        $bytes[6] = ($bytes[6] -band 15) -bor 48
+        $bytes[8] = ($bytes[8] -band 63) -bor 128
+        $hex = [BitConverter]::ToString($bytes).Replace('-','').ToLowerInvariant()
+        $uuid = $hex.Substring(0,8)+'-'+$hex.Substring(8,4)+'-'+$hex.Substring(12,4)+'-'+$hex.Substring(16,4)+'-'+$hex.Substring(20,12)
+        @{name=$_;uuid=$uuid}
+    })
+    Write-Text $whitePath (ConvertTo-Json -InputObject $entries -Depth 4)
+    Write-Text $properties $text
+    Write-Host '已启用离线登录与 IPv6 监听，白名单已按离线 UUID 写入。昵称和大小写必须固定。'
+    Write-Host '旧正版玩家数据与 OP 身份不会自动迁移。玩家加入后，在控制台重新 op 对应昵称。'
+}
+
 function Export-Pack {
     $stage = Join-Path $repo ("dist/coop/{0}-{1}" -f (Get-Date -Format 'yyyyMMdd-HHmmss'), [guid]::NewGuid().ToString('N').Substring(0,8))
     & (Join-Path $repo 'mods/dbv-world/gradlew.bat') -p (Join-Path $repo 'mods/dbv-world') -I (Join-Path $PSScriptRoot 'distribution.gradle') "-PcoopOutput=$stage" exportCoopPack --no-daemon --console=plain | Out-Host
@@ -138,6 +176,7 @@ try {
     try { $lock = [IO.File]::Open((Join-Path $repo 'runtime/server.operation.lock'), 'OpenOrCreate', 'ReadWrite', 'None') }
     catch { throw '服务端或维护操作仍在运行。请在服务器窗口输入 stop，等待退出后重试。' }
     if ($Action -eq 'backup') { Backup-Server; return }
+    if ($Action -eq 'offline-ipv6') { Set-OfflineIPv6; return }
     if (!$JavaHome -or !(Test-Path (Join-Path $JavaHome 'bin/java.exe'))) { throw '请设置 JAVA_HOME 为 Zulu JDK 21 安装目录，或传入 -JavaHome。' }
     $script:java = Join-Path $JavaHome 'bin/java.exe'
     $info = (& $script:java --version | Out-String)
@@ -179,7 +218,7 @@ try {
             try {
                 [Console]::OutputEncoding = $utf8
                 [Console]::InputEncoding = $utf8
-                & $script:java '@user_jvm_args.txt' '-Dstdout.encoding=UTF-8' '-Dstderr.encoding=UTF-8' "@$argsFile" nogui
+                & $script:java '@user_jvm_args.txt' '-Djava.net.preferIPv4Stack=false' '-Dstdout.encoding=UTF-8' '-Dstderr.encoding=UTF-8' "@$argsFile" nogui
                 if ($LASTEXITCODE -ne 0) { throw '服务器异常退出，请查看 runtime/server/logs/latest.log。' }
             } finally {
                 [Console]::OutputEncoding = $oldOut
