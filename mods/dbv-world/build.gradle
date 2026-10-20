@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'io.github.low2uu.deepbluevoyage'
-version = '0.1.5'
+version = '0.1.6'
 base { archivesName = 'dbv-world' }
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
