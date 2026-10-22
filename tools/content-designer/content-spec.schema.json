@@ -9590,7 +9590,7 @@
               ]
             },
             "base": {
-              "title": "当前原型行为与模型",
+              "title": "AI 行为基底（外观独立）",
               "type": "object",
               "additionalProperties": false,
               "required": [

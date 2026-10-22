@@ -141,22 +141,22 @@
     },
     "appearance": {
       "model": {
-        "status": "pending",
-        "value": null,
-        "reference": "",
-        "notes": ""
+        "status": "specified",
+        "value": "custom",
+        "reference": "tools/creature-models/generate.py",
+        "notes": "专属模型；未进行游戏内验收。"
       },
       "visualDescription": {
-        "status": "pending",
-        "value": null,
-        "reference": "",
-        "notes": ""
+        "status": "specified",
+        "value": "绿色分节蠕虫，粉色吸附口和六段可摆动腹部。",
+        "reference": "tools/creature-models/generate.py",
+        "notes": "专属模型；未进行游戏内验收。"
       },
       "textureAll": {
-        "status": "pending",
-        "value": null,
-        "reference": "",
-        "notes": ""
+        "status": "specified",
+        "value": "dbv_world:entity/ocean_palette",
+        "reference": "tools/creature-models/generate.py",
+        "notes": "专属模型；未进行游戏内验收。"
       },
       "faceTextures": {
         "status": "pending",
@@ -165,10 +165,10 @@
         "notes": ""
       },
       "textureResolution": {
-        "status": "pending",
+        "status": "not_applicable",
         "value": null,
         "reference": "",
-        "notes": ""
+        "notes": "共用非方形材质图1024×512，实际尺寸在几何JSON内。"
       },
       "renderLayer": {
         "status": "pending",
@@ -237,16 +237,18 @@
         "notes": ""
       },
       "assetReferences": {
-        "status": "pending",
-        "value": null,
-        "reference": "",
-        "notes": ""
+        "status": "specified",
+        "value": [
+          "dbv_world:models/entity/hull_worm.json"
+        ],
+        "reference": "tools/creature-models/generate.py",
+        "notes": "专属模型；未进行游戏内验收。"
       },
       "animations": {
-        "status": "pending",
-        "value": null,
-        "reference": "",
-        "notes": ""
+        "status": "specified",
+        "value": "原生关节动画：鳍翼、尾部、步足、触须或手臂按模型配置摆动；无攻击命中结算。",
+        "reference": "tools/creature-models/generate.py",
+        "notes": "专属模型；未进行游戏内验收。"
       }
     },
     "harvesting": {
@@ -1024,7 +1026,7 @@
       },
       "implementedBehavior": {
         "status": "specified",
-        "value": "临时复用 squid 原版模型与 AI；尚无目标特殊技能、首杀、多人缩放或船体伤害。",
+        "value": "使用专属模型和基础关节动画；行为仍沿用 squid 原型，尚无目标特殊技能、首杀、多人缩放或船体伤害。",
         "reference": "整体玩法与数值初案",
         "notes": "待定原型值"
       },

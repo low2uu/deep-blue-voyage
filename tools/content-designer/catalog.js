@@ -129,7 +129,7 @@
     groups[1].fields.find(x => x.id === key).essential = true;
   groups.push({id: "monster", title: "怪物与 Boss", help: "区分当前原型属性与待定目标。自然刷新、技能和阶段需要单独开发；填写规格不会自动实现。", fields: [
     e("stage", "制作状态", ["prototype|原型（数值待定）", "approved|已确认设计"]),
-    e("base", "当前原型行为与模型", ["squid|鱿鱼（游动、逃避）", "guardian|守卫者（游动、光束攻击）", "drowned|溺尸（水陆寻路、近战）", "custom|自定义，需开发"]),
+    e("base", "AI 行为基底（外观独立）", ["squid|鱿鱼（游动、逃避）", "guardian|守卫者（游动、光束攻击）", "drowned|溺尸（水陆寻路、近战）", "custom|自定义，需开发"]),
     f("region", "目标地区"), b("boss", "是否 Boss"), n("plannedHealth", "方案目标生命点", 1), n("health", "当前游戏生命点", 1, 1024),
     n("width", "碰撞宽度（格）", 0.1, 32), n("height", "碰撞高度（格）", 0.1, 32), n("scale", "模型缩放", 0.1, 10),
     n("speed", "移动速度属性（非格每秒）", 0, 4), n("attackDamage", "基础攻击伤害（不含技能）", 0, 2048), n("armor", "护甲点", 0, 30),

@@ -1,6 +1,6 @@
 {
     "package":  "dbv-content-designer",
-    "version":  "0.1.12",
+    "version":  "0.1.13",
     "schemaVersion":  2,
     "files":  [
                   {
@@ -9,11 +9,11 @@
                   },
                   {
                       "path":  "catalog.js",
-                      "sha256":  "7b299fa307375980e39aefca57a935c02d07828a9d5acea4cae7992b43074b7e"
+                      "sha256":  "7ff5e57a924f74c8a182a0762ae27c2a3b20dd70400597192dab08a294e6eac0"
                   },
                   {
                       "path":  "content-spec.schema.json",
-                      "sha256":  "567b703d23864b5bf7aa9574b57599808236a7e8e1e1caf855767345af273f00"
+                      "sha256":  "0d1855d52087bbcabf6ec116dea230fc60c4350a88c57d80bafcab73b7f2e4a2"
                   },
                   {
                       "path":  "core.js",
@@ -29,7 +29,7 @@
                   },
                   {
                       "path":  "docs/内容设计器字段目录-content-designer-fields.md",
-                      "sha256":  "3de424be14b114fa48f6503b033a40f134b51374d5634444dfcf3e0eecede7ba"
+                      "sha256":  "0e4b74489e11780cc5a63d44bcc562be7ae28a73ba6a765f6fd9341bc066bace"
                   },
                   {
                       "path":  "index.html",
@@ -261,67 +261,67 @@
                   },
                   {
                       "path":  "specs/mobs/cable_eel.json",
-                      "sha256":  "65e5c81c25f9fdd879ebe3bb34d389c9c035458b89b4268aa9d5a9cd330a8320"
+                      "sha256":  "2379b54e645057cd5ec0eca3d097217474cdb24ca373acd0501d6aa486685e5c"
                   },
                   {
                       "path":  "specs/mobs/current_ray.json",
-                      "sha256":  "72f78d857ba1b5f8afe56da3fc70ec8b02f22ec39032a13a910916c11f363217"
+                      "sha256":  "300d774d623bfe52f48c74690d01a3a3a9e274299960e8eeb2cdf3ec0da128f4"
                   },
                   {
                       "path":  "specs/mobs/hull_worm.json",
-                      "sha256":  "9f1420739d87e7a6afec188adc62e86ee418790a5e0c32ee19f93c27979b3a12"
+                      "sha256":  "aa3da1dee3ce6f588e1df9c27e014134a5b09436eebeb1dddaac42b882a925d9"
                   },
                   {
                       "path":  "specs/mobs/ice_cave_stalker.json",
-                      "sha256":  "0ce2124b12e5010f0f9b69e56e45bf8476d518dd195fb8f7ab6c41fe2ad965ac"
+                      "sha256":  "3cd8909cfc439480de3a207cec5667501bc676f4b092feb69cb875862cb1f23a"
                   },
                   {
                       "path":  "specs/mobs/ice_fissure_eel.json",
-                      "sha256":  "64c55cd574de81de5e8ddd0818c5a99cbd2b010548f7917beb46663a3888b7c9"
+                      "sha256":  "dae533a1ba7aa1932caa1ad2430fc24aad95ccb11ac27a585ba7b22e2ac6ab89"
                   },
                   {
                       "path":  "specs/mobs/lantern_lurker.json",
-                      "sha256":  "2382e3e63e96b8a6ca840775c7860a415cebb4bfcace86f665b25b4a64f0d3f8"
+                      "sha256":  "ad61482af233cf8ab1ee69d556de49ddb69c2c43fc1023a65b22c9318c1210a3"
                   },
                   {
                       "path":  "specs/mobs/mirror_shrimp.json",
-                      "sha256":  "49746dd20f8cd8bbb2cff84b090af32a59e929b89be2ec28b28f3ad449da78aa"
+                      "sha256":  "d589691e48863662fecd460a839b0e572c7ca612850533e8c44e9669e10c2c18"
                   },
                   {
                       "path":  "specs/mobs/propeller_jellyfish.json",
-                      "sha256":  "a54275a7b91178da5a4420caa98007f1033b33d3089851d079831d1aa430eb54"
+                      "sha256":  "10bdd9ef67618d68dca1690b7a1a94793eb636844f9ac003206f5a4390939c38"
                   },
                   {
                       "path":  "specs/mobs/ramfish.json",
-                      "sha256":  "12977469f2c0e4039667c6ecdd30b6bc856236b5155314c61e96e2707d1badce"
+                      "sha256":  "e1a14e078d00eaa309f2513bce02b65d3608d5f41b01da84108ca4221083b6af"
                   },
                   {
                       "path":  "specs/mobs/rust_shell_crab.json",
-                      "sha256":  "abfdbc0331eb184e24c1d5f8e6e75d27f9039979485d32dbf1acb7cf799c3734"
+                      "sha256":  "16a771bf1b4ef8cf00b20371872dc4d53dc5141b04e56a8b150e9e5543854c14"
                   },
                   {
                       "path":  "specs/mobs/split_shell_beast.json",
-                      "sha256":  "399c6855ebd9fa9e3e4b6854c39f6c1c8c0bfcb7e468829215471e2973bf587f"
+                      "sha256":  "cc1ff79c54d44285b98f8003a5457797a476240a7de1e873a60a930aef4a9884"
                   },
                   {
                       "path":  "specs/mobs/sunken_bell_guardian.json",
-                      "sha256":  "c9520c4af8de7aa8d6d7ff6ca08cc6e960d417e5382ede77c31b4220dc0a2e36"
+                      "sha256":  "ea48a685a29ada8aaad11123316519426da564c9fe5d9a7a33700b1c5047eab8"
                   },
                   {
                       "path":  "specs/mobs/vortex_ray.json",
-                      "sha256":  "0af3ca65796b44798393b693b8726509f5bf86172c9efe420be70b82df3f331b"
+                      "sha256":  "3d0951aec773848e89501550eac9f7c76287025dbc6f4e73c5e61e16ad82612e"
                   },
                   {
                       "path":  "specs/mobs/whiteout_hunter.json",
-                      "sha256":  "68e3214bd18e47558dcb736a6db7fe7151dd7078508c6571e6cd1a6c2e945a52"
+                      "sha256":  "b2e1a3213efe91eb0be3d7e0742ebc6cf426e1559958fcde947befc98bed7e2d"
                   },
                   {
                       "path":  "specs/mobs/wreck_diver.json",
-                      "sha256":  "1931b1ee52aae94f46c31b3901c19c4381834249649e247a105c8a4974526d05"
+                      "sha256":  "62a8673f932e1819828beef72dedc11b3dbc8a930761b0d551c92feac4428f9a"
                   },
                   {
                       "path":  "specs/README.md",
-                      "sha256":  "0cab0ffafe4a2893aa67fe7ef3bba79375af48ab616ec46dad777d04b8148ce9"
+                      "sha256":  "08d57957a7b44fca40ddfaa241fa9e978e03b8465e1b54eba222521d1cf48886"
                   },
                   {
                       "path":  "start.cmd",

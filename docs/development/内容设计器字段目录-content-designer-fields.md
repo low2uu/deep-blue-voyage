@@ -347,7 +347,7 @@
 | 字段键 | 中文名 | 类型/选项 | 必填 |
 | --- | --- | --- | --- |
 | monster.stage | 制作状态 | enum：prototype / 原型（数值待定）；approved / 已确认设计 | 可标待定/不适用 |
-| monster.base | 当前原型行为与模型 | enum：squid / 鱿鱼（游动、逃避）；guardian / 守卫者（游动、光束攻击）；drowned / 溺尸（水陆寻路、近战）；custom / 自定义，需开发 | 可标待定/不适用 |
+| monster.base | AI 行为基底（外观独立） | enum：squid / 鱿鱼（游动、逃避）；guardian / 守卫者（游动、光束攻击）；drowned / 溺尸（水陆寻路、近战）；custom / 自定义，需开发 | 可标待定/不适用 |
 | monster.region | 目标地区 | text | 可标待定/不适用 |
 | monster.boss | 是否 Boss | boolean | 可标待定/不适用 |
 | monster.plannedHealth | 方案目标生命点 | number | 可标待定/不适用 |
