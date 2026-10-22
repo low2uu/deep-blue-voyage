@@ -43,21 +43,22 @@ public final class CabinDoors {
         if(!(event.getEntity() instanceof ServerPlayer player))return;
         try {
             if(!player.mayBuild())throw new IllegalStateException("permission");
+            var view=new DoorBlockView(level,clicked);
             Set<BlockPos> cells=new LinkedHashSet<>();
             if(state.getBlock() instanceof PersonnelHatch){
                 var lower=state.getValue(DoorBlock.HALF)==DoubleBlockHalf.UPPER?clicked.below():clicked;
-                if(!level.getBlockState(lower).is(PERSON.get())||!level.getBlockState(lower.above()).is(PERSON.get()))throw new IllegalStateException("incomplete");
+                if(!view.state(lower).is(PERSON.get())||!view.state(lower.above()).is(PERSON.get()))throw new IllegalStateException("incomplete");
                 cells.add(lower);cells.add(lower.above());
             }else{
                 var queue=new ArrayDeque<BlockPos>();queue.add(clicked);cells.add(clicked);int cores=0;
                 while(!queue.isEmpty()){
-                    var pos=queue.remove();var part=level.getBlockState(pos);
+                    var pos=queue.remove();var part=view.state(pos);
                     if(part.is(CORE.get()))cores++;
                     if(part.getValue(HangarDoorBlock.FACING)!=state.getValue(HangarDoorBlock.FACING))throw new IllegalStateException("facing");
                     for(var direction:Direction.values()){
                         var next=pos.relative(direction);
-                        if(!level.hasChunkAt(next))throw new IllegalStateException("unloaded");
-                        if(level.getBlockState(next).getBlock() instanceof HangarDoorBlock&&cells.add(next)){
+                        if(view.exterior(next))continue;
+                        if(view.state(next).getBlock() instanceof HangarDoorBlock&&cells.add(next)){
                             if(cells.size()>4096)throw new IllegalStateException("limit");queue.add(next);
                         }
                     }
