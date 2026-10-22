@@ -10,7 +10,11 @@ const zh=JSON.parse(fs.readFileSync(path.join(res,'assets/dbv_world/lang/zh_cn.j
 const ids=new Set(),runtime={items:[],mobs:[]};
 function id(d){const full=value(d,'identity','registryId');if(!/^dbv_world:[a-z0-9_]+$/.test(full)||ids.has(full))throw Error('Invalid/duplicate ID '+full);ids.add(full);return full.split(':')[1];}
 function names(d,key){zh[key]=value(d,'identity','nameZh');en[key]=value(d,'identity','nameEn');}
-for(const d of load('items')){const key=id(d);if(value(d,'identity','kind')!=='item')throw Error('Only plain prototype items supported');const stack=value(d,'item','maxStackSize');runtime.items.push({id:key,stack});names(d,'item.dbv_world.'+key);write(path.join(res,'assets/dbv_world/models/item',key+'.json'),{parent:'minecraft:item/generated',textures:{layer0:value(d,'appearance','textureAll')}});}
+for(const d of load('items')){const key=id(d);if(value(d,'identity','kind')!=='item')throw Error('Only plain prototype items supported');const stack=value(d,'item','maxStackSize');runtime.items.push({id:key,stack});names(d,'item.dbv_world.'+key);
+ const custom=value(d,'appearance','model')==='custom';
+ if(custom && !fs.existsSync(path.join(res,'assets/dbv_world/models/item/prototypes',key+'.json')))throw Error('Missing custom item model: '+key);
+ write(path.join(res,'assets/dbv_world/models/item',key+'.json'),custom?{parent:'dbv_world:item/prototypes/'+key}:{parent:'minecraft:item/generated',textures:{layer0:value(d,'appearance','textureAll')}});
+}
 for(const d of load('mobs')){const key=id(d),get=k=>value(d,'monster',k);if(get('naturalSpawn')!==false)throw Error('Natural spawning is not implemented');if(!['squid','guardian','drowned'].includes(get('base')))throw Error('Unsupported base');
  const m={id:key};for(const k of ['base','health','plannedHealth','width','height','scale','speed','attackDamage','armor','followRange','knockbackResistance','boss'])m[k]=get(k);
  for(const k of ['eggPrimary','eggSecondary']){const hex=get(k);if(!/^[0-9a-fA-F]{6}$/.test(hex))throw Error('Invalid egg color');m[k]=parseInt(hex,16);}

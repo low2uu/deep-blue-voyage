@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraft:item/glow_ink_sac"
-  }
+  "parent": "dbv_world:item/prototypes/luminous_sac"
 }

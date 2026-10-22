@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraft:item/paper"
-  }
+  "parent": "dbv_world:item/prototypes/detection_research"
 }

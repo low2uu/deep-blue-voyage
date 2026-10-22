@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraft:item/phantom_membrane"
-  }
+  "parent": "dbv_world:item/prototypes/light_structural_material"
 }

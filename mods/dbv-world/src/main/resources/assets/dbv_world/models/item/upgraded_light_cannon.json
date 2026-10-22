@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraft:item/crossbow"
-  }
+  "parent": "dbv_world:item/prototypes/upgraded_light_cannon"
 }

@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraft:item/iron_nugget"
-  }
+  "parent": "dbv_world:item/prototypes/light_structure"
 }

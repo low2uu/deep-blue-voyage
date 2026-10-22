@@ -146,21 +146,21 @@
     "appearance": {
       "model": {
         "status": "specified",
-        "value": "item",
-        "reference": "",
-        "notes": ""
+        "value": "custom",
+        "reference": "tools/item-models/generate.py",
+        "notes": "原生三维物品模型；无新增使用功能。"
       },
       "visualDescription": {
         "status": "specified",
-        "value": "临时复用原版图标，后续替换专用美术。",
-        "reference": "",
-        "notes": ""
+        "value": "三支不同高度的声学晶簇，紫色晶体与浅色晶尖。",
+        "reference": "tools/item-models/generate.py",
+        "notes": "原生三维物品模型；无新增使用功能。"
       },
       "textureAll": {
         "status": "specified",
-        "value": "minecraft:item/amethyst_shard",
-        "reference": "",
-        "notes": ""
+        "value": "dbv_world:item/prototype_palette",
+        "reference": "tools/item-models/generate.py",
+        "notes": "原生三维物品模型；无新增使用功能。"
       },
       "faceTextures": {
         "status": "pending",
@@ -169,10 +169,10 @@
         "notes": ""
       },
       "textureResolution": {
-        "status": "pending",
-        "value": null,
-        "reference": "",
-        "notes": ""
+        "status": "specified",
+        "value": 128,
+        "reference": "tools/item-models/generate.py",
+        "notes": "原生三维物品模型；无新增使用功能。"
       },
       "renderLayer": {
         "status": "pending",
@@ -241,10 +241,12 @@
         "notes": ""
       },
       "assetReferences": {
-        "status": "pending",
-        "value": null,
-        "reference": "",
-        "notes": ""
+        "status": "specified",
+        "value": [
+          "dbv_world:item/prototypes/acoustic_crystal"
+        ],
+        "reference": "tools/item-models/generate.py",
+        "notes": "原生三维物品模型；无新增使用功能。"
       },
       "animations": {
         "status": "pending",

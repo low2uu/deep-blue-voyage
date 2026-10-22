@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraft:item/flint"
-  }
+  "parent": "dbv_world:item/prototypes/scrap_parts"
 }

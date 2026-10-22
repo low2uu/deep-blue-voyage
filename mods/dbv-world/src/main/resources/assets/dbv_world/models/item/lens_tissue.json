@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraft:item/prismarine_crystals"
-  }
+  "parent": "dbv_world:item/prototypes/lens_tissue"
 }

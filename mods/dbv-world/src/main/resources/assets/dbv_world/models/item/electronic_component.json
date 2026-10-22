@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraft:item/redstone"
-  }
+  "parent": "dbv_world:item/prototypes/electronic_component"
 }

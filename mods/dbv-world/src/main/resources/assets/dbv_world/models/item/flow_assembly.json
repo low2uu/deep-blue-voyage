@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraft:item/prismarine_shard"
-  }
+  "parent": "dbv_world:item/prototypes/flow_assembly"
 }

@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraft:item/amethyst_shard"
-  }
+  "parent": "dbv_world:item/prototypes/precision_acoustic_assembly"
 }

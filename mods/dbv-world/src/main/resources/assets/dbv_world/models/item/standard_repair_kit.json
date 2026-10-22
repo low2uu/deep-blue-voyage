@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraft:item/bundle"
-  }
+  "parent": "dbv_world:item/prototypes/standard_repair_kit"
 }
