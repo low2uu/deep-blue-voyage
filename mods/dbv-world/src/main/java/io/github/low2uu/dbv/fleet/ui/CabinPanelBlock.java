@@ -20,7 +20,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public final class CabinPanelBlock {
     private static final DeferredRegister<Block> BLOCKS=DeferredRegister.create(Registries.BLOCK,"dbv_world");
     private static final DeferredRegister<Item> ITEMS=DeferredRegister.create(Registries.ITEM,"dbv_world");
-    public static final java.util.function.Supplier<Block> PANEL=BLOCKS.register("cabin_panel",()->new Block(BlockBehaviour.Properties.of().strength(2.5f).lightLevel(s->5)));
+    public static final java.util.function.Supplier<Block> PANEL=BLOCKS.register("cabin_panel",()->new CabinMonitorBlock(BlockBehaviour.Properties.of().strength(2.5f).lightLevel(s->5)));
     public static final java.util.function.Supplier<Item> ITEM=ITEMS.register("cabin_panel",()->new BlockItem(PANEL.get(),new Item.Properties()));
     public static final java.util.function.Supplier<Block> CONSOLE=BLOCKS.register("jiuhu_console",()->
             new com.maxenonyme.createsubmarine.submarine.block.CommandSubBlock(BlockBehaviour.Properties.of().strength(3.5f).noOcclusion()));

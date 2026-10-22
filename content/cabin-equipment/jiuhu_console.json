@@ -1,0 +1,1106 @@
+{
+  "format": "dbv-content-spec",
+  "schemaVersion": 2,
+  "purpose": "implementation_specification",
+  "metadata": {
+    "createdAt": "2026-10-20T00:00:00.000Z",
+    "updatedAt": "2026-10-22T00:00:00.000Z"
+  },
+  "sections": {
+    "identity": {
+      "registryId": {
+        "status": "specified",
+        "value": "dbv_world:jiuhu_console",
+        "reference": "tools/cabin-models",
+        "notes": "开发原型，未实机验收。"
+      },
+      "nameZh": {
+        "status": "specified",
+        "value": "酒壶的控制台",
+        "reference": "tools/cabin-models",
+        "notes": "开发原型，未实机验收。"
+      },
+      "nameEn": {
+        "status": "specified",
+        "value": "Jiuhu's Console",
+        "reference": "tools/cabin-models",
+        "notes": "开发原型，未实机验收。"
+      },
+      "kind": {
+        "status": "specified",
+        "value": "block",
+        "reference": "tools/cabin-models",
+        "notes": "开发原型，未实机验收。"
+      },
+      "category": {
+        "status": "specified",
+        "value": "潜艇舱内设备",
+        "reference": "tools/cabin-models",
+        "notes": "开发原型，未实机验收。"
+      },
+      "summary": {
+        "status": "specified",
+        "value": "继承Deep Seas中央控制功能；仪表和按键外观。",
+        "reference": "tools/cabin-models",
+        "notes": "开发原型，未实机验收。"
+      },
+      "motivation": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "keywords": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "author": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "targetRelease": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "creativeTabs": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "tooltipsZh": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "tooltipsEn": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      }
+    },
+    "platform": {
+      "minecraft": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "loader": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "loaderVersion": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "java": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "namespace": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "dependencies": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "installationSide": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "compatibilityPolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      }
+    },
+    "appearance": {
+      "model": {
+        "status": "specified",
+        "value": "custom",
+        "reference": "tools/cabin-models",
+        "notes": "开发原型，未实机验收。"
+      },
+      "visualDescription": {
+        "status": "specified",
+        "value": "继承Deep Seas中央控制功能；仪表和按键外观。",
+        "reference": "tools/cabin-models",
+        "notes": "开发原型，未实机验收。"
+      },
+      "textureAll": {
+        "status": "specified",
+        "value": "dbv_world:item/prototype_palette",
+        "reference": "tools/cabin-models",
+        "notes": "开发原型，未实机验收。"
+      },
+      "faceTextures": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "textureResolution": {
+        "status": "specified",
+        "value": 128,
+        "reference": "tools/cabin-models",
+        "notes": "开发原型，未实机验收。"
+      },
+      "renderLayer": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "mapColor": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "soundType": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "lightLevel": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "occludes": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "fullCube": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "collisionShape": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "outlineShape": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "waterlogged": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "facing": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "blockStates": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "assetReferences": {
+        "status": "specified",
+        "value": [
+          "dbv_world:models/item/jiuhu_console.json"
+        ],
+        "reference": "tools/cabin-models",
+        "notes": "开发原型，未实机验收。"
+      },
+      "animations": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      }
+    },
+    "harvesting": {
+      "referenceBlock": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "hardness": {
+        "status": "specified",
+        "value": 3.5,
+        "reference": "tools/cabin-models",
+        "notes": "开发原型，未实机验收。"
+      },
+      "tool": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "minimumTier": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "requiresCorrectTool": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "dropsSelf": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "silkTouch": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "fortune": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "explosionLoot": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "drops": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "experience": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "breakSideEffects": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      }
+    },
+    "protection": {
+      "referenceBlock": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "explosionResistance": {
+        "status": "specified",
+        "value": 3.5,
+        "reference": "tools/cabin-models",
+        "notes": "开发原型，未实机验收。"
+      },
+      "pistonReaction": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "dragonImmune": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "witherImmune": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "flammability": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "fireSpread": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "slipperiness": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "speedFactor": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "jumpFactor": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "replaceable": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "gravityAffected": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "blockTags": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "itemTags": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "specialInteractions": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      }
+    },
+    "physics": {
+      "referenceBlock": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "bindingPolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "mass": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "volume": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "friction": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "restitution": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "fragile": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "inertia": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "customInertia": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "floatingMaterial": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "floatingScale": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "assemblyAllowed": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "connections": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "damageBehavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "overridePolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      }
+    },
+    "pressure": {
+      "referenceBlock": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "bindingPolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "maxWaterDepth": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "implosionChance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "useGlobalMultipliers": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "sealsCompartment": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "leakBehavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "oxygenBehavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "configurationMigration": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      }
+    },
+    "item": {
+      "maxStackSize": {
+        "status": "specified",
+        "value": 64,
+        "reference": "tools/cabin-models",
+        "notes": "开发原型，未实机验收。"
+      },
+      "durability": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "fireResistant": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "rarity": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "equipmentSlot": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "attackDamage": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "attackSpeed": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "armor": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "toughness": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "knockbackResistance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "repairIngredients": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "enchantments": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "useBehavior": {
+        "status": "specified",
+        "value": "继承Deep Seas中央控制功能；仪表和按键外观。",
+        "reference": "tools/cabin-models",
+        "notes": "开发原型，未实机验收。"
+      }
+    },
+    "interaction": {
+      "actions": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "ui": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "permissions": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "multiplayer": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "redstone": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "automation": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "accessibility": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      }
+    },
+    "machine": {
+      "ports": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "inventorySlots": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "tankCount": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "energyPerTick": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "stressImpact": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "stressCapacity": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "minimumRpm": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "maximumRpm": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "operatingStates": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "multiblock": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "failureModes": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      }
+    },
+    "acquisition": {
+      "recipes": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "otherSources": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "progression": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "balance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "recipeViewer": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      }
+    },
+    "persistence": {
+      "hasBlockEntity": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "vesselOwned": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "jsonModule": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "dataVersion": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "fields": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "authoritativeSource": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "backupTriggers": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "restorePolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "breakMoveRefit": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "migration": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "duplicationProtection": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      }
+    },
+    "integration": {
+      "adapters": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "excludedBehaviors": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "performance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "network": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "knownConflicts": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      }
+    },
+    "acceptance": {
+      "tests": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "openQuestions": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "nonGoals": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "completionCriteria": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "notes": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      }
+    },
+    "monster": {
+      "stage": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "base": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "region": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "boss": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "plannedHealth": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "health": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "width": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "height": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "scale": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "speed": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "attackDamage": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "armor": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "followRange": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "knockbackResistance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "naturalSpawn": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "spawnRules": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "behavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "implementedBehavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "skills": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "phases": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "targetPolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "resistances": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "teamScaling": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "firstReward": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "drops": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "eggPrimary": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "eggSecondary": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "sounds": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "persistence": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      },
+      "acceptance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": "未确认的数值不继承铁质潜艇壳模板。"
+      }
+    }
+  },
+  "extensions": []
+}

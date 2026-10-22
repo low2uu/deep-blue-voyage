@@ -1,4 +1,9 @@
 {
   "replace": false,
-  "values": ["dbv_world:iron_submarine_hull"]
+  "values": [
+    "dbv_world:iron_submarine_hull",
+    "dbv_world:personnel_hatch",
+    "dbv_world:hangar_door_core",
+    "dbv_world:hangar_door_panel"
+  ]
 }

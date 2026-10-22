@@ -10,7 +10,7 @@
 
 ## 1. 已确认的设计前提与文档关系
 
-首个公开版本的已确认范围仍以[1.0游戏机制说明](1.0游戏机制说明-v1.0-confirmed-mechanics.md)为准。既有主艇功能需求另见[主潜艇与酒狐方案](主潜艇与酒狐实现方案-flagship-submarine-plan.md)，不能将其中全部功能自动计入 1.0。
+首个公开版本的已确认范围仍以[1.0游戏机制说明](../game-mechanics/1.0游戏机制说明-v1.0-confirmed-mechanics.md)为准。既有主艇功能需求另见[主潜艇与酒狐方案](../game-mechanics/主潜艇与酒狐实现方案-flagship-submarine-plan.md)，不能将其中全部功能自动计入 1.0。
 
 | 前提 | 本文采用的依据与边界 |
 | --- | --- |
@@ -25,7 +25,7 @@
 | 主艇与存储 | 采用唯一主艇、酒狐协作、船坞改装、实际容器汇总与独立档案备份的既有方向；交付范围单独确认 |
 | 原生物理 | 保留航空学、Deep Seas 原有物理与控制算法；下文先定整艇验收目标，不直接加一套升力或速度算法 |
 
-补充参考：[首个公开版地图布局](首个公开版地图布局-public-release-map-layout.md)、[安全航行层与区域深度](安全航行层与区域深度-safe-transit-and-region-depths.md)、[海域准入限制](海域准入与潜艇限制-ocean-access-gates.md)。与旧提案存在差异时，保留旧文；本文不修改已确认规则。
+补充参考：[首个公开版地图布局](../game-mechanics/首个公开版地图布局-public-release-map-layout.md)、[安全航行层与区域深度](安全航行层与区域深度-safe-transit-and-region-depths.md)、[海域准入限制](../game-mechanics/海域准入与潜艇限制-ocean-access-gates.md)。与旧提案存在差异时，保留旧文；本文不修改已确认规则。
 
 ## 2. 整体循环与推进路线（待定）
 

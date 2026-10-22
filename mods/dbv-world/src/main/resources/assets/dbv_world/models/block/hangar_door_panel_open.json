@@ -1,0 +1,285 @@
+{
+  "credit": "Deep Blue Voyage native item geometry",
+  "gui_light": "side",
+  "textures": {
+    "palette": "dbv_world:item/prototype_palette",
+    "particle": "dbv_world:item/prototype_palette"
+  },
+  "elements": [
+    {
+      "from": [
+        0.0,
+        0.0,
+        14.0
+      ],
+      "to": [
+        0.5,
+        16.0,
+        16.0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            0.25,
+            5.75,
+            1.75
+          ],
+          "texture": "#palette"
+        },
+        "south": {
+          "uv": [
+            4.25,
+            0.25,
+            5.75,
+            1.75
+          ],
+          "texture": "#palette"
+        },
+        "east": {
+          "uv": [
+            4.25,
+            0.25,
+            5.75,
+            1.75
+          ],
+          "texture": "#palette"
+        },
+        "west": {
+          "uv": [
+            4.25,
+            0.25,
+            5.75,
+            1.75
+          ],
+          "texture": "#palette"
+        },
+        "up": {
+          "uv": [
+            4.25,
+            0.25,
+            5.75,
+            1.75
+          ],
+          "texture": "#palette"
+        },
+        "down": {
+          "uv": [
+            4.25,
+            0.25,
+            5.75,
+            1.75
+          ],
+          "texture": "#palette"
+        }
+      }
+    },
+    {
+      "from": [
+        15.4998,
+        -0.0002,
+        13.9998
+      ],
+      "to": [
+        16.0002,
+        16.0002,
+        16.0002
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            0.25,
+            5.75,
+            1.75
+          ],
+          "texture": "#palette"
+        },
+        "south": {
+          "uv": [
+            4.25,
+            0.25,
+            5.75,
+            1.75
+          ],
+          "texture": "#palette"
+        },
+        "east": {
+          "uv": [
+            4.25,
+            0.25,
+            5.75,
+            1.75
+          ],
+          "texture": "#palette"
+        },
+        "west": {
+          "uv": [
+            4.25,
+            0.25,
+            5.75,
+            1.75
+          ],
+          "texture": "#palette"
+        },
+        "up": {
+          "uv": [
+            4.25,
+            0.25,
+            5.75,
+            1.75
+          ],
+          "texture": "#palette"
+        },
+        "down": {
+          "uv": [
+            4.25,
+            0.25,
+            5.75,
+            1.75
+          ],
+          "texture": "#palette"
+        }
+      }
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [
+        25,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.9,
+        0.9,
+        0.9
+      ]
+    },
+    "ground": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        3,
+        0
+      ],
+      "scale": [
+        0.4,
+        0.4,
+        0.4
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    "head": {
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "translation": [
+        0,
+        13,
+        0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        30,
+        0
+      ],
+      "translation": [
+        1,
+        2,
+        0
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        -30,
+        0
+      ],
+      "translation": [
+        1,
+        2,
+        0
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    }
+  },
+  "parent": "minecraft:block/block"
+}

@@ -66,6 +66,13 @@ public final class VesselInspection {
                     if (state.isAir()) continue;
                     var key = BuiltInRegistries.BLOCK.getKey(state.getBlock());
                     String type = key.toString().equals("dbv_world:jiuhu_console") ? "中央控制器" : key.getNamespace().equals("create_submarine") ? TYPES.get(key.getPath()) : null;
+                    if(key.getNamespace().equals("dbv_world"))type=switch(key.getPath()){
+                        case "cabin_panel" -> "舱内显示器";
+                        case "personnel_hatch" -> "人员舱门";
+                        case "hangar_door_core" -> "潜艇大舱门核心";
+                        case "hangar_door_panel" -> "潜艇大舱门结构板";
+                        default -> type;
+                    };
                     // Unknown block entities remain visible without pretending to know their function.
                     if (type == null && !state.hasBlockEntity()) continue;
                     var pos = new BlockPos(chunk.getPos().getMinBlockX() + x, chunk.getMinBuildHeight() + s * 16 + y,
@@ -74,6 +81,9 @@ public final class VesselInspection {
                     if (owner == null || !id.equals(owner.getUniqueId())) continue;
                     BlockEntity be = chunk.getBlockEntity(pos);
                     String status = "已识别；运行状态未适配";
+                    if(io.github.low2uu.dbv.fleet.door.CabinDoors.isDoor(state))status=
+                        io.github.low2uu.dbv.fleet.door.CabinDoors.sealed(state)?"已上锁密封":
+                        state.getValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.OPEN)?"开启；不气密":"关闭未锁；不气密";
                     if (be instanceof CommandSubBlockEntity && !be.isRemoved()) { controller = true; status = "有效"; }
                     if (be instanceof ElectrolyzerBlockEntity electrolyzer) {
                         boolean ready = !be.isRemoved() && electrolyzer.data.get(6) == 1

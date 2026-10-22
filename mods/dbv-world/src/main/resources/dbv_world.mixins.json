@@ -4,6 +4,7 @@
   "package": "io.github.low2uu.dbv.fleet.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "CabinDoorPermeabilityMixin",
     "CommandSubDepthMixin",
     "SubmarinePressureDepthMixin",
     "SubmarineMaterialLookupMixin",

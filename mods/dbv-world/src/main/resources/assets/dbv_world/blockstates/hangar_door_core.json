@@ -1,0 +1,68 @@
+{
+  "variants": {
+    "facing=north,open=false,locked=false": {
+      "model": "dbv_world:block/hangar_door_core",
+      "y": 0
+    },
+    "facing=east,open=false,locked=false": {
+      "model": "dbv_world:block/hangar_door_core",
+      "y": 90
+    },
+    "facing=south,open=false,locked=false": {
+      "model": "dbv_world:block/hangar_door_core",
+      "y": 180
+    },
+    "facing=west,open=false,locked=false": {
+      "model": "dbv_world:block/hangar_door_core",
+      "y": 270
+    },
+    "facing=north,open=false,locked=true": {
+      "model": "dbv_world:block/hangar_door_core_locked",
+      "y": 0
+    },
+    "facing=east,open=false,locked=true": {
+      "model": "dbv_world:block/hangar_door_core_locked",
+      "y": 90
+    },
+    "facing=south,open=false,locked=true": {
+      "model": "dbv_world:block/hangar_door_core_locked",
+      "y": 180
+    },
+    "facing=west,open=false,locked=true": {
+      "model": "dbv_world:block/hangar_door_core_locked",
+      "y": 270
+    },
+    "facing=north,open=true,locked=false": {
+      "model": "dbv_world:block/hangar_door_core_open",
+      "y": 0
+    },
+    "facing=east,open=true,locked=false": {
+      "model": "dbv_world:block/hangar_door_core_open",
+      "y": 90
+    },
+    "facing=south,open=true,locked=false": {
+      "model": "dbv_world:block/hangar_door_core_open",
+      "y": 180
+    },
+    "facing=west,open=true,locked=false": {
+      "model": "dbv_world:block/hangar_door_core_open",
+      "y": 270
+    },
+    "facing=north,open=true,locked=true": {
+      "model": "dbv_world:block/hangar_door_core_open_locked",
+      "y": 0
+    },
+    "facing=east,open=true,locked=true": {
+      "model": "dbv_world:block/hangar_door_core_open_locked",
+      "y": 90
+    },
+    "facing=south,open=true,locked=true": {
+      "model": "dbv_world:block/hangar_door_core_open_locked",
+      "y": 180
+    },
+    "facing=west,open=true,locked=true": {
+      "model": "dbv_world:block/hangar_door_core_open_locked",
+      "y": 270
+    }
+  }
+}

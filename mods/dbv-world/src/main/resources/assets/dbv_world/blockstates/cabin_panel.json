@@ -1,1 +1,20 @@
-{"variants":{"":{"model":"dbv_world:block/cabin_panel"}}}
+{
+  "variants": {
+    "facing=north": {
+      "model": "dbv_world:block/cabin_panel",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "dbv_world:block/cabin_panel",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "dbv_world:block/cabin_panel",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "dbv_world:block/cabin_panel",
+      "y": 270
+    }
+  }
+}
