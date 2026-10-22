@@ -7,7 +7,7 @@ if (!file) {
 } else {
   try {
     if (fs.statSync(file).size > 5 * 1024 * 1024) throw new Error("文件超过5 MiB，请分拆设计");
-    const doc = JSON.parse(fs.readFileSync(file, "utf8").replace(/^\uFEFF/, ""));
+    const doc = S.importDocument(JSON.parse(fs.readFileSync(file, "utf8").replace(/^\uFEFF/, "")));
     const result = process.argv.includes("--draft")
       ? { errors: S.structuralErrors(doc, true), warnings: [] }
       : S.validate(doc);

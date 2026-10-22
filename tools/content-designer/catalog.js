@@ -12,7 +12,7 @@
     { id: "identity", title: "基本信息", help: "先确定它是什么、叫什么、解决什么问题。注册ID一旦发布应保持稳定。", fields: [
       f("registryId", "注册ID", "text", { essential: true, placeholder: "dbv_world:iron_submarine_hull", pattern: "^[a-z0-9_.-]+:[a-z0-9/._-]+$" }),
       f("nameZh", "中文名称", "text", { essential: true }), f("nameEn", "英文名称", "text", { essential: true }),
-      e("kind", "内容类型", ["block|普通方块", "machine|机器方块", "controller|控制器", "decorative|装饰方块", "item|普通物品", "tool|工具", "equipment|装备"]),
+      e("kind", "内容类型", ["block|普通方块", "machine|机器方块", "controller|控制器", "decorative|装饰方块", "item|普通物品", "tool|工具", "equipment|装备", "monster|怪物 / Boss"]),
       f("category", "功能类别", "text", { essential: true, placeholder: "潜艇外壳 / 动力 / 存储 / 装饰" }),
       t("summary", "功能描述（必填）"), t("motivation", "使用场景与设计目的"),
       l("keywords", "搜索关键词（每行一个）"), f("author", "设计者"), f("targetRelease", "计划加入版本"),
@@ -127,7 +127,23 @@
   groups[0].fields.find(x => x.id === "summary").essential = true;
   for (const key of ["minecraft", "loader", "loaderVersion", "java", "namespace"])
     groups[1].fields.find(x => x.id === key).essential = true;
-  const api = { version: 1, groups };
+  groups.push({id: "monster", title: "怪物与 Boss", help: "区分当前原型属性与待定目标。自然刷新、技能和阶段需要单独开发；填写规格不会自动实现。", fields: [
+    e("stage", "制作状态", ["prototype|原型（数值待定）", "approved|已确认设计"]),
+    e("base", "当前原型行为与模型", ["squid|鱿鱼（游动、逃避）", "guardian|守卫者（游动、光束攻击）", "drowned|溺尸（水陆寻路、近战）", "custom|自定义，需开发"]),
+    f("region", "目标地区"), b("boss", "是否 Boss"), n("plannedHealth", "方案目标生命点", 1), n("health", "当前游戏生命点", 1, 1024),
+    n("width", "碰撞宽度（格）", 0.1, 32), n("height", "碰撞高度（格）", 0.1, 32), n("scale", "模型缩放", 0.1, 10),
+    n("speed", "移动速度属性（非格每秒）", 0, 4), n("attackDamage", "基础攻击伤害（不含技能）", 0, 2048), n("armor", "护甲点", 0, 30),
+    n("followRange", "索敌距离（格）", 0, 128), n("knockbackResistance", "击退抗性", 0, 1),
+    b("naturalSpawn", "自然生成"), t("spawnRules", "群系、深度、光照、数量、刷新和脱战"),
+    t("behavior", "目标行为与攻击预警"), t("implementedBehavior", "当前已实现行为及限制"),
+    t("skills", "技能、触发、冷却、射程、伤害与反制"), t("phases", "Boss 阶段与切换条件"),
+    t("targetPolicy", "目标选择、船体和玩家交互"), t("resistances", "弱点、免疫与抗性"),
+    t("teamScaling", "多人缩放与归属"), t("firstReward", "首次奖励及防重复"),
+    rows("drops", "击败掉落", [f("item", "物品ID"), i("min", "最小数量", 0), i("max", "最大数量", 0), n("chance", "概率", 0, 1), t("conditions", "条件")]),
+    f("eggPrimary", "刷怪蛋主色（六位十六进制）"), f("eggSecondary", "刷怪蛋副色（六位十六进制）"),
+    t("sounds", "环境、受击、死亡和预警声音"), t("persistence", "保存、卸载、重载与防重复"), t("acceptance", "测试步骤与预期结果")
+  ]});
+  const api = { version: 2, groups };
   root.ContentCatalog = api;
   if (typeof module !== "undefined") module.exports = api;
 })(typeof globalThis !== "undefined" ? globalThis : this);

@@ -156,13 +156,14 @@
   function replace(next) { clearTimeout(saveTimer); doc = next; active = "identity"; $("search").value = ""; $("pending").checked = false; edited(); renderNav(); renderForm(); renderValidation(); }
   $("new").onclick = () => { if (confirm("新建设计会替换当前页面内容。需要保留时请先导出草稿。继续吗？")) replace(S.newDocument()); };
   $("preset").onclick = () => { if (confirm("载入预设会替换当前设计。这个预设是目标方案，不代表游戏已经实现。继续吗？")) replace(S.hullPreset()); };
+  $("monster-preset").onclick = () => { if (confirm("新建怪物会替换当前设计，请先导出需要保留的草稿。继续吗？")) replace(S.monsterPreset()); };
   $("search").oninput = renderForm; $("pending").onchange = renderForm;
   $("import").onclick = () => $("file").click();
   $("file").onchange = async () => {
     const file = $("file").files[0]; if (!file) return;
     try {
       if (file.size > 5 * 1024 * 1024) throw new Error("文件超过5 MiB，请分拆设计");
-      const next = JSON.parse((await file.text()).replace(/^\uFEFF/, ""));
+      const next = S.importDocument(JSON.parse((await file.text()).replace(/^\uFEFF/, "")));
       const errors = S.structuralErrors(next, true); if (errors.length) throw new Error(errors.slice(0, 8).join("\n"));
       if (confirm("导入会替换当前设计。继续吗？")) { replace(next); message("导入成功；所有字段、状态、来源和备注均已保留。", "success"); }
     } catch (e) { message(`未导入，当前设计未改变：\n${e.message}`, "errors"); }
@@ -187,7 +188,7 @@
   try {
     const stored = localStorage.getItem(KEY);
     if (stored) {
-      const next = JSON.parse(stored);
+      const next = S.importDocument(JSON.parse(stored));
       if (!S.structuralErrors(next, true).length) { doc = next; message("已恢复当前浏览器中的草稿。"); }
       else message("旧草稿格式不兼容，未覆盖也未自动迁移；请从此前导出的JSON恢复。", "warnings");
     }

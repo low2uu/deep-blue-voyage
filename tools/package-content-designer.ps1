@@ -21,7 +21,8 @@ New-Item -ItemType Directory -Path (Join-Path $stage 'docs') -Force | Out-Null
 foreach ($name in @('内容设计器设计与使用-content-designer.md','内容设计器字段目录-content-designer-fields.md','方块属性规范与对照表-block-property-specification.md')) {
     Copy-Item -LiteralPath (Join-Path $project "docs/development/$name") -Destination (Join-Path $stage "docs/$name")
 }
-$manifest = [ordered]@{ package = 'dbv-content-designer'; version = $Version; schemaVersion = 1; files = @() }
+Copy-Item -LiteralPath (Join-Path $project 'content/prototypes') -Destination (Join-Path $stage 'specs') -Recurse
+$manifest = [ordered]@{ package = 'dbv-content-designer'; version = $Version; schemaVersion = 2; files = @() }
 foreach ($file in Get-ChildItem -LiteralPath $stage -File -Recurse | Sort-Object FullName) {
     $manifest.files += [ordered]@{ path = $file.FullName.Substring($stage.Length + 1).Replace('\','/'); sha256 = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash.ToLowerInvariant() }
 }

@@ -1,6 +1,6 @@
 {
   "format": "dbv-content-spec",
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "purpose": "implementation_specification",
   "metadata": {
     "createdAt": "2026-10-20T00:00:00.000Z",
@@ -936,6 +936,188 @@
         "notes": ""
       },
       "notes": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "monster": {
+      "stage": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "base": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "region": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "boss": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "plannedHealth": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "health": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "width": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "height": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "scale": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "speed": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "attackDamage": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "armor": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "followRange": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "knockbackResistance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "naturalSpawn": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "spawnRules": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "behavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "implementedBehavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "skills": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "phases": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "targetPolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "resistances": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "teamScaling": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "firstReward": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "drops": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "eggPrimary": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "eggSecondary": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "sounds": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "persistence": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "acceptance": {
         "status": "pending",
         "value": null,
         "reference": "",

@@ -1,0 +1,1110 @@
+{
+  "format": "dbv-content-spec",
+  "schemaVersion": 2,
+  "purpose": "implementation_specification",
+  "metadata": {
+    "createdAt": "2026-10-22T00:00:00.000Z",
+    "updatedAt": "2026-10-22T00:00:00.000Z"
+  },
+  "sections": {
+    "identity": {
+      "registryId": {
+        "status": "specified",
+        "value": "dbv_world:luminous_sac",
+        "reference": "",
+        "notes": ""
+      },
+      "nameZh": {
+        "status": "specified",
+        "value": "发光囊",
+        "reference": "",
+        "notes": ""
+      },
+      "nameEn": {
+        "status": "specified",
+        "value": "Luminous Sac",
+        "reference": "",
+        "notes": ""
+      },
+      "kind": {
+        "status": "specified",
+        "value": "item",
+        "reference": "",
+        "notes": ""
+      },
+      "category": {
+        "status": "specified",
+        "value": "材料",
+        "reference": "",
+        "notes": ""
+      },
+      "summary": {
+        "status": "specified",
+        "value": "发光囊：材料原型。来源：灯囊诱猎者的原型掉落。当前可放入实际容器，尚无专用使用效果；平衡数值待定。",
+        "reference": "",
+        "notes": ""
+      },
+      "motivation": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "keywords": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "author": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "targetRelease": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "creativeTabs": {
+        "status": "specified",
+        "value": [
+          "dbv_world:deep_blue_voyage"
+        ],
+        "reference": "",
+        "notes": ""
+      },
+      "tooltipsZh": {
+        "status": "specified",
+        "value": [
+          "原型物品：配方与功能待开发，数值待定"
+        ],
+        "reference": "",
+        "notes": ""
+      },
+      "tooltipsEn": {
+        "status": "specified",
+        "value": [
+          "Prototype: recipes and functions pending; balance provisional"
+        ],
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "platform": {
+      "minecraft": {
+        "status": "specified",
+        "value": "1.21.1",
+        "reference": "",
+        "notes": ""
+      },
+      "loader": {
+        "status": "specified",
+        "value": "neoforge",
+        "reference": "",
+        "notes": ""
+      },
+      "loaderVersion": {
+        "status": "specified",
+        "value": "21.1.259",
+        "reference": "",
+        "notes": ""
+      },
+      "java": {
+        "status": "specified",
+        "value": 21,
+        "reference": "",
+        "notes": ""
+      },
+      "namespace": {
+        "status": "specified",
+        "value": "dbv_world",
+        "reference": "",
+        "notes": ""
+      },
+      "dependencies": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "installationSide": {
+        "status": "specified",
+        "value": "both",
+        "reference": "",
+        "notes": ""
+      },
+      "compatibilityPolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "appearance": {
+      "model": {
+        "status": "specified",
+        "value": "item",
+        "reference": "",
+        "notes": ""
+      },
+      "visualDescription": {
+        "status": "specified",
+        "value": "临时复用原版图标，后续替换专用美术。",
+        "reference": "",
+        "notes": ""
+      },
+      "textureAll": {
+        "status": "specified",
+        "value": "minecraft:item/glow_ink_sac",
+        "reference": "",
+        "notes": ""
+      },
+      "faceTextures": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "textureResolution": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "renderLayer": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "mapColor": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "soundType": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "lightLevel": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "occludes": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "fullCube": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "collisionShape": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "outlineShape": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "waterlogged": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "facing": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "blockStates": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "assetReferences": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "animations": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "harvesting": {
+      "referenceBlock": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "hardness": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "tool": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "minimumTier": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "requiresCorrectTool": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "dropsSelf": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "silkTouch": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "fortune": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "explosionLoot": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "drops": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "experience": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "breakSideEffects": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "protection": {
+      "referenceBlock": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "explosionResistance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "pistonReaction": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "dragonImmune": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "witherImmune": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "flammability": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "fireSpread": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "slipperiness": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "speedFactor": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "jumpFactor": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "replaceable": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "gravityAffected": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "blockTags": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "itemTags": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "specialInteractions": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "physics": {
+      "referenceBlock": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "bindingPolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "mass": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "volume": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "friction": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "restitution": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "fragile": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "inertia": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "customInertia": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "floatingMaterial": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "floatingScale": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "assemblyAllowed": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "connections": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "damageBehavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "overridePolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "pressure": {
+      "referenceBlock": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "bindingPolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "maxWaterDepth": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "implosionChance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "useGlobalMultipliers": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "sealsCompartment": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "leakBehavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "oxygenBehavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "configurationMigration": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "item": {
+      "maxStackSize": {
+        "status": "specified",
+        "value": 64,
+        "reference": "",
+        "notes": ""
+      },
+      "durability": {
+        "status": "not_applicable",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "fireResistant": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "rarity": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "equipmentSlot": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "attackDamage": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "attackSpeed": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "armor": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "toughness": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "knockbackResistance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "repairIngredients": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "enchantments": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "useBehavior": {
+        "status": "specified",
+        "value": "当前仅为可堆叠、可存入容器的原型物品；尚未实现使用效果或配方。",
+        "reference": "整体玩法与数值初案",
+        "notes": "当前实现边界"
+      }
+    },
+    "interaction": {
+      "actions": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "ui": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "permissions": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "multiplayer": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "redstone": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "automation": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "accessibility": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "machine": {
+      "ports": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "inventorySlots": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "tankCount": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "energyPerTick": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "stressImpact": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "stressCapacity": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "minimumRpm": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "maximumRpm": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "operatingStates": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "multiblock": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "failureModes": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "acquisition": {
+      "recipes": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "otherSources": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "progression": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "balance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "recipeViewer": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "persistence": {
+      "hasBlockEntity": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "vesselOwned": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "jsonModule": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "dataVersion": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "fields": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "authoritativeSource": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "backupTriggers": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "restorePolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "breakMoveRefit": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "migration": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "duplicationProtection": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "integration": {
+      "adapters": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "excludedBehaviors": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "performance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "network": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "knownConflicts": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "acceptance": {
+      "tests": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "openQuestions": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "nonGoals": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "completionCriteria": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "notes": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    },
+    "monster": {
+      "stage": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "base": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "region": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "boss": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "plannedHealth": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "health": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "width": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "height": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "scale": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "speed": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "attackDamage": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "armor": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "followRange": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "knockbackResistance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "naturalSpawn": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "spawnRules": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "behavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "implementedBehavior": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "skills": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "phases": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "targetPolicy": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "resistances": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "teamScaling": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "firstReward": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "drops": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "eggPrimary": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "eggSecondary": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "sounds": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "persistence": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      },
+      "acceptance": {
+        "status": "pending",
+        "value": null,
+        "reference": "",
+        "notes": ""
+      }
+    }
+  },
+  "extensions": []
+}

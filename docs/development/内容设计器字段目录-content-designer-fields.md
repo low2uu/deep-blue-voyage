@@ -1,6 +1,6 @@
 # 内容设计器字段目录
 
-由 `node tools/content-designer/generate.cjs` 根据UI的同一字段目录生成。当前14组、147项；每项均导出状态、值、来源和备注。列表内子字段同时列出。
+由 `node tools/content-designer/generate.cjs` 根据UI的同一字段目录生成。字段总数随目录更新；每项均导出状态、值、来源和备注。列表内子字段同时列出。
 
 ## 基本信息（identity）
 
@@ -11,7 +11,7 @@
 | identity.registryId | 注册ID | text | 是 |
 | identity.nameZh | 中文名称 | text | 是 |
 | identity.nameEn | 英文名称 | text | 是 |
-| identity.kind | 内容类型 | enum：block / 普通方块；machine / 机器方块；controller / 控制器；decorative / 装饰方块；item / 普通物品；tool / 工具；equipment / 装备 | 是 |
+| identity.kind | 内容类型 | enum：block / 普通方块；machine / 机器方块；controller / 控制器；decorative / 装饰方块；item / 普通物品；tool / 工具；equipment / 装备；monster / 怪物 / Boss | 是 |
 | identity.category | 功能类别 | text | 是 |
 | identity.summary | 功能描述（必填） | textarea | 是 |
 | identity.motivation | 使用场景与设计目的 | textarea | 可标待定/不适用 |
@@ -339,3 +339,48 @@
 - `steps`：操作步骤（textarea）
 - `expected`：期望结果（textarea）
 - `priority`：优先级（enum；required / 必须通过；recommended / 建议；later / 后续）
+
+## 怪物与 Boss（monster）
+
+区分当前原型属性与待定目标。自然刷新、技能和阶段需要单独开发；填写规格不会自动实现。
+
+| 字段键 | 中文名 | 类型/选项 | 必填 |
+| --- | --- | --- | --- |
+| monster.stage | 制作状态 | enum：prototype / 原型（数值待定）；approved / 已确认设计 | 可标待定/不适用 |
+| monster.base | 当前原型行为与模型 | enum：squid / 鱿鱼（游动、逃避）；guardian / 守卫者（游动、光束攻击）；drowned / 溺尸（水陆寻路、近战）；custom / 自定义，需开发 | 可标待定/不适用 |
+| monster.region | 目标地区 | text | 可标待定/不适用 |
+| monster.boss | 是否 Boss | boolean | 可标待定/不适用 |
+| monster.plannedHealth | 方案目标生命点 | number | 可标待定/不适用 |
+| monster.health | 当前游戏生命点 | number | 可标待定/不适用 |
+| monster.width | 碰撞宽度（格） | number | 可标待定/不适用 |
+| monster.height | 碰撞高度（格） | number | 可标待定/不适用 |
+| monster.scale | 模型缩放 | number | 可标待定/不适用 |
+| monster.speed | 移动速度属性（非格每秒） | number | 可标待定/不适用 |
+| monster.attackDamage | 基础攻击伤害（不含技能） | number | 可标待定/不适用 |
+| monster.armor | 护甲点 | number | 可标待定/不适用 |
+| monster.followRange | 索敌距离（格） | number | 可标待定/不适用 |
+| monster.knockbackResistance | 击退抗性 | number | 可标待定/不适用 |
+| monster.naturalSpawn | 自然生成 | boolean | 可标待定/不适用 |
+| monster.spawnRules | 群系、深度、光照、数量、刷新和脱战 | textarea | 可标待定/不适用 |
+| monster.behavior | 目标行为与攻击预警 | textarea | 可标待定/不适用 |
+| monster.implementedBehavior | 当前已实现行为及限制 | textarea | 可标待定/不适用 |
+| monster.skills | 技能、触发、冷却、射程、伤害与反制 | textarea | 可标待定/不适用 |
+| monster.phases | Boss 阶段与切换条件 | textarea | 可标待定/不适用 |
+| monster.targetPolicy | 目标选择、船体和玩家交互 | textarea | 可标待定/不适用 |
+| monster.resistances | 弱点、免疫与抗性 | textarea | 可标待定/不适用 |
+| monster.teamScaling | 多人缩放与归属 | textarea | 可标待定/不适用 |
+| monster.firstReward | 首次奖励及防重复 | textarea | 可标待定/不适用 |
+| monster.drops | 击败掉落 | rows | 可标待定/不适用 |
+| monster.eggPrimary | 刷怪蛋主色（六位十六进制） | text | 可标待定/不适用 |
+| monster.eggSecondary | 刷怪蛋副色（六位十六进制） | text | 可标待定/不适用 |
+| monster.sounds | 环境、受击、死亡和预警声音 | textarea | 可标待定/不适用 |
+| monster.persistence | 保存、卸载、重载与防重复 | textarea | 可标待定/不适用 |
+| monster.acceptance | 测试步骤与预期结果 | textarea | 可标待定/不适用 |
+
+**击败掉落每条记录的字段：**
+
+- `item`：物品ID（text）
+- `min`：最小数量（integer）
+- `max`：最大数量（integer）
+- `chance`：概率（number）
+- `conditions`：条件（textarea）

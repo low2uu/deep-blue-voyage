@@ -1,0 +1,477 @@
+{
+  "items": [
+    {
+      "id": "acoustic_crystal",
+      "stack": 64
+    },
+    {
+      "id": "active_mucus",
+      "stack": 64
+    },
+    {
+      "id": "artificial_flow_material",
+      "stack": 64
+    },
+    {
+      "id": "auditory_organ",
+      "stack": 64
+    },
+    {
+      "id": "base_propellant",
+      "stack": 64
+    },
+    {
+      "id": "base_rubber",
+      "stack": 64
+    },
+    {
+      "id": "clear_crystal",
+      "stack": 64
+    },
+    {
+      "id": "conductive_mucus",
+      "stack": 64
+    },
+    {
+      "id": "copper_part",
+      "stack": 64
+    },
+    {
+      "id": "damage_control_research",
+      "stack": 64
+    },
+    {
+      "id": "dense_carapace",
+      "stack": 64
+    },
+    {
+      "id": "dense_material",
+      "stack": 64
+    },
+    {
+      "id": "detection_research",
+      "stack": 64
+    },
+    {
+      "id": "electronic_component",
+      "stack": 64
+    },
+    {
+      "id": "flexible_tendon",
+      "stack": 64
+    },
+    {
+      "id": "flow_assembly",
+      "stack": 64
+    },
+    {
+      "id": "flow_cartilage",
+      "stack": 64
+    },
+    {
+      "id": "flow_fin",
+      "stack": 64
+    },
+    {
+      "id": "hand_harpoon",
+      "stack": 1
+    },
+    {
+      "id": "hard_horn",
+      "stack": 64
+    },
+    {
+      "id": "high_pressure_sealant",
+      "stack": 64
+    },
+    {
+      "id": "impact_gland",
+      "stack": 64
+    },
+    {
+      "id": "insulating_gel",
+      "stack": 64
+    },
+    {
+      "id": "intact_tentacles",
+      "stack": 64
+    },
+    {
+      "id": "joint_membrane",
+      "stack": 64
+    },
+    {
+      "id": "lens_tissue",
+      "stack": 64
+    },
+    {
+      "id": "light_cannon_round",
+      "stack": 64
+    },
+    {
+      "id": "light_nail_cannon",
+      "stack": 1
+    },
+    {
+      "id": "light_skeleton",
+      "stack": 64
+    },
+    {
+      "id": "light_structural_material",
+      "stack": 64
+    },
+    {
+      "id": "light_structure",
+      "stack": 64
+    },
+    {
+      "id": "luminous_sac",
+      "stack": 64
+    },
+    {
+      "id": "metal_sheet",
+      "stack": 64
+    },
+    {
+      "id": "mirror_carapace",
+      "stack": 64
+    },
+    {
+      "id": "plant_fiber",
+      "stack": 64
+    },
+    {
+      "id": "precision_acoustic_assembly",
+      "stack": 64
+    },
+    {
+      "id": "premium_flow_material",
+      "stack": 64
+    },
+    {
+      "id": "pressure_composite_plate",
+      "stack": 64
+    },
+    {
+      "id": "processed_dense_material",
+      "stack": 64
+    },
+    {
+      "id": "propulsion_research",
+      "stack": 64
+    },
+    {
+      "id": "reclaimed_metal",
+      "stack": 64
+    },
+    {
+      "id": "reinforced_fiber",
+      "stack": 64
+    },
+    {
+      "id": "repair_tool_fragment",
+      "stack": 64
+    },
+    {
+      "id": "scrap_parts",
+      "stack": 64
+    },
+    {
+      "id": "sealing_mucus",
+      "stack": 64
+    },
+    {
+      "id": "sensory_barbel",
+      "stack": 64
+    },
+    {
+      "id": "shell_fragment",
+      "stack": 64
+    },
+    {
+      "id": "standard_mechanical_part",
+      "stack": 64
+    },
+    {
+      "id": "standard_repair_kit",
+      "stack": 1
+    },
+    {
+      "id": "standard_torpedo",
+      "stack": 64
+    },
+    {
+      "id": "tough_fiber",
+      "stack": 64
+    },
+    {
+      "id": "universal_seal",
+      "stack": 64
+    },
+    {
+      "id": "upgraded_light_cannon",
+      "stack": 1
+    },
+    {
+      "id": "work_cutter",
+      "stack": 1
+    }
+  ],
+  "mobs": [
+    {
+      "id": "cable_eel",
+      "base": "squid",
+      "health": 32,
+      "plannedHealth": 32,
+      "width": 0.8,
+      "height": 0.8,
+      "scale": 1,
+      "speed": 0.1,
+      "attackDamage": 0,
+      "armor": 0,
+      "followRange": 16,
+      "knockbackResistance": 0,
+      "boss": false,
+      "eggPrimary": 5400931,
+      "eggSecondary": 13805689
+    },
+    {
+      "id": "current_ray",
+      "base": "squid",
+      "health": 48,
+      "plannedHealth": 48,
+      "width": 0.8,
+      "height": 0.8,
+      "scale": 1,
+      "speed": 0.1,
+      "attackDamage": 0,
+      "armor": 0,
+      "followRange": 16,
+      "knockbackResistance": 0,
+      "boss": false,
+      "eggPrimary": 5400931,
+      "eggSecondary": 13805689
+    },
+    {
+      "id": "hull_worm",
+      "base": "squid",
+      "health": 20,
+      "plannedHealth": 20,
+      "width": 0.32000000000000006,
+      "height": 0.32000000000000006,
+      "scale": 0.4,
+      "speed": 0.1,
+      "attackDamage": 0,
+      "armor": 0,
+      "followRange": 16,
+      "knockbackResistance": 0,
+      "boss": false,
+      "eggPrimary": 1586765,
+      "eggSecondary": 13805689
+    },
+    {
+      "id": "ice_cave_stalker",
+      "base": "guardian",
+      "health": 100,
+      "plannedHealth": 100,
+      "width": 0.85,
+      "height": 0.85,
+      "scale": 1,
+      "speed": 0.5,
+      "attackDamage": 6,
+      "armor": 0,
+      "followRange": 16,
+      "knockbackResistance": 0,
+      "boss": false,
+      "eggPrimary": 10209756,
+      "eggSecondary": 13805689
+    },
+    {
+      "id": "ice_fissure_eel",
+      "base": "squid",
+      "health": 52,
+      "plannedHealth": 52,
+      "width": 0.8,
+      "height": 0.8,
+      "scale": 1,
+      "speed": 0.1,
+      "attackDamage": 0,
+      "armor": 0,
+      "followRange": 16,
+      "knockbackResistance": 0,
+      "boss": false,
+      "eggPrimary": 10209756,
+      "eggSecondary": 13805689
+    },
+    {
+      "id": "lantern_lurker",
+      "base": "guardian",
+      "health": 72,
+      "plannedHealth": 72,
+      "width": 0.85,
+      "height": 0.85,
+      "scale": 1,
+      "speed": 0.5,
+      "attackDamage": 6,
+      "armor": 0,
+      "followRange": 16,
+      "knockbackResistance": 0,
+      "boss": false,
+      "eggPrimary": 1586765,
+      "eggSecondary": 13805689
+    },
+    {
+      "id": "mirror_shrimp",
+      "base": "squid",
+      "health": 44,
+      "plannedHealth": 44,
+      "width": 0.8,
+      "height": 0.8,
+      "scale": 1,
+      "speed": 0.1,
+      "attackDamage": 0,
+      "armor": 0,
+      "followRange": 16,
+      "knockbackResistance": 0,
+      "boss": false,
+      "eggPrimary": 10209756,
+      "eggSecondary": 13805689
+    },
+    {
+      "id": "propeller_jellyfish",
+      "base": "squid",
+      "health": 36,
+      "plannedHealth": 36,
+      "width": 0.8,
+      "height": 0.8,
+      "scale": 1,
+      "speed": 0.1,
+      "attackDamage": 0,
+      "armor": 0,
+      "followRange": 16,
+      "knockbackResistance": 0,
+      "boss": false,
+      "eggPrimary": 5400931,
+      "eggSecondary": 13805689
+    },
+    {
+      "id": "ramfish",
+      "base": "guardian",
+      "health": 96,
+      "plannedHealth": 96,
+      "width": 0.85,
+      "height": 0.85,
+      "scale": 1,
+      "speed": 0.5,
+      "attackDamage": 6,
+      "armor": 0,
+      "followRange": 16,
+      "knockbackResistance": 0,
+      "boss": false,
+      "eggPrimary": 5400931,
+      "eggSecondary": 13805689
+    },
+    {
+      "id": "rust_shell_crab",
+      "base": "squid",
+      "health": 24,
+      "plannedHealth": 24,
+      "width": 0.8,
+      "height": 0.8,
+      "scale": 1,
+      "speed": 0.1,
+      "attackDamage": 0,
+      "armor": 0,
+      "followRange": 16,
+      "knockbackResistance": 0,
+      "boss": false,
+      "eggPrimary": 5400931,
+      "eggSecondary": 13805689
+    },
+    {
+      "id": "split_shell_beast",
+      "base": "guardian",
+      "health": 120,
+      "plannedHealth": 120,
+      "width": 0.85,
+      "height": 0.85,
+      "scale": 1,
+      "speed": 0.5,
+      "attackDamage": 6,
+      "armor": 0,
+      "followRange": 16,
+      "knockbackResistance": 0,
+      "boss": false,
+      "eggPrimary": 1586765,
+      "eggSecondary": 13805689
+    },
+    {
+      "id": "sunken_bell_guardian",
+      "base": "guardian",
+      "health": 1024,
+      "plannedHealth": 2800,
+      "width": 1.7,
+      "height": 1.7,
+      "scale": 2,
+      "speed": 0.5,
+      "attackDamage": 6,
+      "armor": 0,
+      "followRange": 16,
+      "knockbackResistance": 0,
+      "boss": true,
+      "eggPrimary": 1586765,
+      "eggSecondary": 14922827
+    },
+    {
+      "id": "vortex_ray",
+      "base": "squid",
+      "health": 1024,
+      "plannedHealth": 1800,
+      "width": 1.6,
+      "height": 1.6,
+      "scale": 2,
+      "speed": 0.1,
+      "attackDamage": 0,
+      "armor": 0,
+      "followRange": 16,
+      "knockbackResistance": 0,
+      "boss": true,
+      "eggPrimary": 5400931,
+      "eggSecondary": 14922827
+    },
+    {
+      "id": "whiteout_hunter",
+      "base": "guardian",
+      "health": 1024,
+      "plannedHealth": 1200,
+      "width": 1.7,
+      "height": 1.7,
+      "scale": 2,
+      "speed": 0.5,
+      "attackDamage": 6,
+      "armor": 0,
+      "followRange": 16,
+      "knockbackResistance": 0,
+      "boss": true,
+      "eggPrimary": 10209756,
+      "eggSecondary": 14922827
+    },
+    {
+      "id": "wreck_diver",
+      "base": "drowned",
+      "health": 40,
+      "plannedHealth": 40,
+      "width": 0.6,
+      "height": 1.95,
+      "scale": 1,
+      "speed": 0.23,
+      "attackDamage": 3,
+      "armor": 2,
+      "followRange": 16,
+      "knockbackResistance": 0,
+      "boss": false,
+      "eggPrimary": 5400931,
+      "eggSecondary": 13805689
+    }
+  ]
+}

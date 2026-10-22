@@ -13,7 +13,7 @@
     return "";
   }
   function newDocument() {
-    const doc = { format: FORMAT, schemaVersion: 1, purpose: "implementation_specification",
+    const doc = { format: FORMAT, schemaVersion: 2, purpose: "implementation_specification",
       metadata: { createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
       sections: {}, extensions: [] };
     for (const g of catalog.groups) {
@@ -70,7 +70,7 @@
       return true;
     };
     if (!keys(doc, ["format", "schemaVersion", "purpose", "metadata", "sections", "extensions"], "文档")) return errors;
-    if (doc.format !== FORMAT || doc.schemaVersion !== 1 || doc.purpose !== "implementation_specification") fail("文档格式/版本不支持；只接受本工具v1规格");
+    if (doc.format !== FORMAT || doc.schemaVersion !== 2 || doc.purpose !== "implementation_specification") fail("文档格式/版本不支持；请通过导入升级旧版规格");
     if (keys(doc.metadata, ["createdAt", "updatedAt"], "metadata")) for (const v of Object.values(doc.metadata)) if (typeof v !== "string" || !Number.isFinite(Date.parse(v))) fail("时间格式无效");
     if (keys(doc.sections, catalog.groups.map(x => x.id), "sections")) {
       for (const g of catalog.groups) {
@@ -155,6 +155,14 @@
     if (get("appearance", "model") === "cube_all" && !get("appearance", "textureAll")) warnings.push("六面同材质模型尚未指定共用贴图资源ID");
     if (get("appearance", "fullCube") === true && ["slab", "stairs"].includes(get("appearance", "model"))) errors.push("半砖/楼梯模型不能同时声明为完整立方体");
     if (get("identity", "kind") === "item" && get("persistence", "hasBlockEntity") === true) errors.push("普通物品不能直接拥有方块实体");
+    if (get("identity", "kind") === "monster") {
+      for (const key of ["eggPrimary", "eggSecondary"]) {
+        const color = get("monster", key);
+        if (color !== null && !/^[0-9a-fA-F]{6}$/.test(color)) errors.push("刷怪蛋颜色需要六位十六进制，例如 526963");
+      }
+      if (get("monster", "plannedHealth") > 1024) warnings.push("目标生命超过原版属性上限1024；需要独立实现，不能直接写入最大生命属性");
+      if (get("monster", "naturalSpawn") === true && !get("monster", "spawnRules")) warnings.push("自然生成已开启，但尚未填写群系、数量和刷新条件");
+    }
     if (get("harvesting", "hardness") < 0 && get("harvesting", "dropsSelf") === true) warnings.push("不可挖掘方块的掉落需要说明特殊触发方式");
     const resolution = get("appearance", "textureResolution");
     if (resolution && (resolution & (resolution - 1))) errors.push("纹理边长应为2的整数次幂，例如16、32、64");
@@ -191,14 +199,32 @@
       }
       sections[g.id] = { title: g.title, ...object(fields) };
     }
-    return { $schema: "https://json-schema.org/draft/2020-12/schema", title: "深蓝远航内容开发规格 v1", ...object({
-      format: { const: FORMAT }, schemaVersion: { const: 1 }, purpose: { const: "implementation_specification" },
+    return { $schema: "https://json-schema.org/draft/2020-12/schema", title: "深蓝远航内容开发规格 v2", ...object({
+      format: { const: FORMAT }, schemaVersion: { const: 2 }, purpose: { const: "implementation_specification" },
       metadata: object({ createdAt: { type: "string", format: "date-time" }, updatedAt: { type: "string", format: "date-time" } }),
       sections: object(sections),
       extensions: { type: "array", items: object({ key: { type: "string" }, description: { type: "string" }, acceptance: { type: "string" } }) }
     }) };
   }
-  const api = { newDocument, hullPreset, emptyValue, set, validate, structuralErrors, schema, copy, states };
+  function importDocument(input) {
+    const d = copy(input);
+    if (d.format === FORMAT && d.schemaVersion === 1 && d.sections && !Object.hasOwn(d.sections, "monster")) {
+      d.schemaVersion = 2;
+      d.sections.monster = newDocument().sections.monster;
+    }
+    const errors = structuralErrors(d, true);
+    if (errors.length) throw new Error(errors.slice(0, 8).join("\n"));
+    return d;
+  }
+  function monsterPreset() {
+    const d = newDocument();
+    set(d, "identity", "kind", "monster");
+    set(d, "identity", "category", "海洋怪物原型");
+    set(d, "monster", "stage", "prototype");
+    set(d, "monster", "naturalSpawn", false);
+    return d;
+  }
+  const api = { newDocument, hullPreset, monsterPreset, importDocument, emptyValue, set, validate, structuralErrors, schema, copy, states };
   root.ContentSpec = api;
   if (typeof module !== "undefined") module.exports = api;
 })(typeof globalThis !== "undefined" ? globalThis : this);

@@ -3,6 +3,27 @@ const assert = require("node:assert/strict");
 const C = require("./catalog.js");
 const S = require("./core.js");
 
+test("v1导入迁移无损保留旧字段，v2往返一致，拒绝未知字段", () => {
+  const old = S.hullPreset(); delete old.sections.monster; old.schemaVersion = 1;
+  const before = structuredClone(old.sections);
+  const upgraded = S.importDocument(old);
+  assert.equal(upgraded.schemaVersion, 2);
+  for (const key of Object.keys(before)) assert.deepEqual(upgraded.sections[key], before[key]);
+  assert.deepEqual(S.importDocument(upgraded), upgraded);
+  old.sections.intruder = {value: 1};
+  assert.throws(() => S.importDocument(old), /未知字段/);
+});
+test("怪物生命、颜色和掉落范围拒绝非法输入", () => {
+  const d = S.hullPreset(); S.set(d, "identity", "kind", "monster");
+  S.set(d, "monster", "health", 2000);
+  assert.ok(S.validate(d).errors.some(e => e.includes("生命")));
+  S.set(d, "monster", "health", 40); S.set(d, "monster", "eggPrimary", "not-a-color");
+  assert.ok(S.validate(d).errors.some(e => e.includes("颜色")));
+  S.set(d, "monster", "eggPrimary", "123abc");
+  S.set(d, "monster", "drops", [{item:"dbv_world:shell_fragment",min:3,max:1,chance:1,conditions:"死亡"}]);
+  assert.ok(S.validate(d).errors.some(e => e.includes("最小值")));
+});
+
 test("预设完整往返，显式保留每个字段的值、状态、来源和备注", () => {
   const d = S.hullPreset();
   assert.deepEqual(S.validate(d).errors, []);
@@ -33,7 +54,7 @@ test("草稿中未修正的范围/ID错误仍能恢复，正式交接会阻止",
 });
 test("缺字段、错误版本与未知字段被拒绝，不能静默丢失扩展", () => {
   const d = S.hullPreset();
-  d.schemaVersion = 2;
+  d.schemaVersion = 999;
   delete d.sections.physics.mass;
   d.sections.pressure.unknown = "keep me";
   const errors = S.structuralErrors(d);
