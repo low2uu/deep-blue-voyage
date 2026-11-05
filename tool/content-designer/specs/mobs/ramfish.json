@@ -165,10 +165,10 @@
         "notes": ""
       },
       "textureResolution": {
-        "status": "not_applicable",
-        "value": null,
-        "reference": "",
-        "notes": "共用非方形材质图1024×512，实际尺寸在几何JSON内。"
+        "status": "specified",
+        "value": 16,
+        "reference": "tools/creature-models/generate.py",
+        "notes": "实际纹理16×16；几何中的1024×512仅为UV归一化坐标尺度，色块覆盖范围不变。"
       },
       "renderLayer": {
         "status": "pending",

@@ -1,0 +1,4 @@
+{
+	"done": true,
+	"error": "JavaException: java.lang.IllegalStateException: Mob tick failed Guardian['冰穴伏猎者（原型）'/334, l='ServerLevel[深蓝远航·联合开发]', x=40.00, y=120.00, z=136.00, removed=DISCARDED]"
+}

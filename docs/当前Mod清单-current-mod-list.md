@@ -1,5 +1,24 @@
 # 当前 Mod 清单：深蓝远航
 
+## 2026-10-22 增量更新
+
+默认采用用户选择的 Voxy/Roxy 组合；此前条目与本节不一致时以本节及 Gradle 为准。全部未实机验收。
+
+| Mod | 精确版本 | 当前状态 |
+| --- | --- | --- |
+| Forgified Fabric API | 0.116.15+2.3.5+1.21.1 | 接入默认依赖 |
+| Voxy World Gen V2 | 2.4.2 / NeoForge 1.21.1 | 接入默认依赖 |
+| Roxy | 0.4.0 | 客户端默认启用 |
+| Voxy | 0.2.16-beta+1.21.11 | 由Roxy桥接；客户端默认启用 |
+| Sodium | 0.8.12+mc1.21.1 | Roxy配套客户端依赖 |
+| Sodium Dynamic Lights | 1.0.10 / NeoForge 1.21.1 | 用户选择暂缓；旧界面API与Sodium0.8不兼容 |
+| Create Dynamic Lights（Sodium/Sable版） | 2.3.1-sodium-sable | 随动态光源暂缓 |
+| voxy_server_lod | 文件1.1.4 / 内部1.0.0 | 用户压缩包原件，双端接入，待实测 |
+| Voxy Server Side（lss） | 0.16.0 | 用户压缩包原件，双端接入，待实测 |
+
+版本来源、下载哈希与状态见 [证据JSON](lod-mod-evidence.json)，接入边界见 [远景与动态光源](development/远景与动态光源接入-lod-and-dynamic-lights.md)。
+
+
 更新日期：2026-10-19。目标：**Minecraft 1.21.1 / NeoForge 21.1.259 / Java 21**。
 
 ## 本次整理规则

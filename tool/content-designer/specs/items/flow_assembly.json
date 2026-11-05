@@ -170,7 +170,7 @@
       },
       "textureResolution": {
         "status": "specified",
-        "value": 128,
+        "value": 16,
         "reference": "tools/item-models/generate.py",
         "notes": "原生三维物品模型；无新增使用功能。"
       },

@@ -10,9 +10,9 @@
 ## 不误删的情况
 
 - Deeper Oceans与Tectonic互斥，但地形主选尚未确定，保留二选一标注，不据此判定任一个普遍不兼容。[作者说明](https://modrinth.com/mod/deeper-oceans)
-- Roxy官方明确支持特定Voxy 0.2.16-beta（原生1.21.11 Fabric）桥接到1.21.1 NeoForge；保留指定组合，未实际启用或验证。[作者说明](https://modrinth.com/mod/roxy)
+- Roxy官方明确支持特定Voxy 0.2.16-beta（原生1.21.11 Fabric）桥接到1.21.1 NeoForge；2026-10-22已接入指定组合，构建分包通过，实际渲染联动仍待验证。[作者说明](https://modrinth.com/mod/roxy)
 - JEI原版19.51.0.418已在当前正式环境加载、进世界并初始化GUI；不按旧的范围声明疑点误删，亦不推断其他运行环境必然兼容。[运行证据](辅助Mod启用记录-auxiliary-mods.md)
-- 两个Voxy服务端身份待核文件仍为待定，不能以未知冒充不兼容。
+- 两个Voxy服务端文件已于2026-10-22从用户压缩包确认并接入；原件与哈希见`pack/local-mods/manifest.json`，联动未实测，不能据此宣称兼容或不兼容。
 - ScalableLux、过旧Sodium、过高Sable Companion及Bits n Bobs声明冲突的旧TFMG等并不在当前选定文件内，无须虚构删除操作。相关条件保留在[静态证据](current-mod-evidence.json)。
 
 本次没有从运行目录卸载JAR；被剔除的Sound Physics Remastered原本就未启用。

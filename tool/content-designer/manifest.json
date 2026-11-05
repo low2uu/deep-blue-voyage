@@ -1,6 +1,6 @@
 {
     "package":  "dbv-content-designer",
-    "version":  "0.1.13",
+    "version":  "0.1.16",
     "schemaVersion":  2,
     "files":  [
                   {
@@ -17,7 +17,7 @@
                   },
                   {
                       "path":  "core.js",
-                      "sha256":  "a10e20ee5854f25c08b98b5e29bb1f1dad3f99cdd418773427a4d6cd232238b7"
+                      "sha256":  "3f55ff1ac5e2b71039e393d265c929f33aba898f9b190bcb52545ecf09e7711b"
                   },
                   {
                       "path":  "docs/方块属性规范与对照表-block-property-specification.md",
@@ -37,7 +37,7 @@
                   },
                   {
                       "path":  "iron-submarine-hull.example.json",
-                      "sha256":  "83daade56840d6b0d79300c330c5d96d8ce90a25325bdeef3f06785d0d2e80ca"
+                      "sha256":  "d8ae61afe81a88cac6220019a3fbe576f18cb8c24a0952b032f1fc04ee9a7039"
                   },
                   {
                       "path":  "README.md",
@@ -45,279 +45,279 @@
                   },
                   {
                       "path":  "specs/items/acoustic_crystal.json",
-                      "sha256":  "e14f0fd1c65bd3c3348ab5c8bb65c5e4427781fd1486b366b40afb75bb1d2932"
+                      "sha256":  "23980e94a0827d8df5d88662dd76a4df5bef27dea82fb1592cb6456e4c6a5403"
                   },
                   {
                       "path":  "specs/items/active_mucus.json",
-                      "sha256":  "b63aaeaa53ffca97f6cd3332295fa082c72d42575459db1cc2881619526edcfb"
+                      "sha256":  "8a12b5d367657d61b5da4f97b832cc7db4c27dc89a1c5acefbe3391762b4b963"
                   },
                   {
                       "path":  "specs/items/artificial_flow_material.json",
-                      "sha256":  "59568b765db665c451b84d83544205c401a92f528a77532d00119c2b8e6afb6a"
+                      "sha256":  "051aa80456f5ee2d3385bdce30592dfcfdb9773356b6f6ed2e843c0adbc2bd25"
                   },
                   {
                       "path":  "specs/items/auditory_organ.json",
-                      "sha256":  "35459691ebb4675bd7dd842054f123cae99168a6d6b6d6276e46bbf81608184d"
+                      "sha256":  "af9b14a60a23b82a5bbd52e8d7a47941a83d19b4afc3153ac9f378e3a686a04f"
                   },
                   {
                       "path":  "specs/items/base_propellant.json",
-                      "sha256":  "c8fa2d60248ee777222931261d8679e1768e1e7f38d5e27586f7a8db986a7da5"
+                      "sha256":  "ee83109873ad2f17adfdc878667b033aabda4f0608a50ca11e66ed86b9304056"
                   },
                   {
                       "path":  "specs/items/base_rubber.json",
-                      "sha256":  "e676ade3e5d0c425a0374459f1e95bbb5dafa586acf80aa9d7c094fed539988a"
+                      "sha256":  "696780e3ca2d24a51fa3d040e3cabea8f41739febbf97bdb6e5c94e5cd34d6f7"
                   },
                   {
                       "path":  "specs/items/clear_crystal.json",
-                      "sha256":  "ab7241f391c7ddfa7c5ad94d611f2dbbf95c62dc6216c936e23bb7871e5d64f6"
+                      "sha256":  "81f2cb328196f6174056eec4ec27d6a1aeedf24be09b65e77a00cc88073dbc6c"
                   },
                   {
                       "path":  "specs/items/conductive_mucus.json",
-                      "sha256":  "be75f4ce208343bee03c7a46665bec09d65579b3a0729954b9a673a76b8e2641"
+                      "sha256":  "d539a0bc9065197914d028cb961b367adfb60af0f3be83e65f79fb3c78666df2"
                   },
                   {
                       "path":  "specs/items/copper_part.json",
-                      "sha256":  "53b936f91591300f3be8ac72330e8ac402c06e014fe65dfc5b0e8ec6ddad72a6"
+                      "sha256":  "3b88092b3cf4c2eb9da8e67ac5b6eee92effe5f24ba92bf6eea2b22d6f692fc7"
                   },
                   {
                       "path":  "specs/items/damage_control_research.json",
-                      "sha256":  "438977c131cfd31d1b09bafe4418f2a1de316d197ef0a1e49197833970c8abbe"
+                      "sha256":  "01427c7ac1ad3ecde58f8e3257bfb496c8437c9fbc1de207549092b2fb5f4f23"
                   },
                   {
                       "path":  "specs/items/dense_carapace.json",
-                      "sha256":  "aa1fc0b004e1e79b41072fdf8e795e6d4d75a125410432794930d7b046dfe0ef"
+                      "sha256":  "daf8f6ecc3d0577f8ad3c05ed653d9deaef1502b0a62bb4a1630afb14b21e263"
                   },
                   {
                       "path":  "specs/items/dense_material.json",
-                      "sha256":  "106861391e32225d11a6e370d43db17f13a6e2477075acafee646af0cbba6c67"
+                      "sha256":  "ae6226cf3fcef7b5eebd4d32a5718de443a9d683dda0039caeaa8da8aace1bcc"
                   },
                   {
                       "path":  "specs/items/detection_research.json",
-                      "sha256":  "00b7b9d827c6ac949e254ea55cedfb203f31cc2163d2b406ac211823b7f59c4c"
+                      "sha256":  "48d5b1277a3da6457ebaa4ecc5d4922eb3f64ed3daf3740068921cbf50bd1917"
                   },
                   {
                       "path":  "specs/items/electronic_component.json",
-                      "sha256":  "1999a64569d693be222a5644765f2a5bb50b8463cb980354dcc361bd509d35dc"
+                      "sha256":  "7be589a596296f14c61327008aa0afcc7419f0b4a2124301270d77ab03c494aa"
                   },
                   {
                       "path":  "specs/items/flexible_tendon.json",
-                      "sha256":  "bd1ce0fccee7e77f1475bce0403320e7378f6e91c6b17f6baccb7914d8097f6f"
+                      "sha256":  "04fb8f28c9bd3cead52dddfa216a5fa8cd4830958667715d4865656d090e10d6"
                   },
                   {
                       "path":  "specs/items/flow_assembly.json",
-                      "sha256":  "d953a95cd41fc7a69f73fe463c21863186bf066e21eb9fd430c3b6b5c13edfca"
+                      "sha256":  "f04e17cb1dddd130ebb1b55020db6193a5bd8173fba71bc4022c0d79e9a0b71a"
                   },
                   {
                       "path":  "specs/items/flow_cartilage.json",
-                      "sha256":  "13ed94afd8b1fa6be8ba021c9c66b1800dd66b6cbb73c1b8f577f20fc386635b"
+                      "sha256":  "d869d5196eab9bd44a962f26da2b8a333f1ba198ded5b168666e03cfa7396264"
                   },
                   {
                       "path":  "specs/items/flow_fin.json",
-                      "sha256":  "873eae1212062156dd942db37144392d92ba1ceaec92093e26ad026331e06af7"
+                      "sha256":  "8c31e7045126814ee55d84924537169291daaa9e440a5e7b09d43e3f0a982bd8"
                   },
                   {
                       "path":  "specs/items/hand_harpoon.json",
-                      "sha256":  "051564d1cfa801c2b5262a33641c6d38577f8f74cc1fb7f066322d94d7d09ef0"
+                      "sha256":  "b30f25f22c373723bfd72f94680d34bdc79436f0a7a3322450fbf68784bec8d0"
                   },
                   {
                       "path":  "specs/items/hard_horn.json",
-                      "sha256":  "7fdb50666f27a8de24d51dcdfbacada56785c7d5683aff3fd51bd57984e0311e"
+                      "sha256":  "effc4996d9992b2047539f7f09aef4864ad041b8c28b08a8a8a4f994521353da"
                   },
                   {
                       "path":  "specs/items/high_pressure_sealant.json",
-                      "sha256":  "1dfd916f877fa9bee69f8fa159a34990d7ccf77873612b3f2d6eb824e8d4dc45"
+                      "sha256":  "b88a150082dd85249788c5d73c62a846cd0dfb47b731c3b3ca91efc52f81b593"
                   },
                   {
                       "path":  "specs/items/impact_gland.json",
-                      "sha256":  "7343734ef4cec0718730595304e33e15f54bc4479788ebc2a6066ff9be7736ba"
+                      "sha256":  "2d19e9f02ab261cd6fd63fb157ee3be6696a154e0ddad5a5db2b09a1d2bed1f3"
                   },
                   {
                       "path":  "specs/items/insulating_gel.json",
-                      "sha256":  "04fd436125a05341053c358046454de1ca1a197b506897b8a2e28a29b257b042"
+                      "sha256":  "cf88e599bbdf4b05a70aca62c505f468142b346e04777625c7dbb0404d685d18"
                   },
                   {
                       "path":  "specs/items/intact_tentacles.json",
-                      "sha256":  "ac7aee9984b3e8d9c429a057fe9c0d47aab95578a122fb9714a360106aab12cc"
+                      "sha256":  "c64f808d85d7549a439ff0c76ebf9b8722f82c395753afc4577e7dbcef230160"
                   },
                   {
                       "path":  "specs/items/joint_membrane.json",
-                      "sha256":  "aa28fe9f29aa8fd42bcb88993fad439cda6cdf9c59af0fe263c4a4d74c0ac680"
+                      "sha256":  "9c802a3fdbae6d2ab853ee21a9483d5f8ecfcbaa8dc9fe3361a9fb0dd9d37b57"
                   },
                   {
                       "path":  "specs/items/lens_tissue.json",
-                      "sha256":  "eec8ffdde3110fe42a46573b0a90b0ac3c774ca9fb5840149ff37e5891850f40"
+                      "sha256":  "4a8ec2d5b8ac07379caf0c2d579fb84d9150afc07d9dbd70562773b4cb7e0cc4"
                   },
                   {
                       "path":  "specs/items/light_cannon_round.json",
-                      "sha256":  "2873d9f17a01c2094cd4fcd80687b521a868ab9f08720c962b05b1207e875d85"
+                      "sha256":  "0d1961ed3e4c788b9e7ccc56368da558270eb5201d2439d5e084b0d932679d5a"
                   },
                   {
                       "path":  "specs/items/light_nail_cannon.json",
-                      "sha256":  "c05df85f4a696c92deeaba8e57e2e5fa1f7c660be8480525ebae50ade2c0c9f3"
+                      "sha256":  "bd21b13726efee940898fa38197cc6769379086634bfb88930053b937f6e61c6"
                   },
                   {
                       "path":  "specs/items/light_skeleton.json",
-                      "sha256":  "3e4d623e7a0176e25f3aad747166b134b76a05f8f2d4d0d246b9c8c71bdf8a6a"
+                      "sha256":  "cadff700dee75722bc5a4b121398925c3483d2b165edc785db809b3b166ff32d"
                   },
                   {
                       "path":  "specs/items/light_structural_material.json",
-                      "sha256":  "4f7fe338a16ccfd9230ce0da2f7a0ef9de53b20836936c1dd23cc843e5aa0324"
+                      "sha256":  "d27a181c6e821c9b7952555648ce682487e12975a513233c350a493b91d025d1"
                   },
                   {
                       "path":  "specs/items/light_structure.json",
-                      "sha256":  "26ef79e03d8de444a0ede23566a479fb72d9b5e4c5339e106ad4d1f40761eb27"
+                      "sha256":  "5e376147433f525d5a91b4aae59b7c6359cb1a21c2add1f1531acfbd9f9efc21"
                   },
                   {
                       "path":  "specs/items/luminous_sac.json",
-                      "sha256":  "16f1f949a2aa45a3e06d528f9668d50968524e9e16c2788101e4efbe1e68ffdd"
+                      "sha256":  "4e13c884cfbde67448b0a3a33b318bec6f4d99ee6ef2cb499ba8b196bde3bb68"
                   },
                   {
                       "path":  "specs/items/metal_sheet.json",
-                      "sha256":  "eb342503f1d008e566adfa40b7541d1e5db25ba76fbb1cc28ada1e23617939c5"
+                      "sha256":  "b64c823e0996777d9866a651e0d5674d7acaa8ec0baaff8e030f80248ace26ca"
                   },
                   {
                       "path":  "specs/items/mirror_carapace.json",
-                      "sha256":  "cb30169b21fdb9ed6473721aa2cbc8008f528e3415aa93e444f800a03a3701ae"
+                      "sha256":  "520d90774e674260d15fc33336aa120b4f3bd416f49ae0437c6a4771b1bdcad3"
                   },
                   {
                       "path":  "specs/items/plant_fiber.json",
-                      "sha256":  "48ceb6448921c6c999af7e0c9aee6060537762c261994d55fc685c80fe20937e"
+                      "sha256":  "c5c1b739e3408f34b800b9efe8badbadb2d4c1d1236fa20b1721b4a9fb50ce9f"
                   },
                   {
                       "path":  "specs/items/precision_acoustic_assembly.json",
-                      "sha256":  "671130c5c2d21c85297745e04f78509c1c8f46b129dae2c28b47fd635dfed4b1"
+                      "sha256":  "71b77f92b5f23b57d3f210027c6ec9d4fe62a87f3ebe63ef6db4f32eb780914b"
                   },
                   {
                       "path":  "specs/items/premium_flow_material.json",
-                      "sha256":  "7fd4b4b09a07580223ed2e4dff87ebf779ed96e78673e9a5852df973826f9110"
+                      "sha256":  "b94b1b7f324558bc87498d4a80d51351bbaa2c20a1d7789cd5d8219983be63f2"
                   },
                   {
                       "path":  "specs/items/pressure_composite_plate.json",
-                      "sha256":  "bc31ebdb0d9f1897c8726ab6065032b7e02b9c80058c5555364ddce030b5f43c"
+                      "sha256":  "2a9a0fbc72ecdf3ac9dbb0eae9b155b463a2c9385618fdc692a1e596df5ca40a"
                   },
                   {
                       "path":  "specs/items/processed_dense_material.json",
-                      "sha256":  "3f2341d91acbc84efff5e4b7416d6d41cdeec1804d2c49e22e368c22bc06f381"
+                      "sha256":  "e664f6e67e5062054be4fde9d7ddc84e5a2d64dd29725a32380ddd18711821de"
                   },
                   {
                       "path":  "specs/items/propulsion_research.json",
-                      "sha256":  "41417a4517afe4e26db33f30ec4963b745ce404789b11c927660ce84630b70f5"
+                      "sha256":  "b6027ea0773eb5f375f2696ffecb0ccae4405efd9346a51a95769f8fc53100d9"
                   },
                   {
                       "path":  "specs/items/reclaimed_metal.json",
-                      "sha256":  "3136e6ec39a41a2857bd3fdb8f5ac347b65547a5b950bd0d980a81f355faf17a"
+                      "sha256":  "ea086fd9a68a6820fc3b97da2b6eb4ea76950d7afe418b5a60e4ea884429b6d3"
                   },
                   {
                       "path":  "specs/items/reinforced_fiber.json",
-                      "sha256":  "9b1515fae91cc7c83f35103e1ffeefdcd1da435dd4d50ea891cb017478b71732"
+                      "sha256":  "06a4a8aa448abb48c9e0b79858ef11efcd22911262ba45405bb321ddaba7fdd3"
                   },
                   {
                       "path":  "specs/items/repair_tool_fragment.json",
-                      "sha256":  "264523af9cec441f15b1bfd21cd0541b72ac864ce96c43b6f0af682cf4971b9a"
+                      "sha256":  "689806c8a3f926b5d9f6eae0d56f353876228969916992b2c25a5f5a89ee4b1f"
                   },
                   {
                       "path":  "specs/items/scrap_parts.json",
-                      "sha256":  "ecb0aca1cfb521357b3d8c35dc43572689704405f85ea6a1fb4f4d03e9e1a1fb"
+                      "sha256":  "e736480efd1c45cb904f06a393c4ff0e6749bfaa0cbec4e12bea70d8c281ff36"
                   },
                   {
                       "path":  "specs/items/sealing_mucus.json",
-                      "sha256":  "3b7897b5ec5dc80fb9aca79ab8f953d1f51c401713a6f98815719929a68a69c9"
+                      "sha256":  "020a0046bdb7605c43f80d61ebbe3cdf5f310f5bac1d96f2251140275cda658f"
                   },
                   {
                       "path":  "specs/items/sensory_barbel.json",
-                      "sha256":  "e27eeec04146bfec46b791b199d756cf6e575c0db1d977f17cf960ad9e089134"
+                      "sha256":  "99ee50db69580c97bed7d0d421e2f7bd11605c98f930018cced49ffa4ac19264"
                   },
                   {
                       "path":  "specs/items/shell_fragment.json",
-                      "sha256":  "d0d3623adfc220c8a0706c0c69cda290ca9111992d24b7384d2ceb071e14697e"
+                      "sha256":  "2ca59e89611b276748179cb285e43b1485df12220506b8795d8a5c166316c74b"
                   },
                   {
                       "path":  "specs/items/standard_mechanical_part.json",
-                      "sha256":  "acd8ffcfd133d24adfe09495e4ba7931d1c9c47a736d1525c00bfb6e94124991"
+                      "sha256":  "07e80d76ae81c0d5dcbe4089b8002993eefe375cb14fe2788f9861ef1b3debba"
                   },
                   {
                       "path":  "specs/items/standard_repair_kit.json",
-                      "sha256":  "0baa778b235feb61099d19e4d56e019d4ba6a7a8680411a61c252556bdcae284"
+                      "sha256":  "8dda15d28e538166580460bfab2cc3a7a9aaa9a0941e1a93665f1bbbb9b1b004"
                   },
                   {
                       "path":  "specs/items/standard_torpedo.json",
-                      "sha256":  "8cf040a143579bb16967c1ced73a7e633d8476ea8b166080e021d285ab9d687c"
+                      "sha256":  "235a96b90028ec14ad7b6b813b0c28468134cbbf2dfc01644ad1e55097fe5b1e"
                   },
                   {
                       "path":  "specs/items/tough_fiber.json",
-                      "sha256":  "65fba1e924acf30c30fa086ae74dda410e5cc3f651d6b7036f340b29331c96d6"
+                      "sha256":  "174fe5aa3438776f9c25554f16a489b068545b269406144cd45f6cfe4fa1da06"
                   },
                   {
                       "path":  "specs/items/universal_seal.json",
-                      "sha256":  "f9f7e7f3f1452888f44e4f05d1c2681c82f1ef8d83ddd90b91d3f6ed87752db0"
+                      "sha256":  "b9a169958b69adbba9be6615c7d2eb13e2705f36f24ab52cc4112f761dc4df4a"
                   },
                   {
                       "path":  "specs/items/upgraded_light_cannon.json",
-                      "sha256":  "43c795052cfd48a3b0f9aacd1c916290fb32b39f2cbb2acf36e92e324cb0ac7d"
+                      "sha256":  "e22f22eb1cfb9ce20a4d66a00e7032410c2d8a95a82c21dad2e1b8291083675d"
                   },
                   {
                       "path":  "specs/items/work_cutter.json",
-                      "sha256":  "b8944a208fe9b7e9582b2cc516946f2f7c7e46f7754dfea3696c2ad80b8a652f"
+                      "sha256":  "8f58b13e4e053b2af203073c31d028a5ae1c1c082d6f2968b1b3a52011f92e36"
                   },
                   {
                       "path":  "specs/mobs/cable_eel.json",
-                      "sha256":  "2379b54e645057cd5ec0eca3d097217474cdb24ca373acd0501d6aa486685e5c"
+                      "sha256":  "46d4e16bc336ca90b8c14c635c53168f7eccca59c66352e409ff3b5ceeaabc1a"
                   },
                   {
                       "path":  "specs/mobs/current_ray.json",
-                      "sha256":  "300d774d623bfe52f48c74690d01a3a3a9e274299960e8eeb2cdf3ec0da128f4"
+                      "sha256":  "f43796c5960fea4b85810f2e45b279b055418e5305b99681917dc4655eb4964b"
                   },
                   {
                       "path":  "specs/mobs/hull_worm.json",
-                      "sha256":  "aa3da1dee3ce6f588e1df9c27e014134a5b09436eebeb1dddaac42b882a925d9"
+                      "sha256":  "6db1717b574167c382c41e7f61d0e5d1d35796715d7ac34fe17dce495e4ecb9f"
                   },
                   {
                       "path":  "specs/mobs/ice_cave_stalker.json",
-                      "sha256":  "3cd8909cfc439480de3a207cec5667501bc676f4b092feb69cb875862cb1f23a"
+                      "sha256":  "063be6281bbd82012f83b30317f1b0fa4d1b5c09120970769104dc6083929f98"
                   },
                   {
                       "path":  "specs/mobs/ice_fissure_eel.json",
-                      "sha256":  "dae533a1ba7aa1932caa1ad2430fc24aad95ccb11ac27a585ba7b22e2ac6ab89"
+                      "sha256":  "73e45618a2149306b7ae803938b85ed6df9f1ba3613af69865b5d3e1b1a87ecb"
                   },
                   {
                       "path":  "specs/mobs/lantern_lurker.json",
-                      "sha256":  "ad61482af233cf8ab1ee69d556de49ddb69c2c43fc1023a65b22c9318c1210a3"
+                      "sha256":  "6c3dad33517d67a85ae4517b3c493f15abb771f7d11d0631cf7345156f027e71"
                   },
                   {
                       "path":  "specs/mobs/mirror_shrimp.json",
-                      "sha256":  "d589691e48863662fecd460a839b0e572c7ca612850533e8c44e9669e10c2c18"
+                      "sha256":  "b565548e19891cb9fd9f91ff595282dbaefb09bda246124a54588c95dbc8cf2a"
                   },
                   {
                       "path":  "specs/mobs/propeller_jellyfish.json",
-                      "sha256":  "10bdd9ef67618d68dca1690b7a1a94793eb636844f9ac003206f5a4390939c38"
+                      "sha256":  "b37855663083208f88b18316cfa27d7478d63531a0ba7703ee7e0f43846b1feb"
                   },
                   {
                       "path":  "specs/mobs/ramfish.json",
-                      "sha256":  "e1a14e078d00eaa309f2513bce02b65d3608d5f41b01da84108ca4221083b6af"
+                      "sha256":  "4440d6baf2e2eeca2f47830e51e142cfeabf19e65a93998ba6ee8bafd555631d"
                   },
                   {
                       "path":  "specs/mobs/rust_shell_crab.json",
-                      "sha256":  "16a771bf1b4ef8cf00b20371872dc4d53dc5141b04e56a8b150e9e5543854c14"
+                      "sha256":  "5f87a7f48f2dea8a57f65ae9d4cb2a33227db12ed72c7a443fbb7f67919be215"
                   },
                   {
                       "path":  "specs/mobs/split_shell_beast.json",
-                      "sha256":  "cc1ff79c54d44285b98f8003a5457797a476240a7de1e873a60a930aef4a9884"
+                      "sha256":  "2daad52dd4ee0d2debf7e0ed4019c238442d891b9f614d9b1d5264f31edb46db"
                   },
                   {
                       "path":  "specs/mobs/sunken_bell_guardian.json",
-                      "sha256":  "ea48a685a29ada8aaad11123316519426da564c9fe5d9a7a33700b1c5047eab8"
+                      "sha256":  "786b0fa15ed3b0aa67b190072ecc405b85283b90d8d3b8c300676fa6de4f0640"
                   },
                   {
                       "path":  "specs/mobs/vortex_ray.json",
-                      "sha256":  "3d0951aec773848e89501550eac9f7c76287025dbc6f4e73c5e61e16ad82612e"
+                      "sha256":  "b5398c86e83936ac128d030c74dc313d1656ee6c27d4aeb221f6fbb524860658"
                   },
                   {
                       "path":  "specs/mobs/whiteout_hunter.json",
-                      "sha256":  "b2e1a3213efe91eb0be3d7e0742ebc6cf426e1559958fcde947befc98bed7e2d"
+                      "sha256":  "cb861239d7706f16f0a654617e306653b760fa8d46368b2ec893b951a7f021a0"
                   },
                   {
                       "path":  "specs/mobs/wreck_diver.json",
-                      "sha256":  "62a8673f932e1819828beef72dedc11b3dbc8a930761b0d551c92feac4428f9a"
+                      "sha256":  "51318fa56760b16ba5a4801130486b443752e1863f51ae1a2eadadfa384b8d6b"
                   },
                   {
                       "path":  "specs/README.md",
@@ -333,7 +333,7 @@
                   },
                   {
                       "path":  "test.cjs",
-                      "sha256":  "087a709119e491cd756174a4672cfb63746628501a897e3f425369f0c547ee4a"
+                      "sha256":  "b75e2bf45236d8e6095c60a225ffbf646cc3a2b8915238f2cf875a86dfe71738"
                   },
                   {
                       "path":  "validate.cjs",

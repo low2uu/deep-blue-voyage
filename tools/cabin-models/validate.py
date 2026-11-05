@@ -25,3 +25,18 @@ for lang in ['zh_cn','en_us']:
  data=json.loads((A/f'lang/{lang}.json').read_text(encoding='utf-8'))
  assert all('message.dbv_world.door.'+k in data for k in keys)
 print('Validated five item/block resources; 104 blockstate variants; geometry/textures, lower-half-only door loot and bilingual interaction messages.')
+
+# The top panel must have an actual hole behind glass, not just a blue surface.
+model=json.loads((A/'models/block/personnel_hatch_top_left.json').read_text())
+assert model['render_type']=='minecraft:cutout'
+assert any(any(f['texture']=='#glass' for f in e['faces'].values()) for e in model['elements'])
+for e in model['elements']:
+ if any(f['texture']=='#glass' for f in e['faces'].values()):continue
+ assert not all(e['from'][i]<v<e['to'][i] for i,v in enumerate([1.5,9,8])), 'Opaque geometry blocks upper window'
+from PIL import Image
+for path in (A/'textures').rglob('*.png'):assert Image.open(path).size==(16,16),path
+for lang in ['zh_cn','en_us']:
+ data=json.loads((A/f'lang/{lang}.json').read_text(encoding='utf-8'))
+ for key in ['check_unavailable','check_pending','check_sealed','check_unsealed']:
+  assert 'message.dbv_world.door.'+key in data
+print('Validated transparent window geometry, pre-opening report translations and all runtime textures at 16x16.')

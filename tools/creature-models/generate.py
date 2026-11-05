@@ -286,8 +286,8 @@ def main():
     specs={p.stem:p for p in (ROOT/'content/prototypes/mobs').glob('*.json')}
     assert set(specs)==set(RIGS)
     (ASSETS/'models/entity').mkdir(parents=True,exist_ok=True);(ASSETS/'textures/entity').mkdir(parents=True,exist_ok=True);OUT.mkdir(parents=True,exist_ok=True)
-    palette=Image.new('RGB',(1024,512),'#17272f');draw=ImageDraw.Draw(palette)
-    for i,color in enumerate(PALETTE.values()):draw.rectangle([i%8*128,i//8*128,i%8*128+127,i//8*128+127],fill=color)
+    palette=Image.new('RGB',(16,16),'#17272f');draw=ImageDraw.Draw(palette)
+    for i,color in enumerate(PALETTE.values()):draw.rectangle([i%8*2,i//8*4,i%8*2+1,i//8*4+3],fill=color)
     palette.save(ASSETS/'textures/entity/ocean_palette.png')
     # Reuse the deterministic depth renderer; no game or external image service involved.
     loader=importlib.util.spec_from_file_location('item_preview',ROOT/'tools/item-models/generate.py');preview=importlib.util.module_from_spec(loader);loader.loader.exec_module(preview)
@@ -305,7 +305,7 @@ def main():
                         'animations':'原生关节动画：鳍翼、尾部、步足、触须或手臂按模型配置摆动；无攻击命中结算。'}.items():
             spec['sections']['appearance'][key]={'status':'specified','value':val,'reference':'tools/creature-models/generate.py','notes':'专属模型；未进行游戏内验收。'}
         # Palette is non-square; the old square-only field does not describe this atlas.
-        spec['sections']['appearance']['textureResolution']={'status':'not_applicable','value':None,'reference':'','notes':'共用非方形材质图1024×512，实际尺寸在几何JSON内。'}
+        spec['sections']['appearance']['textureResolution']={'status':'specified','value':16,'reference':'tools/creature-models/generate.py','notes':'实际纹理16×16；几何中的1024×512仅为UV归一化坐标尺度，色块覆盖范围不变。'}
         base=spec['sections']['monster']['base']['value']
         spec['sections']['monster']['implementedBehavior']['value']=f'使用专属模型和基础关节动画；行为仍沿用 {base} 原型，尚无目标特殊技能、首杀、多人缩放或船体伤害。'
         specs[id].write_text(json.dumps(spec,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')

@@ -40,7 +40,7 @@
       },
       "summary": {
         "status": "specified",
-        "value": "一个核心管理相连的同向结构板；自由轮廓，整组开闭和锁定。",
+        "value": "一个核心管理相连的结构板；自由轮廓，整组开闭和锁定。",
         "reference": "tools/cabin-models",
         "notes": "开发原型，未实机验收。"
       },
@@ -146,7 +146,7 @@
       },
       "visualDescription": {
         "status": "specified",
-        "value": "一个核心管理相连的同向结构板；自由轮廓，整组开闭和锁定。",
+        "value": "一个核心管理相连的结构板；自由轮廓，整组开闭和锁定。",
         "reference": "tools/cabin-models",
         "notes": "开发原型，未实机验收。"
       },
@@ -164,7 +164,7 @@
       },
       "textureResolution": {
         "status": "specified",
-        "value": 128,
+        "value": 16,
         "reference": "tools/cabin-models",
         "notes": "开发原型，未实机验收。"
       },
@@ -638,7 +638,7 @@
       },
       "useBehavior": {
         "status": "specified",
-        "value": "一个核心管理相连的同向结构板；自由轮廓，整组开闭和锁定。",
+        "value": "一个核心管理相连的结构板；自由轮廓，整组开闭和锁定。",
         "reference": "tools/cabin-models",
         "notes": "开发原型，未实机验收。"
       }

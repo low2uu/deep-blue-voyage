@@ -41,18 +41,22 @@ for x in [0,15.8]:box(x,2,4,.2,12,8,'copper')
 box(2,2,15.9,12,12,.1,'black');save('cabin_panel')
 
 def hatch(upper=False,locked=False):
- box(0,0,0,16,16,3,'dark');box(.7,.5,.2,14.6,15,2.6,'iron')
- for x in [0.7,14.3]:box(x,0,-.15,1,16,.5,'copper')
- box(2,1,-.25,12,1,.5,'edge')
+ # A real opening in the upper geometry; vanilla glass supplies cutout pixels.
  if upper:
-  box(3,5,-.35,10,8,.4,'black');box(4,6,-.45,8,6,.2,'blue')
-  box(5,7,-.52,1,4,.1,'ice');box(4,11,-.52,7,.4,.1,'aqua')
-  box(11,1.5,-.6,2,2,.7,'green' if locked else 'orange')
+  for x,y,w,h in [(0,0,16,4),(0,14,16,2),(0,4,3,10),(13,4,3,10)]:box(x,y,0,w,h,3,'iron')
+  box(3,4,1.4,10,10,.2,'glass')
+ else:
+  box(0,0,0,16,16,3,'dark');box(.7,.5,.2,14.6,15,2.6,'iron')
+ start=len(boxes)
+ for x in [.7,14.3]:box(x,0,-.15,1,16,.5,'copper')
+ box(2,1,-.25,12,1,.5,'edge')
+ if upper:box(11,1.5,-.6,2,2,.7,'green' if locked else 'orange')
  else:
   for x,y,w,h in [(5,7,6,1),(5,12,6,1),(5,8,1,4),(10,8,1,4)]:box(x,y,-1,w,h,.8,'copper')
   box(7.5,8,-1.3,1,4,.4,'edge');box(6,9.5,-1.3,4,1,.4,'edge')
   for y in [3,5]:box(3,y,-.4,10,.5,.5,'dark')
  bolts(1.7,2,-.5,11.7,11)
+ front=list(boxes[start:]);boxes.extend(([a[0],a[1],3-b[2]],[b[0],b[1],3-a[2]],c) for a,b,c in front)
  geo=list(boxes);boxes.clear();return geo
 
 def hangar(core=False,locked=False,opened=False):
@@ -70,6 +74,8 @@ def hangar(core=False,locked=False,opened=False):
   if core:
    screen(4.5,6,-.5,7,6);box(6,2,-.6,4,2,.5,'green' if locked else 'orange')
   else:box(7,7,-.4,2,2,.4,'green' if locked else 'orange')
+ if not opened:
+  front=list(boxes[1:]);boxes.extend(([a[0],a[1],16-b[2]],[b[0],b[1],16-a[2]],c) for a,b,c in front)
  geo=list(boxes);boxes.clear();return geo
 
 def write_model(id,geo):

@@ -1,3 +1,8 @@
+# 快照契约草稿
+
+此类原位于fleet/snapshot，2026-11-05审计确认没有调用、反射或生成器依赖。仅保存尚未接入的格式设想，从运行源码移除；不代表已经实现完整快照恢复。
+
+```java
 package io.github.low2uu.dbv.fleet.snapshot;
 
 import java.util.Objects;
@@ -15,3 +20,5 @@ public record SnapshotManifest(int schemaVersion, UUID vesselId, long generation
         Objects.requireNonNull(minecraftVersion); Objects.requireNonNull(sableVersion);
     }
 }
+
+```

@@ -31,6 +31,7 @@ test("预设完整往返，显式保留每个字段的值、状态、来源和�
   const roundtrip = JSON.parse(JSON.stringify(d));
   assert.deepEqual(roundtrip, d);
   for (const g of C.groups) assert.deepEqual(Object.keys(d.sections[g.id]), g.fields.map(f => f.id));
+  assert.equal(d.sections.appearance.textureResolution.value, 16);
   assert.equal(d.sections.harvesting.hardness.value, 5);
   assert.equal(d.sections.harvesting.minimumTier.value, "stone");
   assert.equal(d.sections.physics.mass.value, 2);

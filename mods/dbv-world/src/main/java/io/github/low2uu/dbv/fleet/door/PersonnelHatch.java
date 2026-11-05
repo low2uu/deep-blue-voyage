@@ -15,11 +15,17 @@ public final class PersonnelHatch extends DoorBlock {
     public PersonnelHatch(Properties p){super(BlockSetType.IRON,p);registerDefaultState(defaultBlockState().setValue(CabinDoors.LOCKED,false));}
     @Override public MapCodec<? extends DoorBlock> codec(){return CODEC;}
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block,BlockState> b){super.createBlockStateDefinition(b);b.add(CabinDoors.LOCKED);}
-    // All opening is routed through the server safety check; redstone cannot bypass the lock.
-    @Override protected void neighborChanged(BlockState s,Level l,BlockPos p,Block b,BlockPos from,boolean moving){}
+    // Keep vanilla redstone operation for an unlocked door; the user-requested lock remains authoritative.
+    @Override protected void neighborChanged(BlockState s,Level l,BlockPos p,Block b,BlockPos from,boolean moving){
+        if(s.getValue(CabinDoors.LOCKED))return;
+        var other=s.getValue(HALF)==net.minecraft.world.level.block.state.properties.DoubleBlockHalf.LOWER?p.above():p.below();
+        if(!l.isClientSide&&!s.getValue(OPEN)&&(l.hasNeighborSignal(p)||l.hasNeighborSignal(other)))
+            DoorSafety.report(l,java.util.Set.of(p,other));
+        super.neighborChanged(s,l,p,b,from,moving);
+    }
     @Override public BlockState getStateForPlacement(net.minecraft.world.item.context.BlockPlaceContext c){
         var state=super.getStateForPlacement(c);
-        return state==null?null:state.setValue(OPEN,false).setValue(POWERED,false).setValue(CabinDoors.LOCKED,false);
+        return state==null?null:state.setValue(CabinDoors.LOCKED,false);
     }
     @Override protected InteractionResult useWithoutItem(BlockState s,Level l,BlockPos p,Player player,BlockHitResult hit){return InteractionResult.CONSUME;}
 }

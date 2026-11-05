@@ -98,7 +98,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\dev.ps1 run
 
 首次准备依赖和源码可能花费较长时间，后续会使用缓存。网络需要能访问 GitHub、Gradle、NeoForge、Mojang 和 Modrinth 的相关服务。下载失败时保留报错，检查网络后重试原命令，不必先清空全部缓存。
 
-当前工程配置为 NeoForge `21.1.259`、Gradle `9.2.1`、ModDevGradle `2.0.148`。协作者以仓库版本为准，不要各自升级。当前首批运行依赖是 Create、Architectury API、Sable、Create Aeronautics、Create Deep Seas、Power Grid，由 Gradle 按指定版本获取，不要再往运行目录重复放一份。
+当前工程配置为 NeoForge `21.1.259`、Gradle `9.2.1`、ModDevGradle `2.0.148`。协作者以仓库版本为准，不要各自升级。最早一批运行依赖是 Create、Architectury API、Sable、Create Aeronautics、Create Deep Seas、Power Grid，由 Gradle 按指定版本获取，不要再往运行目录重复放一份。完整当前列表见[Mod清单](当前Mod清单-current-mod-list.md)，实际固定版本以build.gradle为准。
 
 验收时确认 `build` 出现 `BUILD SUCCESSFUL`，`run` 能加载本项目 Mod，并能创建或进入世界。2026-10-14 已实际创建起始岛存档，完成出生点、海床采样与建设规则检查；潜艇操控和全部工具功能仍待验证，详见 [检查记录](开发验证记录-development-verification.md)。
 
@@ -139,8 +139,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\dev.ps1 run
 
 ```powershell
 git status
-git switch main
-git pull --ff-only
+git switch develop
+git pull --ff-only origin develop
 git switch -c feature/starter-island-layout
 ```
 
@@ -163,7 +163,7 @@ git push -u origin feature/starter-island-layout
 
 ## 8 共同建图和代码协作的区别
 
-两人克隆同一仓库，只会得到同一套代码，不会自动进入同一个世界。目前工程只配置客户端运行，尚未配置共用专用服务器；开发启动名称也固定为 `DBVDeveloper`，因此不能直接把两个默认开发客户端当作现成联机方案。
+两人克隆同一仓库只会得到同一套代码，不会自动共享世界。当前已提供[独立服务器部署](../server/README.md)，使用固定且不同的离线昵称和IPv6连接；开发入口仍默认使用 `DBVDeveloper`，不要让两人共用该昵称。
 
 要一起在岛上施工，应另行确定共用服务器及客户端身份认证方案，并由服务器保存唯一的权威地图。不要通过 Git 合并两个人分别修改过的世界存档。交接整个存档时应先退出世界或停止服务器，再备份和传输；可复用建筑后续导出为结构或蓝图纳入项目。
 

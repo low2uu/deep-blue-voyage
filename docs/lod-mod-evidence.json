@@ -1,0 +1,155 @@
+[
+  {
+    "slug": "forgified-fabric-api",
+    "version_id": "V9WdDUTx",
+    "version": "0.116.15+2.3.5+1.21.1",
+    "file": {
+      "id": "gxuKrrVB",
+      "hashes": {
+        "sha512": "2b44ecd839544e3668a02f8de86433d507417d068dcafeee7f698744fc2b12fd888a1bba509da57c8e2884d01dbaf344f49bbac0f22cdae599507356ed0cbe30",
+        "sha1": "1a2c41d2efbe1c60159b90a165557e7c06d03a5c"
+      },
+      "url": "https://cdn.modrinth.com/data/Aqlf1Shp/versions/V9WdDUTx/forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar",
+      "filename": "forgified-fabric-api-0.116.15+2.3.5+1.21.1.jar",
+      "primary": true,
+      "size": 5613159,
+      "file_type": null
+    },
+    "status": "默认LOD配置已接入；未启动游戏验收",
+    "source": "https://modrinth.com/mod/forgified-fabric-api/version/V9WdDUTx"
+  },
+  {
+    "slug": "voxy-worldgen",
+    "version_id": "PzNUZlWw",
+    "version": "2.4.2",
+    "file": {
+      "id": "qf3eCARa",
+      "hashes": {
+        "sha512": "1407723c46d6320eac110f7d31fb047ed08b5c654b83f9b77b8f19c90b351b497bf9a1180718dbf647579f3566b1b2a4f85f356c0d0de975a909c965d82bff5a",
+        "sha1": "1e9483ed7b46e1f997637a4f064f38a15680c8b7"
+      },
+      "url": "https://cdn.modrinth.com/data/xT0lnNE9/versions/PzNUZlWw/Voxy%20World%20Gen%20V2-neoforge-1.21.1-2.4.2.jar",
+      "filename": "Voxy World Gen V2-neoforge-1.21.1-2.4.2.jar",
+      "primary": true,
+      "size": 247336,
+      "file_type": null
+    },
+    "status": "默认LOD配置已接入；未启动游戏验收",
+    "source": "https://modrinth.com/mod/voxy-worldgen/version/PzNUZlWw"
+  },
+  {
+    "slug": "sodium",
+    "version_id": "S3DUMfBo",
+    "version": "mc1.21.1-0.8.12-neoforge",
+    "file": {
+      "id": "A8CpawGL",
+      "hashes": {
+        "sha512": "2a689e1b1e16acc790c011b42ec21958956207c3b49cb99cb5c006e639786adf1cc36559f9840e2c1d27485c00da9712d34020fa4279eb6810eaa54bf20b19b0",
+        "sha1": "762251ab3d6825d5accfd89c3f02f1145376105e"
+      },
+      "url": "https://cdn.modrinth.com/data/AANobbMI/versions/S3DUMfBo/sodium-neoforge-0.8.12%2Bmc1.21.1.jar",
+      "filename": "sodium-neoforge-0.8.12+mc1.21.1.jar",
+      "primary": true,
+      "size": 1291418,
+      "file_type": null
+    },
+    "status": "默认LOD配置已接入；未启动游戏验收",
+    "source": "https://modrinth.com/mod/sodium/version/S3DUMfBo"
+  },
+  {
+    "slug": "roxy",
+    "version_id": "cDmwpuYr",
+    "version": "0.4.0-neoforge+mc1.21.1",
+    "file": {
+      "id": "qHGHycNS",
+      "hashes": {
+        "sha1": "05d2b4028dbfc309184f8cf745de92f880a72520",
+        "sha512": "9dc2c87447b2d43b186eba4957be25a08833a937aadd4f836ba86ad64328a1ae819c696044ba55d3efc9cd7b9f8022e3dbc3d362d355486e90b179674eeae1da"
+      },
+      "url": "https://cdn.modrinth.com/data/Ap78bKTp/versions/cDmwpuYr/roxy-1.21.1-NeoForge-0.4.0.jar",
+      "filename": "roxy-1.21.1-NeoForge-0.4.0.jar",
+      "primary": true,
+      "size": 2640569,
+      "file_type": null
+    },
+    "status": "默认LOD配置已接入；未启动游戏验收",
+    "source": "https://modrinth.com/mod/roxy/version/cDmwpuYr"
+  },
+  {
+    "slug": "voxy",
+    "version_id": "H3w2nVdU",
+    "version": "0.2.16-beta",
+    "file": {
+      "id": "9bGKH9VZ",
+      "hashes": {
+        "sha1": "280a55279e0860d29146d908cd8a0246a12e2537",
+        "sha512": "d5159e2e745a9c50f16c67c54303b8a991dc5a1954e5cd7edc235c6f24ad2a045cb493e128717ed4e97352366ae83b03b3d73815342421e631c2a8995c48cccb"
+      },
+      "url": "https://cdn.modrinth.com/data/fxxUqruK/versions/H3w2nVdU/voxy-0.2.16-beta%2B1.21.11.jar",
+      "filename": "voxy-0.2.16-beta+1.21.11.jar",
+      "primary": true,
+      "size": 12620254,
+      "file_type": null
+    },
+    "status": "默认LOD配置已接入；未启动游戏验收",
+    "source": "https://modrinth.com/mod/voxy/version/H3w2nVdU"
+  },
+  {
+    "slug": "sodium-dynamic-lights",
+    "version_id": "XI0WLXdn",
+    "version": "neoforge-1.21.1-1.0.10",
+    "file": {
+      "id": "rrektYAU",
+      "hashes": {
+        "sha512": "ec19a81cf2dfde255990a457d8f6d7375df53cb94190dce71c4bfe5d5263f4862027ce4aa0af20cb11d56c7c031d5e149b3bdf95bec6343e5bd4552450b14c0a",
+        "sha1": "02e9bc7ba28147cdf2d608ecf4f2c1eab34b4652"
+      },
+      "url": "https://cdn.modrinth.com/data/PxQSWIcD/versions/XI0WLXdn/sodiumdynamiclights-neoforge-1.0.10-1.21.1.jar",
+      "filename": "sodiumdynamiclights-neoforge-1.0.10-1.21.1.jar",
+      "primary": true,
+      "size": 299353,
+      "file_type": null
+    },
+    "status": "用户2026-10-22选择暂缓启用，与当前Sodium界面API不兼容",
+    "source": "https://modrinth.com/mod/sodium-dynamic-lights/version/XI0WLXdn"
+  },
+  {
+    "slug": "create-sable-dynamic-lights",
+    "version_id": "sKw2ERw2",
+    "version": "2.3.1-sodium-sable",
+    "file": {
+      "id": "WaQeKUm7",
+      "hashes": {
+        "sha1": "d8db69c0b72b750feaa2c4ed41de906bdebd1e5f",
+        "sha512": "3df01541b913b596d175f8504412ad64d0252d8551a8f68f5481e921365ce5e5e5285a1c21e21adaa014c8b63ab085ae5ae6eb2cb04f76c0d7dbc34d8f58a668"
+      },
+      "url": "https://cdn.modrinth.com/data/eIsyUZG3/versions/sKw2ERw2/create-dyn-light-2.3.1-sodium-sable.jar",
+      "filename": "create-dyn-light-2.3.1-sodium-sable.jar",
+      "primary": true,
+      "size": 151383,
+      "file_type": null
+    },
+    "status": "用户2026-10-22选择暂缓启用，与当前Sodium界面API不兼容",
+    "source": "https://modrinth.com/mod/create-sable-dynamic-lights/version/sKw2ERw2"
+  },
+  {
+    "file": "voxy_server_lod-1.1.4.jar",
+    "mod_id": "voxy_server_lod",
+    "declared_version": "1.0.0",
+    "sha256": "a250e7ec46d9455b32dc54dfd9104fd810b4a4bd94f8a022f687679149d5579b",
+    "side": "both",
+    "source": "用户提供：E:/mc/project/超视距.zip",
+    "license": "MIT（JAR元数据声明）",
+    "validation": "静态核对；Roxy联动及两种LOD服务同时运行尚未实测"
+  },
+  {
+    "file": "voxy-server-side-neoforge-1.21.1.jar",
+    "mod_id": "lss",
+    "declared_version": "0.16.0",
+    "sha256": "a780f192500f72e7559cc2bad28fea0ec3c07d8dc20c08c2eb96d3d79f8ce06b",
+    "side": "both",
+    "source": "用户提供：E:/mc/project/超视距.zip",
+    "license": "MIT（JAR元数据声明）",
+    "validation": "静态核对；Roxy联动及两种LOD服务同时运行尚未实测"
+  }
+]

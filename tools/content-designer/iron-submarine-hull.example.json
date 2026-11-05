@@ -166,7 +166,7 @@
       },
       "textureResolution": {
         "status": "specified",
-        "value": 64,
+        "value": 16,
         "reference": "",
         "notes": ""
       },

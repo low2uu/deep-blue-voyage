@@ -7,7 +7,10 @@ allprojects {
                 doLast {
                     def output = file(providers.gradleProperty('coopOutput').get())
                     def clientOnly = ['jei', 'just-enough-resources-jer', 'xaeros-minimap',
-                                      'xaeros-world-map', 'betterf3', 'cloth-config']
+                                      'xaeros-world-map', 'betterf3', 'cloth-config',
+                                      'roxy', 'voxy', 'sodium', 'sodium-dynamic-lights',
+                                      'sodium-options-api', 'reeses-sodium-options',
+                                      'create-sable-dynamic-lights', 'better-modlist']
                     ['client', 'server'].each { side ->
                         def dest = new File(output, "${side}/mods")
                         dest.mkdirs()
@@ -16,6 +19,8 @@ allprojects {
                                 copy { from artifact.file; into dest }
                             }
                         }
+                        // File dependencies do not appear in resolvedArtifacts; these two mods support both sides.
+                        copy { from configurations.packLocalRuntime; into dest }
                         copy { from tasks.named('jar').get().archiveFile; into dest }
                     }
                 }

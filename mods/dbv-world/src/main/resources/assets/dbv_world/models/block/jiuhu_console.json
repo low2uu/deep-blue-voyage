@@ -1,7 +1,9 @@
 {
+  "render_type": "minecraft:cutout",
   "credit": "Deep Blue Voyage native item geometry",
   "gui_light": "side",
   "textures": {
+    "glass": "minecraft:block/glass",
     "palette": "dbv_world:item/prototype_palette",
     "particle": "dbv_world:item/prototype_palette"
   },

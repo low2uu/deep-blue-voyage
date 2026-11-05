@@ -63,7 +63,7 @@ mods/dbv-world/
         FleetCommands.java         管理员命令入口
         ControllerInteraction.java 潜行右键电脑检查与分页
       snapshot/
-        SnapshotManifest.java      后续备份的格式契约
+        （未接入快照契约已移至docs/archive/code草稿，不参与编译）
       dock/package-info.java       预留船坞事务边界
       captain/package-info.java    预留酒狐持久角色与控制边界
   src/test/java/.../fleet/
@@ -178,3 +178,5 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\dev.ps1 run
 | M6 出海玩法 | 正式主艇、航线、任务、维修与后续战斗 | 离港、潜航、故障、返港和改装完整闭环 |
 
 每阶段更新本文和相应自动化验收；未完成的恢复接口不允许在生存模式伪装成可用功能。暂不安装研究中的第三方蓝图API，先验证现有依赖的保存边界。
+
+2026-11-05整理：未接入的[快照契约草稿](../archive/code/快照契约草稿-snapshot-manifest-draft.md)移出运行源码；LegacyRefitService继续保留用于旧会话恢复。当前系统边界以[开发版本总览](开发版本总览-development-overview.md)为准。

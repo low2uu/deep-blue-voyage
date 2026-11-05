@@ -225,12 +225,13 @@ def designs():
 def model_json(geometry, hand):
     elements=[]
     for a,b,c in geometry:
-        idx=NAMES.index(c);u=(idx%8)*2;v=(idx//8)*2
+        idx=NAMES.index(c) if c!='glass' else 0;u=(idx%8)*2;v=(idx//8)*2
         faces={face:{'uv':[u+.25,v+.25,u+1.75,v+1.75],'texture':'#palette'}
                for face in ('north','south','east','west','up','down')}
+        if c=='glass':faces={face:{'uv':[0,0,16,16],'texture':'#glass'} for face in faces}
         elements.append({'from':a,'to':b,'faces':faces})
-    return {'credit':'Deep Blue Voyage native item geometry','gui_light':'front',
-        'textures':{'palette':'dbv_world:item/prototype_palette','particle':'dbv_world:item/prototype_palette'},
+    return {'render_type':'minecraft:cutout','credit':'Deep Blue Voyage native item geometry','gui_light':'front',
+        'textures':{'glass':'minecraft:block/glass','palette':'dbv_world:item/prototype_palette','particle':'dbv_world:item/prototype_palette'},
         'elements':elements,'display':{
             'gui':{'rotation':[25,45,0],'translation':[0,0,0],'scale':[.9,.9,.9]},
             'ground':{'rotation':[0,0,0],'translation':[0,3,0],'scale':[.4,.4,.4]},
@@ -267,7 +268,7 @@ def render(geometry, size=256):
         for points,shade in [([(x,Y,z),(X,Y,z),(X,Y,Z),(x,Y,Z)],1.10),
                              ([(X,y,z),(X,Y,z),(X,Y,Z),(X,y,Z)],.78),
                              ([(x,y,Z),(X,y,Z),(X,Y,Z),(x,Y,Z)],.98)]:
-            rgb=tuple(int(COLORS[c][i:i+2],16) for i in (1,3,5))
+            rgb=tuple(int((COLORS[c] if c!='glass' else '#b7e0df')[i:i+2],16) for i in (1,3,5))
             color=tuple(min(255,int(v*shade)) for v in rgb)
             projected=[proj(p) for p in points]
             depths=[p[0]*.6409+p[1]*.4226+p[2]*.6409 for p in points]
@@ -282,9 +283,9 @@ def main():
     (ASSETS/'models/item/prototypes').mkdir(parents=True,exist_ok=True)
     (ASSETS/'textures/item').mkdir(parents=True,exist_ok=True)
     PREVIEW.mkdir(parents=True,exist_ok=True)
-    palette=Image.new('RGBA',(128,128),(255,255,255,255));pd=ImageDraw.Draw(palette)
-    # Sixteen texels per swatch keep adjacent colors apart through four mip levels.
-    for i,name in enumerate(NAMES):pd.rectangle([(i%8*16,i//8*16),(i%8*16+15,i//8*16+15)],fill=COLORS[name])
+    palette=Image.new('RGBA',(16,16),(255,255,255,255));pd=ImageDraw.Draw(palette)
+    # Two texels per swatch; cutout rendering disables atlas mipmapping for these models.
+    for i,name in enumerate(NAMES):pd.rectangle([(i%8*2,i//8*2),(i%8*2+1,i//8*2+1)],fill=COLORS[name])
     palette.save(ASSETS/'textures/item/prototype_palette.png')
     font_path=Path('C:/Windows/Fonts/msyh.ttc')
     font=ImageFont.truetype(str(font_path),18) if font_path.exists() else ImageFont.load_default()
@@ -301,7 +302,7 @@ def main():
         (ASSETS/f'models/item/prototypes/{id}.json').write_text(json.dumps(model,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
         spec=json.loads(specs[id].read_text(encoding='utf-8'))
         for key,value in {'model':'custom','textureAll':'dbv_world:item/prototype_palette','visualDescription':description,
-                          'textureResolution':128,'assetReferences':[f'dbv_world:item/prototypes/{id}']}.items():
+                          'textureResolution':16,'assetReferences':[f'dbv_world:item/prototypes/{id}']}.items():
             spec['sections']['appearance'][key]={'status':'specified','value':value,'reference':'tools/item-models/generate.py','notes':'原生三维物品模型；无新增使用功能。'}
         specs[id].write_text(json.dumps(spec,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
         x=(index%6)*240;y=100+(index//6)*224

@@ -1,0 +1,22 @@
+[
+  {
+    "file": "voxy_server_lod-1.1.4.jar",
+    "mod_id": "voxy_server_lod",
+    "declared_version": "1.0.0",
+    "sha256": "a250e7ec46d9455b32dc54dfd9104fd810b4a4bd94f8a022f687679149d5579b",
+    "side": "both",
+    "source": "用户提供：E:/mc/project/超视距.zip",
+    "license": "MIT（JAR元数据声明）",
+    "validation": "静态核对；Roxy联动及两种LOD服务同时运行尚未实测"
+  },
+  {
+    "file": "voxy-server-side-neoforge-1.21.1.jar",
+    "mod_id": "lss",
+    "declared_version": "0.16.0",
+    "sha256": "a780f192500f72e7559cc2bad28fea0ec3c07d8dc20c08c2eb96d3d79f8ce06b",
+    "side": "both",
+    "source": "用户提供：E:/mc/project/超视距.zip",
+    "license": "MIT（JAR元数据声明）",
+    "validation": "静态核对；Roxy联动及两种LOD服务同时运行尚未实测"
+  }
+]

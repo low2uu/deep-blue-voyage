@@ -26,3 +26,5 @@ node tools/content-designer/validate.cjs tools/content-designer/iron-submarine-h
 `validate.cjs <文件> --draft` 仅检查可恢复的草稿结构；不加该参数会检查交接必填项、范围与冲突。Schema是结构/单项约束校验，跨属性语义仍由`core.js`校验。
 
 新增“新建怪物 / Boss”入口；支持 v1 JSON 导入升级及 v2 全字段往返。69份原型规格位于 `content/prototypes/`，编辑后通过 `node tools/content-designer/build-prototypes.cjs` 生成已支持字段，再构建 Mod。技能描述仍需编写代码。
+
+源码入口固定为本目录；铁质潜艇壳预设默认16×16。`tool/content-designer/`和同版本ZIP仅作便携分发，重新打包时由本目录和`content/prototypes/`覆盖生成，不在副本内开发。

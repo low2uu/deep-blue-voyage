@@ -164,7 +164,7 @@
       },
       "textureResolution": {
         "status": "specified",
-        "value": 128,
+        "value": 16,
         "reference": "tools/cabin-models",
         "notes": "开发原型，未实机验收。"
       },

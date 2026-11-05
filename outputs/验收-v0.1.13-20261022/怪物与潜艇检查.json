@@ -1,0 +1,84 @@
+{
+	"passed": true,
+	"shipEligible": true,
+	"moored": true,
+	"bodyCount": 1,
+	"mobs": [
+		{
+			"id": "dbv_world:cable_eel",
+			"ticks": 240,
+			"health": 32.0
+		},
+		{
+			"id": "dbv_world:current_ray",
+			"ticks": 240,
+			"health": 48.0
+		},
+		{
+			"id": "dbv_world:hull_worm",
+			"ticks": 240,
+			"health": 20.0
+		},
+		{
+			"id": "dbv_world:ice_fissure_eel",
+			"ticks": 240,
+			"health": 52.0
+		},
+		{
+			"id": "dbv_world:mirror_shrimp",
+			"ticks": 240,
+			"health": 44.0
+		},
+		{
+			"id": "dbv_world:propeller_jellyfish",
+			"ticks": 240,
+			"health": 36.0
+		},
+		{
+			"id": "dbv_world:rust_shell_crab",
+			"ticks": 240,
+			"health": 24.0
+		},
+		{
+			"id": "dbv_world:vortex_ray",
+			"ticks": 240,
+			"health": 1024.0
+		},
+		{
+			"id": "dbv_world:ice_cave_stalker",
+			"ticks": 240,
+			"health": 100.0
+		},
+		{
+			"id": "dbv_world:lantern_lurker",
+			"ticks": 240,
+			"health": 72.0
+		},
+		{
+			"id": "dbv_world:ramfish",
+			"ticks": 240,
+			"health": 96.0
+		},
+		{
+			"id": "dbv_world:split_shell_beast",
+			"ticks": 240,
+			"health": 120.0
+		},
+		{
+			"id": "dbv_world:sunken_bell_guardian",
+			"ticks": 240,
+			"health": 1024.0
+		},
+		{
+			"id": "dbv_world:whiteout_hunter",
+			"ticks": 240,
+			"health": 1024.0
+		},
+		{
+			"id": "dbv_world:wreck_diver",
+			"ticks": 240,
+			"health": 40.0
+		}
+	],
+	"done": true
+}

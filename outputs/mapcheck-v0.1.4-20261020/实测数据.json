@@ -1,0 +1,2298 @@
+{
+  "passed": true,
+  "seed": 7667568505341616740,
+  "checkedChunks": 1002,
+  "borderSize": 59999968.0,
+  "checkedSites": [
+    {
+      "index": 3,
+      "x": -615,
+      "z": 449,
+      "radius": 55,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "iron",
+      "oreBlocks": 22888,
+      "rawBlocks": 3817,
+      "veinVolume": 26705,
+      "surfaceY": 153,
+      "distance": 761
+    },
+    {
+      "index": 4,
+      "x": 536,
+      "z": 914,
+      "radius": 56,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper",
+      "oreBlocks": 23839,
+      "rawBlocks": 3966,
+      "veinVolume": 27805,
+      "surfaceY": 156,
+      "distance": 1060
+    },
+    {
+      "index": 20,
+      "x": -359,
+      "z": -1041,
+      "radius": 93,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "gold",
+      "oreBlocks": 65576,
+      "rawBlocks": 10920,
+      "veinVolume": 76800,
+      "surfaceY": 157,
+      "distance": 1101
+    },
+    {
+      "index": 17,
+      "x": 11638,
+      "z": -3128,
+      "radius": 56,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc",
+      "oreBlocks": 24233,
+      "rawBlocks": 4048,
+      "veinVolume": 28281,
+      "surfaceY": 155,
+      "distance": 12051
+    },
+    {
+      "index": 26,
+      "x": -10910,
+      "z": -387,
+      "radius": 74,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "diamond",
+      "oreBlocks": 48762,
+      "rawBlocks": 0,
+      "veinVolume": 48762,
+      "surfaceY": 158,
+      "distance": 10917
+    },
+    {
+      "index": 4,
+      "x": 1125,
+      "z": -10012,
+      "radius": 58,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "amethyst",
+      "oreBlocks": 1422,
+      "rawBlocks": 0,
+      "veinVolume": 30454,
+      "surfaceY": 155,
+      "distance": 10075
+    },
+    {
+      "index": 17,
+      "x": -1493,
+      "z": 10684,
+      "radius": 59,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc",
+      "oreBlocks": 26599,
+      "rawBlocks": 4408,
+      "veinVolume": 31007,
+      "surfaceY": 155,
+      "distance": 10788
+    }
+  ],
+  "seedLayout": [
+    {
+      "index": 0,
+      "x": -12371,
+      "z": -9464,
+      "radius": 450,
+      "kind": "急流海域",
+      "y": 100,
+      "mineral": "main"
+    },
+    {
+      "index": 1,
+      "x": -9303,
+      "z": -13258,
+      "radius": 550,
+      "kind": "深海盆地",
+      "y": -160,
+      "mineral": "main"
+    },
+    {
+      "index": 2,
+      "x": -6442,
+      "z": -11543,
+      "radius": 550,
+      "kind": "冰川海域",
+      "y": 136,
+      "mineral": "main"
+    },
+    {
+      "index": 3,
+      "x": -10911,
+      "z": -9551,
+      "radius": 54,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 4,
+      "x": -10024,
+      "z": -11022,
+      "radius": 49,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 5,
+      "x": -7491,
+      "z": -10772,
+      "radius": 73,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 6,
+      "x": -9119,
+      "z": -7273,
+      "radius": 71,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "diamond"
+    },
+    {
+      "index": 7,
+      "x": -9329,
+      "z": -11865,
+      "radius": 50,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 8,
+      "x": -8598,
+      "z": -10327,
+      "radius": 88,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 9,
+      "x": -11603,
+      "z": -9996,
+      "radius": 50,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 10,
+      "x": -13934,
+      "z": -14303,
+      "radius": 64,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 11,
+      "x": -8275,
+      "z": -11122,
+      "radius": 52,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 12,
+      "x": -10899,
+      "z": -6403,
+      "radius": 88,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 13,
+      "x": -11482,
+      "z": -8638,
+      "radius": 84,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 14,
+      "x": -13413,
+      "z": -9314,
+      "radius": 87,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 15,
+      "x": -12536,
+      "z": -13800,
+      "radius": 50,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 16,
+      "x": -5864,
+      "z": -12770,
+      "radius": 79,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 17,
+      "x": -6414,
+      "z": -7288,
+      "radius": 86,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 18,
+      "x": -8461,
+      "z": -14314,
+      "radius": 55,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 19,
+      "x": -7724,
+      "z": -13821,
+      "radius": 89,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 20,
+      "x": -8935,
+      "z": -8948,
+      "radius": 70,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 21,
+      "x": -5725,
+      "z": -6097,
+      "radius": 59,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 22,
+      "x": -13220,
+      "z": -10520,
+      "radius": 69,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 23,
+      "x": -11343,
+      "z": -10930,
+      "radius": 86,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 24,
+      "x": -9740,
+      "z": -14456,
+      "radius": 51,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 25,
+      "x": -8428,
+      "z": -12534,
+      "radius": 86,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 26,
+      "x": -6222,
+      "z": -14151,
+      "radius": 50,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 0,
+      "x": -9362,
+      "z": 2149,
+      "radius": 450,
+      "kind": "急流海域",
+      "y": 100,
+      "mineral": "main"
+    },
+    {
+      "index": 1,
+      "x": -6693,
+      "z": -341,
+      "radius": 550,
+      "kind": "深海盆地",
+      "y": -160,
+      "mineral": "main"
+    },
+    {
+      "index": 2,
+      "x": -13528,
+      "z": 2010,
+      "radius": 550,
+      "kind": "冰川海域",
+      "y": 136,
+      "mineral": "main"
+    },
+    {
+      "index": 3,
+      "x": -9469,
+      "z": 666,
+      "radius": 79,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "amethyst"
+    },
+    {
+      "index": 4,
+      "x": -8885,
+      "z": -377,
+      "radius": 88,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 5,
+      "x": -11995,
+      "z": 1494,
+      "radius": 75,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 6,
+      "x": -9924,
+      "z": 1335,
+      "radius": 72,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 7,
+      "x": -7747,
+      "z": -431,
+      "radius": 70,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 8,
+      "x": -11404,
+      "z": 531,
+      "radius": 91,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 9,
+      "x": -6619,
+      "z": -3671,
+      "radius": 83,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "amethyst"
+    },
+    {
+      "index": 10,
+      "x": -8297,
+      "z": 169,
+      "radius": 72,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 11,
+      "x": -12840,
+      "z": 1227,
+      "radius": 60,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 12,
+      "x": -7047,
+      "z": -2312,
+      "radius": 91,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 13,
+      "x": -12358,
+      "z": 4368,
+      "radius": 75,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "diamond"
+    },
+    {
+      "index": 14,
+      "x": -13169,
+      "z": -2604,
+      "radius": 51,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 15,
+      "x": -13914,
+      "z": -1483,
+      "radius": 77,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 16,
+      "x": -14254,
+      "z": -218,
+      "radius": 73,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 17,
+      "x": -12452,
+      "z": 2846,
+      "radius": 49,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 18,
+      "x": -9551,
+      "z": -1371,
+      "radius": 95,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 19,
+      "x": -14324,
+      "z": -2908,
+      "radius": 59,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 20,
+      "x": -11358,
+      "z": 4378,
+      "radius": 51,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 21,
+      "x": -11192,
+      "z": 2078,
+      "radius": 86,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "amethyst"
+    },
+    {
+      "index": 22,
+      "x": -9278,
+      "z": 3767,
+      "radius": 75,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 23,
+      "x": -12865,
+      "z": -423,
+      "radius": 73,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 24,
+      "x": -7361,
+      "z": 3921,
+      "radius": 70,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 25,
+      "x": -11593,
+      "z": 2940,
+      "radius": 64,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 26,
+      "x": -10910,
+      "z": -387,
+      "radius": 74,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "diamond"
+    },
+    {
+      "index": 0,
+      "x": -7955,
+      "z": 8906,
+      "radius": 450,
+      "kind": "急流海域",
+      "y": 100,
+      "mineral": "main"
+    },
+    {
+      "index": 1,
+      "x": -8591,
+      "z": 12673,
+      "radius": 550,
+      "kind": "深海盆地",
+      "y": -160,
+      "mineral": "main"
+    },
+    {
+      "index": 2,
+      "x": -12805,
+      "z": 12892,
+      "radius": 550,
+      "kind": "冰川海域",
+      "y": 136,
+      "mineral": "main"
+    },
+    {
+      "index": 3,
+      "x": -9192,
+      "z": 9855,
+      "radius": 63,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 4,
+      "x": -9878,
+      "z": 10949,
+      "radius": 56,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 5,
+      "x": -11898,
+      "z": 12224,
+      "radius": 84,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 6,
+      "x": -8895,
+      "z": 9049,
+      "radius": 57,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 7,
+      "x": -9074,
+      "z": 11027,
+      "radius": 62,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 8,
+      "x": -10891,
+      "z": 11277,
+      "radius": 89,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 9,
+      "x": -14103,
+      "z": 12445,
+      "radius": 87,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 10,
+      "x": -9470,
+      "z": 11750,
+      "radius": 76,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "diamond"
+    },
+    {
+      "index": 11,
+      "x": -11710,
+      "z": 11357,
+      "radius": 58,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 12,
+      "x": -9887,
+      "z": 14465,
+      "radius": 77,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 13,
+      "x": -5547,
+      "z": 12386,
+      "radius": 84,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 14,
+      "x": -10643,
+      "z": 6669,
+      "radius": 85,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 15,
+      "x": -8206,
+      "z": 10701,
+      "radius": 77,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 16,
+      "x": -13912,
+      "z": 11256,
+      "radius": 88,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "amethyst"
+    },
+    {
+      "index": 17,
+      "x": -13876,
+      "z": 9489,
+      "radius": 86,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 18,
+      "x": -13270,
+      "z": 6597,
+      "radius": 95,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 19,
+      "x": -6525,
+      "z": 6647,
+      "radius": 67,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 20,
+      "x": -6380,
+      "z": 12625,
+      "radius": 53,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 21,
+      "x": -11365,
+      "z": 6016,
+      "radius": 83,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 22,
+      "x": -10898,
+      "z": 7593,
+      "radius": 78,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 23,
+      "x": -12197,
+      "z": 8574,
+      "radius": 83,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 24,
+      "x": -8769,
+      "z": 7494,
+      "radius": 92,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 25,
+      "x": -9948,
+      "z": 7972,
+      "radius": 70,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 26,
+      "x": -10279,
+      "z": 12372,
+      "radius": 64,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 0,
+      "x": -2279,
+      "z": -11155,
+      "radius": 450,
+      "kind": "急流海域",
+      "y": 100,
+      "mineral": "main"
+    },
+    {
+      "index": 1,
+      "x": 3119,
+      "z": -9522,
+      "radius": 550,
+      "kind": "深海盆地",
+      "y": -160,
+      "mineral": "main"
+    },
+    {
+      "index": 2,
+      "x": 3304,
+      "z": -7835,
+      "radius": 550,
+      "kind": "冰川海域",
+      "y": 136,
+      "mineral": "main"
+    },
+    {
+      "index": 3,
+      "x": -1290,
+      "z": -10944,
+      "radius": 82,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 4,
+      "x": 1125,
+      "z": -10012,
+      "radius": 58,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "amethyst"
+    },
+    {
+      "index": 5,
+      "x": 992,
+      "z": -9079,
+      "radius": 71,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 6,
+      "x": -1008,
+      "z": -10161,
+      "radius": 94,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 7,
+      "x": 1832,
+      "z": -9429,
+      "radius": 80,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 8,
+      "x": 1610,
+      "z": -8543,
+      "radius": 77,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 9,
+      "x": 440,
+      "z": -7669,
+      "radius": 73,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 10,
+      "x": 462,
+      "z": -10961,
+      "radius": 94,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 11,
+      "x": 2417,
+      "z": -8678,
+      "radius": 90,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 12,
+      "x": -355,
+      "z": -7836,
+      "radius": 93,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 13,
+      "x": 2308,
+      "z": -6542,
+      "radius": 95,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 14,
+      "x": -2210,
+      "z": -6765,
+      "radius": 55,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "amethyst"
+    },
+    {
+      "index": 15,
+      "x": -3370,
+      "z": -13110,
+      "radius": 66,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 16,
+      "x": -3474,
+      "z": -8016,
+      "radius": 52,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 17,
+      "x": -4155,
+      "z": -10646,
+      "radius": 94,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "amethyst"
+    },
+    {
+      "index": 18,
+      "x": -4134,
+      "z": -5654,
+      "radius": 52,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "amethyst"
+    },
+    {
+      "index": 19,
+      "x": -3379,
+      "z": -9153,
+      "radius": 73,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 20,
+      "x": 4160,
+      "z": -14363,
+      "radius": 80,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 21,
+      "x": -1759,
+      "z": -13578,
+      "radius": 73,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 22,
+      "x": -3870,
+      "z": -12074,
+      "radius": 87,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 23,
+      "x": -4132,
+      "z": -13620,
+      "radius": 58,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 24,
+      "x": 896,
+      "z": -5588,
+      "radius": 73,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 25,
+      "x": -1312,
+      "z": -12205,
+      "radius": 92,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 26,
+      "x": 1497,
+      "z": -13868,
+      "radius": 51,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 0,
+      "x": -1141,
+      "z": 2038,
+      "radius": 450,
+      "kind": "急流海域",
+      "y": 100,
+      "mineral": "main"
+    },
+    {
+      "index": 1,
+      "x": 886,
+      "z": 3249,
+      "radius": 550,
+      "kind": "深海盆地",
+      "y": -160,
+      "mineral": "main"
+    },
+    {
+      "index": 2,
+      "x": 2956,
+      "z": -2797,
+      "radius": 550,
+      "kind": "冰川海域",
+      "y": 136,
+      "mineral": "main"
+    },
+    {
+      "index": 3,
+      "x": -615,
+      "z": 449,
+      "radius": 55,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 4,
+      "x": 536,
+      "z": 914,
+      "radius": 56,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 5,
+      "x": 1941,
+      "z": -1511,
+      "radius": 89,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 6,
+      "x": -390,
+      "z": 1405,
+      "radius": 76,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 7,
+      "x": 824,
+      "z": 1813,
+      "radius": 69,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 8,
+      "x": 698,
+      "z": -914,
+      "radius": 50,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 9,
+      "x": 1970,
+      "z": -3208,
+      "radius": 72,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 10,
+      "x": -3591,
+      "z": -3334,
+      "radius": 92,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "diamond"
+    },
+    {
+      "index": 11,
+      "x": 2038,
+      "z": -2311,
+      "radius": 57,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "amethyst"
+    },
+    {
+      "index": 12,
+      "x": 2949,
+      "z": 2313,
+      "radius": 86,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 13,
+      "x": 2301,
+      "z": -236,
+      "radius": 62,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 14,
+      "x": -3301,
+      "z": -879,
+      "radius": 76,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 15,
+      "x": 4030,
+      "z": -3813,
+      "radius": 82,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 16,
+      "x": 3680,
+      "z": 315,
+      "radius": 89,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "diamond"
+    },
+    {
+      "index": 17,
+      "x": -829,
+      "z": -3974,
+      "radius": 58,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 18,
+      "x": 2050,
+      "z": 4387,
+      "radius": 62,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 19,
+      "x": -10,
+      "z": 4116,
+      "radius": 67,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "diamond"
+    },
+    {
+      "index": 20,
+      "x": -359,
+      "z": -1041,
+      "radius": 93,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 21,
+      "x": -4264,
+      "z": -2486,
+      "radius": 84,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 22,
+      "x": -1163,
+      "z": -1911,
+      "radius": 58,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 23,
+      "x": -2635,
+      "z": 3725,
+      "radius": 80,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 24,
+      "x": -4294,
+      "z": 1001,
+      "radius": 51,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 25,
+      "x": -3353,
+      "z": -4348,
+      "radius": 69,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 26,
+      "x": -1894,
+      "z": -796,
+      "radius": 53,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 0,
+      "x": 1363,
+      "z": 12200,
+      "radius": 450,
+      "kind": "急流海域",
+      "y": 100,
+      "mineral": "main"
+    },
+    {
+      "index": 1,
+      "x": 2673,
+      "z": 7960,
+      "radius": 550,
+      "kind": "深海盆地",
+      "y": -160,
+      "mineral": "main"
+    },
+    {
+      "index": 2,
+      "x": 1448,
+      "z": 13824,
+      "radius": 550,
+      "kind": "冰川海域",
+      "y": 136,
+      "mineral": "main"
+    },
+    {
+      "index": 3,
+      "x": 821,
+      "z": 10781,
+      "radius": 93,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 4,
+      "x": 1778,
+      "z": 9049,
+      "radius": 56,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 5,
+      "x": 332,
+      "z": 11563,
+      "radius": 82,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 6,
+      "x": -303,
+      "z": 13331,
+      "radius": 59,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 7,
+      "x": 1035,
+      "z": 9473,
+      "radius": 80,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "diamond"
+    },
+    {
+      "index": 8,
+      "x": 717,
+      "z": 12877,
+      "radius": 51,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 9,
+      "x": -3279,
+      "z": 7352,
+      "radius": 67,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 10,
+      "x": 943,
+      "z": 6240,
+      "radius": 60,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 11,
+      "x": 2799,
+      "z": 9148,
+      "radius": 95,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 12,
+      "x": 2671,
+      "z": 13759,
+      "radius": 80,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 13,
+      "x": -2267,
+      "z": 14132,
+      "radius": 55,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 14,
+      "x": 3151,
+      "z": 6046,
+      "radius": 72,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 15,
+      "x": -341,
+      "z": 8419,
+      "radius": 51,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 16,
+      "x": -2121,
+      "z": 11824,
+      "radius": 53,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 17,
+      "x": -1493,
+      "z": 10684,
+      "radius": 59,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 18,
+      "x": -3559,
+      "z": 10315,
+      "radius": 52,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 19,
+      "x": -4244,
+      "z": 14136,
+      "radius": 93,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 20,
+      "x": -2623,
+      "z": 8993,
+      "radius": 49,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 21,
+      "x": -2145,
+      "z": 5985,
+      "radius": 78,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 22,
+      "x": 198,
+      "z": 5944,
+      "radius": 95,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 23,
+      "x": -1358,
+      "z": 7818,
+      "radius": 67,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 24,
+      "x": -1327,
+      "z": 13231,
+      "radius": 67,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 25,
+      "x": -3257,
+      "z": 12340,
+      "radius": 71,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 26,
+      "x": 3516,
+      "z": 9917,
+      "radius": 76,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "diamond"
+    },
+    {
+      "index": 0,
+      "x": 12045,
+      "z": -11094,
+      "radius": 450,
+      "kind": "急流海域",
+      "y": 100,
+      "mineral": "main"
+    },
+    {
+      "index": 1,
+      "x": 11409,
+      "z": -7327,
+      "radius": 550,
+      "kind": "深海盆地",
+      "y": -160,
+      "mineral": "main"
+    },
+    {
+      "index": 2,
+      "x": 7195,
+      "z": -7108,
+      "radius": 550,
+      "kind": "冰川海域",
+      "y": 136,
+      "mineral": "main"
+    },
+    {
+      "index": 3,
+      "x": 10808,
+      "z": -10145,
+      "radius": 63,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 4,
+      "x": 10122,
+      "z": -9051,
+      "radius": 56,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 5,
+      "x": 8102,
+      "z": -7776,
+      "radius": 84,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 6,
+      "x": 11105,
+      "z": -10951,
+      "radius": 57,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 7,
+      "x": 10926,
+      "z": -8973,
+      "radius": 62,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 8,
+      "x": 9109,
+      "z": -8723,
+      "radius": 89,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 9,
+      "x": 5897,
+      "z": -7555,
+      "radius": 87,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 10,
+      "x": 10530,
+      "z": -8250,
+      "radius": 76,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "diamond"
+    },
+    {
+      "index": 11,
+      "x": 8290,
+      "z": -8643,
+      "radius": 58,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 12,
+      "x": 10113,
+      "z": -5535,
+      "radius": 77,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 13,
+      "x": 14453,
+      "z": -7614,
+      "radius": 84,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 14,
+      "x": 9357,
+      "z": -13331,
+      "radius": 85,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 15,
+      "x": 11794,
+      "z": -9299,
+      "radius": 77,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 16,
+      "x": 6088,
+      "z": -8744,
+      "radius": 88,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "amethyst"
+    },
+    {
+      "index": 17,
+      "x": 6124,
+      "z": -10511,
+      "radius": 86,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 18,
+      "x": 6730,
+      "z": -13403,
+      "radius": 95,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 19,
+      "x": 13475,
+      "z": -13353,
+      "radius": 67,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 20,
+      "x": 13620,
+      "z": -7375,
+      "radius": 53,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 21,
+      "x": 8635,
+      "z": -13984,
+      "radius": 83,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 22,
+      "x": 9102,
+      "z": -12407,
+      "radius": 78,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 23,
+      "x": 7803,
+      "z": -11426,
+      "radius": 83,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 24,
+      "x": 11231,
+      "z": -12506,
+      "radius": 92,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 25,
+      "x": 10052,
+      "z": -12028,
+      "radius": 70,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 26,
+      "x": 9721,
+      "z": -7628,
+      "radius": 64,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 0,
+      "x": 7999,
+      "z": -1198,
+      "radius": 450,
+      "kind": "急流海域",
+      "y": 100,
+      "mineral": "main"
+    },
+    {
+      "index": 1,
+      "x": 12636,
+      "z": -2093,
+      "radius": 550,
+      "kind": "深海盆地",
+      "y": -160,
+      "mineral": "main"
+    },
+    {
+      "index": 2,
+      "x": 13884,
+      "z": 134,
+      "radius": 550,
+      "kind": "冰川海域",
+      "y": 136,
+      "mineral": "main"
+    },
+    {
+      "index": 3,
+      "x": 9515,
+      "z": -655,
+      "radius": 51,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "amethyst"
+    },
+    {
+      "index": 4,
+      "x": 10997,
+      "z": -1117,
+      "radius": 57,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 5,
+      "x": 12292,
+      "z": 394,
+      "radius": 50,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 6,
+      "x": 8715,
+      "z": -487,
+      "radius": 74,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 7,
+      "x": 11636,
+      "z": -1705,
+      "radius": 78,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "diamond"
+    },
+    {
+      "index": 8,
+      "x": 11477,
+      "z": 386,
+      "radius": 91,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "diamond"
+    },
+    {
+      "index": 9,
+      "x": 10481,
+      "z": -4061,
+      "radius": 78,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 10,
+      "x": 10877,
+      "z": -288,
+      "radius": 60,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 11,
+      "x": 12801,
+      "z": -242,
+      "radius": 61,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "diamond"
+    },
+    {
+      "index": 12,
+      "x": 9530,
+      "z": 3131,
+      "radius": 67,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 13,
+      "x": 6976,
+      "z": -4415,
+      "radius": 77,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 14,
+      "x": 13832,
+      "z": 3481,
+      "radius": 63,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "amethyst"
+    },
+    {
+      "index": 15,
+      "x": 5785,
+      "z": 1783,
+      "radius": 85,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 16,
+      "x": 12979,
+      "z": 2253,
+      "radius": 59,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 17,
+      "x": 11638,
+      "z": -3128,
+      "radius": 56,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 18,
+      "x": 10780,
+      "z": -2920,
+      "radius": 82,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 19,
+      "x": 13182,
+      "z": -3074,
+      "radius": 94,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 20,
+      "x": 5754,
+      "z": -914,
+      "radius": 50,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 21,
+      "x": 8622,
+      "z": 1710,
+      "radius": 78,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "amethyst"
+    },
+    {
+      "index": 22,
+      "x": 12154,
+      "z": 3939,
+      "radius": 75,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 23,
+      "x": 7401,
+      "z": -249,
+      "radius": 85,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "diamond"
+    },
+    {
+      "index": 24,
+      "x": 9543,
+      "z": 717,
+      "radius": 51,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 25,
+      "x": 9647,
+      "z": 1940,
+      "radius": 88,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 26,
+      "x": 6657,
+      "z": 4218,
+      "radius": 68,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 0,
+      "x": 7629,
+      "z": 10536,
+      "radius": 450,
+      "kind": "急流海域",
+      "y": 100,
+      "mineral": "main"
+    },
+    {
+      "index": 1,
+      "x": 10697,
+      "z": 6742,
+      "radius": 550,
+      "kind": "深海盆地",
+      "y": -160,
+      "mineral": "main"
+    },
+    {
+      "index": 2,
+      "x": 13558,
+      "z": 8457,
+      "radius": 550,
+      "kind": "冰川海域",
+      "y": 136,
+      "mineral": "main"
+    },
+    {
+      "index": 3,
+      "x": 9089,
+      "z": 10449,
+      "radius": 54,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 4,
+      "x": 9976,
+      "z": 8978,
+      "radius": 49,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 5,
+      "x": 12509,
+      "z": 9228,
+      "radius": 73,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 6,
+      "x": 10881,
+      "z": 12727,
+      "radius": 71,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "diamond"
+    },
+    {
+      "index": 7,
+      "x": 10671,
+      "z": 8135,
+      "radius": 50,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 8,
+      "x": 11402,
+      "z": 9673,
+      "radius": 88,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "zinc"
+    },
+    {
+      "index": 9,
+      "x": 8397,
+      "z": 10004,
+      "radius": 50,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 10,
+      "x": 6066,
+      "z": 5697,
+      "radius": 64,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 11,
+      "x": 11725,
+      "z": 8878,
+      "radius": 52,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 12,
+      "x": 9101,
+      "z": 13597,
+      "radius": 88,
+      "kind": "补给岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 13,
+      "x": 8518,
+      "z": 11362,
+      "radius": 84,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 14,
+      "x": 6587,
+      "z": 10686,
+      "radius": 87,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "lapis"
+    },
+    {
+      "index": 15,
+      "x": 7464,
+      "z": 6200,
+      "radius": 50,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "emerald"
+    },
+    {
+      "index": 16,
+      "x": 14136,
+      "z": 7230,
+      "radius": 79,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 17,
+      "x": 13586,
+      "z": 12712,
+      "radius": 86,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "iron"
+    },
+    {
+      "index": 18,
+      "x": 11539,
+      "z": 5686,
+      "radius": 55,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 19,
+      "x": 12276,
+      "z": 6179,
+      "radius": 89,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 20,
+      "x": 11065,
+      "z": 11052,
+      "radius": 70,
+      "kind": "工业岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 21,
+      "x": 14275,
+      "z": 13903,
+      "radius": 59,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "redstone"
+    },
+    {
+      "index": 22,
+      "x": 6780,
+      "z": 9480,
+      "radius": 69,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 23,
+      "x": 8657,
+      "z": 9070,
+      "radius": 86,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "gold"
+    },
+    {
+      "index": 24,
+      "x": 10260,
+      "z": 5544,
+      "radius": 51,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "coal"
+    },
+    {
+      "index": 25,
+      "x": 11572,
+      "z": 7466,
+      "radius": 86,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "copper"
+    },
+    {
+      "index": 26,
+      "x": 13778,
+      "z": 5849,
+      "radius": 50,
+      "kind": "挑战岛",
+      "y": 0,
+      "mineral": "redstone"
+    }
+  ],
+  "done": true,
+  "source": "v0.1.4 联合开发交付存档的独立副本，实际运行整合包客户端并探索生成",
+  "countScope": "选中岛屿完整额外矿脉形状内的方块；矿石/成熟晶簇与粗矿块分开计数，不代表掉落物数量，也不含岛外天然矿。surfaceY 为岛中心 OCEAN_FLOOR 高度图值。"
+}

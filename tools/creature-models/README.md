@@ -2,7 +2,7 @@
 
 为 12 种普通怪和 3 个 Boss 生成原生 ModelPart 分层模型、共享材质、完整设计 JSON 和离线预览。运行 `python tools/creature-models/generate.py`，需要 Pillow、NumPy，当前预览字体使用 Windows 微软雅黑。
 
-几何源使用 16 单位一格、Y 向上、头朝 -Z；导出时转为 Minecraft 的 Y 向下局部关节坐标。每个关节记录父节点、相对支点、立方体及动画轴、幅度、速度和相位。共享材质为 1024×512，每个色块 128×128，包含 UV 展开余量。客户端 CreatureGeometry 加载模型，OceanCreatureModel 驱动尾部、鳍翼、触须、步足、手臂和下颌动画。
+几何源使用 16 单位一格、Y 向上、头朝 -Z；导出时转为 Minecraft 的 Y 向下局部关节坐标。每个关节记录父节点、相对支点、立方体及动画轴、幅度、速度和相位。共享材质为16×16，每个色块2×4；几何的1024×512保留为UV归一化坐标尺度，实际贴图尺寸不是1024×512。客户端 CreatureGeometry 加载模型，OceanCreatureModel 驱动尾部、鳍翼、触须、步足、手臂和下颌动画。
 
 `models/entity/*.json` 是本 Mod 的自定义几何格式，需要配套 Java 加载器，不能作为普通原版资源包独立使用。几何从 JAR 加载，修改后需重新构建并重启客户端；纹理遵循常规资源路径。设计器导入的是 `content/prototypes/mobs/*.json` 完整规格，不是几何 JSON。
 

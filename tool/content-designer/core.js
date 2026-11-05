@@ -32,7 +32,7 @@
     const values = {
       identity: { registryId: "dbv_world:iron_submarine_hull", nameZh: "铁质潜艇壳", nameEn: "Iron Submarine Hull", kind: "block", category: "潜艇外壳",
         summary: "灰色平滑金属潜艇外壳，边缘带螺丝接缝，六面相同。采集按铁块；防护、航空学物理与深海学耐压按黑曜石。", creativeTabs: ["dbv_world:deep_blue_voyage"] },
-      appearance: { model: "cube_all", visualDescription: "灰色平滑金属，四边拼接缝、四角螺丝，六面材质相同。", textureAll: "dbv_world:block/iron_submarine_hull", textureResolution: 64, renderLayer: "solid", lightLevel: 0, occludes: true, fullCube: true, waterlogged: false, facing: "none", soundType: "minecraft:obsidian（石质音效）" },
+      appearance: { model: "cube_all", visualDescription: "灰色平滑金属，四边拼接缝、四角螺丝，六面材质相同。", textureAll: "dbv_world:block/iron_submarine_hull", textureResolution: 16, renderLayer: "solid", lightLevel: 0, occludes: true, fullCube: true, waterlogged: false, facing: "none", soundType: "minecraft:obsidian（石质音效）" },
       harvesting: { referenceBlock: "minecraft:iron_block", hardness: 5, tool: "pickaxe", minimumTier: "stone", requiresCorrectTool: true, dropsSelf: true, silkTouch: "掉落自身", fortune: "不增加掉落", experience: 0 },
       protection: { referenceBlock: "minecraft:obsidian", explosionResistance: 1200, pistonReaction: "block", dragonImmune: true, witherImmune: false, flammability: 0, fireSpread: 0, replaceable: false, gravityAffected: false },
       physics: { referenceBlock: "minecraft:obsidian", bindingPolicy: "follow_runtime", mass: 2, volume: 1, friction: 1, restitution: 0, fragile: false, inertia: "engine", assemblyAllowed: true },

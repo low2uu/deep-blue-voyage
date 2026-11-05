@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'io.github.low2uu.deepbluevoyage'
-version = '0.1.15'
+version = '0.1.16'
 base { archivesName = 'dbv-world' }
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
@@ -24,9 +24,16 @@ repositories {
     }
 }
 
-configurations { runtimeClasspath.extendsFrom localRuntime }
+configurations {
+    packLocalRuntime
+    localRuntime.extendsFrom packLocalRuntime
+    runtimeClasspath.extendsFrom localRuntime
+}
 
 dependencies {
+    // 用户压缩包原文件；校验信息见pack/local-mods/manifest.json。
+    packLocalRuntime files('../../pack/local-mods/voxy_server_lod-1.1.4.jar',
+                           '../../pack/local-mods/voxy-server-side-neoforge-1.21.1.jar')
     // Compile against the exact installed releases; do not bundle another physics engine.
     compileOnly 'maven.modrinth:sable:fg9dTRz9'
     compileOnly 'maven.modrinth:create-aeronautics-toolgun:pcD0Yutw'
@@ -68,6 +75,24 @@ dependencies {
     // 用户于2026-10-19确认，用于世界5设计艇及原生蓝图导入。
     localRuntime 'maven.modrinth:create-aeronautics-toolgun:pcD0Yutw'
     localRuntime 'maven.modrinth:create-aeronautics-transmission-linkage:FCZZ3ED4'
+    // 用户于2026-10-22确认；两套渲染组合分开，避免旧动态光源引用已删除的Sodium类。
+    localRuntime 'maven.modrinth:forgified-fabric-api:V9WdDUTx'
+    localRuntime 'maven.modrinth:voxy-worldgen:PzNUZlWw'
+    def graphicsProfile = providers.gradleProperty('dbvGraphics').getOrElse('lod')
+    if (graphicsProfile == 'lod') {
+        localRuntime 'maven.modrinth:sodium:S3DUMfBo'
+        localRuntime 'maven.modrinth:roxy:cDmwpuYr'
+        localRuntime 'maven.modrinth:voxy:H3w2nVdU'
+    } else if (graphicsProfile == 'lights') {
+        localRuntime 'maven.modrinth:sodium:Pb3OXVqC'
+        localRuntime 'maven.modrinth:sodium-dynamic-lights:XI0WLXdn'
+        localRuntime 'maven.modrinth:create-sable-dynamic-lights:sKw2ERw2'
+        localRuntime 'maven.modrinth:sodium-options-api:lrsX3TMS'
+        localRuntime 'maven.modrinth:reeses-sodium-options:xAiCe6w8'
+    } else if (graphicsProfile != 'none') {
+        throw new GradleException('dbvGraphics must be none, lights or lod')
+    }
+
 }
 
 neoForge {

@@ -1,48 +1,36 @@
-# 深蓝远航文档索引
+# 文档入口
 
-数值资料统一入口：[数值设计](数值设计-balance-design/README.md)，包含已确认目标、待定方案、当前原型属性、掉落与物理材料对照。
+先读[开发版本总览](development/开发版本总览-development-overview.md)，再查[文件整理记录](development/文件整理记录-repository-cleanup.md)与[逐文件职责索引](development/repository-files.json)。
 
-新增说明文档使用中文文件名、中文标题和中文正文；各级 `README.md` 保持原名。现有文档改名时同步更新引用；JSON 清单、程序源码、运行目录和第三方依赖不因本规则改名。
+当前开发应按下面的顺序阅读。游戏机制和数值设计完整保留；历史交付与初筛资料分区存放，避免把旧步骤当作当前用法。
 
-## 开发与验证
+## 当前开发
 
-| 文档 | 内容 |
+| 入口 | 负责的内容 |
 | --- | --- |
-| [系统开发文档](development/README.md) | 自研模块架构、代码目录、数据格式和开发验收 |
-| [开发环境部署](开发环境部署-development-setup.md) | Windows、Zulu Java 21、VS Code 与协作开发流程 |
-| [部署、启动地图与版本更新](部署启动与版本更新-deployment-launch-update.md) | 本机启动、新电脑部署、进入 v2、新建起始岛及更新代码 |
-| [开发工具记录](开发工具记录-development-tools.md) | 已批准的建设、脚本和性能工具 |
-| [开发验证记录](开发验证记录-development-verification.md) | 客户端、起始岛与工程验证记录 |
-| [世界存档与汉化资源推送](世界存档与汉化资源推送-world4-and-l10n.md) | 「新的世界4」酒狐号存档与中文资源包交付 |
-| [世界存档推送（新的世界5）](世界存档推送-新的世界5-world5.md) | 重制潜艇物理结构 `66d01998-…` 与设计快照交付 |
+| [开发版本总览](development/开发版本总览-development-overview.md) | 当前能力、代码边界、数据流、已知缺口与逐文件职责 |
+| [部署、启动与更新](部署启动与版本更新-deployment-launch-update.md) | develop、构建/运行、导入地图、更新代码与常见错误 |
+| [开发环境部署](开发环境部署-development-setup.md) | 新电脑安装Zulu JDK21、Git、VS Code和本地路径配置 |
+| [系统开发索引](development/README.md) | 当前自研模块、改装与数据、世界生成、模型与设计器 |
+| [当前Mod清单](当前Mod清单-current-mod-list.md) | 已确认、待定、备选及实际启用状态；固定依赖以Gradle为准 |
+| [版本记录](版本记录-changelog.md) | 已发布与未提交改动的版本边界 |
+| [服务器部署](../server/README.md) | 双人离线登录、IPv6、服务端更新与回退 |
+| [世界存档交付](../pack/worlds/README.md) | 唯一当前地图快照、manifest与导入脚本 |
 
-## 玩法与 Mod 选型
+## 完整保留的设计资料
 
-| 文档 | 内容 |
-| --- | --- |
-| [玩法设计](玩法设计-design.md) | 潜艇远航主题和整体方向 |
-| [当前 Mod 清单](当前Mod清单-current-mod-list.md) | 确定、待定、备选及安装状态 |
-| [Mod 初筛表](Mod初筛表-mod-candidates.md) | 海洋主题候选池及版本信息 |
-| [游戏机制索引](game-mechanics/README.md) | 功能架构、海域限制、AI、地图与建设方案 |
+- [游戏机制](game-mechanics/README.md)：海域准入、唯一主艇、酒狐AI、科技路线、地图与起始岛、蓝图库。
+- [数值设计](数值设计-balance-design/README.md)：待定平衡草案、当前原型、深度与材料边界。
+- [玩法方向](玩法设计-design.md)：海洋远航主题及最早的设计原则。
 
-## 当前建设与主潜艇
+这些设计中的计划、候选和目标数值不代表已经完成。整理没有删改这三处资料；当前实现由源码与实际验证记录确定。
 
-| 文档 | 内容 |
-| --- | --- |
-| [初始潜艇与改装流程](development/初始潜艇与改装流程-starter-submarine-refit.md) | 建设小艇、中文管理界面、备份与回滚边界 |
-| [主艇独立数据与舱内面板](development/主艇独立数据与舱内面板-vessel-data-and-cabin-panel.md) | 独立 JSON 档案、容器汇总、信息面板与存储恢复 |
-| [起始岛建筑与环境初版](game-mechanics/起始岛建筑与环境初版-starter-island-built-v1.md) | 已建成地图、船坞、机器预留空间与验收 |
-| [起始岛工厂与蓝图方案](game-mechanics/起始岛工厂与蓝图方案-starter-factory-blueprint-plan.md) | 首期工厂规模与机器选型 |
-| [机器蓝图库](game-mechanics/机器蓝图库-machine-blueprint-catalog.md) | 尺寸、版本、来源与使用说明 |
-| [主潜艇与酒狐实现方案](game-mechanics/主潜艇与酒狐实现方案-flagship-submarine-plan.md) | 唯一主艇、改装、备份、监控和恢复方案 |
-| [潜艇相关 Mod 能力核对](game-mechanics/潜艇相关Mod能力核对-submarine-mod-capability-research.md) | 航空学、Sable、Deep Seas等能力与接口依据 |
+## 资源与追溯
 
-文档中的“设计、候选、待验证”不代表功能已经实现；以各文档的状态和实际验收记录为准。
+- [物品模型](art/item-models/物品模型目录-item-model-catalog.md)、[怪物模型](art/creature-models/怪物模型目录-creature-model-catalog.md)：离线预览与几何索引。
+- [舱内设备规格](../content/cabin-equipment/README.md)、[物品怪物原型规格](../content/prototypes/README.md)：可导入内容设计器的JSON源数据。
+- [历史归档](archive/README.md)：旧验收、世界4/5交接和第一轮Mod候选池。
+- [验证证据导航](../outputs/README.md)：各批次日志、截图、JSON结果及其适用版本，区分已撤回实验参数。
+- Mod来源证据保留在本目录的`*-evidence.json`；这些是静态核对材料，不是安装清单。已知排除依据见[剔除记录](Mod剔除记录-mod-exclusions.md)。
 
-辅助工具新增与加载验证：[辅助Mod启用记录](辅助Mod启用记录-auxiliary-mods.md)。
-
-当前清单已按主选/同类备选整理；明确冲突的项目见[Mod剔除记录](Mod剔除记录-mod-exclusions.md)。
-
-- [随机主线地点、单矿种支线岛与坐标（v0.1.2）](development/随机主线与矿脉支线岛-v0.1.2.md)
-
-- [舱内设备与模块化舱门](development/舱内设备与模块化舱门-cabin-equipment-and-modular-hatches.md)：模型、物品、自由拼装、上锁气密和开门隔离检查。
+新增说明文件用中英文联合命名，README除外。不要用生成文档替代源规格；修改链接时保留机制文档的原始内容。

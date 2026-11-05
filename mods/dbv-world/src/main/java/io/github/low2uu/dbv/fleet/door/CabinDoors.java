@@ -53,13 +53,13 @@ public final class CabinDoors {
                 var queue=new ArrayDeque<BlockPos>();queue.add(clicked);cells.add(clicked);int cores=0;
                 while(!queue.isEmpty()){
                     var pos=queue.remove();var part=view.state(pos);
-                    if(part.is(CORE.get()))cores++;
-                    if(part.getValue(HangarDoorBlock.FACING)!=state.getValue(HangarDoorBlock.FACING))throw new IllegalStateException("facing");
+                    if(part.is(CORE.get())){cores++;state=part;}
+
                     for(var direction:Direction.values()){
                         var next=pos.relative(direction);
                         if(view.exterior(next))continue;
                         if(view.state(next).getBlock() instanceof HangarDoorBlock&&cells.add(next)){
-                            if(cells.size()>4096)throw new IllegalStateException("limit");queue.add(next);
+                            queue.add(next);
                         }
                     }
                 }
@@ -67,21 +67,16 @@ public final class CabinDoors {
             }
             for(var pos:cells)if(!level.mayInteract(player,pos))throw new IllegalStateException("permission");
             boolean open=state.getValue(BlockStateProperties.OPEN),locked=state.getValue(LOCKED);
-            // New attached sections must match the assembly before it can operate.
-            if(cells.stream().anyMatch(p->level.getBlockState(p).getValue(BlockStateProperties.OPEN)!=open))throw new IllegalStateException("mixed");
             boolean newOpen=open,newLocked=locked;
             String message;
             if(player.isShiftKeyDown()){
                 if(open)throw new IllegalStateException("close_first");
-                if(locked){DoorSafety.requireSafe(level,cells,state.getValue(BlockStateProperties.HORIZONTAL_FACING));newLocked=false;message="unlocked";}
+                if(locked){player.displayClientMessage(DoorSafety.report(level,cells),false);newLocked=false;message="unlocked";}
                 else {newLocked=true;message="locked";}
             }else if(open){newOpen=false;newLocked=false;message="closed";}
             else {
                 if(cells.stream().anyMatch(p->level.getBlockState(p).getValue(LOCKED)))throw new IllegalStateException("unlock_first");
-                DoorSafety.requireSafe(level,cells,state.getValue(BlockStateProperties.HORIZONTAL_FACING));newOpen=true;newLocked=false;message="opened";
-            }
-            if(!newOpen&&open){
-                for(var pos:cells)if(!level.getEntities((net.minecraft.world.entity.Entity)null,new net.minecraft.world.phys.AABB(pos),e->e.isAlive()&&!e.isSpectator()).isEmpty())throw new IllegalStateException("occupied");
+                player.displayClientMessage(DoorSafety.report(level,cells),false);newOpen=true;newLocked=false;message="opened";
             }
             for(var pos:cells){var old=level.getBlockState(pos);level.setBlock(pos,old.setValue(BlockStateProperties.OPEN,newOpen).setValue(LOCKED,newLocked),Block.UPDATE_CLIENTS);}
             for(var pos:cells)level.updateNeighborsAt(pos,level.getBlockState(pos).getBlock());

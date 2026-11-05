@@ -40,7 +40,7 @@
       },
       "summary": {
         "status": "specified",
-        "value": "1×2格；关闭不气密，上锁才密封；解锁和开门均先检查隔离。",
+        "value": "1×2格；关闭不气密，上锁才密封；开门前显示气密检查结果。",
         "reference": "tools/cabin-models",
         "notes": "开发原型，未实机验收。"
       },
@@ -146,7 +146,7 @@
       },
       "visualDescription": {
         "status": "specified",
-        "value": "1×2格；关闭不气密，上锁才密封；解锁和开门均先检查隔离。",
+        "value": "1×2格；关闭不气密，上锁才密封；开门前显示气密检查结果。",
         "reference": "tools/cabin-models",
         "notes": "开发原型，未实机验收。"
       },
@@ -164,7 +164,7 @@
       },
       "textureResolution": {
         "status": "specified",
-        "value": 128,
+        "value": 16,
         "reference": "tools/cabin-models",
         "notes": "开发原型，未实机验收。"
       },
@@ -638,7 +638,7 @@
       },
       "useBehavior": {
         "status": "specified",
-        "value": "1×2格；关闭不气密，上锁才密封；解锁和开门均先检查隔离。",
+        "value": "1×2格；关闭不气密，上锁才密封；开门前显示气密检查结果。",
         "reference": "tools/cabin-models",
         "notes": "开发原型，未实机验收。"
       }
