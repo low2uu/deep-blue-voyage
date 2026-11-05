@@ -11,6 +11,7 @@
 | [主潜艇系统](主潜艇系统开发文档-flagship-system-development.md) | 模块、身份登记、资格与观测、数据契约 |
 | [初始艇与改装](初始潜艇与改装流程-starter-submarine-refit.md) | 物理艇和世界方块转换、完成检测、备份回滚 |
 | [独立数据与舱内面板](主艇独立数据与舱内面板-vessel-data-and-cabin-panel.md) | 主艇JSON档案、结构与实际容器存储 |
+| [主艇完整恢复与JSON档案](主艇完整恢复与JSON档案-whole-vessel-recovery-and-json.md) | 整艇恢复点、损伤冻结、船坞一键恢复、JSON迁移与断点处理 |
 | [存储终端](存储终端与定深修复-storage-terminal-and-depth-hold.md) | 可交互存储及曾经的定深修复；参数变更看后续原生控制记录 |
 | [原生控制与停泊](原生潜艇控制与返航停泊-native-submarine-control-and-mooring.md) | 原生算法、出航停泊及历次参数恢复 |
 | [控制器深度](控制器深度与升降控制-controller-depth-and-ballast.md) | 物理艇坐标与深度依据 |

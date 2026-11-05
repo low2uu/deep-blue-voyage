@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "phase": "resume",
+  "ticks": 27,
+  "interruptedBeforeCommit": false,
+  "vesselId": "a07a8a8e-ce61-4b5a-b28e-2808d1865df6",
+  "bodyId": "7eca68dc-0f5b-447a-b335-4f230621a37c",
+  "status": "整艇恢复完成：船体、设备与存储已核对，已在船坞停泊；永久主艇编号保持不变。",
+  "world": ".\\world\\."
+}

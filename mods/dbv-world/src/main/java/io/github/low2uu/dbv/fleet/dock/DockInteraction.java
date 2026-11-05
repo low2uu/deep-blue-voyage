@@ -32,6 +32,7 @@ public final class DockInteraction {
         for(String action:new String[]{"begin","check","commit","cancel","angler"}) root.then(Commands.literal(action).executes(c->{
             try {
                 var m=FleetModule.get(c.getSource().getServer());var p=c.getSource().getPlayerOrException();
+                if(m.recovery().active()&&!action.equals("check"))throw new IllegalStateException(io.github.low2uu.dbv.fleet.ui.FleetPanel.localizedText(p,"message.dbv_world.recovery.busy"));
                 String result=m.refit().execute(action,p,m);c.getSource().sendSuccess(()->Component.literal(result),false);return 1;
             } catch(Exception e) { c.getSource().sendFailure(Component.literal("改装未完成："+e.getMessage()));return 0; }
         }));
@@ -50,6 +51,9 @@ public final class DockInteraction {
         try {
             var m=FleetModule.get(player.getServer());
             if(m.registry().flagship().isEmpty() || !m.registry().flagship().get().bodyId().equals(body.getUniqueId())) return false;
+            if(m.recovery().active()){
+                player.sendSystemMessage(Component.translatable("message.dbv_world.recovery.busy"));return true;
+            }
             if(!m.refit().active())return false; // Normal physical ships retain Sable's ordinary building interactions.
             if(m.refit().mayEdit(player,pos,state)) return false;
             player.sendSystemMessage(Component.literal("主艇正在转换、验收或还原，暂时无法编辑；请等待改装流程结束。"));

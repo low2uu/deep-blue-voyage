@@ -2,7 +2,7 @@
   "audited_at": "2026-11-05",
   "scope": "Git跟踪且仍存在的文件，以及未忽略的新文件；本地缓存/活动世界完整物理盘点另存.local/repository-audit",
   "review_boundary": "手写源码/文档/脚本逐文件审读；生成资源按生成规则核对；三方二进制/世界按来源、内部清单、哈希或格式审查，不宣称逐行反编译。",
-  "file_count": 950,
+  "file_count": 979,
   "files": [
     {
       "path": ".gitattributes",
@@ -839,6 +839,12 @@
       "review": "已通读文档与交叉核对版本/职责；索引字段由脚本提取"
     },
     {
+      "path": "docs/development/主艇完整恢复与JSON档案-whole-vessel-recovery-and-json.md",
+      "purpose": "v0.1.17整艇恢复、JSON档案与旧数据迁移说明",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
       "path": "docs/development/主艇独立数据与舱内面板-vessel-data-and-cabin-panel.md",
       "purpose": "主艇state.json模块、真实容器汇总、结构/存储快照、自动备份和恢复边界。",
       "status": "当前参考/源规格",
@@ -1278,9 +1284,9 @@
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/FleetModule.java",
-      "purpose": "每服务器舰队服务装配、唯一注册/载体换绑、每秒遥测、每 5 秒结构及存储 JSON 同步。",
-      "status": "implemented",
-      "review": "手写源文件已阅读；本次未启动游戏/服务器"
+      "purpose": "每服务器主艇服务与定时捕获，调度改装和完整恢复事务",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/captain/package-info.java",
@@ -1290,9 +1296,9 @@
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/client/FleetScreen.java",
-      "purpose": "中文船况、设备、存储备份、多步骤改装、出航停泊界面；每秒刷新且不暂停游戏。",
-      "status": "implemented",
-      "review": "手写源文件已阅读；本次未启动游戏/服务器"
+      "purpose": "中文船况、改装、设备、存储与整艇档案界面",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/client/StarterGuideScreen.java",
@@ -1350,9 +1356,9 @@
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/dock/AtomicSnapshotFile.java",
-      "purpose": "船坞不可变文件发布和 pending 标记；要求原子重命名且拒绝覆盖。",
-      "status": "implemented",
-      "review": "手写源文件已阅读；本次未启动游戏/服务器"
+      "purpose": "不可覆盖快照创建、原子替换与中断写入标记",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/dock/DesignedSubmarine.java",
@@ -1362,9 +1368,9 @@
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/dock/DockFiles.java",
-      "purpose": "船坞压缩 NBT 快照读写/替换及 512 MiB 解压读取预算预验。",
-      "status": "implemented",
-      "review": "手写源文件已阅读；本次未启动游戏/服务器"
+      "purpose": "船坞JSON原子读写及旧NBT校验迁移归档",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/dock/DockInteraction.java",
@@ -1373,22 +1379,28 @@
       "review": "手写源文件已阅读；本次未启动游戏/服务器"
     },
     {
+      "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/dock/DockJsonCodec.java",
+      "purpose": "带版本与SHA-256的流式typed JSON船坞编码，保留设备数值类型",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
+    },
+    {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/dock/LegacyRefitService.java",
-      "purpose": "旧 active-refit.nbt 改装事务兼容恢复和委派，限制旧会话范围；非闲置副本。",
-      "status": "legacy-compatibility",
-      "review": "手写源文件已阅读；本次未启动游戏/服务器"
+      "purpose": "旧改装事务兼容，读取迁移后的JSON并保留回滚能力",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/dock/RefitService.java",
-      "purpose": "实体拆为船坞方块、连通扫描、临时装配、三条件验收、回滚及 NBT 事务恢复。",
-      "status": "implemented-construction-only",
-      "review": "手写源文件已阅读；本次未启动游戏/服务器"
+      "purpose": "实体与世界方块改装事务、JSON回滚和完成后更新整艇恢复点",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/dock/StarterSubmarine.java",
-      "purpose": "建设模式初始艇请求、用户模板装配、三条件登记、岸供、系泊约束、出航停泊。",
-      "status": "implemented-construction-only",
-      "review": "手写源文件已阅读；本次未启动游戏/服务器"
+      "purpose": "用户初始艇、JSON泊位、岸供、出航停泊及恢复艇系泊",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/dock/TransferredBlockState.java",
@@ -1463,6 +1475,12 @@
       "review": "手写源文件已阅读；本次未启动游戏/服务器"
     },
     {
+      "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/mixin/ElectrolyzerPersistenceMixin.java",
+      "purpose": "修复DeepSeas电解器读档受单次FE传输限额截断，不改变运行能耗",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
+    },
+    {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/mixin/IslandFireMixin.java",
       "purpose": "拦截起始岛及边界附近火焰蔓延和燃烧。",
       "status": "implemented-upstream-patch",
@@ -1479,6 +1497,18 @@
       "purpose": "自定义 ocean 维度对外报告海平面 128。",
       "status": "implemented-upstream-patch",
       "review": "手写源文件已阅读；本次未启动游戏/服务器"
+    },
+    {
+      "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/mixin/RecoveryAllocationTrackingMixin.java",
+      "purpose": "只记录新分配载体，排除重新加载的旁艇",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
+    },
+    {
+      "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/mixin/RecoverySplitTrackingMixin.java",
+      "purpose": "观察原生拆分父子关系供恢复事务清理，不改变拆分行为",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/mixin/SubmarineMaterialLookupMixin.java",
@@ -1512,15 +1542,39 @@
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/persistence/RegistryStore.java",
-      "purpose": "独立 registry.json 原子建立与载体 CAS 换绑，保留中断标志避免重复主艇。",
-      "status": "implemented",
-      "review": "手写源文件已阅读；本次未启动游戏/服务器"
+      "purpose": "永久主艇登记及经恢复事务验证的中断换绑协调",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/persistence/VesselDataStore.java",
-      "purpose": "每主艇 state.json、校验和手动/自动备份、模块保留及容器恢复事务标志。",
-      "status": "implemented",
-      "review": "手写源文件已阅读；本次未启动游戏/服务器"
+      "purpose": "主艇JSON业务档案、手动和轮转快照、损伤冻结恢复点与坏镜像留证",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
+    },
+    {
+      "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/recovery/NativeVesselArchive.java",
+      "purpose": "原生完整蓝图适配、磁盘船体定位、资源精确回放、连接归属与内容核对",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
+    },
+    {
+      "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/recovery/RecoveryJournal.java",
+      "purpose": "版本化整艇恢复事务、校验和与断点重读归档",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
+    },
+    {
+      "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/recovery/RecoveryMessages.java",
+      "purpose": "恢复服务端文本的中英文资源读取",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
+    },
+    {
+      "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/recovery/WholeVesselRecovery.java",
+      "purpose": "船坞整艇恢复状态机，记录候选与拆分后代、换绑永久身份及失败回滚",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/storage/BlockEntityJson.java",
@@ -1530,9 +1584,9 @@
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/storage/CabinStorage.java",
-      "purpose": "实际容器/能力扫描、物品 JSON 快照、船体/BE/原生蓝图归档及受限容器恢复。",
-      "status": "implemented",
-      "review": "手写源文件已阅读；本次未启动游戏/服务器"
+      "purpose": "实际容器与整船JSON捕获、结构拓扑损伤基线及独立恢复点",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/telemetry/DepthReference.java",
@@ -1566,9 +1620,9 @@
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/ui/FleetPanel.java",
-      "purpose": "服务端会话和动作权限检查、能力状态投影、刷新/改装/备份/终端/出航停泊网络处理。",
-      "status": "implemented",
-      "review": "手写源文件已阅读；本次未启动游戏/服务器"
+      "purpose": "服务器管理会话、岸上无船体恢复入口、权限与异步结果",
+      "status": "v0.1.17-current",
+      "review": "源码及调用关系审读；版本验收见整艇恢复报告"
     },
     {
       "path": "mods/dbv-world/src/main/java/io/github/low2uu/dbv/fleet/ui/PanelAction.java",
@@ -3149,6 +3203,42 @@
       "review": "手写源文件已阅读；本次未启动游戏/服务器"
     },
     {
+      "path": "mods/dbv-world/src/test/java/io/github/low2uu/dbv/fleet/fixtures/VesselSnapshotFixtures.java",
+      "purpose": "整艇档案、原生适配或事务故障序列回归测试：VesselSnapshotFixtures.java",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
+      "path": "mods/dbv-world/src/test/java/io/github/low2uu/dbv/fleet/persistence/RegistryRecoveryTest.java",
+      "purpose": "整艇档案、原生适配或事务故障序列回归测试：RegistryRecoveryTest.java",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
+      "path": "mods/dbv-world/src/test/java/io/github/low2uu/dbv/fleet/persistence/VesselCheckpointTest.java",
+      "purpose": "整艇档案、原生适配或事务故障序列回归测试：VesselCheckpointTest.java",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
+      "path": "mods/dbv-world/src/test/java/io/github/low2uu/dbv/fleet/recovery/NativeVesselArchiveTest.java",
+      "purpose": "整艇档案、原生适配或事务故障序列回归测试：NativeVesselArchiveTest.java",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
+      "path": "mods/dbv-world/src/test/java/io/github/low2uu/dbv/fleet/recovery/RecoveryJournalTest.java",
+      "purpose": "整艇档案、原生适配或事务故障序列回归测试：RecoveryJournalTest.java",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
+      "path": "mods/dbv-world/src/test/java/io/github/low2uu/dbv/fleet/recovery/RecoveryMessagesTest.java",
+      "purpose": "整艇档案、原生适配或事务故障序列回归测试：RecoveryMessagesTest.java",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
       "path": "mods/dbv-world/src/test/java/io/github/low2uu/dbv/world/AutomaticMineralLayoutTest.java",
       "purpose": "矿岛铁铜金顺序、跨格分离、边界索引和整个矿池可分配测试。",
       "status": "unit-test",
@@ -4182,6 +4272,24 @@
         "submerged-villages/client.js",
         "submerged-villages/server.js"
       ]
+    },
+    {
+      "path": "mods/dbv-world/src/test/resources/acceptance/whole-vessel-recovery/README.md",
+      "purpose": "独立无界面整体验收；会在专用临时世界生成、销毁、恢复潜艇并重启服务端",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
+      "path": "mods/dbv-world/src/test/resources/acceptance/whole-vessel-recovery/WholeVesselRecoveryProbe.java",
+      "purpose": "独立无界面整体验收；会在专用临时世界生成、销毁、恢复潜艇并重启服务端",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
+      "path": "mods/dbv-world/src/test/resources/acceptance/whole-vessel-recovery/neoforge.mods.toml",
+      "purpose": "独立无界面整体验收；会在专用临时世界生成、销毁、恢复潜艇并重启服务端",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
     },
     {
       "path": "mods/dbv-world/src/test/resources/acceptance/wide-blocks-client.js",
@@ -5483,6 +5591,60 @@
       "review": "按所属报告与文件全文关键词/结构审查；日志未逐行人工复核"
     },
     {
+      "path": "outputs/验收-v0.1.17-20261105/README.md",
+      "purpose": "v0.1.17整艇恢复验收证据与说明，不是活动世界",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
+      "path": "outputs/验收-v0.1.17-20261105/expected.json",
+      "purpose": "v0.1.17整艇恢复验收证据与说明，不是活动世界",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
+      "path": "outputs/验收-v0.1.17-20261105/recover.json",
+      "purpose": "v0.1.17整艇恢复验收证据与说明，不是活动世界",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
+      "path": "outputs/验收-v0.1.17-20261105/restart.json",
+      "purpose": "v0.1.17整艇恢复验收证据与说明，不是活动世界",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
+      "path": "outputs/验收-v0.1.17-20261105/resume.json",
+      "purpose": "v0.1.17整艇恢复验收证据与说明，不是活动世界",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
+      "path": "outputs/验收-v0.1.17-20261105/runtime-manifest.json",
+      "purpose": "v0.1.17整艇恢复验收证据与说明，不是活动世界",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
+      "path": "outputs/验收-v0.1.17-20261105/splitrollback-expected.json",
+      "purpose": "v0.1.17整艇恢复验收证据与说明，不是活动世界",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
+      "path": "outputs/验收-v0.1.17-20261105/splitrollback.json",
+      "purpose": "v0.1.17整艇恢复验收证据与说明，不是活动世界",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
+      "path": "outputs/验收-v0.1.17-20261105/verification.json",
+      "purpose": "v0.1.17整艇恢复验收证据与说明，不是活动世界",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
       "path": "pack/local-mods/README.md",
       "purpose": "两枚非仓库下载依赖的来源和使用限制说明。",
       "status": "current-document",
@@ -6407,10 +6569,22 @@
       "review": "按来源与对应内容核对"
     },
     {
+      "path": "tools/test-whole-vessel-recovery.ps1",
+      "purpose": "整艇恢复验收构建/运行工具；仅使用.local专用测试目录，正常发行不加载探针",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
+    },
+    {
       "path": "tools/test_migrate_world_height.py",
       "purpose": "4项迁移回归：位打包、高度+65、世界与虚拟坐标区分、Sable节索引。",
       "status": "historical-utility-test",
       "review": "按来源与对应内容核对"
+    },
+    {
+      "path": "tools/whole-vessel-recovery.gradle",
+      "purpose": "整艇恢复验收构建/运行工具；仅使用.local专用测试目录，正常发行不加载探针",
+      "status": "v0.1.17-current",
+      "review": "本版新增文件已核对；测试证据见版本报告"
     },
     {
       "path": "tools/设计器便携说明-content-designer-portable.md",
@@ -6418,5 +6592,6 @@
       "status": "current-template",
       "review": "按来源与对应内容核对"
     }
-  ]
+  ],
+  "updated_for": "0.1.17"
 }

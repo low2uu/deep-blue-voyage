@@ -1,0 +1,14 @@
+{
+  "floatingBarrel": [
+    1,
+    12,
+    1
+  ],
+  "originalBodyId": "7eca68dc-0f5b-447a-b335-4f230621a37c",
+  "generation": 3,
+  "checkpointSha256": "23b1350b320e16a1d238d856ba9b451a4eeab9dfbf47a5714c94117d7ef5bd34",
+  "independentBodies": [],
+  "initialCandidates": [
+    "7eec1ffe-fb67-49f5-9202-4e921a54d4c9"
+  ]
+}

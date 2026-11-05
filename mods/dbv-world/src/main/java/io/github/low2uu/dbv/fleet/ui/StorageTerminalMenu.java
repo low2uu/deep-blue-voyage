@@ -37,7 +37,7 @@ public final class StorageTerminalMenu extends AbstractContainerMenu {
         super(TYPE.get(),id);this.module=module;
         if(module!=null){
             try{
-                if(module.refit().active())throw new IllegalStateException("改装期间不能打开存储终端");
+                if(module.refit().active()||module.recovery().active())throw new IllegalStateException("改装或恢复期间不能打开存储终端");
                 var body=module.refit().currentBody(module);if(body==null)throw new IllegalStateException("主艇未加载");
                 bodyId=body.getUniqueId();var level=inventory.player.level();
                 for(var pos:module.refit().storagePositions(module)){
@@ -82,7 +82,7 @@ public final class StorageTerminalMenu extends AbstractContainerMenu {
         if(module==null)return true;
         try{
             var body=module.refit().currentBody(module);
-            if(module.refit().active()||body==null||body.isRemoved()||!bodyId.equals(body.getUniqueId())||player.level()!=body.getLevel())return false;
+            if(module.refit().active()||module.recovery().active()||body==null||body.isRemoved()||!bodyId.equals(body.getUniqueId())||player.level()!=body.getLevel())return false;
             var p=body.logicalPose().transformPositionInverse(player.position());var b=body.getPlot().getBoundingBox();
             if(p.x<b.minX()-8||p.x>b.maxX()+8||p.y<b.minY()-8||p.y>b.maxY()+8||p.z<b.minZ()-8||p.z>b.maxZ()+8)return false;
             for(var cell:cells){

@@ -1,0 +1,105 @@
+{
+    "minecraft":  "1.21.1",
+    "prepared":  "2026-11-05T12:16:26.8730854+08:00",
+    "neoforge":  "21.1.259",
+    "phases":  [
+                   "recover",
+                   "restart",
+                   "resume",
+                   "splitrollback"
+               ],
+    "mods":  [
+                 {
+                     "sha256":  "9cc92f2c09533fc5482c60f993bd891c655a0e32b637037cdcb7c2b23adedeeb",
+                     "file":  "architectury-api-1IiqEQGl.jar"
+                 },
+                 {
+                     "sha256":  "a3f330d4757640f8715d991a43eedb826e4d0e51558d859c843ae6693bd35f1e",
+                     "file":  "create-aeronautics-44pLdPGg.jar"
+                 },
+                 {
+                     "sha256":  "57db4e5b8e52c208a73764a5d0c8bc70fc61a62b96349e12b092dcd0b344874a",
+                     "file":  "create-aeronautics-toolgun-pcD0Yutw.jar"
+                 },
+                 {
+                     "sha256":  "149a68e131440c62a2aae39357dc23cf190d7ec4fb52c0c0b105834988d63596",
+                     "file":  "create-aeronautics-transmission-linkage-FCZZ3ED4.jar"
+                 },
+                 {
+                     "sha256":  "99709e004c8a7a36cb3439c0200ffd0c8ff5d7ca4fb77d49f76395d803864ba1",
+                     "file":  "create-deep-seas-8CV1LRTl.jar"
+                 },
+                 {
+                     "sha256":  "56ef1d574278fc311f1ffa223dbd613077b899354a18d01ae8dca2578a4e2990",
+                     "file":  "create-diesel-generators-UoPH8lO1.jar"
+                 },
+                 {
+                     "sha256":  "ef87fe5709f1ba1f5b8bb20a2925b5afb4669e178fd6d8bf10c167759eefe37a",
+                     "file":  "create-UjX6dr61.jar"
+                 },
+                 {
+                     "sha256":  "2598d248c4820d58c5fb7e19ddf2106960d758b6ff7c419aa4bc57e176b2540b",
+                     "file":  "dashpanels-aH1Oe6Kk.jar"
+                 },
+                 {
+                     "sha256":  "26b19203ef302e81ed069d4ca308bc8c219b6ef4335e6b2b3c882dea8539d421",
+                     "file":  "dbv-recovery-probe.jar"
+                 },
+                 {
+                     "sha256":  "2fec8f804733e02ef688294f08c652daa0d0607a71595bb4614448b87ddd573b",
+                     "file":  "dbv-world-0.1.17.jar"
+                 },
+                 {
+                     "sha256":  "96f8b489f401c64e87343daf57a030ccd1b58be40fc0aad701278ba58a0fadaf",
+                     "file":  "forgified-fabric-api-V9WdDUTx.jar"
+                 },
+                 {
+                     "sha256":  "276f1f65a20d04f536989c4f311949d770b52c440c23c2b904a08860f3c93810",
+                     "file":  "jade-eYz2YBGT.jar"
+                 },
+                 {
+                     "sha256":  "f26e974115226d83ec363e3d327e739c87ded760d781ca0538181094eb4bb9a2",
+                     "file":  "jade-sable-compat-cxUohR7A.jar"
+                 },
+                 {
+                     "sha256":  "df9a8458b1f83fed06ba54684977911795a5153a462b81a610895f5b1f2f0cbf",
+                     "file":  "kubejs-THIGFPwf.jar"
+                 },
+                 {
+                     "sha256":  "e40d67a874431925d502af88e85064883c67936cfd689033d7df560cffcf19e7",
+                     "file":  "power-grid-jCkPHjmP.jar"
+                 },
+                 {
+                     "sha256":  "afb957ce00611cfc7de4bb33ac1ac8ea1d880c741ac14b9c67876b207b1377e7",
+                     "file":  "probejs-xC9KUA7R.jar"
+                 },
+                 {
+                     "sha256":  "1d53d962aa4dac54bcbb4f998c1845980cf194318f1d6b1580ea6ac15cce5ef3",
+                     "file":  "rhino-SqkDvOLG.jar"
+                 },
+                 {
+                     "sha256":  "9c199157843bf953a47dff625fc5bb41c01a90538d35ad18e6996bbcb8a617c2",
+                     "file":  "sable-fg9dTRz9.jar"
+                 },
+                 {
+                     "sha256":  "647e8a81afbe414dba1df4ba15fd06c5d32d4cb544e68828405e8e074c2e16db",
+                     "file":  "spark-v5qtqRQi.jar"
+                 },
+                 {
+                     "sha256":  "a250e7ec46d9455b32dc54dfd9104fd810b4a4bd94f8a022f687679149d5579b",
+                     "file":  "voxy_server_lod-1.1.4.jar"
+                 },
+                 {
+                     "sha256":  "a780f192500f72e7559cc2bad28fea0ec3c07d8dc20c08c2eb96d3d79f8ce06b",
+                     "file":  "voxy-server-side-neoforge-1.21.1.jar"
+                 },
+                 {
+                     "sha256":  "a2c3851d1fcbdd2e116d15c79d916b508b8ae0f117bda05a5de90446f1b63265",
+                     "file":  "voxy-worldgen-PzNUZlWw.jar"
+                 },
+                 {
+                     "sha256":  "5e7752c97876d87411e3760bcc573cc431f43c453722e6959fa7fe54db1b01ca",
+                     "file":  "worldedit-WTAFvuRx.jar"
+                 }
+             ]
+}

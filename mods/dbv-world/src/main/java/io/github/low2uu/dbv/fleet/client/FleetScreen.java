@@ -16,7 +16,7 @@ public final class FleetScreen extends Screen {
     private PanelView view;
     private int left,top,panelWidth,panelHeight,ticks,page;
     private boolean equipment,storageTab,confirmRestore,confirmCancel,busy;
-    private Button begin,check,commit,cancel,backup,restore,depart;
+    private Button begin,check,commit,cancel,backup,restore,depart,wholeRestore,storageOpen;
     public FleetScreen(PanelView view){super(Component.literal("潜艇管理"));this.view=view;}
     public UUID session(){return view.session();}
     public PanelView snapshot(){return view;}
@@ -36,8 +36,8 @@ public final class FleetScreen extends Screen {
         int tabWidth=Math.max(32,(panelWidth-100)/4);
         addRenderableWidget(Button.builder(Component.literal("船况与改装"),b->{equipment=false;storageTab=false;page=0;updateButtons();}).bounds(left+14,top+38,tabWidth,20).build());
         addRenderableWidget(Button.builder(Component.literal("艇内设备"),b->{equipment=true;storageTab=false;page=0;updateButtons();}).bounds(left+20+tabWidth,top+38,tabWidth,20).build());
-        addRenderableWidget(Button.builder(Component.literal("存储终端"),b->request(PanelAction.STORAGE_OPEN)).bounds(left+26+2*tabWidth,top+38,tabWidth,20).build());
-        addRenderableWidget(Button.builder(Component.literal("存储备份"),b->{equipment=false;storageTab=true;page=0;updateButtons();}).bounds(left+32+3*tabWidth,top+38,tabWidth,20).build());
+        storageOpen=addRenderableWidget(Button.builder(Component.literal("存储终端"),b->request(PanelAction.STORAGE_OPEN)).bounds(left+26+2*tabWidth,top+38,tabWidth,20).build());
+        addRenderableWidget(Button.builder(Component.translatable("screen.dbv_world.recovery.archive"),b->{equipment=false;storageTab=true;page=0;updateButtons();}).bounds(left+32+3*tabWidth,top+38,tabWidth,20).build());
         addRenderableWidget(Button.builder(Component.literal("<"),b->{page=Math.max(0,page-1);}).bounds(left+panelWidth-66,top+38,22,20).build());
         addRenderableWidget(Button.builder(Component.literal(">"),b->{page=Math.min(pages()-1,page+1);}).bounds(left+panelWidth-40,top+38,22,20).build());
         int w=(panelWidth-52)/5,y=top+panelHeight-52;
@@ -48,8 +48,10 @@ public final class FleetScreen extends Screen {
             if(confirmCancel){confirmCancel=false;request(PanelAction.CANCEL);}else{confirmCancel=true;equipment=false;updateButtons();}
         }).bounds(left+32+3*w,y,w,20).build());
         depart=addRenderableWidget(Button.builder(Component.literal("出航"),b->request(view.has(PanelView.DEPARTED)?PanelAction.MOOR:PanelAction.DEPART)).bounds(left+38+4*w,y,w,20).build());
-        backup=addRenderableWidget(Button.builder(Component.literal("备份存储"),b->request(PanelAction.STORAGE_BACKUP)).bounds(left+14,y,110,20).build());
-        restore=addRenderableWidget(Button.builder(Component.literal("恢复最近备份"),b->{if(confirmRestore){confirmRestore=false;request(PanelAction.STORAGE_RESTORE);}else{confirmRestore=true;updateButtons();}}).bounds(left+130,y,130,20).build());
+        int archiveWidth=(panelWidth-40)/3;
+        backup=addRenderableWidget(Button.builder(Component.translatable("screen.dbv_world.recovery.backup"),b->request(PanelAction.VESSEL_BACKUP)).bounds(left+14,y,archiveWidth,20).build());
+        restore=addRenderableWidget(Button.builder(Component.translatable("screen.dbv_world.recovery.items_only"),b->{if(confirmRestore){confirmRestore=false;request(PanelAction.STORAGE_RESTORE);}else{confirmRestore=true;updateButtons();}}).bounds(left+20+archiveWidth,y,archiveWidth,20).build());
+        wholeRestore=addRenderableWidget(Button.builder(Component.translatable("screen.dbv_world.recovery.restore"),b->request(PanelAction.VESSEL_RESTORE)).bounds(left+26+2*archiveWidth,y,archiveWidth,20).build());
         updateButtons();
     }
     private void updateButtons(){
@@ -61,11 +63,17 @@ public final class FleetScreen extends Screen {
             depart.setTooltip(Tooltip.create(Component.literal(view.has(PanelView.DEPARTED)?(view.has(PanelView.CAN_MOOR)?"在当前位置固定船体并恢复岸供；停泊前保存独立数据备份。":view.status()):view.has(PanelView.CAN_DEPART)?"解除船坞固定并断开岸供；不会自动驾驶或传送潜艇。":"需在船坞靠近已系泊主艇，结束改装后由建设模式创造管理员操作。")));
         }
         if(backup!=null){
-            backup.visible=restore.visible=storageTab;backup.active=restore.active=!busy&&view.has(PanelView.STORAGE_EDITABLE);
-            restore.setMessage(Component.literal(confirmRestore?"确认覆盖当前物品":"恢复最近备份"));
+            backup.visible=restore.visible=wholeRestore.visible=storageTab;
+            backup.active=restore.active=!busy&&!view.has(PanelView.RECOVERING)&&view.has(PanelView.STORAGE_EDITABLE);
+            wholeRestore.active=!busy&&!view.has(PanelView.RECOVERING)&&view.has(PanelView.CAN_RESTORE);
+            wholeRestore.setMessage(Component.translatable(view.has(PanelView.RECOVERING)?"screen.dbv_world.recovery.working":"screen.dbv_world.recovery.restore"));
+            wholeRestore.setTooltip(Tooltip.create(wholeRestore.active?Component.translatable("screen.dbv_world.recovery.restore_hint"):Component.literal(view.status())));
+            backup.setTooltip(Tooltip.create(Component.translatable("screen.dbv_world.recovery.backup_hint")));
+            restore.setMessage(confirmRestore?Component.literal("确认覆盖当前物品"):Component.translatable("screen.dbv_world.recovery.items_only"));
             restore.setTooltip(Tooltip.create(Component.literal("将覆盖容器当前内容；恢复前另存快照。需在船坞内，结束改装后由创造管理员操作。")));
         }
-        boolean editable=view.has(PanelView.EDITABLE)&&!busy;
+        if(storageOpen!=null)storageOpen.active=!busy&&!view.has(PanelView.RECOVERING)&&view.has(PanelView.BODY_PRESENT)&&view.has(PanelView.REGISTERED)&&!view.has(PanelView.ACTIVE);
+        boolean editable=view.has(PanelView.EDITABLE)&&!busy&&!view.has(PanelView.RECOVERING);
         begin.active=editable&&!view.has(PanelView.ACTIVE);
         commit.active=editable&&view.has(PanelView.ACTIVE)&&!view.has(PanelView.CHECKING);
         cancel.active=editable&&view.has(PanelView.ACTIVE)&&!view.has(PanelView.CHECKING);
@@ -121,7 +129,7 @@ public final class FleetScreen extends Screen {
         String identity=view.has(PanelView.REGISTERED)?"身份：唯一主潜艇":"身份：尚未登记为主潜艇";
         g.drawString(font,identity,left+14,y,0x96D7E1,false);y+=16;
         String problem=beginProblem();
-        String[] paragraphs={view.vesselInfo(),confirmCancel?"确认还原？本次改装的新增和修改都将撤销。再次点击“确认还原”执行。":(view.notice().startsWith("检查完成")?view.notice():(!problem.isEmpty()&&!view.has(PanelView.ACTIVE)?problem:view.notice())),view.status()};
+        String[] paragraphs={view.vesselInfo(),view.has(PanelView.CAN_RESTORE)||view.has(PanelView.RECOVERING)?view.notice():confirmCancel?"确认还原？本次改装的新增和修改都将撤销。再次点击“确认还原”执行。":(view.notice().startsWith("检查完成")?view.notice():(!problem.isEmpty()&&!view.has(PanelView.ACTIVE)?problem:view.notice())),view.status()};
         for(int p=0;p<paragraphs.length;p++){
             for(var line:font.split(Component.literal(paragraphs[p]),panelWidth-28)){
                 if(y>top+panelHeight-70)break;
@@ -133,7 +141,12 @@ public final class FleetScreen extends Screen {
     private void renderDevices(GuiGraphics g,int mouseX,int mouseY){
         page=Math.min(page,pages()-1);
         g.drawString(font,(storageTab?"存储清单":"设备清单")+" · "+displayRows().size()+" 项 · 第 "+(page+1)+" / "+pages()+" 页",left+14,top+68,0x96D7E1,false);
-        if(storageTab)clipped(g,view.notice(),left+14,top+panelHeight-65,panelWidth-28,0xF0CD91);
+        if(storageTab){
+            int noticeY=top+panelHeight-65;
+            clipped(g,view.notice(),left+14,noticeY,panelWidth-28,0xF0CD91);
+            if(mouseX>=left+14&&mouseX<left+panelWidth-14&&mouseY>=noticeY&&mouseY<noticeY+10)
+                g.renderTooltip(font,font.split(Component.literal(view.notice()),Math.min(320,panelWidth-30)),mouseX,mouseY);
+        }
         if(displayRows().isEmpty())g.drawString(font,storageTab?"未发现可读取的舱内容器。":"暂未识别到设备，请重新检查。",left+14,top+92,0xC8DAE2,false);
         for(int i=page*rows();i<Math.min(displayRows().size(),(page+1)*rows());i++){
             int y=top+84+(i-page*rows())*38;String text=displayRows().get(i);String[] lines=text.split("\n",2);

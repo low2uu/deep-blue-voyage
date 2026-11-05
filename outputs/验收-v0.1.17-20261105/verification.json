@@ -1,0 +1,134 @@
+{
+  "version": "0.1.17",
+  "date": "2026-11-05",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.259",
+  "javaTests": 90,
+  "failures": 0,
+  "errors": 0,
+  "suites": [
+    {
+      "name": "io.github.low2uu.dbv.fleet.DepthReferenceTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "io.github.low2uu.dbv.fleet.dock.AtomicSnapshotFileTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "io.github.low2uu.dbv.fleet.dock.DockFilesTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "io.github.low2uu.dbv.fleet.dock.TransferredBlockStateTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "io.github.low2uu.dbv.fleet.persistence.RegistryRecoveryTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "io.github.low2uu.dbv.fleet.persistence.VesselCheckpointTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "io.github.low2uu.dbv.fleet.QualificationTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "io.github.low2uu.dbv.fleet.recovery.NativeVesselArchiveTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "io.github.low2uu.dbv.fleet.recovery.RecoveryJournalTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "io.github.low2uu.dbv.fleet.recovery.RecoveryMessagesTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "io.github.low2uu.dbv.fleet.RegistryStoreTest",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "io.github.low2uu.dbv.fleet.VesselDataStoreTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "io.github.low2uu.dbv.world.AutomaticMineralLayoutTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "io.github.low2uu.dbv.world.OceanBoundsTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "io.github.low2uu.dbv.world.SubmergedVillagesTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "io.github.low2uu.dbv.world.VoyageLayoutTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "protectedDocumentsUnchanged": 26,
+  "headlessServerPhases": [
+    "recover",
+    "restart",
+    "resume",
+    "splitrollback"
+  ],
+  "testedJarSha256": "2fec8f804733e02ef688294f08c652daa0d0607a71595bb4614448b87ddd573b",
+  "clientLaunched": false,
+  "productionWorldModified": false,
+  "scope": "真实世界5蓝图与锁定Mod依赖；专用临时世界整艇销毁、恢复、重启、分裂失败回滚；未做玩家GUI或双人界面实测"
+}

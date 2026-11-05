@@ -1,5 +1,6 @@
 package io.github.low2uu.dbv.fleet.storage;
 
+import static io.github.low2uu.dbv.fleet.recovery.RecoveryMessages.text;
 import com.google.gson.*;
 import com.mojang.serialization.JsonOps;
 import io.github.low2uu.dbv.fleet.FleetModule;
@@ -58,6 +59,7 @@ public final class CabinStorage {
         root.add("containers",containers);return root;
     }
     public void capture(FleetModule m) throws IOException {
+        if(m.recovery().active())throw new IOException(text("storage.capture_busy"));
         store(m).requireStorageReady();captureUnchecked(m);
     }
     private void captureUnchecked(FleetModule m) throws IOException {
@@ -65,19 +67,22 @@ public final class CabinStorage {
         var geometry=new JsonArray();
         for(var value:structure.getAsJsonArray("blocks")){var entry=value.getAsJsonObject().deepCopy();entry.remove("metadata");geometry.add(entry);}
         key.add("geometry",geometry);
-        var current=store.read().getAsJsonObject("modules");var business=new JsonObject();
+        var previousRoot=store.read();var current=previousRoot.getAsJsonObject("modules");var business=new JsonObject();
         for(var entry:current.entrySet())if(!Set.of("structure","storage","vessel","automaticBackup","storageBackup").contains(entry.getKey()))business.add(entry.getKey(),entry.getValue());
         key.add("business",business);String fingerprint=VesselDataStore.fingerprint(key);
         var previous=current.getAsJsonObject("automaticBackup");
         var id=m.registry().flagship().orElseThrow();var identity=new JsonObject();identity.addProperty("name",id.name());identity.addProperty("dimension",id.dimension());
         identity.addProperty("bodyId",id.bodyId().toString());identity.addProperty("generation",id.generation());
-        store.putModules(Map.of("storage",storage,"structure",structure,"vessel",identity));
+        store.putModules(Map.of("storage",storage,"structure",structure,"vessel",identity,
+                "berth",m.starter().berthSnapshot(),"refit",m.refit().snapshot()));
+        store.updateCheckpoint(previousRoot,store.read());
         if(previous==null||!fingerprint.equals(previous.get("fingerprint").getAsString())){
             var marker=new JsonObject();marker.addProperty("latest",store.backupAutomatic().toString());marker.addProperty("fingerprint",fingerprint);store.putModule("automaticBackup",marker);
         }
     }
     public JsonObject structure(FleetModule m) throws IOException {
-        var root=new JsonObject();root.addProperty("schemaVersion",1);root.addProperty("metadataAdapter","typed-json-v1");
+        var root=new JsonObject();root.addProperty("schemaVersion",2);root.addProperty("metadataAdapter","typed-json-v1");
+        root.addProperty("captureScope","connected-only-v1");
         var origin=m.refit().storageOrigin(m);var blocks=new JsonArray();var level=server.overworld();
         var ops=server.registryAccess().createSerializationContext(JsonOps.INSTANCE);
         for(var pos:m.refit().storagePositions(m)){
@@ -95,18 +100,21 @@ public final class CabinStorage {
             var body=m.refit().currentBody(m);
             // Static blocks alone omit bearing-mounted sails and their inventories.
             var archive=com.enxv.aeronauticsstructuretool.blueprint.capture.NativeBlueprintCaptureService.captureById(
-                    level,body.getUniqueId(),"主艇完整蓝图",0.0);
-            root.add("nativeBlueprint",BlockEntityJson.encode(
-                    com.enxv.aeronauticsstructuretool.blueprint.codec.BlueprintArchiveCodec.decode(archive.fileContents())));
+                    level,body.getUniqueId(),"主艇完整蓝图",-1.0);
+            var nativeArchive=com.enxv.aeronauticsstructuretool.blueprint.codec.BlueprintArchiveCodec.decode(archive.fileContents());
+            root.add("nativeBlueprint",BlockEntityJson.encode(nativeArchive));
+            root.add("recoveryTopology",io.github.low2uu.dbv.fleet.recovery.NativeVesselArchive.topology(nativeArchive));
         }
         return root;
     }
     public UUID backup(FleetModule m) throws IOException {capture(m);return store(m).backup();}
+    public void checkpoint(FleetModule m) throws IOException {capture(m);store(m).checkpoint(store(m).read(),false);}
     public String manualBackup(ServerPlayer p,FleetModule m) throws IOException {
-        authorize(p,m);UUID id=backup(m);var pointer=new JsonObject();pointer.addProperty("latest",id.toString());store(m).putModule("storageBackup",pointer);
-        return "舱内存储已独立备份："+id;
+        authorize(p,m);checkpoint(m);UUID id=store(m).backup();var pointer=new JsonObject();pointer.addProperty("latest",id.toString());store(m).putModule("storageBackup",pointer);
+        return text("storage.backup_complete", id);
     }
     private void authorize(ServerPlayer p,FleetModule m){
+        if(m.recovery().active())throw new IllegalStateException(text("storage.busy"));
         if(!p.isCreative()||!p.hasPermissions(2))throw new IllegalStateException("存储备份与恢复暂限创造模式管理员");
         if(m.refit().active())throw new IllegalStateException("请先完成或取消改装，再操作独立存储备份");
         if(m.refit().accessProblem(p,m)!=null)throw new IllegalStateException(m.refit().accessProblem(p,m));

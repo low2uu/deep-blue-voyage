@@ -27,17 +27,21 @@ public final class FleetModule {
     private final io.github.low2uu.dbv.fleet.dock.StarterSubmarine starter;
     private final io.github.low2uu.dbv.fleet.dock.RefitService refit;
     private final io.github.low2uu.dbv.fleet.storage.CabinStorage storage;
+    private final io.github.low2uu.dbv.fleet.recovery.WholeVesselRecovery recovery;
 
     private FleetModule(MinecraftServer server) throws IOException {
         store = new RegistryStore(server.getWorldPath(LevelResource.ROOT));
+        store.recoverWholeVesselRebind();
         registry = store.load();
         starter = new io.github.low2uu.dbv.fleet.dock.StarterSubmarine(server);
         refit = new io.github.low2uu.dbv.fleet.dock.RefitService(server);
         storage = new io.github.low2uu.dbv.fleet.storage.CabinStorage(server);
+        recovery = new io.github.low2uu.dbv.fleet.recovery.WholeVesselRecovery(server);
     }
 
     public static void initialize() {
         io.github.low2uu.dbv.fleet.dock.StarterSubmarine.initializeTickets();
+        io.github.low2uu.dbv.fleet.recovery.WholeVesselRecovery.initializeTickets();
         NeoForge.EVENT_BUS.addListener(FleetCommands::register);
         io.github.low2uu.dbv.fleet.dock.DockInteraction.initialize();
         NeoForge.EVENT_BUS.addListener(io.github.low2uu.dbv.fleet.command.ControllerInteraction::interact);
@@ -52,12 +56,15 @@ public final class FleetModule {
         if (module == null) { module = new FleetModule(server); SERVERS.put(server, module); }
         return module;
     }
+    public static FleetModule existing(MinecraftServer server){return SERVERS.get(server);}
 
     public FlagshipRegistry registry() { return registry; }
     public io.github.low2uu.dbv.fleet.dock.StarterSubmarine starter() { return starter; }
     public io.github.low2uu.dbv.fleet.dock.RefitService refit() { return refit; }
     public SableVesselAdapter adapter() { return adapter; }
     public io.github.low2uu.dbv.fleet.storage.CabinStorage storage(){return storage;}
+    public io.github.low2uu.dbv.fleet.recovery.WholeVesselRecovery recovery(){return recovery;}
+    public void reconcileRecoveryRegistry() throws IOException {store.recoverWholeVesselRebind();registry=store.load();}
     public void rebindForRefit(java.util.UUID expected,dev.ryanhcode.sable.sublevel.ServerSubLevel next) throws IOException {
         registry=store.rebind(expected,next.getUniqueId());adapter.mark(next,registry.flagship().orElseThrow());
     }
@@ -95,12 +102,16 @@ public final class FleetModule {
         FleetModule module = SERVERS.get(event.getServer());
         if (module == null) { return; }
         try {
-            module.starter.tick(module);
-            module.refit.recover(module);
-            module.refit.process(module);
+            boolean restoring=module.recovery.active();
+            module.recovery.tick(module);
+            if(!restoring&&!module.recovery.active()){
+                module.starter.tick(module);
+                module.refit.recover(module);
+                module.refit.process(module);
+            }
         } catch (Exception error) { LogUtils.getLogger().error("DBV dock stopped safely: {}", error.getMessage()); }
         if (event.getServer().getTickCount() % 20 != 0) { return; }
-        if(event.getServer().getTickCount()%100==0&&module.registry.flagship().isPresent()&&!module.refit.active())try{module.storage.capture(module);}
+        if(event.getServer().getTickCount()%100==0&&module.registry.flagship().isPresent()&&!module.refit.active()&&!module.recovery.active())try{module.storage.capture(module);}
         catch(Exception error){if(event.getServer().getTickCount()%1200==0)LogUtils.getLogger().warn("主艇独立存储未更新，保留旧档案：{}",error.getMessage());}
         VesselTelemetry.State before = module.telemetry == null ? null : module.telemetry.state();
         VesselTelemetry now = module.sample(event.getServer());
@@ -110,7 +121,7 @@ public final class FleetModule {
     private static void stop(ServerStoppedEvent event) { SERVERS.remove(event.getServer()); }
     private static void stopping(net.neoforged.neoforge.event.server.ServerStoppingEvent event){
         var module=SERVERS.get(event.getServer());
-        if(module!=null&&module.registry.flagship().isPresent()&&!module.refit.active())try{module.storage.capture(module);}
+        if(module!=null&&module.registry.flagship().isPresent()&&!module.refit.active()&&!module.recovery.active())try{module.storage.capture(module);}
         catch(Exception error){LogUtils.getLogger().error("退出时主艇备份未更新，保留旧档案",error);}
     }
 

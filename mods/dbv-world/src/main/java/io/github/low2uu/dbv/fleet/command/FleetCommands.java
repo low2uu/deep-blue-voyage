@@ -21,6 +21,9 @@ public final class FleetCommands {
                                         .executes(context -> inspect(context.getSource(), UuidArgument.getUuid(context, "body"),
                                                 com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(context, "page"))))))
                         .then(Commands.literal("status").executes(context -> status(context.getSource())))
+                        .then(Commands.literal("panel").executes(context -> archive(context.getSource(),"panel")))
+                        .then(Commands.literal("backup").executes(context -> archive(context.getSource(),"backup")))
+                        .then(Commands.literal("recover").executes(context -> archive(context.getSource(),"recover")))
                         .then(Commands.literal("candidates").executes(context -> candidates(context.getSource())))
                         .then(Commands.literal("register")
                                 .then(Commands.argument("body", UuidArgument.uuid())
@@ -69,9 +72,22 @@ public final class FleetCommands {
                         "物理质量=%.2f（物理引擎单位） | 物理速度=%.3f | 深度=%s | 裂纹=%s | 破舱=%s | 观测游戏刻=%d",
                         sample.mass(), sample.speed(), value(sample.depth()), value(sample.cracks()), value(sample.breached()), sample.observedTick())), false);
             }
-            source.sendSuccess(() -> Component.literal("建设船坞：/dbv refit；仅支持初始小艇有限方块快照，尚非完整灾难恢复。"), false);
+            source.sendSuccess(() -> Component.translatable("message.dbv_world.recovery.commands"), false);
             return 1;
         } catch (Exception exception) { return fail(source, exception); }
+    }
+
+    private static int archive(CommandSourceStack source,String action){
+        try{
+            var module=FleetModule.get(source.getServer());var player=source.getPlayerOrException();
+            if(action.equals("panel")){
+                if(io.github.low2uu.dbv.fleet.ui.FleetPanel.nearDock(player))io.github.low2uu.dbv.fleet.ui.FleetPanel.openDock(player,null);
+                else io.github.low2uu.dbv.fleet.ui.FleetPanel.openMain(player);
+                return 1;
+            }
+            String result=action.equals("backup")?module.storage().manualBackup(player,module):module.recovery().restoreLatest(player,module);
+            source.sendSuccess(()->Component.literal(result),false);return 1;
+        }catch(Exception exception){return fail(source,exception);}
     }
 
     private static String value(Object value) { return value == null ? "未知/未初始化" : value instanceof Boolean flag ? (flag ? "是" : "否") : value.toString(); }

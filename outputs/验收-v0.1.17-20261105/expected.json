@@ -1,0 +1,33 @@
+{
+  "vesselId": "a07a8a8e-ce61-4b5a-b28e-2808d1865df6",
+  "originalBodyId": "fd856502-0ba1-4087-b05e-f4e36b0fe34c",
+  "barrel": [
+    3,
+    13,
+    3
+  ],
+  "diffuser": [
+    3,
+    13,
+    9
+  ],
+  "generator": [
+    3,
+    13,
+    6
+  ],
+  "dieselTank": [
+    3,
+    13,
+    12
+  ],
+  "water": 1879,
+  "generatorOxygen": 211,
+  "energy": 6234,
+  "diffuserOxygen": 1000,
+  "diesel": 2487,
+  "contraptions": 1,
+  "blocks": 1693,
+  "restoredBodyId": "32d54c81-742b-4e19-b4ed-3869d2446434",
+  "interruptedOriginalBodyId": "32d54c81-742b-4e19-b4ed-3869d2446434"
+}

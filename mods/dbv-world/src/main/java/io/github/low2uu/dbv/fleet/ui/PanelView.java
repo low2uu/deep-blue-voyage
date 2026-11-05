@@ -14,6 +14,7 @@ public record PanelView(UUID session, boolean open, String title, String status,
     public static final int BLOCK_MODE=512;
     public static final int STORAGE_EDITABLE=1024;
     public static final int CAN_DEPART=2048,DEPARTED=4096,CAN_MOOR=8192;
+    public static final int CAN_RESTORE=16384,RECOVERING=32768,BODY_PRESENT=65536;
     public PanelView(UUID session,boolean open,String title,String status,String notice,int flags,List<String> devices){this(session,open,title,status,notice,flags,devices,List.of(),"");}
     public static final Type<PanelView> TYPE=new Type<>(ResourceLocation.parse("dbv_world:panel_view"));
     public static final StreamCodec<RegistryFriendlyByteBuf,PanelView> CODEC=StreamCodec.of((b,v)->{

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "phase": "restart",
+  "ticks": 5,
+  "interruptedBeforeCommit": true,
+  "vesselId": "a07a8a8e-ce61-4b5a-b28e-2808d1865df6",
+  "bodyId": "32d54c81-742b-4e19-b4ed-3869d2446434",
+  "status": "正在恢复整艘潜艇，核对船体、设备和存储内容",
+  "world": ".\\world\\."
+}

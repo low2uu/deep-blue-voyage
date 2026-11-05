@@ -23,11 +23,13 @@ final class LegacyRefitService {
     private long checkingUntil;
     public LegacyRefitService(MinecraftServer server) throws IOException {
         this.server=server;
-        active=server.getWorldPath(LevelResource.ROOT).resolve("dbv/fleet/dock/active-refit.nbt");
-        if (Files.exists(active.resolveSibling("active-refit.nbt.pending"))) throw new IOException("改装备份写入中断，禁止继续编辑");
+        active=server.getWorldPath(LevelResource.ROOT).resolve("dbv/fleet/dock/active-refit.json");
+        DockFiles.migrateDirectory(active.getParent());
+        AtomicSnapshotFile.requireComplete(active);
         if (Files.exists(active)) { session=DockFiles.read(active); validate(session); recoveryRequired=true; }
     }
     public boolean active() { return session!=null; }
+    public com.google.gson.JsonObject snapshot(){return io.github.low2uu.dbv.fleet.storage.BlockEntityJson.encode(session);}
     public boolean checking() { return checkingUntil>0; }
     public String accessProblem(ServerPlayer player,FleetModule module) {
         try { authorize(player,module);return null; }
@@ -43,6 +45,7 @@ final class LegacyRefitService {
         return body;
     }
     private ServerSubLevel authorize(ServerPlayer player,FleetModule module) {
+        if(module.recovery().active())throw new IllegalStateException(net.minecraft.network.chat.Component.translatable("message.dbv_world.recovery.busy").getString());
         if(!ConstructionMode.ENABLED || !player.isCreative() || !player.hasPermissions(2)) throw new IllegalStateException("首版仅限建设模式下的创造模式管理员");
         if(blocked || recoveryRequired) throw new IllegalStateException(status());
         var body=body(module);
@@ -95,19 +98,19 @@ final class LegacyRefitService {
                 return "验收中，等待结构扫描（最多10秒）；期间锁定编辑，完成后自动通知。";
             }
             if(!report.qualification().eligible()) {
-                String reasons=String.join("；",report.qualification().reasons());restore(body);finish("rejected");
+                String reasons=String.join("；",report.qualification().reasons());restore(body);finish("rejected");module.storage().checkpoint(module);
                 return "验收失败，已还原改装前状态："+reasons;
             }
-            finish("committed");return "验收通过，改装已保存；主艇身份保持不变，旧备份保留在history。";
+            finish("committed");module.storage().checkpoint(module);return "验收通过，改装已保存；主艇身份保持不变，旧备份保留在history。";
         }
-        if(action.equals("cancel")) { restore(body);finish("cancelled");return "已取消改装并还原船体与支持设备的数据。"; }
+        if(action.equals("cancel")) { restore(body);finish("cancelled");module.storage().checkpoint(module);return "已取消改装并还原船体与支持设备的数据。"; }
         throw new IllegalArgumentException("未知改装操作");
     }
     public void recover(FleetModule module) throws IOException {
         if(!recoveryRequired || blocked) return;
         var identity=module.registry().flagship();
         if(identity.isEmpty() || module.adapter().find(server.overworld(),identity.get().bodyId())==null) return;
-        try { restore(body(module));finish("interrupted");recoveryRequired=false; }
+        try { restore(body(module));finish("interrupted");recoveryRequired=false;module.storage().checkpoint(module); }
         catch(IOException | RuntimeException error) { blocked=true;throw error; }
     }
     public void process(FleetModule module) throws IOException {
@@ -119,6 +122,7 @@ final class LegacyRefitService {
             boolean eligible=report.qualification().eligible();
             if(!eligible) restore(body);
             finish(eligible?"committed":"rejected");
+            module.storage().checkpoint(module);
             if(owner!=null) {
                 String result=eligible?"验收完成，改装已保存。":"验收未通过，已自动还原："+String.join("；",report.qualification().reasons());
                 if(!io.github.low2uu.dbv.fleet.ui.FleetPanel.notifyResult(owner,result))
@@ -161,7 +165,7 @@ final class LegacyRefitService {
     private void closeSnapshot(String outcome) throws IOException {
         if(!server.saveEverything(false,true,true)) throw new IOException("世界存盘失败，保留活动备份");
         Path history=active.getParent().resolve("history");Files.createDirectories(history);
-        Files.move(active,history.resolve(java.util.UUID.randomUUID()+"-"+outcome+".nbt"),StandardCopyOption.ATOMIC_MOVE);
+        Files.move(active,history.resolve(java.util.UUID.randomUUID()+"-"+outcome+".json"),StandardCopyOption.ATOMIC_MOVE);
         session=null;
         checkingUntil=0;
     }

@@ -37,7 +37,7 @@ public final class RefitService {
     private long deadline;
     public RefitService(MinecraftServer server) throws IOException {
         this.server=server;legacy=new LegacyRefitService(server);
-        file=server.getWorldPath(LevelResource.ROOT).resolve("dbv/fleet/dock/block-refit.nbt");
+        file=server.getWorldPath(LevelResource.ROOT).resolve("dbv/fleet/dock/block-refit.json");
         AtomicSnapshotFile.requireComplete(file);
         if(Files.exists(file)){
             journal=DockFiles.read(file);validate();recovering=true;
@@ -46,6 +46,13 @@ public final class RefitService {
         }
     }
     public boolean active(){return journal!=null||legacy.active();}
+    /** Included in vessel business snapshots; the live transaction remains authoritative until it is closed. */
+    public com.google.gson.JsonObject snapshot(){
+        var data=new com.google.gson.JsonObject();data.addProperty("schemaVersion",1);data.addProperty("active",active());
+        if(journal!=null)data.add("transaction",io.github.low2uu.dbv.fleet.storage.BlockEntityJson.encode(journal));
+        else if(legacy.active())data.add("transaction",legacy.snapshot());
+        return data;
+    }
     public boolean checking(){return journal!=null?phase().equals("VALIDATING"):legacy.checking();}
     public boolean blockMode(){return journal!=null&&!phase().equals("VALIDATING");}
     private String phase(){return journal==null?"":journal.getString("phase");}
@@ -73,6 +80,7 @@ public final class RefitService {
         try{authorize(p,m);return null;}catch(Exception e){return e.getMessage()==null?"船坞状态无法确认":e.getMessage();}
     }
     private void authorize(ServerPlayer p,FleetModule m){
+        if(m.recovery().active())throw new IllegalStateException(net.minecraft.network.chat.Component.translatable("message.dbv_world.recovery.busy").getString());
         if(!ConstructionMode.ENABLED||!p.isCreative()||!p.hasPermissions(2))throw new IllegalStateException("首版仅限建设模式下的创造模式管理员");
         if(blocked||recovering)throw new IllegalStateException(status());
         if(journal!=null){
@@ -322,7 +330,7 @@ public final class RefitService {
             }
             restoreWorld();assemble(m,true);
             if(journal.hasUUID("businessBackup"))m.storage().store(m).restore(journal.getUUID("businessBackup"));
-            finish(outcome);m.storage().capture(m);
+            finish(outcome);m.storage().checkpoint(m);
         }catch(IOException|RuntimeException e){blocked=true;throw e;}
     }
     public void recover(FleetModule m) throws IOException {
@@ -344,13 +352,13 @@ public final class RefitService {
         var q=m.inspection().inspect(body).qualification();
         if(!q.eligible()&&server.overworld().getGameTime()<deadline)return;
         var owner=server.getPlayerList().getPlayer(journal.getUUID("owner"));String result;
-        if(q.eligible()){finish("committed");result="三项验收通过：改装完成，已恢复物理船体；主艇永久身份不变。";}
+        if(q.eligible()){finish("committed");m.storage().checkpoint(m);result="三项验收通过：改装完成，已恢复物理船体；主艇永久身份不变。";}
         else{rollback(m,"rejected");result="完成验收失败，已恢复改装前物理船体："+String.join("；",q.reasons());}
         if(owner!=null&&!io.github.low2uu.dbv.fleet.ui.FleetPanel.notifyResult(owner,result))owner.sendSystemMessage(net.minecraft.network.chat.Component.literal(result));
     }
     private void finish(String outcome) throws IOException {
         saveWorld();var history=file.getParent().resolve("history");Files.createDirectories(history);
-        Files.move(file,history.resolve(UUID.randomUUID()+"-blocks-"+outcome+".nbt"),StandardCopyOption.ATOMIC_MOVE);
+        Files.move(file,history.resolve(UUID.randomUUID()+"-blocks-"+outcome+".json"),StandardCopyOption.ATOMIC_MOVE);
         journal=null;deadline=0;
     }
     private void setPhase(String phase) throws IOException {journal.putString("phase",phase);DockFiles.replace(file,journal);}

@@ -1,0 +1,14 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+[[mods]]
+modId="dbv_recovery_probe"
+version="1.0.0"
+displayName="DBV isolated whole-vessel recovery acceptance"
+description="Destructive test fixture; never include in a player pack."
+[[dependencies.dbv_recovery_probe]]
+modId="dbv_world"
+type="required"
+versionRange="[0.1.16,)"
+ordering="AFTER"
+side="SERVER"

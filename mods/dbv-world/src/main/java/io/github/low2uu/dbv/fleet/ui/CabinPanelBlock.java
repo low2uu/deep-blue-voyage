@@ -36,6 +36,9 @@ public final class CabinPanelBlock {
         try{
             var m=FleetModule.get(p.getServer());var owner=SableCompanion.INSTANCE.getContaining(e.getLevel(),e.getPos());
             boolean onboard=owner instanceof ServerSubLevel body&&m.registry().flagship().map(i->i.bodyId().equals(body.getUniqueId())).orElse(false);
+            if(owner==null&&p.serverLevel()==p.getServer().overworld()&&FleetPanel.dockPosition(e.getPos())){
+                FleetPanel.openDock(p,e.getPos());return;
+            }
             if(!onboard&&!(p.serverLevel()==p.getServer().overworld()&&m.refit().contains(e.getPos())))throw new IllegalStateException("请将信息面板安装在主潜艇内");
             FleetPanel.openMain(p);
         }catch(Exception error){FleetPanel.unavailable(p,error.getMessage()==null?"面板暂时无法连接主艇":error.getMessage());}

@@ -12,13 +12,20 @@ final class AtomicSnapshotFile {
         if(Files.exists(path.resolveSibling(path.getFileName()+".pending"))) throw new IOException("船坞档案写入中断，请保留现场");
     }
     static void create(Path path,byte[] bytes) throws IOException {
+        write(path,bytes,false);
+    }
+    static void replace(Path path,byte[] bytes) throws IOException {
+        write(path,bytes,true);
+    }
+    private static void write(Path path,byte[] bytes,boolean replace) throws IOException {
         Files.createDirectories(path.getParent());
         requireComplete(path);
-        if(Files.exists(path)) throw new IOException("船坞档案已存在，拒绝覆盖："+path.getFileName());
+        if(!replace&&Files.exists(path)) throw new IOException("船坞档案已存在，拒绝覆盖："+path.getFileName());
         var pending=path.resolveSibling(path.getFileName()+".pending");
         try(var channel=FileChannel.open(pending,StandardOpenOption.CREATE_NEW,StandardOpenOption.WRITE)) {
             var buffer=ByteBuffer.wrap(bytes);while(buffer.hasRemaining())channel.write(buffer);channel.force(true);
         }
-        Files.move(pending,path,StandardCopyOption.ATOMIC_MOVE);
+        if(replace)Files.move(pending,path,StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);
+        else Files.move(pending,path,StandardCopyOption.ATOMIC_MOVE);
     }
 }

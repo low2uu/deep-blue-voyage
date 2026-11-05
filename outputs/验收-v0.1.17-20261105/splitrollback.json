@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "phase": "splitrollback",
+  "ticks": 27,
+  "interruptedBeforeCommit": false,
+  "vesselId": "a07a8a8e-ce61-4b5a-b28e-2808d1865df6",
+  "bodyId": "7eca68dc-0f5b-447a-b335-4f230621a37c",
+  "splitRollback": {
+    "floatingBarrel": [
+      1,
+      12,
+      1
+    ],
+    "originalBodyId": "7eca68dc-0f5b-447a-b335-4f230621a37c",
+    "generation": 3,
+    "checkpointSha256": "23b1350b320e16a1d238d856ba9b451a4eeab9dfbf47a5714c94117d7ef5bd34",
+    "independentBodies": [],
+    "initialCandidates": [
+      "7eec1ffe-fb67-49f5-9202-4e921a54d4c9"
+    ],
+    "allCandidatesRemoved": [
+      "49d5ff4e-3f07-4ffe-b446-0b652d2954ff",
+      "7eec1ffe-fb67-49f5-9202-4e921a54d4c9"
+    ],
+    "splitDescendantsRemoved": [
+      "49d5ff4e-3f07-4ffe-b446-0b652d2954ff"
+    ],
+    "checkpointUnchanged": true,
+    "identityUnchanged": true,
+    "cargoCopiesRemaining": 0,
+    "receipt": ".\\world\\.\\dbv\\fleet\\vessels\\a07a8a8e-ce61-4b5a-b28e-2808d1865df6\\recovery-history\\b0a0f6a2-fd03-4fc0-a034-9c66b0972ef9-rolled-back.json"
+  },
+  "status": "恢复设备缺失：局部 996, 36, 1024，应为 minecraft:barrel，实际位置 20480996, 36, 20481024，当前方块 Block{minecraft:air}，区块已加载 true，载体 7eec1ffe-fb67-49f5-9202-4e921a54d4c9",
+  "world": ".\\world\\."
+}

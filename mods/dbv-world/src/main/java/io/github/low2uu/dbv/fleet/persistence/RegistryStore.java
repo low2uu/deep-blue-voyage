@@ -21,6 +21,32 @@ public final class RegistryStore {
 
     public RegistryStore(Path worldRoot) { file = worldRoot.resolve("dbv/fleet/registry.json"); }
 
+    /** Only a verified whole-vessel transaction may settle an interrupted carrier swap. */
+    public void recoverWholeVesselRebind() throws IOException {
+        Path pending=file.resolveSibling("registry.refit.pending.json");
+        if(!Files.exists(pending)||!Files.exists(file))return;
+        try {
+            var current=JsonParser.parseString(Files.readString(file)).getAsJsonObject();
+            var ship=current.getAsJsonObject("flagship");UUID vessel=UUID.fromString(string(ship,"vesselId"));
+            Path directory=file.getParent().resolve("vessels").resolve(vessel.toString());
+            var journal=new io.github.low2uu.dbv.fleet.recovery.RecoveryJournal(directory).read();
+            if(journal==null||!java.util.Set.of("VERIFIED","COMMITTED").contains(string(journal,"phase")))return;
+            if(!string(journal,"originalBody").equals(string(ship,"bodyId"))||!string(journal,"vesselId").equals(vessel.toString()))return;
+            boolean valid=false;
+            try {
+                var next=JsonParser.parseString(Files.readString(pending)).getAsJsonObject();var replacement=next.getAsJsonObject("flagship");
+                var expected=current.deepCopy();var expectedShip=expected.getAsJsonObject("flagship");
+                expectedShip.addProperty("bodyId",string(journal,"candidate"));expectedShip.addProperty("generation",Math.addExact(integer(ship,"generation"),1));
+                valid=next.equals(expected)&&string(replacement,"vesselId").equals(vessel.toString());
+            }catch(RuntimeException ignored){ /* A partial write has not committed; retain it as evidence. */ }
+            if(valid)Files.move(pending,file,StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);
+            else {
+                Path history=directory.resolve("recovery-history");Files.createDirectories(history);
+                Files.move(pending,history.resolve(UUID.randomUUID()+"-registry-interrupted.json"),StandardCopyOption.ATOMIC_MOVE);
+            }
+        }catch(RuntimeException e){throw new IOException("整艇恢复登记无法核对，保留原文件",e);}
+    }
+
     public FlagshipRegistry load() throws IOException {
         if(Files.exists(file.resolveSibling("registry.refit.pending.json")))throw new IOException("主艇换装登记中断，请保留船坞档案");
         if (!Files.exists(file)) {

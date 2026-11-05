@@ -2,11 +2,12 @@
 
 Minecraft **1.21.1 / NeoForge 21.1.259 / Java 21** 的潜艇探索整合包，自研 Mod 为 `dbv-world`。
 
-当前开发版本 **0.1.16**，对应`develop`分支和`v0.1.16`标签（2026-11-05）。地图交付版本单独管理，`pack/worlds` 当前为 **0.1.4**，不代表Mod代码版本。查看[版本记录](docs/版本记录-changelog.md)。
+当前开发版本 **0.1.17**，对应`develop`分支和`v0.1.17`标签（2026-11-05）。地图交付版本单独管理，`pack/worlds` 当前为 **0.1.4**，不代表Mod代码版本。查看[版本记录](docs/版本记录-changelog.md)。
 
 ## 从这里开始
 
 - **理解当前开发版本**：[开发版本总览](docs/development/开发版本总览-development-overview.md)。说明系统边界、数据存放和已实现/未实现功能。
+- **主艇损毁恢复**：[主艇完整恢复与JSON档案](docs/development/主艇完整恢复与JSON档案-whole-vessel-recovery-and-json.md)。说明独立恢复点、设备与物品恢复、岸上面板、旧NBT迁移和断点处理。
 - **运行与更新**：[部署启动与版本更新](docs/部署启动与版本更新-deployment-launch-update.md)；全新电脑先看[开发环境部署](docs/开发环境部署-development-setup.md)。
 - **双人联机**：[服务器部署](server/README.md)，目前采用用户选择的离线登录和IPv6。
 - **玩法设计**：[游戏机制](docs/game-mechanics/README.md)；所有机制及数值设计完整保留，方案不等于代码已实现。
@@ -30,7 +31,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\dev.ps1 run
 
 | 路径 | 内容 |
 | --- | --- |
-| `mods/dbv-world/` | Java代码、游戏资源、44项当前测试、Gradle构建 |
+| `mods/dbv-world/` | Java代码、游戏资源、回归测试与Gradle构建；验证结果见本版验收记录 |
 | `content/` | 物品、怪物、舱内设备的设计JSON来源 |
 | `tools/` | 开发/地图/生成器/设计器的可维护源码 |
 | `tool/content-designer/` | 设计器便携发行；修改应回到tools源码并重打包 |
@@ -43,4 +44,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\dev.ps1 run
 | `runtime/backups/`、`runtime/server-backups/` | 本机回退资料，不随代码更新覆盖 |
 | `.local/`、`dist/` | 本机构建缓存、检查结果和可重新生成的发行包，不进Git |
 
-项目默认中文；新贴图默认16×16。自研业务数据以船体ID组织，但目前仍有改装事务/泊位NBT，详见总览。旧恢复代码承担兼容职责，不能仅因名字含Legacy就删除。
+项目默认中文；新贴图默认16×16。主艇业务、恢复点、改装事务和泊位均保存为独立JSON；旧NBT经校验迁移后只保留归档，上游内存数据适配及Minecraft自身存档格式仍保留。船坞面板的“整艇档案”可执行整艇备份和损毁恢复，支持范围与验证结果见上述文档及本版验收记录。旧恢复代码承担兼容职责，不能仅因名字含Legacy就删除。

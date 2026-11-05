@@ -1,0 +1,28 @@
+// Test-only source set; use with -I. Nothing here is applied by normal development or distribution.
+allprojects {
+    afterEvaluate {
+        if (plugins.hasPlugin('java-library') && name == 'dbv-world') {
+            def probeRoot = file('src/test/resources/acceptance/whole-vessel-recovery')
+            def destination = file(providers.gradleProperty('dbvRecoveryOutput').get())
+            def probe = sourceSets.create('recoveryProbe') {
+                java.srcDirs = [probeRoot]
+                resources.srcDirs = []
+                compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+            }
+            tasks.named(probe.compileJavaTaskName, JavaCompile) {
+                dependsOn tasks.named('classes')
+                options.encoding = 'UTF-8'
+            }
+            tasks.register('recoveryProbeJar', Jar) {
+                dependsOn tasks.named(probe.classesTaskName)
+                archiveFileName = 'dbv-recovery-probe.jar'
+                destinationDirectory = destination
+                from probe.output
+                from(probeRoot) { include 'neoforge.mods.toml'; into 'META-INF' }
+                doLast {
+                    new File(destination, 'probe-classpath.txt').setText(probe.compileClasspath.asPath, 'UTF-8')
+                }
+            }
+        }
+    }
+}

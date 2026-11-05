@@ -47,6 +47,7 @@ public final class StarterSubmarine {
     }
     public String departureProblem(net.minecraft.server.level.ServerPlayer player,FleetModule module){
         try{
+            if(module.recovery().active())return net.minecraft.network.chat.Component.translatable("message.dbv_world.recovery.busy").getString();
             if(departed(module))return "已出航，船坞固定与岸供已断开";
             if(module.refit().active())return "请先完成或取消改装";
             return module.refit().accessProblem(player,module);
@@ -61,6 +62,7 @@ public final class StarterSubmarine {
     }
     public String mooringProblem(net.minecraft.server.level.ServerPlayer player,FleetModule module){
         try{
+            if(module.recovery().active())return net.minecraft.network.chat.Component.translatable("message.dbv_world.recovery.busy").getString();
             if(!ConstructionMode.ENABLED||!player.isCreative()||!player.hasPermissions(2))return "首版停泊仅限建设模式创造管理员";
             if(failed)return "船坞服务异常，请保存退出后重新进入世界，再检查日志";
             if(!departed(module))return "主艇已经停泊";
@@ -109,15 +111,19 @@ public final class StarterSubmarine {
     }
     public static void requestNewWorld(MinecraftServer server) throws IOException {
         var directory = server.getWorldPath(LevelResource.ROOT).resolve("dbv/fleet/dock");
-        DockFiles.create(directory.resolve("starter-request.nbt"), new CompoundTag());
+        DockFiles.migrateDirectory(directory);
+        DockFiles.create(directory.resolve("starter-request.json"), new CompoundTag());
     }
     public void tick(FleetModule module) throws IOException {
         if (failed || !ConstructionMode.ENABLED) return;
         try {
-            Path vessel = directory.resolve("starter.nbt");
+            Path vessel = directory.resolve("starter.json");
+            AtomicSnapshotFile.requireComplete(vessel);
             if (!Files.exists(vessel)) {
-                if (!Files.exists(directory.resolve("starter-request.nbt"))) return;
-                if (Files.exists(directory.resolve("starter-building.nbt"))) throw new IOException("初始艇生成曾中断，不重复生成，请保留船坞档案");
+                AtomicSnapshotFile.requireComplete(directory.resolve("starter-request.json"));
+                AtomicSnapshotFile.requireComplete(directory.resolve("starter-building.json"));
+                if (!Files.exists(directory.resolve("starter-request.json"))) return;
+                if (Files.exists(directory.resolve("starter-building.json"))) throw new IOException("初始艇生成曾中断，不重复生成，请保留船坞档案");
                 create(module);
             }
             if (vesselData == null) vesselData = DockFiles.read(vessel);
@@ -131,16 +137,7 @@ public final class StarterSubmarine {
                 return;
             }
             if (!inDock(body)) return;
-            if (mooring == null || !mooring.isValid() || body != mooredInstance) {
-                if (mooring != null && mooring.isValid()) mooring.remove();
-                var p = new Vector3d(tag.getInt("x") + .5, tag.getInt("y") + .5, tag.getInt("z") + .5);
-                var w = new Vector3d(tag.getDouble("worldX"), tag.getDouble("worldY"), tag.getDouble("worldZ"));
-                mooring = SubLevelPhysicsSystem.require(body.getLevel()).getPipeline().addConstraint(body, null,
-                        new FixedConstraintConfiguration(p, w, tag.contains("qw")
-                                ?new Quaterniond(tag.getDouble("qx"),tag.getDouble("qy"),tag.getDouble("qz"),tag.getDouble("qw")):new Quaterniond()));
-                mooredBody = body.getUniqueId();
-                mooredInstance = body;
-            }
+            ensureMooring(body,tag);
             // A dock utility, not fake production: the generator still consumes FE/water and produces oxygen.
             for (var holder : body.getPlot().getLoadedChunks()) {
                 if (holder.getChunk() == null) continue;
@@ -171,6 +168,40 @@ public final class StarterSubmarine {
                 && box.minY() >= WorldHeights.fromLegacy(13) && box.maxY() <= WorldHeights.fromLegacy(100);
     }
     public boolean moored(ServerSubLevel body) { return body.getUniqueId().equals(mooredBody) && mooring != null && mooring.isValid(); }
+    private void ensureMooring(ServerSubLevel body,CompoundTag tag){
+        if(mooring!=null&&mooring.isValid()&&body==mooredInstance)return;
+        releaseMooring();
+        var p=new Vector3d(tag.getInt("x")+.5,tag.getInt("y")+.5,tag.getInt("z")+.5);
+        var w=new Vector3d(tag.getDouble("worldX"),tag.getDouble("worldY"),tag.getDouble("worldZ"));
+        mooring=SubLevelPhysicsSystem.require(body.getLevel()).getPipeline().addConstraint(body,null,
+                new FixedConstraintConfiguration(p,w,tag.contains("qw")
+                        ?new Quaterniond(tag.getDouble("qx"),tag.getDouble("qy"),tag.getDouble("qz"),tag.getDouble("qw")):new Quaterniond()));
+        mooredBody=body.getUniqueId();mooredInstance=body;
+    }
+    public static net.minecraft.core.BlockPos recoveryPosition(){
+        return new net.minecraft.core.BlockPos(64,WorldHeights.fromLegacy(68),180);
+    }
+    /** A body-independent copy of the dock record; no live physics handle is serialized. */
+    public com.google.gson.JsonObject berthSnapshot() throws IOException {
+        if(vesselData==null&&Files.exists(directory.resolve("starter.json")))vesselData=DockFiles.read(directory.resolve("starter.json"));
+        var data=new com.google.gson.JsonObject();data.addProperty("schemaVersion",1);
+        if(vesselData!=null)data.add("anchor",io.github.low2uu.dbv.fleet.storage.BlockEntityJson.encode(vesselData));
+        return data;
+    }
+    /** Called only after the registry has rebound to a newly restored body. Does not provision or modify devices. */
+    public void adoptRecoveredBody(ServerSubLevel body,FleetModule module) throws IOException {
+        if(!module.registry().flagship().orElseThrow().bodyId().equals(body.getUniqueId()))throw new IOException("恢复泊位与主艇登记不一致");
+        // A committed recovery can reconstruct its berth after an interrupted atomic dock write.
+        Path pending=directory.resolve("starter.json.pending");
+        if(Files.exists(pending)){
+            Path history=directory.resolve("history");Files.createDirectories(history);
+            Files.move(pending,history.resolve(java.util.UUID.randomUUID()+"-recovery-berth.json.pending"),StandardCopyOption.ATOMIC_MOVE);
+        }
+        adoptRefitBody(body);
+        var navigation=new com.google.gson.JsonObject();navigation.addProperty("schemaVersion",1);navigation.addProperty("departed",false);
+        module.storage().store(module).putModule("navigation",navigation);
+        departed=false;failed=false;ensureMooring(body,vesselData);
+    }
     public void releaseMooring(){
         if(mooring!=null&&mooring.isValid())mooring.remove();
         mooring=null;mooredBody=null;mooredInstance=null;
@@ -184,7 +215,7 @@ public final class StarterSubmarine {
         tag.putDouble("worldX",w.x);tag.putDouble("worldY",w.y);tag.putDouble("worldZ",w.z);
         var orientation=body.logicalPose().orientation().conjugate(new Quaterniond());
         tag.putDouble("qx",orientation.x);tag.putDouble("qy",orientation.y);tag.putDouble("qz",orientation.z);tag.putDouble("qw",orientation.w);
-        DockFiles.replace(directory.resolve("starter.nbt"),tag);vesselData=tag;
+        DockFiles.replace(directory.resolve("starter.json"),tag);vesselData=tag;
         dev.ryanhcode.sable.api.sublevel.SubLevelContainer.getContainer(body.getLevel()).addForceLoadTicket(body,INITIAL_VALIDATION,net.minecraft.util.Unit.INSTANCE);
     }
     private void create(FleetModule module) throws IOException {
@@ -192,7 +223,7 @@ public final class StarterSubmarine {
             throw new IOException("世界已有船体或主艇，拒绝自动生成");
         var level = server.overworld();
         DesignedSubmarine.read(); // Validate dependencies before recording creation intent.
-        DockFiles.create(directory.resolve("starter-building.nbt"), new CompoundTag());
+        DockFiles.create(directory.resolve("starter-building.json"), new CompoundTag());
         var body = DesignedSubmarine.create(level);
         // A freshly imported Sable body's world bounds update on the next physics tick.
         // tick() checks inDock before mooring or registration; do not reject its stale initial bounds.

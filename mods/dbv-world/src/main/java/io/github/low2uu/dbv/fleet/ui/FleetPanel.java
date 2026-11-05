@@ -3,6 +3,7 @@ package io.github.low2uu.dbv.fleet.ui;
 import com.maxenonyme.createsubmarine.submarine.block.entity.CommandSubBlockEntity;
 import dev.ryanhcode.sable.sublevel.ServerSubLevel;
 import io.github.low2uu.dbv.fleet.FleetModule;
+import io.github.low2uu.dbv.world.WorldHeights;
 import java.util.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -14,7 +15,8 @@ public final class FleetPanel {
     private static final Map<ServerPlayer,Session> SESSIONS=new WeakHashMap<>();
     private static final class Session {
         final UUID token=UUID.randomUUID(),body;
-        boolean flagship;
+        boolean flagship,dock,recovering;
+        BlockPos terminal;
         long lastPacket=-100,expires;
         String notice="关闭窗口后可继续建设；关闭窗口不会取消已开始的改装。";
         Session(UUID body,long now){this.body=body;expires=now+200;}
@@ -24,7 +26,7 @@ public final class FleetPanel {
         PacketDistributor.sendToPlayer(player,new PanelView(UUID.randomUUID(),true,"潜艇管理",message,"请先将船载电脑装配到潜艇船体。",0,List.of()));
     }
     public static void register(RegisterPayloadHandlersEvent event){
-        var registrar=event.registrar("2");
+        var registrar=event.registrar("3");
         registrar.playToServer(PanelAction.TYPE,PanelAction.CODEC,(payload,context)->{
             if(context.player() instanceof ServerPlayer p)handle(p,payload);
         });
@@ -39,9 +41,39 @@ public final class FleetPanel {
     }
     public static void openMain(ServerPlayer player) throws java.io.IOException {
         var m=FleetModule.get(player.getServer());var body=m.refit().currentBody(m);
+        if(!m.refit().blockMode()&&nearDock(player)){openDock(player,null);return;}
         if(m.refit().blockMode()? !m.refit().near(player):body==null||!near(player,body))throw new IllegalStateException("请靠近主艇或船坞改装区域");
         var s=new Session(m.registry().flagship().orElseThrow().bodyId(),player.serverLevel().getGameTime());s.flagship=true;
         SESSIONS.put(player,s);send(player,s,body,true);
+    }
+    /** An onshore terminal belongs to the permanent identity, not its possibly destroyed body. */
+    public static void openDock(ServerPlayer player,BlockPos terminal) throws java.io.IOException {
+        var m=FleetModule.get(player.getServer());
+        if(!nearDock(player)||(terminal!=null&&(!dockPosition(terminal)||!player.blockPosition().closerThan(terminal,12))))
+            throw new IllegalStateException(localizedText(player,"message.dbv_world.recovery.near_dock"));
+        var identity=m.registry().flagship().orElseThrow(()->new IllegalStateException(localizedText(player,"message.dbv_world.recovery.unregistered")));
+        var s=new Session(identity.bodyId(),player.serverLevel().getGameTime());
+        s.flagship=true;s.dock=true;s.terminal=terminal==null?null:terminal.immutable();
+        s.notice=localizedText(player,"message.dbv_world.recovery.dock_notice");
+        SESSIONS.put(player,s);send(player,s,m.refit().currentBody(m),true);
+    }
+    public static boolean dockPosition(BlockPos pos){
+        return pos.getX()>=-12&&pos.getX()<=140&&pos.getZ()>=100&&pos.getZ()<=252
+                &&pos.getY()>=WorldHeights.fromLegacy(1)&&pos.getY()<=WorldHeights.fromLegacy(112);
+    }
+    public static boolean nearDock(ServerPlayer player){return player.serverLevel()==player.getServer().overworld()&&dockPosition(player.blockPosition());}
+    private static final Map<String,Map<String,String>> TRANSLATIONS=new HashMap<>();
+    /** PanelView carries strings, so resolve new messages for the player's locale, not the dedicated server's English fallback. */
+    public static String localizedText(ServerPlayer player,String key,Object...args){
+        String locale=player.clientInformation().language().startsWith("zh")?"zh_cn":"en_us";
+        var translations=TRANSLATIONS.computeIfAbsent(locale,language->{
+            try(var input=FleetPanel.class.getResourceAsStream("/assets/dbv_world/lang/"+language+".json")){
+                if(input==null)throw new java.io.IOException("Missing UI language resource");
+                var values=com.google.gson.JsonParser.parseReader(new java.io.InputStreamReader(input,java.nio.charset.StandardCharsets.UTF_8)).getAsJsonObject();
+                var result=new HashMap<String,String>();values.entrySet().forEach(e->result.put(e.getKey(),e.getValue().getAsString()));return result;
+            }catch(java.io.IOException error){throw new IllegalStateException("无法读取潜艇界面语言资源",error);}
+        });
+        return String.format(Locale.ROOT,translations.getOrDefault(key,key),args);
     }
     private static boolean near(ServerPlayer player,ServerSubLevel body){
         if(player.serverLevel()!=body.getLevel()||body.isRemoved())return false;
@@ -50,7 +82,7 @@ public final class FleetPanel {
     }
     public static void handle(ServerPlayer player,PanelAction action){
         var s=SESSIONS.get(player);long now=player.serverLevel().getGameTime();
-        if(s==null||!s.token.equals(action.session())||action.action()<0||action.action()>PanelAction.MOOR)return;
+        if(s==null||!s.token.equals(action.session())||action.action()<0||action.action()>PanelAction.VESSEL_RESTORE)return;
         if(action.action()==PanelAction.CLOSE){SESSIONS.remove(player);return;}
         if(now>s.expires){
             PacketDistributor.sendToPlayer(player,new PanelView(s.token,false,"潜艇管理","连接已过期","请重新打开管理界面。",0,List.of()));
@@ -59,11 +91,21 @@ public final class FleetPanel {
         if(now-s.lastPacket<4&&action.action()==PanelAction.REFRESH)return;s.lastPacket=now;s.expires=now+200;
         try{
             var m=FleetModule.get(player.getServer());var body=s.flagship?m.refit().currentBody(m):m.adapter().find(player.serverLevel(),s.body);
-            if(s.flagship&&m.refit().blockMode()?!m.refit().near(player):body==null||!near(player,body)){
+            boolean connected=s.dock?nearDock(player)&&(s.terminal==null||player.blockPosition().closerThan(s.terminal,12))
+                    :(s.flagship&&m.refit().blockMode()?m.refit().near(player):body!=null&&near(player,body));
+            if(!connected){
                 PacketDistributor.sendToPlayer(player,new PanelView(s.token,false,"潜艇管理","连接已断开","请靠近原潜艇，重新打开管理界面。",0,List.of()));
                 SESSIONS.remove(player);return;
             }
-            if(action.action()==PanelAction.STORAGE_OPEN){
+            if(m.recovery().active()&&action.action()!=PanelAction.REFRESH&&action.action()!=PanelAction.CHECK)
+                throw new IllegalStateException(localizedText(player,"message.dbv_world.recovery.busy"));
+            if(action.action()==PanelAction.VESSEL_RESTORE){
+                if(!s.flagship)throw new IllegalStateException(localizedText(player,"message.dbv_world.recovery.unregistered"));
+                s.notice=m.recovery().restoreLatest(player,m);
+            }else if(action.action()==PanelAction.VESSEL_BACKUP){
+                if(!s.flagship)throw new IllegalStateException(localizedText(player,"message.dbv_world.recovery.unregistered"));
+                s.notice=m.storage().manualBackup(player,m);
+            }else if(action.action()==PanelAction.STORAGE_OPEN){
                 if(!s.flagship)throw new IllegalStateException("仅主潜艇可打开存储终端");
                 StorageTerminalMenu.open(player,m);SESSIONS.remove(player);return;
             }else if(action.action()==PanelAction.MOOR){
@@ -76,6 +118,9 @@ public final class FleetPanel {
                 if(!s.flagship)throw new IllegalStateException("仅主艇可操作独立存储档案");
                 s.notice=action.action()==PanelAction.STORAGE_BACKUP?m.storage().manualBackup(player,m):m.storage().restoreLatest(player,m);
             }else if(action.action()==PanelAction.CHECK){
+                if(s.flagship&&(body==null||m.recovery().active())){
+                    s.notice=m.recovery().status(m);send(player,s,body,false);return;
+                }
                 var q=(s.flagship?m.refit().report(m):m.inspection().inspect(body)).qualification();
                 String access=m.refit().accessProblem(player,m);
                 s.notice="检查完成："+(s.flagship&&m.refit().blockMode()?"当前为世界方块；点击完成改装后才执行运行资格验收。":q.eligible()?"控制器、供氧和密闭均符合。":String.join("；",q.reasons()))
@@ -84,7 +129,7 @@ public final class FleetPanel {
                 if(!s.flagship||m.registry().flagship().isEmpty())throw new IllegalStateException("此船尚未登记为主潜艇，不能改装");
                 s.notice=m.refit().execute(switch(action.action()){case 1->"begin";case 2->"commit";case 3->"cancel";default->throw new IllegalStateException();},player,m);
             }
-            send(player,s,body,false);
+            send(player,s,s.flagship?m.refit().currentBody(m):body,false);
         }catch(Exception error){
             com.mojang.logging.LogUtils.getLogger().error("DBV panel action {} failed",action.action(),error);
             s.notice="操作未完成："+safeMessage(error);
@@ -99,8 +144,16 @@ public final class FleetPanel {
     private static void send(ServerPlayer player,Session s,ServerSubLevel body,boolean open){
         try{
             var m=FleetModule.get(player.getServer());boolean registered=s.flagship;
+            boolean recovering=registered&&m.recovery().active();
+            if(registered&&(recovering||s.recovering))s.notice=m.recovery().status(m);
+            s.recovering=recovering;
+            // Keep the dock session usable after loss of the controller and the entire physical hull.
+            if(registered&&(m.recovery().active()||(body==null&&!m.refit().blockMode()))){
+                sendArchive(player,s,m,open);return;
+            }
             var report=registered?m.refit().report(m):m.inspection().inspect(body);var q=report.qualification();
             int flags=PanelView.CONNECTED|(q.controller()?1:0)|(q.oxygen()?2:0)|(q.sealed()?4:0)|(q.pending()?8:0)|(registered?16:0);
+            if(body!=null&&!body.isRemoved())flags|=PanelView.BODY_PRESENT;
             String status=registered?m.refit().status():"此船尚未登记为主潜艇";
             if(registered&&m.starter().departed(m)){flags|=PanelView.DEPARTED;status="已出航：自由物理状态，船坞固定和岸供已断开。";}
             if(registered&&m.starter().departureProblem(player,m)==null)flags|=PanelView.CAN_DEPART;
@@ -125,10 +178,28 @@ public final class FleetPanel {
                     +"\n质量："+(Double.isFinite(telemetry.mass())?String.format(java.util.Locale.ROOT,"%.1f",telemetry.mass()):"暂不可用")
                     +" · 速度："+(Double.isFinite(telemetry.speed())?String.format(java.util.Locale.ROOT,"%.2f",telemetry.speed()):"暂不可用");
                 if(!m.refit().active()&&m.refit().accessProblem(player,m)==null)flags|=PanelView.STORAGE_EDITABLE;
+                if(m.recovery().accessProblem(player,m)==null&&m.recovery().hasSnapshot(m))flags|=PanelView.CAN_RESTORE;
+                String recoveryProblem=m.recovery().accessProblem(player,m);
+                if(recoveryProblem!=null)status+="；"+recoveryProblem;
+                info+="\n"+m.recovery().status(m);
             }
             storage=storage.stream().map(line->line.length()>1000?line.substring(0,1000):line).toList();
             PacketDistributor.sendToPlayer(player,new PanelView(s.token,open,title,status,s.notice,flags,devices,storage,info));
-        }catch(Exception error){PacketDistributor.sendToPlayer(player,new PanelView(s.token,open,"潜艇管理","船况读取失败",safeMessage(error),0,List.of()));}
+        }catch(Exception error){
+            // A broken device inspection must not hide recovery of an otherwise valid independent archive.
+            if(s.flagship)try{sendArchive(player,s,FleetModule.get(player.getServer()),open);return;}catch(Exception ignored){}
+            PacketDistributor.sendToPlayer(player,new PanelView(s.token,open,"潜艇管理","船况读取失败",safeMessage(error),0,List.of()));
+        }
+    }
+    private static void sendArchive(ServerPlayer player,Session s,FleetModule m,boolean open) throws java.io.IOException {
+        var identity=m.registry().flagship().orElseThrow();
+        int flags=PanelView.CONNECTED|PanelView.REGISTERED;
+        if(m.recovery().active())flags|=PanelView.RECOVERING;
+        String problem=m.recovery().accessProblem(player,m);
+        if(problem==null&&m.recovery().hasSnapshot(m))flags|=PanelView.CAN_RESTORE;
+        String status=m.recovery().status(m);if(problem!=null)status+="；"+problem;
+        String info=localizedText(player,"message.dbv_world.recovery.identity",identity.vesselId(),identity.generation());
+        PacketDistributor.sendToPlayer(player,new PanelView(s.token,open,identity.name(),status,s.notice,flags,List.of(),List.of(),info));
     }
     public static boolean notifyResult(ServerPlayer player,String result){
         var s=SESSIONS.get(player);

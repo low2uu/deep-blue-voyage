@@ -16,6 +16,92 @@ public final class VesselDataStore {
     private final UUID vessel;
     public VesselDataStore(Path world,UUID vessel){this.vessel=vessel;directory=world.resolve("dbv/fleet/vessels").resolve(vessel.toString());}
     public Path directory(){return directory;}
+    /** A pinned whole-vessel image, independent of the rotating automatic history. */
+    public JsonObject recoveryCheckpoint() throws IOException {
+        Path file=directory.resolve("recovery-checkpoint.json");
+        if(!Files.exists(file))return null;
+        try {
+            var envelope=JsonParser.parseString(Files.readString(file)).getAsJsonObject();
+            var payload=envelope.getAsJsonObject("payload");
+            if(envelope.get("schemaVersion").getAsInt()!=1||!fingerprint(payload).equals(envelope.get("sha256").getAsString()))
+                throw new IOException("整艇恢复点校验失败");
+            decode(payload.toString());return envelope;
+        } catch(RuntimeException e){throw new IOException("整艇恢复点损坏",e);}
+    }
+    public void checkpoint(JsonObject root,boolean frozen) throws IOException {
+        decode(root.toString());
+        if(!completeVessel(root))throw new IOException("档案缺少完整船体蓝图或存储，不能作为整艇恢复点");
+        var envelope=new JsonObject();envelope.addProperty("schemaVersion",1);
+        envelope.addProperty("capturedAt",java.time.Instant.now().toString());envelope.addProperty("damageDetected",frozen);
+        envelope.add("payload",root.deepCopy());envelope.addProperty("sha256",fingerprint(root));
+        write(directory.resolve("recovery-checkpoint.json"),JSON.toJson(envelope),true);
+    }
+    public static boolean completeVessel(JsonObject root){
+        if(root==null||!root.has("modules"))return false;
+        var modules=root.getAsJsonObject("modules");var structure=modules.getAsJsonObject("structure");
+        return structure!=null&&structure.has("nativeBlueprint")&&structure.has("blocks")
+                &&!structure.getAsJsonArray("blocks").isEmpty()&&modules.has("storage");
+    }
+    /** Missing or replaced blocks latch the previous complete image until an explicit backup/refit. */
+    public void updateCheckpoint(JsonObject previous,JsonObject current) throws IOException {
+        var saved=recoveryCheckpoint();
+        if(saved!=null&&saved.get("damageDetected").getAsBoolean())return;
+        // state.json can have advanced before a crash while the pinned image still contains the intact ship.
+        // Always compare to that committed image, never to a possibly already damaged current mirror.
+        var baseline=saved!=null?saved.getAsJsonObject("payload"):completeVessel(previous)?previous:null;
+        if(!completeVessel(current)){
+            if(completeVessel(baseline))checkpoint(baseline,true);return;
+        }
+        if(completeVessel(baseline)&&lostBlocks(baseline,current)){
+            checkpoint(baseline,true);return;
+        }
+        checkpoint(current,false);
+    }
+    static boolean lostBlocks(JsonObject before,JsonObject after){
+        var oldTopology=before.getAsJsonObject("modules").getAsJsonObject("structure").getAsJsonObject("recoveryTopology");
+        var newTopology=after.getAsJsonObject("modules").getAsJsonObject("structure").getAsJsonObject("recoveryTopology");
+        if(oldTopology!=null){
+            if(newTopology==null)return true;
+            for(var e:oldTopology.entrySet())if(!e.getValue().equals(newTopology.get(e.getKey())))return true;
+        }
+        var now=new java.util.HashMap<String,String>();
+        for(var e:after.getAsJsonObject("modules").getAsJsonObject("structure").getAsJsonArray("blocks")){
+            var b=e.getAsJsonObject();now.put(positionKey(b),b.getAsJsonObject("state").get("Name").getAsString());
+        }
+        for(var e:before.getAsJsonObject("modules").getAsJsonObject("structure").getAsJsonArray("blocks")){
+            var b=e.getAsJsonObject();if(!b.getAsJsonObject("state").get("Name").getAsString().equals(now.get(positionKey(b))))return true;
+        }
+        return false;
+    }
+    private static String positionKey(JsonObject b){return b.get("x")+","+b.get("y")+","+b.get("z");}
+    public void replaceFromRecovery(JsonObject root) throws IOException {
+        decode(root.toString());retainInterrupted("state.json");retainInterrupted("recovery-checkpoint.json");
+        retainInterrupted("storage-recovery.json");
+        Path marker=directory.resolve("storage-recovery.json");
+        if(Files.exists(marker)){
+            Path history=directory.resolve("recovery-history");Files.createDirectories(history);
+            Files.move(marker,history.resolve(UUID.randomUUID()+"-superseded-storage-recovery.json"),StandardCopyOption.ATOMIC_MOVE);
+        }
+        write(directory.resolve("state.json"),JSON.toJson(root),true);
+    }
+    /** A verified recovery point remains usable when the current mirror was only partially written. */
+    public JsonObject recoveryBefore(JsonObject verifiedSource) throws IOException {
+        decode(verifiedSource.toString());if(!completeVessel(verifiedSource))throw new IOException("整艇恢复源不完整");
+        try{return read();}catch(IOException unreadable){
+            Path evidence=directory.resolve("recovery-evidence").resolve(UUID.randomUUID().toString());Files.createDirectories(evidence);
+            for(String name:java.util.List.of("state.json","state.json.pending","storage-recovery.json","storage-recovery.json.pending")){
+                Path file=directory.resolve(name);if(Files.exists(file))Files.copy(file,evidence.resolve(name));
+            }
+            var before=verifiedSource.deepCopy();var marker=new JsonObject();marker.addProperty("unreadableCurrentState",true);
+            marker.addProperty("evidence",directory.relativize(evidence).toString().replace('\\','/'));
+            before.getAsJsonObject("modules").add("recoveryEvidence",marker);return before;
+        }
+    }
+    private void retainInterrupted(String name) throws IOException {
+        Path pending=directory.resolve(name+".pending");if(!Files.exists(pending))return;
+        Path history=directory.resolve("recovery-history");Files.createDirectories(history);
+        Files.move(pending,history.resolve(UUID.randomUUID()+"-"+name+".pending"),StandardCopyOption.ATOMIC_MOVE);
+    }
     public void requireStorageReady() throws IOException {
         Path marker=directory.resolve("storage-recovery.json");requireComplete(marker);
         if(Files.exists(marker))throw new IOException("上次存储恢复中断，已锁定档案；请保留 storage-recovery.json 与备份");
